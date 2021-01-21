@@ -1,12 +1,11 @@
 # Getting Started
 
-These exercises lean on Test-Driven Development (TDD), but they're not
-an exact match.
+These exercises lean on Test-Driven Development (TDD), but they're not an exact match.
 
 The following steps assume that you are in the same directory as the exercise.
 
-You must have rust installed.
-Follow the [Installation chapter in the Rust book](https://doc.rust-lang.org/book/ch01-01-installation.html).
+You must have rust installed. Follow
+the [Installation chapter in the Rust book](https://doc.rust-lang.org/book/ch01-01-installation.html).
 The [Rust language section](http://exercism.io/languages/rust)
 section from exercism is also useful.
 
@@ -39,8 +38,8 @@ test result: FAILED. 0 passed; 1 failed; 0 ignored; 0 measured
 ### Understanding Test Failures
 
 The `test_hello_world` failure states that it is expecting the value,
-`"Hello, World!"`, to be returned from `hello()`.
-The left side of the assertion (at line 5) should be equal to the right side.
+`"Hello, World!"`, to be returned from `hello()`. The left side of the assertion (at line 5) should be equal to the
+right side.
 
 ```
 ---- test_hello_world stdout ----
@@ -84,8 +83,7 @@ test result: ok. 0 passed; 0 failed; 0 ignored; 0 measured
 
 ## Submit
 
-Once the test is passing, you can submit your code with the following
-command:
+Once the test is passing, you can submit your code with the following command:
 
 ```
 $ exercism submit src/lib.rs

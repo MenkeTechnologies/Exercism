@@ -7,13 +7,12 @@ fn test_two_pieces() {
         "For want of a nail the shoe was lost.",
         "And all for the want of a nail.",
     ]
-    .join("\n");
+        .join("\n");
     assert_eq!(build_proverb(&input), expected);
 }
 
 // Notice the change in the last line at three pieces.
 #[test]
-#[ignore]
 fn test_three_pieces() {
     let input = vec!["nail", "shoe", "horse"];
     let expected = vec![
@@ -21,12 +20,11 @@ fn test_three_pieces() {
         "For want of a shoe the horse was lost.",
         "And all for the want of a nail.",
     ]
-    .join("\n");
+        .join("\n");
     assert_eq!(build_proverb(&input), expected);
 }
 
 #[test]
-#[ignore]
 fn test_one_piece() {
     let input = vec!["nail"];
     let expected = String::from("And all for the want of a nail.");
@@ -34,7 +32,6 @@ fn test_one_piece() {
 }
 
 #[test]
-#[ignore]
 fn test_zero_pieces() {
     let input: Vec<&str> = vec![];
     let expected = String::new();
@@ -42,7 +39,6 @@ fn test_zero_pieces() {
 }
 
 #[test]
-#[ignore]
 fn test_full() {
     let input = vec![
         "nail", "shoe", "horse", "rider", "message", "battle", "kingdom",
@@ -56,12 +52,11 @@ fn test_full() {
         "For want of a battle the kingdom was lost.",
         "And all for the want of a nail.",
     ]
-    .join("\n");
+        .join("\n");
     assert_eq!(build_proverb(&input), expected);
 }
 
 #[test]
-#[ignore]
 fn test_three_pieces_modernized() {
     let input = vec!["pin", "gun", "soldier", "battle"];
     let expected = vec![
@@ -70,6 +65,6 @@ fn test_three_pieces_modernized() {
         "For want of a soldier the battle was lost.",
         "And all for the want of a pin.",
     ]
-    .join("\n");
+        .join("\n");
     assert_eq!(build_proverb(&input), expected);
 }

@@ -5,21 +5,17 @@ Find the difference between the square of the sum and the sum of the squares of 
 The square of the sum of the first ten natural numbers is
 (1 + 2 + ... + 10)² = 55² = 3025.
 
-The sum of the squares of the first ten natural numbers is
-1² + 2² + ... + 10² = 385.
+The sum of the squares of the first ten natural numbers is 1² + 2² + ... + 10² = 385.
 
-Hence the difference between the square of the sum of the first
-ten natural numbers and the sum of the squares of the first ten
-natural numbers is 3025 - 385 = 2640.
+Hence the difference between the square of the sum of the first ten natural numbers and the sum of the squares of the
+first ten natural numbers is 3025 - 385 = 2640.
 
-You are not expected to discover an efficient solution to this yourself from
-first principles; research is allowed, indeed, encouraged. Finding the best
-algorithm for the problem is a key skill in software engineering.
+You are not expected to discover an efficient solution to this yourself from first principles; research is allowed,
+indeed, encouraged. Finding the best algorithm for the problem is a key skill in software engineering.
 
 ## Rust Installation
 
-Refer to the [exercism help page][help-page] for Rust installation and learning
-resources.
+Refer to the [exercism help page][help-page] for Rust installation and learning resources.
 
 ## Writing the Code
 
@@ -29,11 +25,9 @@ Execute the tests with:
 $ cargo test
 ```
 
-All but the first test have been ignored. After you get the first test to
-pass, open the tests source file which is located in the `tests` directory
-and remove the `#[ignore]` flag from the next test and get the tests to pass
-again. Each separate test is a function with `#[test]` flag above it.
-Continue, until you pass every test.
+All but the first test have been ignored. After you get the first test to pass, open the tests source file which is
+located in the `tests` directory and remove the `#[ignore]` flag from the next test and get the tests to pass again.
+Each separate test is a function with `#[test]` flag above it. Continue, until you pass every test.
 
 If you wish to run all ignored tests without editing the tests source file, use:
 
@@ -55,12 +49,12 @@ $ cargo test some_test -- --ignored
 
 To learn more about Rust tests refer to the [online test documentation][rust-tests]
 
-Make sure to read the [Modules][modules] chapter if you
-haven't already, it will help you with organizing your files.
+Make sure to read the [Modules][modules] chapter if you haven't already, it will help you with organizing your files.
 
 ## Further improvements
 
-After you have solved the exercise, please consider using the additional utilities, described in the [installation guide](https://exercism.io/tracks/rust/installation), to further refine your final solution.
+After you have solved the exercise, please consider using the additional utilities, described in
+the [installation guide](https://exercism.io/tracks/rust/installation), to further refine your final solution.
 
 To format your solution, inside the solution directory use
 
@@ -76,17 +70,25 @@ cargo clippy --all-targets
 
 ## Submitting the solution
 
-Generally you should submit all files in which you implemented your solution (`src/lib.rs` in most cases). If you are using any external crates, please consider submitting the `Cargo.toml` file. This will make the review process faster and clearer.
+Generally you should submit all files in which you implemented your solution (`src/lib.rs` in most cases). If you are
+using any external crates, please consider submitting the `Cargo.toml` file. This will make the review process faster
+and clearer.
 
 ## Feedback, Issues, Pull Requests
 
-The [exercism/rust](https://github.com/exercism/rust) repository on GitHub is the home for all of the Rust exercises. If you have feedback about an exercise, or want to help implement new exercises, head over there and create an issue. Members of the rust track team are happy to help!
+The [exercism/rust](https://github.com/exercism/rust) repository on GitHub is the home for all of the Rust exercises. If
+you have feedback about an exercise, or want to help implement new exercises, head over there and create an issue.
+Members of the rust track team are happy to help!
 
-If you want to know more about Exercism, take a look at the [contribution guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md).
+If you want to know more about Exercism, take a look at
+the [contribution guide](https://github.com/exercism/docs/blob/master/contributing-to-language-tracks/README.md).
 
 [help-page]: https://exercism.io/tracks/rust/learning
+
 [modules]: https://doc.rust-lang.org/book/ch07-02-defining-modules-to-control-scope-and-privacy.html
+
 [cargo]: https://doc.rust-lang.org/book/ch14-00-more-about-cargo.html
+
 [rust-tests]: https://doc.rust-lang.org/book/ch11-02-running-tests.html
 
 ## Source
@@ -94,4 +96,5 @@ If you want to know more about Exercism, take a look at the [contribution guide]
 Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
 
 ## Submitting Incomplete Solutions
+
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.

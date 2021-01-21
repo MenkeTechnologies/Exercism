@@ -15,7 +15,7 @@ pub fn nth(n: u32) -> u32 {
         }
 
         if prime {
-            cnt+=1;
+            cnt += 1;
             if cnt == n {
                 return possible;
             }
@@ -25,5 +25,4 @@ pub fn nth(n: u32) -> u32 {
             return 0;
         }
     };
-
 }

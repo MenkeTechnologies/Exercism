@@ -1,5 +1,4 @@
 pub fn factors(n: u64) -> Vec<u64> {
-
     let mut factors: Vec<u64> = vec![];
     let mut p_factors: Vec<u64> = vec![];
 
@@ -19,5 +18,4 @@ pub fn factors(n: u64) -> Vec<u64> {
     }
 
     p_factors
-
 }
