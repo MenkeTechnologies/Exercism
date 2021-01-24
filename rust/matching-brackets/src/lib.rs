@@ -1,5 +1,3 @@
-use std::net::Shutdown::Read;
-
 pub fn brackets_are_balanced(string: &str) -> bool {
     let mut v = vec![];
 
