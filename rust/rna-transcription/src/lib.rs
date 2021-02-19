@@ -1,21 +1,55 @@
 #[derive(Debug, PartialEq)]
-pub struct Dna;
+pub struct Dna {
+    bases: Vec<char>,
+}
 
 #[derive(Debug, PartialEq)]
-pub struct Rna;
+pub struct Rna {
+    bases: Vec<char>,
+}
 
 impl Dna {
     pub fn new(dna: &str) -> Result<Dna, usize> {
-        unimplemented!("Construct new Dna from '{}' string. If string contains invalid nucleotides return index of first invalid nucleotide", dna);
+        let mut d = Dna { bases: vec![] };
+        for (i, ch) in dna.chars().enumerate() {
+            match ch {
+                'C' | 'G' | 'T' | 'A' => d.bases.push(ch),
+                _ => {
+                    return Err(i);
+                }
+            }
+        }
+
+        Ok(d)
     }
 
     pub fn into_rna(self) -> Rna {
-        unimplemented!("Transform Dna {:?} into corresponding Rna", self);
+        let mut r = Rna { bases: vec![] };
+        for ch in self.bases {
+            match ch {
+                'C' => r.bases.push('G'),
+                'G' => r.bases.push('C'),
+                'T' => r.bases.push('A'),
+                'A' => r.bases.push('U'),
+                _ => {}
+            }
+        }
+
+        r
     }
 }
 
 impl Rna {
     pub fn new(rna: &str) -> Result<Rna, usize> {
-        unimplemented!("Construct new Rna from '{}' string. If string contains invalid nucleotides return index of first invalid nucleotide", rna);
+        let mut r = Rna { bases: vec![] };
+        for (i, ch) in rna.chars().enumerate() {
+            match ch {
+                'C' | 'G' | 'U' | 'A' => r.bases.push(ch),
+                _ => {
+                    return Err(i);
+                }
+            }
+        }
+        Ok(r)
     }
 }
