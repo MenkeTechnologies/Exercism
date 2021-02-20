@@ -1,17 +1,16 @@
 use std::ops::AddAssign;
 
-use num_traits::{zero, Num, Zero};
+use num_traits::{zero, Zero};
 
 pub struct Triangle<T> {
     s: Vec<T>,
 }
 
 impl<T> Triangle<T>
-where
-    T: PartialOrd + Zero + Copy + AddAssign,
+    where
+        T: PartialOrd + Zero + Copy + AddAssign,
 {
     pub fn build(sides: [T; 3]) -> Option<Triangle<T>> {
-        let mut tri = Triangle { s: vec![] };
         let mut v: Vec<T> = [].to_vec();
 
         for (i, side) in sides.iter().enumerate() {
@@ -31,7 +30,7 @@ where
             v.push(*side);
         }
 
-        tri.s = v;
+        let tri = Triangle { s: v };
 
         Some(tri)
     }
