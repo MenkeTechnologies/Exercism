@@ -22,8 +22,8 @@ impl School {
 
     pub fn grades(&self) -> Vec<u32> {
         let mut values: Vec<u32> = self.m.values().cloned().collect();
-        values.dedup_by(|a, b| a == b);
         values.sort();
+        values.dedup();
         values
     }
 
