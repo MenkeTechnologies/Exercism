@@ -1,65 +1,98 @@
 use std::iter::FromIterator;
 
-pub struct SimpleLinkedList<T> {
-    // Delete this field
-    // dummy is needed to avoid unused parameter error during compilation
-    dummy: ::std::marker::PhantomData<T>,
+#[derive(Clone, Eq, PartialEq)]
+struct Node<T>
+where
+    T: Clone,
+{
+    data: T,
+    prev: Option<Box<Node<T>>>,
 }
 
-impl<T> SimpleLinkedList<T> {
+pub struct SimpleLinkedList<T>
+where
+    T: Clone,
+{
+    counter: usize,
+    tail: Option<Box<Node<T>>>,
+}
+
+impl<T: Clone> SimpleLinkedList<T> {
     pub fn new() -> Self {
-        unimplemented!()
+        SimpleLinkedList {
+            counter: 0,
+            tail: None,
+        }
     }
 
-    // You may be wondering why it's necessary to have is_empty()
-    // when it can easily be determined from len().
-    // It's good custom to have both because len() can be expensive for some types,
-    // whereas is_empty() is almost always cheap.
-    // (Also ask yourself whether len() is expensive for SimpleLinkedList)
     pub fn is_empty(&self) -> bool {
-        unimplemented!()
+        self.counter == 0
     }
 
     pub fn len(&self) -> usize {
-        unimplemented!()
+        self.counter
     }
 
     pub fn push(&mut self, _element: T) {
-        unimplemented!()
+        let n = Node {
+            data: _element,
+            prev: self.tail.take()
+        };
+
+        self.tail = Some(Box::new(n));
+
+        self.counter += 1;
     }
 
     pub fn pop(&mut self) -> Option<T> {
-        unimplemented!()
+        self.tail.take().map(|n| {
+            self.counter -= 1;
+            self.tail = n.prev;
+            n.data
+        })
     }
 
     pub fn peek(&self) -> Option<&T> {
-        unimplemented!()
+        self.tail.as_ref().map(|n| &n.data)
     }
 
     pub fn rev(self) -> SimpleLinkedList<T> {
-        unimplemented!()
+        let mut ll = SimpleLinkedList::new();
+        let mut prev = self.tail;
+
+        while let Some(n) = prev {
+            ll.push(n.data);
+            prev = n.prev;
+        }
+
+        ll
     }
 }
 
-impl<T> FromIterator<T> for SimpleLinkedList<T> {
+impl<T: Clone> FromIterator<T> for SimpleLinkedList<T> {
     fn from_iter<I: IntoIterator<Item = T>>(_iter: I) -> Self {
-        unimplemented!()
+        let mut ll = SimpleLinkedList::new();
+
+        for e in _iter {
+            ll.push(e);
+        }
+
+        ll
     }
 }
 
-// In general, it would be preferable to implement IntoIterator for SimpleLinkedList<T>
-// instead of implementing an explicit conversion to a vector. This is because, together,
-// FromIterator and IntoIterator enable conversion between arbitrary collections.
-// Given that implementation, converting to a vector is trivial:
-//
-// let vec: Vec<_> = simple_linked_list.into_iter().collect();
-//
-// The reason this exercise's API includes an explicit conversion to Vec<T> instead
-// of IntoIterator is that implementing that interface is fairly complicated, and
-// demands more of the student than we expect at this point in the track.
-
-impl<T> Into<Vec<T>> for SimpleLinkedList<T> {
+impl<T: Clone> Into<Vec<T>> for SimpleLinkedList<T> {
     fn into(self) -> Vec<T> {
-        unimplemented!()
+        let mut v = vec![];
+
+        let mut prev = self.tail;
+
+        while let Some(n) = prev {
+            v.push(n.data);
+            prev = n.prev;
+        }
+
+        v.reverse();
+        v
     }
 }
