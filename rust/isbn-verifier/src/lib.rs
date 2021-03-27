@@ -10,7 +10,6 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
     }
 
     for ch in chars {
-
         let i: u32;
 
         match ch {
@@ -20,19 +19,15 @@ pub fn is_valid_isbn(isbn: &str) -> bool {
                 }
 
                 i = 10;
-            },
-            '0'..= '9' => i = char::to_digit(ch, 10).unwrap(),
-            _ => return false
-
+            }
+            '0'..='9' => i = char::to_digit(ch, 10).unwrap(),
+            _ => return false,
         };
 
         tot += i * mult;
 
         mult -= 1;
-
-
     }
 
     tot % 11 == 0
-
 }

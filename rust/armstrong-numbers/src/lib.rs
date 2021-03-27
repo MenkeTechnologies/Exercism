@@ -13,7 +13,10 @@ pub fn is_armstrong_number(num: u32) -> bool {
 
     let len: u32 = digits.len() as u32;
 
-    let sum = digits.iter().map(|a| u32::pow(*a, len)).fold(0, |a, b| a + b);
+    let sum = digits
+        .iter()
+        .map(|a| u32::pow(*a, len))
+        .fold(0, |a, b| a + b);
 
     sum == num
 }

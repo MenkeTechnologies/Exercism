@@ -12,7 +12,5 @@ pub fn check(candidate: &str) -> bool {
     v.dedup();
     let post = v.len();
 
-
     pre == post
-
 }

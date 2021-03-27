@@ -1,16 +1,13 @@
 pub struct PascalsTriangle {
-    rows: Vec<Vec<u32>>
+    rows: Vec<Vec<u32>>,
 }
 
 impl PascalsTriangle {
     pub fn new(row_count: u32) -> Self {
-
-        let mut p = PascalsTriangle{
-            rows: vec![]
-        };
+        let mut p = PascalsTriangle { rows: vec![] };
 
         for row in 0..row_count {
-            let mut v: Vec<u32>  = vec![];
+            let mut v: Vec<u32> = vec![];
 
             if row == 0 {
                 v.push(1);
@@ -21,7 +18,6 @@ impl PascalsTriangle {
                 v.push(1);
 
                 for col_idx in 1..row {
-
                     let prev_row_idx: usize = (row - 1) as usize;
 
                     let prev_row = &p.rows[prev_row_idx];
@@ -35,9 +31,8 @@ impl PascalsTriangle {
                 v.push(1);
             }
 
-          p.rows.push(v);
+            p.rows.push(v);
         }
-
 
         p
     }

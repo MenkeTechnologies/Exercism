@@ -2,12 +2,8 @@ pub fn brackets_are_balanced(string: &str) -> bool {
     let mut v = vec![];
 
     for char in string.chars() {
-
         match char {
-
-            '[' | '{' | '(' => {
-                v.push(char)
-            },
+            '[' | '{' | '(' => v.push(char),
             ']' | '}' | ')' => {
                 if v.is_empty() {
                     return false;
@@ -22,8 +18,6 @@ pub fn brackets_are_balanced(string: &str) -> bool {
                 if char == '}' && last_char != '{' {
                     return false;
                 }
-
-
             }
 
             _ => {}
@@ -35,5 +29,4 @@ pub fn brackets_are_balanced(string: &str) -> bool {
     }
 
     false
-
 }

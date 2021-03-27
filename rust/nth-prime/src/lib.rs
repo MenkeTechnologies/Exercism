@@ -24,5 +24,5 @@ pub fn nth(n: u32) -> u32 {
         if cnt > n {
             return 0;
         }
-    };
+    }
 }

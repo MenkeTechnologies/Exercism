@@ -10,13 +10,13 @@ pub fn tens_from_digit(n: u64) -> String {
         7 => "seven",
         8 => "eight",
         9 => "nine",
-        _ => "err"
+        _ => "err",
     };
     String::from(s)
 }
 
 fn get_place(idx: usize) -> String {
-    let place= match idx + 1 {
+    let place = match idx + 1 {
         1 => "",
         4 => "thousand",
         7 => "million",
@@ -24,7 +24,7 @@ fn get_place(idx: usize) -> String {
         13 => "trillion",
         16 => "quadrillion",
         19 => "quintillion",
-        _ => "N/A"
+        _ => "N/A",
     };
 
     String::from(place)
@@ -42,7 +42,7 @@ pub fn teen_from_digit(n: u64) -> String {
         7 => "seventeen",
         8 => "eighteen",
         9 => "nineteen",
-        _ => "err"
+        _ => "err",
     };
     String::from(s)
 }
@@ -57,7 +57,7 @@ pub fn twenties_from_digit(n: u64) -> String {
         7 => "seventy",
         8 => "eighty",
         9 => "ninety",
-        _ => "err"
+        _ => "err",
     };
     String::from(s)
 }
@@ -109,7 +109,12 @@ pub fn encode(n: u64) -> String {
                     if *c1 == 0 {
                         str = format!("{} {}", str, twenties_from_digit(*c2))
                     } else {
-                        str = format!("{} {}-{}", str, twenties_from_digit(*c2), tens_from_digit(*c1))
+                        str = format!(
+                            "{} {}-{}",
+                            str,
+                            twenties_from_digit(*c2),
+                            tens_from_digit(*c1)
+                        )
                     }
                 } else if *c2 >= 1 {
                     str = format!("{} {}", str, teen_from_digit(*c1));
@@ -117,16 +122,12 @@ pub fn encode(n: u64) -> String {
                     str = format!("{} {}", str, tens_from_digit(*c1))
                 }
             }
-            None => {
-                str = format!("{} {}", str, tens_from_digit(*c1))
-            }
+            None => str = format!("{} {}", str, tens_from_digit(*c1)),
         }
         if places {
             fin = format!("{} {} {}", str.trim(), place, fin)
         }
     }
 
-
     String::from(fin.trim())
 }
-

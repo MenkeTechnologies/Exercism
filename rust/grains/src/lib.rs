@@ -3,6 +3,9 @@ pub fn square(s: u32) -> u64 {
 }
 
 pub fn total() -> u64 {
-    let sum = (0..=64).into_iter().map(|a| square(a)).fold(0, |a, b| a + b);
+    let sum = (0..=64)
+        .into_iter()
+        .map(|a| square(a))
+        .fold(0, |a, b| a + b);
     sum
 }

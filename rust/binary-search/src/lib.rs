@@ -1,6 +1,5 @@
 fn recurse(array: &[i32], key: i32, l: i32, r: i32) -> Option<usize> {
-
-    if r < l  {
+    if r < l {
         return None;
     }
 
@@ -12,7 +11,7 @@ fn recurse(array: &[i32], key: i32, l: i32, r: i32) -> Option<usize> {
         recurse(&array, key, l, mid_idx - 1)
     } else {
         recurse(&array, key, mid_idx + 1, r)
-    }
+    };
 }
 
 pub fn find(array: &[i32], key: i32) -> Option<usize> {

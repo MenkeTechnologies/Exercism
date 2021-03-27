@@ -35,7 +35,6 @@ fn test_four_digit_non_armstrong_number() {
     assert!(!is_armstrong_number(9475))
 }
 
-
 fn test_seven_digit_armstrong_number() {
     assert!(is_armstrong_number(9_926_315))
 }

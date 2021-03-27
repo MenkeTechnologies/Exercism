@@ -6,15 +6,14 @@ pub enum Error {
 
 pub struct BowlingGame {
     frames: Vec<u16>,
-    roll: bool
+    roll: bool,
 }
 
 impl BowlingGame {
     pub fn new() -> Self {
         BowlingGame {
             frames: vec![],
-            roll: false
-
+            roll: false,
         }
     }
 
