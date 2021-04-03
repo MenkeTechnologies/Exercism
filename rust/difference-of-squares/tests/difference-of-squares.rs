@@ -1,6 +1,5 @@
 use difference_of_squares as squares;
 
-
 #[test]
 fn test_square_of_sum_1() {
     assert_eq!(1, squares::square_of_sum(1));

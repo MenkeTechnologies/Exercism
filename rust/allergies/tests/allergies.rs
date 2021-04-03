@@ -1,5 +1,5 @@
-use Allergen::*;
 use allergies::*;
+use Allergen::*;
 
 fn compare_allergy_vectors(expected: &[Allergen], actual: &[Allergen]) {
     for element in expected {
@@ -100,13 +100,7 @@ fn allergic_to_eggs_and_shellfish() {
 #[test]
 #[ignore]
 fn allergic_to_many_things() {
-    let expected = &[
-        Strawberries,
-        Tomatoes,
-        Chocolate,
-        Pollen,
-        Cats,
-    ];
+    let expected = &[Strawberries, Tomatoes, Chocolate, Pollen, Cats];
     let allergies = Allergies::new(248).allergies();
 
     compare_allergy_vectors(expected, &allergies);
