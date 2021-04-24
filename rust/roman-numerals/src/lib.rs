@@ -13,4 +13,3 @@ impl From<u32> for Roman {
         unimplemented!("Construct a Roman object from the '{}' number", num);
     }
 }
-
