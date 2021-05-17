@@ -6,26 +6,27 @@
 package acronym
 
 import (
-	"strings"
-	"unicode"
+    "strings"
+    "unicode"
 )
 
 func Split(r rune) bool {
-	return r == ' ' || r == '-'
+    return r == ' ' || r == '-'
 }
 
 // Abbreviate should have a comment documenting it.
 func Abbreviate(s string) string {
-	s3 := ""
-	for _, i := range strings.FieldsFunc(strings.ToUpper(s), Split) {
+    s3 := ""
+    for _, i := range strings.FieldsFunc(strings.ToUpper(s), Split) {
 
-		for _, j := range []rune(i) {
+        l := []rune(i)
+        for _, j := range l {
 
-			if unicode.IsLetter(j) {
-				s3 += string(j)
-				break
-			}
-		}
-	}
-	return s3
+            if unicode.IsLetter(j) {
+                s3 += string(j)
+                break
+            }
+        }
+    }
+    return s3
 }
