@@ -4,9 +4,11 @@ using System.Linq;
 
 public class HighScores
 {
+    private List<int> mylist;
+    
     public HighScores(List<int> list)
     {
-        throw new NotImplementedException();
+        mylist = list;
     }
 
     public List<int> Scores()

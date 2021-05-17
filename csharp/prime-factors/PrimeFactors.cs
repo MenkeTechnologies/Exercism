@@ -1,8 +1,8 @@
 using System;
 
-public static class PrimeFactors
+    [Fact]
 {
-    public static long[] Factors(long number)
+    [Fact]
     {
         throw new NotImplementedException();
     }
