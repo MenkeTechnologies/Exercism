@@ -1,3 +1,4 @@
-internal fun twofer(name: String): String {
-    TODO("Implement the function to complete the task")
+internal fun twofer(name: String = "you"): String {
+
+        return "One for $name, one for me."
 }
