@@ -15,7 +15,6 @@ fn test_empty_graph() {
 }
 
 #[test]
-#[ignore]
 fn test_graph_with_one_node() {
     let nodes = vec![Node::new("a")];
 
@@ -29,7 +28,6 @@ fn test_graph_with_one_node() {
 }
 
 #[test]
-#[ignore]
 fn test_graph_with_one_node_with_keywords() {
     let nodes = vec![Node::new("a").with_attrs(&[("color", "green")])];
 
@@ -46,7 +44,6 @@ fn test_graph_with_one_node_with_keywords() {
 }
 
 #[test]
-#[ignore]
 fn test_graph_with_one_edge() {
     let edges = vec![Edge::new("a", "b")];
 
@@ -60,7 +57,6 @@ fn test_graph_with_one_edge() {
 }
 
 #[test]
-#[ignore]
 fn test_graph_with_one_attribute() {
     let graph = Graph::new().with_attrs(&[("foo", "1")]);
 
@@ -76,7 +72,6 @@ fn test_graph_with_one_attribute() {
 }
 
 #[test]
-#[ignore]
 fn test_graph_with_attributes() {
     let nodes = vec![
         Node::new("a").with_attrs(&[("color", "green")]),
@@ -123,7 +118,6 @@ fn test_graph_with_attributes() {
 }
 
 #[test]
-#[ignore]
 fn test_graph_stores_attributes() {
     let attributes = [("foo", "bar"), ("bat", "baz"), ("bim", "bef")];
     let graph = Graph::new().with_nodes(

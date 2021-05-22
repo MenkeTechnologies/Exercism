@@ -13,7 +13,6 @@ fn test_private_key_in_range_key() {
 }
 
 #[test]
-#[ignore]
 fn test_public_key_correct() {
     let p: u64 = 23;
     let g: u64 = 5;
@@ -25,7 +24,6 @@ fn test_public_key_correct() {
 }
 
 #[test]
-#[ignore]
 fn test_secret_key_correct() {
     let p: u64 = 11;
 
@@ -38,7 +36,6 @@ fn test_secret_key_correct() {
 }
 
 #[test]
-#[ignore]
 fn test_public_key_correct_big_numbers() {
     let p: u64 = 4_294_967_299;
 
@@ -52,7 +49,6 @@ fn test_public_key_correct_big_numbers() {
 }
 
 #[test]
-#[ignore]
 fn test_secret_key_correct_big_numbers() {
     let p: u64 = 4_294_967_927;
 
@@ -78,7 +74,6 @@ const PRIVATE_KEY_64BIT: u64 = 0xFFFF_FFFF_FFFF_FFC3;
 const PUBLIC_KEY_64BIT: u64 = 0xB851_EB85_1EB8_51C1;
 
 #[test]
-#[ignore]
 #[cfg(feature = "big-primes")]
 fn test_public_key_correct_biggest_numbers() {
     assert_eq!(
@@ -88,7 +83,6 @@ fn test_public_key_correct_biggest_numbers() {
 }
 
 #[test]
-#[ignore]
 #[cfg(feature = "big-primes")]
 fn test_secret_key_correct_biggest_numbers() {
     let private_key_b = 0xEFFF_FFFF_FFFF_FFC0;
@@ -109,7 +103,6 @@ fn test_secret_key_correct_biggest_numbers() {
 }
 
 #[test]
-#[ignore]
 #[cfg(feature = "big-primes")]
 fn test_changed_secret_key_biggest_numbers() {
     let private_key_a = private_key(PRIME_64BIT_1);
@@ -125,7 +118,6 @@ fn test_changed_secret_key_biggest_numbers() {
 }
 
 #[test]
-#[ignore]
 fn test_changed_secret_key() {
     let p: u64 = 13;
     let g: u64 = 11;

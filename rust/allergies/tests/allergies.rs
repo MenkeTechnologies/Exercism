@@ -28,13 +28,11 @@ fn is_not_allergic_to_anything() {
 }
 
 #[test]
-#[ignore]
 fn is_allergic_to_eggs() {
     assert!(Allergies::new(1).is_allergic_to(&Eggs));
 }
 
 #[test]
-#[ignore]
 fn is_allergic_to_egg_shellfish_and_strawberries() {
     let allergies = Allergies::new(5);
     assert!(allergies.is_allergic_to(&Eggs));
@@ -43,7 +41,6 @@ fn is_allergic_to_egg_shellfish_and_strawberries() {
 }
 
 #[test]
-#[ignore]
 fn no_allergies_at_all() {
     let expected = &[];
     let allergies = Allergies::new(0).allergies();
@@ -52,7 +49,6 @@ fn no_allergies_at_all() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_just_eggs() {
     let expected = &[Eggs];
     let allergies = Allergies::new(1).allergies();
@@ -61,7 +57,6 @@ fn allergic_to_just_eggs() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_just_peanuts() {
     let expected = &[Peanuts];
     let allergies = Allergies::new(2).allergies();
@@ -70,7 +65,6 @@ fn allergic_to_just_peanuts() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_just_strawberries() {
     let expected = &[Strawberries];
     let allergies = Allergies::new(8).allergies();
@@ -79,7 +73,6 @@ fn allergic_to_just_strawberries() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_eggs_and_peanuts() {
     let expected = &[Eggs, Peanuts];
     let allergies = Allergies::new(3).allergies();
@@ -88,7 +81,6 @@ fn allergic_to_eggs_and_peanuts() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_eggs_and_shellfish() {
     let expected = &[Eggs, Shellfish];
 
@@ -98,7 +90,6 @@ fn allergic_to_eggs_and_shellfish() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_many_things() {
     let expected = &[Strawberries, Tomatoes, Chocolate, Pollen, Cats];
     let allergies = Allergies::new(248).allergies();
@@ -107,7 +98,6 @@ fn allergic_to_many_things() {
 }
 
 #[test]
-#[ignore]
 fn allergic_to_everything() {
     let expected = &[
         Eggs,
@@ -125,7 +115,6 @@ fn allergic_to_everything() {
 }
 
 #[test]
-#[ignore]
 fn scores_over_255_do_not_trigger_false_positives() {
     let expected = &[
         Eggs,

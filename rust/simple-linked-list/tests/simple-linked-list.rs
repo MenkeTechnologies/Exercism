@@ -16,7 +16,6 @@ fn test_push_increments_length() {
 }
 
 #[test]
-#[ignore]
 fn test_pop_decrements_length() {
     let mut list: SimpleLinkedList<u32> = SimpleLinkedList::new();
     list.push(1);
@@ -28,7 +27,6 @@ fn test_pop_decrements_length() {
 }
 
 #[test]
-#[ignore]
 fn test_is_empty() {
     let mut list: SimpleLinkedList<u32> = SimpleLinkedList::new();
     assert!(list.is_empty(), "List wasn't empty on creation");
@@ -60,7 +58,6 @@ fn test_is_empty() {
 }
 
 #[test]
-#[ignore]
 fn test_pop_returns_head_element_and_removes_it() {
     let mut list: SimpleLinkedList<u32> = SimpleLinkedList::new();
     list.push(1);
@@ -71,7 +68,6 @@ fn test_pop_returns_head_element_and_removes_it() {
 }
 
 #[test]
-#[ignore]
 fn test_peek_returns_reference_to_head_element_but_does_not_remove_it() {
     let mut list: SimpleLinkedList<u32> = SimpleLinkedList::new();
     assert_eq!(list.peek(), None, "No element should be contained in list");
@@ -87,7 +83,6 @@ fn test_peek_returns_reference_to_head_element_but_does_not_remove_it() {
 }
 
 #[test]
-#[ignore]
 fn test_from_slice() {
     let mut array = vec!["1", "2", "3", "4"];
     let mut list: SimpleLinkedList<_> = array.drain(..).collect();
@@ -98,7 +93,6 @@ fn test_from_slice() {
 }
 
 #[test]
-#[ignore]
 fn test_reverse() {
     let mut list: SimpleLinkedList<u32> = SimpleLinkedList::new();
     list.push(1);
@@ -112,7 +106,6 @@ fn test_reverse() {
 }
 
 #[test]
-#[ignore]
 fn test_into_vector() {
     let mut v = Vec::new();
     let mut s = SimpleLinkedList::new();

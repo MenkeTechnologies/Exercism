@@ -7,21 +7,18 @@ fn test_zero_area_1() {
 }
 
 #[test]
-#[ignore]
 fn test_zero_area_2() {
     let lines = &[""];
     assert_eq!(0, count(lines))
 }
 
 #[test]
-#[ignore]
 fn test_empty_area() {
     let lines = &[" "];
     assert_eq!(0, count(lines))
 }
 
 #[test]
-#[ignore]
 fn test_one_rectangle() {
     #[rustfmt::skip]
     let lines = &[
@@ -33,7 +30,6 @@ fn test_one_rectangle() {
 }
 
 #[test]
-#[ignore]
 fn test_two_rectangles_no_shared_parts() {
     #[rustfmt::skip]
     let lines = &[
@@ -47,7 +43,6 @@ fn test_two_rectangles_no_shared_parts() {
 }
 
 #[test]
-#[ignore]
 fn test_five_rectangles_three_regions() {
     #[rustfmt::skip]
     let lines = &[
@@ -61,7 +56,6 @@ fn test_five_rectangles_three_regions() {
 }
 
 #[test]
-#[ignore]
 fn rectangle_of_height_1() {
     #[rustfmt::skip]
     let lines = &[
@@ -72,7 +66,6 @@ fn rectangle_of_height_1() {
 }
 
 #[test]
-#[ignore]
 fn rectangle_of_width_1() {
     #[rustfmt::skip]
     let lines = &[
@@ -84,7 +77,6 @@ fn rectangle_of_width_1() {
 }
 
 #[test]
-#[ignore]
 fn unit_square() {
     #[rustfmt::skip]
     let lines = &[
@@ -95,7 +87,6 @@ fn unit_square() {
 }
 
 #[test]
-#[ignore]
 fn test_incomplete_rectangles() {
     #[rustfmt::skip]
     let lines = &[
@@ -109,7 +100,6 @@ fn test_incomplete_rectangles() {
 }
 
 #[test]
-#[ignore]
 fn test_complicated() {
     let lines = &[
         "+------+----+",
@@ -122,7 +112,6 @@ fn test_complicated() {
 }
 
 #[test]
-#[ignore]
 fn test_not_so_complicated() {
     let lines = &[
         "+------+----+",
@@ -135,7 +124,6 @@ fn test_not_so_complicated() {
 }
 
 #[test]
-#[ignore]
 fn test_large_input_with_many_rectangles() {
     let lines = &[
         "+---+--+----+",
