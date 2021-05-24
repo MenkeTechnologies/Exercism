@@ -14,7 +14,6 @@ class BankAccountTest {
         assertEquals(0, account.balance)
     }
 
-    @Ignore
     @Test
     fun sequentialBalanceAdjustments() {
         val account = BankAccount()
@@ -26,7 +25,6 @@ class BankAccountTest {
         assertEquals(42, account.balance)
     }
 
-    @Ignore
     @Test
     fun closedAccountHasNoBalance() {
         val account = BankAccount()
@@ -35,7 +33,6 @@ class BankAccountTest {
         assertFailsWith(IllegalStateException::class) { account.balance }
     }
 
-    @Ignore
     @Test
     fun closedAccountCannotBeAdjusted() {
         val account = BankAccount()
@@ -44,7 +41,6 @@ class BankAccountTest {
         assertFailsWith(IllegalStateException::class) { account.adjustBalance(1000) }
     }
 
-    @Ignore
     @Test
     fun concurrentBalanceAdjustments() {
         val threads = 100

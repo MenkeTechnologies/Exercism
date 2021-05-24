@@ -8,7 +8,6 @@ class YachtTest {
 
     @Test
     fun yacht() = assertEquals(50, Yacht.solve(YACHT, 5, 5, 5, 5, 5))
-    
     @Test
     fun `not yacht`() = assertEquals(0, Yacht.solve(YACHT, 1, 3, 3, 2, 5))
 

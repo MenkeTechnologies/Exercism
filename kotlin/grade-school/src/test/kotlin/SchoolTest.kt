@@ -9,7 +9,6 @@ class SchoolTest {
             .everyone()
             .shouldBe(listOf("Aimee"))
 
-    @Ignore
     @Test
     fun `adding more student adds them to the sorted roster`() =
         students(
@@ -20,7 +19,6 @@ class SchoolTest {
             .everyone()
             .shouldBe(listOf("Blair", "James", "Paul"))
 
-    @Ignore
     @Test
     fun `adding students to different grades adds them to the same sorted roster`() =
         students(
@@ -30,14 +28,12 @@ class SchoolTest {
             .everyone()
             .shouldBe(listOf("Chelsea", "Logan"))
 
-    @Ignore
     @Test
     fun `roster returns an empty list if there are no students enrolled`() =
         students()
             .everyone()
             .shouldBe(listOf())
 
-    @Ignore
     @Test
     fun `student names with grades are displayed in the same sorted roster`() =
         students(
@@ -52,7 +48,6 @@ class SchoolTest {
             .everyone()
             .shouldBe(listOf("Anna", "Barb", "Charlie", "Alex", "Peter", "Zoe", "Jim"))
 
-    @Ignore
     @Test
     fun `grade returns the students in that grade in alphabetical order`() =
         students(
@@ -63,7 +58,6 @@ class SchoolTest {
             .fromGrade(5)
             .shouldBe(listOf("Bradley", "Franklin"))
 
-    @Ignore
     @Test
     fun `grade returns an empty list if there are no students in that grade`() =
         students()
