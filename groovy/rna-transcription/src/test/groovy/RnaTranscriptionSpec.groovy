@@ -20,7 +20,6 @@ class RnaTranscriptionSpec extends Specification {
         'C' || 'G'
     }
 
-    @Ignore
     def "RNA complement of guanine is cytosine"() {
         expect:
         RnaTranscription.toRna(dna) == expected
@@ -30,7 +29,6 @@ class RnaTranscriptionSpec extends Specification {
         'G' || 'C'
     }
 
-    @Ignore
     def "RNA complement of thymine is adenine"() {
         expect:
         RnaTranscription.toRna(dna) == expected
@@ -40,7 +38,6 @@ class RnaTranscriptionSpec extends Specification {
         'T' || 'A'
     }
 
-    @Ignore
     def "RNA complement of adenine is uracil"() {
         expect:
         RnaTranscription.toRna(dna) == expected
@@ -50,7 +47,6 @@ class RnaTranscriptionSpec extends Specification {
         'A' || 'U'
     }
 
-    @Ignore
     def "RNA complement"() {
         expect:
         RnaTranscription.toRna(dna) == expected

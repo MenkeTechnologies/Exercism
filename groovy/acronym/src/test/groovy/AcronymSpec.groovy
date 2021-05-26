@@ -11,7 +11,6 @@ class AcronymSpec extends Specification {
         'Portable Network Graphics' || 'PNG'
     }
 
-    @Ignore
     def "Lowercase words"() {
         expect:
         Acronym.abbreviate(phrase) == expected
@@ -21,7 +20,6 @@ class AcronymSpec extends Specification {
         'Ruby on Rails' || 'ROR'
     }
 
-    @Ignore
     def "Punctuation"() {
         expect:
         Acronym.abbreviate(phrase) == expected
@@ -31,7 +29,6 @@ class AcronymSpec extends Specification {
         'First In, First Out' || 'FIFO'
     }
 
-    @Ignore
     def "All caps word"() {
         expect:
         Acronym.abbreviate(phrase) == expected
@@ -41,7 +38,6 @@ class AcronymSpec extends Specification {
         'GNU Image Manipulation Program' || 'GIMP'
     }
 
-    @Ignore
     def "Punctuation without whitespace"() {
         expect:
         Acronym.abbreviate(phrase) == expected
@@ -51,7 +47,6 @@ class AcronymSpec extends Specification {
         'Complementary metal-oxide semiconductor' || 'CMOS'
     }
 
-    @Ignore
     def "Very long abbreviation"() {
         expect:
         Acronym.abbreviate(phrase) == expected
@@ -61,7 +56,6 @@ class AcronymSpec extends Specification {
         expected = 'ROTFLSHTMDCOALM'
     }
 
-    @Ignore
     def "Consecutive delimiters"() {
         expect:
         Acronym.abbreviate(phrase) == expected
@@ -71,7 +65,6 @@ class AcronymSpec extends Specification {
         'Something - I made up from thin air' || 'SIMUFTA'
     }
 
-    @Ignore
     def "Apostrophes"() {
         expect:
         Acronym.abbreviate(phrase) == expected
@@ -81,7 +74,6 @@ class AcronymSpec extends Specification {
         'Halley\'s Comet' || 'HC'
     }
 
-    @Ignore
     def "Underscore emphasis"() {
         expect:
         Acronym.abbreviate(phrase) == expected

@@ -15,7 +15,6 @@ class GigasecondSpec extends Specification {
         expected = LocalDateTime.of(2043, Month.JANUARY, 1, 1, 46, 40)
     }
 
-    @Ignore
     def "Second test for date only specification of time"() {
         expect:
         Gigasecond.add(moment) == expected
@@ -25,7 +24,6 @@ class GigasecondSpec extends Specification {
         expected = LocalDateTime.of(2009, Month.FEBRUARY, 19, 1, 46, 40)
     }
 
-    @Ignore
     def "Third test for date only specification of time"() {
         expect:
         Gigasecond.add(moment) == expected
@@ -35,7 +33,6 @@ class GigasecondSpec extends Specification {
         expected = LocalDateTime.of(1991, Month.MARCH, 27, 1, 46, 40)
     }
 
-    @Ignore
     def "Full time specified"() {
         expect:
         Gigasecond.add(moment) == expected
@@ -45,7 +42,6 @@ class GigasecondSpec extends Specification {
         expected = LocalDateTime.of(2046, Month.OCTOBER, 2, 23, 46, 40)
     }
 
-    @Ignore
     def "Full time with day roll-over"() {
         expect:
         Gigasecond.add(moment) == expected

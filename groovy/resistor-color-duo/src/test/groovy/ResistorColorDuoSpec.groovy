@@ -11,7 +11,6 @@ class ResistorColorDuoSpec extends Specification {
         ['brown', 'black'] || 10
     }
 
-    @Ignore
     def "Blue and grey"() {
         expect:
         ResistorColorDuo.value(colors) == expected
@@ -21,7 +20,6 @@ class ResistorColorDuoSpec extends Specification {
         ['blue', 'grey'] || 68
     }
 
-    @Ignore
     def "Yellow and violet"() {
         expect:
         ResistorColorDuo.value(colors) == expected
@@ -31,7 +29,6 @@ class ResistorColorDuoSpec extends Specification {
         ['yellow', 'violet'] || 47
     }
 
-    @Ignore
     def "Orange and orange"() {
         expect:
         ResistorColorDuo.value(colors) == expected
@@ -41,7 +38,6 @@ class ResistorColorDuoSpec extends Specification {
         ['orange', 'orange'] || 33
     }
 
-    @Ignore
     def "Ignore additional colors"() {
         expect:
         ResistorColorDuo.value(colors) == expected

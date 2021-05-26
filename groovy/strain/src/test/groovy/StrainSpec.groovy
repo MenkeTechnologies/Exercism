@@ -11,7 +11,6 @@ class StrainSpec extends Specification {
         []         | { it % 2 == 0 } || []
     }
 
-    @Ignore
     def "Keep all even numbers"() {
         expect:
         Strain.keep(collection, predicate) == expected
@@ -21,7 +20,6 @@ class StrainSpec extends Specification {
         [1, 2, 3, 4, 5] | { it % 2 == 0 } || [2, 4]
     }
 
-    @Ignore
     def "Keep all odd numbers"() {
         expect:
         Strain.keep(collection, predicate) == expected
@@ -31,7 +29,6 @@ class StrainSpec extends Specification {
         [1, 2, 3, 4, 5] | { it % 2 != 0 } || [1, 3, 5]
     }
 
-    @Ignore
     def "Keep all everything under 10"() {
         expect:
         Strain.keep(collection, predicate) == expected
@@ -41,7 +38,6 @@ class StrainSpec extends Specification {
         [1, 2, 3, 4, 5] | { it < 10 } || [1, 2, 3, 4, 5]
     }
 
-    @Ignore
     def "Keep String that start with 'z'"() {
         expect:
         Strain.keep(collection, predicate) == expected
@@ -52,7 +48,6 @@ class StrainSpec extends Specification {
         expected = ['zebra', 'zombies', 'zelot']
     }
 
-    @Ignore
     def "Discard returns empty collection"() {
         expect:
         Strain.discard(collection, predicate) == expected
@@ -62,7 +57,6 @@ class StrainSpec extends Specification {
         []         | { it % 2 == 0 } || []
     }
 
-    @Ignore
     def "Discard all even numbers"() {
         expect:
         Strain.discard(collection, predicate) == expected
@@ -72,7 +66,6 @@ class StrainSpec extends Specification {
         [1, 2, 3, 4, 5] | { it % 2 == 0 } || [1, 3, 5]
     }
 
-    @Ignore
     def "Discard all odd numbers"() {
         expect:
         Strain.discard(collection, predicate) == expected
@@ -82,7 +75,6 @@ class StrainSpec extends Specification {
         [1, 2, 3, 4, 5] | { it % 2 != 0 } || [2, 4]
     }
 
-    @Ignore
     def "Discard all everything under 10"() {
         expect:
         Strain.discard(collection, predicate) == expected
@@ -92,7 +84,6 @@ class StrainSpec extends Specification {
         [1, 2, 3, 4, 5] | { it < 10 } || []
     }
 
-    @Ignore
     def "Discard String that start with 'z'"() {
         expect:
         Strain.discard(collection, predicate) == expected

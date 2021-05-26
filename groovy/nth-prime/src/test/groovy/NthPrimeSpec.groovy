@@ -11,7 +11,6 @@ class NthPrimeSpec extends Specification {
         1      || 2
     }
 
-    @Ignore
     def "Can calculate the second prime"() {
         expect:
         NthPrime.nth(number) == expected
@@ -21,7 +20,6 @@ class NthPrimeSpec extends Specification {
         2      || 3
     }
 
-    @Ignore
     def "Can calculate the sixth prime"() {
         expect:
         NthPrime.nth(number) == expected
@@ -31,7 +29,6 @@ class NthPrimeSpec extends Specification {
         6      || 13
     }
 
-    @Ignore
     def "Can calculate a big prime"() {
         expect:
         NthPrime.nth(number) == expected
@@ -41,7 +38,6 @@ class NthPrimeSpec extends Specification {
         10001  || 104743
     }
 
-    @Ignore
     def "Throws exception when asked for the zeroth prime"() {
         when:
         NthPrime.nth(0)

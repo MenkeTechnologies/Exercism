@@ -14,7 +14,6 @@ class ResistorColorSpec extends Specification {
         'orange' || 3
     }
 
-    @Ignore
     def "Colors"() {
         expect:
         ResistorColor.colors == ['black',

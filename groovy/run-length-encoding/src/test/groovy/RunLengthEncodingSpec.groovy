@@ -17,7 +17,6 @@ class RunLengthEncodingSpec extends Specification {
         'aabbbcccc'                                             || '2a3b4c'
     }
 
-    @Ignore
     @Unroll
     def "Run-length decode #string"() {
         expect:
@@ -33,7 +32,6 @@ class RunLengthEncodingSpec extends Specification {
         '2a3b4c'        || 'aabbbcccc'
     }
 
-    @Ignore
     def "Encode followed by decode gives original string"() {
         setup:
         RunLengthEncoding run = new RunLengthEncoding()

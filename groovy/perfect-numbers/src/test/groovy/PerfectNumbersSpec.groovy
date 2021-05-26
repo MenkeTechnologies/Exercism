@@ -14,7 +14,6 @@ class PerfectNumbersSpec extends Specification {
         33550336 || Classification.PERFECT
     }
 
-    @Ignore
     @Unroll("#number should be a Abundant number")
     def "Abundant numbers"() {
         expect:
@@ -27,7 +26,6 @@ class PerfectNumbersSpec extends Specification {
         33550335 || Classification.ABUNDANT
     }
 
-    @Ignore
     @Unroll("#number should be a Deficient number")
     def "Deficient numbers"() {
         expect:
@@ -41,7 +39,6 @@ class PerfectNumbersSpec extends Specification {
         33550337 || Classification.DEFICIENT
     }
 
-    @Ignore
     def "Edge case (no factors other than itself) is classified correctly"() {
         expect:
         PerfectNumbers.classify(number) == expected
@@ -51,7 +48,6 @@ class PerfectNumbersSpec extends Specification {
         1      || Classification.DEFICIENT
     }
 
-    @Ignore
     def "Zero is rejected (not a natural number)"() {
         when:
         PerfectNumbers.classify(0)
@@ -60,7 +56,6 @@ class PerfectNumbersSpec extends Specification {
         thrown(ArithmeticException)
     }
 
-    @Ignore
     def "Negative integer is rejected (not a natural number)"() {
         when:
         PerfectNumbers.classify(-1)

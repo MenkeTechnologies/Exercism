@@ -11,7 +11,6 @@ class ETLSpec extends Specification {
         expected = ['a': 1]
     }
 
-    @Ignore
     def "Single score with multiple letters"() {
         expect:
         ETL.transform(legacy) == expected
@@ -21,7 +20,6 @@ class ETLSpec extends Specification {
         expected = ['a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1]
     }
 
-    @Ignore
     def "Multiple scores with multiple letters"() {
         expect:
         ETL.transform(legacy) == expected
@@ -32,7 +30,6 @@ class ETLSpec extends Specification {
         expected = ['a': 1, 'd': 2, 'e': 1, 'g': 2]
     }
 
-    @Ignore
     def "Multiple scores with differing numbers of letters"() {
         expect:
         ETL.transform(legacy) == expected

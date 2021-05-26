@@ -7,7 +7,6 @@ class TwoFerSpec extends Specification {
         TwoFer.twoFer() == 'One for you, one for me.'
     }
 
-    @Ignore
     def "Empty name given"() {
         expect:
         TwoFer.twoFer(name) == expected
@@ -17,7 +16,6 @@ class TwoFerSpec extends Specification {
         ''   || 'One for you, one for me.'
     }
 
-    @Ignore
     def "A name given"() {
         expect:
         TwoFer.twoFer(name) == expected
@@ -27,7 +25,6 @@ class TwoFerSpec extends Specification {
         'Alice' || 'One for Alice, one for me.'
     }
 
-    @Ignore
     def "Another name given"() {
         expect:
         TwoFer.twoFer(name) == expected

@@ -14,7 +14,6 @@ class DifferenceOfSquaresSpec extends Specification {
         100     || 25502500
     }
 
-    @Ignore
     @Unroll("Can sum the squares up to #integer")
     def "Can sum the squares up to the given integer"() {
         expect:
@@ -27,7 +26,6 @@ class DifferenceOfSquaresSpec extends Specification {
         100     || 338350
     }
 
-    @Ignore
     @Unroll("Can subtract sum of squares from square of sum of #integer")
     def "Can subtract sum of squares from square of sum"() {
         expect:
