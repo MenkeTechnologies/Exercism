@@ -11,17 +11,17 @@ describe('Solve the alphametics puzzle', () => {
     expect(new Alphametics(puzzle).solve()).toEqual(expected)
   })
 
-  xit('solution must have unique value for each letter', () => {
+  it('solution must have unique value for each letter', () => {
     const puzzle = 'A == B'
     expect(new Alphametics(puzzle).solve()).toBeUndefined()
   })
 
-  xit('leading zero solution is invalid', () => {
+  it('leading zero solution is invalid', () => {
     const puzzle = 'ACA + DD == BD'
     expect(new Alphametics(puzzle).solve()).toBeUndefined()
   })
 
-  xit('puzzle with four letters', () => {
+  it('puzzle with four letters', () => {
     const puzzle = 'AS + A == MOM'
     const expected = {
       A: 9,
@@ -32,7 +32,7 @@ describe('Solve the alphametics puzzle', () => {
     expect(new Alphametics(puzzle).solve()).toEqual(expected)
   })
 
-  xit('puzzle with six letters', () => {
+  it('puzzle with six letters', () => {
     const puzzle = 'NO + NO + TOO == LATE'
     const expected = {
       N: 7,
@@ -45,7 +45,7 @@ describe('Solve the alphametics puzzle', () => {
     expect(new Alphametics(puzzle).solve()).toEqual(expected)
   })
 
-  xit('puzzle with seven letters', () => {
+  it('puzzle with seven letters', () => {
     const puzzle = 'HE + SEES + THE == LIGHT'
     const expected = {
       E: 4,
@@ -59,7 +59,7 @@ describe('Solve the alphametics puzzle', () => {
     expect(new Alphametics(puzzle).solve()).toEqual(expected)
   })
 
-  xit('puzzle with eight letters', () => {
+  it('puzzle with eight letters', () => {
     const puzzle = 'SEND + MORE == MONEY'
     const expected = {
       S: 9,
@@ -74,7 +74,7 @@ describe('Solve the alphametics puzzle', () => {
     expect(new Alphametics(puzzle).solve()).toEqual(expected)
   })
 
-  xit('puzzle with ten letters', () => {
+  it('puzzle with ten letters', () => {
     const puzzle = 'AND + A + STRONG + OFFENSE + AS + A + GOOD == DEFENSE'
     const expected = {
       A: 5,

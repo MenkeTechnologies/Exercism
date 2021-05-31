@@ -7,13 +7,13 @@ describe('Spiral Matrix', () => {
     expect(actual).toEqual(expected)
   })
 
-  xit('trivial spiral', () => {
+  it('trivial spiral', () => {
     const expected = [[1]]
     const actual = SpiralMatrix.ofSize(1)
     expect(actual).toEqual(expected)
   })
 
-  xit('spiral of size 2', () => {
+  it('spiral of size 2', () => {
     const expected = [
       [1, 2],
       [4, 3],
@@ -22,7 +22,7 @@ describe('Spiral Matrix', () => {
     expect(actual).toEqual(expected)
   })
 
-  xit('spiral of size 3', () => {
+  it('spiral of size 3', () => {
     const expected = [
       [1, 2, 3],
       [8, 9, 4],
@@ -32,7 +32,7 @@ describe('Spiral Matrix', () => {
     expect(actual).toEqual(expected)
   })
 
-  xit('spiral of size 4', () => {
+  it('spiral of size 4', () => {
     const expected = [
       [1, 2, 3, 4],
       [12, 13, 14, 5],
@@ -43,7 +43,7 @@ describe('Spiral Matrix', () => {
     expect(actual).toEqual(expected)
   })
 
-  xit('spiral of size 5', () => {
+  it('spiral of size 5', () => {
     const expected = [
       [1, 2, 3, 4, 5],
       [16, 17, 18, 19, 6],

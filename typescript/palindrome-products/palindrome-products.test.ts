@@ -13,7 +13,7 @@ describe('Palindrome', () => {
     ])
   })
 
-  xit('largest palindrome from double digit factors', () => {
+  it('largest palindrome from double digit factors', () => {
     const palindromes = generate({ maxFactor: 99, minFactor: 10 })
     const largest = palindromes.largest
 
@@ -21,7 +21,7 @@ describe('Palindrome', () => {
     expect(sort2dArray(largest.factors)).toEqual([[91, 99]])
   })
 
-  xit('smallest palindrome from double digit factors', () => {
+  it('smallest palindrome from double digit factors', () => {
     const palindromes = generate({ maxFactor: 99, minFactor: 10 })
     const smallest = palindromes.smallest
 
@@ -29,7 +29,7 @@ describe('Palindrome', () => {
     expect(sort2dArray(smallest.factors)).toEqual([[11, 11]])
   })
 
-  xit('largest palindrome from triple digit factors', () => {
+  it('largest palindrome from triple digit factors', () => {
     const palindromes = generate({ maxFactor: 999, minFactor: 100 })
     const largest = palindromes.largest
 
@@ -37,7 +37,7 @@ describe('Palindrome', () => {
     expect(sort2dArray(largest.factors)).toEqual([[913, 993]])
   })
 
-  xit('smallest palindrome from triple digit factors', () => {
+  it('smallest palindrome from triple digit factors', () => {
     const palindromes = generate({ maxFactor: 999, minFactor: 100 })
     const smallest = palindromes.smallest
 

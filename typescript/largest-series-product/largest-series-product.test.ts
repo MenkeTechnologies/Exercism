@@ -5,15 +5,15 @@ describe('Series', () => {
     expect(new Series('0123456789').largestProduct(2)).toBe(72)
   })
 
-  xit('works for a tiny number', () => {
+  it('works for a tiny number', () => {
     expect(new Series('19').largestProduct(2)).toBe(9)
   })
 
-  xit('can get the largest product of 3', () => {
+  it('can get the largest product of 3', () => {
     expect(new Series('1027839564').largestProduct(3)).toBe(270)
   })
 
-  xit('can get the largest product of a big number', () => {
+  it('can get the largest product of a big number', () => {
     const largeNumber =
       '73167176531330624919225119674426574742355349194934969835203127745063262395783180169848018694788' +
       '51843858615607891129494954595017379583319528532088055111254069874715852386305071569329096329522744304355766896648' +
@@ -27,41 +27,41 @@ describe('Series', () => {
     expect(new Series(largeNumber).largestProduct(13)).toBe(23514624000)
   })
 
-  xit('returns 0 if all digits are zero', () => {
+  it('returns 0 if all digits are zero', () => {
     expect(new Series('0000').largestProduct(2)).toBe(0)
   })
 
-  xit('returns 0 if all spans contain zero', () => {
+  it('returns 0 if all spans contain zero', () => {
     expect(new Series('99099').largestProduct(3)).toBe(0)
   })
 
-  xit('rejects invalid character in input', () => {
+  it('rejects invalid character in input', () => {
     expect(() => {
       new Series('1234a5').largestProduct(2)
     }).toThrowError('Invalid input.')
   })
 
-  xit('rejects negative span', () => {
+  it('rejects negative span', () => {
     expect(() => {
       new Series('12345').largestProduct(-1)
     }).toThrowError('Invalid input.')
   })
 
-  xit('returns 1 for empty string and zero slice length', () => {
+  it('returns 1 for empty string and zero slice length', () => {
     expect(new Series('').largestProduct(0)).toBe(1)
   })
 
-  xit('returns 1 for non-empty string and zero slice length', () => {
+  it('returns 1 for non-empty string and zero slice length', () => {
     expect(new Series('123').largestProduct(0)).toBe(1)
   })
 
-  xit('throws an error for slices bigger than the number', () => {
+  it('throws an error for slices bigger than the number', () => {
     expect(() => {
       new Series('123').largestProduct(4)
     }).toThrowError('Slice size is too big.')
   })
 
-  xit('throws an error for empty string and non-zero slice length', () => {
+  it('throws an error for empty string and non-zero slice length', () => {
     expect(() => {
       new Series('').largestProduct(1)
     }).toThrowError('Slice size is too big.')

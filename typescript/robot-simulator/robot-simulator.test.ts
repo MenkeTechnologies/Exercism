@@ -12,7 +12,7 @@ describe('Robot', () => {
     })
   })
 
-  xit('invalid robot bearing', () => {
+  it('invalid robot bearing', () => {
     try {
       robot.orient('crood')
     } catch (exception) {
@@ -20,105 +20,105 @@ describe('Robot', () => {
     }
   })
 
-  xit('turn right from north', () => {
+  it('turn right from north', () => {
     robot.orient('north')
     robot.turnRight()
     expect(robot.bearing).toEqual('east')
   })
 
-  xit('turn right from east', () => {
+  it('turn right from east', () => {
     robot.orient('east')
     robot.turnRight()
     expect(robot.bearing).toEqual('south')
   })
 
-  xit('turn right from south', () => {
+  it('turn right from south', () => {
     robot.orient('south')
     robot.turnRight()
     expect(robot.bearing).toEqual('west')
   })
 
-  xit('turn right from west', () => {
+  it('turn right from west', () => {
     robot.orient('west')
     robot.turnRight()
     expect(robot.bearing).toEqual('north')
   })
 
-  xit('turn left from north', () => {
+  it('turn left from north', () => {
     robot.orient('north')
     robot.turnLeft()
     expect(robot.bearing).toEqual('west')
   })
 
-  xit('turn left from east', () => {
+  it('turn left from east', () => {
     robot.orient('east')
     robot.turnLeft()
     expect(robot.bearing).toEqual('north')
   })
 
-  xit('turn left from south', () => {
+  it('turn left from south', () => {
     robot.orient('south')
     robot.turnLeft()
     expect(robot.bearing).toEqual('east')
   })
 
-  xit('turn left from west', () => {
+  it('turn left from west', () => {
     robot.orient('west')
     robot.turnLeft()
     expect(robot.bearing).toEqual('south')
   })
 
-  xit('robot coordinates', () => {
+  it('robot coordinates', () => {
     robot.at(3, 0)
     expect(robot.coordinates).toEqual([3, 0])
   })
 
-  xit('other robot coordinates', () => {
+  it('other robot coordinates', () => {
     robot.at(-2, 5)
     expect(robot.coordinates).toEqual([-2, 5])
   })
 
-  xit('advance when facing north', () => {
+  it('advance when facing north', () => {
     robot.at(0, 0)
     robot.orient('north')
     robot.advance()
     expect(robot.coordinates).toEqual([0, 1])
   })
 
-  xit('advance when facing east', () => {
+  it('advance when facing east', () => {
     robot.at(0, 0)
     robot.orient('east')
     robot.advance()
     expect(robot.coordinates).toEqual([1, 0])
   })
 
-  xit('advance when facing south', () => {
+  it('advance when facing south', () => {
     robot.at(0, 0)
     robot.orient('south')
     robot.advance()
     expect(robot.coordinates).toEqual([0, -1])
   })
 
-  xit('advance when facing west', () => {
+  it('advance when facing west', () => {
     robot.at(0, 0)
     robot.orient('west')
     robot.advance()
     expect(robot.coordinates).toEqual([-1, 0])
   })
 
-  xit('instructions for turning left', () => {
+  it('instructions for turning left', () => {
     expect(robot.instructions('L')).toEqual(['turnLeft'])
   })
 
-  xit('instructions for turning right', () => {
+  it('instructions for turning right', () => {
     expect(robot.instructions('R')).toEqual(['turnRight'])
   })
 
-  xit('instructions for advancing', () => {
+  it('instructions for advancing', () => {
     expect(robot.instructions('A')).toEqual(['advance'])
   })
 
-  xit('series of instructions', () => {
+  it('series of instructions', () => {
     expect(robot.instructions('RAAL')).toEqual([
       'turnRight',
       'advance',
@@ -127,14 +127,14 @@ describe('Robot', () => {
     ])
   })
 
-  xit('instruct robot', () => {
+  it('instruct robot', () => {
     const robotI = new Robot(-2, 1, 'east')
     robotI.evaluate('RLAALAL')
     expect(robotI.coordinates).toEqual([0, 2])
     expect(robotI.bearing).toEqual('west')
   })
 
-  xit('instruct many robots', () => {
+  it('instruct many robots', () => {
     const robot1 = new Robot(0, 0, 'north')
     const robot2 = new Robot(2, -7, 'east')
     const robot3 = new Robot(8, 4, 'south')

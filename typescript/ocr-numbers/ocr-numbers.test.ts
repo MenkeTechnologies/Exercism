@@ -5,53 +5,53 @@ describe('ocr', () => {
     expect(OcrParser.convert(' _ \n' + '| |\n' + '|_|\n' + '   ')).toBe('0')
   })
 
-  xit('recognizes one', () => {
+  it('recognizes one', () => {
     expect(OcrParser.convert('   \n' + '  |\n' + '  |\n' + '   ')).toBe('1')
   })
 
-  xit('recognizes two', () => {
+  it('recognizes two', () => {
     expect(OcrParser.convert(' _ \n' + ' _|\n' + '|_ \n' + '   ')).toBe('2')
   })
 
-  xit('recognizes three', () => {
+  it('recognizes three', () => {
     expect(OcrParser.convert(' _ \n' + ' _|\n' + ' _|\n' + '   ')).toBe('3')
   })
 
-  xit('recognizes four', () => {
+  it('recognizes four', () => {
     expect(OcrParser.convert('   \n' + '|_|\n' + '  |\n' + '   ')).toBe('4')
   })
 
-  xit('recognizes five', () => {
+  it('recognizes five', () => {
     expect(OcrParser.convert(' _ \n' + '|_ \n' + ' _|\n' + '   ')).toBe('5')
   })
 
-  xit('recognizes six', () => {
+  it('recognizes six', () => {
     expect(OcrParser.convert(' _ \n' + '|_ \n' + '|_|\n' + '   ')).toBe('6')
   })
 
-  xit('recognizes seven', () => {
+  it('recognizes seven', () => {
     expect(OcrParser.convert(' _ \n' + '  |\n' + '  |\n' + '   ')).toBe('7')
   })
 
-  xit('recognizes eight', () => {
+  it('recognizes eight', () => {
     expect(OcrParser.convert(' _ \n' + '|_|\n' + '|_|\n' + '   ')).toBe('8')
   })
 
-  xit('recognizes nine', () => {
+  it('recognizes nine', () => {
     expect(OcrParser.convert(' _ \n' + '|_|\n' + ' _|\n' + '   ')).toBe('9')
   })
 
-  xit('recognizes ten', () => {
+  it('recognizes ten', () => {
     expect(
       OcrParser.convert('    _ \n' + '  || |\n' + '  ||_|\n' + '      ')
     ).toBe('10')
   })
 
-  xit('identifies garble', () => {
+  it('identifies garble', () => {
     expect(OcrParser.convert('   \n' + '| |\n' + '| |\n' + '   ')).toBe('?')
   })
 
-  xit('converts 110101100', () => {
+  it('converts 110101100', () => {
     expect(
       OcrParser.convert(
         '       _     _        _  _ \n' +
@@ -62,7 +62,7 @@ describe('ocr', () => {
     ).toBe('110101100')
   })
 
-  xit('identifies garble mixed in', () => {
+  it('identifies garble mixed in', () => {
     expect(
       OcrParser.convert(
         '       _     _           _ \n' +
@@ -73,7 +73,7 @@ describe('ocr', () => {
     ).toBe('11?10?1?0')
   })
 
-  xit('converts 1234567890', () => {
+  it('converts 1234567890', () => {
     expect(
       OcrParser.convert(
         '    _  _     _  _  _  _  _  _ \n' +
@@ -84,7 +84,7 @@ describe('ocr', () => {
     ).toBe('1234567890')
   })
 
-  xit('converts 123 456 789', () => {
+  it('converts 123 456 789', () => {
     expect(
       OcrParser.convert(
         '    _  _ \n' +

@@ -7,19 +7,19 @@ describe('Prime', () => {
     expect(prime.nth(1)).toEqual(2)
   })
 
-  xit('second', () => {
+  it('second', () => {
     expect(prime.nth(2)).toEqual(3)
   })
 
-  xit('sixth', () => {
+  it('sixth', () => {
     expect(prime.nth(6)).toEqual(13)
   })
 
-  xit('big prime', () => {
+  it('big prime', () => {
     expect(prime.nth(10001)).toEqual(104743)
   })
 
-  xit('weird case', () => {
+  it('weird case', () => {
     expect(() => prime.nth(0)).toThrowError('Prime is not possible')
   })
 })
