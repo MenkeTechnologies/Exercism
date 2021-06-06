@@ -2,19 +2,16 @@
 
 Given a number determine whether or not it is valid per the Luhn formula.
 
-The [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) is
-a simple checksum formula used to validate a variety of identification
-numbers, such as credit card numbers and Canadian Social Insurance
-Numbers.
+The [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) is a simple checksum formula used to validate a
+variety of identification numbers, such as credit card numbers and Canadian Social Insurance Numbers.
 
 The task is to check if a given string is valid.
 
 Validating a Number
 ------
 
-Strings of length 1 or less are not valid. Spaces are allowed in the input,
-but they should be stripped before checking. All other non-digit characters
-are disallowed.
+Strings of length 1 or less are not valid. Spaces are allowed in the input, but they should be stripped before checking.
+All other non-digit characters are disallowed.
 
 ## Example 1: valid credit card number
 
@@ -22,15 +19,13 @@ are disallowed.
 4539 1488 0343 6467
 ```
 
-The first step of the Luhn algorithm is to double every second digit,
-starting from the right. We will be doubling
+The first step of the Luhn algorithm is to double every second digit, starting from the right. We will be doubling
 
 ```text
 4_3_ 1_8_ 0_4_ 6_6_
 ```
 
-If doubling the number results in a number greater than 9 then subtract 9
-from the product. The results of our doubling:
+If doubling the number results in a number greater than 9 then subtract 9 from the product. The results of our doubling:
 
 ```text
 8569 2478 0383 3437
@@ -66,8 +61,7 @@ Sum the digits
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -94,9 +88,9 @@ Once you get a test passing, you can enable the next one by changing `xit` to
 
 ## Source
 
-The Luhn Algorithm on Wikipedia [http://en.wikipedia.org/wiki/Luhn_algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm)
+The Luhn Algorithm on
+Wikipedia [http://en.wikipedia.org/wiki/Luhn_algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm)
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

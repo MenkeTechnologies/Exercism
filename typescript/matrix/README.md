@@ -1,7 +1,6 @@
 # Matrix
 
-Given a string representing a matrix of numbers, return the rows and columns of
-that matrix.
+Given a string representing a matrix of numbers, return the rows and columns of that matrix.
 
 So given a string with embedded newlines like:
 
@@ -23,10 +22,8 @@ representing this matrix:
 
 your code should be able to spit out:
 
-- A list of the rows, reading each row left-to-right while moving
-  top-to-bottom across the rows,
-- A list of the columns, reading each column top-to-bottom while moving
-  from left-to-right.
+- A list of the rows, reading each row left-to-right while moving top-to-bottom across the rows,
+- A list of the columns, reading each column top-to-bottom while moving from left-to-right.
 
 The rows for our example matrix:
 
@@ -42,8 +39,7 @@ And its columns:
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -74,5 +70,4 @@ Warmup to the `saddle-points` warmup. [http://jumpstartlab.com](http://jumpstart
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

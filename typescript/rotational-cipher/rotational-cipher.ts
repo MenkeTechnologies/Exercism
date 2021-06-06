@@ -1,1 +1,2 @@
-export default class RotationalCipher {}
+export default class RotationalCipher {
+}

@@ -2,7 +2,8 @@
 
 Take a nested list and return a single flattened list with all values except nil/null.
 
-The challenge is to write a function that accepts an arbitrarily-deep nested list-like structure and returns a flattened structure without any nil/null values.
+The challenge is to write a function that accepts an arbitrarily-deep nested list-like structure and returns a flattened
+structure without any nil/null values.
 
 For Example
 
@@ -12,8 +13,7 @@ output: [1,2,3,4,5]
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -40,9 +40,9 @@ Once you get a test passing, you can enable the next one by changing `xit` to
 
 ## Source
 
-Interview Question [https://reference.wolfram.com/language/ref/Flatten.html](https://reference.wolfram.com/language/ref/Flatten.html)
+Interview
+Question [https://reference.wolfram.com/language/ref/Flatten.html](https://reference.wolfram.com/language/ref/Flatten.html)
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

@@ -8,8 +8,7 @@ Given `"listen"` and a list of candidates like `"enlists" "google"
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -36,9 +35,9 @@ Once you get a test passing, you can enable the next one by changing `xit` to
 
 ## Source
 
-Inspired by the Extreme Startup game [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
+Inspired by the Extreme Startup
+game [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

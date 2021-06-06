@@ -2,18 +2,16 @@
 
 Convert a number, represented as a sequence of digits in one base, to any other base.
 
-Implement general base conversion. Given a number in base **a**,
-represented as a sequence of digits, convert it to base **b**.
+Implement general base conversion. Given a number in base **a**, represented as a sequence of digits, convert it to
+base **b**.
 
 ## Note
 
-- Try to implement the conversion yourself.
-  Do not use something else to perform the conversion for you.
+- Try to implement the conversion yourself. Do not use something else to perform the conversion for you.
 
 ## About [Positional Notation](https://en.wikipedia.org/wiki/Positional_notation)
 
-In positional notation, a number in base **b** can be understood as a linear
-combination of powers of **b**.
+In positional notation, a number in base **b** can be understood as a linear combination of powers of **b**.
 
 The number 42, *in base 10*, means:
 
@@ -33,8 +31,7 @@ I think you got the idea!
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -59,8 +56,6 @@ In the test suites all tests but the first have been skipped.
 Once you get a test passing, you can enable the next one by changing `xit` to
 `it`.
 
-
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

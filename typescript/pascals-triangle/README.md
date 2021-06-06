@@ -2,8 +2,8 @@
 
 Compute Pascal's triangle up to a given number of rows.
 
-In Pascal's Triangle each number is computed by adding the numbers to
-the right and left of the current position in the previous row.
+In Pascal's Triangle each number is computed by adding the numbers to the right and left of the current position in the
+previous row.
 
 ```text
     1
@@ -16,8 +16,7 @@ the right and left of the current position in the previous row.
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -44,9 +43,9 @@ Once you get a test passing, you can enable the next one by changing `xit` to
 
 ## Source
 
-Pascal's Triangle at Wolfram Math World [http://mathworld.wolfram.com/PascalsTriangle.html](http://mathworld.wolfram.com/PascalsTriangle.html)
+Pascal's Triangle at Wolfram Math
+World [http://mathworld.wolfram.com/PascalsTriangle.html](http://mathworld.wolfram.com/PascalsTriangle.html)
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

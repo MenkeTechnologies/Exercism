@@ -1,8 +1,7 @@
 # Strain
 
-Implement the `keep` and `discard` operation on collections. Given a collection
-and a predicate on the collection's elements, `keep` returns a new collection
-containing those elements where the predicate is true, while `discard` returns
+Implement the `keep` and `discard` operation on collections. Given a collection and a predicate on the collection's
+elements, `keep` returns a new collection containing those elements where the predicate is true, while `discard` returns
 a new collection containing those elements where the predicate is false.
 
 For example, given the collection of numbers:
@@ -23,20 +22,17 @@ While your discard operation should produce:
 
 Note that the union of keep and discard is all the elements.
 
-The functions may be called `keep` and `discard`, or they may need different
-names in order to not clash with existing functions or concepts in your
-language.
+The functions may be called `keep` and `discard`, or they may need different names in order to not clash with existing
+functions or concepts in your language.
 
 ## Restrictions
 
-Keep your hands off that filter/reject/whatchamacallit functionality
-provided by your standard library!  Solve this one yourself using other
-basic tools instead.
+Keep your hands off that filter/reject/whatchamacallit functionality provided by your standard library!  Solve this one
+yourself using other basic tools instead.
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -67,5 +63,4 @@ Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitte
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

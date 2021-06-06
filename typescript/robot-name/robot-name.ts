@@ -1,15 +1,16 @@
 export default class Robot {
-  constructor() {}
+    constructor() {
+    }
 
-  public get name(): string {
-    throw new Error('Implement Robot#name')
-  }
+    public get name(): string {
+        throw new Error('Implement Robot#name')
+    }
 
-  public resetName(): void {
-    throw new Error('Implement Robot#resetName')
-  }
+    public static releaseNames(): void {
+        throw new Error('Implement Robot.releaseNames')
+    }
 
-  public static releaseNames(): void {
-    throw new Error('Implement Robot.releaseNames')
-  }
+    public resetName(): void {
+        throw new Error('Implement Robot#resetName')
+    }
 }

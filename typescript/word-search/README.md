@@ -1,7 +1,6 @@
 # Word Search
 
-In word search puzzles you get a square of letters and have to find specific
-words in them.
+In word search puzzles you get a square of letters and have to find specific words in them.
 
 For example:
 
@@ -20,15 +19,13 @@ clojurermt
 
 There are several programming languages hidden in the above square.
 
-Words can be hidden in all kinds of directions: left-to-right, right-to-left,
-vertical and diagonal.
+Words can be hidden in all kinds of directions: left-to-right, right-to-left, vertical and diagonal.
 
-Given a puzzle and a list of words return the location of the first and last
-letter of each word.
+Given a puzzle and a list of words return the location of the first and last letter of each word.
+
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -59,5 +56,4 @@ This is a classic toy problem, but we were reminded of it by seeing it in the Go
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

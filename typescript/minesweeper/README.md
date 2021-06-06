@@ -2,12 +2,12 @@
 
 Add the numbers to a minesweeper board.
 
-Minesweeper is a popular game where the user has to find the mines using
-numeric hints that indicate how many mines are directly adjacent
+Minesweeper is a popular game where the user has to find the mines using numeric hints that indicate how many mines are
+directly adjacent
 (horizontally, vertically, diagonally) to a square.
 
-In this exercise you have to create some code that counts the number of
-mines adjacent to a square and transforms boards like this (where `*`
+In this exercise you have to create some code that counts the number of mines adjacent to a square and transforms boards
+like this (where `*`
 indicates a mine):
 
     +-----+
@@ -28,8 +28,7 @@ into this:
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -54,8 +53,6 @@ In the test suites all tests but the first have been skipped.
 Once you get a test passing, you can enable the next one by changing `xit` to
 `it`.
 
-
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

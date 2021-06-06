@@ -1,1 +1,2 @@
-export default class Triangle {}
+export default class Triangle {
+}

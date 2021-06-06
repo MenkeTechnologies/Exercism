@@ -2,9 +2,8 @@
 
 Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'.
 
-While you could copy/paste the lyrics,
-or read them from a file, this problem is much more
-interesting if you approach it algorithmically.
+While you could copy/paste the lyrics, or read them from a file, this problem is much more interesting if you approach
+it algorithmically.
 
 This is a [cumulative song](http://en.wikipedia.org/wiki/Cumulative_song) of unknown origin.
 
@@ -65,8 +64,7 @@ She's dead, of course!
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -97,5 +95,4 @@ Wikipedia [http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fl
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

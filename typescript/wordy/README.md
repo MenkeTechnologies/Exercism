@@ -40,8 +40,8 @@ Now, perform the other three operations.
 
 Handle a set of operations, in sequence.
 
-Since these are verbal word problems, evaluate the expression from
-left-to-right, _ignoring the typical order of operations._
+Since these are verbal word problems, evaluate the expression from left-to-right, _ignoring the typical order of
+operations._
 
 > What is 5 plus 13 plus 6?
 
@@ -69,8 +69,7 @@ If you'd like, handle exponentials.
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -97,9 +96,9 @@ Once you get a test passing, you can enable the next one by changing `xit` to
 
 ## Source
 
-Inspired by one of the generated questions in the Extreme Startup game. [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
+Inspired by one of the generated questions in the Extreme Startup
+game. [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

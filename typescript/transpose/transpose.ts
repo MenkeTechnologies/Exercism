@@ -1,5 +1,5 @@
 function transpose(_lines: string[]): string[] {
-  return []
+    return []
 }
 
 export default transpose

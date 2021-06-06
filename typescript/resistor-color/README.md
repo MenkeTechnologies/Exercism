@@ -1,6 +1,7 @@
 # Resistor Color
 
-Resistors have color coded bands, where each color maps to a number. The first 2 bands of a resistor have a simple encoding scheme: each color maps to a single number.
+Resistors have color coded bands, where each color maps to a number. The first 2 bands of a resistor have a simple
+encoding scheme: each color maps to a single number.
 
 These colors are encoded as follows:
 
@@ -15,14 +16,15 @@ These colors are encoded as follows:
 - Grey: 8
 - White: 9
 
-Mnemonics map the colors to the numbers, that, when stored as an array, happen to map to their index in the array: Better Be Right Or Your Great Big Values Go Wrong.
+Mnemonics map the colors to the numbers, that, when stored as an array, happen to map to their index in the array:
+Better Be Right Or Your Great Big Values Go Wrong.
 
-More information on the color encoding of resistors can be found in the [Electronic color code Wikipedia article](https://en.wikipedia.org/wiki/Electronic_color_code)
+More information on the color encoding of resistors can be found in
+the [Electronic color code Wikipedia article](https://en.wikipedia.org/wiki/Electronic_color_code)
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -53,5 +55,4 @@ https://github.com/exercism/problem-specifications/issues/1458
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

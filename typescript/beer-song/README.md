@@ -308,22 +308,19 @@ Go to the store and buy some more, 99 bottles of beer on the wall.
 
 ## For bonus points
 
-Did you get the tests passing and the code clean? If you want to, these
-are some additional things you could try:
+Did you get the tests passing and the code clean? If you want to, these are some additional things you could try:
 
 * Remove as much duplication as you possibly can.
 * Optimize for readability, even if it means introducing duplication.
-* If you've removed all the duplication, do you have a lot of
-  conditionals? Try replacing the conditionals with polymorphism, if it
-  applies in this language. How readable is it?
+* If you've removed all the duplication, do you have a lot of conditionals? Try replacing the conditionals with
+  polymorphism, if it applies in this language. How readable is it?
 
-Then please share your thoughts in a comment on the submission. Did this
-experiment make the code better? Worse? Did you learn anything from it?
+Then please share your thoughts in a comment on the submission. Did this experiment make the code better? Worse? Did you
+learn anything from it?
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -354,5 +351,4 @@ Learn to Program by Chris Pine [http://pine.fm/LearnToProgram/?Chapter=06](http:
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

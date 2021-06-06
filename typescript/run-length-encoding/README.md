@@ -11,22 +11,20 @@ For example we can represent the original 53 characters with only 13.
 "WWWWWWWWWWWWBWWWWWWWWWWWWBBBWWWWWWWWWWWWWWWWWWWWWWWWB"  ->  "12WB12W3B24WB"
 ```
 
-RLE allows the original data to be perfectly reconstructed from
-the compressed data, which makes it a lossless data compression.
+RLE allows the original data to be perfectly reconstructed from the compressed data, which makes it a lossless data
+compression.
 
 ```text
 "AABCCCDEEEE"  ->  "2AB3CD4E"  ->  "AABCCCDEEEE"
 ```
 
-For simplicity, you can assume that the unencoded string will only contain
-the letters A through Z (either lower or upper case) and whitespace. This way
-data to be encoded will never contain any numbers and numbers inside data to
-be decoded always represent the count for the following character.
+For simplicity, you can assume that the unencoded string will only contain the letters A through Z (either lower or
+upper case) and whitespace. This way data to be encoded will never contain any numbers and numbers inside data to be
+decoded always represent the count for the following character.
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -57,5 +55,4 @@ Wikipedia [https://en.wikipedia.org/wiki/Run-length_encoding](https://en.wikiped
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

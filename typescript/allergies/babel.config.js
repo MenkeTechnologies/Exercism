@@ -17,4 +17,4 @@ module.exports = {
     '@babel/proposal-object-rest-spread',
     '@babel/plugin-syntax-bigint',
   ],
-}
+};

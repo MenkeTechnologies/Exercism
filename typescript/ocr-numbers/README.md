@@ -1,7 +1,6 @@
 # OCR Numbers
 
-Given a 3 x 4 grid of pipes, underscores, and spaces, determine which number is
-represented, or whether it is garbled.
+Given a 3 x 4 grid of pipes, underscores, and spaces, determine which number is represented, or whether it is garbled.
 
 # Step One
 
@@ -80,8 +79,7 @@ Is converted to "123,456,789"
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -108,9 +106,9 @@ Once you get a test passing, you can enable the next one by changing `xit` to
 
 ## Source
 
-Inspired by the Bank OCR kata [http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR)
+Inspired by the Bank OCR
+kata [http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR)
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

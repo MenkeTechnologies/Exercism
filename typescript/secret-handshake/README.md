@@ -3,8 +3,7 @@
 > There are 10 types of people in the world: Those who understand
 > binary, and those who don't.
 
-You and your fellow cohort of those in the "know" when it comes to
-binary decide to come up with a secret "handshake".
+You and your fellow cohort of those in the "know" when it comes to binary decide to come up with a secret "handshake".
 
 ```text
 1 = wink
@@ -22,14 +21,12 @@ Given the input 3, the function would return the array
 ["wink", "double blink"] because 3 is 11 in binary.
 
 Given the input 19, the function would return the array
-["double blink", "wink"] because 19 is 10011 in binary.
-Notice that the addition of 16 (10000 in binary)
+["double blink", "wink"] because 19 is 10011 in binary. Notice that the addition of 16 (10000 in binary)
 has caused the array to be reversed.
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -56,9 +53,9 @@ Once you get a test passing, you can enable the next one by changing `xit` to
 
 ## Source
 
-Bert, in Mary Poppins [http://www.imdb.com/title/tt0058331/quotes/qt0437047](http://www.imdb.com/title/tt0058331/quotes/qt0437047)
+Bert, in Mary
+Poppins [http://www.imdb.com/title/tt0058331/quotes/qt0437047](http://www.imdb.com/title/tt0058331/quotes/qt0437047)
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

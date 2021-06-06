@@ -1,6 +1,7 @@
 # Armstrong Numbers
 
-An [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) is a number that is the sum of its own digits each raised to the power of the number of digits.
+An [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) is a number that is the sum of its own digits
+each raised to the power of the number of digits.
 
 For example:
 
@@ -13,8 +14,7 @@ Write some code to determine whether a number is an Armstrong number.
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -45,5 +45,4 @@ Wikipedia [https://en.wikipedia.org/wiki/Narcissistic_number](https://en.wikiped
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

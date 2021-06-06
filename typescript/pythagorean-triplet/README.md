@@ -1,7 +1,6 @@
 # Pythagorean Triplet
 
-A Pythagorean triplet is a set of three natural numbers, {a, b, c}, for
-which,
+A Pythagorean triplet is a set of three natural numbers, {a, b, c}, for which,
 
 ```text
 a**2 + b**2 = c**2
@@ -25,8 +24,7 @@ For example, with N = 1000, there is exactly one Pythagorean triplet for which `
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -57,5 +55,4 @@ Problem 9 at Project Euler [http://projecteuler.net/problem=9](http://projecteul
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

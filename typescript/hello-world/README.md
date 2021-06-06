@@ -2,9 +2,8 @@
 
 The classical introductory exercise. Just say "Hello, World!".
 
-["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
-the traditional first program for beginning programming in a new language
-or environment.
+["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is the traditional first program for
+beginning programming in a new language or environment.
 
 The objectives are simple:
 
@@ -16,8 +15,7 @@ If everything goes well, you will be ready to fetch your first real exercise.
 
 ## Setup
 
-Go through the setup instructions for TypeScript to
-install the necessary dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -39,8 +37,7 @@ $ yarn test
 
 In many test suites all but the first test have been skipped.
 
-Once you get a test passing, you can unskip the next one by
-changing `xit` to `it`.
+Once you get a test passing, you can unskip the next one by changing `xit` to `it`.
 
 ## Tutorial
 
@@ -51,23 +48,18 @@ This exercise has two files:
 - hello-world.ts
 - hello-world.test.ts
 
-The first file is where you will write your code.
-The second is where the tests are defined.
+The first file is where you will write your code. The second is where the tests are defined.
 
-The tests will check whether your code is doing the right thing.
-You don't need to be able to write a test suite from scratch,
-but it helps to understand what a test looks like, and what
-it is doing.
+The tests will check whether your code is doing the right thing. You don't need to be able to write a test suite from
+scratch, but it helps to understand what a test looks like, and what it is doing.
 
-Open up the test file, hello-world.test.ts.
-There is a single test inside:
+Open up the test file, hello-world.test.ts. There is a single test inside:
 
 ```typescript
   it('says hello world with no name', () => {
     expect(HelloWorld.hello()).toEqual('Hello, World!')
   })
 ```
-
 
 Run the tests now, with the following command on the command-line:
 
@@ -103,14 +95,15 @@ The failure looks like this:
 And these are those code lines with probable defects in the `hello-world.test.ts` file:
 
 the 6th line:
+
 ```
     expect(HelloWorld.hello)).toEqual('Hello, World!')
                               ^
 ```
 
-
-Hence the problem is with the `HelloWorld.hello()` call where we are calling the `hello` static method from the `HelloWorld` class.
-We can see that the test is expecting `'Hello, World!'` as output, but instead is getting `undefined`.
+Hence the problem is with the `HelloWorld.hello()` call where we are calling the `hello` static method from
+the `HelloWorld` class. We can see that the test is expecting `'Hello, World!'` as output, but instead is
+getting `undefined`.
 
 So let's check now this method in the `hello-worlds.ts` file:
 
@@ -124,7 +117,8 @@ class HelloWorld {
 export default HelloWorld
 ```
 
-Now we see that the method doesn't return anything, which is the reason for our failure. Let's fix this by adding a return value:
+Now we see that the method doesn't return anything, which is the reason for our failure. Let's fix this by adding a
+return value:
 
 ```typescript
 class HelloWorld {
@@ -137,11 +131,13 @@ export default HelloWorld
 ```
 
 Run tests again:
+
 ```bash
  PASS  ./hello-world.test.ts
   Hello World
     √ says hello world with no name (4ms)
 ```
+
 And they pass!
 
 Now when we are done, let's submit our solution to exercism:
@@ -150,11 +146,9 @@ Now when we are done, let's submit our solution to exercism:
 $ exercism submit hello-world.ts
 ```
 
-
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -176,9 +170,9 @@ $ yarn test
 
 ## Source
 
-This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
+This is an exercise to introduce users to using
+Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

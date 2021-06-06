@@ -1,8 +1,7 @@
 # Diamond
 
-The diamond kata takes as its input a letter, and outputs it in a diamond
-shape. Given a letter, it prints a diamond starting with 'A', with the
-supplied letter at the widest point.
+The diamond kata takes as its input a letter, and outputs it in a diamond shape. Given a letter, it prints a diamond
+starting with 'A', with the supplied letter at the widest point.
 
 ## Requirements
 
@@ -54,8 +53,7 @@ E·······E
 
 ## Setup
 
-Go through the setup instructions for TypeScript to install the necessary
-dependencies:
+Go through the setup instructions for TypeScript to install the necessary dependencies:
 
 [https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
 
@@ -86,5 +84,4 @@ Seb Rose [http://claysnow.co.uk/recycling-tests-in-tdd/](http://claysnow.co.uk/r
 
 ## Submitting Incomplete Solutions
 
-It's possible to submit an incomplete solution so you can see how others have
-completed the exercise.
+It's possible to submit an incomplete solution so you can see how others have completed the exercise.

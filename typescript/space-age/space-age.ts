@@ -19,15 +19,9 @@ class SpaceAge {
         this.seconds = secs;
     }
 
-
-    private extracted(planetaryPeriod: PlanetaryPeriod): number {
-        return parseFloat((this.seconds / SECS_PER_YEAR / planetaryPeriod).toFixed(2));
-    }
-
     onEarth() {
         return this.extracted(PlanetaryPeriod.Earth);
     }
-
 
     onMercury() {
         return this.extracted(PlanetaryPeriod.Mercury);
@@ -55,6 +49,10 @@ class SpaceAge {
 
     onNeptune() {
         return this.extracted(PlanetaryPeriod.Neptune);
+    }
+
+    private extracted(planetaryPeriod: PlanetaryPeriod): number {
+        return parseFloat((this.seconds / SECS_PER_YEAR / planetaryPeriod).toFixed(2));
     }
 }
 
