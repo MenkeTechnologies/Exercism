@@ -1,4 +1,4 @@
-import spock.lang.*
+import spock.lang.Specification
 
 class IsogramSpec extends Specification {
 
