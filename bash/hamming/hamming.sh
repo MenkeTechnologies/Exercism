@@ -1,24 +1,35 @@
 #!/usr/bin/env bash
+function usage(){
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+    echo "Usage: hamming.sh <string1> <string2>"
+    exit 1
+}
+
+
+arg1=$1
+arg2=$2
+
+
+if (( $# < 2 )); then
+    usage
+fi
+
+if (( ${#arg1} != ${#arg2} )); then
+
+    echo 'left and right strands must be of equal length'
+    exit 1
+fi
+
+cnt=0
+
+for (( i = 0; i < ${#arg1}; i++ )); do
+    a="${arg1:$i:1}"
+    b="${arg2:$i:1}"
+
+    if [[ "$a" != "$b" ]]; then
+        ((++cnt))
+    fi
+done
+
+
+echo $cnt
