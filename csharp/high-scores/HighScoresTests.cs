@@ -27,7 +27,6 @@ public class HighScoresTests
     }
 
     [Fact]
-    public void Personal_best()
     public void Personal_top_three_from_a_list_of_scores()
     {
         var sut = new HighScores(new List<int> { 10, 30, 90, 30, 100, 20, 10, 0, 30, 40, 40, 70, 70 });
