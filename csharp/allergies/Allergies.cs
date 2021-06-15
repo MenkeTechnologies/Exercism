@@ -1,30 +1,43 @@
 using System;
+using System.Collections;
 
 public enum Allergen
 {
-    Eggs,
-    Peanuts,
-    Shellfish,
-    Strawberries,
-    Tomatoes,
-    Chocolate,
-    Pollen,
-    Cats
+    Eggs = 1,
+    Peanuts = 2,
+    Shellfish = 4,
+    Strawberries = 8,
+    Tomatoes = 16,
+    Chocolate = 32,
+    Pollen = 64,
+    Cats = 128
 }
 
 public class Allergies
 {
+    private int mask;
+
     public Allergies(int mask)
     {
+        this.mask = mask;
     }
 
     public bool IsAllergicTo(Allergen allergen)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        return (mask & (int)allergen) != 0;
     }
 
     public Allergen[] List()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        var li = new ArrayList();
+        foreach (Allergen allergen in Enum.GetValues(typeof(Allergen)))
+        {
+            if (IsAllergicTo(allergen))
+            {
+                li.Add(allergen);
+            }
+        }
+
+        return (Allergen[])li.ToArray(typeof(Allergen));
     }
 }
