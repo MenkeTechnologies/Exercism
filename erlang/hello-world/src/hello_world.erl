@@ -3,4 +3,4 @@
 -export([hello/0]).
 
 
-hello() -> undefined.
+hello() -> "Hello, World!".
