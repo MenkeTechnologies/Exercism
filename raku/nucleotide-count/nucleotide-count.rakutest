@@ -1,0 +1,95 @@
+#!/usr/bin/env raku
+use Test;
+use JSON::Fast;
+use lib $?FILE.IO.dirname;
+use NucleotideCount;
+plan 5;
+
+my @test-cases = from-json($=pod.pop.contents).List;
+for @test-cases -> %case {
+  given %case<expected> {
+    when .<error>.so {
+      throws-like
+        { nucleotide-count %case<input><strand> },
+        Exception,
+        message => /
+          $( %case<expected><error> )
+          || 'Constraint type check failed in binding to parameter'
+        /,
+        %case<description>;
+    }
+
+    default {
+      cmp-ok nucleotide-count(%case<input><strand>),
+        '~~', %case<expected>.Bag, %case<description>;
+    }
+  }
+}
+
+=head2 Test Cases
+=begin code
+[
+  {
+    "description": "count all nucleotides in a strand: empty strand",
+    "expected": {
+      "A": 0,
+      "C": 0,
+      "G": 0,
+      "T": 0
+    },
+    "input": {
+      "strand": ""
+    },
+    "property": "nucleotideCounts"
+  },
+  {
+    "description": "count all nucleotides in a strand: can count one nucleotide in single-character input",
+    "expected": {
+      "A": 0,
+      "C": 0,
+      "G": 1,
+      "T": 0
+    },
+    "input": {
+      "strand": "G"
+    },
+    "property": "nucleotideCounts"
+  },
+  {
+    "description": "count all nucleotides in a strand: strand with repeated nucleotide",
+    "expected": {
+      "A": 0,
+      "C": 0,
+      "G": 7,
+      "T": 0
+    },
+    "input": {
+      "strand": "GGGGGGG"
+    },
+    "property": "nucleotideCounts"
+  },
+  {
+    "description": "count all nucleotides in a strand: strand with multiple nucleotides",
+    "expected": {
+      "A": 20,
+      "C": 12,
+      "G": 17,
+      "T": 21
+    },
+    "input": {
+      "strand": "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
+    },
+    "property": "nucleotideCounts"
+  },
+  {
+    "description": "count all nucleotides in a strand: strand with invalid nucleotides",
+    "expected": {
+      "error": "Invalid nucleotide in strand"
+    },
+    "input": {
+      "strand": "AGXXACT"
+    },
+    "property": "nucleotideCounts"
+  }
+]
+=end code

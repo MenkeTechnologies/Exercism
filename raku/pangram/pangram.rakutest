@@ -1,0 +1,101 @@
+#!/usr/bin/env raku
+use Test;
+use JSON::Fast;
+use lib $?FILE.IO.dirname;
+use Pangram;
+plan 10;
+
+my @test-cases = from-json($=pod.pop.contents).List;
+for @test-cases -> %case {
+  subtest %case<description>, {
+    plan 2;
+    isa-ok ( my $result := is-pangram %case<input><sentence> ), Bool;
+    is-deeply $result, %case<expected>, 'Result matches expected';
+  }
+}
+
+=head2 Test Cases
+=begin code
+[
+  {
+    "description": "empty sentence",
+    "expected": false,
+    "input": {
+      "sentence": ""
+    },
+    "property": "isPangram"
+  },
+  {
+    "description": "perfect lower case",
+    "expected": true,
+    "input": {
+      "sentence": "abcdefghijklmnopqrstuvwxyz"
+    },
+    "property": "isPangram"
+  },
+  {
+    "description": "only lower case",
+    "expected": true,
+    "input": {
+      "sentence": "the quick brown fox jumps over the lazy dog"
+    },
+    "property": "isPangram"
+  },
+  {
+    "description": "missing the letter 'x'",
+    "expected": false,
+    "input": {
+      "sentence": "a quick movement of the enemy will jeopardize five gunboats"
+    },
+    "property": "isPangram"
+  },
+  {
+    "description": "missing the letter 'h'",
+    "expected": false,
+    "input": {
+      "sentence": "five boxing wizards jump quickly at it"
+    },
+    "property": "isPangram"
+  },
+  {
+    "description": "with underscores",
+    "expected": true,
+    "input": {
+      "sentence": "the_quick_brown_fox_jumps_over_the_lazy_dog"
+    },
+    "property": "isPangram"
+  },
+  {
+    "description": "with numbers",
+    "expected": true,
+    "input": {
+      "sentence": "the 1 quick brown fox jumps over the 2 lazy dogs"
+    },
+    "property": "isPangram"
+  },
+  {
+    "description": "missing letters replaced by numbers",
+    "expected": false,
+    "input": {
+      "sentence": "7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog"
+    },
+    "property": "isPangram"
+  },
+  {
+    "description": "mixed case and punctuation",
+    "expected": true,
+    "input": {
+      "sentence": "\"Five quacking Zephyrs jolt my wax bed.\""
+    },
+    "property": "isPangram"
+  },
+  {
+    "description": "case insensitive",
+    "expected": false,
+    "input": {
+      "sentence": "the quick brown fox jumps over with lazy FX"
+    },
+    "property": "isPangram"
+  }
+]
+=end code

@@ -1,0 +1,169 @@
+#!/usr/bin/env raku
+use Test;
+use JSON::Fast;
+use lib $?FILE.IO.dirname;
+use RomanNumerals;
+plan 19;
+
+my @test-cases = from-json($=pod.pop.contents).List;
+for @test-cases -> %case {
+  is to-roman(%case<input><number>), |%case<expected description>;
+}
+
+=head2 Test Cases
+=begin code
+[
+  {
+    "description": "1 is a single I",
+    "expected": "I",
+    "input": {
+      "number": 1
+    },
+    "property": "roman"
+  },
+  {
+    "description": "2 is two I's",
+    "expected": "II",
+    "input": {
+      "number": 2
+    },
+    "property": "roman"
+  },
+  {
+    "description": "3 is three I's",
+    "expected": "III",
+    "input": {
+      "number": 3
+    },
+    "property": "roman"
+  },
+  {
+    "description": "4, being 5 - 1, is IV",
+    "expected": "IV",
+    "input": {
+      "number": 4
+    },
+    "property": "roman"
+  },
+  {
+    "description": "5 is a single V",
+    "expected": "V",
+    "input": {
+      "number": 5
+    },
+    "property": "roman"
+  },
+  {
+    "description": "6, being 5 + 1, is VI",
+    "expected": "VI",
+    "input": {
+      "number": 6
+    },
+    "property": "roman"
+  },
+  {
+    "description": "9, being 10 - 1, is IX",
+    "expected": "IX",
+    "input": {
+      "number": 9
+    },
+    "property": "roman"
+  },
+  {
+    "description": "20 is two X's",
+    "expected": "XXVII",
+    "input": {
+      "number": 27
+    },
+    "property": "roman"
+  },
+  {
+    "description": "48 is not 50 - 2 but rather 40 + 8",
+    "expected": "XLVIII",
+    "input": {
+      "number": 48
+    },
+    "property": "roman"
+  },
+  {
+    "description": "49 is not 40 + 5 + 4 but rather 50 - 10 + 10 - 1",
+    "expected": "XLIX",
+    "input": {
+      "number": 49
+    },
+    "property": "roman"
+  },
+  {
+    "description": "50 is a single L",
+    "expected": "LIX",
+    "input": {
+      "number": 59
+    },
+    "property": "roman"
+  },
+  {
+    "description": "90, being 100 - 10, is XC",
+    "expected": "XCIII",
+    "input": {
+      "number": 93
+    },
+    "property": "roman"
+  },
+  {
+    "description": "100 is a single C",
+    "expected": "CXLI",
+    "input": {
+      "number": 141
+    },
+    "property": "roman"
+  },
+  {
+    "description": "60, being 50 + 10, is LX",
+    "expected": "CLXIII",
+    "input": {
+      "number": 163
+    },
+    "property": "roman"
+  },
+  {
+    "description": "400, being 500 - 100, is CD",
+    "expected": "CDII",
+    "input": {
+      "number": 402
+    },
+    "property": "roman"
+  },
+  {
+    "description": "500 is a single D",
+    "expected": "DLXXV",
+    "input": {
+      "number": 575
+    },
+    "property": "roman"
+  },
+  {
+    "description": "900, being 1000 - 100, is CM",
+    "expected": "CMXI",
+    "input": {
+      "number": 911
+    },
+    "property": "roman"
+  },
+  {
+    "description": "1000 is a single M",
+    "expected": "MXXIV",
+    "input": {
+      "number": 1024
+    },
+    "property": "roman"
+  },
+  {
+    "description": "3000 is three M's",
+    "expected": "MMM",
+    "input": {
+      "number": 3000
+    },
+    "property": "roman"
+  }
+]
+=end code
