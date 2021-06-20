@@ -1,0 +1,65 @@
+#!/usr/bin/env raku
+use Test;
+use JSON::Fast;
+use lib $?FILE.IO.dirname;
+use RNA;
+plan 6;
+
+my @test-cases = from-json($=pod.pop.contents).List;
+for @test-cases -> %case {
+  is to-rna(%case<input><dna>), |%case<expected description>;
+}
+
+=head2 Test Cases
+=begin code
+[
+  {
+    "description": "Empty RNA sequence",
+    "expected": "",
+    "input": {
+      "dna": ""
+    },
+    "property": "toRna"
+  },
+  {
+    "description": "RNA complement of cytosine is guanine",
+    "expected": "G",
+    "input": {
+      "dna": "C"
+    },
+    "property": "toRna"
+  },
+  {
+    "description": "RNA complement of guanine is cytosine",
+    "expected": "C",
+    "input": {
+      "dna": "G"
+    },
+    "property": "toRna"
+  },
+  {
+    "description": "RNA complement of thymine is adenine",
+    "expected": "A",
+    "input": {
+      "dna": "T"
+    },
+    "property": "toRna"
+  },
+  {
+    "description": "RNA complement of adenine is uracil",
+    "expected": "U",
+    "input": {
+      "dna": "A"
+    },
+    "property": "toRna"
+  },
+  {
+    "description": "RNA complement",
+    "expected": "UGCACCAGAAUU",
+    "input": {
+      "dna": "ACGTGGTCTTAA"
+    },
+    "property": "toRna"
+  }
+]
+=end code

@@ -1,0 +1,122 @@
+#!/usr/bin/env raku
+use Test;
+use JSON::Fast;
+use lib $?FILE.IO.dirname;
+use Hamming;
+plan 9;
+
+my @test-cases = from-json($=pod.pop.contents).List;
+for @test-cases -> %case {
+  given %case<expected> {
+    when .<error>.so {
+      throws-like
+        { hamming-distance |%case<input><strand1 strand2> },
+        Exception,
+        message => /
+          'left and right strands must be of equal length'
+          || 'Constraint type check failed in binding to parameter'
+        /,
+        %case<description>;
+    }
+
+    default {
+      is hamming-distance(|%case<input><strand1 strand2>),
+        |%case<expected description>;
+    }
+  }
+}
+
+=head2 Test Cases
+=begin code
+[
+  {
+    "description": "empty strands",
+    "expected": 0,
+    "input": {
+      "strand1": "",
+      "strand2": ""
+    },
+    "property": "distance"
+  },
+  {
+    "description": "single letter identical strands",
+    "expected": 0,
+    "input": {
+      "strand1": "A",
+      "strand2": "A"
+    },
+    "property": "distance"
+  },
+  {
+    "description": "single letter different strands",
+    "expected": 1,
+    "input": {
+      "strand1": "G",
+      "strand2": "T"
+    },
+    "property": "distance"
+  },
+  {
+    "description": "long identical strands",
+    "expected": 0,
+    "input": {
+      "strand1": "GGACTGAAATCTG",
+      "strand2": "GGACTGAAATCTG"
+    },
+    "property": "distance"
+  },
+  {
+    "description": "long different strands",
+    "expected": 9,
+    "input": {
+      "strand1": "GGACGGATTCTG",
+      "strand2": "AGGACGGATTCT"
+    },
+    "property": "distance"
+  },
+  {
+    "description": "disallow first strand longer",
+    "expected": {
+      "error": "left and right strands must be of equal length"
+    },
+    "input": {
+      "strand1": "AATG",
+      "strand2": "AAA"
+    },
+    "property": "distance"
+  },
+  {
+    "description": "disallow second strand longer",
+    "expected": {
+      "error": "left and right strands must be of equal length"
+    },
+    "input": {
+      "strand1": "ATA",
+      "strand2": "AGTG"
+    },
+    "property": "distance"
+  },
+  {
+    "description": "disallow left empty strand",
+    "expected": {
+      "error": "left strand must not be empty"
+    },
+    "input": {
+      "strand1": "",
+      "strand2": "G"
+    },
+    "property": "distance"
+  },
+  {
+    "description": "disallow right empty strand",
+    "expected": {
+      "error": "right strand must not be empty"
+    },
+    "input": {
+      "strand1": "G",
+      "strand2": ""
+    },
+    "property": "distance"
+  }
+]
+=end code
