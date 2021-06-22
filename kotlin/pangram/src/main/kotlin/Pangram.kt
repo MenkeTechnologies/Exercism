@@ -1,6 +1,13 @@
 object Pangram {
 
     fun isPangram(input: String): Boolean {
-        TODO("Implement this function to complete the task")
+        val lc = input.toLowerCase()
+        for (ch in ('a'..'z')) {
+            if (!lc.contains(ch)) {
+                return false
+            }
+        }
+
+        return true
     }
 }
