@@ -1,8 +1,9 @@
+import java.time.LocalDate
 import java.time.LocalDateTime
 
-class Gigasecond {
+class Gigasecond(dateTime: LocalDateTime) {
 
-    // TODO: Implement proper constructor
+    constructor(date: LocalDate) : this(date.atStartOfDay())
 
-    val date: LocalDateTime = TODO("Implement this getter to complete the task")
+    val date: LocalDateTime = dateTime.plusSeconds(1e9.toLong())
 }
