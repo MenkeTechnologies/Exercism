@@ -1,9 +1,17 @@
 namespace eval resistorColor {
+
     proc colorCode {args} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+
+        set index [lsearch -exact [colors] $args]
+
+        if {$index == -1} {
+            error "Invalid color: $args"
+        }
+        return $index
+
     }
 
     proc colors {args} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+        return {black brown red orange yellow green blue violet grey white}
     }
 }

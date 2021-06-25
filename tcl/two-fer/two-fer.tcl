@@ -1,3 +1,3 @@
-proc two-fer {name} {
-    throw {NOT_IMPLEMENTED} "Implement this procedure."
+proc two-fer {{name "you"}} {
+    return "One for $name, one for me."
 }
