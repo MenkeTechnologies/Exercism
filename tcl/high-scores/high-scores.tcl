@@ -2,23 +2,31 @@
 
 oo::class create HighScores {
 
+    variable scores
+    constructor {} {
+        set scores [list ]
+    }
+
     method addScores {args} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        set scores [concat $scores $args]
     }
 
     method scores {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        return $scores
     }
 
     method latest {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        return [lindex $scores end]
     }
-    
+
     method personalBest {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+
+        return [lindex [lsort -integer $scores] end]
+
     }
 
     method topThree {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+
+        return [lrange [lsort -integer -decreasing $scores] 0 2]
     }
 }
