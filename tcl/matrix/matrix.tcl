@@ -1,11 +1,12 @@
 proc matrixFrom {inputString} {
-    throw {NOT_IMPLEMENTED} "Implement this procedure."
+    return [lmap r [split $inputString "\n"] {split $r " "}]
 }
 
 proc row {matrix n} {
-    throw {NOT_IMPLEMENTED} "Implement this procedure."
+    return [lindex $matrix $n-1]
 }
 
 proc column {matrix n} {
-    throw {NOT_IMPLEMENTED} "Implement this procedure."
+    return [lmap r $matrix {row $r $n}]
+
 }
