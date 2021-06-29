@@ -8,7 +8,7 @@ describe "BinarySearchTree" do
   end
 
   describe "#insert" do
-    pending "inserts smaller values to the left" do
+    it "inserts smaller values to the left" do
       tree = Node.new(4)
       tree.insert(2)
 
@@ -18,7 +18,7 @@ describe "BinarySearchTree" do
       tree.right.should be_nil
     end
 
-    pending "inserts equal values to the left" do
+    it "inserts equal values to the left" do
       tree = Node.new(4)
       tree.insert(4)
 
@@ -28,7 +28,7 @@ describe "BinarySearchTree" do
       tree.right.should be_nil
     end
 
-    pending "inserts greater values to the right" do
+    it "inserts greater values to the right" do
       tree = Node.new(4)
       tree.insert(5)
 
@@ -40,21 +40,21 @@ describe "BinarySearchTree" do
   end
 
   describe "#search" do
-    pending "will return a node if a search if successful" do
+    it "will return a node if a search if successful" do
       tree = Node.new(5)
       tree.insert(1)
       node = tree.search(1).not_nil!
       node.value.should eq(1)
     end
 
-    pending "will return nil if a searched value is not found" do
+    it "will return nil if a searched value is not found" do
       tree = Node.new(5)
       tree.search(4).should be_nil
     end
   end
 
   describe "#each" do
-    pending "traverses the tree in order" do
+    it "traverses the tree in order" do
       tree = Node.new(5)
       tree.insert(1)
       tree.insert(6)
@@ -74,21 +74,21 @@ describe "BinarySearchTree" do
   # 2. Deleting a node with one child
   # 3. Deleting a node with two children
   describe "#delete" do
-    pending "can remove the root node" do
+    it "can remove the root node" do
       tree = Node.new(5)
       tree.insert(2)
       tree.delete(5)
       tree.value.should eq(2)
     end
 
-    pending "removes a node with no children" do
+    it "removes a node with no children" do
       tree = Node.new(5)
       tree.insert(2)
       tree.delete(2)
       tree.left.should be_nil
     end
 
-    pending "removes a node with one child" do
+    it "removes a node with one child" do
       tree = Node.new(5)
       tree.insert(3)
       tree.insert(2)
@@ -100,7 +100,7 @@ describe "BinarySearchTree" do
       end
     end
 
-    pending "removes a node with two children" do
+    it "removes a node with two children" do
       tree = Node.new(5)
       tree.insert(3)
       tree.insert(2)
@@ -113,7 +113,7 @@ describe "BinarySearchTree" do
       end
     end
 
-    pending "removes a left node with two child (complex)" do
+    it "removes a left node with two child (complex)" do
       tree = Node.new(10)
       tree.insert(5)
       tree.insert(2)
@@ -129,7 +129,7 @@ describe "BinarySearchTree" do
       end
     end
 
-    pending "removes a right node with two children (complex)" do
+    it "removes a right node with two children (complex)" do
       tree = Node.new(1)
       tree.insert(5)
       tree.insert(2)
@@ -152,7 +152,7 @@ describe "BinarySearchTree" do
   describe "crystal-lang specific" do
     # Make the Binary Search Tree Enumerable
     # See https://crystal-lang.org/api/0.20.3/Enumerable.html
-    pending "is an Enumerable" do
+    it "is an Enumerable" do
       tree = Node.new(1)
       tree.insert(5)
       tree.insert(2)
@@ -163,7 +163,7 @@ describe "BinarySearchTree" do
 
     # If no block is provided to the each method return an Iterator
     # See https://crystal-lang.org/api/0.20.3/Iterator.html
-    pending "will return an iterator if no block is provided" do
+    it "will return an iterator if no block is provided" do
       tree = Node.new(1)
       tree.insert(5)
       tree.insert(2)
@@ -175,7 +175,7 @@ describe "BinarySearchTree" do
 
     # Make the Binary Search Tree Iterable
     # See https://crystal-lang.org/api/0.20.3/Iterable.html
-    pending "is Iterable" do
+    it "is Iterable" do
       tree = Node.new(100)
       tree.insert(50)
       tree.insert(20)
