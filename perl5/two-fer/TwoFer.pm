@@ -6,7 +6,8 @@ our @EXPORT_OK = qw(two_fer);
 
 sub two_fer {
   my ($name) = @_;
-  return undef;
+  $name ||= "you";
+  return "One for $name, one for me.";
 }
 
 1;
@@ -20,4 +21,4 @@ use experimental qw(signatures);
 
 sub two_fer ($name = undef) {}
 
-1;
+1;0i
