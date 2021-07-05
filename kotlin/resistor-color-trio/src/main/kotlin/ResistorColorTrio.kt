@@ -2,17 +2,20 @@ object ResistorColorTrio {
 
     fun text(vararg input: Color): String {
         var res = ""
-        var cnt = 0
 
-        for (color in input) {
+        for ((cnt, color) in input.withIndex()) {
             if (cnt < 2) {
-                res += color
+                res += color.ordinal
             } else {
-
+                res += "0".repeat(color.ordinal)
             }
-            ++cnt
         }
 
-        return res
+        var prefix = res.dropLastWhile { it == '0' }
+        val zeroCnt = res.takeLastWhile { it == '0' }.length
+        prefix += "0".repeat(zeroCnt % 3)
+        val unit = Unit.values()[zeroCnt / 3].toString().toLowerCase()
+
+        return "$prefix $unit"
     }
 }
