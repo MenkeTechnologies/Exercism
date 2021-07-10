@@ -1,3 +1,19 @@
 proc hammingDistance {left right} {
-    throw {NOT_IMPLEMENTED} "Implement this procedure."
+    set ll [string length $left]
+    set rl [string length $right]
+
+    if { $ll != $rl } {
+        error "left and right strands must be of equal length"
+
+    }
+
+    set hamming 0
+
+    for {set i 0} {$i < $ll} {incr i} {
+        if {[string index $left $i] != [string index $right $i]} {
+            incr hamming
+        }
+    }
+
+    return $hamming
 }
