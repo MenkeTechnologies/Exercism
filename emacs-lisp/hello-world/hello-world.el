@@ -7,3 +7,5 @@
 
 (provide 'hello-world)
 ;;; hello-world.el ends here
+
+(defun hello () "Hello, World!")
