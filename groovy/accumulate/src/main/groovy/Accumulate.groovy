@@ -1,7 +1,10 @@
 class Accumulate {
 
-    static accumulate(Collection collection, Closure func) {
-        throw new UnsupportedOperationException('method not implemented.')
+    static Collection accumulate(Collection collection, Closure func) {
+        def res = []
+        collection.each { res << func.call(it)}
+
+        res
     }
 
 }
