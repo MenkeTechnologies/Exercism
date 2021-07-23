@@ -1,1 +1,8 @@
-# Please implement your solution to gigasecond in this file
+class Gigasecond
+
+    def self.from(time : Time)
+        time + 1e9.seconds
+    end
+
+end
+
