@@ -48,7 +48,7 @@ public class SumOfMultiplesTests
     }
 
     [Fact]
-    [Fact]
+    public void Factors_not_relatively_prime()
     {
         Assert.Equal(30, SumOfMultiples.Sum(new[] { 4, 6 }, 15));
     }
