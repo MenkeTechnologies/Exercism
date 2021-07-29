@@ -1,24 +1,37 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+
+score=0
+word="${1^^}"
+
+
+for (( i = 0; i < ${#word}; i++ )); do
+    ch=${word:$i:1}
+
+    case $ch in
+        A | E | I | O | U | L | N | R | S |T )
+            (( score += 1 ))
+            ;;
+        D | G)
+            (( score += 2 ))
+            ;;
+        B | C | M | P)
+            (( score += 3 ))
+            ;;
+        F | H | V | W | Y)
+            (( score += 4 ))
+            ;;
+        K)
+            (( score += 5 ))
+            ;;
+        J | X)
+            (( score += 8 ))
+            ;;
+        Q | Z)
+            (( score += 10 ))
+            ;;
+    esac
+done
+
+echo "$score"
+
