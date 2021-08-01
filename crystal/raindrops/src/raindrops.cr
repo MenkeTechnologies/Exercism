@@ -19,7 +19,7 @@ class Raindrops
             str = "#{num}"
         end
 
-        return str
+        str
     end
     
 end
