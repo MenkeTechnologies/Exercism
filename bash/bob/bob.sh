@@ -1,24 +1,28 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+function talk() {
+    printf '%s\n' "$@"
+    exit 0
+}
+
+q="${1//[[:space:]]/}"
+
+if [[ -z "$q" ]]; then
+    talk "Fine. Be that way!"
+fi
+
+if ! [[ "$q" =~ [a-z] ]] && [[ "$q" =~ [A-Z] ]]; then
+
+    if [[ "$q" =~ \?$ ]]; then
+        talk "Calm down, I know what I'm doing!"
+    fi
+
+    talk "Whoa, chill out!"
+
+fi
+
+if [[ $q =~ \?$ ]]; then
+    talk 'Sure.'
+fi
+
+talk "Whatever."
