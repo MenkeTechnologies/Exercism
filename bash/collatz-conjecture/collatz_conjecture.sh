@@ -1,24 +1,23 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+num="$1"
+cnt=0
+
+if (( num < 1 )); then
+    echo Error: Only positive numbers are allowed
+    exit 1
+fi
+
+while true; do
+    if (( num == 1 )); then
+        break
+    fi
+    if (( num % 2 == 0 )); then
+        (( num /= 2 ))
+    else
+        (( num = 3 * num + 1 ))
+    fi
+    (( ++cnt ))
+done
+
+echo "$cnt"
