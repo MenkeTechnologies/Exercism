@@ -1,24 +1,32 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+function fail() {
+
+    echo 'Invalid number.  [1]NXX-NXX-XXXX N=2-9, X=0-9'
+    exit 1
+}
+
+p=${1/+1 /}
+p=${1/1 /}
+p=${p//[^[:digit:]]/}
+
+if (( ${#p} == 11 )) && [[ ${p:0:1} == 1 ]]; then
+    p=${p:1:10}
+fi
+
+if (( ${#p} != 10 )); then
+    fail
+fi
+
+
+if [[ ${p:0:1} == 0 ]]; then
+    fail
+elif [[ ${p:0:1} == 1 ]]; then
+    fail
+elif [[ ${p:3:1} == 0 ]]; then
+    fail
+elif [[ ${p:3:1} == 1 ]]; then
+    fail
+fi
+
+echo $p
