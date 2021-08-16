@@ -2,7 +2,7 @@
 
 anagrams=()
 orig="$1"
-origLetters=$(printf $orig | perl -ne '@l=split //, uc $_;print for sort @l')
+origLetters=$(printf $orig | perl -ne '@l=split //, uc;print for sort @l')
 shift
 
 for possible in $@; do
@@ -11,7 +11,7 @@ for possible in $@; do
         continue
     fi
 
-    possibleLetters=$(printf $possible | perl -ne '@l=split //, uc $_;print for sort @l')
+    possibleLetters=$(printf $possible | perl -ne '@l=split //, uc;print for sort @l')
 
     if [[ $possibleLetters == $origLetters ]]; then
         anagrams+=( $possible )

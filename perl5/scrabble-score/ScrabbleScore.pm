@@ -16,15 +16,15 @@ my %points = (
 
 
 sub score {
-  my ($word) = @_;
+  local $_ = shift;
 
-  my @ch = split //, uc $word;
+  my @ch = split //, uc;
 
   my $sc = 0;
 
   $sc += $points{$_} for @ch;
 
-  return $sc;
+  $sc
 }
 
 1;
