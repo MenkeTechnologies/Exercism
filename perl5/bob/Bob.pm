@@ -6,8 +6,22 @@ use Exporter 'import';
 our @EXPORT_OK = qw(hey);
 
 sub hey {
-  my ($msg) = @_;
-  return undef;   # Replace this with your own code to pass the tests.
+    local $_ = shift;
+    s@\s+@@g;
+
+    return "Fine. Be that way!" if !length;
+
+    if (/[A-Z]/ && !/[a-z]/) {
+
+        return "Calm down, I know what I'm doing!" if /\?$/;
+
+        return "Whoa, chill out!"
+
+    }
+
+    return "Sure." if /\?$/;
+
+    'Whatever.'
 }
 
 1;
