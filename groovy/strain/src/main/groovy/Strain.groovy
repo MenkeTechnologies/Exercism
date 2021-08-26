@@ -1,10 +1,18 @@
 class Strain {
 
     static Collection keep(Collection collection, Closure predicate) {
-        throw new UnsupportedOperationException('method not implemented.')
+        
+        def res = []
+
+        collection.forEach{ predicate(it) && res << it }
+
+        res
+
     }
 
     static Collection discard(Collection collection, Closure predicate) {
-        throw new UnsupportedOperationException('method not implemented.')
+
+        keep(collection, { !predicate(it) })
+
     }
 }
