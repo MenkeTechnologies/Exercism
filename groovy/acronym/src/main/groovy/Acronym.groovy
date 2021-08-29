@@ -1,7 +1,10 @@
 class Acronym {
 
     static String abbreviate(String phrase) {
-        throw new UnsupportedOperationException('method not implemented.')
+        def l = phrase.toUpperCase().replaceAll("[,_]", "").replaceAll("[-]", " ").split()
+
+        l.collect {it[0]}.join()
+
     }
 
 }
