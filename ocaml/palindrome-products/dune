@@ -1,0 +1,20 @@
+(executable
+ (name test)
+ (libraries base oUnit)
+ (preprocess
+  (pps ppx_deriving.eq ppx_deriving.show)))
+
+(alias
+ (name runtest)
+ (deps
+  (:< test.exe))
+ (action
+  (run %{<})))
+
+(alias
+  (name    buildtest)
+  (deps    (:x test.exe)))
+
+(env
+  (dev
+    (flags (:standard -warn-error -A))))
