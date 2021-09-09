@@ -1,0 +1,4 @@
+# dune external-lib-deps --missing @runtest
+# OCAMLPARAM: unset
+$ /usr/local/bin/nproc > /var/folders/pr/1cyrcdk979dfkrrzyhlllc4c0000gn/T/duneba4fbe.output 2> /dev/null
+$ /usr/local/bin/ocamlc.opt -config > /var/folders/pr/1cyrcdk979dfkrrzyhlllc4c0000gn/T/dune6c06da.output
