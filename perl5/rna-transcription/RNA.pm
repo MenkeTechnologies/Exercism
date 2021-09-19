@@ -4,9 +4,22 @@ use warnings;
 use Exporter 'import';
 our @EXPORT_OK = qw(to_rna);
 
-sub to_rna {
-  my ($dna) = @_;
-  return undef;
+{
+    my %m = ("G", "C", "C", "G", "T", "A", "A", "U");
+
+    sub transcribe {
+        $m{+shift}
+    }
 }
 
-1;
+sub to_rna {
+    my ($dna) = @_;
+
+    my $rna = "";
+
+    $rna .= transcribe $_ for split //, $dna;
+
+    $rna
+}
+
+1
