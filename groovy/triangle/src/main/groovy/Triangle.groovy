@@ -1,19 +1,25 @@
 class Triangle {
 
+    def uniq
+    def valid
+
     Triangle(a, b, c) {
-        throw new UnsupportedOperationException('Constructor implementation is missing')
+        def list = [a, b, c]
+        list.sort()
+        valid = list.every { it > 0 } && list[0] + list[1] >= list[2]
+        uniq = list.unique().size()
     }
 
     boolean isEquilateral() {
-        throw new UnsupportedOperationException('isEquilateral method not implemented.')
+        valid && uniq == 1
     }
 
     boolean isIsosceles() {
-        throw new UnsupportedOperationException('isIsosceles method not implemented.')
+        valid && uniq <= 2
     }
 
     boolean isScalene() {
-        throw new UnsupportedOperationException('isScalene method not implemented.')
+        valid && uniq == 3
     }
 
 }
