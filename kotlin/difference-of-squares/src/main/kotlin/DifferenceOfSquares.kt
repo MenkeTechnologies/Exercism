@@ -1,15 +1,18 @@
-class Squares {
-    //TODO: implement proper constructor
+class Squares(private val tot: Int) {
 
-    fun sumOfSquares() {
-        TODO("Implement the function to complete the task")
+    private fun Int.sq() = this * this
+
+
+    fun sumOfSquares(): Int {
+        return (0..tot).map { it.sq() }.sum()
     }
 
-    fun squareOfSum() {
-        TODO("Implement the function to complete the task")
+    fun squareOfSum(): Int {
+
+        return (0..tot).sum().sq()
     }
 
-    fun difference() {
-        TODO("Implement the function to complete the task")
+    fun difference(): Int {
+        return squareOfSum() - sumOfSquares()
     }
 }
