@@ -1,8 +1,14 @@
 class Triangle<out T : Number>(val a: T, val b: T, val c: T) {
 
-    // TODO: Implement proper constructor
+    val sides = listOf(a, b, c)
+    val uniq = sides.distinct()
+    val sorted = sides.map { it.toDouble() }.sorted()
 
-    val isEquilateral: Boolean = TODO("Implement this getter to complete the task")
-    val isIsosceles: Boolean = TODO("Implement this getter to complete the task")
-    val isScalene: Boolean = TODO("Implement this getter to complete the task")
+    init {
+        require(sorted.all { it > 0}.and(sorted[0] + sorted[1] >= sorted[2]))
+    }
+
+    val isEquilateral: Boolean =  uniq.size == 1
+    val isIsosceles: Boolean = uniq.size <= 2
+    val isScalene: Boolean = uniq.size == 3
 }
