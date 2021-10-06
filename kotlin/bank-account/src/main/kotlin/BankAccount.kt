@@ -1,11 +1,21 @@
-class BankAccount {
-    // TODO: implement read access to 'balance'
+import java.util.concurrent.atomic.AtomicLong
 
-    fun adjustBalance(amount: Long){
-        TODO("Implement the function to complete the task")
+class BankAccount {
+    private var _b = AtomicLong(0L)
+    var open = true
+    val balance: Long
+        get() {
+            check(open)
+
+            return _b.get()
+        }
+
+    fun adjustBalance(amount: Long) {
+        check(open)
+        _b.addAndGet(amount)
     }
 
     fun close() {
-        TODO("Implement the function to complete the task")
+        open = false
     }
 }
