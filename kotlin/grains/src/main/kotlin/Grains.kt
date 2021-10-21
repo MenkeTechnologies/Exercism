@@ -1,12 +1,14 @@
 import java.math.BigInteger
+import java.math.BigInteger.*
 
 object Board {
 
     fun getGrainCountForSquare(number: Int): BigInteger {
-        TODO("Implement this function to complete the task")
+
+        require(number in 1..64)
+        return TWO.pow(number - 1)
     }
 
-    fun getTotalGrainCount(): BigInteger {
-        TODO("Implement this function to complete the task")
-    }
+    fun getTotalGrainCount(): BigInteger =
+        (1..64).map { getGrainCountForSquare(it) }.fold(ZERO, BigInteger::add)
 }
