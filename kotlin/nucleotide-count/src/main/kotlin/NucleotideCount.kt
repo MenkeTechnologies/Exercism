@@ -1,9 +1,14 @@
-class Dna {
+class Dna(dnaStr: String) {
 
-    // TODO: Implement proper constructor
+    val nucleotideCounts = mutableMapOf('A' to 0, 'C' to 0, 'G' to 0, 'T' to 0)
 
-    val nucleotideCounts: Map<Char, Int>
-        get() {
-            TODO("Implement this function to complete the task")
+    init {
+
+        dnaStr.chars().forEach {
+            val key = it.toChar()
+            require(nucleotideCounts.containsKey(key))
+            nucleotideCounts[key] = nucleotideCounts[key]!!.inc()
         }
+    }
+
 }
