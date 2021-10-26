@@ -1,6 +1,24 @@
-class PhoneNumber {
+class PhoneNumber(num: String) {
 
-    // TODO: Implement proper constructor
+    var number: String? = null
 
-    val number: String? = TODO("Implement this getter to complete the task")
+    init {
+
+        val regex = Regex(
+            """
+            \s*(\+?1?\s*)?\(?([2-9]\d{2})\)?[-.\s]*([2-9]\d{2})[-.\s]*(\d{4})\s*
+        """.trimIndent()
+        )
+        require(regex.matches(num))
+
+        val matchResult = regex.find(num)
+
+        val str = matchResult?.groupValues?.get(2) +
+                matchResult?.groupValues?.get(3) +
+                matchResult?.groupValues?.get(4)
+
+        number = str
+
+    }
+
 }
