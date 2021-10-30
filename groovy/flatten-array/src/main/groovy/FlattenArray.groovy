@@ -1,5 +1,9 @@
 class FlattenArray {
     static List flatten(List l) {
-        throw new UnsupportedOperationException('Method implementation is missing')
+        l.findAll{ it != null}.collect {
+            if (it instanceof List) {
+                flatten(it)
+            } else it
+        }.flatten().toList()
     }
 }
