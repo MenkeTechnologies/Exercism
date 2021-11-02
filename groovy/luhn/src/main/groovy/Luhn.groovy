@@ -1,7 +1,14 @@
 class Luhn {
 
     static boolean valid(String value) {
-        throw new UnsupportedOperationException('method not implemented.')
+
+        def tr = value.trim()
+        if (tr.length() <= 1) {
+            return false
+        }
+
+
+
     }
 
 }
