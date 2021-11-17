@@ -158,11 +158,11 @@ fn test_create_stats() {
     let _ = paasio::WriteStats::new(data.as_mut_slice());
 }
 
-test_read!(#[ignore] read_string (
+test_read!( read_string (
     "Twas brillig, and the slithy toves/Did gyre and gimble in the wabe:/All mimsy were the borogoves,/And the mome raths outgrabe.".as_bytes(),
     |d: &[u8]| d.len()
 ));
-test_write!(#[ignore] write_string (
+test_write!( write_string (
     "Beware the Jabberwock, my son!/The jaws that bite, the claws that catch!/Beware the Jubjub bird, and shun/The frumious Bandersnatch!".as_bytes(),
     |d: &[u8]| d.len()
 ));
