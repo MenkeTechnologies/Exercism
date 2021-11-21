@@ -1,11 +1,13 @@
 func dailyRateFrom(hourlyRate: Int) -> Double {
-  fatalError("Please implement the dailyRateFrom(hourlyRate:) function")
+    Double(hourlyRate * 8)
 }
 
 func monthlyRateFrom(hourlyRate: Int, withDiscount discount: Double) -> Double {
-  fatalError("Please implement the monthlyRateFrom(hourlyRate:withDiscount:) function")
+    (22 * dailyRateFrom(hourlyRate: hourlyRate) * (1 - discount / 100)).rounded()
 }
 
 func workdaysIn(budget: Double, hourlyRate: Int, withDiscount discount: Double) -> Double {
-  fatalError("Please implement the workdaysIn(budget:hourlyRate:withDiscount:) function")
+    let dr = dailyRateFrom(hourlyRate: hourlyRate) * (1 - discount / 100)
+    return (budget / dr).rounded(.down)
+
 }
