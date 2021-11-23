@@ -1,4 +1,5 @@
-use perfect_numbers::{classify, Classification};
+use perfect_numbers::Classification::*;
+use perfect_numbers::*;
 
 macro_rules! tests {
     ($property_test_func:ident {
@@ -25,16 +26,16 @@ fn basic() {
 
 tests! {
     test_classification {
-         test_1(1, Classification::Deficient);
-         test_2(2, Classification::Deficient);
-         test_4(4, Classification::Deficient);
-         test_6(6, Classification::Perfect);
-         test_12(12, Classification::Abundant);
-         test_28(28, Classification::Perfect);
-         test_30(30, Classification::Abundant);
-         test_32(32, Classification::Deficient);
-         test_33550335(33_550_335, Classification::Abundant);
-         test_33550336(33_550_336, Classification::Perfect);
-         test_33550337(33_550_337, Classification::Deficient);
+         test_1(1, Deficient);
+         test_2(2, Deficient);
+         test_4(4, Deficient);
+         test_6(6, Perfect);
+         test_12(12, Abundant);
+         test_28(28, Perfect);
+         test_30(30, Abundant);
+         test_32(32, Deficient);
+         test_33550335(33_550_335, Abundant);
+         test_33550336(33_550_336, Perfect);
+         test_33550337(33_550_337, Deficient);
     }
 }
