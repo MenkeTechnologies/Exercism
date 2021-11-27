@@ -5,3 +5,7 @@ version = "1.5.0"
 
 [features]
 exponentials = []
+
+
+[dependencies]
+regex = "1.5.4"
