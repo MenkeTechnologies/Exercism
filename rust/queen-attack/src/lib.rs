@@ -25,18 +25,9 @@ impl Queen {
     }
 
     pub fn can_attack(&self, other: &Queen) -> bool {
-        //same row/col
-        if other.position.rank == self.position.rank || other.position.file == self.position.file {
-            return true;
-        }
+        let dx = i32::abs(other.position.rank - self.position.rank);
+        let dy = i32::abs(other.position.file - self.position.file);
 
-        //diagonal
-        if i32::abs(other.position.rank - self.position.rank)
-            == i32::abs(other.position.file - self.position.file)
-        {
-            return true;
-        }
-
-        false
+        dx == 0 || dy == 0 || dx == dy
     }
 }
