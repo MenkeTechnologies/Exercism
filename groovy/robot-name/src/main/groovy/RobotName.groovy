@@ -1,9 +1,20 @@
 class RobotName {
 
-    String name
+    def name
+    def random = new Random()
+    def alpha = ('A'..'Z')
 
     RobotName() {
-        throw new UnsupportedOperationException('Constructor implementation is missing')
+        gen()
     }
 
+    private def gen() {
+        name = (1..5).collect {
+            it <= 2 ? alpha[random.nextInt(26)] : random.nextInt(10).toString()
+        }.join("")
+    }
+
+    def reset() {
+        gen()
+    }
 }
