@@ -1,16 +1,6 @@
 pub fn sum_of_multiples(limit: u32, factors: &[u32]) -> u32 {
-    let mut sum = 0;
-    for num in 1..limit {
-        for factor in factors {
-            if *factor == 0 {
-                continue;
-            }
-            if num % factor == 0 {
-                sum += num;
-                break;
-            }
-        }
-    }
+    let v: Vec<_> = factors.iter().filter(|&&i| i != 0).collect();
 
-    sum
+    (1..limit).filter(|f| v.iter().any(|&&i| f % i == 0)).sum()
+
 }
