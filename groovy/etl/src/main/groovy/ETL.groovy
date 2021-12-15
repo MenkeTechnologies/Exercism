@@ -1,6 +1,16 @@
 class ETL {
 
-    static transform(input) {
-        throw new UnsupportedOperationException('Method implementation is missing')
+    static transform(Map<String, List<String>> input) {
+
+        def map = [:]
+
+        input.each { k, v ->
+            v.each {
+                map[it.toLowerCase()] = k as int
+            }
+        }
+
+        map
+
     }
 }
