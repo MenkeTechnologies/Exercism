@@ -10,7 +10,6 @@ TEST_CASE("sum_to_1_yields_0")
     REQUIRE(0 == sum_of_multiples::to({3, 5}, 0));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("sum_to_4_yields_3")
 {
     REQUIRE(3 == sum_of_multiples::to({3, 5}, 4));
@@ -65,4 +64,3 @@ TEST_CASE("sum_of_empty_list")
 {
     REQUIRE(0 == sum_of_multiples::to({}, 10000));
 }
-#endif
