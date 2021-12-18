@@ -1,8 +1,8 @@
-#if !defined(REVERSE_STRING_H)
-#define REVERSE_STRING_H
-
+#pragma once
+#include <string>
+using namespace std;
 namespace reverse_string {
-
-}  // namespace reverse_string
-
-#endif // REVERSE_STRING_H
+    inline string reverse_string(const string& src) {
+        return {src.rbegin(), src.rend()};
+    }
+}
