@@ -1,7 +1,16 @@
-=begin
-Write your code for the 'Microwave' exercise in this file. Make the tests in
-`microwave_test.rb` pass.
+class Microwave
+  def initialize minutes
+    hr = minutes / 100
+    min = minutes % 100
+    if min >= 60
+      min -= 60
+      hr += 1
+    end
 
-To get started with TDD, see the `README.md` file in your
-`ruby/microwave` directory.
-=end
+    @time = format('%02d:%02d', hr, min)
+  end
+
+  def timer
+    @time
+  end
+end
