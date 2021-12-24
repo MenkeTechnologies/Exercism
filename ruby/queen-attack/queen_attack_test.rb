@@ -4,7 +4,6 @@ require_relative 'queen_attack'
 # Common test data version: 2.2.0 aaadbac
 class QueenAttackTest < Minitest::Test
   def test_queen_with_a_valid_position
-    # skip
     assert Queens.new(white: [2, 2])
   end
 
