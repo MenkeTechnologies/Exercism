@@ -4,8 +4,7 @@ require_relative 'raindrops'
 # Common test data version: 1.1.0 99de15d
 class RaindropsTest < Minitest::Test
   def test_the_sound_for_1_is_1 # rubocop:disable Naming/VariableNumber
-    # skip
-    assert_equal "1", Raindrops.convert(1)
+    assert_equal = assert_equal "1", Raindrops.convert(1)
   end
 
   def test_the_sound_for_3_is_pling
