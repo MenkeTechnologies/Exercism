@@ -1,13 +1,9 @@
 object Acronym {
-    fun generate(phrase: String) : String {
-        val str = phrase.replace(Regex("[-_]"), " ").toUpperCase()
 
-        var end = ""
+    fun generate(phrase: String): String {
 
-        for (ch in str.split(Regex("\\s+"))) {
-            end += ch[0]
-        }
+        return phrase.toUpperCase().replace(Regex("[-_]"), " ").split(Regex("\\s+"))
+            .map { it[0] }.joinToString("")
 
-        return end
     }
 }
