@@ -20,7 +20,7 @@ public class RestApiTest {
             assertEquals(expected, new RestApi().get(url));
         }
 
-        @Ignore("Remove to run test")
+        
         @Test
         public void addUser() {
             String expected = new JSONObject()
@@ -35,7 +35,7 @@ public class RestApiTest {
             assertEquals(expected, new RestApi().post(url, payload));
         }
 
-        @Ignore("Remove to run test")
+        
         @Test
         public void getSingleUser() {
             String expected = new JSONObject()
@@ -102,7 +102,7 @@ public class RestApiTest {
                     .post(url, payload));
         }
 
-        @Ignore("Remove to run test")
+        
         @Test
         public void borrowerHasNegativeBalance() {
             String expected =
@@ -145,7 +145,7 @@ public class RestApiTest {
                     .post(url, payload));
         }
 
-        @Ignore("Remove to run test")
+        
         @Test
         public void lenderHasNegativeBalance() {
             String expected =
@@ -190,7 +190,7 @@ public class RestApiTest {
                     .post(url, payload));
         }
 
-        @Ignore("Remove to run test")
+        
         @Test
         public void lenderOwesBorrower() {
             String expected =
@@ -230,7 +230,7 @@ public class RestApiTest {
                     .post(url, payload));
         }
 
-        @Ignore("Remove to run test")
+        
         @Test
         public void lenderOwesBorrowerLessThanNewLoan() {
             String expected =
@@ -270,7 +270,7 @@ public class RestApiTest {
                     .post(url, payload));
         }
 
-        @Ignore("Remove to run test")
+        
         @Test
         public void lenderOwesBorrowerSameAsNewLoan() {
             String expected =
