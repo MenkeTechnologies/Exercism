@@ -18,7 +18,7 @@ public class BuildTreeTest {
         assertNull(root);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testOneRecord() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
@@ -30,7 +30,7 @@ public class BuildTreeTest {
         assertNodeIsLeaf(root);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testThreeRecordsInOrder() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
@@ -48,7 +48,7 @@ public class BuildTreeTest {
         assertEquals(root.getChildren().get(1).getNodeId(), 2);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testThreeRecordsInReverseOrder() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
@@ -66,7 +66,7 @@ public class BuildTreeTest {
         assertEquals(root.getChildren().get(1).getNodeId(), 2);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testRecordsWithMoreThanTwoChildren() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
@@ -88,7 +88,7 @@ public class BuildTreeTest {
 
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testBinaryTree() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
@@ -119,7 +119,7 @@ public class BuildTreeTest {
         assertEquals(root.getChildren().get(1).getChildren().get(1).getNodeId(), 6);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testUnbalancedTree() throws InvalidRecordsException {
         ArrayList<Record> records = new ArrayList<>();
@@ -149,7 +149,7 @@ public class BuildTreeTest {
         assertEquals(root.getChildren().get(1).getChildren().get(0).getNodeId(), 6);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testRootNodeHasParent() {
         ArrayList<Record> records = new ArrayList<>();
@@ -166,7 +166,7 @@ public class BuildTreeTest {
         assertThat(expected).hasMessage("Invalid Records");
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testNoRootNode() {
         ArrayList<Record> records = new ArrayList<>();
@@ -183,7 +183,7 @@ public class BuildTreeTest {
         assertThat(expected).hasMessage("Invalid Records");
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testNonContinuousRecords() {
         ArrayList<Record> records = new ArrayList<>();
@@ -202,7 +202,7 @@ public class BuildTreeTest {
         assertThat(expected).hasMessage("Invalid Records");
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void testCycleIndirectly() {
         ArrayList<Record> records = new ArrayList<>();
