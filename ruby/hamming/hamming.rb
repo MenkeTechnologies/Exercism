@@ -10,7 +10,7 @@ class Hamming
 
     raise ArgumentError if str1.size != str2.size
 
-    (0..str1.size - 1).inject(0) do
+    (0..str1.size - 1).reduce(0) do
       if str1[_2] != str2[_2]
         _1 + 1
       else
