@@ -14,14 +14,12 @@ final class SantasHelperTests: XCTestCase {
   }
 
   func testCartesianToPolarQ3() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     let coordinate = (x: -4.7292, y: -2.4096)
     let (actualR, actualPhi) = cartesianToPolar(coordinate)
     XCTAssertTrue(aboutEqual(actualR, 5.3077) && aboutEqual(actualPhi, -2.6704))
   }
 
   func testCombineRecords() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     let id = Int.random(in: 0..<1_000_000)
     let toy =
       ["Chemistry set", "Race car", "Box kite", "Building brick set", "Talking doll"]
