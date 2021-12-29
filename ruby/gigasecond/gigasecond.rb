@@ -5,3 +5,12 @@ Write your code for the 'Gigasecond' exercise in this file. Make the tests in
 To get started with TDD, see the `README.md` file in your
 `ruby/gigasecond` directory.
 =end
+class Gigasecond
+
+  def self.from(time)
+
+    time + 1e9
+
+  end
+
+end
