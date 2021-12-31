@@ -9,9 +9,10 @@ To get started with TDD, see the `README.md` file in your
 class ETL
   def self.transform(old)
 
-    old.each do
-
-    end
+    old.inject({}) { |acc, n|
+      n[1].each { acc[_1.downcase] = n[0] }
+      acc
+    }
 
   end
 end
