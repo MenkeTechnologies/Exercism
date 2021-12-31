@@ -1,9 +1,7 @@
-class ArmstrongNumbers {
 
+class ArmstrongNumbers {
     boolean isArmstrongNumber(int numberToCheck) {
 
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
-
+        return numberToCheck == String.valueOf(numberToCheck).chars().map(Character::getNumericValue).mapToDouble(c -> Math.pow(c, String.valueOf(numberToCheck).length())).sum();
     }
-
 }
