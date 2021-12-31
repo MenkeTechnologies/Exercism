@@ -1,6 +1,6 @@
 object SumOfMultiples {
 
     fun sum(factors: Set<Int>, limit: Int): Int {
-        TODO("Implement this function to complete the task")
+        return (1 until limit).filter { factors.any { f -> f != 0 && it % f == 0 } }.sum()
     }
 }
