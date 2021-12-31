@@ -1,14 +1,24 @@
 class Matrix {
 
+    String str
+
     Matrix(String asString) {
-        throw new UnsupportedOperationException('Method implementation is missing')
+        this.str = asString;
     }
 
     int[] row(int rowNumber) {
-        throw new UnsupportedOperationException('Method implementation is missing')
+        str.split("\n").collect { it.trim().split("\\s+").collect { it.toInteger() } }[rowNumber]
     }
 
     int[] column(int columnNumber) {
-        throw new UnsupportedOperationException('Method implementation is missing')
+        str.split("\n").inject([]) { acc, n ->
+            n.trim().split("\\s+").eachWithIndex { it, idx ->
+                acc[idx] == null ? acc[idx] = [it.toInteger()] : acc[idx] << it.toInteger()
+
+            }
+
+            acc
+
+        }[columnNumber]
     }
 }

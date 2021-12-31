@@ -5,3 +5,13 @@ Write your code for the 'ETL' exercise in this file. Make the tests in
 To get started with TDD, see the `README.md` file in your
 `ruby/etl` directory.
 =end
+
+class ETL
+  def self.transform(old)
+
+    old.each do
+
+    end
+
+  end
+end
