@@ -2,15 +2,10 @@ class ETL {
 
     static transform(Map<String, List<String>> input) {
 
-        def map = [:]
-
-        input.each { k, v ->
-            v.each {
-                map[it.toLowerCase()] = k as int
-            }
+        input.inject([:]) { acc, k, v ->
+            v.each { acc[it.toLowerCase()] = k as int }
+            acc
         }
-
-        map
 
     }
 }
