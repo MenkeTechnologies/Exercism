@@ -1,10 +1,26 @@
 object PrimeFactorCalculator {
 
     fun primeFactors(int: Int): List<Int> {
-        TODO("Implement this function to complete the task")
+        return primeFactors(int.toLong()).map { it.toInt() }
     }
 
     fun primeFactors(long: Long): List<Long> {
-        TODO("Implement this function to complete the task")
+
+        val l = mutableListOf<Long>()
+        var dup = long
+
+        var dividend = 2L
+
+        while (dup > 1) {
+
+            while (dup % dividend == 0L) {
+                l.add(dividend)
+                dup /= dividend
+            }
+            dividend += 1
+
+        }
+
+        return l
     }
 }
