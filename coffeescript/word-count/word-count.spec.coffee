@@ -6,14 +6,14 @@ describe 'WordCount', ->
     expect(words.count()).toEqual
       word: 1
 
-  xit 'counts one of each', ->
+  it 'counts one of each', ->
     words = new WordCount 'one of each'
     expect(words.count()).toEqual
       one: 1
       of: 1
       each: 1
 
-  xit 'counts multiple occurrences', ->
+  it 'counts multiple occurrences', ->
     words = new WordCount 'one fish two fish red fish blue fish'
     expect(words.count()).toEqual
       one: 1
@@ -22,7 +22,7 @@ describe 'WordCount', ->
       red: 1
       blue: 1
 
-  xit 'ignores punctuation', ->
+  it 'ignores punctuation', ->
     words = new WordCount 'car : carpet as java : javascript!!&@$%^&'
     expect(words.count()).toEqual
       car: 1
@@ -31,14 +31,14 @@ describe 'WordCount', ->
       java: 1
       javascript: 1
 
-  xit 'includes numbers', ->
+  it 'includes numbers', ->
     words = new WordCount 'testing, 1, 2 testing'
     expect(words.count()).toEqual
       testing: 2
       1: 1
       2: 1
 
-  xit 'normalizes case', ->
+  it 'normalizes case', ->
     words = new WordCount 'go Go GO'
     expect(words.count()).toEqual
       go: 3
