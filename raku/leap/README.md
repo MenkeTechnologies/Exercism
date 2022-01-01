@@ -1,5 +1,10 @@
 # Leap
 
+Welcome to Leap on Exercism's Raku Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a year, report if it is a leap year.
 
 The tricky thing here is that a leap year in the Gregorian calendar occurs:
@@ -23,25 +28,21 @@ phenomenon, go watch [this youtube video][video].
 
 [video]: http://www.youtube.com/watch?v=xX96xng7sAE
 
-## Resources
-
-Remember to check out the Raku [documentation](https://docs.raku.org/) and
-[resources](https://raku.org/resources/) pages for information, tips, and
-examples if you get stuck.
-
-## Running the tests
-
-There is a test suite and module included with the exercise.
-The test suite (a file with the extension `.rakutest`) will attempt to run routines
-from the module (a file with the extension `.rakumod`).
-Add/modify routines in the module so that the tests will pass! You can view the
-test data by executing the command `raku --doc *.rakutest` (\* being the name of the
-test suite), and run the test suite for the exercise by executing the command
-`prove6 .` in the exercise directory.
-
 ## Source
 
-JavaRanch Cattle Drive, exercise 3 [http://www.javaranch.com/leap.jsp](http://www.javaranch.com/leap.jsp)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @dnmfarrell
+
+### Contributed to by
+
+- @alexkalderimis
+- @kotp
+- @kytrinyx
+- @m-dango
+- @pgraemer
+- @yanick
+
+### Based on
+
+JavaRanch Cattle Drive, exercise 3 - http://www.javaranch.com/leap.jsp
