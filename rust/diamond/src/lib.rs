@@ -1,12 +1,12 @@
 pub fn get_diamond(c: char) -> Vec<String> {
-    let size = c as u8 - b'A';
-    (0..=size)
-        .chain((0..size).rev())
+    let top_idx = c as u8 - b'A';
+
+    (0..=top_idx).chain((0..top_idx).rev())
         .map(|row_offset| {
-            (0..=size)
-                .chain((0..size).rev())
+            (0..=top_idx).rev()
+                .chain(1..=top_idx)
                 .map(|col_offset| {
-                    if row_offset == size - col_offset {
+                    if row_offset == col_offset {
                         (b'A' + row_offset) as char
                     } else {
                         ' '
