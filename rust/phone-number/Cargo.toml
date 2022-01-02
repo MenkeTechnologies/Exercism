@@ -2,3 +2,6 @@
 edition = "2018"
 name = "phone-number"
 version = "1.6.1"
+
+[dependencies]
+regex = "1.5.4"
