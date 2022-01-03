@@ -20,20 +20,19 @@ class ResistorColorTrio
     'white' => '9'
   }.freeze
 
-  def initialize(ary)
-    @first = ary.take(2).map { color_val(_1) }.join
-    @val = @first + ('0' * color_val(ary.last).to_i)
-  end
-
   RESISTOR_VAL = 'Resistor value: '
 
-  UNITS = %w[ohms kiloohms megaohms gigaohms].freeze
+  UNITS = %w[ohms kiloohms megaohms gigaohms teraohms petaohms exaohms zettaohms].freeze
+
+  def initialize(ary)
+    @val = ary.take(ary.size - 1).map { color_val(_1) }.join + '0' * color_val(ary.last).to_i
+  end
 
   def label
-    @prefix = @val.chars.reverse.drop_while { _1 == '0' }.reverse.join
-    @zc = @val.chars.reverse.take_while { _1 == '0' }.length
+    prefix = @val.chars.reverse.drop_while { _1 == '0' }.reverse.join
+    zc = @val.chars.reverse.take_while { _1 == '0' }.length
 
-    "#{RESISTOR_VAL}#{@prefix}#{'0' * (@zc % 3)} #{UNITS[@zc / 3]}"
+    "#{RESISTOR_VAL}#{prefix}#{'0' * (zc % 3)} #{UNITS[zc / 3]}"
   end
 
   private
