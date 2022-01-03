@@ -1,5 +1,10 @@
 object ETL {
     fun transform(source: Map<Int, Collection<Char>>): Map<Char, Int> {
-        TODO("Implement the function to complete the task")
+
+        return source.entries.fold(mutableMapOf()) { acc, n ->
+            n.value.forEach { acc[it.toLowerCase()] = n.key }
+            acc
+        }
+
     }
 }
