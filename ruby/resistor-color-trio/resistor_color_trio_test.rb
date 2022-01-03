@@ -28,6 +28,18 @@ class ResistorColorTrioTest < Minitest::Test
     assert_equal "Resistor value: 470 kiloohms", ResistorColorTrio.new(%w[yellow violet yellow]).label
   end
 
+  def test_yellow_and_violet_and_violet
+
+    #47 000 000 000
+    assert_equal "Resistor value: 470 megaohms", ResistorColorTrio.new(%w[yellow violet violet]).label
+  end
+
+  def test_yellow_and_violet_and_white
+
+    #47 000 000 000
+    assert_equal "Resistor value: 47 gigaohms", ResistorColorTrio.new(%w[yellow violet white]).label
+  end
+
   def test_invalid_color
 
     assert_raises(ArgumentError) do
