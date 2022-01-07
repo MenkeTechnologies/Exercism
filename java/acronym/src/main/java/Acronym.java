@@ -1,11 +1,18 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 class Acronym {
 
+    String phrase;
+
     Acronym(String phrase) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        this.phrase = phrase.toUpperCase();
     }
 
     String get() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+
+       return Arrays.stream(phrase.replaceAll("[_']", "").split("\\W+")).map(c -> c.substring(0,1)).collect(Collectors.joining(""));
+
     }
 
 }
