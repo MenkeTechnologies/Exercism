@@ -1,5 +1,9 @@
-(ns acronym)
+(ns acronym
+  (:require [clojure.string :as str]))
 
-(defn acronym [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn acronym [str]
+  (->> (str/split str #"(\W+|[a-z](?=[A-Z]))")
+       (map first)
+       (str/join)
+       (str/upper-case))
+  )
