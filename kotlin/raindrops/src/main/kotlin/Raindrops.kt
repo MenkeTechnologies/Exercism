@@ -1,14 +1,7 @@
 object Raindrops {
 
-    private val sounds = mapOf(3 to "Pling", 5 to "Plang", 7 to "Plong")
+    private val MAP = mapOf(3 to "Pling", 5 to "Plang", 7 to "Plong")
 
-    fun convert(n: Int): String = buildString {
-
-        sounds.forEach{
-            if (it.key % n == 0) {
-                append(it.value)
-            }
-        }
-        if (isEmpty()) append(n)
-    }
+    fun convert(n: Int) = MAP.filterKeys { n % it == 0 }
+        .values.joinToString("").ifEmpty { "$n" }
 }

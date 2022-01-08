@@ -7,7 +7,7 @@
 
   (let [sum
         (->> (range 1 num)
-             (filter #(= (mod num %) 0))
+             (filter #(zero? (mod num %)))
              (reduce +))]
     (condp #(%1 sum %2) num
       < :deficient
