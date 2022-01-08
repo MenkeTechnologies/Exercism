@@ -1,8 +1,8 @@
 object Raindrops {
-  val MAP = Map(3 -> "Pling", 5 -> "Plang", 7 -> "Plong", 1 -> null)
+  val MAP = Map(3 -> "Pling", 5 -> "Plang", 7 -> "Plong")
 
-  def convert(num: Int): String =
-    MAP.filterKeys(num % _ == 0).foldLeft(""){ (acc, n) => if (n._1 != 1) acc + n._2 else if (acc.isEmpty) s"$num" else acc }
+  def convert(n: Int) = List(MAP.filterKeys(n % _ == 0).values.mkString)
+    .map(s => if (s.nonEmpty) s else s"$n").mkString
 
 }
 
