@@ -1,5 +1,6 @@
 (ns accumulate)
 
-(defn accumulate [] ;; <- arglist goes here
-      ;; your code goes here
-)
+(defn accumulate [f coll]
+  (reduce #(conj %1 (f %2)) [] coll)
+
+  )
