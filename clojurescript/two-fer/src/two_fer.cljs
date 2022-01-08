@@ -1,5 +1,7 @@
 (ns two-fer)
 
-(defn two-fer [] ;; <-- arguments come here.
-  ;; your code goes here.
+(defn two-fer [name]
+  (if (nil? name)
+    "One for you, one for me."
+    (str "One for " name ", one for me." ))
   )
