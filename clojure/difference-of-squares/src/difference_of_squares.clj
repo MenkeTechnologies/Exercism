@@ -1,11 +1,18 @@
 (ns difference-of-squares)
 
 (defn sum-of-squares [n]
-  (reduce + (map #(* % %) (range 1 (inc n))))
+  (->> (range 1 (+ n 1))
+       (map #(* % %))
+       (reduce +)
+       )
   )
 
 (defn square-of-sum [n]
-  (reduce * (repeat 2 (reduce + (range 1 (inc n)))))
+  (->> (range 1 (+ n 1))
+       (reduce +)
+       (repeat 2)
+       (reduce *)
+       )
   )
 
 (defn difference [num]
