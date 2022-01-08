@@ -2,18 +2,9 @@ object CollatzCalculator {
     fun computeStepCount(start: Int): Int {
 
         require(start >= 1)
-        var cnt = 0
-        var s = start
+        return generateSequence(start) {
+            if (it and 1 == 0) it / 2 else 3 * it + 1
+        }.takeWhile { it > 1 }.count()
 
-        while (s != 1) {
-            if (s % 2 == 0) {
-                s /= 2
-            } else {
-                s = 3 * s + 1
-            }
-            ++cnt
-        }
-
-        return cnt
     }
 }
