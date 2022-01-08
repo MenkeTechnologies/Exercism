@@ -1,13 +1,13 @@
 (ns difference-of-squares)
 
-(defn difference [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn sum-of-squares [n]
+  (reduce + (map #(* % %) (range 1 (inc n))))
+  )
 
-(defn sum-of-squares [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn square-of-sum [n]
+  (reduce * (repeat 2 (reduce + (range 1 (inc n)))))
+  )
 
-(defn square-of-sum [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn difference [num]
+  (- (square-of-sum num) (sum-of-squares num))
+  )
