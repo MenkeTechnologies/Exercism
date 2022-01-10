@@ -1,9 +1,29 @@
+import java.util.stream.IntStream;
+
 public class Hamming {
+    String l;
+    String r;
+
     public Hamming(String leftStrand, String rightStrand) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+
+        if (leftStrand.length() != rightStrand.length()) {
+            if (leftStrand.isEmpty()) {
+                throw new IllegalArgumentException("left strand must not be empty.");
+            }
+
+            if (rightStrand.isEmpty()) {
+                throw new IllegalArgumentException("right strand must not be empty.");
+            }
+            throw new IllegalArgumentException("leftStrand and rightStrand must be of equal length.");
+        }
+
+        l = leftStrand;
+        r = rightStrand;
     }
 
     public int getHammingDistance() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+
+        return (int) IntStream.range(0, l.length())
+                .filter(i -> l.charAt(i) != r.charAt(i)).count();
     }
 }
