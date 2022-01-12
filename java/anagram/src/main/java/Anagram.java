@@ -1,10 +1,21 @@
-/*
+import java.util.List;
+import java.util.stream.Collectors;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Anagram {
+    String target;
+    List<Integer> sortedChars;
 
-Please remove this comment when submitting your solution.
+    public Anagram(String target) {
+        this.target = target.toUpperCase();
+        sortedChars = target.toUpperCase().chars().sorted().boxed().collect(Collectors.toList());
+    }
 
-*/
+    public List<String> match(List<String> asList) {
+
+        return asList.stream().filter(str ->
+                sortedChars.equals(str.toUpperCase().chars().sorted().boxed().collect(Collectors.toList())) &&
+                        !str.toUpperCase().equals(target)
+
+        ).collect(Collectors.toList());
+    }
+}
