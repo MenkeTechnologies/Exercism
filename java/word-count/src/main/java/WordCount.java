@@ -1,10 +1,13 @@
-/*
+import java.util.Arrays;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class WordCount {
+    public Map<String, Integer> phrase(String word) {
 
-Please remove this comment when submitting your solution.
-
-*/
+        return Arrays.stream(word.toLowerCase().replaceAll("(\\s'|'\\s|(?!\\w|'\\w+\\b).)", " ").trim().split("\\s+"))
+                .collect(Collectors.groupingBy(Function.identity()))
+                .entrySet().stream().collect(Collectors.toMap(Map.Entry::getKey, e -> e.getValue().size()));
+    }
+}
