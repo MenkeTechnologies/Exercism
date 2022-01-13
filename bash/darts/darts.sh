@@ -27,7 +27,7 @@ NUM_RE='-?[0-9]+(\.[0.9+])*'
 x="$1"
 y="$2"
 
-if (( $# < 1 )) || ! [[ "$1" =~ $NUM_RE && "$2" =~ $NUM_RE  ]]; then
+if ! [[ "$1" =~ $NUM_RE && "$2" =~ $NUM_RE  ]]; then
     echo "Usage: darts.sh NUM1 NUM2" >&2
     exit 1
 fi

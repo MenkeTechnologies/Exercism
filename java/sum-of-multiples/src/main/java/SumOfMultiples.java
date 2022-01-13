@@ -1,11 +1,17 @@
+import java.util.Arrays;
+import java.util.stream.IntStream;
+
 class SumOfMultiples {
+    private int sum;
 
     SumOfMultiples(int number, int[] set) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+
+        sum = IntStream.range(1, number)
+                .filter(n -> Arrays.stream(set).filter(f -> f != 0).anyMatch(f -> n % f == 0))
+                .sum();
     }
 
     int getSum() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return sum;
     }
-
 }
