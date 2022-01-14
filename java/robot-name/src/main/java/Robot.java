@@ -3,10 +3,8 @@ import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-
 class Robot {
-    static HashMap<String, Integer> MAP = new HashMap<>();
-
+    private static HashMap<String, Integer> MAP = new HashMap<>();
     String name;
 
     public Robot() {
@@ -18,16 +16,14 @@ class Robot {
 
         Random random = new Random();
 
-        String name = IntStream.range(0, 5)
-                .map(i -> i < 2 ? random.nextInt(26) + 'A' : random.nextInt(10) + '0').mapToObj(c -> String.valueOf((char) c)).collect(Collectors.joining(""));
-
-        if (MAP.containsKey(name)) {
-            return gen();
-        } else {
-            MAP.put(name, 1);
-            return name;
+        while (true) {
+            String name = IntStream.range(0, 5)
+                    .map(i -> i < 2 ? random.nextInt(26) + 'A' : random.nextInt(10) + '0').mapToObj(c -> String.valueOf((char) c)).collect(Collectors.joining(""));
+            if (!MAP.containsKey(name)) {
+                MAP.put(name, 1);
+                return name;
+            }
         }
-
     }
 
     public String getName() {
