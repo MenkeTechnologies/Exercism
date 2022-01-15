@@ -3,7 +3,7 @@ proc hammingDistance {left right} {
     set rl [string length $right]
 
     if { $ll != $rl } {
-        error "left and right strands must be of equal length"
+        error "strands must be of equal length"
 
     }
 
