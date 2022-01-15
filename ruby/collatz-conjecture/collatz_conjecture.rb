@@ -12,7 +12,7 @@ class CollatzConjecture
 
     cnt = 0
 
-    while limit != 1
+    while limit > 1
       if limit.even?
         limit /= 2
       else
