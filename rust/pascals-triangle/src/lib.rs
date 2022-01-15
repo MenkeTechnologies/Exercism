@@ -4,40 +4,16 @@ pub struct PascalsTriangle {
 
 impl PascalsTriangle {
     pub fn new(row_count: u32) -> Self {
-        let mut p = PascalsTriangle { rows: vec![] };
-
-        for row in 0..row_count {
-            let mut v: Vec<u32> = vec![];
-
-            if row == 0 {
-                v.push(1);
-            } else if row == 1 {
-                v.push(1);
-                v.push(1);
-            } else {
-                v.push(1);
-
-                for col_idx in 1..row {
-                    let prev_row_idx: usize = (row - 1) as usize;
-
-                    let prev_row = &p.rows[prev_row_idx];
-
-                    let prev_left_idx = (col_idx - 1) as usize;
-                    let prev_right_idx = col_idx as usize;
-
-                    v.push(prev_row[prev_left_idx] + prev_row[prev_right_idx]);
-                }
-
-                v.push(1);
+        if row_count <= 0 { Self { rows: vec![] } } else {
+            Self { rows: (2..=row_count).fold(vec![vec![1]], |acc, _| {
+                    let prev = acc.last().unwrap().clone();
+                    [acc.as_slice(), vec![[&[1], prev.iter().take(prev.len() - 1).enumerate()
+                        .map(|(i, n)| { n + prev[i + 1] })
+                        .collect::<Vec<u32>>().as_slice(), &[1]].concat()].as_slice()].concat()
+                })
             }
-
-            p.rows.push(v);
         }
-
-        p
     }
 
-    pub fn rows(&self) -> Vec<Vec<u32>> {
-        self.rows.to_owned()
-    }
+    pub fn rows(&self) -> Vec<Vec<u32>> { self.rows.clone() }
 }
