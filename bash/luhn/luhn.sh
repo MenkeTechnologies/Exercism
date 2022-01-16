@@ -1,24 +1,29 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+digits=${1//[[:space:]]/}
+
+if (( ${#digits} < 2 )) || [[ $digits =~ [^[:digit:]] ]]; then
+    echo "false"
+    exit
+fi
+
+sum=0
+digits="$(printf "$digits" | rev)"
+for (( i = 0; i < ${#digits}; i++ )); do
+    d=${digits:$i:1}
+    if (( i % 2 == 1 )); then
+        ((d *= 2 ))
+    fi
+    if (( d > 9)); then
+        ((d -= 9))
+    fi
+    ((sum += d))
+done
+
+
+if (( sum % 10 == 0)); then
+    echo "true"
+    exit
+fi
+
+echo "false"
