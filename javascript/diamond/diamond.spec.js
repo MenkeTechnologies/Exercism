@@ -5,7 +5,7 @@ describe('Diamond', () => {
     expect(rows('A')).toEqual(['A']);
   });
 
-  xtest('Degenerate case with no row containing 3 distinct groups of spaces', () => {
+  test('Degenerate case with no row containing 3 distinct groups of spaces', () => {
     // prettier-ignore
     expect(rows('B')).toEqual([
       ' A ',
@@ -14,7 +14,7 @@ describe('Diamond', () => {
     ]);
   });
 
-  xtest('Smallest non-degenerate case with odd diamond side length', () => {
+  test('Smallest non-degenerate case with odd diamond side length', () => {
     // prettier-ignore
     expect(rows('C')).toEqual([
       '  A  ',
@@ -25,7 +25,7 @@ describe('Diamond', () => {
     ]);
   });
 
-  xtest('Smallest non-degenerate case with even diamond side length', () => {
+  test('Smallest non-degenerate case with even diamond side length', () => {
     expect(rows('D')).toEqual([
       '   A   ',
       '  B B  ',
@@ -37,7 +37,7 @@ describe('Diamond', () => {
     ]);
   });
 
-  xtest('Largest possible diamond', () => {
+  test('Largest possible diamond', () => {
     expect(rows('Z')).toEqual([
       '                         A                         ',
       '                        B B                        ',

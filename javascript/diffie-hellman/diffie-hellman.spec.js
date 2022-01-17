@@ -8,7 +8,7 @@ describe('diffie-hellman', () => {
     }).toThrow();
   });
 
-  xtest('throws an error if the constructor arguments are not prime', () => {
+  test('throws an error if the constructor arguments are not prime', () => {
     expect(() => {
       new DiffieHellman(10, 13);
     }).toThrow();
@@ -19,31 +19,31 @@ describe('diffie-hellman', () => {
     const g = 5;
     const diffieHellman = new DiffieHellman(p, g);
 
-    xtest('throws an error if private key is negative', () => {
+    test('throws an error if private key is negative', () => {
       expect(() => {
         diffieHellman.getPublicKey(-1);
       }).toThrow();
     });
 
-    xtest('throws an error if private key is zero', () => {
+    test('throws an error if private key is zero', () => {
       expect(() => {
         diffieHellman.getPublicKey(0);
       }).toThrow();
     });
 
-    xtest('throws an error if private key is one', () => {
+    test('throws an error if private key is one', () => {
       expect(() => {
         diffieHellman.getPublicKey(1);
       }).toThrow();
     });
 
-    xtest('throws an error if private key equals the modulus parameter p', () => {
+    test('throws an error if private key equals the modulus parameter p', () => {
       expect(() => {
         diffieHellman.getPublicKey(p);
       }).toThrow();
     });
 
-    xtest('throws an error if private key is greater than the modulus parameter p', () => {
+    test('throws an error if private key is greater than the modulus parameter p', () => {
       expect(() => {
         diffieHellman.getPublicKey(p + 1);
       }).toThrow();
@@ -59,22 +59,22 @@ describe('diffie-hellman', () => {
     const bobPrivateKey = 15;
     const bobPublicKey = 19;
 
-    xtest('can calculate public key using private key', () => {
+    test('can calculate public key using private key', () => {
       expect(diffieHellman.getPublicKey(alicePrivateKey)).toEqual(
         alicePublicKey
       );
     });
 
-    xtest('can calculate public key when given a different private key', () => {
+    test('can calculate public key when given a different private key', () => {
       expect(diffieHellman.getPublicKey(bobPrivateKey)).toEqual(bobPublicKey);
     });
   });
 
-  xtest("can calculate secret using other party's public key", () => {
+  test("can calculate secret using other party's public key", () => {
     expect(new DiffieHellman(23, 5).getSecret(19, 6)).toEqual(2);
   });
 
-  xtest('key exchange', () => {
+  test('key exchange', () => {
     const diffieHellman = new DiffieHellman(23, 5);
 
     const alicePrivateKey = 6;

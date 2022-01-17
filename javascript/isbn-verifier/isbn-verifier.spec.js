@@ -5,67 +5,67 @@ describe('ISBN Verifier', () => {
     expect(isValid('3-598-21508-8')).toEqual(true);
   });
 
-  xtest('invalid isbn check digit', () => {
+  test('invalid isbn check digit', () => {
     expect(isValid('3-598-21508-9')).toEqual(false);
   });
 
-  xtest('valid isbn number with a check digit of 10', () => {
+  test('valid isbn number with a check digit of 10', () => {
     expect(isValid('3-598-21507-X')).toEqual(true);
   });
 
-  xtest('check digit is a character other than X', () => {
+  test('check digit is a character other than X', () => {
     expect(isValid('3-598-21507-A')).toEqual(false);
   });
 
-  xtest('invalid character in isbn', () => {
+  test('invalid character in isbn', () => {
     expect(isValid('3-598-P1581-X')).toEqual(false);
   });
 
-  xtest('X is only valid as a check digit', () => {
+  test('X is only valid as a check digit', () => {
     expect(isValid('3-598-2X507-9')).toEqual(false);
   });
 
-  xtest('valid isbn without separating dashes', () => {
+  test('valid isbn without separating dashes', () => {
     expect(isValid('3598215088')).toEqual(true);
   });
 
-  xtest('isbn without separating dashes and X as check digit', () => {
+  test('isbn without separating dashes and X as check digit', () => {
     expect(isValid('359821507X')).toEqual(true);
   });
 
-  xtest('isbn without check digit and dashes', () => {
+  test('isbn without check digit and dashes', () => {
     expect(isValid('359821507')).toEqual(false);
   });
 
-  xtest('too long isbn and no dashes', () => {
+  test('too long isbn and no dashes', () => {
     expect(isValid('3598215078X')).toEqual(false);
   });
 
-  xtest('too short isbn', () => {
+  test('too short isbn', () => {
     expect(isValid('00')).toEqual(false);
   });
 
-  xtest('isbn without check digit', () => {
+  test('isbn without check digit', () => {
     expect(isValid('3-598-21507')).toEqual(false);
   });
 
-  xtest('check digit of X should not be used for 0', () => {
+  test('check digit of X should not be used for 0', () => {
     expect(isValid('3-598-21515-X')).toEqual(false);
   });
 
-  xtest('empty isbn', () => {
+  test('empty isbn', () => {
     expect(isValid('')).toEqual(false);
   });
 
-  xtest('input is 9 characters', () => {
+  test('input is 9 characters', () => {
     expect(isValid('134456729')).toEqual(false);
   });
 
-  xtest('invalid characters are not ignored', () => {
+  test('invalid characters are not ignored', () => {
     expect(isValid('3132P34035')).toEqual(false);
   });
 
-  xtest('input is too long but contains a valid isbn', () => {
+  test('input is too long but contains a valid isbn', () => {
     expect(isValid('98245726788')).toEqual(false);
   });
 });
