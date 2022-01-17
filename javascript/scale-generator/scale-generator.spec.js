@@ -20,7 +20,7 @@ describe('ScaleGenerator', () => {
       expect(new Scale('C').chromatic()).toEqual(expected);
     });
 
-    xtest('Chromatic scale with flats', () => {
+    test('Chromatic scale with flats', () => {
       const expected = [
         'F',
         'Gb',
@@ -40,77 +40,77 @@ describe('ScaleGenerator', () => {
   });
 
   describe('Scales with specified intervals', () => {
-    xtest('Simple major scale', () => {
+    test('Simple major scale', () => {
       const expected = ['C', 'D', 'E', 'F', 'G', 'A', 'B'];
       expect(new Scale('C').interval('MMmMMMm')).toEqual(expected);
     });
 
-    xtest('Major scale with sharps', () => {
+    test('Major scale with sharps', () => {
       const expected = ['G', 'A', 'B', 'C', 'D', 'E', 'F#'];
       expect(new Scale('G').interval('MMmMMMm')).toEqual(expected);
     });
 
-    xtest('Major scale with flats', () => {
+    test('Major scale with flats', () => {
       const expected = ['F', 'G', 'A', 'Bb', 'C', 'D', 'E'];
       expect(new Scale('F').interval('MMmMMMm')).toEqual(expected);
     });
 
-    xtest('Minor scale with sharps', () => {
+    test('Minor scale with sharps', () => {
       const expected = ['F#', 'G#', 'A', 'B', 'C#', 'D', 'E'];
       expect(new Scale('f#').interval('MmMMmMM')).toEqual(expected);
     });
 
-    xtest('Minor scale with flats', () => {
+    test('Minor scale with flats', () => {
       const expected = ['Bb', 'C', 'Db', 'Eb', 'F', 'Gb', 'Ab'];
       expect(new Scale('bb').interval('MmMMmMM')).toEqual(expected);
     });
 
-    xtest('Dorian mode', () => {
+    test('Dorian mode', () => {
       const expected = ['D', 'E', 'F', 'G', 'A', 'B', 'C'];
       expect(new Scale('d').interval('MmMMMmM')).toEqual(expected);
     });
 
-    xtest('Mixolydian mode', () => {
+    test('Mixolydian mode', () => {
       const expected = ['Eb', 'F', 'G', 'Ab', 'Bb', 'C', 'Db'];
       expect(new Scale('Eb').interval('MMmMMmM')).toEqual(expected);
     });
 
-    xtest('Lydian mode', () => {
+    test('Lydian mode', () => {
       const expected = ['A', 'B', 'C#', 'D#', 'E', 'F#', 'G#'];
       expect(new Scale('a').interval('MMMmMMm')).toEqual(expected);
     });
 
-    xtest('Phrygian mode', () => {
+    test('Phrygian mode', () => {
       const expected = ['E', 'F', 'G', 'A', 'B', 'C', 'D'];
       expect(new Scale('e').interval('mMMMmMM')).toEqual(expected);
     });
 
-    xtest('Locrian mode', () => {
+    test('Locrian mode', () => {
       const expected = ['G', 'Ab', 'Bb', 'C', 'Db', 'Eb', 'F'];
       expect(new Scale('g').interval('mMMmMMM')).toEqual(expected);
     });
 
-    xtest('Harmonic minor', () => {
+    test('Harmonic minor', () => {
       const expected = ['D', 'E', 'F', 'G', 'A', 'Bb', 'Db'];
       expect(new Scale('d').interval('MmMMmAm')).toEqual(expected);
     });
 
-    xtest('Octatonic', () => {
+    test('Octatonic', () => {
       const expected = ['C', 'D', 'D#', 'F', 'F#', 'G#', 'A', 'B'];
       expect(new Scale('C').interval('MmMmMmMm')).toEqual(expected);
     });
 
-    xtest('Hexatonic', () => {
+    test('Hexatonic', () => {
       const expected = ['Db', 'Eb', 'F', 'G', 'A', 'B'];
       expect(new Scale('Db').interval('MMMMMM')).toEqual(expected);
     });
 
-    xtest('Pentatonic', () => {
+    test('Pentatonic', () => {
       const expected = ['A', 'B', 'C#', 'E', 'F#'];
       expect(new Scale('A').interval('MMAMA')).toEqual(expected);
     });
 
-    xtest('Enigmatic', () => {
+    test('Enigmatic', () => {
       const expected = ['G', 'G#', 'B', 'C#', 'D#', 'F', 'F#'];
       expect(new Scale('G').interval('mAMMMmm')).toEqual(expected);
     });
