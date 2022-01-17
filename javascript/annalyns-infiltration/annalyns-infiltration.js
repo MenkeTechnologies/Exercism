@@ -5,9 +5,7 @@
  *
  * @return {boolean} Whether or not you can execute a fast attack.
  */
-export function canExecuteFastAttack(knightIsAwake) {
-  throw new Error('Implement the canExecuteFastAttack function');
-}
+export const canExecuteFastAttack = (knightIsAwake) => !knightIsAwake
 
 /**
  * A useful spy captures information, which they can't do if everyone's asleep.
@@ -18,9 +16,7 @@ export function canExecuteFastAttack(knightIsAwake) {
  *
  * @returns {boolean} Whether or not you can spy on someone.
  */
-export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
-  throw new Error('Implement the canSpy function');
-}
+export const canSpy = (knightIsAwake, archerIsAwake, prisonerIsAwake) => knightIsAwake || archerIsAwake || prisonerIsAwake
 
 /**
  * You'll get caught by the archer if you signal while they're awake.
@@ -30,9 +26,7 @@ export function canSpy(knightIsAwake, archerIsAwake, prisonerIsAwake) {
  *
  * @returns {boolean} Whether or not you can send a signal to the prisoner.
  */
-export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
-  throw new Error('Implement the canSignalPrisoner function');
-}
+export const canSignalPrisoner = (archerIsAwake, prisonerIsAwake) => prisonerIsAwake && !archerIsAwake
 
 /**
  * The final stage in the plan: freeing Annalyn's best friend.
@@ -44,11 +38,9 @@ export function canSignalPrisoner(archerIsAwake, prisonerIsAwake) {
  *
  * @returns {boolean} Whether or not you can free Annalyn's friend.
  */
-export function canFreePrisoner(
+export const canFreePrisoner = (
   knightIsAwake,
   archerIsAwake,
   prisonerIsAwake,
   petDogIsPresent
-) {
-  throw new Error('Implement the canFreePrisoner function');
-}
+) => petDogIsPresent ? !archerIsAwake : prisonerIsAwake && !knightIsAwake && !archerIsAwake
