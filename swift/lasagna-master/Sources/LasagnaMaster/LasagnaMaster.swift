@@ -1,9 +1,31 @@
-// TODO: define the 'remainingMinutesInOven' function
+let FL_OZ = 33.814
 
-// TODO: define the 'preparationTimeInMinutes' function
+func remainingMinutesInOven(elapsedMinutes: Int, expectedMinutesInOven: Int = 40) -> Int {
 
-// TODO: define the 'quantities' function
+    expectedMinutesInOven - elapsedMinutes
+}
 
-// TODO: define the 'toOz' function
+func preparationTimeInMinutes(layers: String...) -> Int {
+    layers.count * 2
 
-// TODO: define the 'redWine' function
+}
+
+func quantities(layers: String...) -> (noodles: Double, sauce: Double) {
+    (Double(layers.filter { $0 == "noodles" } .count) * 3,
+        Double(layers.filter { $0 == "sauce" } .count) * 0.2)
+
+}
+
+
+func toOz(_ tuple: inout (noodles: Double, sauce: Double)) {
+    tuple.noodles *= FL_OZ
+    tuple.sauce *= FL_OZ
+}
+
+func redWine(layers: String...) -> Bool {
+
+    let w = ["mozzarella", "ricotta", "béchamel"]
+    let r = ["meat", "sauce"]
+
+    return layers.filter { r.contains($0) } .count >= layers.filter { w.contains($0) } .count
+}
