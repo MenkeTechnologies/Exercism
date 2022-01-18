@@ -1,19 +1,12 @@
 using System;
+using System.Text.RegularExpressions;
 
 static class LogLine
 {
-    public static string Message(string logLine)
-    {
-        throw new NotImplementedException("Please implement the (static) LogLine.Message() method");
-    }
+    private static string REGEX = @"\[(.*)\]:\s+(.*\S)\s*";
+    public static string Message(string logLine) => Regex.Match(logLine, REGEX).Groups[2].Value;
 
-    public static string LogLevel(string logLine)
-    {
-        throw new NotImplementedException("Please implement the (static) LogLine.LogLevel() method");
-    }
+    public static string LogLevel(string logLine) => Regex.Match(logLine, REGEX).Groups[1].Value.ToLower();
 
-    public static string Reformat(string logLine)
-    {
-        throw new NotImplementedException("Please implement the (static) LogLine.Reformat() method");
-    }
+    public static string Reformat(string logLine) => $"{Message(logLine)} ({LogLevel(logLine)})";
 }
