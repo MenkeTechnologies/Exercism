@@ -1,32 +1,17 @@
+use std::collections::HashMap;
+
 pub fn brackets_are_balanced(string: &str) -> bool {
-    let mut v = vec![];
+    let mut stk = vec![];
+    let map: HashMap<char, char> = vec![('[', ']'), ('{', '}'), ('(', ')')].into_iter().collect();
 
-    for char in string.chars() {
-        match char {
-            '[' | '{' | '(' => v.push(char),
-            ']' | '}' | ')' => {
-                if v.is_empty() {
-                    return false;
-                }
-                let last_char = v.pop().unwrap();
-                if char == ']' && last_char != '[' {
-                    return false;
-                }
-                if char == ')' && last_char != '(' {
-                    return false;
-                }
-                if char == '}' && last_char != '{' {
-                    return false;
-                }
+    string.chars().all(|c| {
+        if map.contains_key(&c) {
+            stk.push(c)
+        } else if map.values().any(|&v| v == c) {
+            if stk.is_empty() || map[(&stk.pop().unwrap())] != c {
+                return false;
             }
-
-            _ => {}
         }
-    }
-
-    if v.is_empty() {
-        return true;
-    }
-
-    false
+        true
+    }) && stk.is_empty()
 }
