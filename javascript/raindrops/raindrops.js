@@ -3,6 +3,13 @@
 // convenience to get you started writing code faster.
 //
 
-export const convert = () => {
-  throw new Error('Remove this statement and implement this function');
+export const convert = (num) => {
+  let r = '';
+
+  r += num % 3 === 0 ? 'Pling' : '';
+  r += num % 5 === 0 ? 'Plang' : '';
+  r += num % 7 === 0 ? 'Plong' : '';
+
+  return r || `${num}`;
+
 };
