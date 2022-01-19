@@ -13,15 +13,9 @@ class Bob
     return 'Fine. Be that way!' if remark.empty?
 
     if remark !~ /[a-z]/ && remark =~ /[A-Z]/
-
-      return "Calm down, I know what I'm doing!" if remark =~ /\?$/
-
-      return 'Whoa, chill out!'
-
+      return remark =~ /\?$/ ? "Calm down, I know what I'm doing!" : 'Whoa, chill out!'
     end
 
-    return 'Sure.' if remark =~ /\?$/
-
-    'Whatever.'
+    remark =~ /\?$/ ? 'Sure.' : 'Whatever.'
   end
 end
