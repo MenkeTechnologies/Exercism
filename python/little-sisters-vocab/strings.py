@@ -8,7 +8,7 @@ def add_prefix_un(word):
     returns a new word with an 'un' prefix.
     """
 
-    pass
+    return f"un{word}"
 
 
 def make_word_groups(vocab_words):
@@ -23,7 +23,7 @@ def make_word_groups(vocab_words):
      by ' :: '.
     """
 
-    pass
+    return f" :: {vocab_words[0]}".join(vocab_words)
 
 
 def remove_suffix_ness(word):
@@ -35,7 +35,12 @@ def remove_suffix_ness(word):
     This function takes in a word and returns the base word with `ness` removed.
     """
 
-    pass
+    word = word.removesuffix("ness")
+
+    if word[-1] == 'i':
+        return word[:-1] + 'y'
+    else:
+        return word
 
 
 def adjective_to_verb(sentence, index):
@@ -51,4 +56,4 @@ def adjective_to_verb(sentence, index):
     adjective as a verb.
     """
 
-    pass
+    return sentence.split()[index].replace(".", "") + "en"
