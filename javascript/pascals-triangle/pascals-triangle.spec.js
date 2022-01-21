@@ -6,6 +6,7 @@ describe('Pascals Triangle', () => {
       expect(rows(0)).toEqual([]);
     });
 
+<<<<<<< HEAD
     test('single row', () => {
       expect(rows(1)).toEqual([[1]]);
     });
@@ -23,6 +24,25 @@ describe('Pascals Triangle', () => {
     });
 
     test('five rows', () => {
+=======
+    xtest('single row', () => {
+      expect(rows(1)).toEqual([[1]]);
+    });
+
+    xtest('two rows', () => {
+      expect(rows(2)).toEqual([[1], [1, 1]]);
+    });
+
+    xtest('three rows', () => {
+      expect(rows(3)).toEqual([[1], [1, 1], [1, 2, 1]]);
+    });
+
+    xtest('four rows', () => {
+      expect(rows(4)).toEqual([[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]);
+    });
+
+    xtest('five rows', () => {
+>>>>>>> c759d2b1af0c2bb9499a4789d0fc44e33579de66
       expect(rows(5)).toEqual([
         [1],
         [1, 1],
@@ -32,7 +52,11 @@ describe('Pascals Triangle', () => {
       ]);
     });
 
+<<<<<<< HEAD
     test('six rows', () => {
+=======
+    xtest('six rows', () => {
+>>>>>>> c759d2b1af0c2bb9499a4789d0fc44e33579de66
       expect(rows(6)).toEqual([
         [1],
         [1, 1],
@@ -43,7 +67,11 @@ describe('Pascals Triangle', () => {
       ]);
     });
 
+<<<<<<< HEAD
     test('ten rows', () => {
+=======
+    xtest('ten rows', () => {
+>>>>>>> c759d2b1af0c2bb9499a4789d0fc44e33579de66
       expect(rows(10)).toEqual([
         [1],
         [1, 1],
