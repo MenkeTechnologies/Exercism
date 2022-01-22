@@ -30,6 +30,16 @@ class Darts
 
     public function __construct(float $xAxis, float $yAxis)
     {
-        throw new BadFunctionCallException("Please implement the Darts class!");
+        $dist = pow(pow($xAxis, 2) + pow($yAxis, 2), 0.5);
+
+
+        if ($dist <= 1) {
+            $this->score = 10;
+        } else if ($dist <= 5) {
+            $this->score = 5;
+        } else if ($dist <= 10) {
+            $this->score = 1;
+        }
+
     }
 }
