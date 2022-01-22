@@ -26,8 +26,18 @@ declare(strict_types=1);
 
 class HighScores
 {
+    public array $scores;
+    public array $personalTopThree;
+    public int $latest;
+    public int $personalBest;
+
     public function __construct(array $scores)
     {
-        throw new \BadFunctionCallException("Implement the HighScores class");
+        $this->scores = $scores;
+        $this->latest = end($scores);
+        $this->personalBest = max($scores);
+        rsort($scores);
+        $this->personalTopThree = array_slice($scores, 0, 3);
+
     }
 }
