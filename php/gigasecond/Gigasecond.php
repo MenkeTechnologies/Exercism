@@ -24,7 +24,8 @@
 
 declare(strict_types=1);
 
-function from(DateTimeImmutable $date): DateTimeImmutable
+function from(DateTimeImmutable $date)
 {
-    throw new \BadFunctionCallException("Implement the from function");
+    $g = 1e9;
+    return $date->modify("+$g seconds");
 }
