@@ -3,6 +3,9 @@
 // convenience to get you started writing code faster.
 //
 
-export const countWords = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const countWords = (str) =>
+  str.toLowerCase().replace(/(?!\w|'t\b)./g, " ").trim().split(/\s+/).reduce((acc, n) => ({
+    ...acc,
+    [n]: ~~acc[n] + 1
+  }), {});
+
