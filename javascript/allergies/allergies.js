@@ -1,18 +1,20 @@
-//
-// This is only a SKELETON file for the 'Allergies' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+const MAP = {
+  eggs: 1,
+  peanuts: 2,
+  shellfish: 4,
+  strawberries: 8,
+  tomatoes: 16,
+  chocolate: 32,
+  pollen: 64,
+  cats: 128,
+}
 
 export class Allergies {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
+  constructor(mask) {
+    this.mask = mask
   }
 
-  list() {
-    throw new Error('Remove this statement and implement this function');
-  }
+  list = () => Object.keys(MAP).filter(a => this.allergicTo(a))
 
-  allergicTo() {
-    throw new Error('Remove this statement and implement this function');
-  }
+  allergicTo = a => (this.mask & MAP[a] || 0) > 0
 }
