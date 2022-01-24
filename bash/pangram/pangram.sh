@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-res=$(echo "$1" | perl -nE '$_=lc;s@[^[:alpha:]]@@g;say for split //' | sort | uniq | perl -pe 's@\n@@')
+res=$(echo "$1" | perl -MList::Util=uniq -nE '$_=lc;s@[^[:alpha:]]@@g;print for uniq sort split //')
 
 
 [[ $res == abcdefghijklmnopqrstuvwxyz ]] && echo true || echo false
