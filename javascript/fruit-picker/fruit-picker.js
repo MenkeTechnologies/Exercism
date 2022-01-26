@@ -15,9 +15,7 @@ import { checkStatus, checkInventory } from './grocer';
  * Returns the service status as a boolean value
  * @return {boolean}
  */
-export function isServiceOnline() {
-  throw new Error('Implement the isServiceOnline function');
-}
+export const isServiceOnline = () => checkStatus(x => x === 'ONLINE')
 
 /**
  * Pick a fruit using the checkInventory API
@@ -27,9 +25,8 @@ export function isServiceOnline() {
  * @param {InventoryCallback} callback
  * @return {AvailabilityAction} the result from checkInventory
  */
-export function pickFruit(variety, quantity, callback) {
-  throw new Error('Implement the pickFruit function');
-}
+export const pickFruit = (variety, quantity, callback) =>
+  checkInventory({variety, quantity}, callback)
 
 /**
  * This is a callback function to be passed to the checkInventory API
@@ -38,9 +35,13 @@ export function pickFruit(variety, quantity, callback) {
  * @param {boolean | undefined} isAvailable
  * @return {AvailabilityAction} whether the fruit was purchased 'PURCHASE' or 'NOOP'
  */
-export function purchaseInventoryIfAvailable(err, isAvailable) {
-  throw new Error('Implement the purchaseInventoryIfAvailable function');
-}
+export const purchaseInventoryIfAvailable = (err, isAvailable) => {
+  if (err) {
+    throw new Error();
+  }
+
+  return isAvailable ? 'PURCHASE' : 'NOOP';
+};
 
 /**
  * Pick a fruit, and if it is available, purchase it
@@ -49,6 +50,5 @@ export function purchaseInventoryIfAvailable(err, isAvailable) {
  * @param {number} quantity
  * @return {AvailabilityAction} whether the fruit was purchased 'PURCHASE' or 'NOOP'
  */
-export function pickAndPurchaseFruit(variety, quantity) {
-  throw new Error('Implement the pickAndPurchaseFruit function');
-}
+export const pickAndPurchaseFruit = (variety, quantity) =>
+  pickFruit(variety, quantity, purchaseInventoryIfAvailable)
