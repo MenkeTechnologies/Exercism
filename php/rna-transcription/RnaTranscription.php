@@ -24,7 +24,18 @@
 
 declare(strict_types=1);
 
+
+const dnaToRna = [
+    "G" => "C",
+    "C" => "G",
+    "T" => "A",
+    "A" => "U"
+];
+
 function toRna(string $dna): string
 {
-    throw new \BadFunctionCallException("Implement the toRna function");
+    return implode("", array_map(function ($c) {
+        return dnaToRna[$c];
+    }, str_split(strtoupper($dna))));
+
 }
