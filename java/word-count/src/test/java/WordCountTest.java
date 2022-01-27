@@ -100,7 +100,17 @@ public class WordCountTest {
 
     }
 
-    
+    @Test
+    public void mes() {
+        expectedWordCount.put("men's", 1);
+        expectedWordCount.put("shoes", 1);
+
+        actualWordCount = wordCount.phrase("men's shoes");
+        assertEquals(
+                expectedWordCount, actualWordCount
+        );
+    }
+
     @Test
     public void includeNumbers() {
         expectedWordCount.put("testing", 2);
