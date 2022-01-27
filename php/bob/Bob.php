@@ -28,6 +28,17 @@ class Bob
 {
     public function respondTo(string $str): string
     {
-        throw new \BadMethodCallException("Implement the respondTo function");
+        $nows = preg_replace('/\s/', "", $str);
+
+        if (empty($nows)) return "Fine. Be that way!";
+
+        if (preg_match('/[A-Z]/', $nows) && !preg_match('/[a-z]/', $nows)) {
+
+            return preg_match('/\?$/', $nows) ? "Calm down, I know what I'm doing!" : "Whoa, chill out!";
+
+        }
+
+        return preg_match('/\?$/', $nows) ? "Sure." : "Whatever.";
+
     }
 }
