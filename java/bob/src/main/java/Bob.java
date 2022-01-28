@@ -1,10 +1,16 @@
-/*
+import java.util.regex.Pattern;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Bob {
+    public String hey(String s) {
 
-Please remove this comment when submitting your solution.
+        s = s.replaceAll("\\s", "");
 
-*/
+        if (s.isEmpty()) return "Fine. Be that way!";
+
+        if (Pattern.compile("[A-Z]").matcher(s).find() && !Pattern.compile("[a-z]").matcher(s).find()) {
+            return s.endsWith("?") ? "Calm down, I know what I'm doing!" : "Whoa, chill out!";
+        }
+
+        return s.endsWith("?") ? "Sure." : "Whatever.";
+    }
+}
