@@ -1,9 +1,24 @@
+import java.util.Arrays;
+
 class ResistorColor {
+    enum Colours {
+        black,
+        brown,
+        red,
+        orange,
+        yellow,
+        green,
+        blue,
+        violet,
+        grey,
+        white
+    }
+
     int colorCode(String color) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return Colours.valueOf(color).ordinal();
     }
 
     String[] colors() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        return Arrays.stream(Colours.values()).map(Enum::name).toArray(String[]::new);
     }
 }
