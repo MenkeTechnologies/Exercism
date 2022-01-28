@@ -1,11 +1,25 @@
+import static java.lang.Math.pow;
+
 class Darts {
 
+    double distance;
     Darts(double x, double y) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        distance = pow(pow(x, 2) + pow(y, 2), 0.5);
     }
 
     int score() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+
+        if (distance <= 1) {
+            return 10;
+        }
+        if (distance <= 5) {
+            return 5;
+        }
+        if (distance <= 10) {
+            return 1;
+        }
+
+        return 0;
     }
 
 }
