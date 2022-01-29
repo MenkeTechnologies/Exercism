@@ -1,58 +1,47 @@
 #!/usr/bin/env bash
+set -o noglob
 
-if [[ "${BASH_SOURCE[0]}" == "$0" ]]; then
-    echo "This library of functions should be sourced into another script" >&2
-    exit 4
-fi
-bash_version=$((10 * BASH_VERSINFO[0] + BASH_VERSINFO[1]))
-if (( bash_version < 43 )); then
-    echo "This library requires at least bash version 4.3" >&2
-    return 4
-fi
-
-# Due to inherent bash limitations around word splitting and globbing,
-# functions that are intended to *return a list* are instead required to
-# receive a nameref parameter, the name of an array variable that will be
-# populated in the list function.
-# See the filter, map and reverse functions.
-
-# Also note that nameref parameters cannot have the same name as the
-# name of the variable in the calling scope.
-
-
-# Append some elements to the given list.
 list::append () {
-    echo "Implement me" >&2
-    return 1
+    eval "$1+=( ${@:2} )"
 }
 
-# Return only the list elements that pass the given function.
 list::filter () {
-    echo "Implement me" >&2
-    return 1
+    eval l="( \${$2[@]} )"
+    for i in "${l[@]}" ; do
+        $1 "$i" && eval "$3+=( $i )"
+    done
 }
 
-# Transform the list elements, using the given function,
-# into a new list.
 list::map () {
-    echo "Implement me" >&2
-    return 1
+    eval l="( \${$2[@]} )"
+    for n in "${l[@]}" ; do
+        eval "$3+=( $($1 $n) )"
+    done
 }
 
-# Left-fold the list using the function and the initial value.
 list::foldl () {
-    echo "Implement me" >&2
-    return 1
+    eval l="( \"\${$3[@]}\" )"
+    local t="$2"
+    for (( i = 0; i < ${#l[@]}; i++ )); do
+        t=$($1 "$t" "${l[$i]}")
+    done
+    echo "$t"
 }
 
-# Right-fold the list using the function and the initial value.
 list::foldr () {
-    echo "Implement me" >&2
-    return 1
+    eval l="( \"\${$3[@]}\" )"
+    local t="$2"
+    top=$(( ${#l[@]} - 1 ))
+    for (( i = $top; i >= 0; i--)); do
+        t="$($1 "${l[$i]}" "$t")"
+    done
+    echo "$t"
 }
 
-# Return the list reversed
 list::reverse () {
-    echo "Implement me" >&2
-    return 1
+    eval l="( \${$1[@]} )"
+    top=$(( ${#l[@]} - 1 ))
+    for (( i =$top; i >= 0; i--)); do
+        eval "$2+=( ${l[$i]} )"
+    done
 }
