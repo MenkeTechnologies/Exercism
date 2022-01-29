@@ -1,7 +1,8 @@
 ﻿module DifferenceOfSquares
 
-let squareOfSum (number: int): int = failwith "You need to implement this function."
+let sq x = x * x
+let squareOfSum (number: int): int = seq {1 .. number} |> Seq.sum |>  sq
 
-let sumOfSquares (number: int): int = failwith "You need to implement this function."
+let sumOfSquares (number: int): int = seq {1 .. number } |> Seq.map(sq) |> Seq.sum
 
-let differenceOfSquares (number: int): int = failwith "You need to implement this function."
+let differenceOfSquares (number: int): int = squareOfSum number - sumOfSquares number
