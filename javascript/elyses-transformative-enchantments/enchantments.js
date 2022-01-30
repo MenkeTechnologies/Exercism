@@ -7,9 +7,7 @@
  *
  * @returns {number[]} deck with every card doubled
  */
-export function seeingDouble(deck) {
-  throw new Error('Implement the seeingDouble function');
-}
+export const seeingDouble = deck => deck.map(i => i * 2)
 
 /**
  *  Creates triplicates of every 3 found in the deck.
@@ -18,9 +16,8 @@ export function seeingDouble(deck) {
  *
  * @returns {number[]} deck with triplicate 3s
  */
-export function threeOfEachThree(deck) {
-  throw new Error('Implement the threeOfEachThree function');
-}
+export const threeOfEachThree = deck =>
+  deck.flatMap(i => i === 3 ? [i, i, i] : [i])
 
 /**
  * Extracts the middle two cards from a deck.
@@ -30,9 +27,8 @@ export function threeOfEachThree(deck) {
  *
  * @returns {number[]} deck with only two middle cards
  */
-export function middleTwo(deck) {
-  throw new Error('Implement the middleTwo function');
-}
+export const middleTwo = deck =>
+  deck.filter((n, i) => i === deck.length / 2 || i === deck.length / 2 + 1)
 
 /**
  * Moves the outside two cards to the middle.
@@ -41,10 +37,8 @@ export function middleTwo(deck) {
  *
  * @returns {number[]} transformed deck
  */
-
-export function sandwichTrick(deck) {
-  throw new Error('Implement the sandwichTrick function');
-}
+export const sandwichTrick = deck =>
+  deck.splice(deck.length / 2, 0, deck.shift(), deck.pop())
 
 /**
  * Removes every card from the deck except 2s.
@@ -53,9 +47,7 @@ export function sandwichTrick(deck) {
  *
  * @returns {number[]} deck with only 2s
  */
-export function twoIsSpecial(deck) {
-  throw new Error('Implement the twoIsSpecial function');
-}
+export const twoIsSpecial = deck => deck.filter(i => i !== 2)
 
 /**
  * Returns a perfectly order deck from lowest to highest.
@@ -64,9 +56,7 @@ export function twoIsSpecial(deck) {
  *
  * @returns {number[]} ordered deck
  */
-export function perfectlyOrdered(deck) {
-  throw new Error('Implement the perfectlyOrdered function');
-}
+export const perfectlyOrdered = deck => deck.sort()
 
 /**
  * Reorders the deck so that the top card ends up at the bottom.
@@ -75,6 +65,5 @@ export function perfectlyOrdered(deck) {
  *
  * @returns {number[]} reordered deck
  */
-export function reorder(deck) {
-  throw new Error('Implement the reorder function');
-}
+export const reorder = deck =>
+  deck.reverse()
