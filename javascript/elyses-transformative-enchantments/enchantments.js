@@ -28,7 +28,7 @@ export const threeOfEachThree = deck =>
  * @returns {number[]} deck with only two middle cards
  */
 export const middleTwo = deck =>
-  deck.filter((n, i) => i === deck.length / 2 || i === deck.length / 2 + 1)
+  deck.slice(Math.floor(deck.length / 2) - 1, Math.floor(deck.length / 2) + 1)
 
 /**
  * Moves the outside two cards to the middle.
@@ -37,8 +37,13 @@ export const middleTwo = deck =>
  *
  * @returns {number[]} transformed deck
  */
-export const sandwichTrick = deck =>
-  deck.splice(deck.length / 2, 0, deck.shift(), deck.pop())
+export const sandwichTrick = deck => {
+  let f = deck.shift();
+  let l = deck.pop();
+  deck.splice(Math.round(deck.length / 2), 0, l, f)
+  return deck
+
+}
 
 /**
  * Removes every card from the deck except 2s.
@@ -47,7 +52,7 @@ export const sandwichTrick = deck =>
  *
  * @returns {number[]} deck with only 2s
  */
-export const twoIsSpecial = deck => deck.filter(i => i !== 2)
+export const twoIsSpecial = deck => deck.filter(i => i === 2)
 
 /**
  * Returns a perfectly order deck from lowest to highest.
@@ -56,7 +61,7 @@ export const twoIsSpecial = deck => deck.filter(i => i !== 2)
  *
  * @returns {number[]} ordered deck
  */
-export const perfectlyOrdered = deck => deck.sort()
+export const perfectlyOrdered = deck => deck.sort((a, b) => a - b)
 
 /**
  * Reorders the deck so that the top card ends up at the bottom.
