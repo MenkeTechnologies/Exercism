@@ -10,25 +10,25 @@ void main() {
     test('first prime', () {
       final int result = nthPrime.prime(1);
       expect(result, equals(2));
-    }, skip: false);
+    });
 
     test('second prime', () {
       final int result = nthPrime.prime(2);
       expect(result, equals(3));
-    }, skip: true);
+    });
 
     test('sixth prime', () {
       final int result = nthPrime.prime(6);
       expect(result, equals(13));
-    }, skip: true);
+    });
 
     test('big prime', () {
       final int result = nthPrime.prime(10001);
       expect(result, equals(104743));
-    }, skip: true);
+    });
 
     test('there is no zeroth prime', () {
       expect(() => nthPrime.prime(0), throwsA(noZerothPrime));
-    }, skip: true);
+    });
   });
 }
