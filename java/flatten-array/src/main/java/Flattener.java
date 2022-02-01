@@ -1,10 +1,13 @@
-/*
+import java.util.List;
+import java.util.Objects;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
-
-Please remove this comment when submitting your solution.
-
-*/
+class Flattener {
+    public <T> List<T> flatten(List<T> array) {
+        return array.stream().filter(Objects::nonNull).map(n -> n instanceof List ?
+                flatten((List<T>) n) : List.of(n)).reduce(List.of(), (acc, n) ->
+                Stream.concat(acc.stream(), n.stream()).collect(Collectors.toList())
+        );
+    }
+}
