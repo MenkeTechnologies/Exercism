@@ -1,4 +1,1 @@
-DateTime add(final DateTime birthDate) {
-  // Replace the throw call and put your code here
-  throw UnimplementedError();
-}
+DateTime add(final DateTime birthDate) => birthDate.add(new Duration(seconds: 1e9.toInt()));
