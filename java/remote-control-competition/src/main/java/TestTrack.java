@@ -1,13 +1,16 @@
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class TestTrack {
 
     public static void race(RemoteControlCar car) {
-        throw new UnsupportedOperationException("Please implement the (static) TestTrack.race() method");
+        car.drive();
     }
 
     public static List<ProductionRemoteControlCar> getRankedCars(ProductionRemoteControlCar prc1,
                                                                  ProductionRemoteControlCar prc2) {
-        throw new UnsupportedOperationException("Please implement the (static) TestTrack.getRankedCars() method");
+        return Stream.of(prc1, prc2).sorted().collect(Collectors.toList());
+
     }
 }
