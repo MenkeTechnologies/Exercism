@@ -1,8 +1,2 @@
-//
-// This is only a SKELETON file for the 'Pangram' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const isPangram = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const isPangram = (str) =>
+  [...Array(26).keys()].map(i => String.fromCharCode('A'.charCodeAt(0) + i)).every(c => str.toUpperCase().includes(c));
