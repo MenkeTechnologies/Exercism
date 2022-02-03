@@ -3,6 +3,12 @@
 // convenience to get you started writing code faster.
 //
 
-export const toRna = () => {
-  throw new Error('Remove this statement and implement this function');
+const MAP = {
+  G: 'C',
+  C: 'G',
+  T: 'A',
+  A: 'U'
 };
+
+export const toRna = (str) =>
+  str.toUpperCase().split("").map(c => MAP[c]).reduce((acc, n) => acc + n, "");
