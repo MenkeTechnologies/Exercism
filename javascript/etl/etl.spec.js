@@ -8,7 +8,7 @@ describe('Transform legacy to new', () => {
     expect(transform(old)).toEqual(expected);
   });
 
-  xtest('single score with multiple letters', () => {
+  test('single score with multiple letters', () => {
     const old = { 1: ['A', 'E', 'I', 'O', 'U'] };
     const expected = {
       a: 1,
@@ -21,7 +21,7 @@ describe('Transform legacy to new', () => {
     expect(transform(old)).toEqual(expected);
   });
 
-  xtest('multiple scores with multiple letters', () => {
+  test('multiple scores with multiple letters', () => {
     const old = { 1: ['A', 'E'], 2: ['D', 'G'] };
     const expected = {
       a: 1,
@@ -33,7 +33,7 @@ describe('Transform legacy to new', () => {
     expect(transform(old)).toEqual(expected);
   });
 
-  xtest('multiple scores with differing numbers of letters', () => {
+  test('multiple scores with differing numbers of letters', () => {
     const old = {
       1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T'],
       2: ['D', 'G'],

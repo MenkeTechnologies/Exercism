@@ -3,6 +3,7 @@
 // convenience to get you started writing code faster.
 //
 
-export const transform = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const transform = (dict) =>
+  Object.entries(dict).reduce((acc1, [num,letters]) =>
+      ({...acc1, ...(letters.reduce((acc2, letter) => ({...acc2, [letter.toLowerCase()]: parseInt(num)}), {}))})
+    , {});
