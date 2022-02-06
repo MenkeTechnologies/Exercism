@@ -18,7 +18,7 @@ static void test_empty_lists(void)
 
 static void test_empty_list_within_non_empty_list(void)
 {
-   TEST_IGNORE();   // delete this line to run test
+   
    int base_list[] = { 1, 2, 3 };
 
    TEST_ASSERT_EQUAL(SUBLIST,
@@ -27,7 +27,7 @@ static void test_empty_list_within_non_empty_list(void)
 
 static void test_non_empty_list_contains_empty_list(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 2, 3 };
 
    TEST_ASSERT_EQUAL(SUPERLIST, check_lists(list_to_compare, NULL,
@@ -36,7 +36,7 @@ static void test_non_empty_list_contains_empty_list(void)
 
 static void test_list_equals_itself(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 2, 3 };
    int base_list[] = { 1, 2, 3 };
 
@@ -47,7 +47,7 @@ static void test_list_equals_itself(void)
 
 static void test_different_lists(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 2, 3 };
    int base_list[] = { 2, 3, 4 };
 
@@ -58,7 +58,7 @@ static void test_different_lists(void)
 
 static void test_false_start(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 2, 5 };
    int base_list[] = { 0, 1, 2, 3, 1, 2, 5, 6 };
 
@@ -69,7 +69,7 @@ static void test_false_start(void)
 
 static void test_consecutive(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 1, 2 };
    int base_list[] = { 0, 1, 1, 1, 2, 1, 2 };
 
@@ -80,7 +80,7 @@ static void test_consecutive(void)
 
 static void test_sublist_at_start(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 0, 1, 2 };
    int base_list[] = { 0, 1, 2, 3, 4, 5 };
 
@@ -91,7 +91,7 @@ static void test_sublist_at_start(void)
 
 static void test_sublist_at_middle(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 2, 3, 4 };
    int base_list[] = { 0, 1, 2, 3, 4, 5 };
 
@@ -102,7 +102,7 @@ static void test_sublist_at_middle(void)
 
 static void test_sublist_at_end(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 3, 4, 5 };
    int base_list[] = { 0, 1, 2, 3, 4, 5 };
 
@@ -113,7 +113,7 @@ static void test_sublist_at_end(void)
 
 static void test_at_start_of_superlist(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 0, 1, 2, 3, 4, 5 };
    int base_list[] = { 0, 1, 2 };
 
@@ -124,7 +124,7 @@ static void test_at_start_of_superlist(void)
 
 static void test_in_middle_of_superlist(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 0, 1, 2, 3, 4, 5 };
    int base_list[] = { 2, 3 };
 
@@ -135,7 +135,7 @@ static void test_in_middle_of_superlist(void)
 
 static void test_at_end_of_superlist(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 0, 1, 2, 3, 4, 5 };
    int base_list[] = { 3, 4, 5 };
 
@@ -146,7 +146,7 @@ static void test_at_end_of_superlist(void)
 
 static void test_first_list_missing_element_from_second_list(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 3 };
    int base_list[] = { 1, 2, 3 };
 
@@ -157,7 +157,7 @@ static void test_first_list_missing_element_from_second_list(void)
 
 static void test_second_list_missing_element_from_first_list(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 2, 3 };
    int base_list[] = { 1, 3 };
 
@@ -168,7 +168,7 @@ static void test_second_list_missing_element_from_first_list(void)
 
 static void test_first_list_missing_additional_digits_from_second_list(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 2 };
    int base_list[] = { 1, 22 };
 
@@ -179,7 +179,7 @@ static void test_first_list_missing_additional_digits_from_second_list(void)
 
 static void test_order_matters_to_a_list(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 2, 3 };
    int base_list[] = { 3, 2, 1 };
 
@@ -190,7 +190,7 @@ static void test_order_matters_to_a_list(void)
 
 static void test_same_digits_but_different_numbers(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 0, 1 };
    int base_list[] = { 10, 1 };
 
@@ -201,7 +201,7 @@ static void test_same_digits_but_different_numbers(void)
 
 static void test_different_signs(void)
 {
-   TEST_IGNORE();
+   
    int list_to_compare[] = { 1, 2, 3 };
    int base_list[] = { 1, -2, 3 };
 

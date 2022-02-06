@@ -38,7 +38,7 @@ static void
 test_measure_using_bucket_one_of_size_3_and_bucket_two_of_size_5_start_with_bucket_two(
     void)
 {
-   TEST_IGNORE();
+   
    bucket_result_t expected = { .possible = true,
                                 .move_count = 8,
                                 .goal_bucket = BUCKET_ID_2,
@@ -51,7 +51,7 @@ static void
 test_measure_using_bucket_one_of_size_7_and_bucket_two_of_size_11_start_with_bucket_one(
     void)
 {
-   TEST_IGNORE();
+   
    bucket_result_t expected = { .possible = true,
                                 .move_count = 14,
                                 .goal_bucket = BUCKET_ID_1,
@@ -64,7 +64,7 @@ static void
 test_measure_using_bucket_one_of_size_7_and_bucket_two_of_size_11_start_with_bucket_two(
     void)
 {
-   TEST_IGNORE();
+   
    bucket_result_t expected = { .possible = true,
                                 .move_count = 18,
                                 .goal_bucket = BUCKET_ID_2,
@@ -77,7 +77,7 @@ static void
 test_measure_one_step_using_bucket_one_of_size_1_and_bucket_two_of_size_3_start_with_bucket_two(
     void)
 {
-   TEST_IGNORE();
+   
    bucket_result_t expected = { .possible = true,
                                 .move_count = 1,
                                 .goal_bucket = BUCKET_ID_2,
@@ -90,7 +90,7 @@ static void
 test_measure_using_bucket_one_of_size_2_and_bucket_two_of_size_3_start_with_bucket_one_and_end_with_bucket_two(
     void)
 {
-   TEST_IGNORE();
+   
    bucket_result_t expected = { .possible = true,
                                 .move_count = 2,
                                 .goal_bucket = BUCKET_ID_2,
@@ -101,7 +101,7 @@ test_measure_using_bucket_one_of_size_2_and_bucket_two_of_size_3_start_with_buck
 
 static void test_not_possible_to_reach_the_goal(void)
 {
-   TEST_IGNORE();
+   
    bucket_result_t expected = { .possible = false };
    bucket_result_t actual = measure(6, 15, 5, BUCKET_ID_1);
    assert_results_match(expected, actual);
@@ -110,7 +110,7 @@ static void test_not_possible_to_reach_the_goal(void)
 static void
 test_with_the_same_buckets_but_a_different_goal_then_it_is_possible(void)
 {
-   TEST_IGNORE();
+   
    bucket_result_t expected = { .possible = true,
                                 .move_count = 10,
                                 .goal_bucket = BUCKET_ID_2,
@@ -121,7 +121,7 @@ test_with_the_same_buckets_but_a_different_goal_then_it_is_possible(void)
 
 static void test_goal_larger_than_both_buckets_is_impossible(void)
 {
-   TEST_IGNORE();
+   
    bucket_result_t expected = { .possible = false };
    bucket_result_t actual = measure(5, 7, 8, BUCKET_ID_1);
    assert_results_match(expected, actual);
