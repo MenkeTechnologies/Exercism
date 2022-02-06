@@ -1,64 +1,40 @@
-"""Functions to help play and score a game of blackjack.
-
-How to play blackjack:    https://bicyclecards.com/how-to-play/blackjack/
-"Standard" playing cards: https://en.wikipedia.org/wiki/Standard_52-card_deck
-"""
+VAL_MAP = {
+    'A': 1,
+    'K': 10,
+    'Q': 10,
+    'J': 10,
+}
 
 
 def value_of_card(card):
-    """Determine the scoring value of a card.
+    return VAL_MAP.get(card) or int(card)
 
-    :param card: str - given card.
-    :return: int - value of a given card (J, Q, K = 10, 'A' = 1) numerical value otherwise.
-    """
-
-    pass
 
 def higher_card(card_one, card_two):
-    """Determine which card has a higher value in the hand.
+    v1 = value_of_card(card_one)
+    v2 = value_of_card(card_two)
 
-    :param card_one, card_two: str - cards dealt.  J, Q, K = 10, 'A' = 1, all others are numerical value.
-    :return: higher value card - str. Tuple of both cards if they are of equal value.
-    """
-
-    pass
+    return card_one if v1 > v2 else card_two if v2 > v1 else (card_one, card_two)
 
 
 def value_of_ace(card_one, card_two):
-    """Calculate the most advantageous value for the ace card.
-
-    :param card_one, card_two: str - card (J, Q, K == 10, numerical value otherwise)
-    :return: int - value of the upcoming ace card (either 1 or 11).
-    """
-
-    pass
+    v1 = value_of_card(card_one)
+    v2 = value_of_card(card_two)
+    return 1 if card_one == 'A' or card_two == 'A' else 11 if v1 + v2 + 11 <= 21 else 1
 
 
 def is_blackjack(card_one, card_two):
-    """Determine if the hand is a 'natural' or 'blackjack'.
-
-    :param card_one, card_two: str - cards dealt.  J, Q, K = 10, 'A' = 11, all others are numerical value.
-    :return: bool - if the hand is a blackjack (two cards worth 21).
-    """
-
-    pass
+    l = ['10', 'J', 'K', 'Q']
+    return False if card_one == 'A' and card_two == 'A' else True if card_one == 'A' and card_two in l else True if card_two == 'A' and card_one in l else False
 
 
 def can_split_pairs(card_one, card_two):
-    """Determine if a player can split their hand into two hands.
-
-    :param card_one, card_two: str - cards in hand.
-    :return: bool - if the hand can be split into two pairs (i.e. cards are of the same value).
-    """
-
-    pass
+    v1 = value_of_card(card_one)
+    v2 = value_of_card(card_two)
+    return True if v1 == v2 else False
 
 
 def can_double_down(card_one, card_two):
-    """Determine if a blackjack player can place a double down bet.
-
-    :param card_one, card_two: str - first and second cards in hand.
-    :return: bool - if the hand can be doubled down (i.e. totals 9, 10 or 11 points).
-    """
-
-    pass
+    v1 = value_of_card(card_one)
+    v2 = value_of_card(card_two)
+    return True if v1 + v2 in [9, 10, 11] else False
