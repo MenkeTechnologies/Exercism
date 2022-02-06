@@ -1,7 +1,25 @@
-=begin
-Write your code for the 'Allergies' exercise in this file. Make the tests in
-`allergies_test.rb` pass.
+ALLERGIES_HASH = {
+  'eggs' => 1,
+  'peanuts' => 2,
+  'shellfish' => 4,
+  'strawberries' => 8,
+  'tomatoes' => 16,
+  'chocolate' => 32,
+  'pollen' => 64,
+  'cats' => 128
+}.freeze
 
-To get started with TDD, see the `README.md` file in your
-`ruby/allergies` directory.
-=end
+class Allergies
+  def initialize(mask)
+    @mask = mask
+  end
+
+  def allergic_to?(allergen)
+    (@mask & ALLERGIES_HASH[allergen]).positive?
+  end
+
+  def list
+    ALLERGIES_HASH.keys.filter { allergic_to? _1 }
+  end
+
+end
