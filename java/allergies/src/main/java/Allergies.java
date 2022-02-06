@@ -1,10 +1,19 @@
-/*
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Allergies {
+    int mask;
 
-Please remove this comment when submitting your solution.
+    public Allergies(int mask) {
+        this.mask = mask;
+    }
 
-*/
+    public boolean isAllergicTo(Allergen allergen) {
+        return (mask & allergen.getScore()) > 0;
+    }
+
+    public List<Allergen> getList() {
+        return Arrays.stream(Allergen.values()).filter(this::isAllergicTo).collect(Collectors.toList());
+    }
+}
