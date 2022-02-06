@@ -1,10 +1,18 @@
-/*
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class NucleotideCounter {
+    Map<Character, Integer> map = new HashMap<>(Map.of('A', 0, 'C', 0, 'G', 0, 'T', 0));
 
-Please remove this comment when submitting your solution.
+    public NucleotideCounter(String s) {
+        map = s.chars().mapToObj(c -> (char) c).collect(Collectors.groupingBy(s1 -> s1)).entrySet().stream().collect(Collectors.toMap(c -> {
+            if (!map.containsKey(c.getKey())) throw new IllegalArgumentException("bad nucleotide " + c);
+            return c.getKey();
+        }, v -> v.getValue().size(), (integer, integer2) -> integer2, () -> map));
+    }
 
-*/
+    public Map<Character, Integer> nucleotideCounts() {
+        return map;
+    }
+}
