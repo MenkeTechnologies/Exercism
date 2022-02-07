@@ -1,4 +1,4 @@
-# Personal [Exercism](https://exercism.io) Solutions
+# Personal [Exercism](https://exercism.org) Solutions
 
 
 # created by MenkeTechnologies
