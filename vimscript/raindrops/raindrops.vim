@@ -13,6 +13,9 @@
 "   :echo Raindrops(15)
 "   PlingPlang
 "
-function! Raindrops(number) abort
-  " your solution goes here
+let s:map = {3: 'Pling', 5: 'Plang', 7: 'Plong'}
+function! Raindrops(n) abort
+    let s = join(map(filter(keys(s:map), {i,k -> a:n % k == 0}), {i,k -> s:map[k]}), '')
+
+    return empty(s) ? string(a:n) : s
 endfunction
