@@ -1,0 +1,1 @@
+module PascalsTriangle (rows) where
