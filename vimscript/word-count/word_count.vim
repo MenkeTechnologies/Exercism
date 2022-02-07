@@ -1,14 +1,14 @@
-"
-" Given a phrase, return a dictionary containing the count of occurrences of
-" each word.
-"
-" Example:
-"
-"   :echo WordCount('olly olly in come free')
-"   {'olly': 2, 'come': 1, 'in': 1, 'free': 1}
-"
-function! WordCount(phrase) abort
+function! WordCount(s) abort
+    let h = {}
+    for w in split(tolower(a:s), "\\v(\\s'|('\\s|$)|[^'[:alnum:]]+)")
+        if !has_key(h, w)
+            let h[w] = 1
+        else
+            let h[w] += 1
+        endif
 
-  " your solution goes here
+    endfor
+
+    return h
 
 endfunction
