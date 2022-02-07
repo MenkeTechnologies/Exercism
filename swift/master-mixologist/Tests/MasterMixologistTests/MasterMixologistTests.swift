@@ -25,28 +25,28 @@ final class MasterMixologistTests: XCTestCase {
   }
 
   func testMakeWedges() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let got = makeWedges(
       needed: 42, limes: ["small", "large", "large", "medium", "small", "large", "large"])
     XCTAssertEqual(got, 6, "You needto use 6 limes to fill the bin; you said you need \(got).")
   }
 
   func testMakeWedgesNoNeed() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let got = makeWedges(
       needed: 0, limes: ["small", "large", "large", "medium", "small", "large", "large"])
     XCTAssertEqual(got, 0, "Your bin was full, so you used 0 limes; you said you used \(got).")
   }
 
   func testMakeWedgesNoLimes() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let got = makeWedges(needed: 42, limes: [])
     XCTAssertEqual(
       got, 0, "You have no limes to cut up so you used 0 limes; you said you used \(got).")
   }
 
   func testMakeWedgesTooFewLimes() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let got = makeWedges(
       needed: 80, limes: ["small", "large", "large", "medium", "small", "large", "large"])
     XCTAssertEqual(
@@ -54,7 +54,7 @@ final class MasterMixologistTests: XCTestCase {
   }
 
   func testFinishShift() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let got = finishShift(minutesLeft: 12, remainingOrders: orders)
     let expected = Array(orders.dropFirst(8))
     XCTAssertEqual(
@@ -63,7 +63,7 @@ final class MasterMixologistTests: XCTestCase {
   }
 
   func testFinishShiftJustRunOver() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let got = finishShift(minutesLeft: 30, remainingOrders: orders)
     let expected: [[String]] = []
     XCTAssertEqual(
@@ -72,7 +72,7 @@ final class MasterMixologistTests: XCTestCase {
   }
 
   func testFinishShiftLeaveEarly() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let got = finishShift(minutesLeft: 120, remainingOrders: orders)
     let expected: [[String]] = []
     XCTAssertEqual(
@@ -81,7 +81,7 @@ final class MasterMixologistTests: XCTestCase {
   }
 
   func testOrderTracker() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let orders = [
       (drink: "beer", time: "10:01"), (drink: "soda", time: "10:02"),
       (drink: "shot", time: "10:05"), (drink: "fancy drink", time: "10:06"),
@@ -98,7 +98,7 @@ final class MasterMixologistTests: XCTestCase {
   }
 
   func testOrderOneEach() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let orders = [
       (drink: "beer", time: "10:01"), (drink: "soda", time: "10:02"),
       (drink: "shot", time: "10:05"), (drink: "fancy drink", time: "10:06"),
@@ -113,7 +113,7 @@ final class MasterMixologistTests: XCTestCase {
   }
 
   func testOrderTrackerNoBeer() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let orders = [
       (drink: "soda", time: "10:02"), (drink: "shot", time: "10:05"),
       (drink: "fancy drink", time: "10:06"), (drink: "soda", time: "10:09"),
@@ -128,7 +128,7 @@ final class MasterMixologistTests: XCTestCase {
   }
 
   func testOrderTrackerNoSoda() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let orders = [
       (drink: "beer", time: "10:01"), (drink: "shot", time: "10:05"),
       (drink: "fancy drink", time: "10:06"), (drink: "beer", time: "10:15"),
@@ -144,7 +144,7 @@ final class MasterMixologistTests: XCTestCase {
   }
 
   func testOrderTrackerNils() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
+    
     let orders = [(drink: String, time: String)]()
     let expectedBeers: DrinkTrack = nil
     let expectedSodas: DrinkTrack = nil
