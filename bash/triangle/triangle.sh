@@ -1,24 +1,29 @@
 #!/usr/bin/env bash
+t(){ echo true; }
+f(){ echo false; exit 0; }
+check(){ eval "$1" && t || f; }
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+guess=$1
+shift
+
+sorted=( $(printf "%s\n" "$@" | sort -n) )
+
+(( $(echo "${sorted[0]} + ${sorted[1]} >= ${sorted[2]}" | bc) )) || f
+
+set=( $(printf "%s\n" "$@" | sort -u) )
+
+for i in ${set[@]}; do
+    (( $(echo "$i <= 0" | bc) )) && f
+done
+
+case $guess in
+    equilateral)
+        check '(( ${#set[@]} == 1 ))'
+        ;;
+    scalene)
+        check '(( ${#set[@]} == 3))'
+        ;;
+    isosceles)
+        check '(( ${#set[@]} <= 2 ))'
+        ;;
+esac
