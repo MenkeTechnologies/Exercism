@@ -6,8 +6,11 @@
 "
 "     'left and right strands must be of equal length'
 "
-function! Distance(strand1, strand2)
+function! Distance(s1, s2)
 
-  " your solution goes here
+    if strlen(a:s1) != strlen(a:s2)
+        throw 'left and right strands must be of equal length'
+    endif
 
+    return len(filter(range(strlen(a:s1)), {i -> a:s1[i] != a:s2[i]}))
 endfunction
