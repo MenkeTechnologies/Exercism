@@ -1,7 +1,11 @@
-=begin
-Write your code for the 'Secret Handshake' exercise in this file. Make the tests in
-`secret_handshake_test.rb` pass.
-
-To get started with TDD, see the `README.md` file in your
-`ruby/secret-handshake` directory.
-=end
+class SecretHandshake
+  HANDSHAKES = { 1 => 'wink', 2 => 'double blink', 4 => 'close your eyes', 8 => 'jump' }.freeze
+  attr_reader :commands
+  def initialize(m)
+    @commands = []
+    if m.is_a? Integer
+      @commands = HANDSHAKES.filter { m & _1 > 0 }.values
+      @commands.reverse! if m & 16 > 0
+    end
+  end
+end
