@@ -1,8 +1,21 @@
-//
-// This is only a SKELETON file for the 'Matching Brackets' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+const MAP = {
+  '[': ']',
+  '(': ')',
+  '{': '}'
+}
+export const isPaired = (str) => {
+  const stk = []
+  for (const n of str.split('')) {
 
-export const isPaired = () => {
-  throw new Error('Remove this statement and implement this function');
+    if (MAP[n]) {
+      stk.push(n)
+    } else if (Object.values(MAP).indexOf(n) !== -1) {
+      if (!stk.length || MAP[stk.pop()] !== n) {
+        return false;
+      }
+    }
+
+  }
+
+  return stk.length === 0;
 };
