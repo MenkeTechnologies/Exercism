@@ -3,6 +3,5 @@
 // convenience to get you started writing code faster.
 //
 
-export const flatten = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const flatten = (ary) =>
+  ary.map(n => Array.isArray(n) ? flatten([...n]) : [n]).reduce((acc,n ) => [...acc, ...n], []).filter(n => n != null)
