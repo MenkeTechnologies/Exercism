@@ -1,33 +1,14 @@
 /// Determines whether the supplied string is a valid ISBN number
 pub fn is_valid_isbn(isbn: &str) -> bool {
-    let mut tot = 0;
-    let mut mult = 10;
-
-    let chars = isbn.chars().filter(|c| *c != '-').collect::<Vec<char>>();
+    let chars = isbn.chars().filter(|&c| c.is_numeric() || c == 'X').collect::<Vec<char>>();
 
     if chars.len() != 10 {
-        return false;
+        return false
     }
 
-    for ch in chars {
-        let i: u32;
-
+    chars.into_iter().rev().enumerate().map(|(i, ch)|
         match ch {
-            'X' => {
-                if mult != 1 {
-                    return false;
-                }
-
-                i = 10;
-            }
-            '0'..='9' => i = char::to_digit(ch, 10).unwrap(),
-            _ => return false,
-        };
-
-        tot += i * mult;
-
-        mult -= 1;
-    }
-
-    tot % 11 == 0
+            'X' => 10,
+            _ => ch.to_digit(10).unwrap() * (i as u32 + 1),
+        }).sum::<u32>() % 11 == 0
 }
