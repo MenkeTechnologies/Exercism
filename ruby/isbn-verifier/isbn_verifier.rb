@@ -1,7 +1,6 @@
-=begin
-Write your code for the 'ISBN Verifier' exercise in this file. Make the tests in
-`isbn_verifier_test.rb` pass.
-
-To get started with TDD, see the `README.md` file in your
-`ruby/isbn-verifier` directory.
-=end
+class IsbnVerifier
+  def self.valid?(str)
+    return false if str !~ /^\d-?\d{3}-?\d{5}-?[\dX]$/
+    str.scan(/\w/).reverse.each_with_index.map { _1 == 'X' ? 10 : _1.to_i * (_2 + 1) }.sum % 11 == 0
+  end
+end
