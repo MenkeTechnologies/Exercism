@@ -1,7 +1,17 @@
-=begin
-Write your code for the 'Grade School' exercise in this file. Make the tests in
-`grade_school_test.rb` pass.
+class School
+  def initialize
+    @school = Hash.new { [] }
+  end
 
-To get started with TDD, see the `README.md` file in your
-`ruby/grade-school` directory.
-=end
+  def add(student, level)
+    @school[level] <<= student
+  end
+
+  def students(x)
+    @school[x].sort
+  end
+
+  def students_by_grade
+    @school.keys.map { { grade: _1, students: students(_1) } }.sort_by { _1[:grade] }
+  end
+end
