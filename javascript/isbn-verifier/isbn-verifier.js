@@ -1,8 +1,5 @@
-//
-// This is only a SKELETON file for the 'ISBN Verifier' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const isValid = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const isValid = (str) =>
+  (str.match(/^\d-?\d{3}-?\d{5}-?[\dX]$/) || false) &&
+    str.split('').filter(c => c.match(/[X0-9]/)).reverse()
+      .map((n, i) => n === 'X' ? 10 : n * (i + 1))
+      .reduce((acc, n) => acc + n) % 11 === 0;
