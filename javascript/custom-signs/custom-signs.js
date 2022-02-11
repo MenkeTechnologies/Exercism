@@ -12,10 +12,7 @@
  *
  * @returns {string} template string combining both parameters
  */
-
-export function buildSign(occasion, name) {
-  throw new Error('Implement the buildSign function');
-}
+export const buildSign = (occasion, name) => `Happy ${occasion} ${name}!`;
 
 /**
  * Build a birthday sign that conditionally formats the return string.
@@ -24,10 +21,7 @@ export function buildSign(occasion, name) {
  *
  * @returns {string} template string based on age
  */
-
-export function buildBirthdaySign(age) {
-  throw new Error('Implement the buildBirthdaySign function');
-}
+export const buildBirthdaySign = age => `Happy Birthday! What a ${age >= 50 ? 'mature' : 'young'} fellow you are.`;
 
 /**
  * Build a graduation sign that includes multiple lines.
@@ -37,10 +31,7 @@ export function buildBirthdaySign(age) {
  *
  * @returns {string} multi-line template string
  */
-
-export function graduationFor(name, year) {
-  throw new Error('Implement the graduationForm function');
-}
+export const graduationFor = (name, year) => `Congratulations ${name}!\nClass of ${year}`;
 
 /**
  * Determine cost based on each character of sign parameter that builds
@@ -51,7 +42,4 @@ export function graduationFor(name, year) {
  *
  * @returns {string} cost to create the sign
  */
-
-export function costOf(sign, currency) {
-  throw new Error('Implement the costOf function');
-}
+export const costOf = (sign, currency) => `Your sign costs ${(20 + sign.length * 2).toFixed(2)} ${currency}.`;
