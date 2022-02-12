@@ -1,9 +1,38 @@
 package lasagna
 
-// TODO: define the 'PreparationTime()' function
+func PreparationTime(layers []string, preparationTimePerLayer int) int {
+	if preparationTimePerLayer <= 0 {
+		preparationTimePerLayer = 2
+	}
 
-// TODO: define the 'Quantities()' function
+	return len(layers) * preparationTimePerLayer
+}
 
-// TODO: define the 'AddSecretIngredient()' function
+func Quantities(layers []string) (noodles int, sauce float64) {
 
-// TODO: define the 'ScaleRecipe()' function
+	for _, v := range layers {
+		if v == "noodles" {
+			noodles += 50
+		}
+		if v == "sauce" {
+			sauce += 0.2
+		}
+	}
+
+	return
+}
+
+func AddSecretIngredient(friendsList, myList []string) []string {
+	myList[len(myList)-1] = friendsList[len(friendsList)-1]
+	return myList
+}
+
+func ScaleRecipe(qtys []float64, portions int) []float64 {
+	out := make([]float64, len(qtys))
+	for i, v := range qtys {
+		out[i] = (v / 2) * float64(portions)
+	}
+
+	return out
+
+}
