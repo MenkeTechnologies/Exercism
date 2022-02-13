@@ -1,19 +1,9 @@
 object Hamming {
 
-    fun compute(leftStrand: String, rightStrand: String): Int {
-        if (leftStrand.length != rightStrand.length) {
-            throw IllegalArgumentException("left and right strands must be of equal length")
-        }
+    fun compute(leftStrand: String, rightStrand: String) =
+            if (leftStrand.length != rightStrand.length)
+                throw IllegalArgumentException("left and right strands must be of equal length")
+            else leftStrand.zip(rightStrand)
+                    .count { it.first != it.second }
 
-        var d = 0
-        leftStrand.forEachIndexed { i, ch ->
-            if (ch != rightStrand[i]) {
-                ++d
-            }
-
-        }
-
-        return d
-
-    }
 }
