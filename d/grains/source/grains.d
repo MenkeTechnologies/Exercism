@@ -1,5 +1,18 @@
 module grains;
 
+import std.range;
+import std.exception;
+import std.algorithm;
+
+auto square(ulong n) {
+    enforce(n > 0 && n < 65);
+    return 2 ^^ (n - 1);
+}
+
+auto total() {
+    return iota(1,65).map!(square).sum;
+}
+
 unittest
 {
     import std.exception : assertThrown;
