@@ -1,5 +1,16 @@
 module armstrong_numbers;
 
+import std.conv;
+import std.math;
+import std.algorithm;
+import std.stdio;
+
+bool isArmstrongNumber(int n) {
+    auto str = to!string(n);
+    return n == str.map!((a) { return pow(to!int(a) - '0', str.length); })
+    .sum();
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
