@@ -1,5 +1,18 @@
 module darts;
 
+import std.math;
+
+auto score(double x, double y){
+
+    double d = sqrt(pow(x,2) + pow(y,2));
+    
+    if(d <= 1) { return 10; }
+    if(d <= 5) { return 5; }
+    if(d <= 10) { return 1; }
+    return 0;
+
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
