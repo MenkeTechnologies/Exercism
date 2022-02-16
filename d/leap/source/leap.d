@@ -1,5 +1,9 @@
 module leap;
 
+auto isLeap(int y){
+    return y % 4 == 0 && y % 100 != 0 || y % 400 == 0;
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
