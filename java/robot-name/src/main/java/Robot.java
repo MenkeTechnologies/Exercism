@@ -1,20 +1,19 @@
 import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 class Robot {
-    private static HashMap<String, Integer> MAP = new HashMap<>();
+    private static Map<String, Integer> MAP = new HashMap<>();
     String name;
+    Random random = new Random();
 
     public Robot() {
-
         name = gen();
     }
 
     private String gen() {
-
-        Random random = new Random();
 
         while (true) {
             String name = IntStream.range(0, 5)
