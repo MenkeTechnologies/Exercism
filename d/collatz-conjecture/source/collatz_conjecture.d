@@ -1,5 +1,17 @@
 module collatz_conjecture;
 
+int steps(int n){
+    if (n < 1) throw new Exception("Natural numbers");
+
+    int cnt = 0;
+    while(n > 1)
+    {
+        if (n % 2 == 0) n /=2; else n = 3 * n + 1;
+        ++cnt;
+    }
+    return cnt;
+}
+
 unittest
 {
     import std.exception : assertThrown;
