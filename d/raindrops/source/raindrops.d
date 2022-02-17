@@ -1,6 +1,17 @@
+import std.algorithm;
+import std.array;
+import std.conv;
+
+string convert(int n){
+    string[int] MAP = [3 : "Pling", 5 : "Plang", 7 : "Plong"];
+    auto s = MAP.keys.sort.map!(k => n % k == 0 ? MAP[k] : "").join();
+    return s != "" ? s : to!string(n);
+}
+
+
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // The sound for 1 is 1
     assert(convert(1) == "1");
