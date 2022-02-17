@@ -1,8 +1,12 @@
 module two_fer;
 
+string twoFer(string name = "you") {
+    return "One for " ~ name ~ ", one for me.";
+}
+
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // No name given
     assert(twoFer() == "One for you, one for me.");
