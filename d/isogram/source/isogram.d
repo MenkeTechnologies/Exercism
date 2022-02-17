@@ -1,5 +1,19 @@
 module isogram;
 
+import std.algorithm;
+import std.ascii;
+import std.string;
+import std.array;
+ 
+
+
+bool isIsogram(immutable string str){
+
+    return !str.toLower.filter!(isAlpha).group
+    .assocArray.byPair.map!(p => p[0]).any!(v => v > 1);
+
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
