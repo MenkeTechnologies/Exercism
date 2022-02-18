@@ -1,8 +1,27 @@
 module luhn;
+import std.range;
+import std.algorithm;
+import std.ascii;
+import std.conv;
+import std.string;
+
+bool valid(string s){
+
+    s = replace(s, " ", "");
+
+    if (s.any!(c => !c.isDigit) || s.length < 2){
+        return false;
+    }
+    return s.retro.map!"a - '0'"
+    .enumerate
+    .map!(t => (t.index % 2 == 0) ? t.value : (t.value * 2 > 9) ? t.value * 2 - 9 : t.value * 2)
+    .sum % 10 == 0;
+
+}
 
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // Single digit strings can not be valid
     assert(!valid("1"));
