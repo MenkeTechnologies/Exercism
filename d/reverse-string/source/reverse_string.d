@@ -1,8 +1,16 @@
 module reverse_string;
 
+import std.range;
+import std.conv;
+
+
+string reverseString(string s){
+    return s.retro.to!string;
+}
+
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // An empty string
     assert(reverseString("") == "");
