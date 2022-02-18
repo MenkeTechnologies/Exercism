@@ -1,8 +1,30 @@
 module bob;
 
+import std.string;
+import std.ascii;
+import std.algorithm;
+import std.regex;
+
+
+string hey(string s){
+
+    s = s.replaceAll(regex(`\s`), "");
+    
+    if(s.empty) {
+        return "Fine. Be that way!";
+    }
+    
+    if(matchFirst(s, regex(`[A-Z]`)) && !matchFirst(s, regex(`[a-z]`))) {
+       return s[$-1] == '?' ? "Calm down, I know what I'm doing!" : "Whoa, chill out!";
+    }
+
+    return s[$-1] == '?' ? "Sure." : "Whatever.";
+}
+
+
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // Stating something
     assert(hey("Tom-ay-to, tom-aaaah-to.") == "Whatever.");
