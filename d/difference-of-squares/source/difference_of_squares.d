@@ -1,8 +1,29 @@
 module difference_of_squares;
 
+import std.range;
+import std.algorithm;
+
+struct squares {
+
+    int square;
+
+    auto squareOfSum() {
+        return iota(0, square + 1).sum ^^ 2;
+    }
+
+    auto sumOfSquares() {
+        return iota(0, square + 1).map!"a^^2".sum;
+    }
+
+    auto difference() {
+        return squareOfSum - sumOfSquares;
+    }
+
+}
+
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // Square of sum 1
     assert(squares(1).squareOfSum == 1);
