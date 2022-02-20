@@ -3,7 +3,7 @@
 #if __has_include("ReverseStringExample.h")
 # import "ReverseStringExample.h"
 # else
-# import "ReverseString.h"
+# import "../rvsstr/ReverseString.h"
 #endif
 
 @interface ReverseStringTest : XCTestCase
