@@ -1,1 +1,5 @@
-# Please implement your solution to pangram in this file
+class Pangram
+  def self.pangram?(str)
+    ('a'..'z').all?{|c| str.downcase.includes?(c)}
+  end
+end
