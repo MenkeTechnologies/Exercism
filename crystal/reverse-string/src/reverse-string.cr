@@ -1,1 +1,6 @@
-# Please implement your solution to reverse-string in this file
+module ReverseString
+
+  def self.reverse(s)
+    s.chars.reverse.join
+  end
+end
