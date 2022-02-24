@@ -9,21 +9,11 @@ class Luhn
   def self.valid?(str)
 
     str.gsub! /\s/, ''
-
-    return false if str.size < 2 || str.chars.any? { _1.match? /\D/ }
-
-    (str.chars.reverse.map { _1.to_i }.each.with_index.map {
-      dbl = if _2.odd?
-              _1 * 2
-            else
-              _1
-            end
-      if dbl > 9
-        dbl - 9
-      else
-        dbl
-      end
-    }.sum % 10).zero?
+    str.size < 2 || str.chars.any? { _1.match? /\D/ } ? false :
+      str.chars.reverse.map { _1.to_i }.each.with_index.map {
+        dbl = _2.odd? ? _1 * 2 : _1
+        dbl - (dbl > 9 ? 9 : 0)
+      }.sum % 10 == 0
 
   end
 end
