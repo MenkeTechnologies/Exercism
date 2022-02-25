@@ -1,9 +1,8 @@
-
 object SpaceAge {
 
-  val SecondsPerEarthYear = 31557600
+  val EARTH_YEAR_IN_SECONDS = 31557600
 
-  val Periods = Map(
+  val PERIODS = Map(
     "Earth" -> 1.0,
     "Mercury" -> 0.2408467,
     "Venus" -> 0.61519726,
@@ -14,28 +13,27 @@ object SpaceAge {
     "Neptune" -> 164.79132)
 
   def onEarth(n: Double): Double =
-    n / SecondsPerEarthYear
+    n / EARTH_YEAR_IN_SECONDS
 
   def onMercury(n: Double): Double =
-    onEarth(n) / Periods("Mercury")
+    onEarth(n) / PERIODS("Mercury")
 
   def onVenus(n: Double): Double =
-    onEarth(n) / Periods("Venus")
+    onEarth(n) / PERIODS("Venus")
 
   def onMars(n: Double): Double =
-    onEarth(n) / Periods("Mars")
+    onEarth(n) / PERIODS("Mars")
 
   def onJupiter(n: Double): Double =
-    onEarth(n) / Periods("Jupiter")
+    onEarth(n) / PERIODS("Jupiter")
 
   def onSaturn(n: Double): Double =
-    onEarth(n) / Periods("Saturn")
+    onEarth(n) / PERIODS("Saturn")
 
   def onUranus(n: Double): Double =
-    onEarth(n) / Periods("Uranus")
+    onEarth(n) / PERIODS("Uranus")
 
   def onNeptune(n: Double): Double =
-    onEarth(n) / Periods("Neptune")
-
+    onEarth(n) / PERIODS("Neptune")
 
 }
