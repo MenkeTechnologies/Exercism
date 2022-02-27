@@ -1,7 +1,16 @@
-=begin
-Write your code for the 'Atbash Cipher' exercise in this file. Make the tests in
-`atbash_cipher_test.rb` pass.
+module Atbash
+  ENC = ('a'..'z').to_a.zip(('a'..'z').to_a.reverse).to_h
+  DEC = ('a'..'z').to_a.reverse.to_a.zip(('a'..'z').to_a).to_h
 
-To get started with TDD, see the `README.md` file in your
-`ruby/atbash-cipher` directory.
-=end
+  def self.common(s, m)
+    s.downcase.scan(/[0-9a-z]/).map { m[_1] || _1 }.join
+  end
+
+  def self.encode(s)
+    common(s, ENC).scan(/.{1,5}/).join(" ")
+  end
+
+  def self.decode(s)
+    common(s, DEC)
+  end
+end
