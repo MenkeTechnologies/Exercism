@@ -1,7 +1,30 @@
-=begin
-Write your code for the 'List Ops' exercise in this file. Make the tests in
-`list_ops_test.rb` pass.
+class ListOps
+  def self.arrays(ary)
+    ary.reduce(0) { _1 + 1 }
 
-To get started with TDD, see the `README.md` file in your
-`ruby/list-ops` directory.
-=end
+  end
+
+  def self.reverser(ary)
+    ary.reverse
+  end
+
+  def self.concatter(*ary)
+    ary.flatten
+  end
+
+  def self.mapper(ary)
+    ary.map { _1 + 1 }
+  end
+
+  def self.sum_reducer(ary)
+    ary.reduce(0) { _1 + _2 }
+  end
+
+  def self.factorial_reducer(ary)
+    ary.reduce(1) { _1 * _2 }
+  end
+
+  def self.filterer(ary, &block)
+    ary.filter { block.call _1 }
+  end
+end
