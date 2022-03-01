@@ -1,10 +1,17 @@
-/*
+import static java.lang.Character.isDigit;
+import static java.util.stream.Collectors.joining;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class Atbash {
+    private String tr(String s) {
+        return s.toLowerCase().chars().filter(Character::isLetterOrDigit)
+                .map(c -> isDigit(c) ? c : 'z' - c + 'a').mapToObj(Character::toString).collect(joining());
+    }
 
-Please remove this comment when submitting your solution.
+    public String encode(String s) {
+        return tr(s).replaceAll(".{5}(?=.)", "$0 ");
+    }
 
-*/
+    public String decode(String s) {
+        return tr(s);
+    }
+}
