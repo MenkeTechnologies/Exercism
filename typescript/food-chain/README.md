@@ -1,9 +1,15 @@
 # Food Chain
 
+Welcome to Food Chain on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Generate the lyrics of the song 'I Know an Old Lady Who Swallowed a Fly'.
 
-While you could copy/paste the lyrics, or read them from a file, this problem is much more interesting if you approach
-it algorithmically.
+While you could copy/paste the lyrics,
+or read them from a file, this problem is much more
+interesting if you approach it algorithmically.
 
 This is a [cumulative song](http://en.wikipedia.org/wiki/Cumulative_song) of unknown origin.
 
@@ -62,37 +68,17 @@ I know an old lady who swallowed a horse.
 She's dead, of course!
 ```
 
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
-
 ## Source
 
-Wikipedia [http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly](http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly)
+### Created by
 
-## Submitting Incomplete Solutions
+- @masters3d
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @lukaszklis
+- @SleeplessByte
+
+### Based on
+
+Wikipedia - http://en.wikipedia.org/wiki/There_Was_an_Old_Lady_Who_Swallowed_a_Fly

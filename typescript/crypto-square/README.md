@@ -1,14 +1,19 @@
 # Crypto Square
 
+Welcome to Crypto Square on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement the classic method for composing secret messages called a square code.
 
 Given an English text, output the encoded version of that text.
 
-First, the input is normalized: the spaces and punctuation are removed from the English text and the message is
-downcased.
+First, the input is normalized: the spaces and punctuation are removed
+from the English text and the message is downcased.
 
-Then, the normalized characters are broken into rows. These rows can be regarded as forming a rectangle when printed
-with intervening newlines.
+Then, the normalized characters are broken into rows. These rows can be
+regarded as forming a rectangle when printed with intervening newlines.
 
 For example, the sentence
 
@@ -22,8 +27,10 @@ is normalized to:
 "ifmanwasmeanttostayonthegroundgodwouldhavegivenusroots"
 ```
 
-The plaintext should be organized in to a rectangle. The size of the rectangle (`r x c`) should be decided by the length
-of the message, such that `c >= r` and `c - r <= 1`, where `c` is the number of columns and `r` is the number of rows.
+The plaintext should be organized in to a rectangle. The size of the
+rectangle (`r x c`) should be decided by the length of the message,
+such that `c >= r` and `c - r <= 1`, where `c` is the number of columns
+and `r` is the number of rows.
 
 Our normalized text is 54 characters long, dictating a rectangle with
 `c = 8` and `r = 7`:
@@ -38,7 +45,8 @@ Our normalized text is 54 characters long, dictating a rectangle with
 "sroots  "
 ```
 
-The coded message is obtained by reading down the columns going left to right.
+The coded message is obtained by reading down the columns going left to
+right.
 
 The message above is coded as:
 
@@ -46,8 +54,8 @@ The message above is coded as:
 "imtgdvsfearwermayoogoanouuiontnnlvtwttddesaohghnsseoau"
 ```
 
-Output the encoded text in chunks that fill perfect rectangles `(r X c)`, with `c` chunks of `r` length, separated by
-spaces. For phrases that are
+Output the encoded text in chunks that fill perfect rectangles `(r X c)`,
+with `c` chunks of `r` length, separated by spaces. For phrases that are
 `n` characters short of the perfect rectangle, pad each of the last `n`
 chunks with a single trailing space.
 
@@ -55,7 +63,8 @@ chunks with a single trailing space.
 "imtgdvs fearwer mayoogo anouuio ntnnlvt wttddes aohghn  sseoau "
 ```
 
-Notice that were we to stack these, we could visually decode the ciphertext back in to the original message:
+Notice that were we to stack these, we could visually decode the
+ciphertext back in to the original message:
 
 ```text
 "imtgdvs"
@@ -68,38 +77,17 @@ Notice that were we to stack these, we could visually decode the ciphertext back
 "sseoau "
 ```
 
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
-
 ## Source
 
-J Dalbey's Programming Practice
-problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)
+### Created by
 
-## Submitting Incomplete Solutions
+- @CRivasGomez
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+J Dalbey's Programming Practice problems - http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html

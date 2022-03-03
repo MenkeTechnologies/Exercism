@@ -7,7 +7,7 @@ module.exports = {
           node: 'current',
         },
         useBuiltIns: 'entry',
-        corejs: 3,
+        corejs: '3.15',
       },
     ],
     '@babel/preset-typescript',
@@ -17,4 +17,4 @@ module.exports = {
     '@babel/proposal-object-rest-spread',
     '@babel/plugin-syntax-bigint',
   ],
-};
+}

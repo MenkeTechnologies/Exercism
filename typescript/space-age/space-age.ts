@@ -1,5 +1,3 @@
-const SECS_PER_YEAR = 31557600;
-
 enum PlanetaryPeriod {
     Earth = 1,
     Mercury = 0.2408467,
@@ -14,14 +12,21 @@ enum PlanetaryPeriod {
 class SpaceAge {
 
     seconds: number;
+    secsPerYear = 31557600;
 
     constructor(secs: number) {
         this.seconds = secs;
     }
 
+
+    private extracted(planetaryPeriod: PlanetaryPeriod): number {
+        return parseFloat((this.seconds / this.secsPerYear / planetaryPeriod).toFixed(2));
+    }
+
     onEarth() {
         return this.extracted(PlanetaryPeriod.Earth);
     }
+
 
     onMercury() {
         return this.extracted(PlanetaryPeriod.Mercury);
@@ -49,10 +54,6 @@ class SpaceAge {
 
     onNeptune() {
         return this.extracted(PlanetaryPeriod.Neptune);
-    }
-
-    private extracted(planetaryPeriod: PlanetaryPeriod): number {
-        return parseFloat((this.seconds / SECS_PER_YEAR / planetaryPeriod).toFixed(2));
     }
 }
 

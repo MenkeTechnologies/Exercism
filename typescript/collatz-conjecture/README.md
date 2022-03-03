@@ -1,10 +1,16 @@
 # Collatz Conjecture
 
+Welcome to Collatz Conjecture on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The Collatz Conjecture or 3x+1 problem can be summarized as follows:
 
-Take any positive integer n. If n is even, divide n by 2 to get n / 2. If n is odd, multiply n by 3 and add 1 to get 3n
-+ 1. Repeat the process indefinitely. The conjecture states that no matter which number you start with, you will always
-reach 1 eventually.
+Take any positive integer n. If n is even, divide n by 2 to get n / 2. If n is
+odd, multiply n by 3 and add 1 to get 3n + 1. Repeat the process indefinitely.
+The conjecture states that no matter which number you start with, you will
+always reach 1 eventually.
 
 Given a number n, return the number of steps required to reach 1.
 
@@ -25,38 +31,17 @@ Starting with n = 12, the steps would be as follows:
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
-
 ## Source
 
-An unsolved problem in mathematics named after mathematician Lothar
-Collatz [https://en.wikipedia.org/wiki/3x_%2B_1_problem](https://en.wikipedia.org/wiki/3x_%2B_1_problem)
+### Created by
 
-## Submitting Incomplete Solutions
+- @CRivasGomez
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+An unsolved problem in mathematics named after mathematician Lothar Collatz - https://en.wikipedia.org/wiki/3x_%2B_1_problem

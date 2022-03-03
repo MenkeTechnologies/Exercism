@@ -1,9 +1,14 @@
-# Pascal's Triangle
+# Pascals Triangle
+
+Welcome to Pascals Triangle on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Compute Pascal's triangle up to a given number of rows.
 
-In Pascal's Triangle each number is computed by adding the numbers to the right and left of the current position in the
-previous row.
+In Pascal's Triangle each number is computed by adding the numbers to
+the right and left of the current position in the previous row.
 
 ```text
     1
@@ -14,38 +19,17 @@ previous row.
 # ... etc
 ```
 
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
-
 ## Source
 
-Pascal's Triangle at Wolfram Math
-World [http://mathworld.wolfram.com/PascalsTriangle.html](http://mathworld.wolfram.com/PascalsTriangle.html)
+### Created by
 
-## Submitting Incomplete Solutions
+- @anuragsoni
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+Pascal's Triangle at Wolfram Math World - http://mathworld.wolfram.com/PascalsTriangle.html

@@ -1,11 +1,17 @@
-export default class Triangle {
-    sides: number[]
+export class Triangle {
+  constructor(...sides) {
+    throw new Error('Remove this statement and implement this function')
+  }
 
-    constructor(...sides: number[]) {
-        this.sides = sides
-    }
+  get isEquilateral() {
+    throw new Error('Remove this statement and implement this function')
+  }
 
-    kind() {
-        return ''
-    }
+  get isIsosceles() {
+    throw new Error('Remove this statement and implement this function')
+  }
+
+  get isScalene() {
+    throw new Error('Remove this statement and implement this function')
+  }
 }

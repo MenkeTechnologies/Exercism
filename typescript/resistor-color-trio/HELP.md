@@ -12,7 +12,7 @@ $ yarn test
 
 In the test suites all tests but the first have been skipped.
 
-Once you get a test passing, you can enable the next one by changing `xit` to
+Once you get a test passing, you can enable the next one by changing `it` to
 `it`.
 
 ## Submitting your solution
