@@ -1,14 +1,22 @@
 # Kindergarten Garden
 
-Given a diagram, determine which plants each child in the kindergarten class is responsible for.
+Welcome to Kindergarten Garden on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-The kindergarten class is learning about growing plants. The teacher thought it would be a good idea to give them actual
-seeds, plant them in actual dirt, and grow actual plants.
+## Instructions
+
+Given a diagram, determine which plants each child in the kindergarten class is
+responsible for.
+
+The kindergarten class is learning about growing plants. The teacher
+thought it would be a good idea to give them actual seeds, plant them in
+actual dirt, and grow actual plants.
 
 They've chosen to grow grass, clover, radishes, and violets.
 
-To this end, the children have put little cups along the window sills, and planted one type of plant in each cup,
-choosing randomly from the available types of seeds.
+To this end, the children have put little cups along the window sills, and
+planted one type of plant in each cup, choosing randomly from the available
+types of seeds.
 
 ```text
 [window][window][window]
@@ -22,7 +30,8 @@ There are 12 children in the class:
 - Eve, Fred, Ginny, Harriet,
 - Ileana, Joseph, Kincaid, and Larry.
 
-Each child gets 4 cups, two on each row. Their teacher assigns cups to the children alphabetically by their names.
+Each child gets 4 cups, two on each row. Their teacher assigns cups to
+the children alphabetically by their names.
 
 The following diagram represents Alice's plants:
 
@@ -32,10 +41,12 @@ VR......................
 RG......................
 ```
 
-In the first row, nearest the windows, she has a violet and a radish. In the second row she has a radish and some grass.
+In the first row, nearest the windows, she has a violet and a radish. In the
+second row she has a radish and some grass.
 
-Your program will be given the plants from left-to-right starting with the row nearest the windows. From this, it should
-be able to determine which plants belong to each student.
+Your program will be given the plants from left-to-right starting with
+the row nearest the windows. From this, it should be able to determine
+which plants belong to each student.
 
 For example, if it's told that the garden looks like so:
 
@@ -53,37 +64,18 @@ While asking for Bob's plants would yield:
 
 - Clover, grass, clover, clover
 
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
-
 ## Source
 
-Random musings during airplane trip. [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
+- @fredrb
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @CRivasGomez
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+Random musings during airplane trip. - http://jumpstartlab.com

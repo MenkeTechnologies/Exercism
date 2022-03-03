@@ -1,18 +1,24 @@
-# ETL
+# Etl
+
+Welcome to Etl on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 We are going to do the `Transform` step of an Extract-Transform-Load.
 
-### ETL
+## ETL
 
-Extract-Transform-Load (ETL) is a fancy way of saying, "We have some crufty, legacy data over in this system, and now we
-need it in this shiny new system over here, so we're going to migrate this."
+Extract-Transform-Load (ETL) is a fancy way of saying, "We have some crufty, legacy data over in this system, and now we need it in this shiny new system over here, so
+we're going to migrate this."
 
-(Typically, this is followed by, "We're only going to need to run this once." That's then typically followed by much
-forehead slapping and moaning about how stupid we could possibly be.)
+(Typically, this is followed by, "We're only going to need to run this
+once." That's then typically followed by much forehead slapping and
+moaning about how stupid we could possibly be.)
 
-### The goal
+## The goal
 
-We're going to extract some scrabble scores from a legacy system.
+We're going to extract some Scrabble scores from a legacy system.
 
 The old system stored a list of letters per score:
 
@@ -24,8 +30,10 @@ The old system stored a list of letters per score:
 - 8 points: "J", "X",
 - 10 points: "Q", "Z",
 
-The shiny new scrabble system instead stores the score per letter, which makes it much faster and easier to calculate
-the score for a word. It also stores the letters in lower-case regardless of the case of the input letters:
+The shiny new Scrabble system instead stores the score per letter, which
+makes it much faster and easier to calculate the score for a word. It
+also stores the letters in lower-case regardless of the case of the
+input letters:
 
 - "a" is worth 1 point.
 - "b" is worth 3 points.
@@ -33,45 +41,28 @@ the score for a word. It also stores the letters in lower-case regardless of the
 - "d" is worth 2 points.
 - Etc.
 
-Your mission, should you choose to accept it, is to transform the legacy data format to the shiny new format.
+Your mission, should you choose to accept it, is to transform the legacy data
+format to the shiny new format.
 
-### Notes
+## Notes
 
-A final note about scoring, Scrabble is played around the world in a variety of languages, each with its own unique
-scoring table. For example, an "E" is scored at 2 in the Māori-language version of the game while being scored at 4 in
-the Hawaiian-language version.
-
-## Setup
-
-Go through the setup instructions for TypeScript to install the necessary dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
+A final note about scoring, Scrabble is played around the world in a
+variety of languages, each with its own unique scoring table. For
+example, an "E" is scored at 2 in the Māori-language version of the
+game while being scored at 4 in the Hawaiian-language version.
 
 ## Source
 
-The Jumpstart Lab team [http://jumpstartlab.com](http://jumpstartlab.com)
+### Created by
 
-## Submitting Incomplete Solutions
+- @masters3d
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @lukaszklis
+- @pranasziaukas
+- @SleeplessByte
+
+### Based on
+
+The Jumpstart Lab team - http://jumpstartlab.com

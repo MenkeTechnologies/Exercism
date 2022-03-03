@@ -33,28 +33,28 @@ type UpdateFn<T> = (value?: T) => T
 type InputPair<T> = [GetterFn<T>, SetterFn<T>]
 
 type Options = {
-    name: string // for debugging
+  name: string // for debugging
 }
 
 type ObserverR = {
-    name?: string
+  name?: string
 }
 
 type ObserverV<T> = {
-    value?: T
-    updateFn: UpdateFn<T>
+  value?: T
+  updateFn: UpdateFn<T>
 }
 
 type Observer<T> = ObserverR & ObserverV<T>
 
 type SubjectR = {
-    name?: string
-    observer: ObserverR | undefined
+  name?: string
+  observer: ObserverR | undefined
 }
 
 type SubjectV<T> = {
-    value: T
-    equalFn?: EqualFn<T>
+  value: T
+  equalFn?: EqualFn<T>
 }
 
 type Subject<T> = SubjectR & SubjectV<T>
@@ -63,10 +63,10 @@ type Subject<T> = SubjectR & SubjectV<T>
 let activeObserver: ObserverR
 
 function updateObserver<T>(observer: Observer<T>): void {
-    const prevObserver = activeObserver
-    activeObserver = observer
-    observer.value = observer.updateFn(observer.value)
-    activeObserver = prevObserver
+  const prevObserver = activeObserver
+  activeObserver = observer
+  observer.value = observer.updateFn(observer.value)
+  activeObserver = prevObserver
 }
 
 /**
@@ -103,29 +103,29 @@ function updateObserver<T>(observer: Observer<T>): void {
  *                the mutator (setter function).
  */
 function createInput<T>(
-    value: T,
-    _equal?: boolean | EqualFn<T>,
-    options?: { name?: string }
+  value: T,
+  _equal?: boolean | EqualFn<T>,
+  options?: { name?: string }
 ): InputPair<T> {
-    const s: Subject<T> = {
-        name: options?.name,
-        observer: undefined,
-        value,
-        equalFn: undefined,
-    }
+  const s: Subject<T> = {
+    name: options?.name,
+    observer: undefined,
+    value,
+    equalFn: undefined,
+  }
 
-    const read: GetterFn<T> = () => {
-        if (activeObserver) s.observer = activeObserver
-        return s.value
-    }
+  const read: GetterFn<T> = () => {
+    if (activeObserver) s.observer = activeObserver
+    return s.value
+  }
 
-    const write: SetterFn<T> = (value) => {
-        s.value = value
-        if (s.observer) updateObserver(s.observer as Observer<unknown>)
-        return s.value
-    }
+  const write: SetterFn<T> = (value) => {
+    s.value = value
+    if (s.observer) updateObserver(s.observer as Observer<unknown>)
+    return s.value
+  }
 
-    return [read, write]
+  return [read, write]
 }
 
 /**
@@ -180,18 +180,18 @@ function createInput<T>(
  *                 updates).
  */
 function createComputed<T>(
-    updateFn: UpdateFn<T>,
-    value?: T,
-    _equal?: boolean | EqualFn<T>,
-    options?: { name?: string }
+  updateFn: UpdateFn<T>,
+  value?: T,
+  _equal?: boolean | EqualFn<T>,
+  options?: { name?: string }
 ): GetterFn<T> {
-    const o: Observer<T> = {
-        name: options?.name,
-        value,
-        updateFn,
-    }
-    updateObserver(o)
-    return (): T => o.value!
+  const o: Observer<T> = {
+    name: options?.name,
+    value,
+    updateFn,
+  }
+  updateObserver(o)
+  return (): T => o.value!
 }
 
 /**
@@ -224,12 +224,12 @@ function createComputed<T>(
  *                 subjects it subscribed to.
  */
 function createCallback<T>(_updateFn: UpdateFn<T>, _value?: T): UnsubscribeFn {
-    const observer = {}
-    return ((observer: unknown | undefined) => (): void => {
-        if (!observer) return
-        observer = undefined
-        // i.e. dispose of any active subscriptions
-    })(observer)
+  const observer = {}
+  return ((observer: unknown | undefined) => (): void => {
+    if (!observer) return
+    observer = undefined
+    // i.e. dispose of any active subscriptions
+  })(observer)
 }
 
-export {createInput, createComputed, createCallback}
+export { createInput, createComputed, createCallback }

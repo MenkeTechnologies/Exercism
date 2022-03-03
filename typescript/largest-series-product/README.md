@@ -1,47 +1,34 @@
 # Largest Series Product
 
-Given a string of digits, calculate the largest product for a contiguous substring of digits of length n.
+Welcome to Largest Series Product on Exercism's TypeScript Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-For example, for the input `'1027839564'`, the largest product for a series of 3 digits is 270 (9 * 5 * 6), and the
-largest product for a series of 5 digits is 7560 (7 * 8 * 3 * 9 * 5).
+## Instructions
 
-Note that these series are only required to occupy *adjacent positions*
-in the input; the digits need not be *numerically consecutive*.
+Given a string of digits, calculate the largest product for a contiguous
+substring of digits of length n.
 
-For the input `'73167176531330624919225119674426574742355349194934'`, the largest product for a series of 6 digits is
-23520.
+For example, for the input `'1027839564'`, the largest product for a
+series of 3 digits is 270 (9 _ 5 _ 6), and the largest product for a
+series of 5 digits is 7560 (7 _ 8 _ 3 _ 9 _ 5).
 
-## Setup
+Note that these series are only required to occupy _adjacent positions_
+in the input; the digits need not be _numerically consecutive_.
 
-Go through the setup instructions for TypeScript to install the necessary dependencies:
-
-[https://exercism.io/tracks/typescript/installation](https://exercism.io/tracks/typescript/installation)
-
-## Requirements
-
-Install assignment dependencies:
-
-```bash
-$ yarn install
-```
-
-## Making the test suite pass
-
-Execute the tests with:
-
-```bash
-$ yarn test
-```
-
-In the test suites all tests but the first have been skipped.
-
-Once you get a test passing, you can enable the next one by changing `xit` to
-`it`.
+For the input `'73167176531330624919225119674426574742355349194934'`,
+the largest product for a series of 6 digits is 23520.
 
 ## Source
 
-A variation on Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
+### Created by
 
-## Submitting Incomplete Solutions
+- @deyshin
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @masters3d
+- @SleeplessByte
+
+### Based on
+
+A variation on Problem 8 at Project Euler - http://projecteuler.net/problem=8
