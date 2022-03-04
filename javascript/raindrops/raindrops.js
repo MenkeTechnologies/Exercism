@@ -1,15 +1,5 @@
-//
-// This is only a SKELETON file for the 'Raindrops' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+const MAP = {3: "Pling", 5: "Plang", 7: "Plong"}
 
-export const convert = (num) => {
-  let r = '';
+export const convert = (n) =>
+    Object.entries(MAP).filter(([k]) => n % parseInt(k) === 0).map(([_, v]) => v).join("") || n.toString();
 
-  r += num % 3 === 0 ? 'Pling' : '';
-  r += num % 5 === 0 ? 'Plang' : '';
-  r += num % 7 === 0 ? 'Plong' : '';
-
-  return r || `${num}`;
-
-};
