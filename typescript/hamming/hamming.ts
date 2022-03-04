@@ -1,3 +1,6 @@
-export function compute(left: unknown, right: unknown): unknown {
-  throw new Error('Remove this statement and implement this function')
-}
+export const compute = (left: string, right: string) => {
+    if (left.length !== right.length) throw new Error("DNA strands must be of equal length.")
+
+    return left.split('').map((c, i) => [c, right[i]])
+        .filter(([l, r]) => l !== r).length
+};
