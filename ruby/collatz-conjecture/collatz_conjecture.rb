@@ -13,11 +13,7 @@ class CollatzConjecture
     cnt = 0
 
     while limit > 1
-      if limit.even?
-        limit /= 2
-      else
-        limit = 3 * limit + 1
-      end
+      limit = limit.even? ? limit / 2 : 3 * limit + 1
       cnt += 1
     end
 
