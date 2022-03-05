@@ -1,13 +1,20 @@
 export class Allergies {
-  constructor(allergenIndex: unknown) {
-    throw new Error('Remove this statement and implement this function')
+  private MAP : {[key: string]: number} = {
+    eggs: 1,
+    peanuts: 2,
+    shellfish: 4,
+    strawberries: 8,
+    tomatoes: 16,
+    chocolate: 32,
+    pollen: 64,
+    cats: 128,
+  }
+  mask: number;
+
+  constructor(allergenIndex: number) {
+    this.mask = allergenIndex
   }
 
-  public list(): unknown {
-    throw new Error('Remove this statement and implement this function')
-  }
-
-  public allergicTo(allergen: unknown): unknown {
-    throw new Error('Remove this statement and implement this function')
-  }
+  list = () => Object.keys(this.MAP).filter(k => this.allergicTo(k));
+  allergicTo = (allergen: string) => (this.MAP[allergen] & this.mask) > 0;
 }
