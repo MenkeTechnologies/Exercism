@@ -1,17 +1,23 @@
 export class Triangle {
-  constructor(...sides) {
-    throw new Error('Remove this statement and implement this function')
+  private sorted: number[]
+  private set: Set<number>;
+
+  constructor(...sides: number[]) {
+    this.sorted = sides.sort((a,b) => a - b)
+    this.set = new Set(sides);
   }
 
+  valid = () => this.sorted.every(s => s > 0) && this.sorted[0] + this.sorted[1] >= this.sorted[2]
+
   get isEquilateral() {
-    throw new Error('Remove this statement and implement this function')
+    return this.valid() && this.set.size === 1
   }
 
   get isIsosceles() {
-    throw new Error('Remove this statement and implement this function')
+    return this.valid() && this.set.size <= 2
   }
 
   get isScalene() {
-    throw new Error('Remove this statement and implement this function')
+    return this.valid() && this.set.size === 3
   }
 }
