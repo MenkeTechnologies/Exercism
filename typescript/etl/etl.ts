@@ -1,3 +1,4 @@
-export function transform(/* Parameters go here */) {
-  throw new Error('Remove this statement and implement this function')
-}
+export const transform = (old: { [key: number]: string[] }) =>
+    Object.entries(old).reduce((acc1, [n, letters]) =>
+            ({...acc1, ...(letters.reduce((acc2, letter) => ({...acc2, [letter.toLowerCase()]: parseInt(n)}), {}))})
+        , {});
