@@ -9,18 +9,9 @@ To get started with TDD, see the `README.md` file in your
 class Nucleotide
 
   def initialize(str)
-    @h = {
-      'A' => 0,
-      'C' => 0,
-      'G' => 0,
-      'T' => 0
-    }
-
-    str.chars.each do
-      throw ArgumentError if @h[_1].nil?
-      @h[_1] += 1
-    end
-
+    @h = { 'A' => 0, 'C' => 0, 'G' => 0, 'T' => 0 }
+    throw ArgumentError if str !~ /^[AGCT]*$/
+    @h.merge!(str.chars.group_by { _1 }.map { [_1, _2.size] }.to_h)
   end
 
   def count(nt)
