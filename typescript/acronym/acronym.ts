@@ -1,3 +1,3 @@
-export function parse(phrase: unknown): unknown {
-  throw new Error('Remove this statement and implement this function')
-}
+export const parse = (s: string) =>
+    s.replace(/([a-z])([A-Z])/g, " $2").toUpperCase()
+        .split(/[\s-]+/).map(n => n[0]).join("")
