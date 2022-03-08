@@ -1,13 +1,22 @@
 export class GradeSchool {
-  roster() {
-    throw new Error('Remove this statement and implement this function')
-  }
+    private _roster: { [_: number]: string[] };
 
-  add() {
-    throw new Error('Remove this statement and implement this function')
-  }
+    constructor() {
+        this._roster = {};
+    }
 
-  grade() {
-    throw new Error('Remove this statement and implement this function')
-  }
+    roster = () => JSON.parse(JSON.stringify(this._roster));
+
+    add = (name: string, grade: number) => {
+        for (const [_, names] of Object.entries(this._roster)) {
+            if (names.indexOf(name) !== -1) {
+                names.splice(names.indexOf(name), 1);
+                break;
+            }
+        }
+        this._roster[grade] = [...(this._roster[grade] || []), name].sort()
+        return this._roster[grade];
+    };
+
+    grade = (grade: number) => (this._roster[grade] || []).slice().sort();
 }
