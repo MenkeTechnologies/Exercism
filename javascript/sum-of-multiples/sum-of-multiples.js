@@ -1,8 +1,2 @@
-//
-// This is only a SKELETON file for the 'Sum Of Multiples' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const sum = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const sum = (factors, limit) =>
+  [...Array(limit).keys()].filter(n => n > 0).filter(n => factors.some(f => f !== 0 && n % f === 0)).reduce((acc, n) => acc + n, 0);
