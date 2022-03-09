@@ -1,10 +1,21 @@
-/*
+import java.util.ArrayList;
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class PrimeFactorsCalculator {
+    List<Long> calculatePrimeFactorsOf(long start) {
 
-Please remove this comment when submitting your solution.
+        List<Long> fac = new ArrayList<>();
+        long divisor = 2;
 
-*/
+        while (start > 1) {
+            while (start % divisor == 0) {
+                fac.add(divisor);
+                start /= divisor;
+            }
+
+            ++divisor;
+        }
+
+        return fac;
+    }
+}
