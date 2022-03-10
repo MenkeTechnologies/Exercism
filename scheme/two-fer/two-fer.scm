@@ -1,5 +1,3 @@
-(import (rnrs))
-
-(define (two-fer . maybe-name)
-  'implement-me!)
+(define* (two-fer #:optional (name "you"))
+  (string-append "One for " name ", one for me."))
 
