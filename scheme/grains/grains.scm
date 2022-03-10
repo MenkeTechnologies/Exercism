@@ -1,8 +1,11 @@
 (import (rnrs))
 
 (define (square n)
-  'implement-me!)
+ (assert (< 0 n 65))
+ (expt 2 (- n 1))
+)
 
 (define total
-  'implement-me!)
+ (fold-right + 0 (map square (iota 64 1 1)))
+)
 
