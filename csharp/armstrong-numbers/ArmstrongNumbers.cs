@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Linq;
 
 public static class ArmstrongNumbers
 {
     public static bool IsArmstrongNumber(int number)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        var ary = number.ToString().ToCharArray();
+        return number == (int)ary.Select(n => Math.Pow(char.GetNumericValue(n), ary.Length)).Sum();
     }
 }
