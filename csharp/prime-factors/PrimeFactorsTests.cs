@@ -1,48 +1,46 @@
-// This file was auto-generated based on version 1.1.0 of the canonical data.
-
 using Xunit;
 
-    [Fact]
+public class PrimeFactorsTests
 {
     [Fact]
     public void No_factors()
     {
-    [Fact]
+        Assert.Empty(PrimeFactors.Factors(1L));
     }
 
     [Fact]
     public void Prime_number()
     {
-    [Fact]
+        Assert.Equal(new[] { 2L }, PrimeFactors.Factors(2L));
     }
 
     [Fact]
     public void Square_of_a_prime()
     {
-    [Fact]
+        Assert.Equal(new[] { 3L, 3L }, PrimeFactors.Factors(9L));
     }
 
     [Fact]
     public void Cube_of_a_prime()
     {
-    [Fact]
+        Assert.Equal(new[] { 2L, 2L, 2L }, PrimeFactors.Factors(8L));
     }
 
     [Fact]
     public void Product_of_primes_and_non_primes()
     {
-    [Fact]
+        Assert.Equal(new[] { 2L, 2L, 3L }, PrimeFactors.Factors(12L));
     }
 
     [Fact]
     public void Product_of_primes()
     {
-    [Fact]
+        Assert.Equal(new[] { 5L, 17L, 23L, 461L }, PrimeFactors.Factors(901255L));
     }
 
     [Fact]
-    [Fact]
+    public void Factors_include_a_large_prime()
     {
-    [Fact]
+        Assert.Equal(new[] { 11L, 9539L, 894119L }, PrimeFactors.Factors(93819012551L));
     }
 }

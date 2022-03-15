@@ -1,9 +1,25 @@
-using System;
+using System.Collections.Generic;
 
-    [Fact]
+public static class PrimeFactors
 {
-    [Fact]
+    public static long[] Factors(long start)
     {
-        throw new NotImplementedException();
+        var fact = new List<long>();
+        var divisor = 2;
+
+        while (start > 1)
+        {
+            while (start % divisor == 0)
+            {
+                fact.Add(divisor);
+                start /= divisor;
+            }
+
+            divisor += 1;
+
+        }
+
+        return fact.ToArray();
+
     }
 }
