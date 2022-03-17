@@ -16,11 +16,19 @@ public static class QueenAttack
 {
     public static bool CanAttack(Queen white, Queen black)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        var dx = Math.Abs(white.Column - black.Column);
+        var dy = Math.Abs(white.Row - black.Row);
+
+        return dx == 0 || dy == 0 || dx == dy;
     }
 
     public static Queen Create(int row, int column)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        if (row is < 0 or > 7 || column is < 0 or > 7)
+        {
+            throw new ArgumentOutOfRangeException();
+        }
+
+        return new Queen(row, column);
     }
 }
