@@ -27,6 +27,6 @@ namespace eval ::resistorColor {
             lappend res [colorCode $color]
         }
 
-        return [join $res ""]
+        return [scan [join $res ""] %d]
     }
 }
