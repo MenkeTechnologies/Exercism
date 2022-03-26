@@ -2,9 +2,17 @@ module hamming;
 
 unittest
 {
-    import std.exception : assertThrown;
+    import std.exception;
+    import std.range;
+    import std.algorithm;
 
     immutable int allTestsEnabled = 0;
+
+    int distance(in string s1, in string s2) {
+        enforce(s1.length == s2.length, "Different lengths");
+        return zip(s1, s2).map!(a => a[0] != a[1]).sum;
+
+    }
 
     // Empty strands
     assert(distance("", "") == 0);
@@ -23,7 +31,7 @@ unittest
         // Long different strands
         assert(distance("GGACGGATTCTG", "AGGACGGATTCT") == 9);
 
-        // Disallow first strand longer 
+        // Disallow first strand longer
         assertThrown(distance("AATG", "AAA"));
 
         // Disallow second strand longer
