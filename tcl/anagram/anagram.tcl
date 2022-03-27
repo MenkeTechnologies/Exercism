@@ -1,3 +1,14 @@
 proc findAnagrams {subject candidates} {
-    throw {NOT_IMPLEMENTED} "Implement this procedure."
+    set lc [string tolower $subject]
+    set sorted [lsort [split $lc ""]]
+
+    set r [list]
+
+    foreach c $candidates {
+        if {[lsort [split [string tolower $c] ""]] eq $sorted && $lc ne [string tolower $c]} {
+            lappend r $c
+        }
+    }
+
+    return $r
 }
