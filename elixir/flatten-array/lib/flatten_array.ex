@@ -13,6 +13,8 @@ defmodule FlattenArray do
   """
 
   @spec flatten(list) :: list
-  def flatten(list) do
-  end
+  def flatten([]), do: []
+  def flatten(nil), do: []
+  def flatten([h | t]), do: flatten(h) ++ flatten(t)
+  def flatten(n), do: [n]
 end
