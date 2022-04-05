@@ -1,2 +1,1 @@
-fun isPangram s =
-  raise Fail "'isPangram' is not implemented"
+fun isPangram s = List.all(Char.contains(String.map Char.toLower s)) (explode "abcdefghijklmnopqrstuvwxyz")
