@@ -10,19 +10,19 @@ tests =
     describe "Pythagorean Triplets"
         [ test "triplets whose sum is 12" <|
             \() -> Expect.equal [ ( 3, 4, 5 ) ] (triplets 12)
-        , skip <|
+        , 
             test "triplets whose sum is 108" <|
                 \() -> Expect.equal [ ( 27, 36, 45 ) ] (triplets 108)
-        , skip <|
+        , 
             test "triplets whose sum is 1000" <|
                 \() -> Expect.equal [ ( 200, 375, 425 ) ] (triplets 1000)
-        , skip <|
+        , 
             test "no matching triplets for 1001" <|
                 \() -> Expect.equal [] (triplets 1001)
-        , skip <|
+        , 
             test "returns all matching triplets" <|
                 \() -> Expect.equal [ ( 9, 40, 41 ), ( 15, 36, 39 ) ] (triplets 90)
-        , skip <|
+        , 
             test "several matching triplets" <|
                 \() ->
                     Expect.equal
@@ -36,7 +36,7 @@ tests =
                         , ( 240, 252, 348 )
                         ]
                         (triplets 840)
-        , skip <|
+        , 
             test "triplets for large number" <|
                 \() ->
                     Expect.equal
