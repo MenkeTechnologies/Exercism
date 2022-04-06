@@ -2,5 +2,7 @@ module Accumulate exposing (accumulate)
 
 
 accumulate : (a -> b) -> List a -> List b
-accumulate func input =
-    Debug.todo "Please implement this function"
+accumulate f list =
+    case list of
+        [] -> []
+        h::t -> f h :: accumulate f t
