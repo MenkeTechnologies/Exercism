@@ -2,30 +2,29 @@ module TracksOnTracksOnTracks exposing (..)
 
 
 newList : List String
-newList =
-    Debug.todo "implement this function"
+newList = []
 
 
 existingList : List String
-existingList =
-    Debug.todo "implement this function"
+existingList = ["Elm", "Clojure", "Haskell"]
 
 
 addLanguage : String -> List String -> List String
-addLanguage language languages =
-    Debug.todo "implement this function"
+addLanguage language languages = language :: languages
 
 
 countLanguages : List String -> Int
-countLanguages languages =
-    Debug.todo "implement this function"
+countLanguages = List.length
 
 
 reverseList : List String -> List String
-reverseList languages =
-    Debug.todo "implement this function"
+reverseList = List.reverse
 
 
 excitingList : List String -> Bool
 excitingList languages =
-    Debug.todo "implement this function"
+    case languages of
+        "Elm" :: _ -> True
+        _ :: "Elm" :: [] -> True
+        _ :: "Elm" :: _ :: [] -> True
+        _ -> False
