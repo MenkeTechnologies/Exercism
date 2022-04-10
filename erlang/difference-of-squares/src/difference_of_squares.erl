@@ -2,9 +2,12 @@
 
 -export([difference_of_squares/1, square_of_sum/1, sum_of_squares/1]).
 
+-import(lists, [sum/1, seq/2]).
 
-difference_of_squares(_Number) -> undefined.
+difference_of_squares(_Number) -> square_of_sum(_Number) - sum_of_squares(_Number).
 
-square_of_sum(_Number) -> undefined.
+square_of_sum(_Number) -> square(sum(seq(1, _Number))).
 
-sum_of_squares(_Number) -> undefined.
+sum_of_squares(_Number) -> sum([square(N) || N <- seq(1, _Number)]).
+
+square(N) -> N * N.
