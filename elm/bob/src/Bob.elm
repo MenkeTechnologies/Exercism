@@ -1,6 +1,9 @@
 module Bob exposing (hey)
 
+import Regex exposing (replace, contains, fromString)
+import String exposing (isEmpty, endsWith, trim)
 
 hey : String -> String
 hey remark =
-    Debug.todo "Please implement this function"
+    let nows = replace(fromString "\s")
+    if contains (fromString "[A-Z]")
