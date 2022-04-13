@@ -1,8 +1,11 @@
 #if !defined(PANGRAM_H)
 #define PANGRAM_H
 
-namespace pangram {
+#include <string>
+using std::string;
 
-}  // namespace pangram
+namespace pangram {
+    bool is_pangram(const string &sentence);
+}
 
 #endif // PANGRAM_H
