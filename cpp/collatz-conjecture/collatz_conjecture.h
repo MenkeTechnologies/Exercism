@@ -3,6 +3,8 @@
 
 namespace collatz_conjecture {
 
-}  // namespace collatz_conjecture
+    int steps(int n);
+
+}
 
 #endif // COLLATZ_CONJECTURE_H
