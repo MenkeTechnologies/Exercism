@@ -1,3 +1,22 @@
+CREATE OR REPLACE PACKAGE  year#
+IS
+	FUNCTION is_leap (n NUMBER) RETURN VARCHAR2;
+END year#;
+/
+CREATE OR REPLACE PACKAGE BODY  year#
+IS
+	FUNCTION is_leap (n NUMBER) RETURN VARCHAR2
+	AS
+	BEGIN
+		IF MOD(n, 4) = 0 AND (MOD(n,100) <> 0 OR MOD(n, 400) = 0) THEN
+			RETURN 'Yes, '||TO_CHAR(n)||' is a leap year';
+		ELSE RETURN 'No, '||TO_CHAR(n)||' is not a leap year';
+		END IF;
+	END is_leap;
+END year#;
+/
+
+
 create or replace package ut_year#
 is
   procedure run;
