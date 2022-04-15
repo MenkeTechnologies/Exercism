@@ -1,5 +1,8 @@
 #include "hamming.h"
 
+#include <stdexcept>
+using namespace std;
+
 namespace hamming {
 
     size_t compute(const string &a, const string &b) {
