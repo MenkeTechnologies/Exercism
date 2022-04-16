@@ -3,6 +3,12 @@
 
 namespace triangle {
 
-}  // namespace triangle
+    enum flavor {
+        equilateral, isosceles, scalene
+    };
+
+    flavor kind(double a, double b, double c);
+
+}
 
 #endif // TRIANGLE_H
