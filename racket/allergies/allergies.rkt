@@ -2,6 +2,21 @@
 
 (provide list-allergies allergic-to?)
 
-(define (list-allergies score))
+(define allergens
+  #("eggs"
+    "peanuts"
+    "shellfish"
+    "strawberries"
+    "tomatoes"
+    "chocolate"
+    "pollen"
+    "cats"
+    ))
 
-(define (allergic-to? str))
+(define (list-allergies mask)
+ (vector->list (vector-sort (vector-filter (lambda (food) (allergic-to? food mask)) allergens) string<?))
+ )
+
+(define (allergic-to? food mask)
+  (> (bitwise-and mask (expt 2 (vector-member food allergens))) 0)
+)
