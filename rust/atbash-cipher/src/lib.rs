@@ -15,12 +15,10 @@ pub fn encode(plain: &str) -> String {
         .map(rotate)
         .collect::<Vec<char>>();
 
-    let mut v: Vec<String> = vec![];
-    chars.chunks(5).for_each(|x| {
-        v.push(x.iter().cloned().collect());
-    });
-
-    v.join(" ")
+    chars.chunks(5).fold(&mut Vec::<String>::new(), |acc, n| {
+        acc.push(n.iter().cloned().collect());
+        acc
+    }).join(" ")
 }
 
 /// "Decipher" with the Atbash cipher.
