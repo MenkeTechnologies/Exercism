@@ -1,11 +1,16 @@
-;;; anagram.el --- Anagram (exercism)
+(require 'cl)
 
-;;; Commentary:
+(defun anagram? (word1 word2)
+    (and
+     (not (equal word1 word2))
+     (equal
+      (cl-sort (downcase word1) #'<)
+      (cl-sort (downcase word2) #'<)
+      )))
 
-;;; Code:
-
-(require 'cl-lib)
-
+(defun anagrams-for (word cands)
+ (remove-if-not (apply-partially #'anagram? word) cands)
+ )
 
 (provide 'anagram)
-;;; anagram.el ends here
+
