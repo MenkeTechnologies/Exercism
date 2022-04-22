@@ -1,18 +1,14 @@
-;;; raindrops.el --- Raindrops (exercism)
-
-;;; Commentary:
-
-;;; Code:
-
-(require 'cl-lib)
-
-
+(require 'cl)
 
 (defun convert (n)
-  "Convert integer N to its raindrops string."
-  )
-
-
+ (let* (
+    (facts '((3 . "Pling") (5 . "Plang") (7 . "Plong")))
+    (r (mapconcat (lambda (f) (if (zerop (mod n (car f))) (cdr f))) facts ""))
+    )
+        (if (string= "" r)
+            (number-to-string n)
+            r)
+    )
+ )
 
 (provide 'raindrops)
-;;; raindrops.el ends here
