@@ -11,7 +11,7 @@ pub fn encode(plain: &str) -> String {
     let chars = plain
         .to_lowercase()
         .chars()
-        .filter(|c| c.is_ascii_alphanumeric())
+        .filter(char::is_ascii_alphanumeric)
         .map(rotate)
         .collect::<Vec<char>>();
 
@@ -25,7 +25,7 @@ pub fn encode(plain: &str) -> String {
 pub fn decode(cipher: &str) -> String {
     cipher
         .chars()
-        .filter(|c| c.is_ascii_alphanumeric())
+        .filter(char::is_ascii_alphanumeric)
         .map(rotate)
         .collect()
 }
