@@ -1,9 +1,9 @@
-;;; nucleotide-count.el --- nucleotide-count Exercise (exercism)
-
-;;; Commentary:
-
-;;; Code:
-
-
 (provide 'nucleotide-count)
-;;; nucleotide-count.el ends here
+
+(defconst init-counter '((?A . 0) (?C . 0) (?G . 0) (?T . 0)))
+
+(defun nucleotide-count (s)
+ (let ((counter (copy-alist init-counter)))
+  (dolist (nt (string-to-list s) counter)
+   (cl-incf (alist-get nt counter)))))
+
