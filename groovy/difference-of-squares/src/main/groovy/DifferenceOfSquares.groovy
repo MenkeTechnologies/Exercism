@@ -9,24 +9,11 @@ class DifferenceOfSquares {
     }
 
     def squareOfSum() {
-
-        int s = 0
-        for (int i = 1; i <= num; ++i) {
-            s += i
-        }
-
-        pow(s, 2)
+        pow((1..num).sum() as double, 2)
     }
 
     def sumOfSquares() {
-
-        int s = 0
-        for (int i = 1; i <= num; ++i) {
-            s += pow(i, 2)
-        }
-
-        s
-
+        (1..num).collect { it * it }.sum()
     }
 
     def difference() {

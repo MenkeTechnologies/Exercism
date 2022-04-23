@@ -1,18 +1,10 @@
 class Strain {
 
     static Collection keep(Collection collection, Closure predicate) {
-        
-        def res = []
-
-        collection.forEach{ predicate(it) && res << it }
-
-        res
-
+        collection.inject([]) { acc, n -> predicate(n) ? acc << n : acc }
     }
 
     static Collection discard(Collection collection, Closure predicate) {
-
         keep(collection, { !predicate(it) })
-
     }
 }

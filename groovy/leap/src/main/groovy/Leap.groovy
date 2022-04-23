@@ -1,24 +1,13 @@
 class Leap {
 
-    private int year;
+    private int y;
 
     Leap(Integer year) {
-        this.year = year;
+        y = year;
     }
 
     def isLeapYear() {
-
-        if (year % 4 == 0) {
-            if (year % 100 == 0) {
-                if (year % 400 == 0) {
-                    return true
-                }
-            } else {
-                return true
-            }
-        }
-
-        false
+        y % 4 == 0 && y % 100 != 0 || y % 400 == 0
     }
 
 
