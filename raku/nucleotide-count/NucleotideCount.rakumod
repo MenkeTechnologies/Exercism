@@ -1,4 +1,7 @@
 unit module NucleotideCount;
 
-sub nucleotide-count ($strand) is export {
+subset DNASequence of Str where /^ <[ACTG]>* $/;
+
+sub nucleotide-count (DNASequence $strand) is export {
+    $strand.comb.Bag
 }
