@@ -12,7 +12,9 @@ constant %allergens = (
 );
 
 sub allergic-to( :$item, :$score ) is export {
+    so %allergens{$item} +& $score
 }
 
 sub list-allergies($score) is export {
+    %allergens.keys.grep: { allergic-to(item => $_, :$score) }
 }
