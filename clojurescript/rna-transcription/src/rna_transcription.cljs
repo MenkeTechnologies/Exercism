@@ -1,5 +1,7 @@
 (ns rna-transcription)
 
-(defn to-rna [] ;; <--- argument goes here...
-  ;; your code goes here...
+(defn to-rna [dna]
+  (->> dna
+       (map #(case % "G" "C" "C" "G" "T" "A" "A" "U"))
+       (apply str))
   )
