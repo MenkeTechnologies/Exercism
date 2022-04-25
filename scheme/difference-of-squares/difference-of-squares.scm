@@ -1,13 +1,18 @@
 (import (rnrs))
 
+(define (square n) (* n n))
+
 (define (square-of-sum n)
-  'implement-me!)
+ (square (fold-left + 0 (iota (+ n 1))))
+)
 
 (define (sum-of-squares n)
-  'implement-me!)
+ (fold-left + 0 (map square (iota (+ n 1))))
+)
 
 (define (difference-of-squares n)
-  'implement-me!)
+ (- (square-of-sum n) (sum-of-squares n))
+)
 
 
 
