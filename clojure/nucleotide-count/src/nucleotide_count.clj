@@ -1,10 +1,15 @@
 (ns nucleotide-count)
 
-(defn count-of-nucleotide-in-strand [nucleotide strand] ;; <- Arglist goes here
-  ;; your code goes here
-)
+(def nucleotides {\A 0 \T 0 \C 0 \G 0})
 
+(defn nucleotide-counts [dna-strand]
+  (->> dna-strand
+       (frequencies)
+       (#(conj nucleotides %))
+       ))
 
-(defn nucleotide-counts [strand] ;; <- Arglist goes here
-  ;; your code goes here
-)
+(defn count-of-nucleotide-in-strand [nucleotide dna-strand]
+  (if (nucleotides nucleotide)
+    ((nucleotide-counts dna-strand) nucleotide)
+    (throw (Exception. "Bad nucleotide")))
+  )
