@@ -1,5 +1,10 @@
 # Paasio
 
+Welcome to Paasio on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Report network IO statistics.
 
 You are writing a [PaaS][], and you need a way to bill customers based
@@ -13,31 +18,28 @@ statistics. The wrapper must report:
 
 [PaaS]: http://en.wikipedia.org/wiki/Platform_as_a_service
 
-## Coding the solution
-
-Look for a stub file having the name paasio.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-Brian Matsuo [https://github.com/bmatsuo](https://github.com/bmatsuo)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @bmatsuo
+
+### Contributed to by
+
+- @alebaffa
+- @bitfield
+- @ekingery
+- @eraserix
+- @ferhatelmas
+- @hilary
+- @kytrinyx
+- @leenipper
+- @petertseng
+- @robphoenix
+- @sebito91
+- @soniakeys
+- @tleen
+
+### Based on
+
+Brian Matsuo - https://github.com/bmatsuo

@@ -1,9 +1,14 @@
 # Perfect Numbers
 
-Determine if a number is perfect, abundant, or deficient based on
-Nicomachus' (60 - 120 CE) classification scheme for natural numbers.
+Welcome to Perfect Numbers on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
 
-The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) devised a classification scheme for natural numbers, identifying each as belonging uniquely to the categories of **perfect**, **abundant**, or **deficient** based on their [aliquot sum](https://en.wikipedia.org/wiki/Aliquot_sum). The aliquot sum is defined as the sum of the factors of a number not including the number itself. For example, the aliquot sum of 15 is (1 + 3 + 5) = 9
+## Instructions
+
+Determine if a number is perfect, abundant, or deficient based on
+Nicomachus' (60 - 120 CE) classification scheme for positive integers.
+
+The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) devised a classification scheme for positive integers, identifying each as belonging uniquely to the categories of **perfect**, **abundant**, or **deficient** based on their [aliquot sum](https://en.wikipedia.org/wiki/Aliquot_sum). The aliquot sum is defined as the sum of the factors of a number not including the number itself. For example, the aliquot sum of 15 is (1 + 3 + 5) = 9
 
 - **Perfect**: aliquot sum = number
   - 6 is a perfect number because (1 + 2 + 3) = 6
@@ -16,8 +21,6 @@ The Greek mathematician [Nicomachus](https://en.wikipedia.org/wiki/Nicomachus) d
   - Prime numbers are deficient
 
 Implement a way to determine whether a given number is **perfect**. Depending on your language track, you may also need to implement a way to determine whether a given number is **abundant** or **deficient**.
-
-## Implementation
 
 Define
 ```type Classification```
@@ -37,32 +40,27 @@ an int64 input and returns a Classification and an error value.
 Create an error named ErrOnlyPositive
 which is returned when the input is not a positive integer.
 
-
-## Coding the solution
-
-Look for a stub file having the name perfect_numbers.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-Taken from Chapter 2 of Functional Thinking by Neal Ford. [http://shop.oreilly.com/product/0636920029687.do](http://shop.oreilly.com/product/0636920029687.do)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ferhatelmas
+
+### Contributed to by
+
+- @alebaffa
+- @bitfield
+- @ekingery
+- @hilary
+- @ilmanzo
+- @kgibilterra
+- @leenipper
+- @petertseng
+- @robphoenix
+- @sebito91
+- @Skarlso
+- @tleen
+
+### Based on
+
+Taken from Chapter 2 of Functional Thinking by Neal Ford. - http://shop.oreilly.com/product/0636920029687.do

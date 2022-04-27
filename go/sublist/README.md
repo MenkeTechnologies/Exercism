@@ -1,5 +1,10 @@
 # Sublist
 
+Welcome to Sublist on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given two lists determine if the first list is contained within the second
 list, if the second list is contained within the first list, if both lists are
 contained within each other or if none of these are true.
@@ -17,27 +22,17 @@ Examples:
  * A = [1, 2, 3, 4, 5], B = [2, 3, 4], A is a superlist of B
  * A = [1, 2, 4], B = [1, 2, 3, 4, 5], A is not a superlist of, sublist of or equal to B
 
-## Coding the solution
+## Source
 
-Look for a stub file having the name sublist.go
-and place your solution code in that file.
+### Created by
 
-## Running the tests
+- @ferhatelmas
 
-To run the tests run the command `go test` from within the exercise directory.
+### Contributed to by
 
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @andreybutko
+- @bitfield
+- @ekingery
+- @hilary
+- @leenipper
+- @sebito91

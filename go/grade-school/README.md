@@ -1,5 +1,10 @@
 # Grade School
 
+Welcome to Grade School on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given students' names along with the grade that they are in, create a roster
 for the school.
 
@@ -15,8 +20,11 @@ In the end, you should be able to:
   as 1, 2, 3, etc., and students within a grade should be sorted
   alphabetically by name.
   - "Who all is enrolled in school right now?"
-  - "Grade 1: Anna, Barb, and Charlie. Grade 2: Alex, Peter, and Zoe.
-    Grade 3…"
+  - "Let me think. We have
+  Anna, Barb, and Charlie in grade 1,
+  Alex, Peter, and Zoe in grade 2
+  and Jim in grade 5.
+  So the answer is: Anna, Barb, Charlie, Alex, Peter, Zoe and Jim"
 
 Note that all our students only have one name.  (It's a small town, what
 do you want?)
@@ -34,31 +42,27 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-## Coding the solution
-
-Look for a stub file having the name grade_school.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool.it)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @soniakeys
+
+### Contributed to by
+
+- @alebaffa
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @jcbwlkr
+- @kytrinyx
+- @leenipper
+- @petertseng
+- @robphoenix
+- @sebito91
+- @tleen
+
+### Based on
+
+A pairing session with Phil Battos at gSchool - http://gschool.it

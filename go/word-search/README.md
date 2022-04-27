@@ -1,5 +1,10 @@
 # Word Search
 
+Welcome to Word Search on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 In word search puzzles you get a square of letters and have to find specific
 words in them.
 
@@ -26,27 +31,24 @@ vertical and diagonal.
 Given a puzzle and a list of words return the location of the first and last
 letter of each word.
 
-## Coding the solution
+## Source
 
-Look for a stub file having the name word_search.go
-and place your solution code in that file.
+### Created by
 
-## Running the tests
+- @pminten
 
-To run the tests run the command `go test` from within the exercise directory.
+### Contributed to by
 
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @Akasurde
+- @alebaffa
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @ilmanzo
+- @kytrinyx
+- @leenipper
+- @petertseng
+- @robphoenix
+- @sebito91
+- @soniakeys

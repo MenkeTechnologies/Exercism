@@ -1,5 +1,10 @@
 # Series
 
+Welcome to Series on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a string of digits, output all the contiguous substrings of length `n` in
 that string in the order that they appear.
 
@@ -20,8 +25,6 @@ whatever you get.
 Note that these series are only required to occupy *adjacent positions*
 in the input; the digits need not be *numerically consecutive*.
 
-## Implementation
-
 Define two functions: (Two? Yes, sometimes we ask more out of Go.)
 
 All returns a list of all substrings of s with length n.
@@ -38,7 +41,7 @@ But wait, maybe you ask a reasonable question: Why is the function
 called **Unsafe** First?  If you are interested, read on for a bonus
 exercise.
 
-### Bonus exercise:
+## Bonus exercise:
 
 Once you get `go test` passing, try `go test -tags asktoomuch`.  This
 uses a *build tag* to enable a test that wasn't enabled before. Build
@@ -63,32 +66,26 @@ in Go. For example you see it in
 [Map lookups](https://blog.golang.org/go-maps-in-action) and
 [type assertions](https://tour.golang.org/methods/15).
 
-
-## Coding the solution
-
-Look for a stub file having the name series.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-A subset of the Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @soniakeys
+
+### Contributed to by
+
+- @alebaffa
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @kytrinyx
+- @leenipper
+- @petertseng
+- @robphoenix
+- @sebito91
+- @tleen
+
+### Based on
+
+A subset of the Problem 8 at Project Euler - http://projecteuler.net/problem=8

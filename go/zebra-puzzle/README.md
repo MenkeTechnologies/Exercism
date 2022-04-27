@@ -1,5 +1,10 @@
 # Zebra Puzzle
 
+Welcome to Zebra Puzzle on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Solve the zebra puzzle.
 
 1. There are five houses.
@@ -25,8 +30,6 @@ drink different beverages and smoke different brands of cigarettes.
 Which of the residents drinks water?
 Who owns the zebra?
 
-## Implementation
-
 Define a single function, SolvePuzzle, which returns a solution
 containing two strings, whose values are the answers to the
 zebra-puzzle questions "Who drinks water?" and "Who owns the Zebra?".
@@ -50,32 +53,19 @@ But the goal is to develop an algorithm which uses
 the given facts and constraints for the puzzle
 and determines the two correct answers.
 
-
-## Coding the solution
-
-Look for a stub file having the name zebra_puzzle.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Zebra_Puzzle](https://en.wikipedia.org/wiki/Zebra_Puzzle)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @leenipper
+
+### Contributed to by
+
+- @bitfield
+- @ekingery
+- @hilary
+- @sebito91
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Zebra_Puzzle

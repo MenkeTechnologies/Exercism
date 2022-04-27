@@ -1,5 +1,10 @@
 # Book Store
 
+Welcome to Book Store on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 To try and encourage more sales of different books from a popular 5 book
 series, a bookshop has decided to offer discounts on multiple book purchases.
 
@@ -67,8 +72,6 @@ For a total of $51.20
 
 And $51.20 is the price with the biggest discount.
 
-## Implementation
-
 Define a single Go func, Cost, which calculates the cost
 for a given list of books based on the defined discounts.
 
@@ -81,33 +84,22 @@ Cost will return the total cost (after discounts) in cents.
 For example, for a single book, the cost is 800 cents, which equals $8.00.
 Only integer calculations are necessary for this exercise.
 
-
-
-## Coding the solution
-
-Look for a stub file having the name book_store.go
-and place your solution code in that file.
-
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
 ## Source
 
-Inspired by the harry potter kata from Cyber-Dojo. [http://cyber-dojo.org](http://cyber-dojo.org)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @magic003
+
+### Contributed to by
+
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @ilmanzo
+- @leenipper
+- @sebito91
+
+### Based on
+
+Inspired by the harry potter kata from Cyber-Dojo. - http://cyber-dojo.org

@@ -1,5 +1,10 @@
 # Dominoes
 
+Welcome to Dominoes on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Make a chain of dominoes.
 
 Compute a way to order a given set of dominoes in such a way that they form a
@@ -13,8 +18,6 @@ like `[1|2] [2|3] [3|1]` or `[3|2] [2|1] [1|3]` or `[1|3] [3|2] [2|1]` etc, wher
 For stones `[1|2]`, `[4|1]` and `[2|3]` the resulting chain is not valid: `[4|1] [1|2] [2|3]`'s first and last numbers are not the same. 4 != 3
 
 Some test cases may use duplicate stones in a chain solution, assume that multiple Domino sets are being used.
-
-## Implementation
 
 Define a single Go func, MakeChain, which accepts a slice
 of dominoes and attempts to construct a legal chain of dominoes.
@@ -43,29 +46,19 @@ MakeChain may return nil for the chain result, but must return false for the ok 
 Since there may be more than one legal chain arrangement for a given input list,
 when ok is true, the test program will check the chain for validity only.
 
+## Source
 
+### Created by
 
-## Coding the solution
+- @leenipper
 
-Look for a stub file having the name dominoes.go
-and place your solution code in that file.
+### Contributed to by
 
-## Running the tests
-
-To run the tests run the command `go test` from within the exercise directory.
-
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @bitfield
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @ilmanzo
+- @sebito91
+- @tleen
+- @zeimusu

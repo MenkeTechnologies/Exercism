@@ -1,19 +1,25 @@
 # Connect
 
+Welcome to Connect on Exercism's Go Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Compute the result for a game of Hex / Polygon.
 
 The abstract boardgame known as
 [Hex](https://en.wikipedia.org/wiki/Hex_%28board_game%29) / Polygon /
 CON-TAC-TIX is quite simple in rules, though complex in practice. Two players
-place stones on a rhombus with hexagonal fields. The player to connect his/her
-stones to the opposite side first wins. The four sides of the rhombus are
+place stones on a parallelogram with hexagonal fields. The player to connect his/her
+stones to the opposite side first wins. The four sides of the parallelogram are
 divided between the two players (i.e. one player gets assigned a side and the
 side directly opposite it and the other player gets assigned the two other
 sides).
 
 Your goal is to build a program that given a simple representation of a board
 computes the winner (or lack thereof). Note that all games need not be "fair".
-(For example, players may have mismatched piece counts.)
+(For example, players may have mismatched piece counts or the game's board might
+have a different width and height.)
 
 The boards look like this:
 
@@ -29,27 +35,24 @@ The boards look like this:
 the above example `O` has made a connection from left to right but nobody has
 won since `O` didn't connect top and bottom.
 
-## Coding the solution
+## Source
 
-Look for a stub file having the name connect.go
-and place your solution code in that file.
+### Created by
 
-## Running the tests
+- @pminten
 
-To run the tests run the command `go test` from within the exercise directory.
+### Contributed to by
 
-If the test suite contains benchmarks, you can run these with the `--bench` and `--benchmem`
-flags:
-
-    go test -v --bench . --benchmem
-
-Keep in mind that each reviewer will run benchmarks on a different machine, with
-different specs, so the results from these benchmark tests may vary.
-
-## Further information
-
-For more detailed information about the Go track, including how to get help if
-you're having trouble, please visit the exercism.io [Go language page](http://exercism.io/languages/go/resources).
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @alebaffa
+- @bitfield
+- @dvrkps
+- @ekingery
+- @ferhatelmas
+- @hilary
+- @jonatas
+- @kytrinyx
+- @leenipper
+- @petertseng
+- @robphoenix
+- @sebito91
+- @tleen
