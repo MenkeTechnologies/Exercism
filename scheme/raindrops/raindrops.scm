@@ -4,6 +4,16 @@
                    (5 . "Plang")
                    (7 . "Plong")))
 
+(define (word-combine n)
+ (lambda (answer entry)
+  (if (zero? (modulo n (car entry)))
+   (string-append answer (cdr entry))
+   answer))
+ )
+
 (define (convert number)
-  'implement-me!)
+  (let ([answer (fold-left (word-combine number) "" word-map)])
+   (or (and (string-null? answer)
+        (number->string number))
+    answer)))
 
