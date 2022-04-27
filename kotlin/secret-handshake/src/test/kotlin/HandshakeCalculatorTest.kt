@@ -11,6 +11,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(1))
     }
 
+    @Ignore
     @Test
     fun testThatInput2YieldsADoubleBlink() {
         assertEquals(
@@ -18,6 +19,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(2))
     }
 
+    @Ignore
     @Test
     fun testThatInput4YieldsACloseYourEyes() {
         assertEquals(
@@ -25,6 +27,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(4))
     }
 
+    @Ignore
     @Test
     fun testThatInput8YieldsAJump() {
         assertEquals(
@@ -32,6 +35,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(8))
     }
 
+    @Ignore
     @Test
     fun testAnInputThatYieldsTwoActions() {
         assertEquals(
@@ -39,6 +43,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(3))
     }
 
+    @Ignore
     @Test
     fun testAnInputThatYieldsTwoReversedActions() {
         assertEquals(
@@ -46,6 +51,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(19))
     }
 
+    @Ignore
     @Test
     fun testReversingASingleActionYieldsTheSameAction() {
         assertEquals(
@@ -53,6 +59,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(24))
     }
 
+    @Ignore
     @Test
     fun testReversingNoActionsYieldsNoActions() {
         assertEquals(
@@ -60,6 +67,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(16))
     }
 
+    @Ignore
     @Test
     fun testInputThatYieldsAllActions() {
         assertEquals(
@@ -67,6 +75,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(15))
     }
 
+    @Ignore
     @Test
     fun testInputThatYieldsAllActionsReversed() {
         assertEquals(
@@ -74,6 +83,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(31))
     }
 
+    @Ignore
     @Test
     fun testThatInput0YieldsNoActions() {
         assertEquals(
@@ -81,6 +91,7 @@ class HandshakeCalculatorTest {
             HandshakeCalculator.calculateHandshake(0))
     }
 
+    @Ignore
     @Test
     fun testThatInputWithLower5BitsNotSetYieldsNoActions() {
         assertEquals(

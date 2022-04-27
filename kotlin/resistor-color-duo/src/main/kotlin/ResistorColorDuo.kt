@@ -8,7 +8,7 @@ object ResistorColorDuo {
         for (color in colors) {
             str += color.ordinal
 
-            if (++cnt == 2) {
+            if (cnt++ == 1) {
                 break
             }
         }
