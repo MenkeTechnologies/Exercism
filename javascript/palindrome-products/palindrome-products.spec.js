@@ -10,7 +10,7 @@ describe('Palindromes', () => {
     expect(sortFactors(smallest.factors)).toEqual(expected.factors);
   });
 
-  test('largest palindrome from single digit factors', () => {
+  xtest('largest palindrome from single digit factors', () => {
     const palindromes = Palindromes.generate({ maxFactor: 9, minFactor: 1 });
     const largest = palindromes.largest;
     const expected = {
@@ -25,7 +25,7 @@ describe('Palindromes', () => {
     expect(sortFactors(largest.factors)).toEqual(expected.factors);
   });
 
-  test('smallest palindrome from double digit factors', () => {
+  xtest('smallest palindrome from double digit factors', () => {
     const palindromes = Palindromes.generate({ maxFactor: 99, minFactor: 10 });
     const smallest = palindromes.smallest;
     const expected = { value: 121, factors: [[11, 11]] };
@@ -34,7 +34,7 @@ describe('Palindromes', () => {
     expect(sortFactors(smallest.factors)).toEqual(expected.factors);
   });
 
-  test('largest palindrome from double digit factors', () => {
+  xtest('largest palindrome from double digit factors', () => {
     const palindromes = Palindromes.generate({ maxFactor: 99, minFactor: 10 });
     const largest = palindromes.largest;
     const expected = { value: 9009, factors: [[91, 99]] };
@@ -43,7 +43,7 @@ describe('Palindromes', () => {
     expect(sortFactors(largest.factors)).toEqual(expected.factors);
   });
 
-  test('smallest palindrome from triple digit factors', () => {
+  xtest('smallest palindrome from triple digit factors', () => {
     const palindromes = Palindromes.generate({
       maxFactor: 999,
       minFactor: 100,
@@ -55,7 +55,7 @@ describe('Palindromes', () => {
     expect(sortFactors(smallest.factors)).toEqual(expected.factors);
   });
 
-  test('largest palindrome from triple digit factors', () => {
+  xtest('largest palindrome from triple digit factors', () => {
     const palindromes = Palindromes.generate({
       maxFactor: 999,
       minFactor: 100,
@@ -67,7 +67,7 @@ describe('Palindromes', () => {
     expect(sortFactors(largest.factors)).toEqual(expected.factors);
   });
 
-  test('smallest palindrome from four digit factors', () => {
+  xtest('smallest palindrome from four digit factors', () => {
     const palindromes = Palindromes.generate({
       maxFactor: 9999,
       minFactor: 1000,
@@ -91,7 +91,7 @@ describe('Palindromes', () => {
     expect(sortFactors(largest.factors)).toEqual(expected.factors);
   });
 
-  test('empty result for smallest if no palindrome in range', () => {
+  xtest('empty result for smallest if no palindrome in range', () => {
     const palindromes = Palindromes.generate({
       maxFactor: 1003,
       minFactor: 1002,
@@ -102,7 +102,7 @@ describe('Palindromes', () => {
     expect(smallest.factors).toEqual([]);
   });
 
-  test('empty result for largest if no palindrome in range', () => {
+  xtest('empty result for largest if no palindrome in range', () => {
     const palindromes = Palindromes.generate({ maxFactor: 15, minFactor: 15 });
     const largest = palindromes.largest;
 
@@ -110,7 +110,7 @@ describe('Palindromes', () => {
     expect(largest.factors).toEqual([]);
   });
 
-  test('error for smallest if min is more than max', () => {
+  xtest('error for smallest if min is more than max', () => {
     expect(() => {
       const palindromes = Palindromes.generate({
         maxFactor: 1,
@@ -120,7 +120,7 @@ describe('Palindromes', () => {
     }).toThrow(new Error('min must be <= max'));
   });
 
-  test('error for largest if min is more than max', () => {
+  xtest('error for largest if min is more than max', () => {
     expect(() => {
       const palindromes = Palindromes.generate({ maxFactor: 1, minFactor: 2 });
       palindromes.largest;

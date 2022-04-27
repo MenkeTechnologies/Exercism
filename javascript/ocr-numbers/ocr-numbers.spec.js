@@ -13,7 +13,7 @@ describe('ocr', () => {
     ).toBe('0');
   });
 
-  test('recognizes one', () => {
+  xtest('recognizes one', () => {
     expect(
       // prettier-ignore
       convert(
@@ -25,7 +25,7 @@ describe('ocr', () => {
     ).toBe('1');
   });
 
-  test('recognizes two', () => {
+  xtest('recognizes two', () => {
     expect(
       // prettier-ignore
       convert(
@@ -37,7 +37,7 @@ describe('ocr', () => {
     ).toBe('2');
   });
 
-  test('recognizes three', () => {
+  xtest('recognizes three', () => {
     expect(
       // prettier-ignore
       convert(
@@ -49,7 +49,7 @@ describe('ocr', () => {
     ).toBe('3');
   });
 
-  test('recognizes four', () => {
+  xtest('recognizes four', () => {
     expect(
       // prettier-ignore
       convert(
@@ -61,7 +61,7 @@ describe('ocr', () => {
     ).toBe('4');
   });
 
-  test('recognizes five', () => {
+  xtest('recognizes five', () => {
     expect(
       // prettier-ignore
       convert(
@@ -73,7 +73,7 @@ describe('ocr', () => {
     ).toBe('5');
   });
 
-  test('recognizes six', () => {
+  xtest('recognizes six', () => {
     expect(
       // prettier-ignore
       convert(
@@ -85,7 +85,7 @@ describe('ocr', () => {
     ).toBe('6');
   });
 
-  test('recognizes seven', () => {
+  xtest('recognizes seven', () => {
     expect(
       // prettier-ignore
       convert(
@@ -97,7 +97,7 @@ describe('ocr', () => {
     ).toBe('7');
   });
 
-  test('recognizes eight', () => {
+  xtest('recognizes eight', () => {
     expect(
       // prettier-ignore
       convert(
@@ -109,7 +109,7 @@ describe('ocr', () => {
     ).toBe('8');
   });
 
-  test('recognizes nine', () => {
+  xtest('recognizes nine', () => {
     expect(
       // prettier-ignore
       convert(
@@ -121,7 +121,7 @@ describe('ocr', () => {
     ).toBe('9');
   });
 
-  test('recognizes ten', () => {
+  xtest('recognizes ten', () => {
     expect(
       // prettier-ignore
       convert(
@@ -133,7 +133,7 @@ describe('ocr', () => {
     ).toBe('10');
   });
 
-  test('identifies garble', () => {
+  xtest('identifies garble', () => {
     expect(
       // prettier-ignore
       convert(
@@ -145,7 +145,7 @@ describe('ocr', () => {
     ).toBe('?');
   });
 
-  test('converts 110101100', () => {
+  xtest('converts 110101100', () => {
     expect(
       // prettier-ignore
       convert(
@@ -157,7 +157,7 @@ describe('ocr', () => {
     ).toBe('110101100');
   });
 
-  test('identifies garble mixed in', () => {
+  xtest('identifies garble mixed in', () => {
     expect(
       // prettier-ignore
       convert(
@@ -169,7 +169,7 @@ describe('ocr', () => {
     ).toBe('11?10?1?0');
   });
 
-  test('converts 1234567890', () => {
+  xtest('converts 1234567890', () => {
     expect(
       // prettier-ignore
       convert(
@@ -181,7 +181,7 @@ describe('ocr', () => {
     ).toBe('1234567890');
   });
 
-  test('converts 123 456 789', () => {
+  xtest('converts 123 456 789', () => {
     expect(
       // prettier-ignore
       convert(

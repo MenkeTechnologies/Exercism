@@ -6,12 +6,12 @@ describe('countWords', () => {
     expect(countWords('word')).toEqual(expectedCounts);
   });
 
-  test('count one of each word', () => {
+  xtest('count one of each word', () => {
     const expectedCounts = { one: 1, of: 1, each: 1 };
     expect(countWords('one of each')).toEqual(expectedCounts);
   });
 
-  test('multiple occurrences of a word', () => {
+  xtest('multiple occurrences of a word', () => {
     const expectedCounts = {
       one: 1,
       fish: 4,
@@ -24,7 +24,7 @@ describe('countWords', () => {
     );
   });
 
-  test('handles cramped lists', () => {
+  xtest('handles cramped lists', () => {
     const expectedCounts = {
       one: 1,
       two: 1,
@@ -33,7 +33,7 @@ describe('countWords', () => {
     expect(countWords('one,two,three')).toEqual(expectedCounts);
   });
 
-  test('handles expanded lists', () => {
+  xtest('handles expanded lists', () => {
     const expectedCounts = {
       one: 1,
       two: 1,
@@ -42,7 +42,7 @@ describe('countWords', () => {
     expect(countWords('one,\ntwo,\nthree')).toEqual(expectedCounts);
   });
 
-  test('ignore punctuation', () => {
+  xtest('ignore punctuation', () => {
     const expectedCounts = {
       car: 1,
       carpet: 1,
@@ -55,7 +55,7 @@ describe('countWords', () => {
     );
   });
 
-  test('include numbers', () => {
+  xtest('include numbers', () => {
     const expectedCounts = {
       testing: 2,
       1: 1,
@@ -64,7 +64,7 @@ describe('countWords', () => {
     expect(countWords('testing, 1, 2 testing')).toEqual(expectedCounts);
   });
 
-  test('normalize case', () => {
+  xtest('normalize case', () => {
     const expectedCounts = {
       go: 3,
       stop: 2,
@@ -72,7 +72,7 @@ describe('countWords', () => {
     expect(countWords('go Go GO Stop stop')).toEqual(expectedCounts);
   });
 
-  test('with apostrophes', () => {
+  xtest('with apostrophes', () => {
     const expectedCounts = {
       first: 1,
       "don't": 2,
@@ -85,7 +85,7 @@ describe('countWords', () => {
     );
   });
 
-  test('with quotations', () => {
+  xtest('with quotations', () => {
     const expectedCounts = {
       joe: 1,
       "can't": 1,
@@ -99,7 +99,7 @@ describe('countWords', () => {
     );
   });
 
-  test('substrings from the beginning', () => {
+  xtest('substrings from the beginning', () => {
     const expectedCounts = {
       joe: 1,
       "can't": 1,
@@ -115,7 +115,7 @@ describe('countWords', () => {
     );
   });
 
-  test('multiple spaces not detected as a word', () => {
+  xtest('multiple spaces not detected as a word', () => {
     const expectedCounts = {
       multiple: 1,
       whitespaces: 1,
@@ -123,7 +123,7 @@ describe('countWords', () => {
     expect(countWords(' multiple   whitespaces')).toEqual(expectedCounts);
   });
 
-  test('alternating word separators not detected as a word', () => {
+  xtest('alternating word separators not detected as a word', () => {
     const expectedCounts = {
       one: 1,
       two: 1,

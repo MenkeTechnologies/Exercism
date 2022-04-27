@@ -8,14 +8,14 @@ describe('Spiral Matrix', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('trivial spiral', () => {
+  xtest('trivial spiral', () => {
     const expected = [[1]];
     const actual = spiralMatrix(1);
 
     expect(actual).toEqual(expected);
   });
 
-  test('spiral of size 2', () => {
+  xtest('spiral of size 2', () => {
     const expected = [
       [1, 2],
       [4, 3],
@@ -25,7 +25,7 @@ describe('Spiral Matrix', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('spiral of size 3', () => {
+  xtest('spiral of size 3', () => {
     const expected = [
       [1, 2, 3],
       [8, 9, 4],
@@ -36,7 +36,7 @@ describe('Spiral Matrix', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('spiral of size 4', () => {
+  xtest('spiral of size 4', () => {
     const expected = [
       [1, 2, 3, 4],
       [12, 13, 14, 5],
@@ -48,7 +48,7 @@ describe('Spiral Matrix', () => {
     expect(actual).toEqual(expected);
   });
 
-  test('spiral of size 5', () => {
+  xtest('spiral of size 5', () => {
     const expected = [
       [1, 2, 3, 4, 5],
       [16, 17, 18, 19, 6],

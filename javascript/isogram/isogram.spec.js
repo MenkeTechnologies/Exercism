@@ -6,51 +6,51 @@ describe('Isogram', () => {
       expect(isIsogram('')).toEqual(true);
     });
 
-    test('isogram with only lower case characters', () => {
+    xtest('isogram with only lower case characters', () => {
       expect(isIsogram('isogram')).toEqual(true);
     });
 
-    test('word with one duplicated character', () => {
+    xtest('word with one duplicated character', () => {
       expect(isIsogram('eleven')).toEqual(false);
     });
 
-    test('word with one duplicated character from the end of the alphabet', () => {
+    xtest('word with one duplicated character from the end of the alphabet', () => {
       expect(isIsogram('zzyzx')).toEqual(false);
     });
 
-    test('longest reported english isogram', () => {
+    xtest('longest reported english isogram', () => {
       expect(isIsogram('subdermatoglyphic')).toEqual(true);
     });
 
-    test('word with duplicated character in mixed case', () => {
+    xtest('word with duplicated character in mixed case', () => {
       expect(isIsogram('Alphabet')).toEqual(false);
     });
 
-    test('word with duplicated character in mixed case, lowercase first', () => {
+    xtest('word with duplicated character in mixed case, lowercase first', () => {
       expect(isIsogram('alphAbet')).toEqual(false);
     });
 
-    test('hypothetical isogrammic word with hyphen', () => {
+    xtest('hypothetical isogrammic word with hyphen', () => {
       expect(isIsogram('thumbscrew-japingly')).toEqual(true);
     });
 
-    test('hypothetical word with duplicated character following hyphen', () => {
+    xtest('hypothetical word with duplicated character following hyphen', () => {
       expect(isIsogram('thumbscrew-jappingly')).toEqual(false);
     });
 
-    test('isogram with duplicated hyphen', () => {
+    xtest('isogram with duplicated hyphen', () => {
       expect(isIsogram('six-year-old')).toEqual(true);
     });
 
-    test('made-up name that is an isogram', () => {
+    xtest('made-up name that is an isogram', () => {
       expect(isIsogram('Emily Jung Schwartzkopf')).toEqual(true);
     });
 
-    test('duplicated character in the middle', () => {
+    xtest('duplicated character in the middle', () => {
       expect(isIsogram('accentor')).toEqual(false);
     });
 
-    test('same first and last characters', () => {
+    xtest('same first and last characters', () => {
       expect(isIsogram('angola')).toEqual(false);
     });
   });

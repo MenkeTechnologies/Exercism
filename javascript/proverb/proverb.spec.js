@@ -7,13 +7,13 @@ describe('Proverb', () => {
     expect(result).toEqual('');
   });
 
-  test('one piece', () => {
+  xtest('one piece', () => {
     const result = proverb('nail');
 
     expect(result).toEqual('And all for the want of a nail.');
   });
 
-  test('two pieces', () => {
+  xtest('two pieces', () => {
     const result = proverb('nail', 'shoe');
 
     expect(result).toEqual(
@@ -22,7 +22,7 @@ And all for the want of a nail.`
     );
   });
 
-  test('three pieces', () => {
+  xtest('three pieces', () => {
     const result = proverb('nail', 'shoe', 'horse');
 
     expect(result).toEqual(
@@ -32,7 +32,7 @@ And all for the want of a nail.`
     );
   });
 
-  test('the whole proverb', () => {
+  xtest('the whole proverb', () => {
     const result = proverb(
       'nail',
       'shoe',
@@ -54,11 +54,11 @@ And all for the want of a nail.`
     );
   });
 
-  test('proverb is the same each time', () => {
+  xtest('proverb is the same each time', () => {
     expect(proverb('nail', 'shoe')).toEqual(proverb('nail', 'shoe'));
   });
 
-  test('four pieces modernized', () => {
+  xtest('four pieces modernized', () => {
     const result = proverb('pin', 'gun', 'soldier', 'battle');
 
     expect(result).toEqual(
@@ -69,7 +69,7 @@ And all for the want of a pin.`
     );
   });
 
-  test('the use of an optional qualifier in the final consequence', () => {
+  xtest('the use of an optional qualifier in the final consequence', () => {
     const result = proverb(
       'nail',
       'shoe',

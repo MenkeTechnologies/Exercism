@@ -6,23 +6,23 @@ describe('Pascals Triangle', () => {
       expect(rows(0)).toEqual([]);
     });
 
-    test('single row', () => {
+    xtest('single row', () => {
       expect(rows(1)).toEqual([[1]]);
     });
 
-    test('two rows', () => {
+    xtest('two rows', () => {
       expect(rows(2)).toEqual([[1], [1, 1]]);
     });
 
-    test('three rows', () => {
+    xtest('three rows', () => {
       expect(rows(3)).toEqual([[1], [1, 1], [1, 2, 1]]);
     });
 
-    test('four rows', () => {
+    xtest('four rows', () => {
       expect(rows(4)).toEqual([[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]);
     });
 
-    test('five rows', () => {
+    xtest('five rows', () => {
       expect(rows(5)).toEqual([
         [1],
         [1, 1],
@@ -32,7 +32,7 @@ describe('Pascals Triangle', () => {
       ]);
     });
 
-    test('six rows', () => {
+    xtest('six rows', () => {
       expect(rows(6)).toEqual([
         [1],
         [1, 1],
@@ -43,7 +43,7 @@ describe('Pascals Triangle', () => {
       ]);
     });
 
-    test('ten rows', () => {
+    xtest('ten rows', () => {
       expect(rows(10)).toEqual([
         [1],
         [1, 1],

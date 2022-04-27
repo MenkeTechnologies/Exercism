@@ -71,7 +71,7 @@ describe('grep exercise', () => {
       ).resolves.toBe('Of Atreus, Agamemnon, King of men.');
     });
 
-    it('One file, one match, print line numbers flag', () => {
+    xit('One file, one match, print line numbers flag', () => {
       return expect(
         spawnGrep({
           pattern: 'Forbidden',
@@ -81,7 +81,7 @@ describe('grep exercise', () => {
       ).resolves.toBe('2:Of that Forbidden Tree, whose mortal tast');
     });
 
-    it('One file, one match, case-insensitive flag', () => {
+    xit('One file, one match, case-insensitive flag', () => {
       return expect(
         spawnGrep({
           pattern: 'FORBIDDEN',
@@ -91,7 +91,7 @@ describe('grep exercise', () => {
       ).resolves.toBe('Of that Forbidden Tree, whose mortal tast');
     });
 
-    it('One file, one match, print file names flag', () => {
+    xit('One file, one match, print file names flag', () => {
       return expect(
         spawnGrep({
           pattern: 'Forbidden',
@@ -101,7 +101,7 @@ describe('grep exercise', () => {
       ).resolves.toBe(resolveDataFile('paradise-lost.txt'));
     });
 
-    it('One file, one match, match entire lines flag', () => {
+    xit('One file, one match, match entire lines flag', () => {
       return expect(
         spawnGrep({
           pattern: 'With loss of Eden, till one greater Man',
@@ -111,7 +111,7 @@ describe('grep exercise', () => {
       ).resolves.toBe('With loss of Eden, till one greater Man');
     });
 
-    it('One file, one match, multiple flags', () => {
+    xit('One file, one match, multiple flags', () => {
       return expect(
         spawnGrep({
           pattern: 'OF ATREUS, Agamemnon, KIng of MEN.',
@@ -121,7 +121,7 @@ describe('grep exercise', () => {
       ).resolves.toBe('9:Of Atreus, Agamemnon, King of men.');
     });
 
-    it('One file, several matches, no flags', () => {
+    xit('One file, several matches, no flags', () => {
       return expect(
         spawnGrep({
           pattern: 'may',
@@ -135,7 +135,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('One file, several matches, print line numbers flag', () => {
+    xit('One file, several matches, print line numbers flag', () => {
       return expect(
         spawnGrep({
           pattern: 'may',
@@ -149,7 +149,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('One file, several matches, match entire lines flag', () => {
+    xit('One file, several matches, match entire lines flag', () => {
       return expect(
         spawnGrep({
           pattern: 'may',
@@ -159,7 +159,7 @@ describe('grep exercise', () => {
       ).resolves.toBe('');
     });
 
-    it('One file, several matches, case-insensitive flag', () => {
+    xit('One file, several matches, case-insensitive flag', () => {
       return expect(
         spawnGrep({
           pattern: 'ACHILLES',
@@ -172,7 +172,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('One file, several matches, inverted flag', () => {
+    xit('One file, several matches, inverted flag', () => {
       return expect(
         spawnGrep({
           pattern: 'Of',
@@ -188,7 +188,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('One file, no matches, various flags', () => {
+    xit('One file, no matches, various flags', () => {
       return expect(
         spawnGrep({
           pattern: 'Gandalf',
@@ -198,7 +198,7 @@ describe('grep exercise', () => {
       ).resolves.toBe('');
     });
 
-    it('One file, one match, file flag takes precedence over line flag', () => {
+    xit('One file, one match, file flag takes precedence over line flag', () => {
       return expect(
         spawnGrep({
           pattern: 'ten',
@@ -208,7 +208,7 @@ describe('grep exercise', () => {
       ).resolves.toBe(resolveDataFile('iliad.txt'));
     });
 
-    it('One file, several matches, inverted and match entire lines flags', () => {
+    xit('One file, several matches, inverted and match entire lines flags', () => {
       return expect(
         spawnGrep({
           pattern: 'Illustrious into Ades premature,',
@@ -229,7 +229,7 @@ describe('grep exercise', () => {
   });
 
   describe('Test grepping multiples files at once', () => {
-    it('Multiple files, one match, no flags', () => {
+    xit('Multiple files, one match, no flags', () => {
       return expect(
         spawnGrep({
           pattern: 'Agamemnon',
@@ -241,7 +241,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('Multiple files, several matches, no flags', () => {
+    xit('Multiple files, several matches, no flags', () => {
       return expect(
         spawnGrep({
           pattern: 'may',
@@ -261,7 +261,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('Multiple files, several matches, print line numbers flag', () => {
+    xit('Multiple files, several matches, print line numbers flag', () => {
       return expect(
         spawnGrep({
           pattern: 'that',
@@ -297,7 +297,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('Multiple files, several matches, case-insensitive flag', () => {
+    xit('Multiple files, several matches, case-insensitive flag', () => {
       return expect(
         spawnGrep({
           pattern: 'TO',
@@ -334,7 +334,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('Multiple files, several matches, inverted flag', () => {
+    xit('Multiple files, several matches, inverted flag', () => {
       return expect(
         spawnGrep({
           pattern: 'a',
@@ -352,7 +352,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('Multiple files, one match, match entire lines flag', () => {
+    xit('Multiple files, one match, match entire lines flag', () => {
       return expect(
         spawnGrep({
           pattern: 'But I beseech your grace that I may know',
@@ -366,7 +366,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('Multiple files, one match, multiple flags', () => {
+    xit('Multiple files, one match, multiple flags', () => {
       return expect(
         spawnGrep({
           pattern: 'WITH LOSS OF EDEN, TILL ONE GREATER MAN',
@@ -380,7 +380,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('Multiple files, no matches, various flags', () => {
+    xit('Multiple files, no matches, various flags', () => {
       return expect(
         spawnGrep({
           pattern: 'Frodo',
@@ -390,7 +390,7 @@ describe('grep exercise', () => {
       ).resolves.toBe('');
     });
 
-    it('Multiple files, several matches, file flag takes precedence over line number flag', () => {
+    xit('Multiple files, several matches, file flag takes precedence over line number flag', () => {
       return expect(
         spawnGrep({
           pattern: 'who',
@@ -403,7 +403,7 @@ describe('grep exercise', () => {
       );
     });
 
-    it('Multiple files, several matches, inverted and match entire lines flags', () => {
+    xit('Multiple files, several matches, inverted and match entire lines flags', () => {
       return expect(
         spawnGrep({
           pattern: 'Illustrious into Ades premature,',

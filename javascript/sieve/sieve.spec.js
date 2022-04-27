@@ -5,19 +5,19 @@ describe('Sieve', () => {
     expect(primes(1)).toEqual([]);
   });
 
-  test('finds first prime', () => {
+  xtest('finds first prime', () => {
     expect(primes(2)).toEqual([2]);
   });
 
-  test('finds primes up to 10', () => {
+  xtest('finds primes up to 10', () => {
     expect(primes(10)).toEqual([2, 3, 5, 7]);
   });
 
-  test('limit is prime', () => {
+  xtest('limit is prime', () => {
     expect(primes(13)).toEqual([2, 3, 5, 7, 11, 13]);
   });
 
-  test('finds primes up to 1000', () => {
+  xtest('finds primes up to 1000', () => {
     expect(primes(1000)).toEqual([
       2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
       71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149,
