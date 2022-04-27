@@ -5,7 +5,7 @@ describe 'LinkedList', ->
         list = new LinkedList()
         expect(list.count).toBe 0
 
-    it 'push/pop', ->
+    xit 'push/pop', ->
         list = new LinkedList()
         list.pushNode(10)
         list.pushNode(20)
@@ -13,14 +13,14 @@ describe 'LinkedList', ->
         expect(list.popNode()).toBe 30
         expect(list.popNode()).toBe 20
 
-    it 'push/shift', ->
+    xit 'push/shift', ->
         list = new LinkedList()
         list.pushNode(10)
         list.pushNode(20)
         expect(list.shiftNode()).toBe 10
         expect(list.shiftNode()).toBe 20
 
-    it 'unshift/shift', ->
+    xit 'unshift/shift', ->
         list = new LinkedList()
         list.unshiftNode(20)
         list.unshiftNode(10)
@@ -28,13 +28,13 @@ describe 'LinkedList', ->
         expect(list.shiftNode()).toBe 30
         expect(list.shiftNode()).toBe 10
 
-    it 'unshift/pop', ->
+    xit 'unshift/pop', ->
         list = new LinkedList()
         list.unshiftNode(20)
         list.unshiftNode(30)
         expect(list.popNode()).toBe 20
 
-    it 'example', ->
+    xit 'example', ->
         list = new LinkedList()
         list.pushNode(10)
         list.pushNode(20)
@@ -50,17 +50,17 @@ describe 'LinkedList', ->
         expect(list.countNodes()).toBe 1
         expect(list.shiftNode()).toBe 30
 
-    it 'pops undefined when there are no elements', ->
+    xit 'pops undefined when there are no elements', ->
         list = new LinkedList()
         expect(list.popNode()).toBe undefined
 
-    it ' can count its elements', ->
+    xit ' can count its elements', ->
         list = new LinkedList()
         list.pushNode(20)
         list.pushNode(30)
         expect(list.countNodes()).toBe 2
 
-    it 'deletes last element from list', ->
+    xit 'deletes last element from list', ->
         list = new LinkedList()
         list.pushNode(10)
         list.pushNode(20)
@@ -69,7 +69,7 @@ describe 'LinkedList', ->
         expect(list.countNodes()).toBe 2
         expect(list.shiftNode()).toBe 20
         
-    it 'deletes only the last element', ->
+    xit 'deletes only the last element', ->
         list = new LinkedList()
         list.pushNode(10)
         list.deleteNode(10)
