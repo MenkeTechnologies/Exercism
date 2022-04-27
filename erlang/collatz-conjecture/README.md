@@ -1,5 +1,10 @@
 # Collatz Conjecture
 
+Welcome to Collatz Conjecture on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The Collatz Conjecture or 3x+1 problem can be summarized as follows:
 
 Take any positive integer n. If n is even, divide n by 2 to get n / 2. If n is
@@ -26,32 +31,21 @@ Starting with n = 12, the steps would be as follows:
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
-## Running tests
-
-In order to run the tests, issue the following command from the exercise
-directory:
-
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
-
-In order to run the tests, you can issue the following command from the exercise
-directory.
-
-```bash
-$ rebar3 eunit
-```
-
-## Questions?
-
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
-
 ## Source
 
-An unsolved problem in mathematics named after mathematician Lothar Collatz [https://en.wikipedia.org/wiki/3x_%2B_1_problem](https://en.wikipedia.org/wiki/3x_%2B_1_problem)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @NobbZ
+
+### Contributed to by
+
+- @ErikSchierboom
+- @iHiD
+- @JordanAdams
+- @juhlig
+- @kytrinyx
+- @wojtii
+
+### Based on
+
+An unsolved problem in mathematics named after mathematician Lothar Collatz - https://en.wikipedia.org/wiki/3x_%2B_1_problem

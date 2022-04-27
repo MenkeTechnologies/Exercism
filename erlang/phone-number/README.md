@@ -1,5 +1,10 @@
 # Phone Number
 
+Welcome to Phone Number on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Clean up user-entered phone numbers so that they can be sent SMS messages.
 
 The **North American Numbering Plan (NANP)** is a telephone numbering system used by many countries in North America like the United States, Canada or Bermuda. All NANP-countries share the same international country code: `1`.
@@ -28,51 +33,23 @@ should all produce the output
 
 **Note:** As this exercise only deals with telephone numbers used in NANP-countries, only 1 is considered a valid country code.
 
-## Running tests
-
-In order to run the tests, issue the following command from the exercise
-directory:
-
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
-
-In order to run the tests, you can issue the following command from the exercise
-directory.
-
-```bash
-$ rebar3 eunit
-```
-
-### Test versioning
-
-Each problem defines a macro `TEST_VERSION` in the test file and
-verifies that the solution defines and exports a function `test_version`
-returning that same value.
-
-To make tests pass, add the following to your solution:
-
-```erlang
--export([test_version/0]).
-
-test_version() ->
-  1.
-```
-
-The benefit of this is that reviewers can see against which test version
-an iteration was written if, for example, a previously posted solution
-does not solve the current problem or passes current tests.
-
-## Questions?
-
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
-
 ## Source
 
-Event Manager by JumpstartLab [http://tutorials.jumpstartlab.com/projects/eventmanager.html](http://tutorials.jumpstartlab.com/projects/eventmanager.html)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @tmcgilchrist
+
+### Contributed to by
+
+- @adolfopa
+- @ErikSchierboom
+- @etrepum
+- @iHiD
+- @JordanAdams
+- @kytrinyx
+- @NobbZ
+- @xymbol
+
+### Based on
+
+Event Manager by JumpstartLab - http://tutorials.jumpstartlab.com/projects/eventmanager.html

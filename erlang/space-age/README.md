@@ -1,10 +1,15 @@
 # Space Age
 
+Welcome to Space Age on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given an age in seconds, calculate how old someone would be on:
 
-   - Earth: orbital period 365.25 Earth days, or 31557600 seconds
    - Mercury: orbital period 0.2408467 Earth years
    - Venus: orbital period 0.61519726 Earth years
+   - Earth: orbital period 1.0 Earth years, 365.25 Earth days, or 31557600 seconds
    - Mars: orbital period 1.8808158 Earth years
    - Jupiter: orbital period 11.862615 Earth years
    - Saturn: orbital period 29.447498 Earth years
@@ -17,32 +22,24 @@ be able to say that they're 31.69 Earth-years old.
 If you're wondering why Pluto didn't make the cut, go watch [this
 youtube video](http://www.youtube.com/watch?v=Z_2gbGXzFbs).
 
-## Running tests
-
-In order to run the tests, issue the following command from the exercise
-directory:
-
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
-
-In order to run the tests, you can issue the following command from the exercise
-directory.
-
-```bash
-$ rebar3 eunit
-```
-
-## Questions?
-
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
-
 ## Source
 
-Partially inspired by Chapter 1 in Chris Pine's online Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=01](http://pine.fm/LearnToProgram/?Chapter=01)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @tmcgilchrist
+
+### Contributed to by
+
+- @adolfopa
+- @ErikSchierboom
+- @etrepum
+- @iHiD
+- @JordanAdams
+- @juhlig
+- @kytrinyx
+- @NobbZ
+- @xymbol
+
+### Based on
+
+Partially inspired by Chapter 1 in Chris Pine's online Learn to Program tutorial. - http://pine.fm/LearnToProgram/?Chapter=01

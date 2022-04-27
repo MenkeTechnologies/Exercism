@@ -1,5 +1,10 @@
 # Satellite
 
+Welcome to Satellite on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Imagine you need to transmit a binary tree to a satellite approaching Alpha
 Centauri and you have limited bandwidth. Since the tree has no repeating
 items it can be uniquely represented by its [pre-order and in-order traversals][wiki].
@@ -28,28 +33,14 @@ Note: the first item in the pre-order traversal is always the root.
 
 [wiki]: https://en.wikipedia.org/wiki/Tree_traversal
 
-## Running tests
+## Source
 
-In order to run the tests, issue the following command from the exercise
-directory:
+### Created by
 
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
+- @juhlig
 
-In order to run the tests, you can issue the following command from the exercise
-directory.
+### Contributed to by
 
-```bash
-$ rebar3 eunit
-```
-
-## Questions?
-
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+- @iHiD
+- @NobbZ

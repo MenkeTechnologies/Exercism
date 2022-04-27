@@ -1,5 +1,10 @@
 # Luhn
 
+Welcome to Luhn on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a number determine whether or not it is valid per the Luhn formula.
 
 The [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) is
@@ -19,27 +24,27 @@ are disallowed.
 ## Example 1: valid credit card number
 
 ```text
-4539 1488 0343 6467
+4539 3195 0343 6467
 ```
 
 The first step of the Luhn algorithm is to double every second digit,
 starting from the right. We will be doubling
 
 ```text
-4_3_ 1_8_ 0_4_ 6_6_
+4_3_ 3_9_ 0_4_ 6_6_
 ```
 
 If doubling the number results in a number greater than 9 then subtract 9
 from the product. The results of our doubling:
 
 ```text
-8569 2478 0383 3437
+8569 6195 0383 3437
 ```
 
 Then sum all of the digits:
 
 ```text
-8+5+6+9+2+4+7+8+0+3+8+3+3+4+3+7 = 80
+8+5+6+9+6+1+9+5+0+3+8+3+3+4+3+7 = 80
 ```
 
 If the sum is evenly divisible by 10, then the number is valid. This number is valid!
@@ -64,32 +69,26 @@ Sum the digits
 
 57 is not evenly divisible by 10, so this number is not valid.
 
-## Running tests
-
-In order to run the tests, issue the following command from the exercise
-directory:
-
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
-
-In order to run the tests, you can issue the following command from the exercise
-directory.
-
-```bash
-$ rebar3 eunit
-```
-
-## Questions?
-
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
-
 ## Source
 
-The Luhn Algorithm on Wikipedia [http://en.wikipedia.org/wiki/Luhn_algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @robinhilliard
+
+### Contributed to by
+
+- @adolfopa
+- @ErikSchierboom
+- @etrepum
+- @iHiD
+- @JordanAdams
+- @juhlig
+- @kytrinyx
+- @NobbZ
+- @sjwarner-bp
+- @tmcgilchrist
+- @xymbol
+
+### Based on
+
+The Luhn Algorithm on Wikipedia - http://en.wikipedia.org/wiki/Luhn_algorithm

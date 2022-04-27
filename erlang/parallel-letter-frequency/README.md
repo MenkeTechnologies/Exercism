@@ -1,5 +1,10 @@
 # Parallel Letter Frequency
 
+Welcome to Parallel Letter Frequency on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Count the frequency of letters in texts using parallel computation.
 
 Parallelism is about doing things in parallel that can also be done
@@ -7,28 +12,15 @@ sequentially. A common example is counting the frequency of letters.
 Create a function that returns the total frequency of each letter in a
 list of texts and that employs parallelism.
 
-## Running tests
+## Source
 
-In order to run the tests, issue the following command from the exercise
-directory:
+### Contributed to by
 
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
-
-In order to run the tests, you can issue the following command from the exercise
-directory.
-
-```bash
-$ rebar3 eunit
-```
-
-## Questions?
-
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+- @iHiD
+- @JordanAdams
+- @juhlig
+- @kytrinyx
+- @NobbZ
+- @tmcgilchrist
+- @xymbol

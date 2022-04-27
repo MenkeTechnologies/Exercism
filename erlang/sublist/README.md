@@ -1,5 +1,10 @@
 # Sublist
 
+Welcome to Sublist on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given two lists determine if the first list is contained within the second
 list, if the second list is contained within the first list, if both lists are
 contained within each other or if none of these are true.
@@ -17,28 +22,14 @@ Examples:
  * A = [1, 2, 3, 4, 5], B = [2, 3, 4], A is a superlist of B
  * A = [1, 2, 4], B = [1, 2, 3, 4, 5], A is not a superlist of, sublist of or equal to B
 
-## Running tests
+## Source
 
-In order to run the tests, issue the following command from the exercise
-directory:
+### Created by
 
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
+- @juhlig
 
-In order to run the tests, you can issue the following command from the exercise
-directory.
+### Contributed to by
 
-```bash
-$ rebar3 eunit
-```
-
-## Questions?
-
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+- @iHiD
+- @NobbZ

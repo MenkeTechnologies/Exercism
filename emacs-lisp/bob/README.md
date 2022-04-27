@@ -1,8 +1,13 @@
 # Bob
 
+Welcome to Bob on Exercism's Emacs Lisp Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Bob is a lackadaisical teenager. In conversation, his responses are very limited.
 
-Bob answers 'Sure.' if you ask him any question, such as "How are you?".
+Bob answers 'Sure.' if you ask him a question, such as "How are you?".
 
 He answers 'Whoa, chill out!' if you YELL AT HIM (in all capitals).
 
@@ -13,13 +18,22 @@ anything.
 
 He answers 'Whatever.' to anything else.
 
-Implement a function `response-for` that takes a string as argument
-and returns the appropriate response.
+Bob's conversational partner is a purist when it comes to written communication and always follows normal rules regarding sentence punctuation in English.
 
 ## Source
 
-Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
+### Created by
 
-## Submitting Incomplete Solutions
+- @canweriotnow
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @benreyn
+- @kytrinyx
+- @stefanv
+- @vermiculus
+- @yurrriq
+
+### Based on
+
+Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial. - http://pine.fm/LearnToProgram/?Chapter=06

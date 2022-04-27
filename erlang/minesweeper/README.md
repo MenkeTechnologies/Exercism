@@ -1,53 +1,54 @@
 # Minesweeper
 
-Add the numbers to a minesweeper board.
+Welcome to Minesweeper on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
+Add the mine counts to a completed Minesweeper board.
 
 Minesweeper is a popular game where the user has to find the mines using
 numeric hints that indicate how many mines are directly adjacent
 (horizontally, vertically, diagonally) to a square.
 
 In this exercise you have to create some code that counts the number of
-mines adjacent to a square and transforms boards like this (where `*`
-indicates a mine):
+mines adjacent to a given empty square and replaces that square with the
+count.
 
-    +-----+
-    | * * |
-    |  *  |
-    |  *  |
-    |     |
-    +-----+
+The board is a rectangle composed of blank space (' ') characters. A mine
+is represented by an asterisk ('\*') character.
 
-into this:
+If a given space has no adjacent mines at all, leave that square blank.
 
-    +-----+
-    |1*3*1|
-    |13*31|
-    | 2*2 |
-    | 111 |
-    +-----+
+## Examples
 
-## Running tests
+For example you may receive a 5 x 4 board like this (empty spaces are
+represented here with the '·' character for display on screen):
 
-In order to run the tests, issue the following command from the exercise
-directory:
-
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
-
-In order to run the tests, you can issue the following command from the exercise
-directory.
-
-```bash
-$ rebar3 eunit
+```
+·*·*·
+··*··
+··*··
+·····
 ```
 
-## Questions?
+And your code will transform it into this:
 
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
+```
+1*3*1
+13*31
+·2*2·
+·111·
+```
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+## Source
+
+### Created by
+
+- @juhlig
+
+### Contributed to by
+
+- @ErikSchierboom
+- @iHiD
+- @NobbZ

@@ -1,5 +1,10 @@
 # Complex Numbers
 
+Welcome to Complex Numbers on Exercism's Erlang Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 A complex number is a number in the form `a + b * i` where `a` and `b` are real and `i` satisfies `i^2 = -1`.
 
 `a` is called the real part and `b` is called the imaginary part of `z`.
@@ -31,33 +36,19 @@ Assume the programming language you are using does not have an implementation of
 You also need to implement a `equal/2` function. For this you can consider
 two numbers as equal, when the difference of each component is less than 0.005.
 
-
-## Running tests
-
-In order to run the tests, issue the following command from the exercise
-directory:
-
-For running the tests provided, `rebar3` is used as it is the official build and
-dependency management tool for erlang now. Please refer to [the tracks installation
-instructions](http://exercism.io/languages/erlang/installation) on how to do that.
-
-In order to run the tests, you can issue the following command from the exercise
-directory.
-
-```bash
-$ rebar3 eunit
-```
-
-## Questions?
-
-For detailed information about the Erlang track, please refer to the
-[help page](http://exercism.io/languages/erlang) on the Exercism site.
-This covers the basic information on setting up the development
-environment expected by the exercises.
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Complex_number](https://en.wikipedia.org/wiki/Complex_number)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @NobbZ
+
+### Contributed to by
+
+- @ErikSchierboom
+- @iHiD
+- @juhlig
+- @kytrinyx
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Complex_number
