@@ -9,58 +9,72 @@ class BookStoreTest extends FunSuite with Matchers {
   }
 
   test("Two of the same book") {
-        BookStore.total(List(2, 2)) should be (1600)
+    pending
+    BookStore.total(List(2, 2)) should be (1600)
   }
 
   test("Empty basket") {
-        BookStore.total(List()) should be (0)
+    pending
+    BookStore.total(List()) should be (0)
   }
 
   test("Two different books") {
-        BookStore.total(List(1, 2)) should be (1520)
+    pending
+    BookStore.total(List(1, 2)) should be (1520)
   }
 
   test("Three different books") {
-        BookStore.total(List(1, 2, 3)) should be (2160)
+    pending
+    BookStore.total(List(1, 2, 3)) should be (2160)
   }
 
   test("Four different books") {
-        BookStore.total(List(1, 2, 3, 4)) should be (2560)
+    pending
+    BookStore.total(List(1, 2, 3, 4)) should be (2560)
   }
 
   test("Five different books") {
-        BookStore.total(List(1, 2, 3, 4, 5)) should be (3000)
+    pending
+    BookStore.total(List(1, 2, 3, 4, 5)) should be (3000)
   }
 
   test("Two groups of four is cheaper than group of five plus group of three") {
-        BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 5)) should be (5120)
+    pending
+    BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 5)) should be (5120)
   }
 
   test("Two groups of four is cheaper than groups of five and three") {
-        BookStore.total(List(1, 1, 2, 3, 4, 4, 5, 5)) should be (5120)
+    pending
+    BookStore.total(List(1, 1, 2, 3, 4, 4, 5, 5)) should be (5120)
   }
 
   test("Group of four plus group of two is cheaper than two groups of three") {
-        BookStore.total(List(1, 1, 2, 2, 3, 4)) should be (4080)
+    pending
+    BookStore.total(List(1, 1, 2, 2, 3, 4)) should be (4080)
   }
 
   test("Two each of first 4 books and 1 copy each of rest") {
-        BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 4, 5)) should be (5560)
+    pending
+    BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 4, 5)) should be (5560)
   }
 
   test("Two copies of each book") {
-        BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 4, 5, 5)) should be (6000)
+    pending
+    BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 4, 5, 5)) should be (6000)
   }
 
   test("Three copies of first book and 2 each of remaining") {
-        BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1)) should be (6800)
+    pending
+    BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1)) should be (6800)
   }
 
   test("Three each of first 2 books and 2 each of remaining books") {
-        BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2)) should be (7520)
+    pending
+    BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 4, 5, 5, 1, 2)) should be (7520)
   }
 
   test("Four groups of four are cheaper than two groups each of five and three") {
-        BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 5, 1, 1, 2, 2, 3, 3, 4, 5)) should be (10240)
+    pending
+    BookStore.total(List(1, 1, 2, 2, 3, 3, 4, 5, 1, 1, 2, 2, 3, 3, 4, 5)) should be (10240)
   }
 }

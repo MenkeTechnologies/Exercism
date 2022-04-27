@@ -36,46 +36,57 @@ class DominoesTest extends FunSuite with Matchers {
   }
 
   test("singleton input = singleton output") {
-        check(List((1, 1)), true)
+    pending
+    check(List((1, 1)), true)
   }
 
   test("singleton that can't be chained") {
-        check(List((1, 2)), false)
+    pending
+    check(List((1, 2)), false)
   }
 
   test("three elements") {
-        check(List((1, 2), (3, 1), (2, 3)), true)
+    pending
+    check(List((1, 2), (3, 1), (2, 3)), true)
   }
 
   test("can reverse dominoes") {
-        check(List((1, 2), (1, 3), (2, 3)), true)
+    pending
+    check(List((1, 2), (1, 3), (2, 3)), true)
   }
 
   test("can't be chained") {
-        check(List((1, 2), (4, 1), (2, 3)), false)
+    pending
+    check(List((1, 2), (4, 1), (2, 3)), false)
   }
 
   test("disconnected - simple") {
-        check(List((1, 1), (2, 2)), false)
+    pending
+    check(List((1, 1), (2, 2)), false)
   }
 
   test("disconnected - double loop") {
-        check(List((1, 2), (2, 1), (3, 4), (4, 3)), false)
+    pending
+    check(List((1, 2), (2, 1), (3, 4), (4, 3)), false)
   }
 
   test("disconnected - single isolated") {
-        check(List((1, 2), (2, 3), (3, 1), (4, 4)), false)
+    pending
+    check(List((1, 2), (2, 3), (3, 1), (4, 4)), false)
   }
 
   test("need backtrack") {
-        check(List((1, 2), (2, 3), (3, 1), (2, 4), (2, 4)), true)
+    pending
+    check(List((1, 2), (2, 3), (3, 1), (2, 4), (2, 4)), true)
   }
 
   test("separate loops") {
-        check(List((1, 2), (2, 3), (3, 1), (1, 1), (2, 2), (3, 3)), true)
+    pending
+    check(List((1, 2), (2, 3), (3, 1), (1, 1), (2, 2), (3, 3)), true)
   }
 
   test("nine elements") {
-        check(List((1, 2), (5, 3), (3, 1), (1, 2), (2, 4), (1, 6), (2, 3), (3, 4), (5, 6)), true)
+    pending
+    check(List((1, 2), (5, 3), (3, 1), (1, 2), (2, 4), (1, 6), (2, 3), (3, 4), (5, 6)), true)
   }
 }

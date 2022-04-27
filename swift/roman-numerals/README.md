@@ -1,5 +1,10 @@
 # Roman Numerals
 
+Welcome to Roman Numerals on Exercism's Swift Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Write a function to convert from normal numbers to Roman Numerals.
 
 The Romans were a clever bunch. They conquered most of Europe and ruled
@@ -42,22 +47,23 @@ In Roman numerals 1990 is MCMXC:
 
 See also: http://www.novaroma.org/via_romana/numbers.html
 
-## Setup
-
-Go through the project setup instructions for Xcode using Swift:
-
-http://exercism.io/languages/swift  
-http://exercism.io/languages/swift/tests
-
-Notably from the source directory:
-
-`swift test` runs tests  
-`swift package generate-xcodeproj` creates an Xcode project
-
-
 ## Source
 
-The Roman Numeral Kata [http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals](http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @masters3d
+
+### Contributed to by
+
+- @bhargavg
+- @hankturowski
+- @harquail
+- @kytrinyx
+- @lyuha
+- @nickkjordan
+- @robtimp
+- @ThomasHaz
+
+### Based on
+
+The Roman Numeral Kata - http://codingdojo.org/cgi-bin/index.pl?KataRomanNumerals

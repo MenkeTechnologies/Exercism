@@ -1,5 +1,10 @@
 # Linked List
 
+Welcome to Linked List on Exercism's Swift Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a doubly linked list.
 
 Like an array, a linked list is a simple linear data structure. Several
@@ -27,22 +32,22 @@ empty list.
 
 If you want to know more about linked lists, check [Wikipedia](https://en.wikipedia.org/wiki/Linked_list).
 
-## Setup
-
-Go through the project setup instructions for Xcode using Swift:
-
-http://exercism.io/languages/swift  
-http://exercism.io/languages/swift/tests
-
-Notably from the source directory:
-
-`swift test` runs tests  
-`swift package generate-xcodeproj` creates an Xcode project
-
-
 ## Source
 
-Classic computer science topic
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @masters3d
+
+### Contributed to by
+
+- @bhargavg
+- @hankturowski
+- @harquail
+- @kytrinyx
+- @lyuha
+- @nickkjordan
+- @ThomasHaz
+
+### Based on
+
+Classic computer science topic

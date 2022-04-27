@@ -1,5 +1,10 @@
 # Kindergarten Garden
 
+Welcome to Kindergarten Garden on Exercism's Swift Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a diagram, determine which plants each child in the kindergarten class is
 responsible for.
 
@@ -59,22 +64,18 @@ While asking for Bob's plants would yield:
 
 - Clover, grass, clover, clover
 
-## Setup
-
-Go through the project setup instructions for Xcode using Swift:
-
-http://exercism.io/languages/swift  
-http://exercism.io/languages/swift/tests
-
-Notably from the source directory:
-
-`swift test` runs tests  
-`swift package generate-xcodeproj` creates an Xcode project
-
-
 ## Source
 
-Random musings during airplane trip. [http://jumpstartlab.com](http://jumpstartlab.com)
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @bhargavg
+- @harquail
+- @kytrinyx
+- @lyuha
+- @masters3d
+- @robtimp
+- @ThomasHaz
+
+### Based on
+
+Random musings during airplane trip. - http://jumpstartlab.com

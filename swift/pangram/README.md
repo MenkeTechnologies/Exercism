@@ -1,5 +1,10 @@
 # Pangram
 
+Welcome to Pangram on Exercism's Swift Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a sentence is a pangram. A pangram (Greek: παν γράμμα, pan gramma,
 "every letter") is a sentence using every letter of the alphabet at least once.
 The best known English pangram is:
@@ -8,22 +13,17 @@ The best known English pangram is:
 The alphabet used consists of ASCII letters `a` to `z`, inclusive, and is case
 insensitive. Input will not contain non-ASCII symbols.
 
-## Setup
-
-Go through the project setup instructions for Xcode using Swift:
-
-http://exercism.io/languages/swift  
-http://exercism.io/languages/swift/tests
-
-Notably from the source directory:
-
-`swift test` runs tests  
-`swift package generate-xcodeproj` creates an Xcode project
-
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Pangram](https://en.wikipedia.org/wiki/Pangram)
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @bhargavg
+- @harquail
+- @kytrinyx
+- @lyuha
+- @masters3d
+- @ThomasHaz
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Pangram

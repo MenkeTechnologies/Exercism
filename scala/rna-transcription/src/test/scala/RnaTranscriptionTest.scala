@@ -8,18 +8,22 @@ class RnaTranscriptionTest extends FunSuite with Matchers {
   }
 
   test("RNA complement of guanine is cytosine") {
-        RnaTranscription.toRna("G") should be(Some("C"))
+    pending
+    RnaTranscription.toRna("G") should be(Some("C"))
   }
 
   test("RNA complement of thymine is adenine") {
-        RnaTranscription.toRna("T") should be(Some("A"))
+    pending
+    RnaTranscription.toRna("T") should be(Some("A"))
   }
 
   test("RNA complement of adenine is uracil") {
-        RnaTranscription.toRna("A") should be(Some("U"))
+    pending
+    RnaTranscription.toRna("A") should be(Some("U"))
   }
 
   test("RNA complement") {
-        RnaTranscription.toRna("ACGTGGTCTTAA") should be(Some("UGCACCAGAAUU"))
+    pending
+    RnaTranscription.toRna("ACGTGGTCTTAA") should be(Some("UGCACCAGAAUU"))
   }
 }

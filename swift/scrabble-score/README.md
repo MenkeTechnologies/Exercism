@@ -1,6 +1,11 @@
 # Scrabble Score
 
-Given a word, compute the scrabble score for that word.
+Welcome to Scrabble Score on Exercism's Swift Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
+Given a word, compute the Scrabble score for that word.
 
 ## Letter Values
 
@@ -39,22 +44,24 @@ And to total:
 - You can play a double or a triple letter.
 - You can play a double or a triple word.
 
-## Setup
-
-Go through the project setup instructions for Xcode using Swift:
-
-http://exercism.io/languages/swift  
-http://exercism.io/languages/swift/tests
-
-Notably from the source directory:
-
-`swift test` runs tests  
-`swift package generate-xcodeproj` creates an Xcode project
-
-
 ## Source
 
-Inspired by the Extreme Startup game [https://github.com/rchatley/extreme_startup](https://github.com/rchatley/extreme_startup)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @masters3d
+
+### Contributed to by
+
+- @bhargavg
+- @hankturowski
+- @harquail
+- @kytrinyx
+- @lyuha
+- @nickkjordan
+- @robtimp
+- @samkrishna
+- @ThomasHaz
+
+### Based on
+
+Inspired by the Extreme Startup game - https://github.com/rchatley/extreme_startup

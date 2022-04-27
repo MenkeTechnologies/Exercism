@@ -1,5 +1,10 @@
 # Custom Set
 
+Welcome to Custom Set on Exercism's Swift Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Create a custom set type.
 
 Sometimes it is necessary to define a custom data structure of some
@@ -7,18 +12,18 @@ type, like a set. In this exercise you will define your own set. How it
 works internally doesn't matter, as long as it behaves like a set of
 unique elements.
 
-## Setup
+## Source
 
-Go through the project setup instructions for Xcode using Swift:
+### Created by
 
-http://exercism.io/languages/swift  
-http://exercism.io/languages/swift/tests
+- @masters3d
 
-Notably from the source directory:
+### Contributed to by
 
-`swift test` runs tests  
-`swift package generate-xcodeproj` creates an Xcode project
-
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @bhargavg
+- @hankturowski
+- @harquail
+- @lyuha
+- @robtimp
+- @samkrishna
+- @ThomasHaz

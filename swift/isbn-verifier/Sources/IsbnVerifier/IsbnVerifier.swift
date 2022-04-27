@@ -26,9 +26,9 @@ public func isValid(_ input: String) -> Bool {
         return false
     }
 
-    return prefixInts.reversed().enumerated()
+    return prefixInts.enumerated()
             .reduce(0) {
-                $0 + ($1.offset + 1) * $1.element
+                $0 + (ISBN_LEN - $1.offset) * $1.element
             } % 11 == 0
 
 

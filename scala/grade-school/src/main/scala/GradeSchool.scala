@@ -16,7 +16,7 @@ class School {
   }
 
   def sorted: DB = {
-    roster.map(m => m._1 -> m._2.sorted).toSeq.sortBy(_._1).toMap
+    roster.map(m=> m._1 -> m._2.sorted).toSeq.sortBy(m => m._1).toMap
   }
 }
 

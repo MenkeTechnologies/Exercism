@@ -1,5 +1,10 @@
 # Crypto Square
 
+Welcome to Crypto Square on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement the classic method for composing secret messages called a square code.
 
 Given an English text, output the encoded version of that text.
@@ -72,19 +77,19 @@ ciphertext back in to the original message:
 "sseoau "
 ```
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-Please see the [learning](https://exercism.io/tracks/scala/learning) and 
-[installation](https://exercism.io/tracks/scala/installation) pages if you need any help.
-
-
 ## Source
 
-J Dalbey's Programming Practice problems [http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html](http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @abo64
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+
+### Based on
+
+J Dalbey's Programming Practice problems - http://users.csc.calpoly.edu/~jdalbey/103/Projects/ProgrammingPractice.html

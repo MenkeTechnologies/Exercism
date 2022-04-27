@@ -1,5 +1,10 @@
 # Series
 
+Welcome to Series on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a string of digits, output all the contiguous substrings of length `n` in
 that string in the order that they appear.
 
@@ -20,19 +25,18 @@ whatever you get.
 Note that these series are only required to occupy *adjacent positions*
 in the input; the digits need not be *numerically consecutive*.
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-Please see the [learning](https://exercism.io/tracks/scala/learning) and 
-[installation](https://exercism.io/tracks/scala/installation) pages if you need any help.
-
-
 ## Source
 
-A subset of the Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+
+### Based on
+
+A subset of the Problem 8 at Project Euler - http://projecteuler.net/problem=8

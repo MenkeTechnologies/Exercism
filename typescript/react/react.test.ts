@@ -2,14 +2,14 @@ import { createInput, createComputed, createCallback } from './react'
 
 describe('React module', () => {
   // c51ee736-d001-4f30-88d1-0c8e8b43cd07
-  it('input cells have a value', () => {
+  xit('input cells have a value', () => {
     const initialValue = 10
     const [input, _setInput] = createInput(initialValue)
     expect(input()).toEqual(initialValue)
   })
 
   // dedf0fe0-da0c-4d5d-a582-ffaf5f4d0851
-  it("an input cell's value can be set", () => {
+  xit("an input cell's value can be set", () => {
     const newValue = 20
     const [input, setInput] = createInput(4)
     setInput(newValue)
@@ -17,14 +17,14 @@ describe('React module', () => {
   })
 
   // 5854b975-f545-4f93-8968-cc324cde746e
-  it('compute cells calculate initial value', () => {
+  xit('compute cells calculate initial value', () => {
     const [input] = createInput(1)
     const output = createComputed(() => input() + 1)
     expect(output()).toEqual(2)
   })
 
   // 25795a3d-b86c-4e91-abe7-1c340e71560c
-  it('compute cell takes inputs in correct order', () => {
+  xit('compute cell takes inputs in correct order', () => {
     const [[one], [two]] = [createInput(1), createInput(2)]
     const output = createComputed(() => one() + two() * 10)
     expect(output()).toEqual(21)
@@ -39,7 +39,7 @@ describe('React module', () => {
   })
 
   // 5ff36b09-0a88-48d4-b7f8-69dcf3feea40
-  it('compute cells can depend on other compute cells', () => {
+  xit('compute cells can depend on other compute cells', () => {
     const [input, setInput] = createInput(1)
     const timesTwo = createComputed(() => input() * 2)
     const timesThirty = createComputed(() => input() * 30)
@@ -50,7 +50,7 @@ describe('React module', () => {
   })
 
   // abe33eaf-68ad-42a5-b728-05519ca88d2d
-  it('compute cells fire callbacks', () => {
+  xit('compute cells fire callbacks', () => {
     const [input, setInput] = createInput(1)
     const output = createComputed(() => input() + 1)
     let value = 0
@@ -60,7 +60,7 @@ describe('React module', () => {
   })
 
   // 9e5cb3a4-78e5-4290-80f8-a78612c52db2
-  it('callbacks fire only when output values change', () => {
+  xit('callbacks fire only when output values change', () => {
     const [input, setInput] = createInput(1)
     const output = createComputed(
       () => (input() < 3 ? 111 : 222),
@@ -77,7 +77,7 @@ describe('React module', () => {
   })
 
   // ada17cb6-7332-448a-b934-e3d7495c13d
-  it('callbacks do not report already reported values', () => {
+  xit('callbacks do not report already reported values', () => {
     const [input, setInput] = createInput(1)
     const output = createComputed(() => input() + 1)
 
@@ -92,7 +92,7 @@ describe('React module', () => {
   })
 
   // ac271900-ea5c-461c-9add-eeebcb8c03e5
-  it('callbacks can fire from multiple cells', () => {
+  xit('callbacks can fire from multiple cells', () => {
     const [input, setInput] = createInput(1)
     const plus_one = createComputed(() => input() + 1)
     const minus_one = createComputed(() => input() - 1)
@@ -108,7 +108,7 @@ describe('React module', () => {
   })
 
   // From JavaScript track
-  it('static callbacks fire even if their own value has not changed', () => {
+  xit('static callbacks fire even if their own value has not changed', () => {
     const [input, setInput] = createInput(1)
     const output = createComputed(
       () => (input() < 3 ? 111 : 222),
@@ -130,7 +130,7 @@ describe('React module', () => {
   })
 
   // 95a82dcc-8280-4de3-a4cd-4f19a84e3d6f
-  it('callbacks can be added and removed', () => {
+  xit('callbacks can be added and removed', () => {
     const [input, setInput] = createInput(11)
     const output = createComputed(() => input() + 1)
 
@@ -157,7 +157,7 @@ describe('React module', () => {
   })
 
   // f2a7b445-f783-4e0e-8393-469ab4915f2a
-  it("removing a callback multiple times doesn't interfere with other callbacks", () => {
+  xit("removing a callback multiple times doesn't interfere with other callbacks", () => {
     const [input, setInput] = createInput(1)
     const output = createComputed(() => input() + 1)
 
@@ -179,7 +179,7 @@ describe('React module', () => {
   })
 
   // daf6feca-09e0-4ce5-801d-770ddfe1c268
-  it('callbacks should only be called once, even if multiple dependencies change', () => {
+  xit('callbacks should only be called once, even if multiple dependencies change', () => {
     const [input, setInput] = createInput(1)
     const plusOne = createComputed(() => input() + 1)
     const minusOne1 = createComputed(() => input() - 1)
@@ -196,7 +196,7 @@ describe('React module', () => {
   })
 
   // 9a5b159f-b7aa-4729-807e-f1c38a46d377
-  it("callbacks should not be called if dependencies change but output value doesn't change", () => {
+  xit("callbacks should not be called if dependencies change but output value doesn't change", () => {
     const [input, setInput] = createInput(1)
     const plusOne = createComputed(() => input() + 1)
     const minusOne = createComputed(() => input() - 1)

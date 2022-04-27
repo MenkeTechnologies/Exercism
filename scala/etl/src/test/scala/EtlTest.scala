@@ -8,17 +8,20 @@ class EtlTest extends FunSuite with Matchers {
   }
 
   test("single score with multiple letters") {
-        Etl.transform(Map(1 -> Seq("A", "E", "I", "O", "U"))) should be(Map("a" -> 1,
+    pending
+    Etl.transform(Map(1 -> Seq("A", "E", "I", "O", "U"))) should be(Map("a" -> 1,
       "e" -> 1, "i" -> 1, "o" -> 1, "u" -> 1))
   }
 
   test("multiple scores with multiple letters") {
-        Etl.transform(Map(1 -> Seq("A", "E"), 2 -> Seq("D", "G"))) should be(Map("a" -> 1,
+    pending
+    Etl.transform(Map(1 -> Seq("A", "E"), 2 -> Seq("D", "G"))) should be(Map("a" -> 1,
       "d" -> 2, "e" -> 1, "g" -> 2))
   }
 
   test("multiple scores with differing numbers of letters") {
-        Etl.transform(Map(1 -> Seq("A", "E", "I", "O", "U", "L", "N", "R", "S", "T"),
+    pending
+    Etl.transform(Map(1 -> Seq("A", "E", "I", "O", "U", "L", "N", "R", "S", "T"),
       2 -> Seq("D", "G"), 3 -> Seq("B", "C", "M", "P"), 4 -> Seq("F", "H", "V", "W", "Y"),
       5 -> Seq("K"), 8 -> Seq("J", "X"), 10 -> Seq("Q", "Z"))) should be(Map("a" -> 1,
         "b" -> 3, "c" -> 3, "d" -> 2, "e" -> 1, "f" -> 4, "g" -> 2, "h" -> 4,

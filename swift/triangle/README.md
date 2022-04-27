@@ -1,5 +1,10 @@
 # Triangle
 
+Welcome to Triangle on Exercism's Swift Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a triangle is equilateral, isosceles, or scalene.
 
 An _equilateral_ triangle has all three sides the same length.
@@ -22,22 +27,24 @@ The case where the sum of the lengths of two sides _equals_ that of the
 third is known as a _degenerate_ triangle - it has zero area and looks like
 a single line. Feel free to add your own code/tests to check for degenerate triangles.
 
-## Setup
-
-Go through the project setup instructions for Xcode using Swift:
-
-http://exercism.io/languages/swift  
-http://exercism.io/languages/swift/tests
-
-Notably from the source directory:
-
-`swift test` runs tests  
-`swift package generate-xcodeproj` creates an Xcode project
-
-
 ## Source
 
-The Ruby Koans triangle project, parts 1 & 2 [http://rubykoans.com](http://rubykoans.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @masters3d
+
+### Contributed to by
+
+- @bhargavg
+- @hankturowski
+- @harquail
+- @kytrinyx
+- @lyuha
+- @nickkjordan
+- @robtimp
+- @samkrishna
+- @ThomasHaz
+
+### Based on
+
+The Ruby Koans triangle project, parts 1 & 2 - http://rubykoans.com

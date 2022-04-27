@@ -5,65 +5,65 @@ describe('Minesweeper annotate', () => {
     expect(annotate([])).toEqual([])
   })
 
-  it('handles no columns', () => {
+  xit('handles no columns', () => {
     expect(annotate([''])).toEqual([''])
   })
 
-  it('handles no mines', () => {
+  xit('handles no mines', () => {
     const input = ['   ', '   ', '   ']
     const expected = ['   ', '   ', '   ']
     expect(annotate(input)).toEqual(expected)
   })
 
-  it('handles board with only mines', () => {
+  xit('handles board with only mines', () => {
     const input = ['***', '***', '***']
     const expected = ['***', '***', '***']
     expect(annotate(input)).toEqual(expected)
   })
 
-  it('handles mine surrounded by spaces', () => {
+  xit('handles mine surrounded by spaces', () => {
     const input = ['   ', ' * ', '   ']
     const expected = ['111', '1*1', '111']
     expect(annotate(input)).toEqual(expected)
   })
 
-  it('handles space surrounded by mines', () => {
+  xit('handles space surrounded by mines', () => {
     const input = ['***', '* *', '***']
     const expected = ['***', '*8*', '***']
     expect(annotate(input)).toEqual(expected)
   })
 
-  it('handles horizontal line', () => {
+  xit('handles horizontal line', () => {
     const input = [' * * ']
     const expected = ['1*2*1']
     expect(annotate(input)).toEqual(expected)
   })
 
-  it('handles horizontal line, mines at edges', () => {
+  xit('handles horizontal line, mines at edges', () => {
     const input = ['*   *']
     const expected = ['*1 1*']
     expect(annotate(input)).toEqual(expected)
   })
 
-  it('handles vertical line', () => {
+  xit('handles vertical line', () => {
     const input = [' ', '*', ' ', '*', ' ']
     const expected = ['1', '*', '2', '*', '1']
     expect(annotate(input)).toEqual(expected)
   })
 
-  it('handles vertical line, mines at edges', () => {
+  xit('handles vertical line, mines at edges', () => {
     const input = ['*', ' ', ' ', ' ', '*']
     const expected = ['*', '1', ' ', '1', '*']
     expect(annotate(input)).toEqual(expected)
   })
 
-  it('handles cross', () => {
+  xit('handles cross', () => {
     const input = ['  *  ', '  *  ', '*****', '  *  ', '  *  ']
     const expected = [' 2*2 ', '25*52', '*****', '25*52', ' 2*2 ']
     expect(annotate(input)).toEqual(expected)
   })
 
-  it('handles large board', () => {
+  xit('handles large board', () => {
     const input = [' *  * ', '  *   ', '    * ', '   * *', ' *  * ', '      ']
     const expected = [
       '1*22*1',

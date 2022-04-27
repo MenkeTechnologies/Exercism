@@ -1,5 +1,10 @@
 # Hamming
 
+Welcome to Hamming on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Calculate the Hamming Distance between two DNA strands.
 
 Your body is made up of cells that contain DNA. Those cells regularly wear out and need replacing, which they achieve by dividing into daughter cells. In fact, the average human body experiences about 10 quadrillion cell divisions in a lifetime!
@@ -16,14 +21,11 @@ They have 7 differences, and therefore the Hamming Distance is 7.
 
 The Hamming Distance is useful for lots of things in science, not just biology, so it's a nice phrase to be familiar with :)
 
-# Implementation notes
-
 The Hamming distance is only defined for sequences of equal length, so
 an attempt to calculate it between sequences of different lengths should
 not work. The general handling of this situation (e.g., raising an
 exception vs returning a special value) may differ between languages.
 
-## Hints
 `Option` is used to indicate a computation that may possibly have no useful result
 (for example due to an error or invalid input).
 If you are unfamiliar with `Option` you may read [this tutorial](http://danielwestheide.com/blog/2012/12/19/the-neophytes-guide-to-scala-part-5-the-option-type.html).
@@ -31,7 +33,7 @@ If you are unfamiliar with `Option` you may read [this tutorial](http://danielwe
 Proper use of Monads can result in very concise yet elegant
 and readable code. Improper use can easily result in the contrary.
 Watch [this video](https://www.youtube.com/watch?v=Mw_Jnn_Y5iA) to learn more.
-#### Common pitfalls that you should avoid
+## Common pitfalls that you should avoid
 There are a few rules of thumbs for `Option`:
 1. If you don't need it don't use it. Instead of
 ```scala
@@ -81,20 +83,22 @@ for {
 } yield x + y + z
 ```
 
-
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-Please see the [learning](https://exercism.io/tracks/scala/learning) and 
-[installation](https://exercism.io/tracks/scala/installation) pages if you need any help.
-
-
 ## Source
 
-The Calculating Point Mutations problem at Rosalind [http://rosalind.info/problems/hamm/](http://rosalind.info/problems/hamm/)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @sgrif
+
+### Contributed to by
+
+- @abo64
+- @ErikSchierboom
+- @kytrinyx
+- @nlochschmidt
+- @ppartarr
+- @rajeshpg
+- @ricemery
+
+### Based on
+
+The Calculating Point Mutations problem at Rosalind - http://rosalind.info/problems/hamm/

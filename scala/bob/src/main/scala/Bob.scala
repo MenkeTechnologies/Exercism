@@ -7,7 +7,7 @@ object Bob {
       return "Fine. Be that way!"
     }
 
-    if (noSpace.matches(raw".*[A-Z].*") && !noSpace.matches(raw".*[a-z].*")) {
+    if (noSpace.matches(raw".*[A-Z].*") && ! noSpace.matches(raw".*[a-z].*")) {
 
       if (noSpace.matches(raw".*\?$$")) {
         return "Calm down, I know what I'm doing!"

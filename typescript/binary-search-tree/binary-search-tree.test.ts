@@ -13,7 +13,7 @@ describe('BinarySearchTree', () => {
     expect(new BinarySearchTree(4).data).toEqual(4)
   })
 
-  it('should insert a lesser number to the left', () => {
+  xit('should insert a lesser number to the left', () => {
     const four = new BinarySearchTree(4)
     four.insert(2)
 
@@ -21,7 +21,7 @@ describe('BinarySearchTree', () => {
     expect(four.left!.data).toEqual(2)
   })
 
-  it('should insert the same number to the left', () => {
+  xit('should insert the same number to the left', () => {
     const four = new BinarySearchTree(4)
     four.insert(4)
 
@@ -29,7 +29,7 @@ describe('BinarySearchTree', () => {
     expect(four.left!.data).toEqual(4)
   })
 
-  it('should insert a greater number to the right', () => {
+  xit('should insert a greater number to the right', () => {
     const four = new BinarySearchTree(4)
     four.insert(5)
 
@@ -37,7 +37,7 @@ describe('BinarySearchTree', () => {
     expect(four.right!.data).toEqual(5)
   })
 
-  it('should deal with a complex tree', () => {
+  xit('should deal with a complex tree', () => {
     const four = new BinarySearchTree(4)
     four.insert(2)
     four.insert(6)
@@ -55,25 +55,25 @@ describe('BinarySearchTree', () => {
     expect(four.right!.right!.data).toEqual(7)
   })
 
-  it('should iterate over one element', () => {
+  xit('should iterate over one element', () => {
     expect(recordAllData(new BinarySearchTree(4))).toEqual([4])
   })
 
-  it('should iterate over smaller element', () => {
+  xit('should iterate over smaller element', () => {
     const four = new BinarySearchTree(4)
     four.insert(2)
 
     expect(recordAllData(four)).toEqual([2, 4])
   })
 
-  it('should iterate over larger element', () => {
+  xit('should iterate over larger element', () => {
     const four = new BinarySearchTree(4)
     four.insert(5)
 
     expect(recordAllData(four)).toEqual([4, 5])
   })
 
-  it('should iterate over complex tree', () => {
+  xit('should iterate over complex tree', () => {
     const four = new BinarySearchTree(4)
     four.insert(2)
     four.insert(1)

@@ -39,6 +39,7 @@ A binary search halves the number of items to check with each iteration,
 so locating an item (or determining its absence) takes logarithmic time.
 A binary search is a dichotomic divide and conquer search algorithm.
 
+
 ## Track Specific Notes
 
 If the element is not present in the array, return the symbol `'not-found`\.

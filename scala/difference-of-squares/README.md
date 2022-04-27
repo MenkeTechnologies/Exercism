@@ -1,5 +1,10 @@
 # Difference Of Squares
 
+Welcome to Difference Of Squares on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Find the difference between the square of the sum and the sum of the squares of the first N natural numbers.
 
 The square of the sum of the first ten natural numbers is
@@ -16,19 +21,19 @@ You are not expected to discover an efficient solution to this yourself from
 first principles; research is allowed, indeed, encouraged. Finding the best
 algorithm for the problem is a key skill in software engineering.
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-Please see the [learning](https://exercism.io/tracks/scala/learning) and 
-[installation](https://exercism.io/tracks/scala/installation) pages if you need any help.
-
-
 ## Source
 
-Problem 6 at Project Euler [http://projecteuler.net/problem=6](http://projecteuler.net/problem=6)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @abo64
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+
+### Based on
+
+Problem 6 at Project Euler - http://projecteuler.net/problem=6

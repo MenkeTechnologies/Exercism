@@ -6,22 +6,22 @@ describe('Transpose', () => {
     expect(transpose([])).toEqual(expected)
   })
 
-  it('two characters in a row', () => {
+  xit('two characters in a row', () => {
     const expected = ['A', '1']
     expect(transpose(['A1'])).toEqual(expected)
   })
 
-  it('two characters in a column', () => {
+  xit('two characters in a column', () => {
     const expected = ['A1']
     expect(transpose(['A', '1'])).toEqual(expected)
   })
 
-  it('simple', () => {
+  xit('simple', () => {
     const expected = ['A1', 'B2', 'C3']
     expect(transpose(['ABC', '123'])).toEqual(expected)
   })
 
-  it('single line', () => {
+  xit('single line', () => {
     const expected = [
       'S',
       'i',
@@ -39,7 +39,7 @@ describe('Transpose', () => {
     expect(transpose(['Single line.'])).toEqual(expected)
   })
 
-  it('first line longer than second line', () => {
+  xit('first line longer than second line', () => {
     const expected = [
       'TT',
       'hh',
@@ -61,7 +61,7 @@ describe('Transpose', () => {
     expect(transpose(['The fourth line.', 'The fifth line.'])).toEqual(expected)
   })
 
-  it('second line longer than first line', () => {
+  xit('second line longer than first line', () => {
     const expected = [
       'TT',
       'hh',
@@ -83,14 +83,14 @@ describe('Transpose', () => {
     expect(transpose(['The first line.', 'The second line.'])).toEqual(expected)
   })
 
-  it('square', () => {
+  xit('square', () => {
     const expected = ['HEART', 'EMBER', 'ABUSE', 'RESIN', 'TREND']
     expect(transpose(['HEART', 'EMBER', 'ABUSE', 'RESIN', 'TREND'])).toEqual(
       expected
     )
   })
 
-  it('rectangle', () => {
+  xit('rectangle', () => {
     const expected = [
       'FOBS',
       'RULE',
@@ -106,7 +106,7 @@ describe('Transpose', () => {
     )
   })
 
-  it('triangle', () => {
+  xit('triangle', () => {
     const expected = [
       'TEASER',
       ' EASER',
@@ -120,7 +120,7 @@ describe('Transpose', () => {
     )
   })
 
-  it('jagged triangle', () => {
+  xit('jagged triangle', () => {
     const expected = ['123456', '1 3456', '  3456', '  3 56', '    56', '    5']
 
     expect(transpose(['11', '2', '3333', '444', '555555', '66666'])).toEqual(
@@ -128,7 +128,7 @@ describe('Transpose', () => {
     )
   })
 
-  it('test many lines', () => {
+  xit('test many lines', () => {
     const expected = [
       'CIFWFAWDTAWITW',
       'hnrhr hohnhshh',

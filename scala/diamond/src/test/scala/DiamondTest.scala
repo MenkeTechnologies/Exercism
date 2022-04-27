@@ -8,16 +8,19 @@ class DiamondTest extends FunSuite with Matchers {
   }
 
   test("Degenerate case with no row containing 3 distinct groups of spaces") {
-        Diamond.rows('B') should be(List(" A ", "B B", " A "))
+    pending
+    Diamond.rows('B') should be(List(" A ", "B B", " A "))
   }
 
   test("Smallest non-degenerate case with odd diamond side length") {
-        Diamond.rows('C') should be(
+    pending
+    Diamond.rows('C') should be(
       List("  A  ", " B B ", "C   C", " B B ", "  A  "))
   }
 
   test("Smallest non-degenerate case with even diamond side length") {
-        Diamond.rows('D') should be(
+    pending
+    Diamond.rows('D') should be(
       List("   A   ",
            "  B B  ",
            " C   C ",
@@ -28,7 +31,8 @@ class DiamondTest extends FunSuite with Matchers {
   }
 
   test("Largest possible diamond") {
-        Diamond.rows('Z') should be(
+    pending
+    Diamond.rows('Z') should be(
       List(
         "                         A                         ",
         "                        B B                        ",

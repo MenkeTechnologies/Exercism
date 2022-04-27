@@ -74,6 +74,7 @@ harder to guess things based on word boundaries.
     - `15 * 7 mod 26 = 105 mod 26 = 1`
     - `7` is the MMI of `15 mod 26`
 
+
 ## Running and testing your solutions
 
 

@@ -1,3 +1,4 @@
+
 class CustomSet[+T](list: Seq[T]){
   val _v = list.distinct
 }
@@ -12,4 +13,6 @@ object CustomSet {
   def intersection[T]( s1: CustomSet[T], s2: CustomSet[T] ) = new CustomSet[T](s1._v.filter(s2._v.contains(_)))
   def union[T]( s1: CustomSet[T], s2: CustomSet[T] ) = new CustomSet[T](s1._v ++ s2._v)
   def difference[T]( s1: CustomSet[T], s2: CustomSet[T] ) = new CustomSet[T](s1._v diff s2._v)
+
+
 }

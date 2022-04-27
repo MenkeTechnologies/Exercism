@@ -41,6 +41,7 @@ In this example, Bob should take the second and fourth item to maximize his
 value, which, in this case, is 90. He cannot get more than 90 as his
 knapsack has a weight limit of 10.
 
+
 ## Track Specific Notes
 
 In the scheme version the aruguments are the `capacity` of the knapsack and a list of the `weights` and a list of the `values`\.

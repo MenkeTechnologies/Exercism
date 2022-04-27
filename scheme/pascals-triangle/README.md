@@ -19,6 +19,7 @@ the right and left of the current position in the previous row.
 # ... etc
 ```
 
+
 ## Running and testing your solutions
 
 

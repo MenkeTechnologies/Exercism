@@ -1,5 +1,10 @@
 # Grains
 
+Welcome to Grains on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Calculate the number of grains of wheat on a chessboard given that the number
 on each square doubles.
 
@@ -26,19 +31,21 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-Please see the [learning](https://exercism.io/tracks/scala/learning) and 
-[installation](https://exercism.io/tracks/scala/installation) pages if you need any help.
-
-
 ## Source
 
-JavaRanch Cattle Drive, exercise 6 [http://www.javaranch.com/grains.jsp](http://www.javaranch.com/grains.jsp)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @sgrif
+
+### Contributed to by
+
+- @abo64
+- @ErikSchierboom
+- @kytrinyx
+- @ppartarr
+- @rajeshpg
+- @ricemery
+
+### Based on
+
+JavaRanch Cattle Drive, exercise 6 - http://www.javaranch.com/grains.jsp

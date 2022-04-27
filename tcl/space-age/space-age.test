@@ -12,42 +12,42 @@ test space-age-1 "age on Earth" -body {
     roundTo 2 [onEarth 1000000000]
 } -returnCodes ok -result 31.69
 
-
+skip space-age-2
 test space-age-2 "age on Mercury" -body {
     roundTo 2 [onMercury 2134835688]
 } -returnCodes ok -result 280.88
 
-
+skip space-age-3
 test space-age-3 "age on Venus" -body {
     roundTo 2 [onVenus 189839836]
 } -returnCodes ok -result 9.78
 
-
+skip space-age-4
 test space-age-4 "age on Mars" -body {
     roundTo 2 [onMars 2129871239]
 } -returnCodes ok -result 35.88
 
-
+skip space-age-5
 test space-age-5 "age on Jupiter" -body {
     roundTo 2 [onJupiter 901876382]
 } -returnCodes ok -result 2.41
 
-
+skip space-age-6
 test space-age-6 "age on Saturn" -body {
     roundTo 2 [onSaturn 2000000000]
 } -returnCodes ok -result 2.15
 
-
+skip space-age-7
 test space-age-7 "age on Uranus" -body {
     roundTo 2 [onUranus 1210123456]
 } -returnCodes ok -result 0.46
 
-
+skip space-age-8
 test space-age-8 "age on Neptune" -body {
     roundTo 2 [onNeptune 1821023456]
 } -returnCodes ok -result 0.35
 
-
+skip space-age-9
 test space-age-9 "invalid planet causes error" -body {
     roundTo 2 [onSun 680804807]
 } -returnCodes error -result "not a planet"

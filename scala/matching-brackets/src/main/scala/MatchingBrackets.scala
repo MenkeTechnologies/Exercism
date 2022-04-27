@@ -11,7 +11,8 @@ object MatchingBrackets {
 
       if (brackets.keys.toList.contains(ch)) {
         stk.push(ch)
-      } else if (brackets.values.toList.contains(ch)) {
+      }
+      if (brackets.values.toList.contains(ch)) {
         if (stk.isEmpty || ch != brackets(stk.pop())) {
           return false
         }

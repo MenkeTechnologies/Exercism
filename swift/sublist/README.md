@@ -1,5 +1,10 @@
 # Sublist
 
+Welcome to Sublist on Exercism's Swift Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given two lists determine if the first list is contained within the second
 list, if the second list is contained within the first list, if both lists are
 contained within each other or if none of these are true.
@@ -17,18 +22,16 @@ Examples:
  * A = [1, 2, 3, 4, 5], B = [2, 3, 4], A is a superlist of B
  * A = [1, 2, 4], B = [1, 2, 3, 4, 5], A is not a superlist of, sublist of or equal to B
 
-## Setup
+## Source
 
-Go through the project setup instructions for Xcode using Swift:
+### Created by
 
-http://exercism.io/languages/swift  
-http://exercism.io/languages/swift/tests
+- @kytrinyx
 
-Notably from the source directory:
+### Contributed to by
 
-`swift test` runs tests  
-`swift package generate-xcodeproj` creates an Xcode project
-
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @bhargavg
+- @harquail
+- @lyuha
+- @masters3d
+- @ThomasHaz

@@ -31,6 +31,7 @@ You'd also be able to answer whether the queens can attack each other.
 In this case, that answer would be yes, they can, because both pieces
 share a diagonal.
 
+
 ## Track Specific Notes
 
 For this track, each queen's position will be represented as a list

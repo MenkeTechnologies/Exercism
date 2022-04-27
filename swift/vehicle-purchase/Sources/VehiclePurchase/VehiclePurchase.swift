@@ -32,7 +32,7 @@ func registrationFee(msrp: Int, yearsOld: Int) -> Int {
         return 25
     }
 
-    var base = Double(msrp > 25000 ? msrp : 25000)
+    var base: Double = Double(msrp > 25000 ? msrp : 25000)
 
     base -= Double(yearsOld) * base / 10
 

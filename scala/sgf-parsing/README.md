@@ -1,4 +1,9 @@
-# SGF Parsing
+# Sgf Parsing
+
+Welcome to Sgf Parsing on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Parsing a Smart Game Format string.
 
@@ -65,15 +70,15 @@ structure of properties. You do not need to encode knowledge about the
 data types of properties, just use the rules for the
 [text](http://www.red-bean.com/sgf/sgf4.html#text) type everywhere.
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
+## Source
 
-To run the tests simply run the command `sbt test` in the exercise directory.
+### Created by
 
-Please see the [learning](https://exercism.io/tracks/scala/learning) and 
-[installation](https://exercism.io/tracks/scala/installation) pages if you need any help.
+- @abo64
 
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+- @ricemery

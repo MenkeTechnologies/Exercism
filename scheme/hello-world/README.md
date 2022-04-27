@@ -19,6 +19,7 @@ The objectives are simple:
 
 If everything goes well, you will be ready to fetch your first real exercise.
 
+
 ## Track Specific Notes
 
 Your solution may be a procedure that

@@ -9,50 +9,58 @@ class KindergartenGardenTest extends FunSuite with Matchers {
   }
 
   test("partial garden - different garden with single student") {
-        Garden.defaultGarden("VC\nRC").plants("Alice") should be(
+    pending
+    Garden.defaultGarden("VC\nRC").plants("Alice") should be(
       List(Plant.Violets, Plant.Clover, Plant.Radishes, Plant.Clover))
   }
 
   test("partial garden - garden with two students") {
-        Garden.defaultGarden("VVCG\nVVRC").plants("Bob") should be(
+    pending
+    Garden.defaultGarden("VVCG\nVVRC").plants("Bob") should be(
       List(Plant.Clover, Plant.Grass, Plant.Radishes, Plant.Clover))
   }
 
   test(
     "multiple students for the same garden with three students, partial garden - second student's garden") {
-        Garden.defaultGarden("VVCCGG\nVVCCGG").plants("Bob") should be(
+    pending
+    Garden.defaultGarden("VVCCGG\nVVCCGG").plants("Bob") should be(
       List(Plant.Clover, Plant.Clover, Plant.Clover, Plant.Clover))
   }
 
   test(
     "multiple students for the same garden with three students, partial garden - third student's garden") {
-        Garden.defaultGarden("VVCCGG\nVVCCGG").plants("Charlie") should be(
+    pending
+    Garden.defaultGarden("VVCCGG\nVVCCGG").plants("Charlie") should be(
       List(Plant.Grass, Plant.Grass, Plant.Grass, Plant.Grass))
   }
 
   test("full garden - first student's garden") {
-        Garden
+    pending
+    Garden
       .defaultGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
       .plants("Alice") should be(
       List(Plant.Violets, Plant.Radishes, Plant.Violets, Plant.Radishes))
   }
 
   test("full garden - second student's garden") {
-        Garden
+    pending
+    Garden
       .defaultGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
       .plants("Bob") should be(
       List(Plant.Clover, Plant.Grass, Plant.Clover, Plant.Clover))
   }
 
   test("full garden - second to last student's garden") {
-        Garden
+    pending
+    Garden
       .defaultGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
       .plants("Kincaid") should be(
       List(Plant.Grass, Plant.Clover, Plant.Clover, Plant.Grass))
   }
 
   test("full garden - last student's garden") {
-        Garden
+    pending
+    Garden
       .defaultGarden("VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV")
       .plants("Larry") should be(
       List(Plant.Grass, Plant.Violets, Plant.Clover, Plant.Violets))

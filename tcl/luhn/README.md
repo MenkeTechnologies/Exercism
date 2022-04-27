@@ -1,5 +1,10 @@
 # Luhn
 
+Welcome to Luhn on Exercism's Tcl Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a number determine whether or not it is valid per the Luhn formula.
 
 The [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) is
@@ -9,14 +14,13 @@ Numbers.
 
 The task is to check if a given string is valid.
 
-Validating a Number
-------
+## Validating a Number
 
 Strings of length 1 or less are not valid. Spaces are allowed in the input,
 but they should be stripped before checking. All other non-digit characters
 are disallowed.
 
-## Example 1: valid credit card number
+### Example 1: valid credit card number
 
 ```text
 4539 3195 0343 6467
@@ -44,7 +48,7 @@ Then sum all of the digits:
 
 If the sum is evenly divisible by 10, then the number is valid. This number is valid!
 
-## Example 2: invalid credit card number
+### Example 2: invalid credit card number
 
 ```text
 8273 1232 7352 0569
@@ -64,26 +68,16 @@ Sum the digits
 
 57 is not evenly divisible by 10, so this number is not valid.
 
-
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
-
-## Running the tests
-To run the test suite, execute one of the following commands:
-
-```bash
-tclsh luhn.test            # Will stop testing after the first failure.
-RUN_ALL=1 tclsh luhn.test  # Will run all tests and report all failures.
-```
-
-## Feedback, Issues, Pull Requests
-The [exercism/tcl](https://github.com/exercism/tcl) repository on GitHub is
-the home for all of the Tcl exercises on Exercism.
-
-If you have feedback about an exercise, or want to help implementing a new
-one, head over there and create an issue.  We'll do our best to help you!
-
 ## Source
 
-The Luhn Algorithm on Wikipedia [http://en.wikipedia.org/wiki/Luhn_algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm)
+### Created by
 
+- @glennj
+
+### Contributed to by
+
+- @sshine
+
+### Based on
+
+The Luhn Algorithm on Wikipedia - http://en.wikipedia.org/wiki/Luhn_algorithm

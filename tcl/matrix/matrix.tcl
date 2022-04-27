@@ -1,5 +1,6 @@
 proc matrixFrom {inputString} {
     return [lmap r [split $inputString "\n"] {split $r " "}]
+
 }
 
 proc row {matrix n} {

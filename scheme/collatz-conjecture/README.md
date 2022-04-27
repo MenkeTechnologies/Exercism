@@ -31,6 +31,7 @@ Starting with n = 12, the steps would be as follows:
 
 Resulting in 9 steps. So for input n = 12, the return value would be 9.
 
+
 ## Track Specific Notes
 
 Don't worry about validating input for this track \-\- all inputs will be natural numbers\.

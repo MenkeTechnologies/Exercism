@@ -1,9 +1,12 @@
-# OCR Numbers
+# Ocr Numbers
+
+Welcome to Ocr Numbers on Exercism's Scala Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Given a 3 x 4 grid of pipes, underscores, and spaces, determine which number is
 represented, or whether it is garbled.
-
-# Step One
 
 To begin with, convert a simple binary font to a string containing 0 or 1.
 
@@ -31,11 +34,7 @@ If the input is the correct size, but not recognizable, your program should retu
 
 If the input is the incorrect size, your program should return an error.
 
-# Step Two
-
 Update your program to recognize multi-character binary strings, replacing garbled numbers with ?
-
-# Step Three
 
 Update your program to recognize all numbers 0 through 9, both individually and as part of a larger string.
 
@@ -57,8 +56,6 @@ Is converted to "2"
 
 Is converted to "1234567890"
 
-# Step Four
-
 Update your program to handle multiple numbers, one per line. When converting several lines, join the lines with commas.
 
 ```text
@@ -78,19 +75,18 @@ Update your program to handle multiple numbers, one per line. When converting se
 
 Is converted to "123,456,789"
 
-The Scala exercises assume an SBT project scheme. The exercise solution source
-should be placed within the exercise directory/src/main/scala. The exercise
-unit tests can be found within the exercise directory/src/test/scala.
-
-To run the tests simply run the command `sbt test` in the exercise directory.
-
-Please see the [learning](https://exercism.io/tracks/scala/learning) and 
-[installation](https://exercism.io/tracks/scala/installation) pages if you need any help.
-
-
 ## Source
 
-Inspired by the Bank OCR kata [http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR](http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @ricemery
+
+### Contributed to by
+
+- @ErikSchierboom
+- @ppartarr
+- @rajeshpg
+
+### Based on
+
+Inspired by the Bank OCR kata - http://codingdojo.org/cgi-bin/wiki.pl?KataBankOCR

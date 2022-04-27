@@ -1,4 +1,11 @@
 class SimulatedRobot {
+
+    public var bearing: Bearing = .east
+
+    private let directions = [Bearing.north, .east, .south, .west]
+
+    public var coordinates = [0, 0]
+
     enum Bearing {
         case north
         case south
@@ -11,12 +18,6 @@ class SimulatedRobot {
         case turnRight = "R"
         case advance = "A"
     }
-
-    private let directions = [Bearing.north, .east, .south, .west]
-
-    public var bearing = Bearing.east
-
-    public var coordinates = [0, 0]
 
     public func orient(_ bearing: Bearing) {
 

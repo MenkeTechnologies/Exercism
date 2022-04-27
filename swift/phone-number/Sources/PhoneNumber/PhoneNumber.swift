@@ -10,15 +10,15 @@ class PhoneNumber {
     private let prefix: String
     private let post: String
 
-    public init(_ input: String) {
+    public init(_ num: String) {
 
         let captureRegex = try! NSRegularExpression(
                 pattern: regex,
                 options: []
         )
 
-        let range = NSRange(input.startIndex..<input.endIndex, in: input)
-        let matches = captureRegex.matches(in: input, range: range)
+        let range = NSRange(num.startIndex..<num.endIndex, in: num)
+        let matches = captureRegex.matches(in: num, range: range)
 
         guard let match = matches.first else {
             areaCode = ""
@@ -27,9 +27,9 @@ class PhoneNumber {
             return
         }
 
-        areaCode = String(input[Range(match.range(at: 2), in: input)!])
-        prefix = String(input[Range(match.range(at: 3), in: input)!])
-        post = String(input[Range(match.range(at: 4), in: input)!])
+        areaCode = String(num[Range(match.range(at: 2), in: num)!])
+        prefix = String(num[Range(match.range(at: 3), in: num)!])
+        post = String(num[Range(match.range(at: 4), in: num)!])
 
         number = "\(areaCode)\(prefix)\(post)"
 
