@@ -1,5 +1,10 @@
 # Triangle
 
+Welcome to Triangle on Exercism's Vim script Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a triangle is equilateral, isosceles, or scalene.
 
 An _equilateral_ triangle has all three sides the same length.
@@ -22,17 +27,16 @@ The case where the sum of the lengths of two sides _equals_ that of the
 third is known as a _degenerate_ triangle - it has zero area and looks like
 a single line. Feel free to add your own code/tests to check for degenerate triangles.
 
-# How to run the tests
-
-If you don't know how to run Vader tests, see:
-[Tests](http://exercism.io/languages/vimscript/tests).
-
-For general information about the Vim script track, see:
-[Help](http://exercism.io/languages/vimscript).
-
 ## Source
 
-The Ruby Koans triangle project, parts 1 & 2 [http://rubykoans.com](http://rubykoans.com)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @mhinz
+
+### Contributed to by
+
+- @kotp
+
+### Based on
+
+The Ruby Koans triangle project, parts 1 & 2 - http://rubykoans.com

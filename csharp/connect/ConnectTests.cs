@@ -1,5 +1,3 @@
-// This file was auto-generated based on version 1.1.0 of the canonical data.
-
 using Xunit;
 
 public class ConnectTests
@@ -19,7 +17,7 @@ public class ConnectTests
         Assert.Equal(ConnectWinner.None, sut.Result());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void X_can_win_on_a_1x1_board()
     {
         var board = new[]
@@ -30,7 +28,7 @@ public class ConnectTests
         Assert.Equal(ConnectWinner.Black, sut.Result());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void O_can_win_on_a_1x1_board()
     {
         var board = new[]
@@ -41,7 +39,7 @@ public class ConnectTests
         Assert.Equal(ConnectWinner.White, sut.Result());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Only_edges_does_not_make_a_winner()
     {
         var board = new[]
@@ -55,7 +53,7 @@ public class ConnectTests
         Assert.Equal(ConnectWinner.None, sut.Result());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Illegal_diagonal_does_not_make_a_winner()
     {
         var board = new[]
@@ -70,7 +68,7 @@ public class ConnectTests
         Assert.Equal(ConnectWinner.None, sut.Result());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Nobody_wins_crossing_adjacent_angles()
     {
         var board = new[]
@@ -85,7 +83,7 @@ public class ConnectTests
         Assert.Equal(ConnectWinner.None, sut.Result());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void X_wins_crossing_from_left_to_right()
     {
         var board = new[]
@@ -100,7 +98,7 @@ public class ConnectTests
         Assert.Equal(ConnectWinner.Black, sut.Result());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void O_wins_crossing_from_top_to_bottom()
     {
         var board = new[]
@@ -115,7 +113,7 @@ public class ConnectTests
         Assert.Equal(ConnectWinner.White, sut.Result());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void X_wins_using_a_convoluted_path()
     {
         var board = new[]
@@ -130,7 +128,7 @@ public class ConnectTests
         Assert.Equal(ConnectWinner.Black, sut.Result());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void X_wins_using_a_spiral_path()
     {
         var board = new[]

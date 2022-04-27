@@ -1,5 +1,10 @@
 # Forth
 
+Welcome to Forth on Exercism's Crystal Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement an evaluator for a very simple subset of Forth.
 
 [Forth](https://en.wikipedia.org/wiki/Forth_%28programming_language%29)
@@ -25,28 +30,14 @@ enough.)
 
 Words are case-insensitive.
 
-## Setup
+## Source
 
-Follow the setup instructions for Crystal here:
+### Created by
 
-http://exercism.io/languages/crystal
+- @bmulvihill
 
-More help installing can be found here:
+### Contributed to by
 
-http://crystal-lang.org/docs/installation/index.html
-
-## Making the Test Suite Pass
-
-Execute the tests with:
-
-```bash
-$ crystal spec
-```
-
-In each test suite all but the first test have been skipped.
-
-Once you get a test passing, you can unskip the next one by changing `pending` to `it`.
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @amscotti
+- @issyl0
+- @mhelmetag

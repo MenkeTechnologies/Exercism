@@ -1,5 +1,10 @@
 # Markdown
 
+Welcome to Markdown on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Refactor a Markdown parser.
 
 The markdown exercise is a refactoring exercise. There is code that parses a
@@ -14,21 +19,19 @@ It would be helpful if you made notes of what you did in your refactoring in
 comments so reviewers can see that, but it isn't strictly necessary. The most
 important thing is to make the code better!
 
-## Hints
 For this exercise the following C# feature comes in handy:
-- [String Interpolation](https://msdn.microsoft.com/en-us/library/dn961160.aspx) (C# 6 and up).
 
-## Running the tests
+- [String Interpolation](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/tokens/interpolated) (C# 6 and up).
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+## Source
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit Markdown.cs`
+### Created by
 
-## Further information
+- @ErikSchierboom
 
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
+### Contributed to by
 
+- @balazsbotond
+- @bcwood
+- @j2jensen
+- @robkeim

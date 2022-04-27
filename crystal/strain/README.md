@@ -1,5 +1,10 @@
 # Strain
 
+Welcome to Strain on Exercism's Crystal Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement the `keep` and `discard` operation on collections. Given a collection
 and a predicate on the collection's elements, `keep` returns a new collection
 containing those elements where the predicate is true, while `discard` returns
@@ -33,32 +38,12 @@ Keep your hands off that filter/reject/whatchamacallit functionality
 provided by your standard library!  Solve this one yourself using other
 basic tools instead.
 
-## Setup
-
-Follow the setup instructions for Crystal here:
-
-http://exercism.io/languages/crystal
-
-More help installing can be found here:
-
-http://crystal-lang.org/docs/installation/index.html
-
-## Making the Test Suit Pass
-
-Execute the tests with:
-
-```bash
-$ crystal spec
-```
-
-In each test suite all but the first test have been skipped.
-
-Once you get a test passing, you can unskip the next one by changing `pending` to `it`.
-
 ## Source
 
-Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitter.com/jeg2)
+### Created by
 
-## Submitting Incomplete Solutions
+- @amscotti
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Based on
+
+Conversation with James Edward Gray II - https://twitter.com/jeg2

@@ -1,5 +1,3 @@
-// This file was auto-generated based on version 1.3.0 of the canonical data.
-
 using System;
 using Xunit;
 
@@ -14,7 +12,7 @@ public class PovTests
         Assert.Equal(expected, Pov.FromPov(tree, from));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_reroot_a_tree_with_a_parent_and_one_sibling()
     {
         var tree = new Tree("parent", new Tree("x"), new Tree("sibling"));
@@ -23,7 +21,7 @@ public class PovTests
         Assert.Equal(expected, Pov.FromPov(tree, from));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_reroot_a_tree_with_a_parent_and_many_siblings()
     {
         var tree = new Tree("parent", new Tree("a"), new Tree("x"), new Tree("b"), new Tree("c"));
@@ -32,7 +30,7 @@ public class PovTests
         Assert.Equal(expected, Pov.FromPov(tree, from));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_reroot_a_tree_with_new_root_deeply_nested_in_tree()
     {
         var tree = new Tree("level-0", new Tree("level-1", new Tree("level-2", new Tree("level-3", new Tree("x")))));
@@ -41,7 +39,7 @@ public class PovTests
         Assert.Equal(expected, Pov.FromPov(tree, from));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Moves_children_of_the_new_root_to_same_level_as_former_parent()
     {
         var tree = new Tree("parent", new Tree("x", new Tree("kid-0"), new Tree("kid-1")));
@@ -50,7 +48,7 @@ public class PovTests
         Assert.Equal(expected, Pov.FromPov(tree, from));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_reroot_a_complex_tree_with_cousins()
     {
         var tree = new Tree("grandparent", new Tree("parent", new Tree("x", new Tree("kid-0"), new Tree("kid-1")), new Tree("sibling-0"), new Tree("sibling-1")), new Tree("uncle", new Tree("cousin-0"), new Tree("cousin-1")));
@@ -59,7 +57,7 @@ public class PovTests
         Assert.Equal(expected, Pov.FromPov(tree, from));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Errors_if_target_does_not_exist_in_a_singleton_tree()
     {
         var tree = new Tree("x");
@@ -67,7 +65,7 @@ public class PovTests
         Assert.Throws<ArgumentException>(() => Pov.FromPov(tree, from));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Errors_if_target_does_not_exist_in_a_large_tree()
     {
         var tree = new Tree("parent", new Tree("x", new Tree("kid-0"), new Tree("kid-1")), new Tree("sibling-0"), new Tree("sibling-1"));
@@ -75,7 +73,7 @@ public class PovTests
         Assert.Throws<ArgumentException>(() => Pov.FromPov(tree, from));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_find_path_to_parent()
     {
         var from = "x";
@@ -85,7 +83,7 @@ public class PovTests
         Assert.Equal(expected, Pov.PathTo(from, to, tree));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_find_path_to_sibling()
     {
         var from = "x";
@@ -95,7 +93,7 @@ public class PovTests
         Assert.Equal(expected, Pov.PathTo(from, to, tree));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_find_path_to_cousin()
     {
         var from = "x";
@@ -105,7 +103,7 @@ public class PovTests
         Assert.Equal(expected, Pov.PathTo(from, to, tree));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_find_path_not_involving_root()
     {
         var from = "x";
@@ -115,7 +113,7 @@ public class PovTests
         Assert.Equal(expected, Pov.PathTo(from, to, tree));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_find_path_from_nodes_other_than_x()
     {
         var from = "a";
@@ -125,7 +123,7 @@ public class PovTests
         Assert.Equal(expected, Pov.PathTo(from, to, tree));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Errors_if_destination_does_not_exist()
     {
         var from = "x";
@@ -134,7 +132,7 @@ public class PovTests
         Assert.Throws<ArgumentException>(() => Pov.PathTo(from, to, tree));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Errors_if_source_does_not_exist()
     {
         var from = "nonexistent";

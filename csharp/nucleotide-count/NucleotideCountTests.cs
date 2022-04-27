@@ -1,5 +1,3 @@
-// This file was auto-generated based on version 1.3.0 of the canonical data.
-
 using System;
 using System.Collections.Generic;
 using Xunit;
@@ -19,7 +17,7 @@ public class NucleotideCountTests
         Assert.Equal(expected, NucleotideCount.Count(""));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Can_count_one_nucleotide_in_single_character_input()
     {
         var expected = new Dictionary<char, int>
@@ -32,7 +30,7 @@ public class NucleotideCountTests
         Assert.Equal(expected, NucleotideCount.Count("G"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Strand_with_repeated_nucleotide()
     {
         var expected = new Dictionary<char, int>
@@ -45,7 +43,7 @@ public class NucleotideCountTests
         Assert.Equal(expected, NucleotideCount.Count("GGGGGGG"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Strand_with_multiple_nucleotides()
     {
         var expected = new Dictionary<char, int>
@@ -58,7 +56,7 @@ public class NucleotideCountTests
         Assert.Equal(expected, NucleotideCount.Count("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Strand_with_invalid_nucleotides()
     {
         Assert.Throws<ArgumentException>(() => NucleotideCount.Count("AGXXACT"));

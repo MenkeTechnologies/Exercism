@@ -1,7 +1,7 @@
 defmodule TakeANumberTest do
   use ExUnit.Case
 
-  
+  @tag task_id: 1
   test "starts a new process" do
     pid = TakeANumber.start()
     assert is_pid(pid)
@@ -9,14 +9,14 @@ defmodule TakeANumberTest do
     assert pid != TakeANumber.start()
   end
 
-  
+  @tag task_id: 2
   test "reports its own state" do
     pid = TakeANumber.start()
     send(pid, {:report_state, self()})
     assert_receive 0
   end
 
-  
+  @tag task_id: 2
   test "does not shut down after reporting its own state" do
     pid = TakeANumber.start()
     send(pid, {:report_state, self()})
@@ -26,14 +26,14 @@ defmodule TakeANumberTest do
     assert_receive 0
   end
 
-  
+  @tag task_id: 3
   test "gives out a number" do
     pid = TakeANumber.start()
     send(pid, {:take_a_number, self()})
     assert_receive 1
   end
 
-  
+  @tag task_id: 3
   test "gives out many consecutive numbers" do
     pid = TakeANumber.start()
     send(pid, {:take_a_number, self()})
@@ -58,7 +58,7 @@ defmodule TakeANumberTest do
     assert_receive 5
   end
 
-  
+  @tag task_id: 4
   test "stops" do
     pid = TakeANumber.start()
     assert Process.alive?(pid)
@@ -71,7 +71,7 @@ defmodule TakeANumberTest do
     refute Process.alive?(pid)
   end
 
-  
+  @tag task_id: 5
   test "ignores unexpected messages and keeps working" do
     pid = TakeANumber.start()
 

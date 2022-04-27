@@ -1,5 +1,10 @@
 # Leap
 
+Welcome to Leap on Exercism's Vim script Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a year, report if it is a leap year.
 
 The tricky thing here is that a leap year in the Gregorian calendar occurs:
@@ -23,17 +28,18 @@ phenomenon, go watch [this youtube video][video].
 
 [video]: http://www.youtube.com/watch?v=xX96xng7sAE
 
-# How to run the tests
-
-If you don't know how to run Vader tests, see:
-[Tests](http://exercism.io/languages/vimscript/tests).
-
-For general information about the Vim script track, see:
-[Help](http://exercism.io/languages/vimscript).
-
 ## Source
 
-JavaRanch Cattle Drive, exercise 3 [http://www.javaranch.com/leap.jsp](http://www.javaranch.com/leap.jsp)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @mhinz
+
+### Contributed to by
+
+- @kotp
+- @kytrinyx
+- @thinca
+
+### Based on
+
+JavaRanch Cattle Drive, exercise 3 - http://www.javaranch.com/leap.jsp

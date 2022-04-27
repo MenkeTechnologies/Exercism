@@ -1,12 +1,17 @@
 # Palindrome Products
 
+Welcome to Palindrome Products on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Detect palindrome products in a given range.
 
 A palindromic number is a number that remains the same when its digits are
 reversed. For example, `121` is a palindromic number but `112` is not.
 
 Given a range of numbers, find the largest and smallest palindromes which
-are products of numbers within that range.
+are products of two numbers within that range.
 
 Your solution should return the largest and smallest palindromes, along with the
 factors of each within the range. If the largest or smallest palindrome has more
@@ -32,26 +37,23 @@ Given the range `[10, 99]` (both inclusive)...
 The smallest palindrome product is `121`. Its factors are `(11, 11)`.
 The largest palindrome product is `9009`. Its factors are `(91, 99)`.
 
-## Hints
-
 For this exercise, you will need to create a set of factors using tuples.
-For more information on tuples, see [this link](https://msdn.microsoft.com/en-us/library/system.tuple(v=vs.110).aspx).
-
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit PalindromeProducts.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
+For more information on tuples, see [this link](https://docs.microsoft.com/en-us/dotnet/api/system.tuple?view=net-5.0).
 
 ## Source
 
-Problem 4 at Project Euler [http://projecteuler.net/problem=4](http://projecteuler.net/problem=4)
+### Created by
 
+- @ErikSchierboom
+
+### Contributed to by
+
+- @bressain
+- @j2jensen
+- @jmbradnan
+- @robkeim
+- @wolf99
+
+### Based on
+
+Problem 4 at Project Euler - http://projecteuler.net/problem=4

@@ -1,5 +1,10 @@
 # Book Store
 
+Welcome to Book Store on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 To try and encourage more sales of different books from a popular 5 book
 series, a bookshop has decided to offer discounts on multiple book purchases.
 
@@ -67,21 +72,20 @@ For a total of $51.20
 
 And $51.20 is the price with the biggest discount.
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit BookStore.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
 ## Source
 
-Inspired by the harry potter kata from Cyber-Dojo. [http://cyber-dojo.org](http://cyber-dojo.org)
+### Created by
 
+- @robkeim
+
+### Contributed to by
+
+- @AndrewYHuang
+- @ErikSchierboom
+- @j2jensen
+- @tomschluter
+- @wolf99
+
+### Based on
+
+Inspired by the harry potter kata from Cyber-Dojo. - http://cyber-dojo.org

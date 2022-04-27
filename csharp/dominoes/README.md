@@ -1,5 +1,10 @@
 # Dominoes
 
+Welcome to Dominoes on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Make a chain of dominoes.
 
 Compute a way to order a given set of dominoes in such a way that they form a
@@ -14,17 +19,16 @@ For stones `[1|2]`, `[4|1]` and `[2|3]` the resulting chain is not valid: `[4|1]
 
 Some test cases may use duplicate stones in a chain solution, assume that multiple Domino sets are being used.
 
-## Running the tests
+## Source
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+### Created by
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit Dominoes.cs`
+- @ErikSchierboom
 
-## Further information
+### Contributed to by
 
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
+- @InKahootz
+- @j2jensen
+- @robkeim
+- @wolf99
+- @Zureka

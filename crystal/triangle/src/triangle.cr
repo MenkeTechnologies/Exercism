@@ -7,7 +7,9 @@ class Triangle
 
     def initialize(@sides : Sides)
 
-        @sides.select{|s| s <= 0}.map { abort }
+        @sides.select{|a| a <= 0}.map {
+            abort
+        }
 
         if @sides[0] > @sides[1] + @sides[2]
             abort

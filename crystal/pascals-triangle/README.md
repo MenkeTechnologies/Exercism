@@ -1,4 +1,9 @@
-# Pascal's Triangle
+# Pascals Triangle
+
+Welcome to Pascals Triangle on Exercism's Crystal Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Compute Pascal's triangle up to a given number of rows.
 
@@ -14,32 +19,18 @@ the right and left of the current position in the previous row.
 # ... etc
 ```
 
-## Setup
-
-Follow the setup instructions for Crystal here:
-
-http://exercism.io/languages/crystal
-
-More help installing can be found here:
-
-http://crystal-lang.org/docs/installation/index.html
-
-## Making the Test Suite Pass
-
-Execute the tests with:
-
-```bash
-$ crystal spec
-```
-
-In each test suite all but the first test have been skipped.
-
-Once you get a test passing, you can unskip the next one by changing `pending` to `it`.
-
 ## Source
 
-Pascal's Triangle at Wolfram Math World [http://mathworld.wolfram.com/PascalsTriangle.html](http://mathworld.wolfram.com/PascalsTriangle.html)
+### Created by
 
-## Submitting Incomplete Solutions
+- @bmulvihill
 
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+### Contributed to by
+
+- @amscotti
+- @issyl0
+- @mhelmetag
+
+### Based on
+
+Pascal's Triangle at Wolfram Math World - http://mathworld.wolfram.com/PascalsTriangle.html

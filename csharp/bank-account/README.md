@@ -1,5 +1,10 @@
 # Bank Account
 
+Welcome to Bank Account on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Simulate a bank account supporting opening/closing, withdrawals, and deposits
 of money. Watch out for concurrent transactions!
 
@@ -26,22 +31,19 @@ it.
 
 Have fun!
 
-## Hints
-This exercise requires you to handle data related to currency and money. A normal approuch is to use the [Decimal](https://msdn.microsoft.com/en-US/library/system.decimal.aspx) struct to store currency values. 
-Note though that you then only store the numeric value of a currency. 
+This exercise requires you to handle data related to currency and money. A normal approuch is to use the [Decimal](https://docs.microsoft.com/en-us/dotnet/api/system.decimal?view=net-5.0) struct to store currency values.
+Note though that you then only store the numeric value of a currency.
 
+## Source
 
-## Running the tests
+### Created by
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+- @robkeim
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit BankAccount.cs`
+### Contributed to by
 
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
+- @AndrewYHuang
+- @artiom
+- @ErikSchierboom
+- @j2jensen
+- @wolf99

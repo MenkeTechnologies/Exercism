@@ -1,10 +1,17 @@
-# DOT DSL
+# Dot Dsl
 
-Write a Domain Specific Language similar to the Graphviz dot language.
+Welcome to Dot Dsl on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 A [Domain Specific Language
 (DSL)](https://en.wikipedia.org/wiki/Domain-specific_language) is a
-small language optimized for a specific domain.
+small language optimized for a specific domain. Since a DSL is
+targeted, it can greatly impact productivity/understanding by allowing the
+writer to declare *what* they want rather than *how*.
+
+One problem area where they are applied are complex customizations/configurations.
 
 For example the [DOT language](https://en.wikipedia.org/wiki/DOT_(graph_description_language)) allows
 you to write a textual description of a graph which is then transformed into a picture by one of
@@ -21,22 +28,29 @@ Putting this in a file `example.dot` and running `dot example.dot -T png
 -o example.png` creates an image `example.png` with red and blue circle
 connected by a green line on a yellow background.
 
-Create a DSL similar to the dot language.
+Write a Domain Specific Language similar to the Graphviz dot language.
 
-## Hints
-This exercise requires you to implement classes with a custom equality check. For more information, see [this page](https://msdn.microsoft.com/en-us/library/bsc2ak47(v=vs.110).aspx).
+Our DSL is similar to the Graphviz dot language in that our DSL will be used
+to create graph data structures. However, unlike the DOT Language, our DSL will
+be an internal DSL for use only in our language.
 
-## Running the tests
+More information about the difference between internal and external DSLs can be
+found [here](https://martinfowler.com/bliki/DomainSpecificLanguage.html).
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+This exercise requires you to implement classes with a custom equality check. For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/api/system.object.equals?view=net-5.0#System_Object_Equals_System_Object_).
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit DotDsl.cs`
+## Source
 
-## Further information
+### Created by
 
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
+- @ErikSchierboom
 
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/DOT_(graph_description_language)

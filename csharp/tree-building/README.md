@@ -1,5 +1,10 @@
 # Tree Building
 
+Welcome to Tree Building on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Refactor a tree building algorithm.
 
 Some web-forums have a tree layout, so posts are presented as a tree. However
@@ -26,17 +31,14 @@ root (ID: 0, parent ID: 0)
 +-- child3 (ID: 5, parent ID: 0)
 ```
 
-## Running the tests
+## Source
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+### Created by
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit TreeBuilding.cs`
+- @ErikSchierboom
 
-## Further information
+### Contributed to by
 
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
+- @j2jensen
+- @robkeim
+- @wolf99

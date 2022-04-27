@@ -1,5 +1,10 @@
 # Grep
 
+Welcome to Grep on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Search a file for lines matching a regular expression pattern. Return the line
 number and contents of each matching line.
 
@@ -33,7 +38,7 @@ hello
 hello again
 ```
 
-### Flags
+## Flags
 
 As said earlier, the `grep` command should also support the following flags:
 
@@ -64,21 +69,18 @@ The `grep` command should support multiple flags at once.
 For example, running `grep -l -v "hello" file1.txt file2.txt` should
 print the names of files that do not contain the string "hello".
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit Grep.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
 ## Source
 
-Conversation with Nate Foster. [http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf](http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf)
+### Created by
 
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Conversation with Nate Foster. - http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf

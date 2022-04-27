@@ -1,12 +1,17 @@
 # List Ops
 
+Welcome to List Ops on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement basic list operations.
 
 In functional languages list operations like `length`, `map`, and
 `reduce` are very common. Implement a series of basic list operations,
 without using existing functions.
 
-The precise number and names of the operations to be implemented will be 
+The precise number and names of the operations to be implemented will be
 track dependent to avoid conflicts with existing names, but the general
 operations you will implement include:
 
@@ -19,20 +24,17 @@ operations you will implement include:
 * `foldr` (*given a function, a list, and an initial accumulator, fold (reduce) each item into the accumulator from the right using `function(item, accumulator)`*);
 * `reverse` (*given a list, return a list with all the original items, but in reversed order*);
 
-## Hints
-The `Foldl` and `Foldr` methods are "fold" functions, which is a concept well-known in the functional programming world, but less so in the object-oriented one. If you'd like more background information, check out this [fold](https://en.wikipedia.org/wiki/Fold_(higher-order_function)) page.
+The `Foldl` and `Foldr` methods are "fold" functions, which is a concept well-known in the functional programming world, but less so in the object-oriented one. If you'd like more background information, check out this [fold](<https://en.wikipedia.org/wiki/Fold_(higher-order_function)>) page.
 
-## Running the tests
+## Source
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+### Created by
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit ListOps.cs`
+- @ErikSchierboom
 
-## Further information
+### Contributed to by
 
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
+- @j2jensen
+- @jmbradnan
+- @robkeim
+- @wolf99

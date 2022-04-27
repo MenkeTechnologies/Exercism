@@ -1,5 +1,3 @@
-// This file was auto-generated based on version 2.3.0 of the canonical data.
-
 using System;
 using Xunit;
 
@@ -15,7 +13,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Binary_to_single_decimal()
     {
         var inputBase = 2;
@@ -25,7 +23,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Single_decimal_to_binary()
     {
         var inputBase = 10;
@@ -35,7 +33,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Binary_to_multiple_decimal()
     {
         var inputBase = 2;
@@ -45,7 +43,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Decimal_to_binary()
     {
         var inputBase = 10;
@@ -55,7 +53,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Trinary_to_hexadecimal()
     {
         var inputBase = 3;
@@ -65,7 +63,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Hexadecimal_to_trinary()
     {
         var inputBase = 16;
@@ -75,7 +73,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Number_15_bit_integer()
     {
         var inputBase = 97;
@@ -85,7 +83,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Empty_list()
     {
         var inputBase = 2;
@@ -95,7 +93,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Single_zero()
     {
         var inputBase = 10;
@@ -105,7 +103,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Multiple_zeros()
     {
         var inputBase = 10;
@@ -115,7 +113,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Leading_zeros()
     {
         var inputBase = 7;
@@ -125,7 +123,7 @@ public class AllYourBaseTests
         Assert.Equal(expected, AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Input_base_is_one()
     {
         var inputBase = 1;
@@ -134,7 +132,7 @@ public class AllYourBaseTests
         Assert.Throws<ArgumentException>(() => AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Input_base_is_zero()
     {
         var inputBase = 0;
@@ -143,7 +141,7 @@ public class AllYourBaseTests
         Assert.Throws<ArgumentException>(() => AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Input_base_is_negative()
     {
         var inputBase = -2;
@@ -152,7 +150,7 @@ public class AllYourBaseTests
         Assert.Throws<ArgumentException>(() => AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Negative_digit()
     {
         var inputBase = 2;
@@ -161,7 +159,7 @@ public class AllYourBaseTests
         Assert.Throws<ArgumentException>(() => AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Invalid_positive_digit()
     {
         var inputBase = 2;
@@ -170,7 +168,7 @@ public class AllYourBaseTests
         Assert.Throws<ArgumentException>(() => AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Output_base_is_one()
     {
         var inputBase = 2;
@@ -179,7 +177,7 @@ public class AllYourBaseTests
         Assert.Throws<ArgumentException>(() => AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Output_base_is_zero()
     {
         var inputBase = 10;
@@ -188,7 +186,7 @@ public class AllYourBaseTests
         Assert.Throws<ArgumentException>(() => AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Output_base_is_negative()
     {
         var inputBase = 2;
@@ -197,7 +195,7 @@ public class AllYourBaseTests
         Assert.Throws<ArgumentException>(() => AllYourBase.Rebase(inputBase, digits, outputBase));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Both_bases_are_negative()
     {
         var inputBase = -2;

@@ -7,24 +7,24 @@ describe "Strain" do
     g.keep { |e| e < 10 }.should eq([] of Int32)
   end
 
-  it "keeps everything" do
+  pending "keeps everything" do
     [1, 2, 3].keep { |e| e < 10 }.should eq([1, 2, 3])
   end
 
-  it "keeps first and last" do
+  pending "keeps first and last" do
     [1, 2, 3].keep { |e| e % 2 == 1 }.should eq([1, 3])
   end
 
-  it "keeps neither first nor last" do
+  pending "keeps neither first nor last" do
     [1, 2, 3].keep { |e| e % 2 == 0 }.should eq([2])
   end
 
-  it "keeps strings" do
+  pending "keeps strings" do
     words = ["apple", "zebra", "banana", "zombies", "cherimoya", "zelot"]
     words.keep { |w| w.starts_with?('z') }.should eq(["zebra", "zombies", "zelot"])
   end
 
-  it "keep arrays" do
+  pending "keep arrays" do
     rows = [
       [1, 2, 3],
       [5, 5, 5],
@@ -38,29 +38,29 @@ describe "Strain" do
     result.should eq([[5, 5, 5], [5, 1, 2], [1, 5, 2], [1, 2, 5]])
   end
 
-  it "discard on empty array returns empty array" do
+  pending "discard on empty array returns empty array" do
     g = [] of Int32
     g.discard { |e| e < 10 }.should eq([] of Int32)
   end
 
-  it "discard nothing" do
+  pending "discard nothing" do
     [1, 2, 3].discard { |e| e > 10 }.should eq([1, 2, 3])
   end
 
-  it "discard first and last" do
+  pending "discard first and last" do
     [1, 2, 3].discard { |e| e % 2 == 0 }.should eq([1, 3])
   end
 
-  it "discard the first and last" do
+  pending "discard the first and last" do
     [1, 2, 3].discard { |e| e % 2 == 1 }.should eq([2])
   end
 
-  it "discard strings" do
+  pending "discard strings" do
     words = ["apple", "zebra", "banana", "zombies", "cherimoya", "zelot"]
     words.discard { |w| w.starts_with?('z') }.should eq(["apple", "banana", "cherimoya"])
   end
 
-  it "discard arrays" do
+  pending "discard arrays" do
     rows = [
       [1, 2, 3],
       [5, 5, 5],

@@ -6,85 +6,85 @@ describe "Triangle" do
     Triangle.new({2, 2, 2}).equilateral?.should eq(true)
   end
 
-  it "any side is unequal" do
+  pending "any side is unequal" do
     Triangle.new({2, 3, 2}).equilateral?.should eq(false)
   end
 
-  it "no sides are equal" do
+  pending "no sides are equal" do
     Triangle.new({5, 4, 6}).equilateral?.should eq(false)
   end
 
-  it "all zero sides is not a triangle" do
+  pending "all zero sides is not a triangle" do
     expect_raises(ArgumentError) do
       Triangle.new({0, 0, 0})
     end
   end
 
-  it "sides may be floats" do
+  pending "sides may be floats" do
     Triangle.new({0.5, 0.5, 0.5}).equilateral?.should eq(true)
   end
 
-  it "last two sides are equal" do
+  pending "last two sides are equal" do
     Triangle.new({3, 4, 4}).isosceles?.should eq(true)
   end
 
-  it "first two sides are equal" do
+  pending "first two sides are equal" do
     Triangle.new({4, 4, 3}).isosceles?.should eq(true)
   end
 
-  it "first and last sides are equal" do
+  pending "first and last sides are equal" do
     Triangle.new({4, 3, 4}).isosceles?.should eq(true)
   end
 
-  it "equilateral triangles are also isosceles" do
+  pending "equilateral triangles are also isosceles" do
     Triangle.new({4, 4, 4}).isosceles?.should eq(true)
   end
 
-  it "no sides are equal" do
+  pending "no sides are equal" do
     Triangle.new({2, 3, 4}).isosceles?.should eq(false)
   end
 
-  it "first triangle inequality violation" do
+  pending "first triangle inequality violation" do
     expect_raises(ArgumentError) do
       Triangle.new({1, 1, 3})
     end
   end
 
-  it "second triangle inequality violation" do
+  pending "second triangle inequality violation" do
     expect_raises(ArgumentError) do
       Triangle.new({1, 3, 1})
     end
   end
 
-  it "third triangle inequality violation" do
+  pending "third triangle inequality violation" do
     expect_raises(ArgumentError) do
       Triangle.new({3, 1, 1})
     end
   end
 
-  it "sides may be floats" do
+  pending "sides may be floats" do
     Triangle.new({0.5, 0.4, 0.5}).isosceles?.should eq(true)
   end
 
-  it "no sides are equal" do
+  pending "no sides are equal" do
     Triangle.new({5, 4, 6}).scalene?.should eq(true)
   end
 
-  it "all sides are equal" do
+  pending "all sides are equal" do
     Triangle.new({4, 4, 4}).scalene?.should eq(false)
   end
 
-  it "two sides are equal" do
+  pending "two sides are equal" do
     Triangle.new({4, 4, 3}).scalene?.should eq(false)
   end
 
-  it "may not violate triangle inequality" do
+  pending "may not violate triangle inequality" do
     expect_raises(ArgumentError) do
       Triangle.new({7, 3, 2})
     end
   end
 
-  it "sides may be floats" do
+  pending "sides may be floats" do
     Triangle.new({0.5, 0.4, 0.6}).scalene?.should eq(true)
   end
 end

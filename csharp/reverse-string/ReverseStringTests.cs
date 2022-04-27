@@ -1,5 +1,3 @@
-// This file was auto-generated based on version 1.2.0 of the canonical data.
-
 using Xunit;
 
 public class ReverseStringTests
@@ -10,31 +8,31 @@ public class ReverseStringTests
         Assert.Equal("", ReverseString.Reverse(""));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void A_word()
     {
         Assert.Equal("tobor", ReverseString.Reverse("robot"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void A_capitalized_word()
     {
         Assert.Equal("nemaR", ReverseString.Reverse("Ramen"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void A_sentence_with_punctuation()
     {
         Assert.Equal("!yrgnuh m'I", ReverseString.Reverse("I'm hungry!"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void A_palindrome()
     {
         Assert.Equal("racecar", ReverseString.Reverse("racecar"));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void An_even_sized_word()
     {
         Assert.Equal("reward", ReverseString.Reverse("drawer"));

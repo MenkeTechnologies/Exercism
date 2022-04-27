@@ -1,5 +1,10 @@
 # Zipper
 
+Welcome to Zipper on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Creating a zipper for a binary tree.
 
 [Zippers](https://en.wikipedia.org/wiki/Zipper_%28data_structure%29) are
@@ -27,21 +32,16 @@ list of child nodes) a zipper might support these operations:
   `next` node if possible otherwise to the `prev` node if possible,
   otherwise to the parent node, returns a new zipper)
 
-## Hints
 This exercise deals with custom equality. For more information see [this page.](http://www.loganfranken.com/blog/687/overriding-equals-in-c-part-1/)
 
+## Source
 
-## Running the tests
+### Created by
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+- @ErikSchierboom
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit Zipper.cs`
+### Contributed to by
 
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
+- @j2jensen
+- @robkeim
+- @wolf99

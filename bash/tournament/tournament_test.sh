@@ -8,7 +8,11 @@
 
 # uses external tool: mktemp
 
-setup()    { export INPUT_FILE=$( mktemp ); }
+setup() { 
+    export INPUT_FILE HAS_TTY
+    INPUT_FILE=$( mktemp ) 
+    [[ -t 0 ]] && HAS_TTY=1 || HAS_TTY=0
+}
 teardown() { rm -f "$INPUT_FILE"; }
 
 @test "just the header if no input" {
@@ -30,6 +34,8 @@ EXPECTED
 
 @test "a win is three points, a loss is zero points" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # ignore this test in CI
+    (( HAS_TTY )) || skip
 
     cat <<INPUT >"$INPUT_FILE"
 Allegoric Alaskans;Blithering Badgers;win
@@ -201,6 +207,8 @@ EXPECTED
 
 @test "incomplete competition (not all pairs have played)" {
     [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+    # ignore this test in CI
+    (( HAS_TTY )) || skip
 
     cat <<INPUT > "$INPUT_FILE"
 Allegoric Alaskans;Blithering Badgers;loss
@@ -242,6 +250,30 @@ Allegoric Alaskans             |  3 |  2 |  1 |  0 |  7
 Courageous Californians        |  3 |  2 |  1 |  0 |  7
 Blithering Badgers             |  3 |  0 |  1 |  2 |  1
 Devastating Donkeys            |  3 |  0 |  1 |  2 |  1
+EXPECTED
+)
+
+    run bash tournament.sh  <<< "$input"
+    (( status == 0 ))
+    [[ $output == "$expected" ]]
+}
+
+@test "ensure points sorted numerically" {
+
+    [[ $BATS_RUN_SKIPPED == "true" ]] || skip
+
+    input=$( cat <<INPUT
+Devastating Donkeys;Blithering Badgers;win
+Devastating Donkeys;Blithering Badgers;win
+Devastating Donkeys;Blithering Badgers;win
+Devastating Donkeys;Blithering Badgers;win
+Blithering Badgers;Devastating Donkeys;win
+INPUT
+)
+    expected=$( cat <<EXPECTED
+Team                           | MP |  W |  D |  L |  P
+Devastating Donkeys            |  5 |  4 |  0 |  1 | 12
+Blithering Badgers             |  5 |  1 |  0 |  4 |  3
 EXPECTED
 )
 

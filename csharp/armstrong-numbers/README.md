@@ -1,5 +1,10 @@
 # Armstrong Numbers
 
+Welcome to Armstrong Numbers on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 An [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) is a number that is the sum of its own digits each raised to the power of the number of digits.
 
 For example:
@@ -11,21 +16,18 @@ For example:
 
 Write some code to determine whether a number is an Armstrong number.
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit ArmstrongNumbers.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
 ## Source
 
-Wikipedia [https://en.wikipedia.org/wiki/Narcissistic_number](https://en.wikipedia.org/wiki/Narcissistic_number)
+### Created by
 
+- @robkeim
+
+### Contributed to by
+
+- @ErikSchierboom
+- @j2jensen
+- @wolf99
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Narcissistic_number

@@ -1,5 +1,10 @@
 # Accumulate
 
+Welcome to Accumulate on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement the `accumulate` operation, which, given a collection and an
 operation to perform on each element of the collection, returns a new
 collection containing the result of applying that operation to each element of
@@ -27,28 +32,31 @@ Solve this one yourself using other basic tools instead.
 
 To be more specific, you are not allowed to use any of the built-in [LINQ methods](https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=netcore-2.1#methods).
 
-### Laziness test
+## Laziness test
 
 Since `accumulate` returns an `IEnumerable`, it's execution is deferred until `ToList()` it is called on it, which is tested with the `Accumulate_is_lazy` method
 
-## Hints		
-This exercise requires you to write an extension method. For more information, see [this page](https://msdn.microsoft.com/en-us//library/bb383977.aspx).
+## Hints
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit Accumulate.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
+This exercise requires you to write an extension method. For more information, see [this page](https://docs.microsoft.com/en-us/dotnet/csharp/programming-guide/classes-and-structs/extension-methods).
 
 ## Source
 
-Conversation with James Edward Gray II [https://twitter.com/jeg2](https://twitter.com/jeg2)
+### Created by
 
+- @bressain
+
+### Contributed to by
+
+- @B1tF8er
+- @balazsbotond
+- @ChrisPritchard
+- @ErikSchierboom
+- @j2jensen
+- @jwood803
+- @robkeim
+- @wolf99
+
+### Based on
+
+Conversation with James Edward Gray II - https://twitter.com/jeg2

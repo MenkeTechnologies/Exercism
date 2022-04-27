@@ -1,4 +1,9 @@
-# SGF Parsing
+# Sgf Parsing
+
+Welcome to Sgf Parsing on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Parsing a Smart Game Format string.
 
@@ -65,21 +70,17 @@ structure of properties. You do not need to encode knowledge about the
 data types of properties, just use the rules for the
 [text](http://www.red-bean.com/sgf/sgf4.html#text) type everywhere.
 
-## Hints
 - To parse the text, you could try to use the [Sprache](https://github.com/sprache/Sprache/blob/develop/README.md) library. You can also find a good tutorial [here](https://www.thomaslevesque.com/2017/02/23/easy-text-parsing-in-c-with-sprache/).
 
+## Source
 
-## Running the tests
+### Created by
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+- @ErikSchierboom
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit SgfParsing.cs`
+### Contributed to by
 
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
+- @deniscapeto
+- @j2jensen
+- @robkeim
+- @wolf99

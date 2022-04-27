@@ -1,12 +1,18 @@
 # Spiral Matrix
 
+Welcome to Spiral Matrix on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given the size, return a square matrix of numbers in spiral order.
 
 The matrix should be filled with natural numbers, starting from 1
 in the top-left corner, increasing in an inward, clockwise spiral order,
 like these examples:
 
-###### Spiral matrix of size 3
+## Examples
+### Spiral matrix of size 3
 
 ```text
 1 2 3
@@ -14,7 +20,7 @@ like these examples:
 7 6 5
 ```
 
-###### Spiral matrix of size 4
+### Spiral matrix of size 4
 
 ```text
  1  2  3 4
@@ -23,21 +29,19 @@ like these examples:
 10  9  8 7
 ```
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit SpiralMatrix.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
 ## Source
 
-Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension. [https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/](https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/)
+### Created by
 
+- @jpreese
+
+### Contributed to by
+
+- @ErikSchierboom
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Reddit r/dailyprogrammer challenge #320 [Easy] Spiral Ascension. - https://www.reddit.com/r/dailyprogrammer/comments/6i60lr/20170619_challenge_320_easy_spiral_ascension/

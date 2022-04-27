@@ -22,7 +22,7 @@
   [s]
   (->> s
        (re-matches log-regex)
-       (drop 1)
+       (drop 1 )
        (take 1)
        str/join
        str/lower-case

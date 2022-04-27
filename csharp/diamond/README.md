@@ -1,5 +1,10 @@
 # Diamond
 
+Welcome to Diamond on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The diamond kata takes as its input a letter, and outputs it in a diamond
 shape. Given a letter, it prints a diamond starting with 'A', with the
 supplied letter at the widest point.
@@ -52,8 +57,7 @@ E·······E
 ····A····
 ```
 
-## Hints
-The tests in this exercise are different from your usual tests. Normally, a test checks if for a given input, the output matches the expected value. This is called *value-based testing*. However, this exercise uses *property-based testing*, where the tests check if for a range of inputs, the output has a specific property. The two key differences that differentiate property-based testing from value-based testing are:
+The tests in this exercise are different from your usual tests. Normally, a test checks if for a given input, the output matches the expected value. This is called _value-based testing_. However, this exercise uses _property-based testing_, where the tests check if for a range of inputs, the output has a specific property. The two key differences that differentiate property-based testing from value-based testing are:
 
 1. A property-based test works not with a single input value, but with many.
 1. A property-based test verifies properties, not concrete values.
@@ -64,21 +68,18 @@ In order to facilitate propery-based testing, the tests in this exercise leverag
 
 If you would like more information on property-based testing, see [this article](http://www.erikschierboom.com/2016/02/22/property-based-testing/).
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit Diamond.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
 ## Source
 
-Seb Rose [http://claysnow.co.uk/recycling-tests-in-tdd/](http://claysnow.co.uk/recycling-tests-in-tdd/)
+### Created by
 
+- @ErikSchierboom
+
+### Contributed to by
+
+- @j2jensen
+- @robkeim
+- @wolf99
+
+### Based on
+
+Seb Rose - http://claysnow.co.uk/recycling-tests-in-tdd/

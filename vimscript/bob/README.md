@@ -1,10 +1,15 @@
 # Bob
 
+Welcome to Bob on Exercism's Vim script Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Bob is a lackadaisical teenager. In conversation, his responses are very limited.
 
-Bob answers 'Sure.' if you ask him a question.
+Bob answers 'Sure.' if you ask him a question, such as "How are you?".
 
-He answers 'Whoa, chill out!' if you yell at him.
+He answers 'Whoa, chill out!' if you YELL AT HIM (in all capitals).
 
 He answers 'Calm down, I know what I'm doing!' if you yell a question at him.
 
@@ -15,17 +20,17 @@ He answers 'Whatever.' to anything else.
 
 Bob's conversational partner is a purist when it comes to written communication and always follows normal rules regarding sentence punctuation in English.
 
-# How to run the tests
-
-If you don't know how to run Vader tests, see:
-[Tests](http://exercism.io/languages/vimscript/tests).
-
-For general information about the Vim script track, see:
-[Help](http://exercism.io/languages/vimscript).
-
 ## Source
 
-Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial. [http://pine.fm/LearnToProgram/?Chapter=06](http://pine.fm/LearnToProgram/?Chapter=06)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @mhinz
+
+### Contributed to by
+
+- @kotp
+- @kytrinyx
+
+### Based on
+
+Inspired by the 'Deaf Grandma' exercise in Chris Pine's Learn to Program tutorial. - http://pine.fm/LearnToProgram/?Chapter=06

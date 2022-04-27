@@ -1,5 +1,3 @@
-// This file was auto-generated based on version 1.1.0 of the canonical data.
-
 using System;
 using Xunit;
 
@@ -13,7 +11,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void One_piece()
     {
         var strings = new[]
@@ -27,7 +25,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Two_pieces()
     {
         var strings = new[]
@@ -43,7 +41,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Three_pieces()
     {
         var strings = new[]
@@ -61,7 +59,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Full_proverb()
     {
         var strings = new[]
@@ -87,7 +85,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Four_pieces_modernized()
     {
         var strings = new[]

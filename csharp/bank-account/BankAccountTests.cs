@@ -14,7 +14,7 @@ public class BankAccountTests
         Assert.Equal(0, account.Balance);
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Check_basic_balance()
     {
         var account = new BankAccount();
@@ -29,7 +29,7 @@ public class BankAccountTests
         Assert.Equal(10, updatedBalance);
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Balance_can_increment_and_decrement()
     {
         var account = new BankAccount();
@@ -47,7 +47,7 @@ public class BankAccountTests
         Assert.Equal(-5, subtractedBalance);
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Closed_account_throws_exception_when_checking_balance()
     {
         var account = new BankAccount();
@@ -57,7 +57,7 @@ public class BankAccountTests
         Assert.Throws<InvalidOperationException>(() => account.Balance);
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Change_account_balance_from_multiple_threads()
     {
         var account = new BankAccount();
@@ -69,7 +69,7 @@ public class BankAccountTests
         account.Open();
         for (int i = 0; i < threads; i++)
         {
-    [Fact]
+            tasks.Add(Task.Factory.StartNew(() =>
             {
                 for (int j = 0; j < iterations; j++)
                 {

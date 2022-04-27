@@ -7,21 +7,21 @@ describe('Resistor Colors', () => {
     )
   })
 
-  test('Blue and grey and brown', () => {
+  xtest('Blue and grey and brown', () => {
     expect(decodedResistorValue(['blue', 'grey', 'brown'])).toEqual('680 ohms')
   })
 
-  test('Red and black and red', () => {
+  xtest('Red and black and red', () => {
     expect(decodedResistorValue(['red', 'black', 'red'])).toEqual('2 kiloohms')
   })
 
-  test('Green and brown and orange', () => {
+  xtest('Green and brown and orange', () => {
     expect(decodedResistorValue(['green', 'brown', 'orange'])).toEqual(
       '51 kiloohms'
     )
   })
 
-  test('Yellow and violet and yellow', () => {
+  xtest('Yellow and violet and yellow', () => {
     expect(decodedResistorValue(['yellow', 'violet', 'yellow'])).toEqual(
       '470 kiloohms'
     )

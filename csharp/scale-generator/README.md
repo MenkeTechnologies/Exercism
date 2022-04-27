@@ -1,5 +1,10 @@
 # Scale Generator
 
+Welcome to Scale Generator on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a tonic, or starting note, and a set of intervals, generate
 the musical scale starting with the tonic and following the
 specified interval pattern.
@@ -43,22 +48,19 @@ a "whole step" or "major second" (written as an upper-case "M"). The
 diatonic scales are built using only these two intervals between
 adjacent notes.
 
-Non-diatonic scales can contain other intervals.  An "augmented first"
-interval, written "A", has two interceding notes (e.g., from A to C or
-Db to E). There are also smaller and larger intervals, but they will not
-figure into this exercise.
+Non-diatonic scales can contain other intervals.  An "augmented second"
+interval, written "A", has two interceding notes (e.g., from A to C or Db to E)
+or a "whole step" plus a "half step". There are also smaller and larger
+intervals, but they will not figure into this exercise.
 
-## Running the tests
+## Source
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+### Created by
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit ScaleGenerator.cs`
+- @ErikSchierboom
 
-## Further information
+### Contributed to by
 
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
+- @j2jensen
+- @robkeim
+- @wolf99

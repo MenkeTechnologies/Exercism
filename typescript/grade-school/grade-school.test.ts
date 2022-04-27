@@ -11,14 +11,14 @@ describe('School', () => {
     expect(school.roster()).toEqual({})
   })
 
-  it('adding a student adds them to the roster for the given grade', () => {
+  xit('adding a student adds them to the roster for the given grade', () => {
     school.add('Aimee', 2)
 
     const expectedDb = { 2: ['Aimee'] }
     expect(school.roster()).toEqual(expectedDb)
   })
 
-  it('adding more students to the same grade adds them to the roster', () => {
+  xit('adding more students to the same grade adds them to the roster', () => {
     school.add('Blair', 2)
     school.add('James', 2)
     school.add('Paul', 2)
@@ -27,7 +27,7 @@ describe('School', () => {
     expect(school.roster()).toEqual(expectedDb)
   })
 
-  it('adding students to different grades adds them to the roster', () => {
+  xit('adding students to different grades adds them to the roster', () => {
     school.add('Chelsea', 3)
     school.add('Logan', 7)
 
@@ -35,7 +35,7 @@ describe('School', () => {
     expect(school.roster()).toEqual(expectedDb)
   })
 
-  it('grade returns the students in that grade in alphabetical order', () => {
+  xit('grade returns the students in that grade in alphabetical order', () => {
     school.add('Franklin', 5)
     school.add('Bradley', 5)
     school.add('Jeff', 1)
@@ -44,11 +44,11 @@ describe('School', () => {
     expect(school.grade(5)).toEqual(expectedStudents)
   })
 
-  it('grade returns an empty array if there are no students in that grade', () => {
+  xit('grade returns an empty array if there are no students in that grade', () => {
     expect(school.grade(1)).toEqual([])
   })
 
-  it('the students names in each grade in the roster are sorted', () => {
+  xit('the students names in each grade in the roster are sorted', () => {
     school.add('Jennifer', 4)
     school.add('Kareem', 6)
     school.add('Christopher', 4)
@@ -62,7 +62,7 @@ describe('School', () => {
     expect(school.roster()).toEqual(expectedSortedStudents)
   })
 
-  it('roster cannot be modified outside of module', () => {
+  xit('roster cannot be modified outside of module', () => {
     school.add('Aimee', 2)
     const roster = school.roster()
     roster[2].push('Oops.')
@@ -70,14 +70,14 @@ describe('School', () => {
     expect(school.roster()).toEqual(expectedDb)
   })
 
-  it('roster cannot be modified outside of module using grade()', () => {
+  xit('roster cannot be modified outside of module using grade()', () => {
     school.add('Aimee', 2)
     school.grade(2).push('Oops.')
     const expectedDb = { 2: ['Aimee'] }
     expect(school.roster()).toEqual(expectedDb)
   })
 
-  it("a student can't be in two different grades", () => {
+  xit("a student can't be in two different grades", () => {
     school.add('Aimee', 2)
     school.add('Aimee', 1)
 

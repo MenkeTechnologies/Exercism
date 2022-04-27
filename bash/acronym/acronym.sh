@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+
+
 in="${*^^}"
 in="${in//[^[:alpha:]\']/ }"
 

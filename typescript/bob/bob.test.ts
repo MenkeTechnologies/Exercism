@@ -6,117 +6,117 @@ describe('Bob', () => {
     expect(result).toEqual('Whatever.')
   })
 
-  it('shouting', () => {
+  xit('shouting', () => {
     const result = hey('WATCH OUT!')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  it('shouting gibberish', () => {
+  xit('shouting gibberish', () => {
     const result = hey('FCECDFCAAB')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  it('asking a question', () => {
+  xit('asking a question', () => {
     const result = hey('Does this cryogenic chamber make me look fat?')
     expect(result).toEqual('Sure.')
   })
 
-  it('asking a numeric question', () => {
+  xit('asking a numeric question', () => {
     const result = hey('You are, what, like 15?')
     expect(result).toEqual('Sure.')
   })
 
-  it('asking gibberish', () => {
+  xit('asking gibberish', () => {
     const result = hey('fffbbcbeab?')
     expect(result).toEqual('Sure.')
   })
 
-  it('talking forcefully', () => {
+  xit('talking forcefully', () => {
     const result = hey("Let's go make out behind the gym!")
     expect(result).toEqual('Whatever.')
   })
 
-  it('using acronyms in regular speech', () => {
+  xit('using acronyms in regular speech', () => {
     const result = hey("It's OK if you don't want to go to the DMV.")
     expect(result).toEqual('Whatever.')
   })
 
-  it('forceful question', () => {
+  xit('forceful question', () => {
     const result = hey('WHAT THE HELL WERE YOU THINKING?')
     expect(result).toEqual("Calm down, I know what I'm doing!")
   })
 
-  it('shouting numbers', () => {
+  xit('shouting numbers', () => {
     const result = hey('1, 2, 3 GO!')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  it('no letters', () => {
+  xit('no letters', () => {
     const result = hey('1, 2, 3')
     expect(result).toEqual('Whatever.')
   })
 
-  it('question with no letters', () => {
+  xit('question with no letters', () => {
     const result = hey('4?')
     expect(result).toEqual('Sure.')
   })
 
-  it('shouting with special characters', () => {
+  xit('shouting with special characters', () => {
     const result = hey('ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  it('shouting with no exclamation mark', () => {
+  xit('shouting with no exclamation mark', () => {
     const result = hey('I HATE THE DMV')
     expect(result).toEqual('Whoa, chill out!')
   })
 
-  it('statement containing question mark', () => {
+  xit('statement containing question mark', () => {
     const result = hey('Ending with ? means a question.')
     expect(result).toEqual('Whatever.')
   })
 
-  it('prattling on', () => {
+  xit('prattling on', () => {
     const result = hey('Wait! Hang on.  Are you going to be OK?')
     expect(result).toEqual('Sure.')
   })
 
-  it('silence', () => {
+  xit('silence', () => {
     const result = hey('')
     expect(result).toEqual('Fine. Be that way!')
   })
 
-  it('prolonged silence', () => {
+  xit('prolonged silence', () => {
     const result = hey('   ')
     expect(result).toEqual('Fine. Be that way!')
   })
 
-  it('alternate silence', () => {
+  xit('alternate silence', () => {
     const result = hey('\t\t\t\t\t\t\t\t\t\t')
     expect(result).toEqual('Fine. Be that way!')
   })
 
-  it('multiple line question', () => {
+  xit('multiple line question', () => {
     const result = hey('\nDoes this cryogenic chamber make me look fat?\nNo.')
     expect(result).toEqual('Whatever.')
   })
 
-  it('starting with whitespace', () => {
+  xit('starting with whitespace', () => {
     const result = hey('         hmmmmmmm...')
     expect(result).toEqual('Whatever.')
   })
 
-  it('ending with whitespace', () => {
+  xit('ending with whitespace', () => {
     const result = hey('Okay if like my  spacebar  quite a bit?   ')
     expect(result).toEqual('Sure.')
   })
 
-  it('other whitespace', () => {
+  xit('other whitespace', () => {
     const result = hey('\n\r \t')
     expect(result).toEqual('Fine. Be that way!')
   })
 
-  it('non-question ending with whitespace', () => {
+  xit('non-question ending with whitespace', () => {
     const result = hey('This is a statement ending with whitespace      ')
     expect(result).toEqual('Whatever.')
   })

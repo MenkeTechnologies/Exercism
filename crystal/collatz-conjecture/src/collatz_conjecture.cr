@@ -2,7 +2,7 @@
 
 module CollatzConjecture
 
-    def self.steps(n)
+    def steps(n)
 
         if n <= 0
             raise ArgumentError.new

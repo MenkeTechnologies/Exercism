@@ -7,19 +7,19 @@ describe "Proverb" do
     proverb.should eq([] of String)
   end
 
-  it "one piece" do
+  pending "one piece" do
     proverb = Proverb.recite(["nail"])
     proverb.should eq(["And all for the want of a nail."])
   end
 
-  it "two pieces" do
+  pending "two pieces" do
     proverb = Proverb.recite(["nail",
                               "shoe"])
     proverb.should eq(["For want of a nail the shoe was lost.",
                        "And all for the want of a nail."])
   end
 
-  it "three pieces" do
+  pending "three pieces" do
     proverb = Proverb.recite(["nail",
                               "shoe",
                               "horse"])
@@ -28,7 +28,7 @@ describe "Proverb" do
                        "And all for the want of a nail."])
   end
 
-  it "full proverb" do
+  pending "full proverb" do
     proverb = Proverb.recite(["nail",
                               "shoe",
                               "horse",
@@ -45,7 +45,7 @@ describe "Proverb" do
                        "And all for the want of a nail."])
   end
 
-  it "four pieces modernized" do
+  pending "four pieces modernized" do
     proverb = Proverb.recite(["pin",
                               "gun",
                               "soldier",

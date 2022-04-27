@@ -1,4 +1,9 @@
-# RNA Transcription
+# Rna Transcription
+
+Welcome to Rna Transcription on Exercism's Vim script Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 Given a DNA strand, return its RNA complement (per RNA transcription).
 
@@ -18,17 +23,17 @@ each nucleotide with its complement:
 * `T` -> `A`
 * `A` -> `U`
 
-# How to run the tests
-
-If you don't know how to run Vader tests, see:
-[Tests](http://exercism.io/languages/vimscript/tests).
-
-For general information about the Vim script track, see:
-[Help](http://exercism.io/languages/vimscript).
-
 ## Source
 
-Hyperphysics [http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html](http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @mhinz
+
+### Contributed to by
+
+- @kotp
+- @kytrinyx
+
+### Based on
+
+Hyperphysics - http://hyperphysics.phy-astr.gsu.edu/hbase/Organic/transcription.html

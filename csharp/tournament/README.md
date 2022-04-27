@@ -1,5 +1,10 @@
 # Tournament
 
+Welcome to Tournament on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Tally the results of a small football competition.
 
 Based on an input file containing which team played against which and what the
@@ -25,9 +30,7 @@ A win earns a team 3 points. A draw earns 1. A loss earns 0.
 
 The outcome should be ordered by points, descending. In case of a tie, teams are ordered alphabetically.
 
-###
-
-Input
+## Input
 
 Your tallying program will receive input that looks like:
 
@@ -40,13 +43,13 @@ Blithering Badgers;Devastating Donkeys;loss
 Allegoric Alaskans;Courageous Californians;win
 ```
 
-The result of the match refers to the first team listed. So this line
+The result of the match refers to the first team listed. So this line:
 
 ```text
 Allegoric Alaskans;Blithering Badgers;win
 ```
 
-Means that the Allegoric Alaskans beat the Blithering Badgers.
+means that the Allegoric Alaskans beat the Blithering Badgers.
 
 This line:
 
@@ -54,7 +57,7 @@ This line:
 Courageous Californians;Blithering Badgers;loss
 ```
 
-Means that the Blithering Badgers beat the Courageous Californians.
+means that the Blithering Badgers beat the Courageous Californians.
 
 And this line:
 
@@ -62,19 +65,20 @@ And this line:
 Devastating Donkeys;Courageous Californians;draw
 ```
 
-Means that the Devastating Donkeys and Courageous Californians tied.
+means that the Devastating Donkeys and Courageous Californians tied.
 
-## Running the tests
+## Source
 
-To run the tests, run the command `dotnet test` from within the exercise directory.
+### Created by
 
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit Tournament.cs`
+- @pminten
 
-## Further information
+### Contributed to by
 
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
+- @bressain
+- @ErikSchierboom
+- @GKotfis
+- @j2jensen
+- @jwood803
+- @robkeim
+- @wolf99

@@ -10,6 +10,7 @@ TEST_CASE("sentence_empty")
     REQUIRE(!pangram::is_pangram(""));
 }
 
+#ifdef EXERCISM_RUN_ALL_TESTS
 TEST_CASE("pangram_with_only_lower_case")
 {
     REQUIRE(pangram::is_pangram("the quick brown fox jumps over the lazy dog"));
@@ -49,3 +50,4 @@ TEST_CASE("upper_and_lower_should_not_be_counted_seperately")
 {
     REQUIRE(!pangram::is_pangram("the quick brown fox jumps over with lazy FX"));
 }
+#endif

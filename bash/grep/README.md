@@ -1,5 +1,10 @@
 # Grep
 
+Welcome to Grep on Exercism's Bash Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Search a file for lines matching a regular expression pattern. Return the line
 number and contents of each matching line.
 
@@ -33,7 +38,7 @@ hello
 hello again
 ```
 
-### Flags
+## Flags
 
 As said earlier, the `grep` command should also support the following flags:
 
@@ -64,8 +69,6 @@ The `grep` command should support multiple flags at once.
 For example, running `grep -l -v "hello" file1.txt file2.txt` should
 print the names of files that do not contain the string "hello".
 
-## To `grep` or not to `grep`, that is the question
-
 Although this exercise can be trivially solved by simply passing the
 arguments to `grep`, implement this exercise using bash only.  The aim 
 of this exercism track is to learn how to use bash builtin commands to solve
@@ -80,49 +83,19 @@ To solve this exercise, you'll need to:
 
 ---
 
-
-
-Run the tests with:
-
-```bash
-bats grep_test.sh
-```
-
-After the first test(s) pass, continue by commenting out or removing the
-`[[ $BATS_RUN_SKIPPED == true ]] || skip` 
-annotations prepending other tests.
-
-To run all tests, including the ones with `skip` annotations, run:
-
-```bash
-BATS_RUN_SKIPPED=true bats grep_test.sh
-```
-
 ## Source
 
-Conversation with Nate Foster. [http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf](http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf)
+### Created by
 
+- @glennj
 
-## External utilities
-`Bash` is a language to write "scripts" -- programs that can call
-external tools, such as
-[`sed`](https://www.gnu.org/software/sed/),
-[`awk`](https://www.gnu.org/software/gawk/),
-[`date`](https://www.gnu.org/software/coreutils/manual/html_node/date-invocation.html)
-and even programs written in other programming languages, 
-like [`Python`](https://www.python.org/).
-This track does not restrict the usage of these utilities, and as long
-as your solution is portable between systems and does not require
-installation of third party applications, feel free to use them to solve
-the exercise.
+### Contributed to by
 
-For an extra challenge, if you would like to have a better understanding
-of the language, try to re-implement the solution in pure `Bash`,
-without using any external tools. Note that there are some types of
-problems that bash cannot solve, such as performing floating point
-arithmetic and manipulating dates: for those, you must call out to an
-external tool.
+- @bkhl
+- @guygastineau
+- @IsaacG
+- @kotp
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others
-have completed the exercise.
+### Based on
+
+Conversation with Nate Foster. - http://www.cs.cornell.edu/Courses/cs3110/2014sp/hw/0/ps0.pdf

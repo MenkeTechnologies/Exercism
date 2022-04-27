@@ -1,5 +1,10 @@
 # Triangle
 
+Welcome to Triangle on Exercism's C# Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Determine if a triangle is equilateral, isosceles, or scalene.
 
 An _equilateral_ triangle has all three sides the same length.
@@ -12,9 +17,19 @@ A _scalene_ triangle has all sides of different lengths.
 
 ## Note
 
-For a shape to be a triangle at all, all sides have to be of length > 0, and
-the sum of the lengths of any two sides must be greater than or equal to the
-length of the third side. See [Triangle Inequality](https://en.wikipedia.org/wiki/Triangle_inequality).
+For a shape to be a triangle at all, all sides have to be of length > 0, and the sum of the lengths of any two sides must be greater than or equal to the length of the third side.
+
+In equations:
+
+Let `a`, `b`, and `c` be sides of the triangle. Then all three of the following expressions must be true:
+
+```text
+a + b ≥ c
+b + c ≥ a
+a + c ≥ b
+```
+
+See [Triangle Inequality](https://en.wikipedia.org/wiki/Triangle_inequality).
 
 ## Dig Deeper
 
@@ -22,21 +37,22 @@ The case where the sum of the lengths of two sides _equals_ that of the
 third is known as a _degenerate_ triangle - it has zero area and looks like
 a single line. Feel free to add your own code/tests to check for degenerate triangles.
 
-## Running the tests
-
-To run the tests, run the command `dotnet test` from within the exercise directory.
-
-Initially, only the first test will be enabled. This is to encourage you to solve the exercise one step at a time.
-Once you get the first test passing, remove the `Skip` property from the next test and work on getting that test passing.
-Once none of the tests are skipped and they are all passing, you can submit your solution 
-using `exercism submit Triangle.cs`
-
-## Further information
-
-For more detailed information about the C# track, including how to get help if
-you're having trouble, please visit the exercism.io [C# language page](http://exercism.io/languages/csharp/resources).
-
 ## Source
 
-The Ruby Koans triangle project, parts 1 & 2 [http://rubykoans.com](http://rubykoans.com)
+### Created by
 
+- @bressain
+
+### Contributed to by
+
+- @bmeverett
+- @ErikSchierboom
+- @j2jensen
+- @jwood803
+- @robkeim
+- @tushartyagi
+- @wolf99
+
+### Based on
+
+The Ruby Koans triangle project, parts 1 & 2 - http://rubykoans.com

@@ -16,7 +16,7 @@ Public Class HighScoresTest
             70
         }, sut.Scores())
     End Sub
-    <Fact>
+    <Fact(Skip:="Remove this Skip property to run this test")>
     Public Sub LatestScore()
         Dim sut = New HighScores(New List(Of Integer) From {
             100,
@@ -26,7 +26,7 @@ Public Class HighScoresTest
         })
         Assert.Equal(30, sut.Latest())
     End Sub
-    <Fact>
+    <Fact(Skip:="Remove this Skip property to run this test")>
     Public Sub PersonalBest()
         Dim sut = New HighScores(New List(Of Integer) From {
             40,
@@ -35,7 +35,7 @@ Public Class HighScoresTest
         })
         Assert.Equal(100, sut.PersonalBest())
     End Sub
-    <Fact>
+    <Fact(Skip:="Remove this Skip property to run this test")>
     Public Sub PersonalTopThreeFromAListOfScores()
         Dim sut = New HighScores(New List(Of Integer) From {
             10,
@@ -58,7 +58,7 @@ Public Class HighScoresTest
             70
         }, sut.PersonalTopThree())
     End Sub
-    <Fact>
+    <Fact(Skip:="Remove this Skip property to run this test")>
     Public Sub PersonalTopHighestToLowest()
         Dim sut = New HighScores(New List(Of Integer) From {
             20,
@@ -71,7 +71,7 @@ Public Class HighScoresTest
             10
         }, sut.PersonalTopThree())
     End Sub
-    <Fact>
+    <Fact(Skip:="Remove this Skip property to run this test")>
     Public Sub PersonalTopWhenThereIsATie()
         Dim sut = New HighScores(New List(Of Integer) From {
             40,
@@ -85,7 +85,7 @@ Public Class HighScoresTest
             30
         }, sut.PersonalTopThree())
     End Sub
-    <Fact>
+    <Fact(Skip:="Remove this Skip property to run this test")>
     Public Sub PersonalTopWhenThereAreLessThan3()
         Dim sut = New HighScores(New List(Of Integer) From {
             30,
@@ -96,7 +96,7 @@ Public Class HighScoresTest
             30
         }, sut.PersonalTopThree())
     End Sub
-    <Fact>
+    <Fact(Skip:="Remove this Skip property to run this test")>
     Public Sub PersonalTopWhenThereIsOnlyOne()
         Dim sut = New HighScores(New List(Of Integer) From {
             40

@@ -5,31 +5,31 @@ describe('Transcriptor', () => {
     expect(toRna('C')).toEqual('G')
   })
 
-  it('transcribes guanine to cytosine', () => {
+  xit('transcribes guanine to cytosine', () => {
     expect(toRna('G')).toEqual('C')
   })
 
-  it('transcribes adenine to uracil', () => {
+  xit('transcribes adenine to uracil', () => {
     expect(toRna('A')).toEqual('U')
   })
 
-  it('transcribes thymine to adenine', () => {
+  xit('transcribes thymine to adenine', () => {
     expect(toRna('T')).toEqual('A')
   })
 
-  it('transcribes all dna nucleotides to their rna complements', () => {
+  xit('transcribes all dna nucleotides to their rna complements', () => {
     expect(toRna('ACGTGGTCTTAA')).toEqual('UGCACCAGAAUU')
   })
 
-  it('correctly handles invalid input', () => {
+  xit('correctly handles invalid input', () => {
     expect(() => toRna('U')).toThrowError('Invalid input DNA.')
   })
 
-  it('correctly handles completely invalid input', () => {
+  xit('correctly handles completely invalid input', () => {
     expect(() => toRna('XXX')).toThrowError('Invalid input DNA.')
   })
 
-  it('correctly handles partially invalid input', () => {
+  xit('correctly handles partially invalid input', () => {
     expect(() => toRna('ACGTXXXCTTAA')).toThrowError('Invalid input DNA.')
   })
 })

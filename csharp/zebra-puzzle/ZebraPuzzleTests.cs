@@ -1,5 +1,3 @@
-// This file was auto-generated based on version 1.1.0 of the canonical data.
-
 using Xunit;
 
 public class ZebraPuzzleTests
@@ -10,7 +8,7 @@ public class ZebraPuzzleTests
         Assert.Equal(Nationality.Norwegian, ZebraPuzzle.DrinksWater());
     }
 
-    [Fact]
+    [Fact(Skip = "Remove this Skip property to run this test")]
     public void Resident_who_owns_zebra()
     {
         Assert.Equal(Nationality.Japanese, ZebraPuzzle.OwnsZebra());

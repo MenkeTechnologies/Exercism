@@ -14,7 +14,7 @@ describe "ETL" do
     ETL.transform(input).should eq(output)
   end
 
-  it "single score with multiple letters" do
+  pending "single score with multiple letters" do
     input = {
       "1" => ["A", "E", "I", "O", "U"],
     }
@@ -30,7 +30,7 @@ describe "ETL" do
     ETL.transform(input).should eq(output)
   end
 
-  it "single score with multiple letters" do
+  pending "single score with multiple letters" do
     input = {
       "1" => ["A", "E"],
       "2" => ["D", "G"],
@@ -46,7 +46,7 @@ describe "ETL" do
     ETL.transform(input).should eq(output)
   end
 
-  it "single score with multiple letters" do
+  pending "single score with multiple letters" do
     input = {
       "1"  => ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
       "2"  => ["D", "G"],

@@ -1,5 +1,10 @@
 # React
 
+Welcome to React on Exercism's Crystal Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Implement a basic reactive system.
 
 Reactive programming is a programming paradigm that focuses on how values
@@ -15,28 +20,14 @@ In addition, compute cells should allow for registering change notification
 callbacks.  Call a cell’s callbacks when the cell’s value in a new stable
 state has changed from the previous stable state.
 
-## Setup
+## Source
 
-Follow the setup instructions for Crystal here:
+### Created by
 
-http://exercism.io/languages/crystal
+- @petertseng
 
-More help installing can be found here:
+### Contributed to by
 
-http://crystal-lang.org/docs/installation/index.html
-
-## Making the Test Suite Pass
-
-Execute the tests with:
-
-```bash
-$ crystal spec
-```
-
-In each test suite all but the first test have been skipped.
-
-Once you get a test passing, you can unskip the next one by changing `pending` to `it`.
-
-## Submitting Incomplete Solutions
-
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @amscotti
+- @issyl0
+- @mhelmetag
