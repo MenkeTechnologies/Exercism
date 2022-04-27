@@ -1,4 +1,9 @@
-## Armstrong numbers
+# Armstrong Numbers
+
+Welcome to Armstrong Numbers on Exercism's Emacs Lisp Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
 
 An [Armstrong number](https://en.wikipedia.org/wiki/Narcissistic_number) is a number that is the sum of its own digits each raised to the power of the number of digits.
 
@@ -13,7 +18,15 @@ Write some code to determine whether a number is an Armstrong number.
 
 ## Source
 
-See more at [wikipedia](https://en.wikipedia.org/wiki/Narcissistic_number)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @cpaulbond
+
+### Contributed to by
+
+- @benreyn
+- @vermiculus
+
+### Based on
+
+Wikipedia - https://en.wikipedia.org/wiki/Narcissistic_number

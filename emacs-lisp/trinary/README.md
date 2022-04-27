@@ -1,5 +1,10 @@
 # Trinary
 
+Welcome to Trinary on Exercism's Emacs Lisp Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Convert a trinary number, represented as a string (e.g. '102012'), to its
 decimal equivalent using first principles.
 
@@ -23,7 +28,10 @@ conversion, pretend it doesn't exist and implement it yourself.
 
 ## Source
 
-All of Computer Science [http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-](http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @wasamasa
+
+### Based on
+
+All of Computer Science - http://www.wolframalpha.com/input/?i=binary&a=*C.binary-_*MathWorld-
