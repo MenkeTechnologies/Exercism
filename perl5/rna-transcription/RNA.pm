@@ -8,7 +8,9 @@ our @EXPORT_OK = qw(to_rna);
     my %m = ("G", "C", "C", "G", "T", "A", "A", "U");
 
     sub transcribe {
-        $m{+shift}
+        my ($base) = @_;
+        $m{$base}
+
     }
 }
 

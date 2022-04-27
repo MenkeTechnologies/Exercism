@@ -1,12 +1,12 @@
 package Sublist;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
+use Exporter qw<import>;
+our @EXPORT_OK = qw<compare_lists>;
 
-sub check_lists {
-    my ($ary1, $ary2) = @_;
-
-
-
+sub compare_lists {
+  my ($args) = @_;
+  return undef;
 }
 
 1;

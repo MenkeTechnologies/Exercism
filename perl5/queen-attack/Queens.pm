@@ -11,13 +11,13 @@ sub new {
 sub white {
   my ($self) = @_;
   
-  return undef;
+  return $self->white;
 }
 
 sub black {
   my ($self) = @_;
   
-  return undef;
+  return $self->black;
 }
 
 sub to_string {
@@ -28,9 +28,11 @@ sub to_string {
 
 sub can_attack {
   my ($self) = @_;
+  my $dx = abs($self->{white}->[0] - $self->{black}->[0]);
+  my $dy = abs($self->{white}->[1] - $self->{black}->[1]);
 
-  return undef;
+  return $dx == 0 || $dy == 0 || $dx == $dy;
 }
 
-1;
+1
 

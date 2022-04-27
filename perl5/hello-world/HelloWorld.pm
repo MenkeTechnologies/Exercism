@@ -6,8 +6,7 @@ use Exporter qw<import>;
 our @EXPORT_OK = qw<hello>;
 
 sub hello {
-
-"Hello, world!"
+  return 'Goodbye, Mars!';
 }
 
 1;
