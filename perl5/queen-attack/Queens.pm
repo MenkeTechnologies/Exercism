@@ -7,7 +7,7 @@ sub new {
     $data{white} //= [ 0, 3 ];
     $data{black} //= [ 7, 3 ];
 
-    if ($data{white}->[0] == $data{black}->[0] || $data{white}->[1] == $data{black}->[1] || grep {$_ < 0 || $_ > 7} $data{white}->@*, $data{black}->@*) {
+    if ($data{white}->[0] == $data{black}->[0] && $data{white}->[1] == $data{black}->[1] || grep {$_ < 0 || $_ > 7} $data{white}->@*, $data{black}->@*) {
         die("ArgumentError");
     }
 
@@ -19,13 +19,17 @@ sub white {
 }
 
 sub black {
-   shift->{black};
+    shift->{black};
 }
 
 sub to_string {
     my ($self) = @_;
 
-    return undef;
+    my @board = map {[ ("O") x 8 ]} 0 .. 7;
+    $board[$self->{white}->[0]][$self->{white}->[1]] = 'W';
+    $board[$self->{black}->[0]][$self->{black}->[1]] = 'B';
+
+    (join "\n", map {join ' ', @$_} @board) . "\n"
 }
 
 sub can_attack {
