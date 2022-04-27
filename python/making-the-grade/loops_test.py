@@ -11,6 +11,7 @@ from loops import (
 
 class MakingTheGradeTest(unittest.TestCase):
 
+    @pytest.mark.task(taskno=1)
     def test_round_scores(self):
         data = [
             ([], []),
@@ -28,6 +29,7 @@ class MakingTheGradeTest(unittest.TestCase):
             with self.subTest(f'variation #{variant}', input=student_scores, output=result):
                 self.assertEqual(sorted(round_scores(student_scores)), sorted(result), msg=error_message)
 
+    @pytest.mark.task(taskno=2)
     def test_count_failed_students(self):
         data = [
             ([89, 85, 42, 57, 90, 100, 95, 48, 70, 96], 0),
@@ -38,6 +40,7 @@ class MakingTheGradeTest(unittest.TestCase):
             with self.subTest(f'variation #{variant}', input=student_scores, output=result):
                 self.assertEqual(count_failed_students(student_scores), result, msg=error_message)
 
+    @pytest.mark.task(taskno=3)
     def test_above_threshold(self):
         data = [
             (([40, 39, 95, 80, 25, 31, 70, 55, 40, 90], 98), []),
@@ -51,6 +54,7 @@ class MakingTheGradeTest(unittest.TestCase):
             with self.subTest(f'variation #{variant}', input=params, output=result):
                 self.assertEqual(above_threshold(*params), result, msg=error_message)
 
+    @pytest.mark.task(taskno=4)
     def test_letter_grades(self):
         data = [
             (100, [41, 56, 71, 86]),
@@ -64,6 +68,7 @@ class MakingTheGradeTest(unittest.TestCase):
             with self.subTest(f'variation #{variant}', input=highest, output=result):
                 self.assertEqual(letter_grades(highest), result, msg=error_message)
 
+    @pytest.mark.task(taskno=5)
     def test_student_ranking(self):
         data = [
             (([82], ['Betty']), ['1. Betty: 82']),
@@ -78,6 +83,7 @@ class MakingTheGradeTest(unittest.TestCase):
             with self.subTest(f'variation #{variant}', input=params, output=result):
                 self.assertEqual(student_ranking(*params), result, msg=error_message)
 
+    @pytest.mark.task(taskno=6)
     def test_perfect_score(self):
         data = [
             ([['Joci', 100], ['Vlad', 100], ['Raiana', 100], ['Alessandro', 100]], ['Joci', 100]),

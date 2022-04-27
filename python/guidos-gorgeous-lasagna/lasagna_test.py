@@ -26,10 +26,12 @@ except ImportError as import_fail:
 
 class LasagnaTest(unittest.TestCase):
 
+    @pytest.mark.task(taskno=1)
     def test_EXPECTED_BAKE_TIME(self):
         failure_msg = 'Expected a constant of EXPECTED_BAKE_TIME with a value of 40.'
         self.assertEqual(EXPECTED_BAKE_TIME, 40, msg=failure_msg)
 
+    @pytest.mark.task(taskno=2)
     def test_bake_time_remaining(self):
         input_data = [1, 2, 5, 10, 15, 23, 33, 39]
         result_data = [40 - item for item in input_data]
@@ -39,6 +41,7 @@ class LasagnaTest(unittest.TestCase):
                 failure_msg = f'Expected: {result} but the bake time remaining was calculated incorrectly.'
                 self.assertEqual(bake_time_remaining(time), result, msg=failure_msg)
 
+    @pytest.mark.task(taskno=3)
     def test_preparation_time_in_minutes(self):
         input_data = [1, 2, 5, 8, 11, 15]
         result_data = [item * 2 for item in input_data]
@@ -48,6 +51,7 @@ class LasagnaTest(unittest.TestCase):
                 failure_msg = f'Expected: {time} minutes, but preparation time was calculated incorrectly.'
                 self.assertEqual(preparation_time_in_minutes(layers), time, msg=failure_msg)
 
+    @pytest.mark.task(taskno=4)
     def test_elapsed_time_in_minutes(self):
         layer_data = (1, 2, 5, 8, 11, 15)
         time_data = (3, 7, 8, 4, 15, 20)
@@ -58,6 +62,7 @@ class LasagnaTest(unittest.TestCase):
                 failure_msg = f'Expected {time} minutes elapsed, but the timing was calculated incorrectly.'
                 self.assertEqual(elapsed_time_in_minutes(layers, time), total_time, msg=failure_msg)
 
+    @pytest.mark.task(taskno=5)
     def test_docstrings_were_written(self):
         functions = [bake_time_remaining, preparation_time_in_minutes, elapsed_time_in_minutes]
 

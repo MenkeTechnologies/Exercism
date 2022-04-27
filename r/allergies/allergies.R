@@ -1,3 +1,4 @@
+
 allergy <- function(num) {
   allergens = c('eggs', 'peanuts', 'shellfish', 'strawberries', 'tomatoes', 'chocolate', 'pollen', 'cats')
   rng=2**(0:(length(allergens) - 1))
