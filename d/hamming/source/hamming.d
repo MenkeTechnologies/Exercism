@@ -31,7 +31,7 @@ unittest
         // Long different strands
         assert(distance("GGACGGATTCTG", "AGGACGGATTCT") == 9);
 
-        // Disallow first strand longer
+        // Disallow first strand longer 
         assertThrown(distance("AATG", "AAA"));
 
         // Disallow second strand longer
