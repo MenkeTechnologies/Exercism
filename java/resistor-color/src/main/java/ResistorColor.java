@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.stream.Collectors;
 
 class ResistorColor {
     enum Colours {
@@ -13,7 +14,6 @@ class ResistorColor {
         grey,
         white
     }
-
     int colorCode(String color) {
         return Colours.valueOf(color).ordinal();
     }

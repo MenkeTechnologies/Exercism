@@ -1,23 +1,10 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.IntStream;
+/*
 
-class PascalsTriangleGenerator {
-    public int[][] generateTriangle(int i) {
+Since this exercise has a difficulty of > 4 it doesn't come
+with any starter implementation.
+This is so that you get to practice creating classes and methods
+which is an important part of programming in Java.
 
-        if (i <= 0) {
-            return new int[][]{};
-        }
+Please remove this comment when submitting your solution.
 
-        List<List<Integer>> init = new ArrayList<>(new ArrayList<>());
-
-        IntStream.rangeClosed(2, i)
-                .boxed()
-                .reduce(init, (acc, n) -> {
-                    return acc;
-                }, (acc,n)-> {
-                    return acc;
-                });
-    }
-}
+*/

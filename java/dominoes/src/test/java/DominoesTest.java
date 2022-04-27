@@ -23,7 +23,7 @@ public class DominoesTest {
         assertEquals("The output list should be empty.", 0, chain.size());
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void singletonInputSingletonOutput() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
@@ -36,7 +36,7 @@ public class DominoesTest {
         assertValidChain(dominoesList, chain);
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void singletonCantBeChainedTest() {
         Dominoes dominoes = new Dominoes();
@@ -52,7 +52,7 @@ public class DominoesTest {
         assertThat(expected).hasMessage("No domino chain found.");
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void threeElementsTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
@@ -65,7 +65,7 @@ public class DominoesTest {
         assertValidChain(dominoesList, chain);
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void canReverseDominoesTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
@@ -78,7 +78,7 @@ public class DominoesTest {
         assertValidChain(dominoesList, chain);
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void cantBeChainedTest() {
         Dominoes dominoes = new Dominoes();
@@ -94,7 +94,7 @@ public class DominoesTest {
         assertThat(expected).hasMessage("No domino chain found.");
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void disconnectedSimpleTest() {
         Dominoes dominoes = new Dominoes();
@@ -110,7 +110,7 @@ public class DominoesTest {
         assertThat(expected).hasMessage("No domino chain found.");
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void disconnectedDoubleLoopTest() {
         Dominoes dominoes = new Dominoes();
@@ -126,7 +126,7 @@ public class DominoesTest {
         assertThat(expected).hasMessage("No domino chain found.");
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void disconnectedSingleIsolatedTest() {
         Dominoes dominoes = new Dominoes();
@@ -142,7 +142,7 @@ public class DominoesTest {
         assertThat(expected).hasMessage("No domino chain found.");
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void needBacktrackTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
@@ -156,7 +156,7 @@ public class DominoesTest {
         assertValidChain(dominoesList, chain);
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void separateLoopsTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
@@ -170,7 +170,7 @@ public class DominoesTest {
         assertValidChain(dominoesList, chain);
     }
 
-    
+    @Ignore("Remove to run test")
     @Test
     public void nineElementsTest() throws ChainNotFoundException {
         Dominoes dominoes = new Dominoes();
