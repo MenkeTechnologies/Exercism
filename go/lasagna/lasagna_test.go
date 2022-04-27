@@ -43,7 +43,6 @@ func TestRemainingOvenTime(t *testing.T) {
 	}
 
 }
-
 func TestPreparationTime(t *testing.T) {
 	tests := []lasagnaTests{
 		{

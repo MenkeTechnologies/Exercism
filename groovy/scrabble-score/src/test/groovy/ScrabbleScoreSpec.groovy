@@ -11,6 +11,7 @@ class ScrabbleScoreSpec extends Specification {
         'a'  || 1
     }
 
+    @Ignore
     def "Uppercase letter"() {
         expect:
         ScrabbleScore.scoreWord(word) == expected
@@ -20,6 +21,7 @@ class ScrabbleScoreSpec extends Specification {
         'A'  || 1
     }
 
+    @Ignore
     def "Valuable letter"() {
         expect:
         ScrabbleScore.scoreWord(word) == expected
@@ -29,6 +31,7 @@ class ScrabbleScoreSpec extends Specification {
         'f'  || 4
     }
 
+    @Ignore
     def "Empty input"() {
         expect:
         ScrabbleScore.scoreWord(word) == expected
@@ -39,6 +42,7 @@ class ScrabbleScoreSpec extends Specification {
     }
 
     @Unroll
+    @Ignore
     def "Score for word #word should be #expected"() {
         expect:
         ScrabbleScore.scoreWord(word) == expected

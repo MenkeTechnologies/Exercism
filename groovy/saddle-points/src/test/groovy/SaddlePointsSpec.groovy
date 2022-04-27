@@ -15,6 +15,7 @@ class SaddlePointsSpec extends Specification {
         expected = [[1, 0]]
     }
 
+    @Ignore
     def "Can identify that empty matrix has no saddle points"() {
         expect:
         SaddlePoints.getSaddlePoints(matrix) == expected
@@ -24,6 +25,7 @@ class SaddlePointsSpec extends Specification {
         expected = []
     }
 
+    @Ignore
     def "Can identify lack of saddle points when there are none"() {
         expect:
         SaddlePoints.getSaddlePoints(matrix) == expected
@@ -37,6 +39,7 @@ class SaddlePointsSpec extends Specification {
         expected = []
     }
 
+    @Ignore
     def "Can identify multiple saddle points in a column"() {
         expect:
         SaddlePoints.getSaddlePoints(matrix) == expected
@@ -52,6 +55,7 @@ class SaddlePointsSpec extends Specification {
                     [2, 1]]
     }
 
+    @Ignore
     def "Can identify multiple saddle points in a row"() {
         expect:
         SaddlePoints.getSaddlePoints(matrix) == expected
@@ -67,6 +71,7 @@ class SaddlePointsSpec extends Specification {
                     [1, 2]]
     }
 
+    @Ignore
     def "Can identify saddle point in bottom right corner"() {
         expect:
         SaddlePoints.getSaddlePoints(matrix) == expected
@@ -80,6 +85,7 @@ class SaddlePointsSpec extends Specification {
         expected = [[2, 2]]
     }
 
+    @Ignore
     def "Can identify saddle points in a non square matrix"() {
         expect:
         SaddlePoints.getSaddlePoints(matrix) == expected
@@ -94,6 +100,7 @@ class SaddlePointsSpec extends Specification {
 
     }
 
+    @Ignore
     def "Can identify that saddle points in a single column matrix are those with the minimum value"() {
         expect:
         SaddlePoints.getSaddlePoints(matrix) == expected
@@ -110,6 +117,7 @@ class SaddlePointsSpec extends Specification {
 
     }
 
+    @Ignore
     def "Can identify that saddle points in a single row matrix are those with the maximum value"() {
         expect:
         SaddlePoints.getSaddlePoints(matrix) == expected

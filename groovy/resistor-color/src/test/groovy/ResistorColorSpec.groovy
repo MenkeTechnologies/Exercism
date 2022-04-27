@@ -1,5 +1,4 @@
-import spock.lang.Specification
-import spock.lang.Unroll
+import spock.lang.*
 
 class ResistorColorSpec extends Specification {
 
@@ -15,17 +14,18 @@ class ResistorColorSpec extends Specification {
         'orange' || 3
     }
 
-//    def "Colors"() {
-//        expect:
-//        ResistorColor.colors == ['black',
-//                                 'brown',
-//                                 'red',
-//                                 'orange',
-//                                 'yellow',
-//                                 'green',
-//                                 'blue',
-//                                 'violet',
-//                                 'grey',
-//                                 'white']
-//    }
+    @Ignore
+    def "Colors"() {
+        expect:
+        ResistorColor.colors == ['black',
+                                 'brown',
+                                 'red',
+                                 'orange',
+                                 'yellow',
+                                 'green',
+                                 'blue',
+                                 'violet',
+                                 'grey',
+                                 'white']
+    }
 }

@@ -14,6 +14,7 @@ class GrainsSpec extends Specification {
         1      || 1
     }
 
+    @Ignore
     def "Square of 2"() {
         expect:
         grains.square(square) == expected
@@ -23,6 +24,7 @@ class GrainsSpec extends Specification {
         2      || 2
     }
 
+    @Ignore
     def "Square of 3"() {
         expect:
         grains.square(square) == expected
@@ -32,6 +34,7 @@ class GrainsSpec extends Specification {
         3      || 4
     }
 
+    @Ignore
     def "Square of 4"() {
         expect:
         grains.square(square) == expected
@@ -41,6 +44,7 @@ class GrainsSpec extends Specification {
         4      || 8
     }
 
+    @Ignore
     def "Square of 16"() {
         expect:
         grains.square(square) == expected
@@ -50,6 +54,7 @@ class GrainsSpec extends Specification {
         16     || 32768
     }
 
+    @Ignore
     def "Square of 32"() {
         expect:
         grains.square(square) == expected
@@ -59,6 +64,7 @@ class GrainsSpec extends Specification {
         32     || 2147483648
     }
 
+    @Ignore
     def "Square of 64"() {
         expect:
         grains.square(square) == expected
@@ -68,6 +74,7 @@ class GrainsSpec extends Specification {
         64     || 9223372036854775808
     }
 
+    @Ignore
     def "Square 0 raises an exception"() {
         when:
         grains.square(square)
@@ -79,6 +86,7 @@ class GrainsSpec extends Specification {
         square = 0
     }
 
+    @Ignore
     def "Negative square raises an exception"() {
         when:
         grains.square(square)
@@ -90,6 +98,7 @@ class GrainsSpec extends Specification {
         square = -1
     }
 
+    @Ignore
     def "Square greater than 64 raises an exception"() {
         when:
         grains.square(square)
@@ -102,6 +111,7 @@ class GrainsSpec extends Specification {
     }
 
 
+    @Ignore
     def "Test total"() {
         expect:
         grains.total() == 18446744073709551615

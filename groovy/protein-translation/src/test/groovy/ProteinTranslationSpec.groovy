@@ -11,6 +11,7 @@ class ProteinTranslationSpec extends Specification {
         'AUG'  || ['Methionine']
     }
 
+    @Ignore
     def "Phenylalanine RNA sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -21,6 +22,7 @@ class ProteinTranslationSpec extends Specification {
         'UUC'  || ['Phenylalanine']
     }
 
+    @Ignore
     def "Leucine RNA sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -31,6 +33,7 @@ class ProteinTranslationSpec extends Specification {
         'UUG'  || ['Leucine']
     }
 
+    @Ignore
     def "Serine RNA sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -43,6 +46,7 @@ class ProteinTranslationSpec extends Specification {
         'UCG'  || ['Serine']
     }
 
+    @Ignore
     def "Tyrosine RNA sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -53,6 +57,7 @@ class ProteinTranslationSpec extends Specification {
         'UAC'  || ['Tyrosine']
     }
 
+    @Ignore
     def "Cysteine RNA sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -63,6 +68,7 @@ class ProteinTranslationSpec extends Specification {
         'UGC'  || ['Cysteine']
     }
 
+    @Ignore
     def "Tryptophan RNA sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -72,6 +78,7 @@ class ProteinTranslationSpec extends Specification {
         'UGG'  || ['Tryptophan']
     }
 
+    @Ignore
     def "STOP codon RNA sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -83,6 +90,7 @@ class ProteinTranslationSpec extends Specification {
         'UGA'  || []
     }
 
+    @Ignore
     def "Translate RNA strand into correct protein list"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -92,6 +100,7 @@ class ProteinTranslationSpec extends Specification {
         'AUGUUUUGG' || ['Methionine', 'Phenylalanine', 'Tryptophan']
     }
 
+    @Ignore
     def "Translation stops if STOP codon at beginning of sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -101,6 +110,7 @@ class ProteinTranslationSpec extends Specification {
         'UAGUGG' || []
     }
 
+    @Ignore
     def "Translation stops if STOP codon at end of two-codon sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -110,6 +120,7 @@ class ProteinTranslationSpec extends Specification {
         'UGGUAG' || ['Tryptophan']
     }
 
+    @Ignore
     def "Translation stops if STOP codon at end of three-codon sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -119,6 +130,7 @@ class ProteinTranslationSpec extends Specification {
         'AUGUUUUAA' || ['Methionine', 'Phenylalanine']
     }
 
+    @Ignore
     def "Translation stops if STOP codon in middle of three-codon sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
@@ -128,6 +140,7 @@ class ProteinTranslationSpec extends Specification {
         'UGGUAGUGG' || ['Tryptophan']
     }
 
+    @Ignore
     def "Translation stops if STOP codon in middle of six-codon sequence"() {
         expect:
         ProteinTranslation.proteins(strand) == expected
