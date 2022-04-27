@@ -1,5 +1,10 @@
 # Hello World
 
+Welcome to Hello World on Exercism's Raku Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 The classical introductory exercise. Just say "Hello, World!".
 
 ["Hello, World!"](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program) is
@@ -14,25 +19,17 @@ The objectives are simple:
 
 If everything goes well, you will be ready to fetch your first real exercise.
 
-## Resources
-
-Remember to check out the Raku [documentation](https://docs.raku.org/) and
-[resources](https://raku.org/resources/) pages for information, tips, and
-examples if you get stuck.
-
-## Running the tests
-
-There is a test suite and module included with the exercise.
-The test suite (a file with the extension `.rakutest`) will attempt to run routines
-from the module (a file with the extension `.rakumod`).
-Add/modify routines in the module so that the tests will pass! You can view the
-test data by executing the command `raku --doc *.rakutest` (\* being the name of the
-test suite), and run the test suite for the exercise by executing the command
-`prove6 .` in the exercise directory.
-
 ## Source
 
-This is an exercise to introduce users to using Exercism [http://en.wikipedia.org/wiki/%22Hello,_world!%22_program](http://en.wikipedia.org/wiki/%22Hello,_world!%22_program)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @m-dango
+
+### Contributed to by
+
+- @kotp
+- @kytrinyx
+
+### Based on
+
+This is an exercise to introduce users to using Exercism - http://en.wikipedia.org/wiki/%22Hello,_world!%22_program

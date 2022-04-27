@@ -11,6 +11,7 @@ fn test_grades_for_empty_school() {
 }
 
 #[test]
+#[ignore]
 fn test_grades_for_one_student() {
     let mut s = school::School::new();
     s.add(2, "Aimee");
@@ -18,6 +19,7 @@ fn test_grades_for_one_student() {
 }
 
 #[test]
+#[ignore]
 fn test_grades_for_several_students_are_sorted() {
     let mut s = school::School::new();
     s.add(2, "Aimee");
@@ -27,6 +29,7 @@ fn test_grades_for_several_students_are_sorted() {
 }
 
 #[test]
+#[ignore]
 fn test_grades_when_several_students_have_the_same_grade() {
     let mut s = school::School::new();
     s.add(2, "Aimee");
@@ -36,12 +39,14 @@ fn test_grades_when_several_students_have_the_same_grade() {
 }
 
 #[test]
+#[ignore]
 fn test_grade_for_empty_school() {
     let s = school::School::new();
     assert_eq!(s.grade(1), Vec::<String>::new());
 }
 
 #[test]
+#[ignore]
 fn test_grade_when_no_students_have_that_grade() {
     let mut s = school::School::new();
     s.add(7, "Logan");
@@ -49,6 +54,7 @@ fn test_grade_when_no_students_have_that_grade() {
 }
 
 #[test]
+#[ignore]
 fn test_grade_for_one_student() {
     let mut s = school::School::new();
     s.add(2, "Aimee");
@@ -56,6 +62,7 @@ fn test_grade_for_one_student() {
 }
 
 #[test]
+#[ignore]
 fn test_grade_returns_students_sorted_by_name() {
     let mut s = school::School::new();
     s.add(2, "James");
@@ -65,6 +72,7 @@ fn test_grade_returns_students_sorted_by_name() {
 }
 
 #[test]
+#[ignore]
 fn test_add_students_to_different_grades() {
     let mut s = school::School::new();
     s.add(3, "Chelsea");

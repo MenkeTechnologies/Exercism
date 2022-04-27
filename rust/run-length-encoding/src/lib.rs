@@ -1,6 +1,7 @@
 use itertools::Itertools;
 
 pub fn encode(source: &str) -> String {
+
     source
         .chars()
         .group_by(|&c| c)
@@ -27,8 +28,10 @@ pub fn decode(source: &str) -> String {
             let n: usize = grp.parse().unwrap_or(1);
             output += ch.to_string().repeat(n).as_str();
             grp.clear();
+
         }
     }
 
     output
+
 }

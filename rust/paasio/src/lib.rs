@@ -1,9 +1,9 @@
 use std::io::{Read, Result, Write};
 
-pub struct ReadStats<R> {
+pub struct ReadStats<R>{
     data: R,
     bytes: usize,
-    ops: usize,
+    ops: usize
 }
 
 impl<R: Read> ReadStats<R> {
@@ -14,7 +14,7 @@ impl<R: Read> ReadStats<R> {
         ReadStats {
             data: _wrapped,
             bytes: 0,
-            ops: 0,
+            ops: 0
         }
     }
 
@@ -39,13 +39,15 @@ impl<R: Read> Read for ReadStats<R> {
         self.ops += 1;
 
         Ok(b)
+
+
     }
 }
 
-pub struct WriteStats<W> {
+pub struct WriteStats<W>{
     data: W,
     bytes: usize,
-    ops: usize,
+    ops: usize
 }
 
 impl<W: Write> WriteStats<W> {
@@ -56,7 +58,7 @@ impl<W: Write> WriteStats<W> {
         WriteStats {
             data: _wrapped,
             bytes: 0,
-            ops: 0,
+            ops: 0
         }
     }
 

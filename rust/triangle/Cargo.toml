@@ -5,6 +5,3 @@ version = "0.0.0"
 
 [features]
 generic = []
-
-[dependencies]
-num-traits = "*"

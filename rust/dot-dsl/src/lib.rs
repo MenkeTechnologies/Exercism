@@ -120,14 +120,15 @@ pub mod graph {
 
             impl Node {
                 pub fn get_attr(&self, p0: &str) -> Option<&str> {
-                    for (k, v) in &self.attrs {
+                    for (k,v) in &self.attrs {
                         if k == p0 {
                             let val = v.as_str();
-                            return Option::from(val);
+                            return Option::from(val)
                         }
                     }
 
                     None
+
                 }
 
                 pub fn with_attrs(&self, p0: &[(&str, &str)]) -> Self {

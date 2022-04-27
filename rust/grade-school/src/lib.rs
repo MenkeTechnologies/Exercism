@@ -8,7 +8,7 @@ use std::collections::HashMap;
 // of this exercise.
 #[allow(clippy::new_without_default)]
 pub struct School {
-    m: HashMap<String, u32>,
+    m: HashMap<String, u32>
 }
 
 impl School {
@@ -32,8 +32,8 @@ impl School {
     // the internal structure can be completely arbitrary. The tradeoff is that some data
     // must be copied each time `grade` is called.
     pub fn grade(&self, grade: u32) -> Vec<String> {
-        let mut students: Vec<String> = vec![];
-        for (k, v) in &self.m {
+        let mut students:Vec<String> = vec![];
+        for (k,v) in &self.m {
             if *v == grade {
                 students.push(k.clone());
             }

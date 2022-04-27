@@ -7,8 +7,9 @@ pub fn build_proverb(list: &[&str]) -> String {
         if i == list.len() - 1 {
             continue;
         }
-        let string = format!("For want of a {} the {} was lost.\n", x, list[i + 1]);
+        let string = format!("For want of a {} the {} was lost.\n", x, list[i+1]);
         str.push_str(string.as_str());
+
     }
     let string = format!("And all for the want of a {}.", list[0]);
     str.push_str(string.as_str());

@@ -42,7 +42,9 @@ where
     }
 
     pub fn is_disjoint(&self, _other: &Self) -> bool {
-        self.map.keys().all(|k| !_other.contains(k)) && _other.map.keys().all(|k| !self.contains(k))
+        self.map.keys()
+            .all(|k| !_other.contains(k))&& _other.map.keys()
+            .all(|k| !self.contains(k))
     }
 
     pub fn intersection(&self, _other: &Self) -> Self {

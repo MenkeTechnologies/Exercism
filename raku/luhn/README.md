@@ -1,5 +1,10 @@
 # Luhn
 
+Welcome to Luhn on Exercism's Raku Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a number determine whether or not it is valid per the Luhn formula.
 
 The [Luhn algorithm](https://en.wikipedia.org/wiki/Luhn_algorithm) is
@@ -64,25 +69,17 @@ Sum the digits
 
 57 is not evenly divisible by 10, so this number is not valid.
 
-## Resources
-
-Remember to check out the Raku [documentation](https://docs.raku.org/) and
-[resources](https://raku.org/resources/) pages for information, tips, and
-examples if you get stuck.
-
-## Running the tests
-
-There is a test suite and module included with the exercise.
-The test suite (a file with the extension `.rakutest`) will attempt to run routines
-from the module (a file with the extension `.rakumod`).
-Add/modify routines in the module so that the tests will pass! You can view the
-test data by executing the command `raku --doc *.rakutest` (\* being the name of the
-test suite), and run the test suite for the exercise by executing the command
-`prove6 .` in the exercise directory.
-
 ## Source
 
-The Luhn Algorithm on Wikipedia [http://en.wikipedia.org/wiki/Luhn_algorithm](http://en.wikipedia.org/wiki/Luhn_algorithm)
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @yanick
+
+### Contributed to by
+
+- @kotp
+- @m-dango
+
+### Based on
+
+The Luhn Algorithm on Wikipedia - http://en.wikipedia.org/wiki/Luhn_algorithm

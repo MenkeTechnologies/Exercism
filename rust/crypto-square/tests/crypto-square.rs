@@ -10,6 +10,7 @@ fn test_empty_input() {
 }
 
 #[test]
+#[ignore]
 fn test_encrypt_also_decrypts_square() {
     // note that you only get the exact input back if:
     // 1. no punctuation
@@ -21,6 +22,7 @@ fn test_encrypt_also_decrypts_square() {
 }
 
 #[test]
+#[ignore]
 fn test_example() {
     test(
         "If man was meant to stay on the ground, god would have given us roots.",
@@ -29,11 +31,13 @@ fn test_example() {
 }
 
 #[test]
+#[ignore]
 fn test_empty_last_line() {
     test("congratulate", "crl oaa ntt gue")
 }
 
 #[test]
+#[ignore]
 fn test_spaces_are_reorganized() {
     test("abet", "ae bt");
     test("a bet", "ae bt");
@@ -41,6 +45,7 @@ fn test_spaces_are_reorganized() {
 }
 
 #[test]
+#[ignore]
 fn test_everything_becomes_lowercase() {
     test("caSe", "cs ae");
     test("cAsE", "cs ae");
@@ -48,6 +53,7 @@ fn test_everything_becomes_lowercase() {
 }
 
 #[test]
+#[ignore]
 fn test_long() {
     test(
         r#"

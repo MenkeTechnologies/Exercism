@@ -1,5 +1,10 @@
 # Grade School
 
+Welcome to Grade School on Exercism's Raku Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given students' names along with the grade that they are in, create a roster
 for the school.
 
@@ -37,25 +42,13 @@ are some additional things you could try:
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
 
-## Resources
-
-Remember to check out the Raku [documentation](https://docs.raku.org/) and
-[resources](https://raku.org/resources/) pages for information, tips, and
-examples if you get stuck.
-
-## Running the tests
-
-There is a test suite and module included with the exercise.
-The test suite (a file with the extension `.rakutest`) will attempt to run routines
-from the module (a file with the extension `.rakumod`).
-Add/modify routines in the module so that the tests will pass! You can view the
-test data by executing the command `raku --doc *.rakutest` (\* being the name of the
-test suite), and run the test suite for the exercise by executing the command
-`prove6 .` in the exercise directory.
-
 ## Source
 
-A pairing session with Phil Battos at gSchool [http://gschool.it](http://gschool.it)
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kotp
+- @m-dango
+
+### Based on
+
+A pairing session with Phil Battos at gSchool - http://gschool.it

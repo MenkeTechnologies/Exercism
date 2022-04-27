@@ -1,5 +1,10 @@
 # All Your Base
 
+Welcome to All Your Base on Exercism's Raku Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Convert a number, represented as a sequence of digits in one base, to any other base.
 
 Implement general base conversion. Given a number in base **a**,
@@ -31,21 +36,12 @@ I think you got the idea!
 
 *Yes. Those three numbers above are exactly the same. Congratulations!*
 
-## Resources
+## Source
 
-Remember to check out the Raku [documentation](https://docs.raku.org/) and
-[resources](https://raku.org/resources/) pages for information, tips, and
-examples if you get stuck.
+### Created by
 
-## Running the tests
+- @m-dango
 
-There is a test suite and module included with the exercise.
-The test suite (a file with the extension `.rakutest`) will attempt to run routines
-from the module (a file with the extension `.rakumod`).
-Add/modify routines in the module so that the tests will pass! You can view the
-test data by executing the command `raku --doc *.rakutest` (\* being the name of the
-test suite), and run the test suite for the exercise by executing the command
-`prove6 .` in the exercise directory.
+### Contributed to by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @kotp

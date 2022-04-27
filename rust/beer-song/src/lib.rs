@@ -1,3 +1,4 @@
+
 pub fn verse(n: u32) -> String {
     let mut orig = String::from("No more bottles");
     let mut orig2 = String::from("no more bottles");
@@ -20,7 +21,11 @@ pub fn verse(n: u32) -> String {
     if n >= 1 {
         return format!("{} of beer on the wall, {} of beer.\nTake {} down and pass it around, {} of beer on the wall.\n", orig, orig2, num, orig3);
     } else {
-        orig3 = format!("{} bottles", 99);
+        if n >= 2 {
+            orig3 = format!("{} bottles", 99);
+        } else {
+            orig3 = format!("{} bottles", 99);
+        }
         return format!("{} of beer on the wall, {} of beer.\nGo to the store and buy some more, {} of beer on the wall.\n", orig, orig2, orig3);
     }
 }
@@ -29,9 +34,8 @@ pub fn sing(start: u32, end: u32) -> String {
     let mut str = String::new();
     for num in (end..=start).rev() {
         str.push_str(verse(num).as_str());
-        if num - end > 0 {
-            str.push_str("\n");
-        }
+        str.push_str("\n");
     }
+    str.pop();
     str
 }

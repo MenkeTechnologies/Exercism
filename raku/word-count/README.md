@@ -1,5 +1,10 @@
 # Word Count
 
+Welcome to Word Count on Exercism's Raku Track.
+If you need help running the tests or submitting your code, check out `HELP.md`.
+
+## Instructions
+
 Given a phrase, count the occurrences of each _word_ in that phrase.
 
 For the purposes of this exercise you can expect that a _word_ will always be one of:
@@ -30,25 +35,20 @@ i: 1
 fled: 1
 ```
 
-## Resources
-
-Remember to check out the Raku [documentation](https://docs.raku.org/) and
-[resources](https://raku.org/resources/) pages for information, tips, and
-examples if you get stuck.
-
-## Running the tests
-
-There is a test suite and module included with the exercise.
-The test suite (a file with the extension `.rakutest`) will attempt to run routines
-from the module (a file with the extension `.rakumod`).
-Add/modify routines in the module so that the tests will pass! You can view the
-test data by executing the command `raku --doc *.rakutest` (\* being the name of the
-test suite), and run the test suite for the exercise by executing the command
-`prove6 .` in the exercise directory.
-
 ## Source
 
-This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour.
+### Created by
 
-## Submitting Incomplete Solutions
-It's possible to submit an incomplete solution so you can see how others have completed the exercise.
+- @dnmfarrell
+
+### Contributed to by
+
+- @dcampos
+- @kotp
+- @kytrinyx
+- @m-dango
+- @yanick
+
+### Based on
+
+This is a classic toy problem, but we were reminded of it by seeing it in the Go Tour.

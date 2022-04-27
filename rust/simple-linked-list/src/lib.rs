@@ -36,7 +36,7 @@ impl<T: Clone> SimpleLinkedList<T> {
     pub fn push(&mut self, _element: T) {
         let n = Node {
             data: _element,
-            prev: self.tail.take(),
+            prev: self.tail.take()
         };
 
         self.tail = Some(Box::new(n));

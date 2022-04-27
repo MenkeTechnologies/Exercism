@@ -1,12 +1,13 @@
 #[derive(Debug)]
-pub struct HighScores {
-    vec: Vec<u32>,
+pub struct HighScores{
+    vec:Vec<u32>
 }
 
 impl HighScores {
     pub fn new(scores: &[u32]) -> Self {
-        HighScores {
-            vec: scores.to_vec(),
+
+        HighScores{
+          vec: scores.to_vec()
         }
     }
 
@@ -20,6 +21,7 @@ impl HighScores {
 
     pub fn personal_best(&self) -> Option<u32> {
         self.vec.iter().max().cloned()
+
     }
 
     pub fn personal_top_three(&self) -> Vec<u32> {

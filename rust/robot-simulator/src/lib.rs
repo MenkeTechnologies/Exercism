@@ -17,7 +17,11 @@ pub struct Robot {
 
 impl Robot {
     pub fn new(x: i32, y: i32, d: Direction) -> Self {
-        Self { x, y, d }
+        Self {
+            x,
+            y,
+            d,
+        }
     }
 
     pub fn turn_right(self) -> Self {
@@ -46,10 +50,10 @@ impl Robot {
 
     pub fn advance(self) -> Self {
         let (dx, dy) = match self.d {
-            Direction::North => (0, 1),
+            Direction::North => (0,  1),
             Direction::East => (1, 0),
             Direction::South => (0, -1),
-            Direction::West => (-1, 0),
+            Direction::West => (-1, 0)
         };
 
         Self {
@@ -60,12 +64,15 @@ impl Robot {
     }
 
     pub fn instructions(self, instructions: &str) -> Self {
-        instructions.chars().fold(self, |r, c| match c {
-            'L' => r.turn_left(),
-            'R' => r.turn_right(),
-            'A' => r.advance(),
-            _ => r,
+        instructions.chars().fold(self, |r, c| {
+            match c {
+                'L' => r.turn_left(),
+                'R' => r.turn_right(),
+                'A' => r.advance(),
+                _ => r
+            }
         })
+
     }
 
     pub fn position(&self) -> (i32, i32) {

@@ -2,73 +2,74 @@ use isogram::check;
 
 #[test]
 fn empty_string() {
-    assert_eq!(check(""), true, "An empty string should be an isogram.")
+    assert!(check(""), "An empty string should be an isogram.")
 }
 
 #[test]
+#[ignore]
 fn only_lower_case_characters() {
-    assert_eq!(check("isogram"), true, "\"isogram\" should be an isogram.")
+    assert!(check("isogram"), "\"isogram\" should be an isogram.")
 }
 
 #[test]
+#[ignore]
 fn one_duplicated_character() {
-    assert_eq!(
-        check("eleven"),
-        false,
+    assert!(
+        !check("eleven"),
         "\"eleven\" has more than one \'e\', therefore it is no isogram."
     )
 }
 
 #[test]
+#[ignore]
 fn longest_reported_english_isogram() {
-    assert_eq!(
+    assert!(
         check("subdermatoglyphic"),
-        true,
         "\"subdermatoglyphic\" should be an isogram."
     )
 }
 
 #[test]
+#[ignore]
 fn one_duplicated_character_mixed_case() {
-    assert_eq!(
-        check("Alphabet"),
-        false,
+    assert!(
+        !check("Alphabet"),
         "\"Alphabet\" has more than one \'a\', therefore it is no isogram."
     )
 }
 
 #[test]
+#[ignore]
 fn hypothetical_isogramic_word_with_hyphen() {
-    assert_eq!(
+    assert!(
         check("thumbscrew-japingly"),
-        true,
         "\"thumbscrew-japingly\" should be an isogram."
     )
 }
 
 #[test]
+#[ignore]
 fn isogram_with_duplicated_hyphen() {
-    assert_eq!(
+    assert!(
         check("six-year-old"),
-        true,
         "\"six-year-old\" should be an isogram."
     )
 }
 
 #[test]
+#[ignore]
 fn made_up_name_that_is_an_isogram() {
-    assert_eq!(
+    assert!(
         check("Emily Jung Schwartzkopf"),
-        true,
         "\"Emily Jung Schwartzkopf\" should be an isogram."
     )
 }
 
 #[test]
+#[ignore]
 fn duplicated_character_in_the_middle() {
-    assert_eq!(
-        check("accentor"),
-        false,
+    assert!(
+        !check("accentor"),
         "\"accentor\" has more than one \'c\', therefore it is no isogram."
     )
 }
