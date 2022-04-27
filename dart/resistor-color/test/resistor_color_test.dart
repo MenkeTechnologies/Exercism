@@ -9,17 +9,17 @@ void main() {
       test('Black', () {
         final int result = resistorColor.colorCode('black');
         expect(result, equals(0));
-      });
+      }, skip: false);
 
       test('White', () {
         final int result = resistorColor.colorCode('white');
         expect(result, equals(9));
-      });
+      }, skip: true);
 
       test('Orange', () {
         final int result = resistorColor.colorCode('orange');
         expect(result, equals(3));
-      });
+      }, skip: true);
     });
 
     test('Colors', () {
@@ -38,6 +38,6 @@ void main() {
             'grey',
             'white',
           ]));
-    });
+    }, skip: true);
   });
 }
