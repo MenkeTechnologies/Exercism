@@ -5,12 +5,22 @@
 
 (in-package :high-scores)
 
-;; Define make-high-scores-table function
+(defun make-high-scores-table ()
+ (make-hash-table)
+ )
 
-;; Define add-player function
+(defun add-player (table name)
+ (set-score table name 0)
+ )
 
-;; Define set-score function
+(defun set-score (table name score)
+ (setf (gethash name table) score)
+ )
 
-;; Define get-score function
+(defun get-score (table name)
+ (gethash name table 0)
+ )
 
-;; Define remove-player function
+(defun remove-player (table name)
+ (remhash name table)
+ )
