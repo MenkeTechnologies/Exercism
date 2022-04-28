@@ -7,8 +7,24 @@
 
 (in-package :lillys-lasagna-leftovers)
 
-;; Define function preparation-time
+(defun preparation-time (&rest layers)
+ (* 19 (length layers)))
 
-;; Define function remaining-minutes-in-oven
+(defun remaining-minutes-in-oven (&optional (style :normal))
+ (ecase style
+    (:normal 337)
+    (:shorter 237)
+    (:very-short 137)
+    (:longer 437)
+    (:very-long 537)
+    ((nil) 0)
+  )
+ )
 
-;; Define function split-leftovers
+(defun split-leftovers (&key (weight nil weight-p) (human 10) (alien 10))
+ (cond
+  (weight (max 0 (- weight human alien)))
+  (weight-p :looks-like-someone-was-hungry)
+  (t :just-split-it)
+  )
+ )
