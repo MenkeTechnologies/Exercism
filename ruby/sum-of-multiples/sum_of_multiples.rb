@@ -13,7 +13,7 @@ class SumOfMultiples
   end
 
   def to(limit)
-    (1...limit).filter { |f| @factors.any? { _1 != 0 && (f % _1).zero? } }.sum
+    (1...limit).filter { |n| @factors.any? { _1 != 0 && (n % _1).zero? } }.sum
   end
 
 end
