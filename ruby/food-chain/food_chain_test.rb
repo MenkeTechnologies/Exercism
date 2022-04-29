@@ -15,7 +15,7 @@ class FoodChainTest < Minitest::Test
   # This test is an acceptance test.
   #
   # If you find it difficult to work the problem with so much
-  # output, go ahead and add a `skip`, and write whatever
+  # output, go ahead and add a ``, and write whatever
   # unit tests will help you. Then unskip it again
   # to make sure you got it right.
   # There's no need to submit the tests you write, unless you
