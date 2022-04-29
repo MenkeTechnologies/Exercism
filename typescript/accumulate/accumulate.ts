@@ -1,3 +1,4 @@
-export function accumulate(list: unknown, accumulator: unknown): never {
-  throw new Error('Remove this statement and implement this function')
+export function accumulate<T,U> (list: T[], accumulator: (_: T) => U): U[] {
+    const init: U[] = []
+    return list.reduce((acc, n) => [...acc, accumulator(n)], init);
 }
