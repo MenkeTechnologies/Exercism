@@ -1,7 +1,18 @@
-=begin
-Write your code for the 'Nth Prime' exercise in this file. Make the tests in
-`nth_prime_test.rb` pass.
+module Prime
+  extend self
+  
+  def nth(n)
+    raise ArgumentError.new "n must be positive" if n < 1
+    primes = [2]
+    curr = 2
+    while primes.size < n
+      curr += 1
+      primes << curr if prime?(curr)
+    end
+    primes[-1]
+  end
 
-To get started with TDD, see the `README.md` file in your
-`ruby/nth-prime` directory.
-=end
+  def prime?(n)
+    (2..Math.sqrt(n)).none? { |i| n % i == 0 }
+  end
+end
