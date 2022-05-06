@@ -16,9 +16,11 @@ bool is_pangram(const char *sentence) {
 
     for (char i = 'a'; i <= 'z'; ++i) {
         if (!strchr(lc, i)) {
+            free(lc);
             return false;
         }
     }
+    free(lc);
     return true;
 
 }
