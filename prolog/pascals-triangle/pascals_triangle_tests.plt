@@ -9,25 +9,25 @@ pending :-
     test(zero_rows, condition(true)) :-
       pascal(0, []).
 
-    test(single_row, condition(pending)) :-
+    test(single_row, condition(true)) :-
       pascal(1, [[1]]).
 
-    test(two_rows, condition(pending)) :-
+    test(two_rows, condition(true)) :-
       pascal(2, [[1], [1,1]]).
 
-    test(three_rows, condition(pending)) :-
+    test(three_rows, condition(true)) :-
       pascal(3, [[1], [1,1], [1,2,1]]).
 
-    test(four_rows, condition(pending)) :-
+    test(four_rows, condition(true)) :-
       pascal(4, [[1], [1,1], [1,2,1], [1,3,3,1]]).
 
-    test(five_rows, condition(pending)) :-
+    test(five_rows, condition(true)) :-
       pascal(5, [[1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1]]).
 
-    test(six_rows, condition(pending)) :-
+    test(six_rows, condition(true)) :-
       pascal(6, [[1], [1,1], [1,2,1], [1,3,3,1], [1,4,6,4,1], [1,5,10,10,5,1]]).
 
-    test(ten_rows, condition(pending)) :-
+    test(ten_rows, condition(true)) :-
       pascal(10, [ [1],
                    [1,1],
                    [1,2,1],
