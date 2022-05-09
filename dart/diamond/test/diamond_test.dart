@@ -25,7 +25,7 @@ void main() {
           ' A ',
         ]),
       );
-    }, skip: true);
+    });
 
     test('Smallest non-degenerate case with odd diamond side length', () {
       final List<String> result = diamond.rows('C');
@@ -39,7 +39,7 @@ void main() {
           '  A  ',
         ]),
       );
-    }, skip: true);
+    });
 
     test('Smallest non-degenerate case with even diamond side length', () {
       final List<String> result = diamond.rows('D');
@@ -55,7 +55,7 @@ void main() {
           '   A   ',
         ]),
       );
-    }, skip: true);
+    });
 
     test('Largest possible diamond', () {
       final List<String> result = diamond.rows('Z');
@@ -115,6 +115,6 @@ void main() {
           '                         A                         ',
         ]),
       );
-    }, skip: true);
+    });
   });
 }
