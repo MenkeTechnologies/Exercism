@@ -1,24 +1,25 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+(( $# == 2 )) || exit 1
+
+SPY=31557600 # seconds
+
+declare -A dict=(
+  [Earth]=1
+  [Mercury]=0.2408467
+  [Venus]=0.61519726
+  [Mars]=1.8808158
+  [Jupiter]=11.862615
+  [Saturn]=29.447498
+  [Uranus]=84.016846
+  [Neptune]=164.79132
+)
+
+planet=$1 seconds=$2
+
+if [[ -n ${dict[$planet]} ]]; then
+    printf '%.2f\n' $(bc <<< "scale=3; $seconds / $SPY / ${dict[$planet]}")
+else
+    echo "not a planet"
+    exit 1
+fi
