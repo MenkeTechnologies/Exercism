@@ -1,5 +1,6 @@
 class Number {
-  static isArmstrong(n) {
-    Fiber.abort("Remove this statement and implement this function")
+  static isArmstrong(num) {
+    var digits = num.toString
+    return num == digits.reduce(0) {|acc, n| acc + Num.fromString(n).pow(digits.count) }
   }
 }
