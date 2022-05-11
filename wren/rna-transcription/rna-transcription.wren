@@ -1,5 +1,5 @@
+var MAP = { "C": "G", "G": "C", "T": "A", "A": "U" }
+
 class DNA {
-  static toRNA(strand) {
-    Fiber.abort("Remove this statement and implement this function")
-  }
+  static toRNA(strand) { strand.map {|c| MAP[c]}.join() }
 }
