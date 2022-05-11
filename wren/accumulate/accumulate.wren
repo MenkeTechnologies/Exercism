@@ -1,3 +1,5 @@
 var Accumulate = Fn.new { |list, fn|
-  Fiber.abort("Remove this statement and implement this function")
+    var r = []
+    list.map{|n| fn.call(n)}.each{|n| r.add(n)}
+    return r
 }
