@@ -1,5 +1,8 @@
 class Hamming {
   static compute(first, second) {
-    Fiber.abort("Remove this statement and implement this function")
+    if (first.count != second.count) Fiber.abort("strands must be of equal length")
+
+    return (0...first.count).where {|i| first[i] != second[i]}.count
+
   }
 }
