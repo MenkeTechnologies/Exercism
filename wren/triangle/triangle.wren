@@ -1,17 +1,15 @@
 class Triangle {
   construct new(a, b, c) {
-    Fiber.abort("Remove this statement and implement this function")
+      _sides = [a, b, c]
+    _sides.sort()
   }
 
-  isEquilateral {
-    Fiber.abort("Remove this statement and implement this function")
-  }
+  valid { _sides[0] + _sides[1] > _sides[2] }
 
-  isIsosceles {
-    Fiber.abort("Remove this statement and implement this function")
-  }
 
-  isScalene {
-    Fiber.abort("Remove this statement and implement this function")
-  }
+  isEquilateral { valid && _sides.all {|s| s == _sides[0] } }
+
+  isIsosceles { valid && _sides[0] == _sides[1] || _sides[1] == _sides[2] }
+
+  isScalene { valid && !isIsosceles }
 }
