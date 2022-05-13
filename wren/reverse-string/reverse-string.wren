@@ -1,5 +1,8 @@
 class StringUtil {
   static reverse(string) {
-    Fiber.abort("Remove this statement and implement this function")
+      return string.reduce([]) {|acc,n|
+          acc.insert(0, n)
+          return acc
+      }.join()
   }
 }
