@@ -1,13 +1,24 @@
 module InterestIsInteresting
 
 let interestRate (balance: decimal): single =
-    failwith "Please implement the 'interestRate' function"
+  if balance >= 5000m then
+        2.475f
+    elif balance >= 1000m then
+        1.621f 
+    elif balance >= 0m then
+        0.5f
+    else
+        3.213f
 
 let interest (balance: decimal): decimal =
-   failwith "Please implement the 'interest' function"
+   let rate = interestRate balance
+   balance * decimal rate * 0.01m
 
 let annualBalanceUpdate(balance: decimal): decimal =
-   failwith "Please implement the 'annualBalanceUpdate' function"
+   balance + interest balance
 
 let amountToDonate(balance: decimal) (taxFreePercentage: float): int =
-   failwith "Please implement the 'amountToDonate' function"
+   if balance < 0m then
+       0
+   else
+       int(floor (balance * decimal (taxFreePercentage * 0.02)))
