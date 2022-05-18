@@ -7,7 +7,14 @@ let convertCoordinate (coordinate: string): int * char =
     chars[0] |> string |> int, chars[1]
 
 let compareRecords (azarasData: string * string) (ruisData: string * (int * char) * string) : bool = 
-    failwith "Please implement the 'compareRecords' function"
+        let azCoord = azarasData |> getCoordinate |> convertCoordinate
+        let _, ruisCoord, _ = ruisData
+        azCoord = ruisCoord
 
 let createRecord (azarasData: string * string) (ruisData: string * (int * char) * string) : (string * string * string * string) =
-    failwith "Please implement the 'createRecord' function"
+    if compareRecords azarasData ruisData then
+       let treasure, coordinate = azarasData
+       let location, _, quadrant = ruisData
+       coordinate, location, quadrant, treasure
+    else
+        "", "", "", ""
