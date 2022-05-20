@@ -1,5 +1,4 @@
 module Seq
 
-let keep pred xs = failwith "You need to implement this function."
-
-let discard pred xs = failwith "You need to implement this function."
+let keep f xs = Seq.foldBack (fun n acc -> if f n then n :: acc else acc) xs []
+let discard f xs = xs |> keep (f >> not)
