@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Linq;
 
 public class DndCharacter
 {
+    
+    private readonly static Random rng = new Random(DateTime.Now.Millisecond);
+
     public int Strength { get; }
     public int Dexterity { get; }
     public int Constitution { get; }
@@ -10,18 +14,31 @@ public class DndCharacter
     public int Charisma { get; }
     public int Hitpoints { get; }
 
-    public static int Modifier(int score)
+    private DndCharacter(int strength, int dexterity, int constitution, int intelligence, int wisdom, int charisma)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        Strength = strength;
+        Dexterity = dexterity;
+        Constitution = constitution;
+        Intelligence = intelligence;
+        Wisdom = wisdom;
+        Charisma = charisma;
+        Hitpoints = 10 + Modifier(constitution);
     }
 
-    public static int Ability() 
-    {
-        throw new NotImplementedException("You need to implement this function.");
-    }
+    public static int Modifier(int score) => (int)Math.Floor((score - 10) * 0.5);
+    
+    private static int RollDie() => rng.Next(1, 7);
 
-    public static DndCharacter Generate()
-    {
-        throw new NotImplementedException("You need to implement this function.");
-    }
+    public static int Ability() =>
+        new[] { RollDie(), RollDie(), RollDie(), RollDie() }
+            .OrderByDescending(v => v)
+            .Take(3)
+            .Sum();
+
+    public static DndCharacter Generate() =>
+        new(
+            Ability(), Ability(),
+            Ability(), Ability(),
+            Ability(), Ability()
+        );
 }
