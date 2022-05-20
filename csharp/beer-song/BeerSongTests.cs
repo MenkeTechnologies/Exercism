@@ -11,7 +11,7 @@ public class BeerSongTests
         Assert.Equal(expected, BeerSong.Recite(99, 1));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Last_generic_verse()
     {
         var expected = 
@@ -20,7 +20,7 @@ public class BeerSongTests
         Assert.Equal(expected, BeerSong.Recite(3, 1));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Verse_with_2_bottles()
     {
         var expected = 
@@ -29,7 +29,7 @@ public class BeerSongTests
         Assert.Equal(expected, BeerSong.Recite(2, 1));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Verse_with_1_bottle()
     {
         var expected = 
@@ -38,7 +38,7 @@ public class BeerSongTests
         Assert.Equal(expected, BeerSong.Recite(1, 1));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Verse_with_0_bottles()
     {
         var expected = 
@@ -47,7 +47,7 @@ public class BeerSongTests
         Assert.Equal(expected, BeerSong.Recite(0, 1));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void First_two_verses()
     {
         var expected = 
@@ -59,7 +59,7 @@ public class BeerSongTests
         Assert.Equal(expected, BeerSong.Recite(99, 2));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Last_three_verses()
     {
         var expected = 
@@ -74,7 +74,7 @@ public class BeerSongTests
         Assert.Equal(expected, BeerSong.Recite(2, 3));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void All_verses()
     {
         var expected = 

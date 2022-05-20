@@ -17,7 +17,7 @@ public class EtlTests
         Assert.Equal(expected, Etl.Transform(input));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Single_score_with_multiple_letters()
     {
         var input = new Dictionary<int, string[]>
@@ -35,7 +35,7 @@ public class EtlTests
         Assert.Equal(expected, Etl.Transform(input));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Multiple_scores_with_multiple_letters()
     {
         var input = new Dictionary<int, string[]>
@@ -53,7 +53,7 @@ public class EtlTests
         Assert.Equal(expected, Etl.Transform(input));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Multiple_scores_with_differing_numbers_of_letters()
     {
         var input = new Dictionary<int, string[]>

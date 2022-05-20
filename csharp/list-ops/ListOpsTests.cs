@@ -12,7 +12,7 @@ public class ListOpsTests
         Assert.Empty(ListOps.Append(list1, list2));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Append_entries_to_a_list_and_return_the_new_list_list_to_empty_list()
     {
         var list1 = new List<int>();
@@ -21,7 +21,7 @@ public class ListOpsTests
         Assert.Equal(expected, ListOps.Append(list1, list2));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Append_entries_to_a_list_and_return_the_new_list_non_empty_lists()
     {
         var list1 = new List<int> { 1, 2 };
@@ -30,14 +30,14 @@ public class ListOpsTests
         Assert.Equal(expected, ListOps.Append(list1, list2));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Concatenate_a_list_of_lists_empty_list()
     {
         var lists = new List<List<int>>();
         Assert.Empty(ListOps.Concat(lists));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Concatenate_a_list_of_lists_list_of_lists()
     {
         var lists = new List<List<int>> { new List<int> { 1, 2 }, new List<int> { 3 }, new List<int>(), new List<int> { 4, 5, 6 } };
@@ -45,7 +45,7 @@ public class ListOpsTests
         Assert.Equal(expected, ListOps.Concat(lists));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Concatenate_a_list_of_lists_list_of_nested_lists()
     {
         var lists = new List<List<List<int>>> { new List<List<int>> { new List<int> { 1 }, new List<int> { 2 } }, new List<List<int>> { new List<int> { 3 } }, new List<List<int>> { new List<int>() }, new List<List<int>> { new List<int> { 4, 5, 6 } } };
@@ -53,7 +53,7 @@ public class ListOpsTests
         Assert.Equal(expected, ListOps.Concat(lists));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Filter_list_returning_only_values_that_satisfy_the_filter_function_empty_list()
     {
         var list = new List<int>();
@@ -61,7 +61,7 @@ public class ListOpsTests
         Assert.Empty(ListOps.Filter(list, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Filter_list_returning_only_values_that_satisfy_the_filter_function_non_empty_list()
     {
         var list = new List<int> { 1, 2, 3, 5 };
@@ -70,21 +70,21 @@ public class ListOpsTests
         Assert.Equal(expected, ListOps.Filter(list, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Returns_the_length_of_a_list_empty_list()
     {
         var list = new List<int>();
         Assert.Equal(0, ListOps.Length(list));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Returns_the_length_of_a_list_non_empty_list()
     {
         var list = new List<int> { 1, 2, 3, 4 };
         Assert.Equal(4, ListOps.Length(list));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Return_a_list_of_elements_whose_values_equal_the_list_value_transformed_by_the_mapping_function_empty_list()
     {
         var list = new List<int>();
@@ -92,7 +92,7 @@ public class ListOpsTests
         Assert.Empty(ListOps.Map(list, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Return_a_list_of_elements_whose_values_equal_the_list_value_transformed_by_the_mapping_function_non_empty_list()
     {
         var list = new List<int> { 1, 3, 5, 7 };
@@ -101,7 +101,7 @@ public class ListOpsTests
         Assert.Equal(expected, ListOps.Map(list, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Folds_reduces_the_given_list_from_the_left_with_a_function_empty_list()
     {
         var list = new List<int>();
@@ -110,7 +110,7 @@ public class ListOpsTests
         Assert.Equal(2, ListOps.Foldl(list, initial, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Folds_reduces_the_given_list_from_the_left_with_a_function_direction_independent_function_applied_to_non_empty_list()
     {
         var list = new List<int> { 1, 2, 3, 4 };
@@ -119,7 +119,7 @@ public class ListOpsTests
         Assert.Equal(15, ListOps.Foldl(list, initial, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Folds_reduces_the_given_list_from_the_left_with_a_function_direction_dependent_function_applied_to_non_empty_list()
     {
         var list = new List<int> { 2, 5 };
@@ -128,7 +128,7 @@ public class ListOpsTests
         Assert.Equal(0, ListOps.Foldl(list, initial, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Folds_reduces_the_given_list_from_the_right_with_a_function_empty_list()
     {
         var list = new List<int>();
@@ -137,7 +137,7 @@ public class ListOpsTests
         Assert.Equal(2, ListOps.Foldr(list, initial, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Folds_reduces_the_given_list_from_the_right_with_a_function_direction_independent_function_applied_to_non_empty_list()
     {
         var list = new List<int> { 1, 2, 3, 4 };
@@ -146,7 +146,7 @@ public class ListOpsTests
         Assert.Equal(15, ListOps.Foldr(list, initial, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Folds_reduces_the_given_list_from_the_right_with_a_function_direction_dependent_function_applied_to_non_empty_list()
     {
         var list = new List<int> { 2, 5 };
@@ -155,14 +155,14 @@ public class ListOpsTests
         Assert.Equal(2, ListOps.Foldr(list, initial, function));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Reverse_the_elements_of_the_list_empty_list()
     {
         var list = new List<int>();
         Assert.Empty(ListOps.Reverse(list));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Reverse_the_elements_of_the_list_non_empty_list()
     {
         var list = new List<int> { 1, 3, 5, 7 };
@@ -170,7 +170,7 @@ public class ListOpsTests
         Assert.Equal(expected, ListOps.Reverse(list));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Reverse_the_elements_of_the_list_list_of_lists_is_not_flattened()
     {
         var list = new List<List<int>> { new List<int> { 1, 2 }, new List<int> { 3 }, new List<int>(), new List<int> { 4, 5, 6 } };

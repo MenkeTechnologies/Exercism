@@ -12,7 +12,7 @@ public class ReactTests
         Assert.Equal(10, input.Value);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void An_input_cells_value_can_be_set()
     {
         var sut = new Reactor();
@@ -21,7 +21,7 @@ public class ReactTests
         Assert.Equal(20, input.Value);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Compute_cells_calculate_initial_value()
     {
         var sut = new Reactor();
@@ -30,7 +30,7 @@ public class ReactTests
         Assert.Equal(2, output.Value);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Compute_cells_take_inputs_in_the_right_order()
     {
         var sut = new Reactor();
@@ -40,7 +40,7 @@ public class ReactTests
         Assert.Equal(21, output.Value);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Compute_cells_update_value_when_dependencies_are_changed()
     {
         var sut = new Reactor();
@@ -50,7 +50,7 @@ public class ReactTests
         Assert.Equal(4, output.Value);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Compute_cells_can_depend_on_other_compute_cells()
     {
         var sut = new Reactor();
@@ -63,7 +63,7 @@ public class ReactTests
         Assert.Equal(96, output.Value);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Compute_cells_fire_callbacks()
     {
         var sut = new Reactor();
@@ -76,7 +76,7 @@ public class ReactTests
         Fake.ClearRecordedCalls(callback1);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Callback_cells_only_fire_on_change()
     {
         var sut = new Reactor();
@@ -91,7 +91,7 @@ public class ReactTests
         Fake.ClearRecordedCalls(callback1);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Callbacks_do_not_report_already_reported_values()
     {
         var sut = new Reactor();
@@ -107,7 +107,7 @@ public class ReactTests
         Fake.ClearRecordedCalls(callback1);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Callbacks_can_fire_from_multiple_cells()
     {
         var sut = new Reactor();
@@ -125,7 +125,7 @@ public class ReactTests
         Fake.ClearRecordedCalls(callback2);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Callbacks_can_be_added_and_removed()
     {
         var sut = new Reactor();
@@ -147,7 +147,7 @@ public class ReactTests
         A.CallTo(() => callback1.Invoke(A<object>._, A<int>._)).MustNotHaveHappened();
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Removing_a_callback_multiple_times_doesnt_interfere_with_other_callbacks()
     {
         var sut = new Reactor();
@@ -164,7 +164,7 @@ public class ReactTests
         A.CallTo(() => callback1.Invoke(A<object>._, A<int>._)).MustNotHaveHappened();
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Callbacks_should_only_be_called_once_even_if_multiple_dependencies_change()
     {
         var sut = new Reactor();
@@ -180,7 +180,7 @@ public class ReactTests
         Fake.ClearRecordedCalls(callback1);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Callbacks_should_not_be_called_if_dependencies_change_but_output_value_doesnt_change()
     {
         var sut = new Reactor();

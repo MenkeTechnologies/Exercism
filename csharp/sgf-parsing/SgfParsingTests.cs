@@ -11,21 +11,21 @@ public class SgfParsingTests
         Assert.Throws<ArgumentException>(() => SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Tree_with_no_nodes()
     {
         var encoded = "()";
         Assert.Throws<ArgumentException>(() => SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Node_without_tree()
     {
         var encoded = ";";
         Assert.Throws<ArgumentException>(() => SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Node_without_properties()
     {
         var encoded = "(;)";
@@ -33,7 +33,7 @@ public class SgfParsingTests
         Assert.Equal(expected, SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Single_node_tree()
     {
         var encoded = "(;A[B])";
@@ -41,7 +41,7 @@ public class SgfParsingTests
         Assert.Equal(expected, SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Multiple_properties()
     {
         var encoded = "(;A[b]C[d])";
@@ -49,28 +49,28 @@ public class SgfParsingTests
         Assert.Equal(expected, SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Properties_without_delimiter()
     {
         var encoded = "(;A)";
         Assert.Throws<ArgumentException>(() => SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void All_lowercase_property()
     {
         var encoded = "(;a[b])";
         Assert.Throws<ArgumentException>(() => SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Upper_and_lowercase_property()
     {
         var encoded = "(;Aa[b])";
         Assert.Throws<ArgumentException>(() => SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Two_nodes()
     {
         var encoded = "(;A[B];B[C])";
@@ -78,7 +78,7 @@ public class SgfParsingTests
         Assert.Equal(expected, SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Two_child_trees()
     {
         var encoded = "(;A[B](;B[C])(;C[D]))";
@@ -86,7 +86,7 @@ public class SgfParsingTests
         Assert.Equal(expected, SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Multiple_property_values()
     {
         var encoded = "(;A[b][c][d])";
@@ -94,7 +94,7 @@ public class SgfParsingTests
         Assert.Equal(expected, SgfParser.ParseTree(encoded));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Escaped_property()
     {
         var encoded = "(;A[\\]b\\nc\\nd\\t\\te \\n\\]])";

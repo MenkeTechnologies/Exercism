@@ -15,7 +15,7 @@ public class DiffieHellmanTests
         }
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Private_key_is_random()
     {
         var p = new BigInteger(7919);
@@ -23,7 +23,7 @@ public class DiffieHellmanTests
         Assert.Equal(privateKeys.Distinct().Count(), privateKeys.Length);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Can_calculate_public_key_using_private_key()
     {
         var p = new BigInteger(23);
@@ -32,7 +32,7 @@ public class DiffieHellmanTests
         Assert.Equal(new BigInteger(8), DiffieHellman.PublicKey(p, g, privateKey));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Can_calculate_secret_using_other_partys_public_key()
     {
         var p = new BigInteger(23);
@@ -41,7 +41,7 @@ public class DiffieHellmanTests
         Assert.Equal(new BigInteger(2), DiffieHellman.Secret(p, theirPublicKey, myPrivateKey));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Key_exchange()
     {
         var p = new BigInteger(23);

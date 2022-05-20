@@ -13,7 +13,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void A_win_is_three_points_a_loss_is_zero_points()
     {
         var rows = "Allegoric Alaskans;Blithering Badgers;win";
@@ -24,7 +24,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void A_win_can_also_be_expressed_as_a_loss()
     {
         var rows = "Blithering Badgers;Allegoric Alaskans;loss";
@@ -35,7 +35,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void A_different_team_can_win()
     {
         var rows = "Blithering Badgers;Allegoric Alaskans;win";
@@ -46,7 +46,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void A_draw_is_one_point_each()
     {
         var rows = "Allegoric Alaskans;Blithering Badgers;draw";
@@ -57,7 +57,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void There_can_be_more_than_one_match()
     {
         var rows = 
@@ -70,7 +70,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void There_can_be_more_than_one_winner()
     {
         var rows = 
@@ -83,7 +83,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void There_can_be_more_than_two_teams()
     {
         var rows = 
@@ -98,7 +98,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Typical_input()
     {
         var rows = 
@@ -117,7 +117,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Incomplete_competition_not_all_pairs_have_played_()
     {
         var rows = 
@@ -134,7 +134,7 @@ public class TournamentTests
         Assert.Equal(expected, RunTally(rows));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Ties_broken_alphabetically()
     {
         var rows = 

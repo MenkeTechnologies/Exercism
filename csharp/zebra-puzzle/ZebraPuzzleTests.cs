@@ -8,7 +8,7 @@ public class ZebraPuzzleTests
         Assert.Equal(Nationality.Norwegian, ZebraPuzzle.DrinksWater());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+    [Fact]
     public void Resident_who_owns_zebra()
     {
         Assert.Equal(Nationality.Japanese, ZebraPuzzle.OwnsZebra());
