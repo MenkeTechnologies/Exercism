@@ -1,3 +1,7 @@
 module WordCount
 
-let countWords phrase = failwith "You need to implement this function."
+open System.Text.RegularExpressions
+
+let countWords phrase =
+    Regex.Matches(phrase, @"\b['\w]+\b") |> Seq.map (fun m -> m.Value.ToLower())
+    |> Seq.countBy id |> Map.ofSeq
