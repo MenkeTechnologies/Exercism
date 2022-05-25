@@ -2,10 +2,14 @@ module GradeSchool
 
 type School = Map<int, string list>
 
-let empty: School = failwith "You need to implement this function."
+let empty: School = Map.empty
 
-let add (student: string) (grade: int) (school: School): School = failwith "You need to implement this function."
+let grade (number: int) (school: School) =
+    Map.tryFind number school
+    |> Option.defaultValue []
 
-let roster (school: School): string list = failwith "You need to implement this function."
+let add (student: string) (gradeNum: int) (school: School) : School =
+    Map.add gradeNum (student :: grade gradeNum school |> List.sort) school
 
-let grade (number: int) (school: School): string list = failwith "You need to implement this function."
+let roster (school: School) : string list =
+    Map.fold (fun acc _ l -> acc @ l) [] school
