@@ -8,5 +8,12 @@
 "
 
 function! Transform(scores) abort
-  " your code goes here
+    let r = {}
+    for [score, letters] in items(a:scores)
+        let score = str2nr(score)
+        for c in letters
+            let r[tolower(c)] = score
+        endfor
+    endfor
+    return r
 endfunction
