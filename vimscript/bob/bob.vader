@@ -121,7 +121,7 @@ Execute (ending with whitespace):
   AssertEqual expected, Response(heyBob)
 
 Execute (other whitespace):
-  let heyBob = "\n\r \t"
+    let heyBob = "\n\r \t"
   let expected = "Fine. Be that way!"
   AssertEqual expected, Response(heyBob)
 
