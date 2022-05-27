@@ -1,9 +1,17 @@
 module Clock
 
-let create hours minutes = failwith "You need to implement this function."
+let HR = 60
+let DAY = 24 * HR
 
-let add minutes clock = failwith "You need to implement this function."
+let create hours minutes =
+    let total = hours * HR + minutes
 
-let subtract minutes clock = failwith "You need to implement this function."
+    match total >= 0 with
+    | true -> total % DAY
+    | false -> DAY - (abs total % DAY)
 
-let display clock = failwith "You need to implement this function."
+let add minutes clock = create 0 (clock + minutes)
+
+let subtract minutes = add -minutes
+
+let display clock = $"%02i{clock / 60}:%02i{clock % 60}"
