@@ -1,24 +1,19 @@
-"
-" Determine if a triangle is equilateral, isosceles, or scalene.
-"
-" An equilateral triangle has all three sides the same length.
-"
-" An isosceles triangle has at least two sides the same length.
-" (It is sometimes specified as having exactly two sides the
-" same length, but for the purposes of this exercise we'll say
-" at least two.)
-"
-" A scalene triangle has all sides of different lengths.
-"
+function! Invalid(triangle) abort
+  let sides = sort(a:triangle)
+  return sides[0] == 0 || sides[1] == 0 || sides[2] == 0 || sides[0] + sides[1] < sides[2]
+endfunction
 
 function! Equilateral(triangle) abort
-  " your code goes here
+    if Invalid(a:triangle) | return 0 | endif
+    return len(uniq(a:triangle)) == 1
 endfunction
 
 function! Isosceles(triangle) abort
-  " your code goes here
+    if Invalid(a:triangle) | return 0 | endif
+    return len(uniq(a:triangle)) <= 2
 endfunction
 
 function! Scalene(triangle) abort
-  " your code goes here
+    if Invalid(a:triangle) | return 0 | endif
+    return len(uniq(a:triangle)) == 3
 endfunction
