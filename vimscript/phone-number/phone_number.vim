@@ -1,11 +1,7 @@
-"
-" Clean up user-entered phone numbers so that they can be sent SMS messages.
-"
-" Example:
-"
-"   :echo ToNANP('+1 (613)-995-0253')
-"   6139950253
-"
+let s:phone_regex = '\v^\s*(\+?1?\s*)?\(?([2-9]\d{2})\)?[-.[:space:]]*([2-9]\d{2})[-.[:space:]]*(\d{4})\s*$'
+
 function! ToNANP(number) abort
-  " your code goes here
+     return match(a:number, s:phone_regex) > -1
+        \ ? substitute(a:number, s:phone_regex, '\2\3\4', '')
+        \ : ''
 endfunction
