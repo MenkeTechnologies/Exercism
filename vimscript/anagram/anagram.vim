@@ -1,13 +1,14 @@
-"
-" Given a word and a list of possible anagrams, select the correct sublist.
-"
-" Example:
-"
-"   :echo FindAnagrams(['foo', 'bar', 'oof', 'Ofo'], 'foo')
-"   ['Ofo', 'oof']
-"
-function! FindAnagrams(candidates, subject) abort
+function! FindAnagrams(candidates, word) abort
+    let sorted = s:sorted(a:word)
+    let r = []
+    for cand in a:candidates
+        if cand !=? a:word && s:sorted(cand) ==# sorted
+            let r += [cand]
+        endif
+    endfor
+    return r
+endfunction
 
-  " your solution goes here
-
+function! s:sorted(word) abort
+	return sort(split(tolower(a:word), '\zs'))
 endfunction
