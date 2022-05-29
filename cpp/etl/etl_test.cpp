@@ -16,7 +16,6 @@ TEST_CASE("transforms_one_value")
     REQUIRE(expected == actual);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("transforms_more_values")
 {
     const std::map<int, std::vector<char>> old{{1, {'A', 'E', 'I', 'O', 'U'}}};
@@ -61,4 +60,3 @@ TEST_CASE("transforms_a_full_dataset")
     };
     REQUIRE(expected == actual);
 }
-#endif
