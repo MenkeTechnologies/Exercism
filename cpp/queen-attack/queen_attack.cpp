@@ -1,4 +1,5 @@
 #include "queen_attack.h"
+#include <stdexcept>
 
 using namespace std;
 namespace queen_attack {
