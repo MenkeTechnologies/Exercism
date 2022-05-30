@@ -2,7 +2,7 @@
 #define NTH_PRIME_H
 
 namespace nth_prime {
+    unsigned nth(unsigned);
+}
 
-}  // namespace nth_prime
-
-#endif // NTH_PRIME_H
+#endif
