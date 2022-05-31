@@ -8,4 +8,7 @@ typedef enum {
    ERROR = -1
 } kind;
 
+kind classify_number(int num);
+
+
 #endif
