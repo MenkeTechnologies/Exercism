@@ -13,8 +13,13 @@ const ROMAN_NUMERALS = [
   [4, 'IV'],
   [1, 'I']
 ];
-export const toRoman = int => {
-  if (int === 0) return '';
-  const [value, numeral] = ROMAN_NUMERALS.find(([value]) => value <= int);
-  return numeral + toRoman(int - value);
+export const toRoman = n => {
+  let acc = '';
+  while (n !== 0) {
+    const [value, numeral] = ROMAN_NUMERALS.find(([k]) => k <= n);
+    acc += numeral;
+    n -= value;
+  }
+
+  return acc;
 };
