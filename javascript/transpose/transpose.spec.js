@@ -5,25 +5,25 @@ describe('Transpose', () => {
     expect(transpose([])).toEqual([]);
   });
 
-  xtest('two characters in a row', () => {
+  test('two characters in a row', () => {
     const input = ['A1'];
     const expected = ['A', '1'];
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('two characters in a column', () => {
+  test('two characters in a column', () => {
     const input = ['A', '1'];
     const expected = ['A1'];
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('simple', () => {
+  test('simple', () => {
     const input = ['ABC', '123'];
     const expected = ['A1', 'B2', 'C3'];
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('single line', () => {
+  test('single line', () => {
     const input = ['Single line.'];
     const expected = [
       'S',
@@ -42,7 +42,7 @@ describe('Transpose', () => {
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('first line longer than second line', () => {
+  test('first line longer than second line', () => {
     const input = ['The fourth line.', 'The fifth line.'];
     const expected = [
       'TT',
@@ -65,7 +65,7 @@ describe('Transpose', () => {
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('second line longer than first line', () => {
+  test('second line longer than first line', () => {
     const input = ['The first line.', 'The second line.'];
     const expected = [
       'TT',
@@ -88,13 +88,13 @@ describe('Transpose', () => {
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('square', () => {
+  test('square', () => {
     const input = ['HEART', 'EMBER', 'ABUSE', 'RESIN', 'TREND'];
     const expected = ['HEART', 'EMBER', 'ABUSE', 'RESIN', 'TREND'];
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('rectangle', () => {
+  test('rectangle', () => {
     const input = ['FRACTURE', 'OUTLINED', 'BLOOMING', 'SEPTETTE'];
     const expected = [
       'FOBS',
@@ -109,7 +109,7 @@ describe('Transpose', () => {
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('triangle', () => {
+  test('triangle', () => {
     const input = ['T', 'EE', 'AAA', 'SSSS', 'EEEEE', 'RRRRRR'];
     const expected = [
       'TEASER',
@@ -122,7 +122,7 @@ describe('Transpose', () => {
     expect(transpose(input)).toEqual(expected);
   });
 
-  xtest('many lines', () => {
+  test('many lines', () => {
     const input = [
       'Chor. Two households, both alike in dignity,',
       'In fair Verona, where we lay our scene,',

@@ -10,7 +10,7 @@ describe('partial Garden', () => {
     ])
   })
 
-  xtest('different garden with single student', () => {
+  test('different garden with single student', () => {
     expect(new Garden('VC\nRC').plants('Alice')).toEqual([
       'violets',
       'clover',
@@ -19,7 +19,7 @@ describe('partial Garden', () => {
     ])
   })
 
-  xtest('garden with two students', () => {
+  test('garden with two students', () => {
     expect(new Garden('VVCG\nVVRC').plants('Bob')).toEqual([
       'clover',
       'grass',
@@ -29,7 +29,7 @@ describe('partial Garden', () => {
   })
 
   describe('multiple students for the same garden with three students', () => {
-    xtest("second student's garden", () => {
+    test("second student's garden", () => {
       expect(new Garden('VVCCGG\nVVCCGG').plants('Bob')).toEqual([
         'clover',
         'clover',
@@ -38,7 +38,7 @@ describe('partial Garden', () => {
       ])
     })
 
-    xtest("third student's garden", () => {
+    test("third student's garden", () => {
       expect(new Garden('VVCCGG\nVVCCGG').plants('Charlie')).toEqual([
         'grass',
         'grass',
@@ -53,7 +53,7 @@ describe('full garden', () => {
   const diagram = 'VRCGVVRVCGGCCGVRGCVCGCGV\nVRCCCGCRRGVCGCRVVCVGCGCV'
   const garden = new Garden(diagram)
 
-  xtest("for Alice, first student's garden", () => {
+  test("for Alice, first student's garden", () => {
     expect(garden.plants('Alice')).toEqual([
       'violets',
       'radishes',
@@ -62,7 +62,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest("for Bob, second student's garden", () => {
+  test("for Bob, second student's garden", () => {
     expect(garden.plants('Bob')).toEqual([
       'clover',
       'grass',
@@ -71,7 +71,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest('for Charlie', () => {
+  test('for Charlie', () => {
     expect(garden.plants('Charlie')).toEqual([
       'violets',
       'violets',
@@ -80,7 +80,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest('for David', () => {
+  test('for David', () => {
     expect(garden.plants('David')).toEqual([
       'radishes',
       'violets',
@@ -89,7 +89,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest('for Eve', () => {
+  test('for Eve', () => {
     expect(garden.plants('Eve')).toEqual([
       'clover',
       'grass',
@@ -98,7 +98,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest('for Fred', () => {
+  test('for Fred', () => {
     expect(garden.plants('Fred')).toEqual([
       'grass',
       'clover',
@@ -107,7 +107,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest('for Ginny', () => {
+  test('for Ginny', () => {
     expect(garden.plants('Ginny')).toEqual([
       'clover',
       'grass',
@@ -116,7 +116,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest('for Harriet', () => {
+  test('for Harriet', () => {
     expect(garden.plants('Harriet')).toEqual([
       'violets',
       'radishes',
@@ -125,7 +125,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest('for Ileana', () => {
+  test('for Ileana', () => {
     expect(garden.plants('Ileana')).toEqual([
       'grass',
       'clover',
@@ -134,7 +134,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest('for Joseph', () => {
+  test('for Joseph', () => {
     expect(garden.plants('Joseph')).toEqual([
       'violets',
       'clover',
@@ -143,7 +143,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest("for Kincaid, second to last student's garden", () => {
+  test("for Kincaid, second to last student's garden", () => {
     expect(garden.plants('Kincaid')).toEqual([
       'grass',
       'clover',
@@ -152,7 +152,7 @@ describe('full garden', () => {
     ])
   })
 
-  xtest("for Larry, last student's garden", () => {
+  test("for Larry, last student's garden", () => {
     expect(garden.plants('Larry')).toEqual([
       'grass',
       'violets',
@@ -167,7 +167,7 @@ describe('disordered class', () => {
   const students = ['Samantha', 'Patricia', 'Xander', 'Roger']
   const garden = new Garden(diagram, students)
 
-  xtest('for Patricia', () => {
+  test('for Patricia', () => {
     expect(garden.plants('Patricia')).toEqual([
       'violets',
       'clover',
@@ -176,7 +176,7 @@ describe('disordered class', () => {
     ])
   })
 
-  xtest('for Roger', () => {
+  test('for Roger', () => {
     expect(garden.plants('Roger')).toEqual([
       'radishes',
       'radishes',
@@ -185,7 +185,7 @@ describe('disordered class', () => {
     ])
   })
 
-  xtest('for Samantha', () => {
+  test('for Samantha', () => {
     expect(garden.plants('Samantha')).toEqual([
       'grass',
       'violets',
@@ -194,7 +194,7 @@ describe('disordered class', () => {
     ])
   })
 
-  xtest('for Xander', () => {
+  test('for Xander', () => {
     expect(garden.plants('Xander')).toEqual([
       'radishes',
       'grass',
@@ -209,7 +209,7 @@ describe('Two gardens, different students', () => {
   const garden1 = new Garden(diagram, ['Alice', 'Bob', 'Charlie', 'Dan'])
   const garden2 = new Garden(diagram, ['Bob', 'Charlie', 'Dan', 'Erin'])
 
-  xtest('Bob and Charlie for each garden', () => {
+  test('Bob and Charlie for each garden', () => {
     expect(garden1.plants('Bob')).toEqual([
       'radishes',
       'radishes',
