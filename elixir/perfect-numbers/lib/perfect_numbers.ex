@@ -1,15 +1,21 @@
 defmodule PerfectNumbers do
-  @doc """
-  Determine the aliquot sum of the given `number`, by summing all the factors
-  of `number`, aside from `number` itself.
+  def classify(n) do
+    cond do
+      n < 1 -> {:error, "Classification is only possible for natural numbers."}
+      n == 1 -> {:ok, :deficient}
+      true -> 1..div(n, 2)
+              |> Stream.filter(&(rem(n, &1) === 0))
+              |> Enum.to_list()
+              |> Enum.sum
+              |> classifier(n)
+    end
+  end
 
-  Based on this sum, classify the number as:
-
-  :perfect if the aliquot sum is equal to `number`
-  :abundant if the aliquot sum is greater than `number`
-  :deficient if the aliquot sum is less than `number`
-  """
-  @spec classify(number :: integer) :: {:ok, atom} | {:error, String.t()}
-  def classify(number) do
+  defp classifier(acc, n) do
+    cond do
+      acc == n -> {:ok, :perfect}
+      acc < n -> {:ok, :deficient}
+      true -> {:ok, :abundant}
+    end
   end
 end
