@@ -1,42 +1,53 @@
-//
-// This is only a SKELETON file for the 'D&D Character' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const abilityModifier = () => {
-  throw new Error('Remove this statement and implement this function');
+export const abilityModifier = (num) => {
+  if (num >= 3 && num <= 18) {
+    return Math.floor((num - 10) / 2);
+  } else if (num < 3) {
+    throw new Error('Ability scores must be at least 3');
+  } else if (num > 18) {
+    throw new Error('Ability scores can be at most 18');
+  }
 };
 
 export class Character {
-  static rollAbility() {
-    throw new Error('Remove this statement and implement this function');
+  static rollAbility = () =>
+    [...Array(4).keys()].map(_ => Math.floor(Math.random() * 6 + 1))
+      .sort().slice(1).reduce((acc, n) => acc + n);
+
+  constructor() {
+    this._str = Character.rollAbility();
+    this._dex = Character.rollAbility();
+    this._con = Character.rollAbility();
+    this._int = Character.rollAbility();
+    this._wis = Character.rollAbility();
+    this._cha = Character.rollAbility();
+    this._hit = 10 + abilityModifier(this._con);
   }
 
   get strength() {
-    throw new Error('Remove this statement and implement this function');
+    return this._str;
   }
 
   get dexterity() {
-    throw new Error('Remove this statement and implement this function');
+    return this._dex;
   }
 
   get constitution() {
-    throw new Error('Remove this statement and implement this function');
+    return this._con;
   }
 
   get intelligence() {
-    throw new Error('Remove this statement and implement this function');
+    return this._int;
   }
 
   get wisdom() {
-    throw new Error('Remove this statement and implement this function');
+    return this._wis;
   }
 
   get charisma() {
-    throw new Error('Remove this statement and implement this function');
+    return this._cha;
   }
 
   get hitpoints() {
-    throw new Error('Remove this statement and implement this function');
+    return this._hit;
   }
 }
