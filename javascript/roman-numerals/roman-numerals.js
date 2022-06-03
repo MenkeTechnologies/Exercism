@@ -15,10 +15,9 @@ const ROMAN_NUMERALS = [
 ];
 export const toRoman = n => {
   let acc = '';
-  while (n !== 0) {
-    const [value, numeral] = ROMAN_NUMERALS.find(([k]) => k <= n);
-    acc += numeral;
-    n -= value;
+  for (const [val, s] of ROMAN_NUMERALS) {
+    acc += s.repeat(n / val)
+    n %= val;
   }
 
   return acc;
