@@ -1,13 +1,7 @@
 defmodule RnaTranscription do
-  @doc """
-  Transcribes a character list representing DNA nucleotides to RNA
+  @transcriptions %{?A => ?U, ?C => ?G, ?T => ?A, ?G => ?C}
 
-  ## Examples
-
-  iex> RnaTranscription.to_rna('ACTG')
-  'UGAC'
-  """
-  @spec to_rna([char]) :: [char]
   def to_rna(dna) do
+    Enum.map dna, &(@transcriptions[&1])
   end
 end
