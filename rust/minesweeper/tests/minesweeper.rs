@@ -28,7 +28,7 @@ fn no_rows() {
 }
 
 #[test]
-#[ignore]
+
 fn no_columns() {
     #[rustfmt::skip]
     run_test(&[
@@ -37,7 +37,7 @@ fn no_columns() {
 }
 
 #[test]
-#[ignore]
+
 fn no_mines() {
     #[rustfmt::skip]
     run_test(&[
@@ -48,7 +48,7 @@ fn no_mines() {
 }
 
 #[test]
-#[ignore]
+
 fn board_with_only_mines() {
     #[rustfmt::skip]
     run_test(&[
@@ -59,7 +59,7 @@ fn board_with_only_mines() {
 }
 
 #[test]
-#[ignore]
+
 fn mine_surrounded_by_spaces() {
     #[rustfmt::skip]
     run_test(&[
@@ -70,7 +70,7 @@ fn mine_surrounded_by_spaces() {
 }
 
 #[test]
-#[ignore]
+
 fn space_surrounded_by_mines() {
     #[rustfmt::skip]
     run_test(&[
@@ -81,7 +81,7 @@ fn space_surrounded_by_mines() {
 }
 
 #[test]
-#[ignore]
+
 fn horizontal_line() {
     #[rustfmt::skip]
     run_test(&[
@@ -90,7 +90,7 @@ fn horizontal_line() {
 }
 
 #[test]
-#[ignore]
+
 fn horizontal_line_mines_at_edges() {
     #[rustfmt::skip]
     run_test(&[
@@ -99,7 +99,7 @@ fn horizontal_line_mines_at_edges() {
 }
 
 #[test]
-#[ignore]
+
 fn vertical_line() {
     #[rustfmt::skip]
     run_test(&[
@@ -112,7 +112,7 @@ fn vertical_line() {
 }
 
 #[test]
-#[ignore]
+
 fn vertical_line_mines_at_edges() {
     #[rustfmt::skip]
     run_test(&[
@@ -125,7 +125,7 @@ fn vertical_line_mines_at_edges() {
 }
 
 #[test]
-#[ignore]
+
 fn cross() {
     #[rustfmt::skip]
     run_test(&[
@@ -138,7 +138,7 @@ fn cross() {
 }
 
 #[test]
-#[ignore]
+
 fn large_board() {
     #[rustfmt::skip]
     run_test(&[

@@ -12,7 +12,7 @@ fn func_single() {
 }
 
 #[test]
-#[ignore]
+
 fn func_multi() {
     let input = vec![2, 3, 4, 5];
     let expected = vec![4, 9, 16, 25];
@@ -20,7 +20,7 @@ fn func_multi() {
 }
 
 #[test]
-#[ignore]
+
 fn closure() {
     let input = vec![2, 3, 4, 5];
     let expected = vec![4, 9, 16, 25];
@@ -28,7 +28,7 @@ fn closure() {
 }
 
 #[test]
-#[ignore]
+
 fn closure_floats() {
     let input = vec![2.0, 3.0, 4.0, 5.0];
     let expected = vec![4.0, 9.0, 16.0, 25.0];
@@ -36,7 +36,7 @@ fn closure_floats() {
 }
 
 #[test]
-#[ignore]
+
 fn strings() {
     let input = vec!["1".to_string(), "2".into(), "3".into()];
     let expected = vec!["11".to_string(), "22".into(), "33".into()];
@@ -44,7 +44,7 @@ fn strings() {
 }
 
 #[test]
-#[ignore]
+
 fn change_in_type() {
     let input: Vec<&str> = vec!["1", "2", "3"];
     let expected: Vec<String> = vec!["1".into(), "2".into(), "3".into()];
@@ -52,7 +52,7 @@ fn change_in_type() {
 }
 
 #[test]
-#[ignore]
+
 fn mutating_closure() {
     let mut counter = 0;
     let input = vec![-2, 3, 4, -5];
@@ -66,7 +66,7 @@ fn mutating_closure() {
 }
 
 #[test]
-#[ignore]
+
 fn minimal_bounds_on_input_and_output() {
     // must be able to accept arbitrary input and output types
     struct Foo;

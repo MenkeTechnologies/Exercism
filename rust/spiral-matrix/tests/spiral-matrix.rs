@@ -7,20 +7,20 @@ fn empty_spiral() {
 }
 
 #[test]
-#[ignore]
+
 fn size_one_spiral() {
     let expected: Vec<Vec<u32>> = vec![vec![1]];
     assert_eq!(spiral_matrix(1), expected);
 }
 #[test]
-#[ignore]
+
 fn size_two_spiral() {
     let expected: Vec<Vec<u32>> = vec![vec![1, 2], vec![4, 3]];
     assert_eq!(spiral_matrix(2), expected);
 }
 
 #[test]
-#[ignore]
+
 fn size_three_spiral() {
     #[rustfmt::skip]
     let expected: Vec<Vec<u32>> = vec![
@@ -31,7 +31,7 @@ fn size_three_spiral() {
     assert_eq!(spiral_matrix(3), expected);
 }
 #[test]
-#[ignore]
+
 fn size_four_spiral() {
     let expected: Vec<Vec<u32>> = vec![
         vec![1, 2, 3, 4],
@@ -42,7 +42,7 @@ fn size_four_spiral() {
     assert_eq!(spiral_matrix(4), expected);
 }
 #[test]
-#[ignore]
+
 fn size_five_spiral() {
     let expected: Vec<Vec<u32>> = vec![
         vec![1, 2, 3, 4, 5],
