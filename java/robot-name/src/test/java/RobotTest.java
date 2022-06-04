@@ -22,13 +22,13 @@ public class RobotTest {
         assertIsValidName(robot.getName());
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void differentRobotsHaveDifferentNames() {
         assertThat(robot.getName()).isNotEqualTo(new Robot().getName());
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void resetName() {
         final String name = robot.getName();
@@ -38,7 +38,7 @@ public class RobotTest {
         assertIsValidName(name2);
     }
     
-    @Ignore("Remove to run test")
+    
     @Test
     public void robotNamesAreUnique() {
         Set<String> robotNames = new HashSet<>();

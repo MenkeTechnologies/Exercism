@@ -42,7 +42,7 @@ public class HangmanTest {
         assertThat(init.status).isEqualTo(Status.PLAYING);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void firstGuess() {
         Observable<Output> result = hangman.play(
@@ -57,7 +57,7 @@ public class HangmanTest {
         assertThat(last.status).isEqualTo(Status.PLAYING);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void firstMiss() {
         Observable<Output> result = hangman.play(
@@ -72,7 +72,7 @@ public class HangmanTest {
         assertThat(last.status).isEqualTo(Status.PLAYING);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void gameInProgress() {
         Observable<Output> result = hangman.play(
@@ -87,7 +87,7 @@ public class HangmanTest {
         assertThat(last.status).isEqualTo(Status.PLAYING);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void wonGame() {
         Observable<Output> result = hangman.play(
@@ -100,7 +100,7 @@ public class HangmanTest {
         assertThat(last.status).isEqualTo(Status.WIN);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void lostGame() {
         Observable<Output> result = hangman.play(
@@ -121,7 +121,7 @@ public class HangmanTest {
         );
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void consecutiveGames() {
         // This test setup is more complex because we have to order the emission of values in the
@@ -192,7 +192,7 @@ public class HangmanTest {
             });
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void cannotPlayAGuessTwice() {
         Observable<Output> result = hangman.play(
@@ -204,7 +204,7 @@ public class HangmanTest {
             .hasMessageContaining("Letter c was already played");
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void cannotPlayAMissTwice() {
         Observable<Output> result = hangman.play(

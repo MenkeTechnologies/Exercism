@@ -1,10 +1,39 @@
-/*
+import java.util.LinkedHashMap;
+import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+public class RomanNumerals {
+    private final static Map<Integer, String> map = new LinkedHashMap<>();
 
-Please remove this comment when submitting your solution.
+    static {
+        map.put(1000, "M");
+        map.put(900, "CM");
+        map.put(500, "D");
+        map.put(400, "CD");
+        map.put(100, "C");
+        map.put(90, "XC");
+        map.put(50, "L");
+        map.put(40, "XL");
+        map.put(10, "X");
+        map.put(9, "IX");
+        map.put(5, "V");
+        map.put(4, "IV");
+        map.put(1, "I");
+    }
 
-*/
+    private String s;
+
+    public RomanNumerals(int num) {
+        final AtomicInteger n = new AtomicInteger(num);
+        s = map.entrySet().stream().map(e -> {
+            String s = e.getValue().repeat(n.get() / e.getKey());
+            n.set(n.get() % e.getKey());
+            return s;
+        }).collect(Collectors.joining());
+    }
+
+    public String getRomanNumeral() {
+        return s;
+    }
+}
