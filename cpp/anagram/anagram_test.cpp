@@ -19,7 +19,6 @@ TEST_CASE("no_matches")
     REQUIRE(expected == matches);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("detects_two_anagrams")
 {
     auto subject = anagram::anagram("master");
@@ -143,4 +142,3 @@ TEST_CASE("words_other_than_themselves_can_be_anagrams")
 
     REQUIRE(expected == matches);
 }
-#endif
