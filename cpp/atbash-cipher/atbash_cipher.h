@@ -1,8 +1,15 @@
 #if !defined(ATBASH_CIPHER_H)
 #define ATBASH_CIPHER_H
 
+#include <string>
+#include <regex>
+#include <cctype>
+
+using namespace std;
 namespace atbash_cipher {
 
-}  // namespace atbash_cipher
+    string encode(string);
 
-#endif // ATBASH_CIPHER_H
+    string decode(string);
+}
+#endif
