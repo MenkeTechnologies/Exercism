@@ -18,8 +18,9 @@ namespace luhn {
         if (digits.size() < 2) {
             return false;
         }
+
         reverse(digits.begin(), digits.end());
-        
+
         int cnt = 0;
         int sum = 0;
         for (int digit: digits) {
