@@ -1,10 +1,27 @@
 unit class Clock;
 
-has $.hour;
-has $.minute;
+has $.hour is rw;
+has $.minute is rw;
 
-method time {!!!}
+method time {
+    while $.minute >= 60 {
+        $.minute -= 60;
+        ++$.hour;
+    }
 
-method add-minutes ($amount) {!!!}
+     while $.minute < 0 {
+        $.minute += 60;
+        --$.hour;
+    }
 
-method subtract-minutes ($amount) {!!!}
+    ($.hour % 24, $.minute % 60).fmt("%02d", ":")
+}
+
+method add-minutes ($amount) {
+    $.minute += $amount;
+    self
+}
+method subtract-minutes ($amount) {
+    $.minute -= $amount;
+    self
+}
