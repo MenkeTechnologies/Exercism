@@ -10,7 +10,11 @@ ENDCLASS.
 CLASS zcl_two_fer IMPLEMENTATION.
 
   METHOD two_fer.
-* add solution here
+   DATA(name) = input.
+    IF name IS INITIAL.
+      name = 'you'.
+    ENDIF.
+    result = |One for { name }, one for me.|.
   ENDMETHOD.
 
 ENDCLASS.
