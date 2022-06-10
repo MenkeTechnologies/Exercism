@@ -30,28 +30,35 @@ CLASS zcl_high_scores DEFINITION
 
 ENDCLASS.
 
-
 CLASS zcl_high_scores IMPLEMENTATION.
-
   METHOD constructor.
-    me->scores_list = scores.
+    scores_list = scores.
   ENDMETHOD.
 
   METHOD list_scores.
-    " add solution here
+    result = scores_list.
   ENDMETHOD.
 
   METHOD latest.
-    " add solution here
+    result = scores_list[ lines( scores_list ) ].
   ENDMETHOD.
 
   METHOD personalbest.
-    " add solution here
+    LOOP AT scores_list ASSIGNING FIELD-SYMBOL(<score>).
+      IF <score> > result.
+        result = <score>.
+      ENDIF.
+    ENDLOOP.
   ENDMETHOD.
 
   METHOD personaltopthree.
-    " add solution here
+    DATA(scores) = scores_list.
+    SORT scores BY table_line DESCENDING.
+    LOOP AT scores ASSIGNING FIELD-SYMBOL(<score>).
+      IF sy-tabix > 3.
+        EXIT.
+      ENDIF.
+      APPEND <score> TO result.
+    ENDLOOP.
   ENDMETHOD.
-
-
 ENDCLASS.
