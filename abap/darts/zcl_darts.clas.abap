@@ -18,7 +18,11 @@ ENDCLASS.
 
 CLASS zcl_darts IMPLEMENTATION.
   METHOD score.
-    " add solution here
+    result = cond #( let d = sqrt( x ** 2 + y ** 2 ) in
+                     when d > 10 then 0
+                     when d > 5 then 1
+                     when d > 1 then 5
+                     else 10 ).
   ENDMETHOD.
 
 
