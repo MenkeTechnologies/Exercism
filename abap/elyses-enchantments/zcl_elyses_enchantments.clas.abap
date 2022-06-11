@@ -55,49 +55,52 @@ CLASS zcl_elyses_enchantments DEFINITION
 
   PROTECTED SECTION.
   PRIVATE SECTION.
+    METHODS insert_item
+      importing stack         type ty_stack
+                new_card      type i
+                position      type i
+      returning value(result) type ty_stack.
 ENDCLASS.
 
 
 
 CLASS zcl_elyses_enchantments IMPLEMENTATION.
 
-  METHOD get_item.
-    "Implement solution here
-  ENDMETHOD.
+  method get_item.
+    result = stack[ position ].
+  endmethod.
+  method set_item.
+    result = stack.
+    modify result index position from replacement.
+  endmethod.
+  method insert_item_at_top.
+    result = insert_item(
+                 stack    = stack
+                 new_card = new_card
+                 position = lines( stack ) + 1 ).
+  endmethod.
+  method get_size_of_stack.
+    result = lines( stack ).
+  endmethod.
+  method insert_item_at_bottom.
+    result = insert_item(
+                 stack    = stack
+                 new_card = new_card
+                 position = 1 ).
+  endmethod.
+  method remove_item.
+    result = stack.
+    delete result index position.
+  endmethod.
+  method remove_item_from_bottom.
+    result = remove_item( stack = stack position = 1 ).
+  endmethod.
+  method remove_item_from_top.
+    result = remove_item( stack = stack position = lines( stack ) ).
+  endmethod.
+  method insert_item.
+    result = stack.
+    insert new_card into result index position.
+  endmethod.
 
-
-  METHOD set_item.
-    "Implement solution here
-  ENDMETHOD.
-
-
-  METHOD insert_item_at_top.
-    "Implement solution here
-  ENDMETHOD.
-
-
-  METHOD get_size_of_stack.
-    "Implement solution here
-  ENDMETHOD.
-
-
-  METHOD insert_item_at_bottom.
-    "Implement solution here
-  ENDMETHOD.
-
-
-  METHOD remove_item.
-    "Implement solution here
-  ENDMETHOD.
-
-
-  METHOD remove_item_from_bottom.
-    "Implement solution here
-  ENDMETHOD.
-
-
-  METHOD remove_item_from_top.
-    "Implement solution here
-  ENDMETHOD.
-
-ENDCLASS.
+endclass.
