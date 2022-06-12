@@ -10,7 +10,6 @@ TEST_CASE("hex_1_is_decimal_1")
     REQUIRE(0x1 == hexadecimal::convert("1"));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("hex_c_is_decimal_12")
 {
     REQUIRE(0xc == hexadecimal::convert("c"));
@@ -55,4 +54,3 @@ TEST_CASE("yellow")
 {
     REQUIRE(0xffff00 == hexadecimal::convert("ffff00"));
 }
-#endif
