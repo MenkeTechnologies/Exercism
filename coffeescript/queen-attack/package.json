@@ -1,0 +1,18 @@
+{
+  "name": "queen-attack",
+  "version": "1.0.0",
+  "description": "Welcome to Queen Attack on Exercism's CoffeeScript Track. If you need help running the tests or submitting your code, check out `HELP.md`.",
+  "main": "queen-attack.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jasmine": "^4.0.3",
+    "coffeescript": "^2.7.0",
+    "jasmine": "^4.2.0",
+    "jasmine-node": "^3.0.0"
+  }
+}
