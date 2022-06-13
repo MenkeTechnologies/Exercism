@@ -4,9 +4,9 @@
 
   QueenAttack = class QueenAttack {
     constructor(positions) {
-      this.white = positions['white'] || [0, 3];
-      this.black = positions['black'] || [7, 3];
-      if (this.white === this.black) {
+      this.white = positions && positions['white'] || [0, 3];
+      this.black = positions && positions['black'] || [7, 3];
+      if (this.white[0] === this.black[0] && this.white[1] === this.black[1]) {
         throw "Queens cannot share the same space";
       }
     }
@@ -21,7 +21,7 @@
             var j, results1;
             results1 = [];
             for (_ = j = 0; j < 8; _ = ++j) {
-              results1.push('O');
+              results1.push('_');
             }
             return results1;
           })());
