@@ -9,7 +9,7 @@ To get started with TDD, see the `README.md` file in your
 class Triangle
   def initialize (ary)
     ary.sort!
-    @valid = ary.all? { _1.positive? } && ary[0] + ary[1] >= ary[2]
+    @valid = ary[0].positive? && ary[0] + ary[1] >= ary[2]
     @set = ary.to_set
   end
 
