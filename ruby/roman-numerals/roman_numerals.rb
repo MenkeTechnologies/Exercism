@@ -21,7 +21,7 @@ class Integer
 end
 
 def from_roman(s)
-  s.scan(/(C(?:M|D|)|M|D|X(?:C|L|)|C|L|I(?:X|V|)|V)/).map { Integer.letter_to_val[_1.first] }.sum
+  s.scan(/(C(?:M|D|)|M|D|X(?:C|L)|C|L|I(?:X|V)|X|V|I)/).map { Integer.letter_to_val[_1.first] }.sum
 end
 
 puts from_roman("MCMXI")
