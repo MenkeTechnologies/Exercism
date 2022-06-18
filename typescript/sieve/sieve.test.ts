@@ -6,22 +6,22 @@ describe('Sieve', () => {
     expect(primes(1)).toEqual(expected)
   })
 
-  xit('find first prime', () => {
+  it('find first prime', () => {
     const expected = [2]
     expect(primes(2)).toEqual(expected)
   })
 
-  xit('find primes up to 10', () => {
+  it('find primes up to 10', () => {
     const expected = [2, 3, 5, 7]
     expect(primes(10)).toEqual(expected)
   })
 
-  xit('limit is prime', () => {
+  it('limit is prime', () => {
     const expected = [2, 3, 5, 7, 11, 13]
     expect(primes(13)).toEqual(expected)
   })
 
-  xit('find primes up to 1000', () => {
+  it('find primes up to 1000', () => {
     const expected: number[] = [
       2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67,
       71, 73, 79, 83, 89, 97, 101, 103, 107, 109, 113, 127, 131, 137, 139, 149,

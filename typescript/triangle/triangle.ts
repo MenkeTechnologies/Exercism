@@ -7,7 +7,7 @@ export class Triangle {
     this.set = new Set(sides);
   }
 
-  valid = () => this.sorted.every(s => s > 0) && this.sorted[0] + this.sorted[1] >= this.sorted[2]
+  valid = () => this.sorted[0] > 0 && this.sorted[0] + this.sorted[1] >= this.sorted[2]
 
   get isEquilateral() {
     return this.valid() && this.set.size === 1

@@ -5,57 +5,57 @@ describe('say', () => {
     expect(sayInEnglish(0)).toBe('zero')
   })
 
-  xit('one', () => {
+  it('one', () => {
     expect(sayInEnglish(1)).toBe('one')
   })
 
-  xit('fourteen', () => {
+  it('fourteen', () => {
     expect(sayInEnglish(14)).toBe('fourteen')
   })
 
-  xit('twenty', () => {
+  it('twenty', () => {
     expect(sayInEnglish(20)).toBe('twenty')
   })
 
-  xit('twenty-two', () => {
+  it('twenty-two', () => {
     expect(sayInEnglish(22)).toBe('twenty-two')
   })
 
-  xit('one hundred', () => {
+  it('one hundred', () => {
     expect(sayInEnglish(100)).toBe('one hundred')
   })
 
-  xit('one hundred twenty-three', () => {
+  it('one hundred twenty-three', () => {
     expect(sayInEnglish(123)).toBe('one hundred twenty-three')
   })
 
-  xit('one thousand', () => {
+  it('one thousand', () => {
     expect(sayInEnglish(1000)).toBe('one thousand')
   })
 
-  xit('one thousand two hundred thirty-four', () => {
+  it('one thousand two hundred thirty-four', () => {
     expect(sayInEnglish(1234)).toBe('one thousand two hundred thirty-four')
   })
 
-  xit('one million', () => {
+  it('one million', () => {
     expect(sayInEnglish(1000000)).toBe('one million')
   })
 
-  xit('one million two', () => {
+  it('one million two', () => {
     expect(sayInEnglish(1000002)).toBe('one million two')
   })
 
-  xit('one million two thousand three hundred forty-five', () => {
+  it('one million two thousand three hundred forty-five', () => {
     expect(sayInEnglish(1002345)).toBe(
       'one million two thousand three hundred forty-five'
     )
   })
 
-  xit('one billion', () => {
+  it('one billion', () => {
     expect(sayInEnglish(1000000000)).toBe('one billion')
   })
 
-  xit('a really big number', () => {
+  it('a really big number', () => {
     let expected = 'nine hundred eighty-seven billion '
     expected += 'six hundred fifty-four million '
     expected += 'three hundred twenty-one thousand '
@@ -63,13 +63,13 @@ describe('say', () => {
     expect(sayInEnglish(987654321123)).toBe(expected)
   })
 
-  xit('raises an error below zero', () => {
+  it('raises an error below zero', () => {
     expect(() => {
       sayInEnglish(-1)
     }).toThrowError('Number must be between 0 and 999,999,999,999.')
   })
 
-  xit('raises an error above 999,999,999,999', () => {
+  it('raises an error above 999,999,999,999', () => {
     expect(() => {
       sayInEnglish(1000000000000)
     }).toThrowError('Number must be between 0 and 999,999,999,999.')
