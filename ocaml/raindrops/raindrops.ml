@@ -1,14 +1,4 @@
-open Core;;
-
-let raindrop num =
-    (* list factors to test and their raindrop descriptions *)
-    let drops = [("Pling", 3); ("Plang", 5); ("Plong", 7)]
-    |> List.filter_map ~f:(fun (str, factor) ->
-        if num mod factor = 0 then Some str
-        else None)
-    |> String.concat
-    in
-    match drops with
-    | "" -> string_of_int num
-    | _ -> drops
-;;
+let raindrop n =
+  [(3, "Pling"); (5, "Plang"); (7, "Plong")]
+  |> List.fold_left (fun acc (i, s) -> if n mod i = 0 then acc ^ s else acc) ""
+  |> (fun s -> if s == "" then Int.to_string n else s)
