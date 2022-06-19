@@ -34,6 +34,11 @@ class AcronymTest < Minitest::Test
       Acronym.abbreviate('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me')
   end
 
+  def test_apo
+    
+    assert_equal "HCA", Acronym.abbreviate("Halley's Commet Act")
+  end
+
   def test_consecutive_delimiters
     
     assert_equal "SIMUFTA", Acronym.abbreviate('Something - I made up from thin air')

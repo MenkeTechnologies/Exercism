@@ -23,4 +23,4 @@ let score = function
 
 let allergic_to mask allergen = mask land (score allergen) > 0
 
-let allergies flag = List.filter allergens ~f:(allergic_to flag)
+let allergies mask = List.filter allergens ~f:(allergic_to mask)
