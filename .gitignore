@@ -1,6 +1,7 @@
 #{{{                    MARK:misc
 #**************************************************************
 .last-updated
+package-lock.json
 *.swp
 *.bak
 #logback
