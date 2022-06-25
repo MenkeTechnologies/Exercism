@@ -1,11 +1,5 @@
 # frozen_string_literal: true
 
-# Write your code for the 'Twelve Days' exercise in this file. Make the tests in
-# `twelve_days_test.rb` pass.
-#
-# To get started with TDD, see the `README.md` file in your
-# `ruby/twelve-days` directory.
-
 class TwelveDays
   DAYS = %w[first second third fourth fifth sixth seventh eighth ninth tenth eleventh twelfth].freeze
   GIFTS = [

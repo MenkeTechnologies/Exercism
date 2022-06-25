@@ -1,6 +1,6 @@
 module Prime
   extend self
-  
+
   def nth(n)
     raise ArgumentError.new "n must be positive" if n < 1
     primes = [2]

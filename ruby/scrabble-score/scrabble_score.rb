@@ -1,11 +1,5 @@
 # frozen_string_literal: true
 
-# Write your code for the 'Scrabble Score' exercise in this file. Make the tests in
-# `scrabble_score_test.rb` pass.
-#
-# To get started with TDD, see the `README.md` file in your
-# `ruby/scrabble-score` directory.
-
 class Scrabble
   SCORES = {
     'A' => 1, 'E' => 1, 'I' => 1, 'O' => 1, 'U' => 1, 'L' => 1, 'N' => 1,
