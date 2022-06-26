@@ -1,3 +1,5 @@
 isArmstrongNumber : Nat -> Boolean
-isArmstrongNumber number =
-  todo "implement isArmstrongNumber"
+isArmstrongNumber n =
+  digits = Nat.toText n |> toCharList |> map (toText >> Nat.fromText >> getOrBug "?")
+  len = List.size digits
+  n == List.foldLeft (acc d -> acc + Nat.pow d len) 0 digits
