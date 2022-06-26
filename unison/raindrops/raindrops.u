@@ -1,2 +1,15 @@
+factors = [
+  (3, "Pling"),
+  (5, "Plang"),
+  (7, "Plong")
+]
+
 convert : Nat -> Text
-convert n = todo "You need to implement convert."
+convert n =
+  pred = cases (factor, text) ->
+    if mod n factor == 0 then Some text else None
+  texts = filterMap pred factors
+  match texts with
+    [] -> Nat.toText n
+    sounds -> List.foldLeft (++) "" sounds
+
