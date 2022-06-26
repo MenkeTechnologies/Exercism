@@ -1,7 +1,25 @@
+allergens : [(Text, Nat)]
+allergens = [
+  ("eggs", 1),
+  ("peanuts", 2),
+  ("shellfish", 4),
+  ("strawberries", 8),
+  ("tomatoes", 16),
+  ("chocolate", 32),
+  ("pollen", 64),
+  ("cats", 128)
+]
+
+allergensMap : Map Text Nat
+allergensMap = Map.fromList allergens
+
 allergicTo : Text -> Nat -> Boolean
-allergicTo allergen score =
-  todo "implement allergicTo"
+allergicTo allergen mask =
+  match Map.get allergen allergensMap with
+    Some n -> (and n mask) > 0
+    None -> false
 
 list : Nat -> [Text]
-list score =
-  todo "implement list"
+list mask =
+  List.filterMap (cases (a, _) -> if allergicTo a mask then Some a else None) allergens
+

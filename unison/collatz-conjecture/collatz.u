@@ -1,7 +1,7 @@
 use Nat / increment
 steps : Nat -> Optional Nat
 steps n =
-  next n = if (mod n 2) === 0 then n / 2 else (3 * n) + 1
+  next num = if (mod num 2) === 0 then num / 2 else 3 * num + 1
   go count = cases
      0 -> None
      1 -> Some count
