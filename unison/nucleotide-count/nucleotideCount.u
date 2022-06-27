@@ -1,3 +1,13 @@
 nucleotideCounts : Text -> Optional (Map Text Nat)
 nucleotideCounts nucleotides =
-  todo "implement nucleotideCounts"
+  init = Map.fromList [("A",0),("C",0),("G",0),("T",0)]
+  ok ch =
+    if (ch == ?A) || (ch == ?C) || (ch == ?G) || (ch == ?T) then Char.toText ch
+    else abort
+  Abort.toOptional! 'let
+    nucleotides
+      |> toCharList
+      |> List.map ok
+      |> Bag.fromList
+      |> Bag.counts
+      |> Map.unionWith (+) init
