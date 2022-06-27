@@ -1,2 +1,11 @@
 abbreviate : Text -> Text
-abbreviate test = todo "implement abbreviate function"
+abbreviate s =
+  Text.toCharList s
+    |> List.split (isOneOf [?\s, ?-])
+    |> List.map (List.filter Char.ascii.isLetter)
+    |> List.filterMap List.head
+    |> List.map Char.ascii.toUpper
+    |> Text.fromCharList
+
+isOneOf : [a] -> a -> Boolean
+isOneOf = flip contains
