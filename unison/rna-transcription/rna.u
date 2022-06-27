@@ -1,2 +1,7 @@
 toRNA : Text -> Optional Text
-toRNA dna = todo "implement toRNA"
+toRNA dna =
+    convert dna = match get dna Map.fromList [(?G, ?C), (?C, ?G), (?T, ?A), (?A, ?U)]
+with
+        None -> abort
+        Some rna -> rna
+    toOptional! '(dna |> toCharList |> List.map convert |> fromCharList)
