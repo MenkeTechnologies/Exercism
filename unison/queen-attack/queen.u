@@ -1,7 +1,9 @@
-create : (Nat,Nat) -> {Abort} (Nat,Nat)
-create coordinates =
-  todo "implement create"
+create = cases
+  (x,y) | (x < 8) && (y < 8) && (x >= 0) && (y >= 0) -> (x,y)
+  _ -> abort
 
-canAttack  : (Nat,Nat) -> (Nat,Nat) -> {Abort} Boolean
+canAttack : (Nat,Nat) -> (Nat,Nat) -> {Abort} Boolean
 canAttack whiteQueen blackQueen =
-  todo "implement canAttack"
+   dx = sub (at1 whiteQueen) (at1 blackQueen) |> abs
+   dy = sub (at2 whiteQueen) (at2 blackQueen) |> abs
+   (dx === 0) || (dy === 0) || (dx === dy)
