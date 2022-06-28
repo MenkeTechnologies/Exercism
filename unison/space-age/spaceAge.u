@@ -1,3 +1,14 @@
 age : Text -> Nat -> Optional Float
 age planet earthAgeSeconds =
-  todo "implement age"
+  use Nat toFloat
+  earthAgeYears = (toFloat earthAgeSeconds) / 31557600.0
+  match planet with
+    "Mercury" -> Some(earthAgeYears / 0.2408467)
+    "Venus" -> Some(earthAgeYears / 0.61519726)
+    "Earth" -> Some earthAgeYears
+    "Mars" -> Some(earthAgeYears / 1.8808158)
+    "Jupiter" -> Some(earthAgeYears / 11.862615)
+    "Saturn" -> Some(earthAgeYears / 29.447498)
+    "Uranus" -> Some(earthAgeYears / 84.016846)
+    "Neptune" -> Some(earthAgeYears / 164.79132)
+    _ -> None
