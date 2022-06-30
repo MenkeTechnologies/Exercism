@@ -6,9 +6,9 @@ defmodule WordCount do
   """
   @spec count(String.t()) :: map
   def count(sentence) do
-    sentence |> String.downcase |> String.split(~R/[^[:alnum:]\-\']/u, trim: true)
+    sentence |> String.downcase |> String.split(~r/[^[:alnum:]-']/u, trim: true)
     |> Enum.reduce(%{}, fn s, acc ->
-      acc |> Map.update(s |> String.trim("'"), 1, &(&1 + 1))
+      acc |> Map.update(s |> String.trim("'"), 1, & &1 + 1)
     end)
   end
 end
