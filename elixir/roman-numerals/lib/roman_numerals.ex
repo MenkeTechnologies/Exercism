@@ -17,10 +17,10 @@ defmodule RomanNumerals do
   ]
   
   def numeral(number) do
-    @roman_values |>
+    [_, r] = @roman_values |>
     Enum.reduce([number, ""], fn {k, v}, acc ->
-      acc[1] = acc[1] <> String.duplicate(v, div(acc[0],k))
-      acc[0] = rem(acc[0], k)
-    end) |> Enum.join("")
+      [rem(acc |> hd, k), List.last(acc) <> String.duplicate(v, div(acc |> hd,k))]
+    end)
+    r
   end
 end
