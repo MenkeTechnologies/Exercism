@@ -1,17 +1,32 @@
 defmodule DNA do
   def encode_nucleotide(code_point) do
-    # Please implement the encode_nucleotide/1 function
+    case code_point do
+      ?\s -> 0
+      ?A -> 1
+      ?C -> 2
+      ?G -> 4
+      ?T -> 8
+    end
   end
-
   def decode_nucleotide(encoded_code) do
-    # Please implement the decode_nucleotide/1 function
+    case encoded_code do
+      0 -> ?\s
+      1 -> ?A
+      2 -> ?C
+      4 -> ?G
+      8 -> ?T
+    end
   end
-
-  def encode(dna) do
-    # Please implement the encode/1 function
+  def encode([]), do: ""
+  def encode([h | t]) do
+    nt = h |> encode_nucleotide
+    rest = t |> encode
+    <<nt::4, rest::bitstring>>
   end
-
-  def decode(dna) do
-    # Please implement the decode/1 function
+  def decode(""), do: []
+  def decode(<<h::4, t::bitstring>>) do
+    char = h |> decode_nucleotide
+    rest = t |> decode
+    [char] ++ rest
   end
 end
