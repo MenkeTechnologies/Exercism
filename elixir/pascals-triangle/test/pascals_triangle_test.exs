@@ -1,32 +1,32 @@
 defmodule PascalsTriangleTest do
   use ExUnit.Case
 
-  # @tag :pending
+  # 
   test "one row" do
     assert PascalsTriangle.rows(1) == [[1]]
   end
 
-  @tag :pending
+  
   test "two rows" do
     assert PascalsTriangle.rows(2) == [[1], [1, 1]]
   end
 
-  @tag :pending
+  
   test "three rows" do
     assert PascalsTriangle.rows(3) == [[1], [1, 1], [1, 2, 1]]
   end
 
-  @tag :pending
+  
   test "four rows" do
     assert PascalsTriangle.rows(4) == [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
   end
 
-  @tag :pending
+  
   test "five rows" do
     assert PascalsTriangle.rows(5) == [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
   end
 
-  @tag :pending
+  
   test "six rows" do
     assert PascalsTriangle.rows(6) == [
              [1],
@@ -38,7 +38,7 @@ defmodule PascalsTriangleTest do
            ]
   end
 
-  @tag :pending
+  
   test "ten rows" do
     assert PascalsTriangle.rows(10) == [
              [1],
@@ -54,7 +54,7 @@ defmodule PascalsTriangleTest do
            ]
   end
 
-  @tag :pending
+  
   test "20 rows" do
     assert PascalsTriangle.rows(20) == [
              [1],

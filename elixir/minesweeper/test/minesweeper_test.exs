@@ -1,7 +1,7 @@
 defmodule MinesweeperTest do
   use ExUnit.Case
 
-  # @tag :pending
+  # 
   test "no rows" do
     input = []
     expected = []
@@ -9,7 +9,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "no columns" do
     input = [""]
     expected = [""]
@@ -17,7 +17,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "no mines" do
     input = [
       "   ",
@@ -34,7 +34,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "mines only" do
     input = [
       "***",
@@ -51,7 +51,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "mine surrounded by spaces" do
     input = [
       "   ",
@@ -68,7 +68,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "space surrounded by mines" do
     input = [
       "***",
@@ -85,7 +85,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "horizontal line" do
     input = [
       " * * "
@@ -98,7 +98,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "horizontal line, mines at edges" do
     input = [
       "*   *"
@@ -111,7 +111,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "vertical line" do
     input = [
       " ",
@@ -132,7 +132,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "vertical line, mines at edges" do
     input = [
       "*",
@@ -153,7 +153,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "cross" do
     input = [
       "  *  ",
@@ -174,7 +174,7 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  @tag :pending
+  
   test "large minefield" do
     input = [
       " *  * ",
