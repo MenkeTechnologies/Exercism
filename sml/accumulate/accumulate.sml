@@ -1,2 +1,4 @@
 fun accumulate (f, xs) =
-  raise Fail "'accumulate' has not been implemented"
+  if null xs
+  then []
+  else f (hd xs) :: accumulate(f, tl xs)
