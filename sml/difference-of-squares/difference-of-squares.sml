@@ -1,8 +1,6 @@
-fun squareOfSum n =
-  raise Fail "'squareOfSum' is not implemented"
+fun sum n f = foldl op+ 0 (List.tabulate (n + 1, f))
+fun square n = n * n
+fun squareOfSum n = square (sum n (fn x => x))
+fun sumOfSquares n = sum n square
 
-fun differenceOfSquares n =
-  raise Fail "'differenceOfSquares' is not implemented"
-
-fun sumOfSquares n =
-  raise Fail "'sumOfSquares' is not implemented"
+fun differenceOfSquares n = squareOfSum n - sumOfSquares n;
