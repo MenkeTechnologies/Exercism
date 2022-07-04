@@ -1,2 +1,6 @@
 fun distance (strand1: string, strand2: string): int option =
-  raise Fail "'distance' is not implemented"
+    if String.size strand1 <> String.size strand2 then
+      NONE
+    else
+      SOME (ListPair.foldlEq (fn (a,b,acc) => if a = b then acc else acc + 1) 0 (explode strand1, explode strand2))
+
