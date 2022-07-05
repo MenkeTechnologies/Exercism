@@ -11,10 +11,9 @@ function LargestProduct(digits, span) abort
   endif
   let digit_array = split(a:digits, '\zs')
   let indexes = range(len(digit_array) - a:span + 1)
-  return max(map(indexes, { _, i ->
-  \   s:product(digit_array[i : i + a:span - 1])
-  \ }))
+  return max(map(indexes, 's:product(digit_array[v:val : v:val + a:span - 1])' ))
 endfunction
+
 function s:product(array) abort
   let mul = 1
   for num in a:array
