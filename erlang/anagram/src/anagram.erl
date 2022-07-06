@@ -2,5 +2,13 @@
 
 -export([find_anagrams/2]).
 
+find_anagrams(Subject, Candidates) ->
+  lists:filter(fun(Candidate) ->
+      is_anagram_of(Subject, Candidate) end,
+      Candidates).
 
-find_anagrams(_Subject, _Candidates) -> undefined.
+is_anagram_of(Subject, Candidate) ->
+  Target = string:lowercase(Subject),
+  Cand = string:lowercase(Candidate),
+  Target /= Cand andalso lists:sort(Target) == lists:sort(Cand).
+
