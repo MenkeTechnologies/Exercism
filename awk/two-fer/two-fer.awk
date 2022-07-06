@@ -1,6 +1,5 @@
 #!/usr/bin/env gawk -f
 
-BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+END {
+    printf("One for %s, one for me.\n", $0 ? $0 : "you")
 }
