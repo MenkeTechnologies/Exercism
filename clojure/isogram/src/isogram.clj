@@ -1,5 +1,11 @@
-(ns isogram)
+(ns isogram
+  (:require [clojure.string :as s]))
 
-(defn isogram? [] ;; <- arglist goes here
-  ;; your code goes here
-)
+
+(defn isogram? [w]
+  (->> w
+       s/lower-case
+       (re-seq #"\p{IsAlphabetic}")
+       (apply distinct?)
+       )
+  )
