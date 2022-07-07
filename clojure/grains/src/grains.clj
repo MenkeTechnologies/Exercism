@@ -1,9 +1,11 @@
 (ns grains)
 
-(defn square [] ;; <- arglist goes here
-    ;; your code goes here
-)
+(defn square [n]
+  (.pow (BigInteger. "2") (dec n))
+  )
 
-(defn total []  ;; <- arglist goes here
-    ;; your code goes here
-)
+(defn total []
+  (->> (range 1 65)
+       (map square)
+       (apply +))
+  )
