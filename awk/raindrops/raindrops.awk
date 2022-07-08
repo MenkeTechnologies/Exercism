@@ -1,9 +1,8 @@
 #!/usr/bin/env gawk -f
 
-# These variables are initialized on the command line (using '-v'):
-# - num
-
 BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+    if (num % 3 == 0) r = r "Pling"
+    if (num % 5 == 0) r = r "Plang"
+    if (num % 7 == 0) r = r "Plong"
+    print r ? r : num
 }
