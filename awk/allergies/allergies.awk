@@ -9,7 +9,7 @@ BEGIN {
 function checkitem(num, bit){ return and(num, bit) > 0 }
 
 $2 == "list" {
-            for (i = 1; i <= n; i++)
+            for (i = 1; i <= n; ++i)
                 if (checkitem(str2nr[nr2str[i]], $1))
                     list = list "," nr2str[i]
             result = substr(list,2)

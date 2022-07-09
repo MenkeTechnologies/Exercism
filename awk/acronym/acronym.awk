@@ -1,6 +1,11 @@
 #!/usr/bin/env gawk -f
 
 BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+    FPAT = "[[:alpha:]][[:alpha:]']*"
+}
+{
+    r = ""
+    for (i = 1; i <= NF; ++i)
+        r = r substr($i, 1, 1)
+    print toupper(r)
 }
