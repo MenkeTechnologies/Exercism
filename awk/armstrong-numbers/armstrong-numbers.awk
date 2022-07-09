@@ -1,9 +1,8 @@
 #!/usr/bin/env gawk -f
 
-# These variables are initialized on the command line (using '-v'):
-# - num
-
 BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+    l = length(num)
+    for (i = 1; i <= l; i++) 
+        sum += substr(num, i, 1) ^ l
+    print sum == num ? "true" : "false"
 }
