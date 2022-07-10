@@ -14,5 +14,5 @@ BEGIN {
 
 {
     if (!periods[$1]) { print "not a planet"; exit 1}
-    printf "%.2f", $2 /periods[$1] / SPY
+    printf "%.2f", $2 / periods[$1] / SPY
 }

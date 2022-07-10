@@ -12,11 +12,9 @@ END {
     else {
         asking  = /\?$/
         if (/[A-Z]/ && !/[a-z]/) {
-            if (asking) print "Calm down, I know what I'm doing!"
-            else print "Whoa, chill out!"
+            print asking ? "Calm down, I know what I'm doing!" : "Whoa, chill out!"
         } else {
-            if (asking) print "Sure."
-            else print "Whatever."
+            print asking ? "Sure." : "Whatever."
         }
     }
 }
