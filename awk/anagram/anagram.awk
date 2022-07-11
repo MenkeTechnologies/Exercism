@@ -1,9 +1,14 @@
 #!/usr/bin/env gawk -f
-
-# These variables are initialized on the command line (using '-v'):
-# - key
+function sort(cand, chars, r) {
+    split(tolower(cand), chars, //)
+    for (i in chars) r = r chars[i]
+    return r
+}
 
 BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+    PROCINFO["sorted_in"] = "@val_str_asc"
+    target_sorted = sort(key)
+    target_lc = tolower(key)
 }
+
+target_lc != tolower($1) && target_sorted == sort($1)
