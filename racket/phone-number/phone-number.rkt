@@ -6,4 +6,4 @@
 
 (define (nanp-clean s)
   (let ([matches (regexp-match re s)])
-    (if matches (string-join (rest matches ) "") (error "Invalid phone number"))))
+    (if matches (string-join (rest matches) "") (error "Invalid phone number"))))
