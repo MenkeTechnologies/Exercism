@@ -1,7 +1,5 @@
-local gigasecond = {}
-
-function gigasecond.anniversary(any_date)
-
-end
-
-return gigasecond
+return {
+  anniversary = function(seconds)
+    return os.date('%x', seconds + 1e9)
+  end
+}
