@@ -1,2 +1,4 @@
 (define (accumulate f xs)
-  'implement-me!)
+  (cond
+   ((null? xs) xs)
+   (else (cons (f (car xs)) (accumulate f (cdr xs))))))
