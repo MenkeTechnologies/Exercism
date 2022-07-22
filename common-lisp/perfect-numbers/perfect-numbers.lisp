@@ -4,4 +4,14 @@
 
 (in-package :perfect-numbers)
 
-(defun classify (n))
+(defun factors (n)
+  (loop for i from 1 to (/ n 2)
+     when (zerop (rem n i)) collect i))
+
+(defun classify (n)
+  (if (plusp n)
+      (let ((sum (reduce #'+ (factors n))))
+	(cond
+	  ((= sum n) "perfect")
+	  ((> sum n) "abundant")
+	  ((< sum n) "deficient")))))
