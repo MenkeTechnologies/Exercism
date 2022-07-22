@@ -4,10 +4,15 @@
 
 (in-package :nucleotide-count)
 
-(defun dna-count (nucleotide strand)
-  "Returns a count of the given nucleotide appearing in a DNA strand."
-  )
+(define-condition invalid-nucleotide (condition) ())
+
+(defun dna-count (nt strand)
+  (if (member nt '(#\A #\T #\G #\C))
+      (count nt strand)
+      (signal 'invalid-nucleotide)))
 
 (defun nucleotide-counts (strand)
-  "Returns a hash of nucleotides and their counts in a given DNA strand."
-  )
+  (let ((new-hash (make-hash-table)))
+        (loop for nt in '(#\A #\T #\G #\C)
+              do (setf (gethash nt new-hash) (dna-count nt strand))
+              finally (return new-hash))))
