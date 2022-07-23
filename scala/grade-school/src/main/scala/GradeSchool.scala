@@ -1,22 +1,12 @@
+import scala.collection.mutable.SortedMap
+
 class School {
-  type DB = Map[Int, Seq[String]]
+  var db = SortedMap.empty[Int, Seq[String]]
 
-  var roster: DB = Map()
+  def add(name: String, g: Int) = db += (g -> (grade(g) :+ name))
 
-  def add(name: String, g: Int) = {
-    var names: Seq[String] = roster.getOrElse(g, Seq.empty)
-    names ++= Seq(name)
-    roster += (g -> names)
-  }
+  def grade(g: Int) = db.getOrElse(g, Seq())
 
-  def db: DB = roster
-
-  def grade(g: Int): Seq[String] = {
-    roster.getOrElse(g, Seq.empty)
-  }
-
-  def sorted: DB = {
-    roster.map(m=> m._1 -> m._2.sorted).toSeq.sortBy(m => m._1).toMap
-  }
+  def sorted = db.map(m => m._1 -> m._2.sorted)
 }
 
