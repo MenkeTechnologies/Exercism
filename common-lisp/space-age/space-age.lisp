@@ -27,8 +27,6 @@
     (on-uranus . 84.016846)
     (on-neptune . 164.79132)))
 
-(defmacro define-functions ()
   (loop for (name . factor) in planet-ratios
-        do (eval `(define-on-planet ,name ,factor))))
+        do (eval `(define-on-planet ,name ,factor)))
 
-(define-functions)

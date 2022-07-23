@@ -18,16 +18,11 @@
 		  (4 . "IV")
 		  (1 . "I")))
 
-(defun next-numeral (n)
-  (first (remove-if (lambda (x) (> (car x) n)) numerals)))
+(defun join (lst)
+    (apply #'concatenate 'string lst))
 
-(defun ->numerals (number)
-  (loop with n = number
-	while (> n 0)
-	collect (let ((pair (next-numeral n)))
-		  (setf n (- n (car pair)))
-		  (cdr pair))))
+(defun repeat (s n)
+    (join (loop repeat n collect s)))
 
-(defun romanize (number)
-  (reduce (lambda (acc n) (concatenate 'string acc n))
-	  (->numerals number)))
+(defun romanize (n)
+    (join (loop for (k . v) in numerals collect (repeat v (floor n k)) do (setf n (mod n k)))))

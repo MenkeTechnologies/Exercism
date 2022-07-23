@@ -15,8 +15,10 @@
                       [1 "I"]])
 
 (defn numerals [init]
-  (first (reduce
-           (fn [[acc num] [k v]] (list (apply str acc (repeat (quot num k) v)) (rem num k)))
-           (list "" init)
-           num-roman-pairs))
+  (->> num-roman-pairs
+    (reduce
+      (fn [[acc num] [k v]] (list (apply str acc (repeat (quot num k) v)) (rem num k)))
+      (list "" init))
+     first
   )
+)
