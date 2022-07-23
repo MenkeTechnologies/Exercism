@@ -31,7 +31,7 @@ public class SqueakyCleanTest {
 
     @Test
     public void ctrl() {
-        assertThat(SqueakyClean.clean("my\0Id")).isEqualTo("myCTRLId");
+        assertThat(SqueakyClean.clean("my\0\r\u007FId")).isEqualTo("myCTRLCTRLCTRLId");
     }
 
     @Test
@@ -40,8 +40,18 @@ public class SqueakyCleanTest {
     }
 
     @Test
+    public void keep_only_letters() {
+        assertThat(SqueakyClean.clean("a1\uD83D\uDE002\uD83D\uDE003\uD83D\uDE00b")).isEqualTo("ab");
+    }
+
+    @Test
     public void kebab_to_camel_case() {
         assertThat(SqueakyClean.clean("à-ḃç")).isEqualTo("àḂç");
+    }
+
+    @Test
+    public void kebab_to_camel_case_no_letter() {
+        assertThat(SqueakyClean.clean("a-1C")).isEqualTo("aC");
     }
 
     @Test
