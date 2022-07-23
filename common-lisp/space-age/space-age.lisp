@@ -11,34 +11,24 @@
 
 (in-package :space-age)
 
-(defun on-mercury (n)
-  "Returns number of Mercury years for a given number of seconds."
-  )
+(defconstant SPY 31557600)
 
-(defun on-venus (n)
-  "Returns number of Venus years for a given number of seconds."
-  )
+(defmacro define-on-planet (on-planet factor)
+  `(defun ,on-planet (seconds)
+     (/ seconds ,SPY ,factor)))
 
-(defun on-earth (n)
-  "Returns number of Earth years for a given number of seconds."
-  )
+(defparameter planet-ratios
+  '((on-earth . 1.0)
+    (on-mercury . 0.2408467)
+    (on-venus . 0.61519726)
+    (on-mars . 1.8808158)
+    (on-jupiter . 11.862615)
+    (on-saturn . 29.447498)
+    (on-uranus . 84.016846)
+    (on-neptune . 164.79132)))
 
-(defun on-mars (n)
-  "Returns number of Mars years for a given number of seconds."
-  )
+(defmacro define-functions ()
+  (loop for (name . factor) in planet-ratios
+        do (eval `(define-on-planet ,name ,factor))))
 
-(defun on-jupiter (n)
-  "Returns number of Jupiter years for a given number of seconds."
-  )
-
-(defun on-saturn (n)
-  "Returns number of Saturn years for a given number of seconds."
-  )
-
-(defun on-uranus (n)
-  "Returns number of Uranus years for a given number of seconds."
-  )
-
-(defun on-neptune (n)
-  "Returns number of Neptune years for a given number of seconds."
-  )
+(define-functions)
