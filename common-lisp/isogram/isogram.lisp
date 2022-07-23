@@ -4,5 +4,8 @@
 
 (in-package :isogram)
 
-(defun isogram-p (string)
-  "Is string an Isogram?")
+(defun isogram-p (s)
+ (let ((letters (string-downcase (remove-if-not #'alpha-char-p s))))
+  (string= letters (remove-duplicates letters))
+  )
+)
