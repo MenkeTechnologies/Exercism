@@ -1,22 +1,15 @@
-use std::collections::{HashSet, HashMap};
+use std::collections::HashSet;
 
-fn get_map(word: String) -> HashMap<char, u32> {
-    word.chars().fold(HashMap::new(), |mut map, c| {
-        let v = map.entry(c).or_insert(0);
-        *v += 1;
-        map
-    })
+fn lcsort(s: &str) -> Vec<char> {
+    let mut l: Vec<char> = s.to_lowercase().chars().collect();
+    l.sort();
+    l
 }
 
-pub fn anagrams_for<'a>(word: &str, possible_anagrams: &'a [&str]) -> HashSet<&'a str> {
-    let cnt = word.len();
-    let map = get_map(word.to_lowercase());
-
+pub fn anagrams_for<'a>(target: &str, possible_anagrams: &'a [&str]) -> HashSet<&'a str> {
+    let sorted = lcsort(target);
     possible_anagrams.clone().into_iter().filter(|&&p| {
-        let pmap = get_map(p.to_lowercase());
-        cnt == p.len() && word.to_lowercase() != p.to_lowercase() && map == pmap
-    })
-        .map(|p| *p)
-        .collect::<HashSet<&str>>()
+        target.to_lowercase() != p.to_lowercase() && sorted == lcsort(p)
+    }).map(|p| *p).collect::<HashSet<&str>>()
 
 }
