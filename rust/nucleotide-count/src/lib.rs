@@ -1,56 +1,31 @@
 use std::collections::HashMap;
 
-pub fn count(nucleotide: char, dna: &str) -> Result<usize, char> {
-    let h = common(&dna);
-
-    return match h {
+pub fn count(nt: char, dna: &str) -> Result<usize, char> {
+    match create_dict(&dna) {
         Err(e) => Err(e),
-        Ok(h) => {
-
-            let option = h.get(&nucleotide);
-            return match option {
-                Some(o) => {
-                    Ok(*o)
-                },
-                None => {
-                    Err(nucleotide)
-                }
+        Ok(h) =>
+            match h.get(&nt) {
+                Some(o) => Ok(*o),
+                None => Err(nt)
             }
-
-        },
-    };
-
-
+    }
 }
 
 pub fn nucleotide_counts(dna: &str) -> Result<HashMap<char, usize>, char> {
-    let h = common(&dna);
-
-    return match h {
-        Err(e) => Err(e),
-        Ok(h) => {
-            Ok(h)
-        },
-    };
-
+    create_dict(&dna)
 }
 
-fn common(dna: &&str) -> Result<HashMap<char, usize>, char> {
+fn create_dict(dna: &&str) -> Result<HashMap<char, usize>, char> {
     let mut h = HashMap::new();
     h.insert('A', 0);
     h.insert('C', 0);
     h.insert('G', 0);
     h.insert('T', 0);
-    for ch in dna.chars() {
-        match ch {
-            'A' | 'C' | 'G' | 'T' => {
-                let new_val = h.get(&ch).unwrap() + 1;
-                h.insert(ch, new_val);
-            }
-            _ => {
-                return Err(ch);
-            }
+    for c in dna.chars() {
+        match c {
+            'A' | 'C' | 'G' | 'T' => h.insert(c, h.get(&c).unwrap() + 1),
+            _ => return Err(c)
         };
     }
-    return Ok(h);
+    Ok(h)
 }
