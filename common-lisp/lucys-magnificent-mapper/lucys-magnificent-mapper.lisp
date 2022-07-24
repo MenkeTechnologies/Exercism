@@ -4,6 +4,9 @@
 
 (in-package :lucys-magnificent-mapper)
 
-;; Define make-magnificent-maybe function
+(defun make-magnificent-maybe (f lst)
+  (mapcar f lst))
 
-;; Define only-the-best function
+(defun only-the-best (f lst)
+  (remove-if f
+             (remove-if (lambda (x) (= x 1)) lst)))
