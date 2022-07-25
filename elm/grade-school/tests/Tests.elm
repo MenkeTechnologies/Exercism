@@ -15,7 +15,7 @@ tests =
                         |> addStudent 2 "Aimee"
                         |> studentsInGrade 2
                     )
-        , skip <|
+        , 
             test "add more students in same class" <|
                 \() ->
                     Expect.equal [ "Blair", "James", "Paul" ]
@@ -25,7 +25,7 @@ tests =
                             |> addStudent 2 "Paul"
                             |> studentsInGrade 2
                         )
-        , skip <|
+        , 
             test "add students to different grades" <|
                 \() ->
                     Expect.equal [ [ "Chelsea" ], [ "Logan" ] ]
@@ -37,7 +37,7 @@ tests =
                          in
                          [ studentsInGrade 3 school, studentsInGrade 7 school ]
                         )
-        , skip <|
+        , 
             test "get students in a grade" <|
                 \() ->
                     Expect.equal [ "Bradley", "Franklin" ]
@@ -47,7 +47,7 @@ tests =
                             |> addStudent 1 "Jeff"
                             |> studentsInGrade 5
                         )
-        , skip <|
+        , 
             test "get all students in the school" <|
                 \() ->
                     Expect.equal [ ( 1, [ "Anna", "Barb", "Charlie" ] ), ( 2, [ "Alex", "Peter", "Zoe" ] ), ( 3, [ "Jim" ] ) ]
@@ -61,7 +61,7 @@ tests =
                             |> addStudent 1 "Charlie"
                             |> allStudents
                         )
-        , skip <|
+        , 
             test "get students in a non-existent grade" <|
                 \() -> Expect.equal [] (studentsInGrade 1 GradeSchool.empty)
         ]
