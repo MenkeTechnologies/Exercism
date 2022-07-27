@@ -1,78 +1,33 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
+const ORBITALPERIODS = [
+    "Mercury" => 0.2408467,
+    "Venus" => 0.61519726,
+    "Mars" => 1.8808158,
+    "Jupiter" => 11.862615,
+    "Saturn" => 29.447498,
+    "Uranus" => 84.016846,
+    "Neptune" => 164.79132
+    ];
 
-declare(strict_types=1);
+const SPY = 31557600;
 
-class SpaceAge
-{
-    public function __construct(int $seconds)
-    {
-        throw new \BadMethodCallException("Implement the __construct method");
+class SpaceAge {
+    public $seconds;
+    public $secondsOnEarth;
+    public function __construct($seconds) {
+        $this->seconds = $seconds;
+        $this->secondsOnEarth = $seconds / SPY;
     }
 
-    public function seconds(): int
-    {
-        throw new \BadMethodCallException("Implement the seconds method");
-    }
-
-    public function earth(): float
-    {
-        throw new \BadMethodCallException("Implement the earth method");
-    }
-
-    public function mercury(): float
-    {
-        throw new \BadMethodCallException("Implement the mercury method");
-    }
-
-    public function venus(): float
-    {
-        throw new \BadMethodCallException("Implement the venus method");
-    }
-
-    public function mars(): float
-    {
-        throw new \BadMethodCallException("Implement the mars method");
-    }
-
-    public function jupiter(): float
-    {
-        throw new \BadMethodCallException("Implement the jupiter method");
-    }
-
-    public function saturn(): float
-    {
-        throw new \BadMethodCallException("Implement the saturn method");
-    }
-
-    public function uranus(): float
-    {
-        throw new \BadMethodCallException("Implement the uranus method");
-    }
-
-    public function neptune(): float
-    {
-        throw new \BadMethodCallException("Implement the neptune method");
-    }
+    public function pretty($arg) { return round($arg, 2); }
+    public function seconds() { return $this->seconds; }
+    public function earth() { return $this->pretty($this->secondsOnEarth); }
+    public function mercury() { return $this->pretty($this->secondsOnEarth / ORBITALPERIODS["Mercury"]); }
+    public function venus() { return $this->pretty($this->secondsOnEarth / ORBITALPERIODS["Venus"]); }
+    public function mars() { return $this->pretty($this->secondsOnEarth / ORBITALPERIODS["Mars"]); }
+    public function jupiter() { return $this->pretty($this->secondsOnEarth / ORBITALPERIODS["Jupiter"]); }
+    public function saturn() { return $this->pretty($this->secondsOnEarth / ORBITALPERIODS["Saturn"]); }
+    public function uranus() { return $this->pretty($this->secondsOnEarth / ORBITALPERIODS["Uranus"]); }
+    public function neptune() { return $this->pretty($this->secondsOnEarth / ORBITALPERIODS["Neptune"]); }
 }
