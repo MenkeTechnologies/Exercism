@@ -1,38 +1,38 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
-declare(strict_types=1);
-
 class Triangle
 {
-    public function __construct(int $a, int $b, int $c)
+    public function __construct($a, $b, $c)
     {
-        throw new \BadMethodCallException("Implement the __construct method");
+        $triangle = [$a, $b, $c];
+        sort($triangle);
+        list($this->a, $this->b, $this->c) = $triangle;
+        $this->set = array_unique($triangle);
     }
-
-    public function kind(): string
+    public function kind()
     {
-        throw new \BadMethodCallException("Implement the kind method");
+        return match (true) {
+            !$this->valid() => throw new Exception(),
+            $this->isEquilateral() => 'equilateral',
+            $this->isIsosceles() => 'isosceles',
+            $this->isScalene() => 'scalene'
+        };
+    }
+    private function valid()
+    {
+        return $this->a > 0 && $this->b > 0 && $this->c > 0 && $this->a + $this->b >= $this->c;
+    }
+    private function isEquilateral()
+    {
+        return count($this->set) == 1;
+    }
+    private function isIsosceles()
+    {
+        return count($this->set) <= 2;
+    }
+    private function isScalene()
+    {
+        return count($this->set) == 3;
     }
 }
+

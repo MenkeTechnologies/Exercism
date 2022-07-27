@@ -9,10 +9,7 @@ const DICT = [
 function raindrops(int $n): string
 {
     $r = '';
-    foreach (DICT as $key => $sound) {
-        if ($n % $key === 0) {
-            $r .= $sound;
-        }
-    }
+    foreach (DICT as $key => $sound) $r .= $n % $key === 0 ? $sound : "";
+
     return $r ?: (string) $n;
 }
