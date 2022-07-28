@@ -1,10 +1,22 @@
-;;; roman-numerals.el --- roman-numerals Exercise (exercism)
-
-;;; Commentary:
-
-;;; Code:
-
-
-
 (provide 'roman-numerals)
-;;; roman-numerals.el ends here
+
+(setf roman-numerals '((1000 "M")
+                      (900 "CM")
+                      (500 "D")
+                      (400 "CD")
+                      (100 "C")
+                      (90 "XC")
+                      (50 "L")
+                      (40 "XL")
+                      (10 "X")
+                      (9 "IX")
+                      (5 "V")
+                      (4 "IV")
+                      (1 "I")))
+
+(defun to-roman (value &optional offset)
+  (unless offset (setf offset roman-numerals))
+  (when (> value 0)
+    (if (>= (- value (caar offset)) 0)
+        (concat (cadar offset) (to-roman (- value (caar offset)) offset))
+        (to-roman value (cdr offset)))))
