@@ -131,6 +131,8 @@
                    15  UT-FILE-STATUS-FIELD-NAME PIC X(31).                     
                                                                                 
       * CCHECKWS.CPY END                                                        
+       01 WS-YEAR PIC 9(4).                                                     
+       01 WS-RESULT PIC 9.                                                      
        PROCEDURE DIVISION.                                                      
            PERFORM UT-INITIALIZE                                                
       *-------- "year not divisible by 4 in common year"                        
@@ -144,10 +146,9 @@
             PERFORM LEAP                                                        
            ADD 1 TO UT-TEST-CASE-COUNT                                          
            SET UT-NORMAL-COMPARE TO TRUE                                        
-           SET UT-ALPHANUMERIC-COMPARE TO TRUE                                  
-           MOVE WS-RESULT TO UT-ACTUAL                                          
-           MOVE 0                                                               
-               TO UT-EXPECTED                                                   
+           SET UT-NUMERIC-COMPARE TO TRUE                                       
+           MOVE WS-RESULT TO UT-ACTUAL-NUMERIC                                  
+           MOVE 0 TO UT-EXPECTED-NUMERIC                                        
            SET UT-RELATION-EQ TO TRUE                                           
            PERFORM UT-CHECK-EXPECTATION                                         
            MOVE SPACES                                                          
@@ -164,10 +165,9 @@
             PERFORM LEAP                                                        
            ADD 1 TO UT-TEST-CASE-COUNT                                          
            SET UT-NORMAL-COMPARE TO TRUE                                        
-           SET UT-ALPHANUMERIC-COMPARE TO TRUE                                  
-           MOVE WS-RESULT TO UT-ACTUAL                                          
-           MOVE 0                                                               
-               TO UT-EXPECTED                                                   
+           SET UT-NUMERIC-COMPARE TO TRUE                                       
+           MOVE WS-RESULT TO UT-ACTUAL-NUMERIC                                  
+           MOVE 0 TO UT-EXPECTED-NUMERIC                                        
            SET UT-RELATION-EQ TO TRUE                                           
            PERFORM UT-CHECK-EXPECTATION                                         
            MOVE SPACES                                                          
@@ -184,10 +184,9 @@
             PERFORM LEAP                                                        
            ADD 1 TO UT-TEST-CASE-COUNT                                          
            SET UT-NORMAL-COMPARE TO TRUE                                        
-           SET UT-ALPHANUMERIC-COMPARE TO TRUE                                  
-           MOVE WS-RESULT TO UT-ACTUAL                                          
-           MOVE 1                                                               
-               TO UT-EXPECTED                                                   
+           SET UT-NUMERIC-COMPARE TO TRUE                                       
+           MOVE WS-RESULT TO UT-ACTUAL-NUMERIC                                  
+           MOVE 1 TO UT-EXPECTED-NUMERIC                                        
            SET UT-RELATION-EQ TO TRUE                                           
            PERFORM UT-CHECK-EXPECTATION                                         
            MOVE SPACES                                                          
@@ -204,10 +203,9 @@
             PERFORM LEAP                                                        
            ADD 1 TO UT-TEST-CASE-COUNT                                          
            SET UT-NORMAL-COMPARE TO TRUE                                        
-           SET UT-ALPHANUMERIC-COMPARE TO TRUE                                  
-           MOVE WS-RESULT TO UT-ACTUAL                                          
-           MOVE 1                                                               
-               TO UT-EXPECTED                                                   
+           SET UT-NUMERIC-COMPARE TO TRUE                                       
+           MOVE WS-RESULT TO UT-ACTUAL-NUMERIC                                  
+           MOVE 1 TO UT-EXPECTED-NUMERIC                                        
            SET UT-RELATION-EQ TO TRUE                                           
            PERFORM UT-CHECK-EXPECTATION                                         
            MOVE SPACES                                                          
@@ -226,10 +224,9 @@
             PERFORM LEAP                                                        
            ADD 1 TO UT-TEST-CASE-COUNT                                          
            SET UT-NORMAL-COMPARE TO TRUE                                        
-           SET UT-ALPHANUMERIC-COMPARE TO TRUE                                  
-           MOVE WS-RESULT TO UT-ACTUAL                                          
-           MOVE 0                                                               
-               TO UT-EXPECTED                                                   
+           SET UT-NUMERIC-COMPARE TO TRUE                                       
+           MOVE WS-RESULT TO UT-ACTUAL-NUMERIC                                  
+           MOVE 0 TO UT-EXPECTED-NUMERIC                                        
            SET UT-RELATION-EQ TO TRUE                                           
            PERFORM UT-CHECK-EXPECTATION                                         
            MOVE SPACES                                                          
@@ -248,10 +245,9 @@
             PERFORM LEAP                                                        
            ADD 1 TO UT-TEST-CASE-COUNT                                          
            SET UT-NORMAL-COMPARE TO TRUE                                        
-           SET UT-ALPHANUMERIC-COMPARE TO TRUE                                  
-           MOVE WS-RESULT TO UT-ACTUAL                                          
-           MOVE 0                                                               
-               TO UT-EXPECTED                                                   
+           SET UT-NUMERIC-COMPARE TO TRUE                                       
+           MOVE WS-RESULT TO UT-ACTUAL-NUMERIC                                  
+           MOVE 0 TO UT-EXPECTED-NUMERIC                                        
            SET UT-RELATION-EQ TO TRUE                                           
            PERFORM UT-CHECK-EXPECTATION                                         
            MOVE SPACES                                                          
@@ -268,10 +264,9 @@
             PERFORM LEAP                                                        
            ADD 1 TO UT-TEST-CASE-COUNT                                          
            SET UT-NORMAL-COMPARE TO TRUE                                        
-           SET UT-ALPHANUMERIC-COMPARE TO TRUE                                  
-           MOVE WS-RESULT TO UT-ACTUAL                                          
-           MOVE 1                                                               
-               TO UT-EXPECTED                                                   
+           SET UT-NUMERIC-COMPARE TO TRUE                                       
+           MOVE WS-RESULT TO UT-ACTUAL-NUMERIC                                  
+           MOVE 1 TO UT-EXPECTED-NUMERIC                                        
            SET UT-RELATION-EQ TO TRUE                                           
            PERFORM UT-CHECK-EXPECTATION                                         
            MOVE SPACES                                                          
@@ -290,10 +285,9 @@
             PERFORM LEAP                                                        
            ADD 1 TO UT-TEST-CASE-COUNT                                          
            SET UT-NORMAL-COMPARE TO TRUE                                        
-           SET UT-ALPHANUMERIC-COMPARE TO TRUE                                  
-           MOVE WS-RESULT TO UT-ACTUAL                                          
-           MOVE 1                                                               
-               TO UT-EXPECTED                                                   
+           SET UT-NUMERIC-COMPARE TO TRUE                                       
+           MOVE WS-RESULT TO UT-ACTUAL-NUMERIC                                  
+           MOVE 1 TO UT-EXPECTED-NUMERIC                                        
            SET UT-RELATION-EQ TO TRUE                                           
            PERFORM UT-CHECK-EXPECTATION                                         
            MOVE SPACES                                                          
@@ -312,10 +306,9 @@
             PERFORM LEAP                                                        
            ADD 1 TO UT-TEST-CASE-COUNT                                          
            SET UT-NORMAL-COMPARE TO TRUE                                        
-           SET UT-ALPHANUMERIC-COMPARE TO TRUE                                  
-           MOVE WS-RESULT TO UT-ACTUAL                                          
-           MOVE 0                                                               
-               TO UT-EXPECTED                                                   
+           SET UT-NUMERIC-COMPARE TO TRUE                                       
+           MOVE WS-RESULT TO UT-ACTUAL-NUMERIC                                  
+           MOVE 0 TO UT-EXPECTED-NUMERIC                                        
            SET UT-RELATION-EQ TO TRUE                                           
            PERFORM UT-CHECK-EXPECTATION                                         
            MOVE SPACES                                                          
@@ -603,7 +596,8 @@
                                                                                 
       * CCHECKPARAGRAPHSPD.CPY END                                              
        LEAP.                                                                    
-      * Enter solution here                                                     
-         CONTINUE.                                                              
-       LEAP-EXIT.                                                               
-         EXIT.                                                                  
+           IF FUNCTION MOD ( WS-YEAR, 4 ) = 0 AND FUNCTION MOD (                
+               WS-YEAR, 100 ) <> 0 OR FUNCTION MOD ( WS-YEAR, 400 ) = 0         
+            MOVE 1 TO WS-RESULT                                                 
+         ELSE                                                                   
+            MOVE 0 TO WS-RESULT.                                                
