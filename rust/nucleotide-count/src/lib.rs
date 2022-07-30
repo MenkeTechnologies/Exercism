@@ -1,31 +1,26 @@
 use std::collections::HashMap;
 
-pub fn count(nt: char, dna: &str) -> Result<usize, char> {
-    match create_dict(&dna) {
-        Err(e) => Err(e),
-        Ok(h) =>
-            match h.get(&nt) {
-                Some(o) => Ok(*o),
-                None => Err(nt)
-            }
-    }
-}
-
 pub fn nucleotide_counts(dna: &str) -> Result<HashMap<char, usize>, char> {
-    create_dict(&dna)
+    let mut dict = HashMap::new();
+    dict.insert('G', 0);
+    dict.insert('T', 0);
+    dict.insert('A', 0);
+    dict.insert('C', 0);
+    dna.chars().try_fold(dict, |mut acc, c| match c {
+        'A' | 'T' | 'G' | 'C' => {
+            *acc.entry(c).or_default() += 1;
+            Ok(acc)
+        }
+        _ => Err(c),
+    })
 }
 
-fn create_dict(dna: &&str) -> Result<HashMap<char, usize>, char> {
-    let mut h = HashMap::new();
-    h.insert('A', 0);
-    h.insert('C', 0);
-    h.insert('G', 0);
-    h.insert('T', 0);
-    for c in dna.chars() {
-        match c {
-            'A' | 'C' | 'G' | 'T' => h.insert(c, h.get(&c).unwrap() + 1),
-            _ => return Err(c)
-        };
+pub fn count(nt: char, dna: &str) -> Result<usize, char> {
+    match nucleotide_counts(dna) {
+        Ok(dict) => match dict.get(&nt) {
+            Some(&cnt) => Ok(cnt),
+            _ => Err(nt)
+        }
+        Err(dna) => Err(dna),
     }
-    Ok(h)
 }
