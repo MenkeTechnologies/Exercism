@@ -4,11 +4,10 @@ class PhoneNumber {
 
     let regex = #"^\s*(\+?1?\s*)?\(?([2-9]\d{2})\)?[-.\s]*([2-9]\d{2})[-.\s]*(\d{4})\s*$"#
 
-    public var number: String = "0000000000"
-    public let areaCode: String
-
-    private let prefix: String
-    private let post: String
+    public var number = "0000000000"
+    public var areaCode = ""
+    private var prefix = ""
+    private var post = ""
 
     public init(_ num: String) {
 
@@ -21,9 +20,6 @@ class PhoneNumber {
         let matches = captureRegex.matches(in: num, range: range)
 
         guard let match = matches.first else {
-            areaCode = ""
-            prefix = ""
-            post = ""
             return
         }
 
