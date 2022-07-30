@@ -3,7 +3,7 @@ import java.util.regex.Pattern;
 
 public class LogLevels {
     static Pattern regex = Pattern.compile("^\\[(.*)\\]:\\s+(.*\\S+)\\s*$");
-    
+
     public static String message(String logLine) {
         Matcher matcher = regex.matcher(logLine);
         matcher.matches();
