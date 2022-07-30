@@ -1,6 +1,10 @@
 -module(pangram).
+-export([is_pangram/1, test_version/0]).
 
--export([is_pangram/1]).
-
-
-is_pangram(_Sentence) -> undefined.
+is_pangram(Sentence) ->
+  LC = string:to_lower(Sentence),
+  lists:all(
+    fun(C)->C end,
+    [lists:member(C, LC) || C <- "abcdefghijklmnopqrstuvwxyz"]
+   ).
+test_version() -> 1.
