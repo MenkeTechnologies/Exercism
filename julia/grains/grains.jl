@@ -1,9 +1,9 @@
-"""Calculate the number of grains on square `square`."""
-function on_square(square)
-
+function on_square(n::Integer)
+    (n < 1 || n > 64) && throw(DomainError("Must be a positive integer between 1-64"))
+    2^(big(n) - 1)
 end
 
-"""Calculate the total number of grains after square `square`."""
-function total_after(square)
-
+function total_after(n::Integer)
+    (n < 1 || n > 64) && throw(DomainError("Must be a positive integer between 1-64"))
+    sum([on_square(i) for i in 1:n])
 end
