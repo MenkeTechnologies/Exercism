@@ -9,6 +9,6 @@ class IsogramChecker {
                         Collectors.groupingBy(
                                 Function.identity(), Collectors.counting()
                         )
-                ).values().stream().noneMatch(c -> c > 1);
+                ).values().stream().allMatch(c -> c == 1);
     }
 }
