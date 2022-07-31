@@ -1,33 +1,46 @@
 <?php
-
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
-
 class DndCharacter
 {
-    public function __construct()
+    private const ABILITIES = [
+        'strength',
+        'dexterity',
+        'constitution',
+        'intelligence',
+        'wisdom',
+        'charisma'
+    ];
+    public int $ability;
+    public int $strength;
+    public int $dexterity;
+    public int $constitution;
+    public int $intelligence;
+    public int $wisdom;
+    public int $charisma;
+    private const HITPOINTS = 10;
+    private const THROWS = 3;
+    private const MIN_SUM_DICES = 1 * self::THROWS;
+    private const MAX_SUM_DICES = 6 * self::THROWS;
+    public static function ability(): int
     {
-        throw new BadFunctionCallException("Please implement the DndCharacter class!");
+        return self::throwAndSumDices();
+    }
+    public static function generate(): stdClass
+    {
+        $character = new stdClass();
+        foreach (self::ABILITIES as $ability) {
+            $character->{$ability} = self::throwAndSumDices();
+        }
+        $character->hitpoints = self::HITPOINTS + self::modifier($character->constitution);
+        return $character;
+    }
+    public static function modifier(int $input): int
+    {
+        return (int) floor(($input - self::HITPOINTS) / 2);
+    }
+    private static function throwAndSumDices(): int
+    {
+        return random_int(self::MIN_SUM_DICES, self::MAX_SUM_DICES);
     }
 }
+
