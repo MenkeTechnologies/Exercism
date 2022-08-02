@@ -1,12 +1,9 @@
-// The code below is a stub. Just enough to satisfy the compiler.
-// In order to pass the tests you can add-to or change any of this code.
-
 #[derive(Debug)]
 pub struct Duration {
     inner: f64,
 }
 
-const SECONDS_PER_EARTH_YEARS: f64 = 31_557_600.0;
+const SECONDS_PER_EARTH_YEARS: f64 = 365.25 * 24.0 * 3600.0;
 
 impl From<u64> for Duration {
     fn from(s: u64) -> Self {
