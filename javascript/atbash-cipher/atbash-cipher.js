@@ -1,12 +1,8 @@
-//
-// This is only a SKELETON file for the 'Atbash Cipher' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+const a = 'a'.charCodeAt(0), z = 'z'.charCodeAt(0);
 
-export const encode = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const decode = (s) =>
+	s.toLowerCase().replace(/[^a-z0-9]/g, '').replace(/[a-z]/g, (c) =>
+		String.fromCharCode(z - c.charCodeAt(0) + a)
+	);
 
-export const decode = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const encode = (s) => decode(s).replace(/.{5}(?=.)/g, '$& ')
