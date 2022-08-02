@@ -17,13 +17,10 @@ allergens = [ "eggs"
             , "pollen"
             , "cats"]
 
-hasAllergy :: Int -> Int -> Boolean
-hasAllergy mask i = (1 `shl` i) `and` mask > 0
-
 allergicTo :: Int -> String -> Boolean
 allergicTo mask allergy = case allergy `elemIndex` allergens of
   Nothing -> false
-  Just index -> hasAllergy mask index
+  Just i -> (1 `shl` i) `and` mask > 0
 
 list :: Int -> Array String
 list mask = filter (allergicTo mask) allergens
