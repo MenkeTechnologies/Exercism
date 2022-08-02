@@ -6,9 +6,9 @@ class RotationalCipher
 
       case _1
       when /[a-z]/
-        ((_1.ord - 'a'.ord + amount) % 26) + 'a'.ord
+        'a'.ord + (_1.ord - 'a'.ord + amount) % 26
       when /[A-Z]/
-        ((_1.ord - 'A'.ord + amount) % 26) + 'A'.ord
+        'A'.ord + (_1.ord - 'A'.ord + amount) % 26
       else
         _1
       end.chr
