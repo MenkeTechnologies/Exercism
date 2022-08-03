@@ -19,7 +19,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "White center territory on 5x5 board" do
     board = """
     __B__
@@ -37,7 +36,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "Open corner territory on 5x5 board" do
     board = """
     __B__
@@ -55,7 +53,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "A stone and not a territory on 5x5 board" do
     board = """
     __B__
@@ -73,7 +70,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "Invalid because X is too low for 5x5 board" do
     board = """
     __B__
@@ -91,7 +87,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "Invalid because X is too high for 5x5 board" do
     board = """
     __B__
@@ -109,7 +104,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "Invalid because Y is too low for 5x5 board" do
     board = """
     __B__
@@ -127,7 +121,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "Invalid because Y is too high for 5x5 board" do
     board = """
     __B__
@@ -145,7 +138,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "One territory is the whole board" do
     board = "_"
     output = GoCounting.territories(board)
@@ -155,7 +147,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "Two territory rectangular board" do
     board = """
     _BW_
@@ -173,7 +164,6 @@ defmodule GoCountingTest do
     assert output == expected
   end
 
-  
   test "Two region rectangular board" do
     board = "_B_"
     output = GoCounting.territories(board)

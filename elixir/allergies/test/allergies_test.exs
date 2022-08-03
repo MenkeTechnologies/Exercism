@@ -19,38 +19,31 @@ defmodule AllergiesTest do
       Allergies.list(0) |> assert_is_a_set_containing([])
     end
 
-    
     test "allergic to just eggs" do
       Allergies.list(1) |> assert_is_a_set_containing(~w[eggs])
     end
 
-    
     test "allergic to just peanuts" do
       Allergies.list(2) |> assert_is_a_set_containing(~w[peanuts])
     end
 
-    
     test "allergic to just strawberries" do
       Allergies.list(8) |> assert_is_a_set_containing(~w[strawberries])
     end
 
-    
     test "allergic to eggs and peanuts" do
       Allergies.list(3) |> assert_is_a_set_containing(~w[eggs peanuts])
     end
 
-    
     test "allergic to more than eggs but not peanuts" do
       Allergies.list(5) |> assert_is_a_set_containing(~w[eggs shellfish])
     end
 
-    
     test "allergic to lots of stuff" do
       Allergies.list(248)
       |> assert_is_a_set_containing(~w[strawberries tomatoes chocolate pollen cats])
     end
 
-    
     test "allergic to everything" do
       Allergies.list(255)
       |> assert_is_a_set_containing(
@@ -58,7 +51,6 @@ defmodule AllergiesTest do
       )
     end
 
-    
     test "ignore non allergen score parts" do
       Allergies.list(509)
       |> assert_is_a_set_containing(
@@ -66,7 +58,6 @@ defmodule AllergiesTest do
       )
     end
 
-    
     test "ignore non allergen score parts without highest valid score" do
       Allergies.list(257)
       |> assert_is_a_set_containing(~w[eggs])
@@ -74,216 +65,176 @@ defmodule AllergiesTest do
   end
 
   describe "score for egg allergies -" do
-    
     test "not allergic to eggs" do
       refute Allergies.allergic_to?(0, "eggs")
     end
 
-    
     test "is allergic to only eggs" do
       assert Allergies.allergic_to?(1, "eggs")
     end
 
-    
     test "is allergic to eggs and something else" do
       assert Allergies.allergic_to?(3, "eggs")
     end
 
-    
     test "is allergic to something, but not eggs" do
       refute Allergies.allergic_to?(2, "eggs")
     end
 
-    
     test "is allergic to everything (including eggs)" do
       assert Allergies.allergic_to?(255, "eggs")
     end
   end
 
   describe "score for peanuts allergies -" do
-    
     test "not allergic to peanuts" do
       refute Allergies.allergic_to?(0, "peanuts")
     end
 
-    
     test "is allergic to only peanuts" do
       assert Allergies.allergic_to?(2, "peanuts")
     end
 
-    
     test "is allergic to peanuts and something else" do
       assert Allergies.allergic_to?(7, "peanuts")
     end
 
-    
     test "is allergic to something, but not peanuts" do
       refute Allergies.allergic_to?(5, "peanuts")
     end
 
-    
     test "is allergic to everything (including peanuts)" do
       assert Allergies.allergic_to?(255, "peanuts")
     end
   end
 
   describe "score for shellfish allergies -" do
-    
     test "not allergic to shellfish" do
       refute Allergies.allergic_to?(0, "shellfish")
     end
 
-    
     test "is allergic to only shellfish" do
       assert Allergies.allergic_to?(4, "shellfish")
     end
 
-    
     test "is allergic to shellfish and something else" do
       assert Allergies.allergic_to?(14, "shellfish")
     end
 
-    
     test "is allergic to something, but not shellfish" do
       refute Allergies.allergic_to?(10, "shellfish")
     end
 
-    
     test "is allergic to everything (including shellfish)" do
       assert Allergies.allergic_to?(255, "shellfish")
     end
   end
 
   describe "score for strawberries allergies -" do
-    
     test "not allergic to strawberries" do
       refute Allergies.allergic_to?(0, "strawberries")
     end
 
-    
     test "is allergic to only strawberries" do
       assert Allergies.allergic_to?(8, "strawberries")
     end
 
-    
     test "is allergic to strawberries and something else" do
       assert Allergies.allergic_to?(28, "strawberries")
     end
 
-    
     test "is allergic to something, but not strawberries" do
       refute Allergies.allergic_to?(20, "strawberries")
     end
 
-    
     test "is allergic to everything (including strawberries)" do
       assert Allergies.allergic_to?(255, "strawberries")
     end
   end
 
   describe "score for tomatoes allergies -" do
-    
     test "not allergic to tomatoes" do
       refute Allergies.allergic_to?(0, "tomatoes")
     end
 
-    
     test "is allergic to only tomatoes" do
       assert Allergies.allergic_to?(16, "tomatoes")
     end
 
-    
     test "is allergic to tomatoes and something else" do
       assert Allergies.allergic_to?(56, "tomatoes")
     end
 
-    
     test "is allergic to something, but not tomatoes" do
       refute Allergies.allergic_to?(40, "tomatoes")
     end
 
-    
     test "is allergic to everything (including tomatoes)" do
       assert Allergies.allergic_to?(255, "tomatoes")
     end
   end
 
   describe "score for chocolate allergies -" do
-    
     test "not allergic to chocolate" do
       refute Allergies.allergic_to?(0, "chocolate")
     end
 
-    
     test "is allergic to only chocolate" do
       assert Allergies.allergic_to?(32, "chocolate")
     end
 
-    
     test "is allergic to chocolate and something else" do
       assert Allergies.allergic_to?(112, "chocolate")
     end
 
-    
     test "is allergic to something, but not chocolate" do
       refute Allergies.allergic_to?(80, "chocolate")
     end
 
-    
     test "is allergic to everything (including chocolate)" do
       assert Allergies.allergic_to?(255, "chocolate")
     end
   end
 
   describe "score for pollen allergies -" do
-    
     test "not allergic to pollen" do
       refute Allergies.allergic_to?(0, "pollen")
     end
 
-    
     test "is allergic to only pollen" do
       assert Allergies.allergic_to?(64, "pollen")
     end
 
-    
     test "is allergic to pollen and something else" do
       assert Allergies.allergic_to?(224, "pollen")
     end
 
-    
     test "is allergic to something, but not pollen" do
       refute Allergies.allergic_to?(160, "pollen")
     end
 
-    
     test "is allergic to everything (including pollen)" do
       assert Allergies.allergic_to?(255, "pollen")
     end
   end
 
   describe "score for cats allergies -" do
-    
     test "not allergic to cats" do
       refute Allergies.allergic_to?(0, "cats")
     end
 
-    
     test "is allergic to only cats" do
       assert Allergies.allergic_to?(128, "cats")
     end
 
-    
     test "is allergic to cats and something else" do
       assert Allergies.allergic_to?(192, "cats")
     end
 
-    
     test "is allergic to something, but not cats" do
       refute Allergies.allergic_to?(64, "cats")
     end
 
-    
     test "is allergic to everything (including cats)" do
       assert Allergies.allergic_to?(255, "cats")
     end

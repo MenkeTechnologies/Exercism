@@ -6,27 +6,22 @@ defmodule PascalsTriangleTest do
     assert PascalsTriangle.rows(1) == [[1]]
   end
 
-  
   test "two rows" do
     assert PascalsTriangle.rows(2) == [[1], [1, 1]]
   end
 
-  
   test "three rows" do
     assert PascalsTriangle.rows(3) == [[1], [1, 1], [1, 2, 1]]
   end
 
-  
   test "four rows" do
     assert PascalsTriangle.rows(4) == [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1]]
   end
 
-  
   test "five rows" do
     assert PascalsTriangle.rows(5) == [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]]
   end
 
-  
   test "six rows" do
     assert PascalsTriangle.rows(6) == [
              [1],
@@ -38,7 +33,6 @@ defmodule PascalsTriangleTest do
            ]
   end
 
-  
   test "ten rows" do
     assert PascalsTriangle.rows(10) == [
              [1],
@@ -54,7 +48,6 @@ defmodule PascalsTriangleTest do
            ]
   end
 
-  
   test "20 rows" do
     assert PascalsTriangle.rows(20) == [
              [1],

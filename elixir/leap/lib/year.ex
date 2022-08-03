@@ -10,6 +10,6 @@ defmodule Year do
   """
   @spec leap_year?(non_neg_integer) :: boolean
   def leap_year?(y) do
-    rem(y, 4) == 0 and rem(y, 100) != 0 || rem(y, 400) == 0
+    (rem(y, 4) == 0 and rem(y, 100) != 0) || rem(y, 400) == 0
   end
 end

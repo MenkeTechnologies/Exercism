@@ -1,5 +1,4 @@
 defmodule RomanNumerals do
-
   @roman_values [
     {1000, "M"},
     {900, "CM"},
@@ -15,12 +14,14 @@ defmodule RomanNumerals do
     {4, "IV"},
     {1, "I"}
   ]
-  
+
   def numeral(number) do
-    [_, r] = @roman_values |>
-    Enum.reduce([number, ""], fn {k, v}, acc ->
-      [rem(acc |> hd, k), List.last(acc) <> String.duplicate(v, div(acc |> hd,k))]
-    end)
+    [_, r] =
+      @roman_values
+      |> Enum.reduce([number, ""], fn {k, v}, acc ->
+        [rem(acc |> hd, k), List.last(acc) <> String.duplicate(v, div(acc |> hd, k))]
+      end)
+
     r
   end
 end

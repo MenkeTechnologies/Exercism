@@ -3,7 +3,7 @@ defmodule NeedForSpeed do
   alias NeedForSpeed.RemoteControlCar, as: Car
   import IO, only: [puts: 1]
   import IO.ANSI, except: [color: 1]
-  
+
   def print_race(%Race{} = race) do
     puts("""
     🏁 #{race.title} 🏁

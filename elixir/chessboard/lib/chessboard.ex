@@ -1,5 +1,4 @@
 defmodule Chessboard do
-  
   def rank_range, do: 1..8
 
   def file_range, do: ?A..?H

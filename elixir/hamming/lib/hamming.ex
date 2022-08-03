@@ -4,10 +4,10 @@ defmodule Hamming do
     if length(s1) != length(s2) do
       {:error, "strands must be of equal length"}
     else
-      {:ok, s1
-            |> Enum.zip(s2)
-            |> Enum.count(fn {n1, n2} -> n1 != n2 end)
-      }
+      {:ok,
+       s1
+       |> Enum.zip(s2)
+       |> Enum.count(fn {n1, n2} -> n1 != n2 end)}
     end
   end
 end

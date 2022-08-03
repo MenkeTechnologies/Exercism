@@ -23,8 +23,13 @@ defmodule RemoteControlCar do
 
   def drive(%RemoteControlCar{} = remote_car) do
     case remote_car.battery_percentage do
-      0 -> remote_car
-      n -> %{remote_car | battery_percentage: n - 1,
+      0 ->
+        remote_car
+
+      n ->
+        %{
+          remote_car
+          | battery_percentage: n - 1,
             distance_driven_in_meters: remote_car.distance_driven_in_meters + 20
         }
     end

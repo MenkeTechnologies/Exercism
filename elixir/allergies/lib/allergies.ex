@@ -14,7 +14,7 @@ defmodule Allergies do
 
   def list(flags) do
     @allergies_bits
-    |> Map.keys
+    |> Map.keys()
     |> Enum.filter(&allergic_to?(flags, &1))
   end
 

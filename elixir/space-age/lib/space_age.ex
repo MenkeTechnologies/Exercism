@@ -9,7 +9,7 @@ defmodule SpaceAge do
           | :uranus
           | :neptune
 
-  @earth_seconds_per_year 31557600
+  @earth_seconds_per_year 31_557_600
   @planet_years_to_earth_years_ratio %{
     earth: 1,
     mercury: 0.2408467,
@@ -28,7 +28,8 @@ defmodule SpaceAge do
   @spec age_on(planet, pos_integer) :: {:ok, float} | {:error, String.t()}
   def age_on(planet, seconds) do
     if planet in Map.keys(@planet_years_to_earth_years_ratio) do
-      {:ok, seconds / @earth_seconds_per_year / Map.get(@planet_years_to_earth_years_ratio, planet)}
+      {:ok,
+       seconds / @earth_seconds_per_year / Map.get(@planet_years_to_earth_years_ratio, planet)}
     else
       {:error, "not a planet"}
     end

@@ -7,50 +7,41 @@ defmodule TripletTest do
     assert Triplet.sum(triplet) == 12
   end
 
-  
   test "product" do
     triplet = [3, 4, 5]
     assert Triplet.product(triplet) == 60
   end
 
-  
   test "pythagorean" do
     triplet = [3, 4, 5]
     assert Triplet.pythagorean?(triplet)
   end
 
-  
   test "not pythagorean" do
     triplet = [5, 6, 7]
     refute Triplet.pythagorean?(triplet)
   end
 
-  
   test "triplets whose sum is 12" do
     assert Triplet.generate(12) == [[3, 4, 5]]
   end
 
-  
   test "triplets whose sum is 108" do
     assert Triplet.generate(108) == [[27, 36, 45]]
   end
 
-  
   test "triplets whose sum is 1000" do
     assert Triplet.generate(1000) == [[200, 375, 425]]
   end
 
-  
   test "no matching triplets for 1001" do
     assert Triplet.generate(1001) == []
   end
 
-  
   test "returns all matching triplets" do
     assert Triplet.generate(90) == [[9, 40, 41], [15, 36, 39]]
   end
 
-  
   test "several matching triplets" do
     assert Triplet.generate(840) == [
              [40, 399, 401],
@@ -64,7 +55,6 @@ defmodule TripletTest do
            ]
   end
 
-  
   @tag :slow
   test "triplets for large number" do
     assert Triplet.generate(30000) == [

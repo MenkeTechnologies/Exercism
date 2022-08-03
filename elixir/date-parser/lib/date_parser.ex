@@ -3,7 +3,9 @@ defmodule DateParser do
   def month(), do: "\\d{1,2}"
   def year(), do: "\\d{4}"
   def day_names(), do: "(Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)"
-  def month_names(), do: "(January|February|March|April|May|June|July|August|September|October|November|December)"
+
+  def month_names(),
+    do: "(January|February|March|April|May|June|July|August|September|October|November|December)"
 
   def capture_day(), do: "(?<day>#{day()})"
   def capture_month(), do: "(?<month>#{month()})"
@@ -17,5 +19,4 @@ defmodule DateParser do
   def match_numeric_date(), do: Regex.compile!("^#{capture_numeric_date()}$")
   def match_month_name_date(), do: Regex.compile!("^#{capture_month_name_date()}$")
   def match_day_month_name_date(), do: Regex.compile!("^#{capture_day_month_name_date()}$")
-
 end

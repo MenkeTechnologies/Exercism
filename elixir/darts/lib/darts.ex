@@ -16,6 +16,5 @@ defmodule Darts do
       d <= 10 -> 1
       true -> 0
     end
-
   end
 end

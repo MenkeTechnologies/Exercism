@@ -6,12 +6,10 @@ defmodule SpiralTest do
     assert Spiral.matrix(0) == []
   end
 
-  
   test "trivial spiral" do
     assert Spiral.matrix(1) == [[1]]
   end
 
-  
   test "spiral of side length 2" do
     assert Spiral.matrix(2) == [
              [1, 2],
@@ -19,7 +17,6 @@ defmodule SpiralTest do
            ]
   end
 
-  
   test "spiral of side length 3" do
     assert Spiral.matrix(3) == [
              [1, 2, 3],
@@ -28,7 +25,6 @@ defmodule SpiralTest do
            ]
   end
 
-  
   test "spiral of side length 4" do
     assert Spiral.matrix(4) == [
              [1, 2, 3, 4],
@@ -38,7 +34,6 @@ defmodule SpiralTest do
            ]
   end
 
-  
   test "spiral of size 5" do
     assert Spiral.matrix(5) == [
              [1, 2, 3, 4, 5],

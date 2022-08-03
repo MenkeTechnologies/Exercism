@@ -6,7 +6,6 @@ defmodule ZebraPuzzleTest do
     assert ZebraPuzzle.drinks_water() == :norwegian
   end
 
-  
   test "resident who owns zebra" do
     assert ZebraPuzzle.owns_zebra() == :japanese
   end

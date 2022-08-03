@@ -12,7 +12,6 @@ defmodule ResistorColorDuo do
     :white => 9
   }
 
-
   @doc """
   Calculate a resistance value from two colors
   """
@@ -20,7 +19,7 @@ defmodule ResistorColorDuo do
   def value(colors) do
     colors
     |> Enum.take(2)
-    |> Enum.map(& @resistance_chart[&1])
-    |> Integer.undigits
+    |> Enum.map(&@resistance_chart[&1])
+    |> Integer.undigits()
   end
 end

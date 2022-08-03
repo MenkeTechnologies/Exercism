@@ -12,6 +12,7 @@ defmodule LibraryFees do
   def return_date(checkout_datetime) do
     return_at =
       if before_noon?(checkout_datetime), do: 28 * @days_in_seconds, else: 29 * @days_in_seconds
+
     checkout_datetime
     |> NaiveDateTime.add(return_at, :seconds)
     |> NaiveDateTime.to_date()
@@ -35,6 +36,7 @@ defmodule LibraryFees do
     return_datetime = datetime_from_string(return)
     checkout_datetime = datetime_from_string(checkout)
     rate = if monday?(return_datetime), do: rate * 0.5, else: rate
+
     checkout_datetime
     |> return_date()
     |> days_late(return_datetime)

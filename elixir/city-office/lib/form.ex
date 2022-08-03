@@ -4,7 +4,7 @@ defmodule Form do
   """
   @doc """
   Generates a string of a given length.
-  
+
   This string can be used to fill out a form field that is supposed to have no value.
   Such fields cannot be left empty because a malicious third party could fill them out with false data.
   """
@@ -13,10 +13,9 @@ defmodule Form do
     String.duplicate("X", n)
   end
 
-
   @doc """
   Splits the string into a list of uppercase letters.
-  
+
   This is needed for form fields that don't offer a single input for the whole string,
   but instead require splitting the string into a predefined number of single-letter inputs.
   """
@@ -29,7 +28,7 @@ defmodule Form do
 
   @doc """
   Checks if the value has no more than the maximum allowed number of letters.
-  
+
   This is needed to check that the values of fields do not exceed the maximum allowed length.
   It also tells you by how much the value exceeds the maximum.
   """

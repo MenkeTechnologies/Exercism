@@ -37,6 +37,5 @@ defmodule HighSchoolSweetheart do
                  ***
                   *
     """
-
   end
 end

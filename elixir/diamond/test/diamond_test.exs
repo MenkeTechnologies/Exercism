@@ -7,7 +7,6 @@ defmodule DiamondTest do
     assert shape == "A\n"
   end
 
-  
   test "letter B" do
     shape = Diamond.build_shape(?B)
 
@@ -18,7 +17,6 @@ defmodule DiamondTest do
            """
   end
 
-  
   test "letter C" do
     shape = Diamond.build_shape(?C)
 
@@ -31,7 +29,6 @@ defmodule DiamondTest do
            """
   end
 
-  
   test "letter D" do
     shape = Diamond.build_shape(?D)
 
@@ -46,7 +43,6 @@ defmodule DiamondTest do
            """
   end
 
-  
   test "letter Z" do
     shape = Diamond.build_shape(?Z)
 

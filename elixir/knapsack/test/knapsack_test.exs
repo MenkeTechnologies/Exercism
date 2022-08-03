@@ -9,7 +9,6 @@ defmodule KnapsackTest do
     assert Knapsack.maximum_value(items, maximum_weight) == 0
   end
 
-  
   test "one item, too heavy" do
     items = [%{value: 1, weight: 100}]
     maximum_weight = 10
@@ -17,7 +16,6 @@ defmodule KnapsackTest do
     assert Knapsack.maximum_value(items, maximum_weight) == 0
   end
 
-  
   test "five items (cannot be greedy by weight)" do
     items = [
       %{value: 5, weight: 2},
@@ -32,7 +30,6 @@ defmodule KnapsackTest do
     assert Knapsack.maximum_value(items, maximum_weight) == 21
   end
 
-  
   test "five items (cannot be greedy by value)" do
     items = [
       %{value: 20, weight: 2},
@@ -47,7 +44,6 @@ defmodule KnapsackTest do
     assert Knapsack.maximum_value(items, maximum_weight) == 80
   end
 
-  
   test "example knapsack" do
     items = [
       %{value: 10, weight: 5},
@@ -61,7 +57,6 @@ defmodule KnapsackTest do
     assert Knapsack.maximum_value(items, maximum_weight) == 90
   end
 
-  
   test "8 items" do
     items = [
       %{value: 350, weight: 25},
@@ -79,7 +74,6 @@ defmodule KnapsackTest do
     assert Knapsack.maximum_value(items, maximum_weight) == 900
   end
 
-  
   test "15 items" do
     items = [
       %{value: 135, weight: 70},

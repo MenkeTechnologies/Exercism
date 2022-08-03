@@ -12,9 +12,10 @@ defmodule Raindrops do
   def convert(number) do
     Enum.reduce([{3, "Pling"}, {5, "Plang"}, {7, "Plong"}], "", fn {k, v}, acc ->
       if rem(number, k) == 0, do: acc <> v, else: acc
-    end) |> case do
-              "" -> to_string(number)
-              str -> str
-            end
+    end)
+    |> case do
+      "" -> to_string(number)
+      str -> str
+    end
   end
 end

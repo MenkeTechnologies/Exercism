@@ -5,5 +5,5 @@ defmodule Anagram do
   end
 
   def uc(string), do: string |> String.upcase()
-  def sorted(string), do: string |> String.upcase |> to_charlist() |> Enum.sort()
+  def sorted(string), do: string |> String.upcase() |> to_charlist() |> Enum.sort()
 end

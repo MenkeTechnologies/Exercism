@@ -15,7 +15,6 @@ defmodule FoodChainTest do
     assert output == expected
   end
 
-  
   test "spider" do
     start = 2
     stop = 2
@@ -31,7 +30,6 @@ defmodule FoodChainTest do
     assert output == expected
   end
 
-  
   test "bird" do
     start = 3
     stop = 3
@@ -48,7 +46,6 @@ defmodule FoodChainTest do
     assert output == expected
   end
 
-  
   test "cat" do
     start = 4
     stop = 4
@@ -66,7 +63,6 @@ defmodule FoodChainTest do
     assert output == expected
   end
 
-  
   test "dog" do
     start = 5
     stop = 5
@@ -85,7 +81,6 @@ defmodule FoodChainTest do
     assert output == expected
   end
 
-  
   test "goat" do
     start = 6
     stop = 6
@@ -105,7 +100,6 @@ defmodule FoodChainTest do
     assert output == expected
   end
 
-  
   test "cow" do
     start = 7
     stop = 7
@@ -126,7 +120,6 @@ defmodule FoodChainTest do
     assert output == expected
   end
 
-  
   test "horse" do
     start = 8
     stop = 8
@@ -140,7 +133,6 @@ defmodule FoodChainTest do
     assert output == expected
   end
 
-  
   test "multiple verses" do
     start = 1
     stop = 3
@@ -165,7 +157,6 @@ defmodule FoodChainTest do
     assert output == expected
   end
 
-  
   test "full song" do
     start = 1
     stop = 8

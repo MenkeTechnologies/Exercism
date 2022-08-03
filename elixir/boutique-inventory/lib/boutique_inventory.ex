@@ -19,6 +19,7 @@ defmodule BoutiqueInventory do
       Enum.reduce(item.quantity_by_size, %{}, fn {size, n}, acc ->
         Map.put(acc, size, n + count)
       end)
+
     Map.put(item, :quantity_by_size, new_sizes)
   end
 

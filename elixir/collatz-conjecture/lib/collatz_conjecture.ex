@@ -14,7 +14,7 @@ defmodule CollatzConjecture do
         n when rem(n, 2) == 0 -> {n, div(n, 2)}
         n -> {n, n * 3 + 1}
       end
-    ) |> Enum.count()
-
+    )
+    |> Enum.count()
   end
 end

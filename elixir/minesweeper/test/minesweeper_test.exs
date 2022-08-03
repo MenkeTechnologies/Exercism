@@ -9,7 +9,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "no columns" do
     input = [""]
     expected = [""]
@@ -17,7 +16,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "no mines" do
     input = [
       "   ",
@@ -34,7 +32,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "mines only" do
     input = [
       "***",
@@ -51,7 +48,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "mine surrounded by spaces" do
     input = [
       "   ",
@@ -68,7 +64,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "space surrounded by mines" do
     input = [
       "***",
@@ -85,7 +80,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "horizontal line" do
     input = [
       " * * "
@@ -98,7 +92,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "horizontal line, mines at edges" do
     input = [
       "*   *"
@@ -111,7 +104,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "vertical line" do
     input = [
       " ",
@@ -132,7 +124,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "vertical line, mines at edges" do
     input = [
       "*",
@@ -153,7 +144,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "cross" do
     input = [
       "  *  ",
@@ -174,7 +164,6 @@ defmodule MinesweeperTest do
     assert Minesweeper.annotate(input) == expected
   end
 
-  
   test "large minefield" do
     input = [
       " *  * ",

@@ -5,8 +5,8 @@ defmodule Isogram do
     |> String.downcase()
     |> String.replace(~r/\W/, "")
     |> String.to_charlist()
-    |> Enum.frequencies
-    |> Map.values
+    |> Enum.frequencies()
+    |> Map.values()
     |> Enum.all?(&(&1 < 2))
   end
 end

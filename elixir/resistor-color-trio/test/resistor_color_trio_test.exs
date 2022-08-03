@@ -10,7 +10,6 @@ defmodule ResistorColorTrioTest do
     assert output == expected
   end
 
-  
   test "Blue and grey and brown" do
     colors = [:blue, :grey, :brown]
     output = ResistorColorTrio.label(colors)
@@ -19,7 +18,6 @@ defmodule ResistorColorTrioTest do
     assert output == expected
   end
 
-  
   test "Red and black and red" do
     colors = [:red, :black, :red]
     output = ResistorColorTrio.label(colors)
@@ -28,7 +26,6 @@ defmodule ResistorColorTrioTest do
     assert output == expected
   end
 
-  
   test "Green and brown and orange" do
     colors = [:green, :brown, :orange]
     output = ResistorColorTrio.label(colors)
@@ -37,7 +34,6 @@ defmodule ResistorColorTrioTest do
     assert output == expected
   end
 
-  
   test "Yellow and violet and yellow" do
     colors = [:yellow, :violet, :yellow]
     output = ResistorColorTrio.label(colors)

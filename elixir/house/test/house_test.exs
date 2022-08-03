@@ -14,7 +14,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse two - the malt that lay" do
     start = 2
     stop = 2
@@ -27,7 +26,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse three - the rat that ate" do
     start = 3
     stop = 3
@@ -40,7 +38,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse four - the cat that killed" do
     start = 4
     stop = 4
@@ -53,7 +50,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse five - the dog that worried" do
     start = 5
     stop = 5
@@ -66,7 +62,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse six - the cow with the crumpled horn" do
     start = 6
     stop = 6
@@ -79,7 +74,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse seven - the maiden all forlorn" do
     start = 7
     stop = 7
@@ -92,7 +86,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse eight - the man all tattered and torn" do
     start = 8
     stop = 8
@@ -105,7 +98,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse nine - the priest all shaven and shorn" do
     start = 9
     stop = 9
@@ -118,7 +110,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse 10 - the rooster that crowed in the morn" do
     start = 10
     stop = 10
@@ -131,7 +122,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse 11 - the farmer sowing his corn" do
     start = 11
     stop = 11
@@ -144,7 +134,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "verse 12 - the horse and the hound and the horn" do
     start = 12
     stop = 12
@@ -157,7 +146,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "multiple verses" do
     start = 4
     stop = 8
@@ -174,7 +162,6 @@ defmodule HouseTest do
     assert output == expected
   end
 
-  
   test "full rhyme" do
     start = 1
     stop = 12

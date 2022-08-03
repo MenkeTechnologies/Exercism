@@ -13,7 +13,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate one word written left to right" do
     grid = "clojurermt"
     words = ["clojure"]
@@ -26,7 +25,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate the same word written left to right in a different position" do
     grid = "mtclojurer"
     words = ["clojure"]
@@ -39,7 +37,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate a different left to right word" do
     grid = "coffeelplx"
     words = ["coffee"]
@@ -52,7 +49,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate that different left to right word in a different position" do
     grid = "xcoffeezlp"
     words = ["coffee"]
@@ -65,7 +61,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate a left to right word in two line grid" do
     grid = """
     jefblpepre
@@ -82,7 +77,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate a left to right word in three line grid" do
     grid = """
     camdcimgtc
@@ -100,7 +94,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate a left to right word in ten line grid" do
     grid = """
     jefblpepre
@@ -125,7 +118,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate that left to right word in a different position in a ten line grid" do
     grid = """
     jefblpepre
@@ -150,7 +142,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate a different left to right word in a ten line grid" do
     grid = """
     jefblpepre
@@ -175,7 +166,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate multiple words" do
     grid = """
     jefblpepre
@@ -201,7 +191,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate a single word written right to left" do
     grid = "rixilelhrs"
     words = ["elixir"]
@@ -214,7 +203,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate multiple words written in different horizontal directions" do
     grid = """
     jefblpepre
@@ -240,7 +228,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate words written top to bottom" do
     grid = """
     jefblpepre
@@ -267,7 +254,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate words written bottom to top" do
     grid = """
     jefblpepre
@@ -295,7 +281,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate words written top left to bottom right" do
     grid = """
     jefblpepre
@@ -324,7 +309,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate words written bottom right to top left" do
     grid = """
     jefblpepre
@@ -354,7 +338,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate words written bottom left to top right" do
     grid = """
     jefblpepre
@@ -385,7 +368,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should locate words written top right to bottom left" do
     grid = """
     jefblpepre
@@ -417,7 +399,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should fail to locate a word that is not in the puzzle" do
     grid = """
     jefblpepre
@@ -461,7 +442,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should fail to locate words that are not on horizontal, vertical, or diagonal lines" do
     grid = """
     abc
@@ -487,7 +467,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should not concatenate different lines to find a horizontal word" do
     grid = """
     abceli
@@ -503,7 +482,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should not wrap around horizontally to find a word" do
     grid = """
     silabcdefp
@@ -518,7 +496,6 @@ defmodule WordSearchTest do
     assert output == expected
   end
 
-  
   test "Should not wrap around vertically to find a word" do
     grid = """
     s
