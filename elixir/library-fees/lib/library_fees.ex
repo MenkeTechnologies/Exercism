@@ -1,25 +1,44 @@
 defmodule LibraryFees do
+  @days_in_seconds 24 * 60 * 60
+
   def datetime_from_string(string) do
-    # Please implement the datetime_from_string/1 function
+    NaiveDateTime.from_iso8601!(string)
   end
 
   def before_noon?(datetime) do
-    # Please implement the before_noon?/1 function
+    datetime.hour < 12
   end
 
   def return_date(checkout_datetime) do
-    # Please implement the return_date/1 function
+    return_at =
+      if before_noon?(checkout_datetime), do: 28 * @days_in_seconds, else: 29 * @days_in_seconds
+    checkout_datetime
+    |> NaiveDateTime.add(return_at, :seconds)
+    |> NaiveDateTime.to_date()
   end
 
   def days_late(planned_return_date, actual_return_datetime) do
-    # Please implement the days_late/2 function
+    actual_return_datetime
+    |> NaiveDateTime.to_date()
+    |> Date.diff(planned_return_date)
+    |> case do
+      days when days <= 0 -> 0
+      days -> days
+    end
   end
 
   def monday?(datetime) do
-    # Please implement the monday?/1 function
+    Date.day_of_week(NaiveDateTime.to_date(datetime)) == 1
   end
 
   def calculate_late_fee(checkout, return, rate) do
-    # Please implement the calculate_late_fee/3 function
+    return_datetime = datetime_from_string(return)
+    checkout_datetime = datetime_from_string(checkout)
+    rate = if monday?(return_datetime), do: rate * 0.5, else: rate
+    checkout_datetime
+    |> return_date()
+    |> days_late(return_datetime)
+    |> Kernel.*(rate)
+    |> trunc()
   end
 end
