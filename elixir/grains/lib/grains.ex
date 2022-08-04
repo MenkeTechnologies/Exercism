@@ -12,6 +12,6 @@ defmodule Grains do
   def total do
     {:ok,
      1..64
-     |> Enum.reduce(0, &Kernel.elem(square(&1), 1) + &2)}
+     |> Enum.reduce(0, &(Kernel.elem(square(&1), 1) + &2))}
   end
 end

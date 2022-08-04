@@ -1,9 +1,7 @@
 defmodule ArmstrongNumber do
-  @moduledoc """
-  Provides a way to validate whether or not a number is an Armstrong number
-  """
-
-  @spec valid?(integer) :: boolean
-  def valid?(number) do
+  def valid?(n) do
+    digits = n |> Integer.digits()
+    len = digits |> length
+    n == digits |> Enum.map(&:math.pow(&1, len)) |> Enum.sum()
   end
 end
