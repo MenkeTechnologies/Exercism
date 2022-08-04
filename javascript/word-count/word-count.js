@@ -1,11 +1,6 @@
-//
-// This is only a SKELETON file for the 'Word Count' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const countWords = (str) =>
-  str.toLowerCase().replace(/(?!\w|'t\b)./g, " ").trim().split(/\s+/).reduce((acc, n) => ({
+export const countWords = s =>
+  s.toLowerCase().replace(/(?!\w|'t\b)./g, " ").trim().split(/\s+/).reduce((acc, w) => ({
     ...acc,
-    [n]: (acc[n] || 0) + 1
+    [w]: (acc[w] || 0) + 1
   }), {});
 
