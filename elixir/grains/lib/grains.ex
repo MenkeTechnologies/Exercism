@@ -10,8 +10,8 @@ defmodule Grains do
   end
 
   def total do
-    {:ok,
-     1..64
-     |> Enum.reduce(0, &(Kernel.elem(square(&1), 1) + &2))}
+    {:ok, 1..64
+     |> Enum.map(&(Kernel.elem(square(&1), 1)))
+     |> Enum.sum }
   end
 end
