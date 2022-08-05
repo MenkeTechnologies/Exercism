@@ -5,15 +5,15 @@ function talk() {
     exit 0
 }
 
-q="${1//[[:space:]]/}"
+nows="${1//[[:space:]]/}"
 
-if [[ -z "$q" ]]; then
+if [[ -z "$nows" ]]; then
     talk "Fine. Be that way!"
 fi
 
-if ! [[ "$q" =~ [a-z] ]] && [[ "$q" =~ [A-Z] ]]; then
+if ! [[ "$nows" =~ [a-z] ]] && [[ "$nows" =~ [A-Z] ]]; then
 
-    if [[ "$q" =~ \?$ ]]; then
+    if [[ "$nows" =~ \?$ ]]; then
         talk "Calm down, I know what I'm doing!"
     fi
 
@@ -21,7 +21,7 @@ if ! [[ "$q" =~ [a-z] ]] && [[ "$q" =~ [A-Z] ]]; then
 
 fi
 
-if [[ $q =~ \?$ ]]; then
+if [[ $nows =~ \?$ ]]; then
     talk 'Sure.'
 fi
 
