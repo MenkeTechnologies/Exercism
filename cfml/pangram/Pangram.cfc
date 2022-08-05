@@ -1,13 +1,14 @@
-/**
-* Your implmentation of the Pangram exercise
-*/
 component {
 	
-	/**
-	* @returns 
-	*/
-	 function isPangram( sentence ) {
-		// Implement me here
+	function isPangram(sentence) {
+		alph = listToArray("abcdefghijklmnopqrstuvwxyz",'');
+		sentence = lCase(sentence)
+		for (c in alph) {
+			if (find(c, sentence) == 0) {
+				return false;
+			}
+		}
+        return true;
 	}
 	
 }
