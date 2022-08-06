@@ -1,5 +1,3 @@
-//Solution goes in Sources
-
 class Squares {
 
     let square: Int
