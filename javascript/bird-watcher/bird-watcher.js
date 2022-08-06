@@ -1,9 +1,4 @@
 // @ts-check
-//
-// The line above enables type checking for this file. Various IDEs interpret
-// the @ts-check directive. It will give you helpful autocompletion when
-// implementing this exercise.
-
 /**
  * Calculates the total bird count.
  *
@@ -30,7 +25,6 @@ export const birdsInWeek = (birdsPerDay, week) =>
  * @param {number[]} birdsPerDay
  * @returns {number[]} corrected bird count data
  */
-export const fixBirdCountLog = birdsPerDay => {
-  birdsPerDay.forEach((n,i) =>  i % 2 === 0 ? birdsPerDay[i] = n + 1 : null )
-  return birdsPerDay
-  }
+export const fixBirdCountLog = birdsPerDay => 
+  birdsPerDay.forEach((n,i) =>  i % 2 === 0 ? birdsPerDay[i] = n + 1 : 0)
+  || birdsPerDay
