@@ -70,35 +70,35 @@ describe("Hamming", () => {
     expect(compute("", "")).toEqual(0);
   });
 
-  xtest("single letter identical strands", () => {
+  test("single letter identical strands", () => {
     expect(compute("A", "A")).toEqual(0);
   });
 
-  xtest("single letter different strands", () => {
+  test("single letter different strands", () => {
     expect(compute("G", "T")).toEqual(1);
   });
 
-  xtest("long identical strands", () => {
+  test("long identical strands", () => {
     expect(compute("GGACTGAAATCTG", "GGACTGAAATCTG")).toEqual(0);
   });
 
-  xtest("long different strands", () => {
+  test("long different strands", () => {
     expect(compute("GGACGGATTCTG", "AGGACGGATTCT")).toEqual(9);
   });
 
-  xtest("disallow first strand longer", () => {
+  test("disallow first strand longer", () => {
     expect(compute("AATG", "AAA")).toEqual(-1);
   });
 
-  xtest("disallow second strand longer", () => {
+  test("disallow second strand longer", () => {
     expect(compute("ATA", "AGTG")).toEqual(-1);
   });
 
-  xtest("disallow empty first strand", () => {
+  test("disallow empty first strand", () => {
     expect(compute("", "G")).toEqual(-1);
   });
 
-  xtest("disallow empty second strand", () => {
+  test("disallow empty second strand", () => {
     expect(compute("G", "")).toEqual(-1);
   });
 });

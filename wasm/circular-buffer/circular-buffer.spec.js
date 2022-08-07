@@ -35,20 +35,20 @@ describe("CircularBuffer", () => {
     expect(currentInstance.exports.read()).toEqual([-1, -1]);
   });
 
-  xtest("can read an item just written", () => {
+  test("can read an item just written", () => {
     expect(currentInstance.exports.init(1)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.read()).toEqual([1, 0]);
   });
 
-  xtest("each item may only be read once", () => {
+  test("each item may only be read once", () => {
     expect(currentInstance.exports.init(1)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.read()).toEqual([1, 0]);
     expect(currentInstance.exports.read()).toEqual([-1, -1]);
   });
 
-  xtest("items are read in the order they are written", () => {
+  test("items are read in the order they are written", () => {
     expect(currentInstance.exports.init(2)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.write(2)).toEqual(0);
@@ -56,13 +56,13 @@ describe("CircularBuffer", () => {
     expect(currentInstance.exports.read()).toEqual([2, 0]);
   });
 
-  xtest("full buffer can't be written to", () => {
+  test("full buffer can't be written to", () => {
     expect(currentInstance.exports.init(1)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.write(2)).toEqual(-1);
   });
 
-  xtest("a read frees up capacity for another write", () => {
+  test("a read frees up capacity for another write", () => {
     expect(currentInstance.exports.init(1)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.read()).toEqual([1, 0]);
@@ -70,7 +70,7 @@ describe("CircularBuffer", () => {
     expect(currentInstance.exports.read()).toEqual([2, 0]);
   });
 
-  xtest("read position is maintained even across multiple writes", () => {
+  test("read position is maintained even across multiple writes", () => {
     expect(currentInstance.exports.init(3)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.write(2)).toEqual(0);
@@ -80,14 +80,14 @@ describe("CircularBuffer", () => {
     expect(currentInstance.exports.read()).toEqual([3, 0]);
   });
 
-  xtest("items cleared out of buffer can't be read", () => {
+  test("items cleared out of buffer can't be read", () => {
     expect(currentInstance.exports.init(1)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     currentInstance.exports.clear();
     expect(currentInstance.exports.read()).toEqual([-1, -1]);
   });
 
-  xtest("clear frees up capacity for another write", () => {
+  test("clear frees up capacity for another write", () => {
     expect(currentInstance.exports.init(1)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     currentInstance.exports.clear();
@@ -95,14 +95,14 @@ describe("CircularBuffer", () => {
     expect(currentInstance.exports.read()).toEqual([2, 0]);
   });
 
-  xtest("clear does nothing on empty buffer", () => {
+  test("clear does nothing on empty buffer", () => {
     expect(currentInstance.exports.init(1)).toEqual(0);
     currentInstance.exports.clear();
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.read()).toEqual([1, 0]);
   });
 
-  xtest("forceWrite acts like write on non-full buffer", () => {
+  test("forceWrite acts like write on non-full buffer", () => {
     expect(currentInstance.exports.init(2)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.forceWrite(2)).toEqual(0);
@@ -110,7 +110,7 @@ describe("CircularBuffer", () => {
     expect(currentInstance.exports.read()).toEqual([2, 0]);
   });
 
-  xtest("forceWrite replaces the oldest item on full buffer", () => {
+  test("forceWrite replaces the oldest item on full buffer", () => {
     expect(currentInstance.exports.init(2)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.write(2)).toEqual(0);
@@ -119,7 +119,7 @@ describe("CircularBuffer", () => {
     expect(currentInstance.exports.read()).toEqual([3, 0]);
   });
 
-  xtest("forceWrite replaces the oldest item remaining in buffer following a read", () => {
+  test("forceWrite replaces the oldest item remaining in buffer following a read", () => {
     expect(currentInstance.exports.init(3)).toEqual(0);
     expect(currentInstance.exports.write(1)).toEqual(0);
     expect(currentInstance.exports.write(2)).toEqual(0);
@@ -132,7 +132,7 @@ describe("CircularBuffer", () => {
     expect(currentInstance.exports.read()).toEqual([5, 0]);
   });
 
-  xtest("initial clear does not affect wrapping around", () => {
+  test("initial clear does not affect wrapping around", () => {
     expect(currentInstance.exports.init(2)).toEqual(0);
     currentInstance.exports.clear();
     expect(currentInstance.exports.write(1)).toEqual(0);

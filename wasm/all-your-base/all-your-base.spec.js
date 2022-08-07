@@ -60,110 +60,110 @@ describe("Converter", () => {
     expect(results).toEqual([1]);
   });
 
-  xtest("binary to single decimal", () => {
+  test("binary to single decimal", () => {
     let [results, rc] = convert([1, 0, 1], 2, 10);
     expect(rc).toEqual(0);
     expect(results).toEqual([5]);
   });
 
-  xtest("single decimal to binary", () => {
+  test("single decimal to binary", () => {
     let [results, rc] = convert([5], 10, 2);
     expect(rc).toEqual(0);
     expect(results).toEqual([1, 0, 1]);
   });
 
-  xtest("binary to multiple decimal", () => {
+  test("binary to multiple decimal", () => {
     let [results, rc] = convert([1, 0, 1, 0, 1, 0], 2, 10);
     expect(rc).toEqual(0);
     expect(results).toEqual([4, 2]);
   });
 
-  xtest("decimal to binary", () => {
+  test("decimal to binary", () => {
     let [results, rc] = convert([4, 2], 10, 2);
     expect(rc).toEqual(0);
     expect(results).toEqual([1, 0, 1, 0, 1, 0]);
   });
 
-  xtest("trinary to hexadecimal", () => {
+  test("trinary to hexadecimal", () => {
     let [results, rc] = convert([1, 1, 2, 0], 3, 16);
     expect(rc).toEqual(0);
     expect(results).toEqual([2, 10]);
   });
 
-  xtest("hexadecimal to trinary", () => {
+  test("hexadecimal to trinary", () => {
     let [results, rc] = convert([2, 10], 16, 3);
     expect(rc).toEqual(0);
     expect(results).toEqual([1, 1, 2, 0]);
   });
 
-  xtest("15-bit integer", () => {
+  test("15-bit integer", () => {
     let [results, rc] = convert([3, 46, 60], 97, 73);
     expect(rc).toEqual(0);
     expect(results).toEqual([6, 10, 45]);
   });
 
-  xtest("empty list", () => {
+  test("empty list", () => {
     let [_, rc] = convert([], 2, 10);
     expect(rc).toEqual(-1);
   });
 
-  xtest("single zero", () => {
+  test("single zero", () => {
     let [results, rc] = convert([0], 10, 2);
     expect(rc).toEqual(0);
     expect(results).toEqual([0]);
   });
 
-  xtest("multiple zeros", () => {
+  test("multiple zeros", () => {
     let [_, rc] = convert([0, 0, 0], 10, 2);
     expect(rc).toEqual(-1);
   });
 
-  xtest("leading zeros", () => {
+  test("leading zeros", () => {
     let [_, rc] = convert([0, 6, 0], 7, 10);
     expect(rc).toEqual(-1);
   });
 
-  xtest("negative digit", () => {
+  test("negative digit", () => {
     let [_, rc] = convert([1, -1, 1, 0, 1, 0], 2, 10);
     expect(rc).toEqual(-1);
   });
 
-  xtest("invalid positive digit", () => {
+  test("invalid positive digit", () => {
     let [_, rc] = convert([1, 2, 1, 0, 1, 0], 2, 10);
     expect(rc).toEqual(-1);
   });
 
-  xtest("first base is one", () => {
+  test("first base is one", () => {
     let [_, rc] = convert([], 1, 10);
     expect(rc).toEqual(-2);
   });
 
-  xtest("second base is one", () => {
+  test("second base is one", () => {
     let [_, rc] = convert([1, 0, 1, 0, 1, 0], 2, 1);
     expect(rc).toEqual(-3);
   });
 
-  xtest("first base is zero", () => {
+  test("first base is zero", () => {
     let [_, rc] = convert([], 0, 10);
     expect(rc).toEqual(-2);
   });
 
-  xtest("second base is zero", () => {
+  test("second base is zero", () => {
     let [_, rc] = convert([7], 10, 0);
     expect(rc).toEqual(-3);
   });
 
-  xtest("first base is negative", () => {
+  test("first base is negative", () => {
     let [_, rc] = convert([1], -2, 10);
     expect(rc).toEqual(-2);
   });
 
-  xtest("second base is negative", () => {
+  test("second base is negative", () => {
     let [_, rc] = convert([1], 2, -7);
     expect(rc).toEqual(-3);
   });
 
-  xtest("both bases are negative", () => {
+  test("both bases are negative", () => {
     let [_, rc] = convert([1], -2, -7);
     expect(rc).toEqual(-2);
   });
