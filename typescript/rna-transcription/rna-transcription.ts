@@ -1,28 +1,8 @@
-class Transcriptor {
-
-    private readonly map = new Map([
-        ["G", "C"],
-        ["C", "G"],
-        ["T", "A"],
-        ["A", "U"]
-    ])
-
-    toRna(str: string): string {
-
-        let translated = "";
-
-        for (let ch of str) {
-            let mapped = this.map.get(ch);
-            if (mapped == undefined) {
-                throw new Error(`Invalid input DNA.`)
-            }
-            translated += mapped;
-        }
-
-        return translated;
-
-
-    }
+const dict: {[k:string]:string} = {
+    G: "C", C: "G", T: "A", A: "U"}
+const getThrow = (c: string) => {
+    const v = dict[c];
+    if (!v) throw Error('Invalid input DNA.')
+    return v;
 }
-
-export default Transcriptor
+export const toRna = (s: string) => s.split("").map(getThrow).join("")
