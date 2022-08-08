@@ -1,18 +1,22 @@
+object Bearing extends Enumeration{
+  type Bearing = Value
+  val North, East, South, West = Value
+}
+
 import Bearing._
 
-case class Robot(bearing: Bearing.Value, coordinates: (Int, Int)) {
-  val list = List(Bearing.North, Bearing.East, Bearing.South, Bearing.West)
+case class Robot(bearing: Bearing, coordinates: (Int, Int)) {
+  val lst = List(North, East, South, West)
   var ptr = bearing.id
 
-
   def bounds(dir: String): Robot = {
-    if (dir == "r") if (ptr == 3) ptr = 0 else ptr += 1
-    else if (ptr == 0) ptr = 3 else ptr -= 1
-    Robot(list(ptr), coordinates)
+    if (dir == "R") if (ptr == lst.size - 1) ptr = 0 else ptr += 1
+    else if (ptr == 0) ptr = lst.size - 1 else ptr -= 1
+    Robot(lst(ptr), coordinates)
   }
 
-  def turnRight: Robot = bounds("r")
-  def turnLeft: Robot = bounds("l")
+  def turnRight: Robot = bounds("R")
+  def turnLeft: Robot = bounds("L")
 
   def advance: Robot = bearing match {
     case North => Robot(bearing, (coordinates._1, coordinates._2 + 1))
