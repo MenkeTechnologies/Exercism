@@ -7,7 +7,7 @@ describe('Rest API', () => {
       expect(restAPI.get('/users')).toEqual({ users: [] });
     });
 
-    xtest('add user', () => {
+    test('add user', () => {
       const restAPI = new RestAPI({ users: [] });
       expect(restAPI.post('/add', { user: 'Adam' })).toEqual({
         name: 'Adam',
@@ -17,7 +17,7 @@ describe('Rest API', () => {
       });
     });
 
-    xtest('get single user', () => {
+    test('get single user', () => {
       const seedUsers = [
         { name: 'Adam', owes: {}, owed_by: {}, balance: 0 },
         { name: 'Bob', owes: {}, owed_by: {}, balance: 0 },
@@ -31,7 +31,7 @@ describe('Rest API', () => {
   });
 
   describe('iou', () => {
-    xtest('both users have 0 balance', () => {
+    test('both users have 0 balance', () => {
       const seedUsers = [
         { name: 'Adam', owes: {}, owed_by: {}, balance: 0 },
         { name: 'Bob', owes: {}, owed_by: {}, balance: 0 },
@@ -45,7 +45,7 @@ describe('Rest API', () => {
       expect(restAPI.post('/iou', payload)).toEqual({ users: expectedUsers });
     });
 
-    xtest('borrower has negative balance', () => {
+    test('borrower has negative balance', () => {
       const seedUsers = [
         { name: 'Adam', owes: {}, owed_by: {}, balance: 0 },
         { name: 'Bob', owes: { Chuck: 3 }, owed_by: {}, balance: -3 },
@@ -60,7 +60,7 @@ describe('Rest API', () => {
       expect(restAPI.post('/iou', payload)).toEqual({ users: expectedUsers });
     });
 
-    xtest('lender has negative balance', () => {
+    test('lender has negative balance', () => {
       const seedUsers = [
         { name: 'Adam', owes: {}, owed_by: {}, balance: 0 },
         { name: 'Bob', owes: { Chuck: 3 }, owed_by: {}, balance: -3 },
@@ -75,7 +75,7 @@ describe('Rest API', () => {
       expect(restAPI.post('/iou', payload)).toEqual({ users: expectedUsers });
     });
 
-    xtest('lender owes borrower', () => {
+    test('lender owes borrower', () => {
       const seedUsers = [
         { name: 'Adam', owes: { Bob: 3 }, owed_by: {}, balance: -3 },
         { name: 'Bob', owes: {}, owed_by: { Adam: 3 }, balance: 3 },
@@ -89,7 +89,7 @@ describe('Rest API', () => {
       expect(restAPI.post('/iou', payload)).toEqual({ users: expectedUsers });
     });
 
-    xtest('lender owes borrower less than new loan', () => {
+    test('lender owes borrower less than new loan', () => {
       const seedUsers = [
         { name: 'Adam', owes: { Bob: 3 }, owed_by: {}, balance: -3 },
         { name: 'Bob', owes: {}, owed_by: { Adam: 3 }, balance: 3 },
@@ -103,7 +103,7 @@ describe('Rest API', () => {
       expect(restAPI.post('/iou', payload)).toEqual({ users: expectedUsers });
     });
 
-    xtest('lender owes borrower same as new loan', () => {
+    test('lender owes borrower same as new loan', () => {
       const seedUsers = [
         { name: 'Adam', owes: { Bob: 3 }, owed_by: {}, balance: -3 },
         { name: 'Bob', owes: {}, owed_by: { Adam: 3 }, balance: 3 },

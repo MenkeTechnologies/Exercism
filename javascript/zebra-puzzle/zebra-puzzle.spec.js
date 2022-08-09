@@ -5,7 +5,7 @@ describe('Zebra puzzle', () => {
     const puzzle = new ZebraPuzzle();
     expect(puzzle.waterDrinker()).toEqual('Norwegian');
   });
-  xtest('resident who owns zebra', () => {
+  test('resident who owns zebra', () => {
     const puzzle = new ZebraPuzzle();
     expect(puzzle.zebraOwner()).toEqual('Japanese');
   });

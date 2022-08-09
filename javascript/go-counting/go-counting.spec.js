@@ -16,14 +16,14 @@ describe('Go Counting', () => {
       expect(goCounting.getTerritory(0, 1)).toEqual(expectedTerritory);
     });
 
-    xtest('White center territory on 5x5 board', () => {
+    test('White center territory on 5x5 board', () => {
       const board = ['  B  ', ' B B ', 'B W B', ' W W ', '  W  '];
       const goCounting = new GoCounting(board);
       const expectedTerritory = { owner: 'WHITE', territory: [[2, 3]] };
       expect(goCounting.getTerritory(2, 3)).toEqual(expectedTerritory);
     });
 
-    xtest('Open corner territory on 5x5 board', () => {
+    test('Open corner territory on 5x5 board', () => {
       const board = ['  B  ', ' B B ', 'B W B', ' W W ', '  W  '];
       const goCounting = new GoCounting(board);
       const expectedTerritory = {
@@ -37,35 +37,35 @@ describe('Go Counting', () => {
       expect(goCounting.getTerritory(1, 4)).toEqual(expectedTerritory);
     });
 
-    xtest('A stone and not a territory on 5x5 board', () => {
+    test('A stone and not a territory on 5x5 board', () => {
       const board = ['  B  ', ' B B ', 'B W B', ' W W ', '  W  '];
       const goCounting = new GoCounting(board);
       const expectedTerritory = { owner: 'NONE', territory: [] };
       expect(goCounting.getTerritory(1, 1)).toEqual(expectedTerritory);
     });
 
-    xtest('Invalid because X is too low for 5x5 board', () => {
+    test('Invalid because X is too low for 5x5 board', () => {
       const board = ['  B  ', ' B B ', 'B W B', ' W W ', '  W  '];
       const goCounting = new GoCounting(board);
       const expectedTerritory = { error: 'Invalid coordinate' };
       expect(goCounting.getTerritory(-1, 1)).toEqual(expectedTerritory);
     });
 
-    xtest('Invalid because X is too high for 5x5 board', () => {
+    test('Invalid because X is too high for 5x5 board', () => {
       const board = ['  B  ', ' B B ', 'B W B', ' W W ', '  W  '];
       const goCounting = new GoCounting(board);
       const expectedTerritory = { error: 'Invalid coordinate' };
       expect(goCounting.getTerritory(5, 1)).toEqual(expectedTerritory);
     });
 
-    xtest('Invalid because Y is too low for 5x5 board', () => {
+    test('Invalid because Y is too low for 5x5 board', () => {
       const board = ['  B  ', ' B B ', 'B W B', ' W W ', '  W  '];
       const goCounting = new GoCounting(board);
       const expectedTerritory = { error: 'Invalid coordinate' };
       expect(goCounting.getTerritory(1, -1)).toEqual(expectedTerritory);
     });
 
-    xtest('Invalid because Y is too high for 5x5 board', () => {
+    test('Invalid because Y is too high for 5x5 board', () => {
       const board = ['  B  ', ' B B ', 'B W B', ' W W ', '  W  '];
       const goCounting = new GoCounting(board);
       const expectedTerritory = { error: 'Invalid coordinate' };
@@ -74,7 +74,7 @@ describe('Go Counting', () => {
   });
 
   describe('getTerritories', () => {
-    xtest('One territory is the whole board', () => {
+    test('One territory is the whole board', () => {
       const board = [' '];
       const goCounting = new GoCounting(board);
       const expectedTerritories = {
@@ -85,7 +85,7 @@ describe('Go Counting', () => {
       expect(goCounting.getTerritories()).toEqual(expectedTerritories);
     });
 
-    xtest('Two territory rectangular board', () => {
+    test('Two territory rectangular board', () => {
       const board = [' BW ', ' BW '];
       const goCounting = new GoCounting(board);
       const expectedTerritories = {
@@ -102,7 +102,7 @@ describe('Go Counting', () => {
       expect(goCounting.getTerritories()).toEqual(expectedTerritories);
     });
 
-    xtest('Two region rectangular board', () => {
+    test('Two region rectangular board', () => {
       const board = [' B '];
       const goCounting = new GoCounting(board);
       const expectedTerritories = {

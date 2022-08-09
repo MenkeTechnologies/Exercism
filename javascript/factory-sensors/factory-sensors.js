@@ -12,9 +12,8 @@ export const checkHumidityLevel = humidityPercentage => {
   if (humidityPercentage > 70) throw new Error();
 }
 export const reportOverheating = temperature => {
-  if (!temperature) throw new ArgumentError(); else if (temperature > 500) {
-    throw new OverheatingError(temperature)
-  }
+  if (!temperature) throw new ArgumentError(); else if (temperature > 500)
+    throw new OverheatingError(temperature);
 }
 export const monitorTheMachine = actions => {
   try {
