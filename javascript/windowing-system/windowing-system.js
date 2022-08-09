@@ -1,21 +1,25 @@
-export function Size(width = 80, height = 60) {
-  this.width = width;
-  this.height = height;
+export class Size {
+  constructor(width = 80, height = 60) {
+    this.width = width;
+    this.height = height
+  }
+
+  resize = (newWidth, newHeight) => {
+    this.width = newWidth;
+    this.height = newHeight
+  }
 }
 
-Size.prototype.resize = function (newWidth, newHeight) {
-  this.width = newWidth;
-  this.height = newHeight;
-}
+export class Position {
+  constructor(x = 0, y = 0) {
+    this.x = x
+    this.y = y
+  }
 
-export function Position(x = 0, y = 0) {
-  this.x = x;
-  this.y = y;
-}
-
-Position.prototype.move = function (newX, newY) {
-  this.x = newX;
-  this.y = newY;
+  move = (newX, newY) => {
+    this.x = newX
+    this.y = newY
+  }
 }
 
 export class ProgramWindow {
@@ -25,7 +29,7 @@ export class ProgramWindow {
     this.position = new Position();
   }
 
-  resize(newSize) {
+  resize = newSize => {
     if (newSize.width < 1) newSize.width = 1;
     if (newSize.height < 1) newSize.height = 1;
     if (newSize.width + this.position.x > this.screenSize.width) newSize.width = this.screenSize.width - this.position.x;
@@ -34,7 +38,7 @@ export class ProgramWindow {
     this.size.width = newSize.width;
   }
 
-  move(newPosition) {
+  move = newPosition => {
     if (newPosition.x < 0) newPosition.x = 0;
     if (newPosition.y < 0) newPosition.y = 0;
     if (newPosition.x + this.size.width > this.screenSize.width) newPosition.x = this.screenSize.width - this.size.width;
@@ -44,7 +48,7 @@ export class ProgramWindow {
   }
 }
 
-export function changeWindow(window) {
+export const changeWindow = window => {
   window.size = new Size(400, 300);
   window.position = new Position(100, 150);
   return window;
