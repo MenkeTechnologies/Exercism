@@ -1,7 +1,7 @@
 module Temperature (tempToC, tempToF) where
 
 tempToC :: Integer -> Float
-tempToC temp = fromIntegral (temp - 32) / 1.8
+tempToC temp = (/ 1.8) $ fromIntegral $ temp - 32
 
 
 tempToF :: Float -> Integer
