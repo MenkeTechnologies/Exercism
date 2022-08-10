@@ -1,7 +1,3 @@
-// This stub file contains items which aren't used yet; feel free to remove this module attribute
-// to enable stricter warnings.
-#![allow(unused)]
-
 const TIME_PER_LAYER: i32 = 2;
 
 pub fn expected_minutes_in_oven() -> i32 {
