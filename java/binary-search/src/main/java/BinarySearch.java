@@ -1,10 +1,25 @@
-/*
+import java.util.List;
+import java.util.Arrays;
+public class BinarySearch {
+    private List<Integer> lst;
+    public BinarySearch(List<Integer> lst){
+        this.lst = lst;
+    }
+    public int indexOf(int pos) throws ValueNotFoundException{
+        int first = 0;
+        int last = lst.size()-1;
+        int mid = (first + last) /2;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
-
-Please remove this comment when submitting your solution.
-
-*/
+        while(first <= last){
+            if(pos == lst.get(mid)){
+                return mid;
+            } else if(pos > lst.get(mid)){
+                first = mid + 1;
+            } else{
+                last = mid - 1;
+            }
+            mid = (first + last) /2;
+        }
+        throw new ValueNotFoundException("Value not in array");
+    }
+}
