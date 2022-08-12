@@ -1,10 +1,17 @@
-/*
+import java.util.*;
+import java.util.stream.Collectors;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+public class School {
+    private final SortedMap<Integer, SortedSet<String>> roster = new TreeMap<>();
 
-Please remove this comment when submitting your solution.
+    public void add(String name, int grade) {
+        roster.computeIfAbsent(grade, i -> new TreeSet<>()).add(name);
+    }
+    public List<String> roster() {
+        return roster.values().stream().flatMap(Collection::stream).collect(Collectors.toList());
+    }
+    public List<String> grade(int grade) {
+        return new ArrayList<>(roster.getOrDefault(grade, Collections.emptySortedSet()));
+    }
+}
 
-*/
