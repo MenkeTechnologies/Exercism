@@ -1,12 +1,18 @@
 package GradeSchool;
 use strict;
 use warnings;
-use Exporter qw<import>;
-our @EXPORT_OK = qw<roster>;
+use Exporter 'import';
+our @EXPORT_OK = qw(roster);
 
 sub roster {
-  my ( $students, $grade ) = @_;
-  return undef;
+    my ($students, $grade) = @_;
+    [
+        map  {$_->[0]}
+        grep {defined $grade ? $_->[1] == $grade : 'all'}
+        sort {$a->[1] <=> $b->[1] or $a->[0] cmp $b->[0]}
+        @$students
+    ]
 }
 
-1;
+1
+
