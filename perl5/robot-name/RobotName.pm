@@ -1,14 +1,28 @@
-# This will be class 'RobotName', defined using Moo (https://perlmaven.com/oop-with-moo)
 package RobotName;
-use Moo;
+use strict;
+use warnings;
 
-# Declare a "name" attribute that is is 'rwp', read-write protected:
-# read-only to consumers, but settable using $self->_set_name
-has name => ( is => 'rwp' );
+our @letters = ('A'..'Z');
 
-sub reset_name {
-  my ($self) = @_;
-  return undef;    # Replace this with your own code to pass the tests.
+sub irand {
+  int rand(10)
 }
-
+sub crand {
+  $letters[int rand(26)]
+}
+sub new {
+  my $class = shift;
+  bless {},$class
+}
+sub name {
+  my $self = shift;
+  if(not defined $self->{name}) {
+    $self->reset_name;
+  }
+  $self->{name};
+}
+sub reset_name {
+  my $self = shift;
+  $self->{name} = crand.crand.irand.irand.irand;
+}
 1;
