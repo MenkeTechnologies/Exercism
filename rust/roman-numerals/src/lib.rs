@@ -28,14 +28,11 @@ impl Display for Roman {
 
 impl From<u32> for Roman {
     fn from(n: u32) -> Self {
-        let mut dup = n;
         Self {
-            s: MAP.iter().map(|(inc, s)| {
-                let mut r = String::new();
-                r.push_str(s.repeat((dup / inc) as usize).as_str());
-                dup %= inc;
-                r
-            }).collect()
+            s: MAP.iter().fold((String::new(), n), |(acc_str, acc), &(val, sym)| {
+                (format!("{}{}", acc_str, sym.repeat((acc / val) as usize)), acc % val)
+            },
+            ).0
         }
     }
 }
