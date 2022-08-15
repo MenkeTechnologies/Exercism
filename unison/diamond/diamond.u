@@ -1,3 +1,13 @@
+use Nat + - increment
+use List foldLeft reverse range
+
 rows : Char -> [Text]
 rows letter =
-  todo "implement rows"
+  num = (Char.toNat letter) - (Char.toNat ?A) + 1
+  rows =  (range 0 (num - 1)) ++ (reverse (range 0 num))
+  cols = (reverse (range 0 num)) ++ (range 1 num)
+  row n = foldLeft (acc -> m -> if n === m
+                                  then acc ++ (Char.toText (Char.fromNat ((Char.toNat ?A) + m)))
+                                  else acc ++ " ") "" cols
+  foldLeft (acc -> n -> acc :+ (row n)) [] rows
+
