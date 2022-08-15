@@ -6,8 +6,8 @@ our @EXPORT_OK = qw<binary_search>;
 
 sub binary_search {
     my ($input) = @_;
-    my @array = $$input{array}->@*;
-    my $value = $$input{value};
+    my @array = $input->{array}->@*;
+    my $value = $input->{value};
     my ($l, $r) = (0, $#array);
     while ( $l <= $r ) {
         my $mid = int( ( $l + $r ) / 2 );
