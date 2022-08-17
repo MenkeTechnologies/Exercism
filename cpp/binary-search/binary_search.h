@@ -1,8 +1,10 @@
-#if !defined(BINARY_SEARCH_H)
+#ifndef BINARY_SEARCH_H
 #define BINARY_SEARCH_H
 
+#include <vector>
+
+using namespace std;
 namespace binary_search {
-
-}  // namespace binary_search
-
-#endif // BINARY_SEARCH_H
+    size_t find(const vector<int> &data, int target);
+}
+#endif

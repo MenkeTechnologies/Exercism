@@ -23,7 +23,6 @@ TEST_CASE("finds_a_value_in_an_array_with_one_element")
     REQUIRE(expected == actual);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("finds_a_value_in_the_middle_of_an_array")
 {
     const std::vector<int> data {1, 3, 4, 6, 8, 9, 11};
@@ -113,5 +112,3 @@ TEST_CASE("nothing_is_found_when_the_left_and_right_bounds_cross")
     
     REQUIRE_THROWS_AS(binary_search::find(data, 0), std::domain_error);
 }
-
-#endif
