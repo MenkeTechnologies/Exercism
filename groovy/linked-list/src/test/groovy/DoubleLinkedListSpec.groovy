@@ -16,7 +16,7 @@ class DoubleLinkedListSpec extends Specification {
         list.pop() == 10
     }
 
-    @Ignore
+    
     def "Can push and shift"() {
         DoubleLinkedList<String> list = new DoubleLinkedList<>()
 
@@ -31,7 +31,7 @@ class DoubleLinkedListSpec extends Specification {
         list.shift() == '20'
     }
 
-    @Ignore
+    
     def "Can unshift an shift"() {
         DoubleLinkedList<Character> list = new DoubleLinkedList<>()
 
@@ -46,7 +46,7 @@ class DoubleLinkedListSpec extends Specification {
         list.shift() == '1'
     }
 
-    @Ignore
+    
     def "Can unshift and pop"() {
         DoubleLinkedList<Integer> list = new DoubleLinkedList<>()
 
@@ -61,7 +61,7 @@ class DoubleLinkedListSpec extends Specification {
         list.pop() == 20
     }
 
-    @Ignore
+    
     def "Complete example"() {
         DoubleLinkedList<String> list = new DoubleLinkedList<>()
 

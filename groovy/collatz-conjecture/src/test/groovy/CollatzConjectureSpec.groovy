@@ -11,7 +11,7 @@ class CollatzConjectureSpec extends Specification {
         1      || 0
     }
 
-    @Ignore
+    
     def "Divide if even"() {
         expect:
         CollatzConjecture.steps(number) == expected
@@ -21,7 +21,7 @@ class CollatzConjectureSpec extends Specification {
         16     || 4
     }
 
-    @Ignore
+    
     def "Even and odd steps"() {
         expect:
         CollatzConjecture.steps(number) == expected
@@ -31,7 +31,7 @@ class CollatzConjectureSpec extends Specification {
         12     || 9
     }
 
-    @Ignore
+    
     def "Large number of even and odd steps"() {
         expect:
         CollatzConjecture.steps(number) == expected
@@ -41,7 +41,7 @@ class CollatzConjectureSpec extends Specification {
         1000000 || 152
     }
 
-    @Ignore
+    
     def "Zero is an error"() {
         when:
         CollatzConjecture.steps(number)
@@ -53,7 +53,7 @@ class CollatzConjectureSpec extends Specification {
         number = 0
     }
 
-    @Ignore
+    
     def "Negative value is an error"() {
         when:
         CollatzConjecture.steps(number)

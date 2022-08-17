@@ -11,7 +11,7 @@ class AccumulateSpec extends Specification {
         []         | { it**2 } || []
     }
 
-    @Ignore
+    
     def "Squares"() {
         expect:
         Accumulate.accumulate(collection, function) == expected
@@ -21,7 +21,7 @@ class AccumulateSpec extends Specification {
         [1, 2, 3, 4, 5] | { it**2 } || [1, 4, 9, 16, 25]
     }
 
-    @Ignore
+    
     def "UpperCases"() {
         expect:
         Accumulate.accumulate(collection, function) == expected
@@ -31,7 +31,7 @@ class AccumulateSpec extends Specification {
         ['hello', 'world'] | { it.toUpperCase() } || ['HELLO', 'WORLD']
     }
 
-    @Ignore
+    
     def "Reverse"() {
         expect:
         Accumulate.accumulate(collection, function) == expected
@@ -41,7 +41,7 @@ class AccumulateSpec extends Specification {
         ['eht', 'kciuq', 'nworb', 'xof', 'cte'] | { it.reverse() } || ['the', 'quick', 'brown', 'fox', 'etc']
     }
 
-    @Ignore
+    
     def "Different return type"() {
         expect:
         Accumulate.accumulate(collection, function) == expected
@@ -51,7 +51,7 @@ class AccumulateSpec extends Specification {
         [1, 2, 3]  | { it.toString() } || ['1', '2', '3']
     }
 
-    @Ignore
+    
     def "Accumulate within accumulate"() {
         given:
         def input1 = ['a', 'b', 'c']

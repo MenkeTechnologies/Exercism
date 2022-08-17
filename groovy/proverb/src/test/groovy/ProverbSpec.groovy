@@ -11,7 +11,7 @@ class ProverbSpec extends Specification {
         expected = ''
     }
 
-    @Ignore
+    
     def "One piece"() {
         expect:
         Proverb.recite(strings) == expected
@@ -23,7 +23,7 @@ class ProverbSpec extends Specification {
         expected = 'And all for the want of a nail.'
     }
 
-    @Ignore
+    
     def "Two pieces"() {
         expect:
         Proverb.recite(strings) == expected
@@ -37,7 +37,7 @@ class ProverbSpec extends Specification {
                 'And all for the want of a nail.'
     }
 
-    @Ignore
+    
     def "Three pieces"() {
         expect:
         Proverb.recite(strings) == expected
@@ -53,7 +53,7 @@ class ProverbSpec extends Specification {
                 'And all for the want of a nail.'
     }
 
-    @Ignore
+    
     def "Full proverb"() {
         expect:
         Proverb.recite(strings) == expected
@@ -77,7 +77,7 @@ class ProverbSpec extends Specification {
                 'And all for the want of a nail.'
     }
 
-    @Ignore
+    
     def "Four pieces modernized"() {
         expect:
         Proverb.recite(strings) == expected

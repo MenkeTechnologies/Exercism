@@ -11,7 +11,7 @@ class ReverseStringSpec extends Specification {
         ''    || ''
     }
 
-    @Ignore
+    
     def "A word"() {
         expect:
         ReverseString.reverse(value) == expected
@@ -21,7 +21,7 @@ class ReverseStringSpec extends Specification {
         'robot' || 'tobor'
     }
 
-    @Ignore
+    
     def "A capitalized word"() {
         expect:
         ReverseString.reverse(value) == expected
@@ -31,7 +31,7 @@ class ReverseStringSpec extends Specification {
         'Ramen' || 'nemaR'
     }
 
-    @Ignore
+    
     def "A sentence with punctuation"() {
         expect:
         ReverseString.reverse(value) == expected
@@ -41,7 +41,7 @@ class ReverseStringSpec extends Specification {
         "I'm hungry!" || "!yrgnuh m'I"
     }
 
-    @Ignore
+    
     def "A palindrome"() {
         expect:
         ReverseString.reverse(value) == expected
@@ -51,7 +51,7 @@ class ReverseStringSpec extends Specification {
         'racecar' || 'racecar'
     }
 
-    @Ignore
+    
     def "An even-sized word"() {
         expect:
         ReverseString.reverse(value) == expected

@@ -23,7 +23,7 @@ class AllergiesSpec extends Specification {
         255   || true
     }
 
-    @Ignore
+    
     def "Testing for peanuts allergy"() {
         given:
         String substance = 'peanuts'
@@ -40,7 +40,7 @@ class AllergiesSpec extends Specification {
         255   || true
     }
 
-    @Ignore
+    
     def "Testing for shellfish allergy"() {
         given:
         String substance = 'shellfish'
@@ -57,7 +57,7 @@ class AllergiesSpec extends Specification {
         255   || true
     }
 
-    @Ignore
+    
     def "Testing for strawberries allergy"() {
         given:
         String substance = 'strawberries'
@@ -74,7 +74,7 @@ class AllergiesSpec extends Specification {
         255   || true
     }
 
-    @Ignore
+    
     def "Testing for tomatoes allergy"() {
         given:
         String substance = 'tomatoes'
@@ -91,7 +91,7 @@ class AllergiesSpec extends Specification {
         255   || true
     }
 
-    @Ignore
+    
     def "Testing for chocolate allergy"() {
         given:
         String substance = 'chocolate'
@@ -108,7 +108,7 @@ class AllergiesSpec extends Specification {
         255   || true
     }
 
-    @Ignore
+    
     def "Testing for pollen allergy"() {
         given:
         String substance = 'pollen'
@@ -125,7 +125,7 @@ class AllergiesSpec extends Specification {
         255   || true
     }
 
-    @Ignore
+    
     def "Testing for cats allergy"() {
         given:
         String substance = 'cats'
@@ -144,7 +144,7 @@ class AllergiesSpec extends Specification {
 
     // Given a number, list all things Tom is allergic to
 
-    @Ignore
+    
     def "No allergies"() {
         given:
         int score = 0
@@ -154,7 +154,7 @@ class AllergiesSpec extends Specification {
         allergies.list() == []
     }
 
-    @Ignore
+    
     def "Just eggs"() {
         given:
         int score = 1
@@ -164,7 +164,7 @@ class AllergiesSpec extends Specification {
         allergies.list() == ['eggs']
     }
 
-    @Ignore
+    
     def "Just peanuts"() {
         given:
         int score = 2
@@ -174,7 +174,7 @@ class AllergiesSpec extends Specification {
         allergies.list() == ['peanuts']
     }
 
-    @Ignore
+    
     def "Just strawberries"() {
         given:
         int score = 8
@@ -184,7 +184,7 @@ class AllergiesSpec extends Specification {
         allergies.list() == ['strawberries']
     }
 
-    @Ignore
+    
     def "Eggs and peanuts"() {
         given:
         int score = 3
@@ -194,7 +194,7 @@ class AllergiesSpec extends Specification {
         allergies.list() == ['eggs', 'peanuts']
     }
 
-    @Ignore
+    
     def "More than eggs but not peanuts"() {
         given:
         int score = 5
@@ -204,7 +204,7 @@ class AllergiesSpec extends Specification {
         allergies.list() == ['eggs', 'shellfish']
     }
 
-    @Ignore
+    
     def "Lots of stuff"() {
         given:
         int score = 248
@@ -218,7 +218,7 @@ class AllergiesSpec extends Specification {
                              'cats']
     }
 
-    @Ignore
+    
     def "Everything"() {
         given:
         int score = 255
@@ -235,7 +235,7 @@ class AllergiesSpec extends Specification {
                              'cats']
     }
 
-    @Ignore
+    
     def "No allergen score parts"() {
         given:
         int score = 509

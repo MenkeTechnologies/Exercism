@@ -11,7 +11,7 @@ class BobSpec extends Specification {
         'Tom-ay-to, tom-aaaah-to.' || 'Whatever.'
     }
 
-    @Ignore
+    
     def "Shouting"() {
         expect:
         Bob.response(heyBob) == expected
@@ -21,7 +21,7 @@ class BobSpec extends Specification {
         'WATCH OUT!' || 'Whoa, chill out!'
     }
 
-    @Ignore
+    
     def "Shouting gibberish"() {
         expect:
         Bob.response(heyBob) == expected
@@ -31,7 +31,7 @@ class BobSpec extends Specification {
         'FCECDFCAAB' || 'Whoa, chill out!'
     }
 
-    @Ignore
+    
     def "Asking a question"() {
         expect:
         Bob.response(heyBob) == expected
@@ -41,7 +41,7 @@ class BobSpec extends Specification {
         'Does this cryogenic chamber make me look fat?' || 'Sure.'
     }
 
-    @Ignore
+    
     def "Asking a numeric question"() {
         expect:
         Bob.response(heyBob) == expected
@@ -51,7 +51,7 @@ class BobSpec extends Specification {
         'You are, what, like 15?' || 'Sure.'
     }
 
-    @Ignore
+    
     def "Asking gibberish"() {
         expect:
         Bob.response(heyBob) == expected
@@ -61,7 +61,7 @@ class BobSpec extends Specification {
         'fffbbcbeab?' || 'Sure.'
     }
 
-    @Ignore
+    
     def "Talking forcefully"() {
         expect:
         Bob.response(heyBob) == expected
@@ -71,7 +71,7 @@ class BobSpec extends Specification {
         'Hi there!' || 'Whatever.'
     }
 
-    @Ignore
+    
     def "Using acronyms in regular speech"() {
         expect:
         Bob.response(heyBob) == expected
@@ -81,7 +81,7 @@ class BobSpec extends Specification {
         'It\'s OK if you don\'t want to go work for NASA.' || 'Whatever.'
     }
 
-    @Ignore
+    
     def "Forceful question"() {
         expect:
         Bob.response(heyBob) == expected
@@ -91,7 +91,7 @@ class BobSpec extends Specification {
         'WHAT\'S GOING ON?' || 'Calm down, I know what I\'m doing!'
     }
 
-    @Ignore
+    
     def "Shouting numbers"() {
         expect:
         Bob.response(heyBob) == expected
@@ -101,7 +101,7 @@ class BobSpec extends Specification {
         '1, 2, 3 GO!' || 'Whoa, chill out!'
     }
 
-    @Ignore
+    
     def "No letters"() {
         expect:
         Bob.response(heyBob) == expected
@@ -111,7 +111,7 @@ class BobSpec extends Specification {
         '1, 2, 3' || 'Whatever.'
     }
 
-    @Ignore
+    
     def "Question with no letters"() {
         expect:
         Bob.response(heyBob) == expected
@@ -121,7 +121,7 @@ class BobSpec extends Specification {
         '4?'   || 'Sure.'
     }
 
-    @Ignore
+    
     def "Shouting with special characters"() {
         expect:
         Bob.response(heyBob) == expected
@@ -131,7 +131,7 @@ class BobSpec extends Specification {
         'ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!' || 'Whoa, chill out!'
     }
 
-    @Ignore
+    
     def "Shouting with no exclamation mark"() {
         expect:
         Bob.response(heyBob) == expected
@@ -141,7 +141,7 @@ class BobSpec extends Specification {
         'I HATE THE DENTIST' || 'Whoa, chill out!'
     }
 
-    @Ignore
+    
     def "Statement containing question mark"() {
         expect:
         Bob.response(heyBob) == expected
@@ -151,7 +151,7 @@ class BobSpec extends Specification {
         'Ending with ? means a question.' || 'Whatever.'
     }
 
-    @Ignore
+    
     def "Non-letters with question"() {
         expect:
         Bob.response(heyBob) == expected
@@ -161,7 +161,7 @@ class BobSpec extends Specification {
         ':) ?' || 'Sure.'
     }
 
-    @Ignore
+    
     def "Prattling on"() {
         expect:
         Bob.response(heyBob) == expected
@@ -171,7 +171,7 @@ class BobSpec extends Specification {
         'Wait! Hang on. Are you going to be OK?' || 'Sure.'
     }
 
-    @Ignore
+    
     def "Silence"() {
         expect:
         Bob.response(heyBob) == expected
@@ -181,7 +181,7 @@ class BobSpec extends Specification {
         ''     || 'Fine. Be that way!'
     }
 
-    @Ignore
+    
     def "Prolonged silence"() {
         expect:
         Bob.response(heyBob) == expected
@@ -191,7 +191,7 @@ class BobSpec extends Specification {
         '          ' || 'Fine. Be that way!'
     }
 
-    @Ignore
+    
     def "Alternate silence"() {
         expect:
         Bob.response(heyBob) == expected
@@ -201,7 +201,7 @@ class BobSpec extends Specification {
         '\t\t\t\t\t\t\t\t\t\t' || 'Fine. Be that way!'
     }
 
-    @Ignore
+    
     def "Multiple line question"() {
         expect:
         Bob.response(heyBob) == expected
@@ -211,7 +211,7 @@ class BobSpec extends Specification {
         '\nDoes this cryogenic chamber make me look fat?\nNo.' || 'Whatever.'
     }
 
-    @Ignore
+    
     def "Starting with whitespace"() {
         expect:
         Bob.response(heyBob) == expected
@@ -221,7 +221,7 @@ class BobSpec extends Specification {
         '         hmmmmmmm...' || 'Whatever.'
     }
 
-    @Ignore
+    
     def "Ending with whitespace"() {
         expect:
         Bob.response(heyBob) == expected
@@ -231,7 +231,7 @@ class BobSpec extends Specification {
         'Okay if like my  spacebar  quite a bit?   ' || 'Sure.'
     }
 
-    @Ignore
+    
     def "Other whitespace"() {
         expect:
         Bob.response(heyBob) == expected
@@ -241,7 +241,7 @@ class BobSpec extends Specification {
         '\n\r \t' || 'Fine. Be that way!'
     }
 
-    @Ignore
+    
     def "Non-question ending with whitespace"() {
         expect:
         Bob.response(heyBob) == expected

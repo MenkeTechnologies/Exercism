@@ -11,7 +11,7 @@ class IsogramSpec extends Specification {
         ''     || true
     }
 
-    @Ignore
+    
     def "Isogram with only lower case characters"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -21,7 +21,7 @@ class IsogramSpec extends Specification {
         'isogram' || true
     }
 
-    @Ignore
+    
     def "Word with one duplicated character"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -31,7 +31,7 @@ class IsogramSpec extends Specification {
         'eleven' || false
     }
 
-    @Ignore
+    
     def "Word with one duplicated character from the end of the alphabet"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -41,7 +41,7 @@ class IsogramSpec extends Specification {
         'zzyzx' || false
     }
 
-    @Ignore
+    
     def "Longest reported english isogram"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -51,7 +51,7 @@ class IsogramSpec extends Specification {
         'subdermatoglyphic' || true
     }
 
-    @Ignore
+    
     def "Word with duplicated character in mixed case"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -61,7 +61,7 @@ class IsogramSpec extends Specification {
         'Alphabet' || false
     }
 
-    @Ignore
+    
     def "Word with duplicated character in mixed case, lowercase first"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -71,7 +71,7 @@ class IsogramSpec extends Specification {
         'alphAbet' || false
     }
 
-    @Ignore
+    
     def "Hypothetical isogrammic word with hyphen"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -81,7 +81,7 @@ class IsogramSpec extends Specification {
         'thumbscrew-japingly' || true
     }
 
-    @Ignore
+    
     def "Hypothetical word with duplicated character following hyphen"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -91,7 +91,7 @@ class IsogramSpec extends Specification {
         'thumbscrew-jappingly' || false
     }
 
-    @Ignore
+    
     def "Isogram with duplicated hyphen"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -101,7 +101,7 @@ class IsogramSpec extends Specification {
         'six-year-old' || true
     }
 
-    @Ignore
+    
     def "Made-up name that is an isogram"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -111,7 +111,7 @@ class IsogramSpec extends Specification {
         'Emily Jung Schwartzkopf' || true
     }
 
-    @Ignore
+    
     def "Duplicated character in the middle"() {
         expect:
         Isogram.isIsogram(phrase) == expected
@@ -121,7 +121,7 @@ class IsogramSpec extends Specification {
         'accentor' || false
     }
 
-    @Ignore
+    
     def "Same first and last characters"() {
         expect:
         Isogram.isIsogram(phrase) == expected

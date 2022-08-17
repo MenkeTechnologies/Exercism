@@ -13,7 +13,7 @@ class BankAccountSpec extends Specification {
         account.getBalance() == 0
     }
 
-    @Ignore
+    
     def "Can deposit money"() {
         setup:
         BankAccount account = new BankAccount()
@@ -26,7 +26,7 @@ class BankAccountSpec extends Specification {
         account.getBalance() == 10
     }
 
-    @Ignore
+    
     def "Can deposit money sequentially"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -40,7 +40,7 @@ class BankAccountSpec extends Specification {
         bankAccount.getBalance() == 28
     }
 
-    @Ignore
+    
     def "Can withdraw money"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -54,7 +54,7 @@ class BankAccountSpec extends Specification {
         bankAccount.getBalance() == 5
     }
 
-    @Ignore
+    
     def "Can withdraw money sequentially"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -69,7 +69,7 @@ class BankAccountSpec extends Specification {
         bankAccount.getBalance() == 0
     }
 
-    @Ignore
+    
     def "Cannot withdraw money from empty account"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -81,7 +81,7 @@ class BankAccountSpec extends Specification {
         thrown(Exception)
     }
 
-    @Ignore
+    
     def "Cannot withdraw more money than you have"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -95,7 +95,7 @@ class BankAccountSpec extends Specification {
         thrown(Exception)
     }
 
-    @Ignore
+    
     def "Cannot deposit negative amount"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -108,7 +108,7 @@ class BankAccountSpec extends Specification {
         thrown(Exception)
     }
 
-    @Ignore
+    
     def "Cannot withdraw negative amount"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -122,7 +122,7 @@ class BankAccountSpec extends Specification {
         thrown(Exception)
     }
 
-    @Ignore
+    
     def "Cannot get balance of closed account"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -137,7 +137,7 @@ class BankAccountSpec extends Specification {
         thrown(Exception)
     }
 
-    @Ignore
+    
     def "Cannot deposit money into closed account"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -151,7 +151,7 @@ class BankAccountSpec extends Specification {
         thrown(Exception)
     }
 
-    @Ignore
+    
     def "Cannot withdraw money from closed account"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -166,7 +166,7 @@ class BankAccountSpec extends Specification {
         thrown(Exception)
     }
 
-    @Ignore
+    
     def "Bank account is closed before it is opened"() {
         setup:
         BankAccount bankAccount = new BankAccount()
@@ -178,7 +178,7 @@ class BankAccountSpec extends Specification {
         thrown(Exception)
     }
 
-    @Ignore
+    
     def "Can adjust balance concurrently"() {
         setup:
         BankAccount bankAccount = new BankAccount()

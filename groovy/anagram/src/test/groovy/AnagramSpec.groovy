@@ -11,7 +11,7 @@ class AnagramSpec extends Specification {
         'diaper' | ['hello', 'world', 'zombies', 'pants'] || []
     }
 
-    @Ignore
+    
     def "Detects two anagrams"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -21,7 +21,7 @@ class AnagramSpec extends Specification {
         'master' | ['stream', 'pigeon', 'maters'] || ['stream', 'maters']
     }
 
-    @Ignore
+    
     def "Does not detect anagram subsets"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -31,7 +31,7 @@ class AnagramSpec extends Specification {
         'good'  | ['dog', 'goody'] || []
     }
 
-    @Ignore
+    
     def "Detects anagram"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -41,7 +41,7 @@ class AnagramSpec extends Specification {
         'listen' | ['enlists', 'google', 'inlets', 'banana'] || ['inlets']
     }
 
-    @Ignore
+    
     def "Detects three anagrams"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -57,7 +57,7 @@ class AnagramSpec extends Specification {
         expected = ['gallery', 'regally', 'largely']
     }
 
-    @Ignore
+    
     def "Detects multiple anagrams with different case"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -68,7 +68,7 @@ class AnagramSpec extends Specification {
         expected = ['Eons', 'ONES']
     }
 
-    @Ignore
+    
     def "Does not detect non-anagrams with identical checksum"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -78,7 +78,7 @@ class AnagramSpec extends Specification {
         'mass'  | ['last']   || []
     }
 
-    @Ignore
+    
     def "Detects anagrams case-insensitively"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -88,7 +88,7 @@ class AnagramSpec extends Specification {
         'Orchestra' | ['cashregister', 'Carthorse', 'radishes'] || ['Carthorse']
     }
 
-    @Ignore
+    
     def "Detects anagrams using case-insensitive subject"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -98,7 +98,7 @@ class AnagramSpec extends Specification {
         'Orchestra' | ['cashregister', 'carthorse', 'radishes'] || ['carthorse']
     }
 
-    @Ignore
+    
     def "Detects anagrams using case-insensitive possible matches"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -108,7 +108,7 @@ class AnagramSpec extends Specification {
         'orchestra' | ['cashregister', 'Carthorse', 'radishes'] || ['Carthorse']
     }
 
-    @Ignore
+    
     def "Does not detect an anagram if the original word is repeated"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -118,7 +118,7 @@ class AnagramSpec extends Specification {
         'go'    | ['go Go GO'] || []
     }
 
-    @Ignore
+    
     def "Anagrams must use all letters exactly once"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -128,7 +128,7 @@ class AnagramSpec extends Specification {
         'tapper' | ['patter'] || []
     }
 
-    @Ignore
+    
     def "Words are not anagrams of themselves (case-insensitive)"() {
         expect:
         new Anagram(subject).find(candidates) == expected
@@ -138,7 +138,7 @@ class AnagramSpec extends Specification {
         'BANANA' | ['BANANA', 'Banana', 'banana'] || []
     }
 
-    @Ignore
+    
     def "Words other than themselves can be anagrams"() {
         expect:
         new Anagram(subject).find(candidates) == expected

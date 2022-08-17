@@ -11,7 +11,7 @@ class SecretHandshakeSpec extends Specification {
         1      || ['wink']
     }
 
-    @Ignore
+    
     def "Double blink for 10"() {
         expect:
         SecretHandshake.commands(number) == expected
@@ -21,7 +21,7 @@ class SecretHandshakeSpec extends Specification {
         2      || ['double blink']
     }
 
-    @Ignore
+    
     def "Close your eyes for 100"() {
         expect:
         SecretHandshake.commands(number) == expected
@@ -31,7 +31,7 @@ class SecretHandshakeSpec extends Specification {
         4      || ['close your eyes']
     }
 
-    @Ignore
+    
     def "Jump for 1000"() {
         expect:
         SecretHandshake.commands(number) == expected
@@ -41,7 +41,7 @@ class SecretHandshakeSpec extends Specification {
         8      || ["jump"]
     }
 
-    @Ignore
+    
     def "Combine two actions"() {
         expect:
         SecretHandshake.commands(number) == expected
@@ -51,7 +51,7 @@ class SecretHandshakeSpec extends Specification {
         3      || ['wink', 'double blink']
     }
 
-    @Ignore
+    
     def "Reverse two actions"() {
         expect:
         SecretHandshake.commands(number) == expected
@@ -61,7 +61,7 @@ class SecretHandshakeSpec extends Specification {
         19     || ['double blink', 'wink']
     }
 
-    @Ignore
+    
     def "Reversing one action gives the same action"() {
         expect:
         SecretHandshake.commands(number) == expected
@@ -71,7 +71,7 @@ class SecretHandshakeSpec extends Specification {
         24     || ['jump']
     }
 
-    @Ignore
+    
     def "Reversing no actions still gives no actions"() {
         expect:
         SecretHandshake.commands(number) == expected
@@ -81,7 +81,7 @@ class SecretHandshakeSpec extends Specification {
         16     || []
     }
 
-    @Ignore
+    
     def "All possible actions"() {
         expect:
         SecretHandshake.commands(number) == expected
@@ -91,7 +91,7 @@ class SecretHandshakeSpec extends Specification {
         15     || ['wink', 'double blink', 'close your eyes', 'jump']
     }
 
-    @Ignore
+    
     def "Reverse all possible actions"() {
         expect:
         SecretHandshake.commands(number) == expected
@@ -101,7 +101,7 @@ class SecretHandshakeSpec extends Specification {
         31     || ['jump', 'close your eyes', 'double blink', 'wink']
     }
 
-    @Ignore
+    
     def "Do nothing for zero"() {
         expect:
         SecretHandshake.commands(number) == expected
