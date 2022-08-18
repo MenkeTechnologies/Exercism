@@ -1,8 +1,6 @@
-//
-// This is only a SKELETON file for the 'Hamming' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const compute = () => {
-  throw new Error('Remove this statement and implement this function');
-};
+export const compute = (s1, s2) =>
+  s1.length !== s2.length ?
+    (() => { throw new Error('strands must be of equal length')})()
+ : [...s1]
+    .map((c,i) => c !== s2[i] ? 1 : 0)
+    .reduce((acc,n) => acc + n, 0)
