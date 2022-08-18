@@ -15,4 +15,4 @@ const MAP = {
   white: 9,
 }
 
-export const decodedValue = (codes) => parseInt(codes.slice(0, 2).map(c => MAP[c]).join(""));
+export const decodedValue = codes => parseInt(codes.slice(0, 2).map(c => MAP[c]).join(""));
