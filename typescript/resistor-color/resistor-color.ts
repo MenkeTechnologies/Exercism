@@ -1,20 +1,9 @@
-const myMap = new Map([
-  ["black", "0"],
-  ["brown", "1"],
-  ["red", "2"],
-  ["orange", "3"],
-  ["yellow", "4"],
-  ["green", "5"],
-  ["blue", "6"],
-  ["violet", "7"],
-  ["grey", "8"],
-  ["white", "9"],
-]);
-
-export const colorCode = (colo : string) => {
-
-    return parseInt(<string>myMap.get(colo));
-
+enum ResistorColors {
+  black, brown, red, orange, yellow,
+  green, blue, violet, grey, white
 }
 
-export const COLORS = [...myMap.keys()];
+export const colorCode = (rc: string) =>
+    parseInt(ResistorColors[rc as unknown as ResistorColors]);
+
+export const COLORS = Object.values(ResistorColors).splice(0, 10);
