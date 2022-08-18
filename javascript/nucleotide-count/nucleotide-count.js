@@ -1,8 +1,7 @@
-//
-// This is only a SKELETON file for the 'Nucleotide Count' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+export const countNucleotides = strand => {
+  if (strand.match(/[^ACGT]/g) != null ) throw new Error('Invalid nucleotide in strand')
 
-export function countNucleotides(strand) {
-  throw new Error('Remove this statement and implement this function');
-}
+  const count = strand.split('').reduce((acc,n) => ++acc[n] && acc, { A: 0, C: 0, G: 0, T: 0});
+  
+  return Object.values(count).join(' ')
+};
