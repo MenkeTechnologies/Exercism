@@ -51,6 +51,4 @@ export const deleteTrack = (playlist, track) => {
  * @param {string[]} playlist
  * @returns {string[]} list of artists
  */
-export const listArtists = playlist => {
-  return [...new Set(playlist.map(track => track.split(' - ')[1]))]
-};
+export const listArtists = playlist => [...new Set(playlist.map(track => track.split(' - ')[1]))];
