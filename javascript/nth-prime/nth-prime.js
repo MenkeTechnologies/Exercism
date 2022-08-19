@@ -1,8 +1,7 @@
-//
-// This is only a SKELETON file for the 'Nth Prime' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
-export const prime = () => {
-  throw new Error('Remove this statement and implement this function');
+export const prime = num => {
+  if (num < 1) throw new Error("there is no zeroth prime")
+  const primes = [2]
+  for (let i = 3; primes.length < num; i += 2)
+    if (primes.every(n => i % n !== 0)) primes.push(i)
+  return primes[primes.length - 1]
 };
