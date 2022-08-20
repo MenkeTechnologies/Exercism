@@ -1,18 +1,18 @@
-//
-// This is only a SKELETON file for the 'Grade School' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class GradeSchool {
-  roster() {
-    throw new Error('Remove this statement and implement this function');
+  constructor() {
+    this._roster = {};
   }
 
-  add() {
-    throw new Error('Remove this statement and implement this function');
-  }
+  roster = () => this.deepClone(this._roster);
 
-  grade() {
-    throw new Error('Remove this statement and implement this function');
-  }
+  add = (name, grade) => {
+    const students = this._roster[grade] || [];
+    for (const [grade, students] of Object.entries(this._roster))
+      if (students.includes(name)) this._roster[grade] = students.filter(student => student !== name);
+    this._roster[grade] = [...students, name].sort();
+  };
+
+  grade = grade => this.deepClone(this._roster[grade] || []);
+
+  deepClone = obj => JSON.parse(JSON.stringify(obj));
 }
