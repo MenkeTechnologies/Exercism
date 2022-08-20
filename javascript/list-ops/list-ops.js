@@ -1,42 +1,56 @@
-//
-// This is only a SKELETON file for the 'List Ops' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class List {
-  constructor() {
-    throw new Error('Remove this statement and implement this function');
+  values = []
+
+  constructor(values = []) {
+    this.values = [...values]
   }
 
-  append() {
-    throw new Error('Remove this statement and implement this function');
+  append(list) {
+    this.values = [...this.values, ...list.values]
+    return this
   }
 
-  concat() {
-    throw new Error('Remove this statement and implement this function');
+  concat(lists) {
+    for (let list of lists.values) if (list.values) this.values = [...this.values, ...list.values]
+    return this
   }
 
-  filter() {
-    throw new Error('Remove this statement and implement this function');
+  filter(f) {
+    let res = []
+    for (let v of this.values) res = f(v) ? [...res, v] : res
+    this.values = res
+    return this
   }
 
-  map() {
-    throw new Error('Remove this statement and implement this function');
+  map(f) {
+    let res = []
+    for (let v of this.values) res = [...res, f(v)]
+    this.values = res
+    return this
   }
 
   length() {
-    throw new Error('Remove this statement and implement this function');
+    let res = 0
+    for (let _v of this.values) res++
+    return res
   }
 
-  foldl() {
-    throw new Error('Remove this statement and implement this function');
+  foldl(f, init) {
+    let acc = init
+    for (let v of this.values) acc = f(acc, v)
+    return acc
   }
 
-  foldr() {
-    throw new Error('Remove this statement and implement this function');
+  foldr(f, init) {
+    let acc = init
+    for (let i = this.length() - 1; i >= 0; i--) acc = f(acc, this.values[i])
+    return acc
   }
 
   reverse() {
-    throw new Error('Remove this statement and implement this function');
+    let res = []
+    for (let v of this.values) res = [v, ...res]
+    this.values = res
+    return this
   }
 }
