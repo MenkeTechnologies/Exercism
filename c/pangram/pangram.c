@@ -8,9 +8,9 @@ bool is_pangram(const char *sentence) {
     if (!sentence) {
         return false;
     }
-    char *lc = (char *) malloc(strlen(sentence) + 1);
+    char *lc = calloc(strlen(sentence) + 1, sizeof(char));
     strcpy(lc, sentence);
-    for (int i = 0; sentence[i]; i++) {
+    for (int i = 0; sentence[i]; ++i) {
         lc[i] = tolower(sentence[i]);
     }
 

@@ -57,4 +57,4 @@ experiment make the code better? Worse? Did you learn anything from it?
 
 ### Based on
 
-A pairing session with Phil Battos at gSchool - http://gschool.it
+A pairing session with Phil Battos at gSchool
