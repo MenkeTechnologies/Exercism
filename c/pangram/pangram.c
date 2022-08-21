@@ -3,15 +3,15 @@
 #include <ctype.h>
 #include <stdlib.h>
 
-bool is_pangram(const char *sentence) {
+bool is_pangram(const char *s) {
 
-    if (!sentence) {
+    if (!s) {
         return false;
     }
-    char *lc = calloc(strlen(sentence) + 1, sizeof(char));
-    strcpy(lc, sentence);
-    for (int i = 0; sentence[i]; ++i) {
-        lc[i] = tolower(sentence[i]);
+    char *lc = calloc(strlen(s) + 1, sizeof(char));
+    strcpy(lc, s);
+    for (int i = 0; s[i]; ++i) {
+        lc[i] = tolower(s[i]);
     }
 
     for (char i = 'a'; i <= 'z'; ++i) {

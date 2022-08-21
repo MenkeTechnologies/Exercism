@@ -3,6 +3,6 @@
 
 #define ERROR_VALUE -1
 
-int steps(int start);
+int steps(int num);
 
 #endif

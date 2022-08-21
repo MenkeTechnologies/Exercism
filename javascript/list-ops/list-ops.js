@@ -31,7 +31,7 @@ export class List {
 
   length() {
     let res = 0
-    for (let _v of this.values) res++
+    for (let _v of this.values) ++res
     return res
   }
 
