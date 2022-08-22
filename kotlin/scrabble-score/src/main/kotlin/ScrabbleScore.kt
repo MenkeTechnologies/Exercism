@@ -7,12 +7,7 @@ object ScrabbleScore {
             'S' to 1, 'T' to 1, 'U' to 1, 'V' to 4, 'W' to 4, 'X' to 8,
             'Y' to 4, 'Z' to 10)
 
-    private fun scoreLetter(c: Char): Int {
+    private fun scoreLetter(c: Char) = MAP[c]!!
 
-        return MAP[c]!!
-    }
-
-    fun scoreWord(word: String): Int {
-        return word.toUpperCase().toCharArray().map { scoreLetter(it) }.sum()
-    }
+    fun scoreWord(word: String) = word.toUpperCase().toCharArray().map { scoreLetter(it) }.sum()
 }
