@@ -1,12 +1,19 @@
 Red [
 	description: {"Reverse string" exercise solution for exercism platform}
-	author: "" ; you can write your name here, in quotes
+	author: "MenkeTechnologies"
 ]
-
 reverse: function [
 	"Reverses a string"
 	input [string!] "String to reverse"
 	return: [string!]
 ] [
-	cause-error 'user 'message ["You need to implement this function."]
+	r: ""
+	down: length? input
+	while [down > 0] [
+		c: pick input down
+		append r c
+		down: down - 1
+	]
+	r
 ]
+
