@@ -1,45 +1,29 @@
-export default class Robot {
-    private static map: Map<string, boolean> = new Map();
-    private nam: string;
+const nameCache = new Set();
+const randLet = (start: string, range: number) => String.fromCharCode(start.charCodeAt(0) + range * Math.random());
+const makeName = () =>
+    [...Array(5).keys()].map(i => i < 2 ? randLet('A', 26) : randLet('0', 10)).join('')
+
+export class Robot {
+    private _name = "";
 
     constructor() {
-        this.nam = ""
+        this.resetName()
     }
 
-    public get name(): string {
-        if (this.nam == "") {
+    get name() {
+        return this._name;
+    }
 
-            while (true) {
-
-                const n = this.genName();
-
-                if (!Robot.map.get(n)) {
-                    Robot.map.set(n, true)
-                    this.nam = n;
-                    return this.nam;
-                }
-            }
-        } else {
-            return this.nam;
+    resetName() {
+        let name = makeName();
+        while (nameCache.has(name)) {
+            name = makeName();
         }
+        nameCache.add(name);
+        this._name = name;
     }
 
-    private genName() {
-        let name = String.fromCharCode(65 + Math.round(Math.random() * 26));
-
-        name += String.fromCharCode(65 + Math.round(Math.random() * 26));
-        name += Math.round(Math.random() * 10);
-        name += Math.round(Math.random() * 10);
-        name += Math.round(Math.random() * 10);
-
-        return name;
-    }
-
-    public static releaseNames(): void {
-        this.map.clear();
-    }
-
-    public resetName(): void {
-        this.nam = ""
+    static releaseNames() {
+        nameCache.clear();
     }
 }
