@@ -1,15 +1,21 @@
 Red [
 	description: {"Resistor Color" exercise solution for exercism platform}
-	author: "" ; you can write your name here, in quotes
+	author: "MenkeTechnologies"
 ]
-
 color-code: function [
 	color
 ] [
-	cause-error 'user 'message ["You need to implement this function."]
+	(index? find colors color) - 1
 ]
-
-colors: function [] [
-	cause-error 'user 'message ["You need to implement this function."]
+colors: [
+    "black"
+    "brown"
+    "red"
+    "orange"
+    "yellow"
+    "green"
+    "blue"
+    "violet"
+    "grey"
+    "white"
 ]
-
