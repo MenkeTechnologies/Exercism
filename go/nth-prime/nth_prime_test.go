@@ -5,7 +5,7 @@ import "testing"
 func TestNth(t *testing.T) {
 	for _, test := range tests {
 		switch p, ok := Nth(test.n); {
-		case !ok:
+		case ok != nil:
 			if test.ok {
 				t.Fatalf("FAIL %s\nNth(%d) returned !ok.  Expecting ok.", test.description, test.n)
 			}
