@@ -1,2 +1,2 @@
-export const isArmstrongNumber = (str) =>
-  str.toString().split('').map(n => Math.pow(n, str.toString().split('').length)).reduce((acc,n)=> acc + n, 0) === str
+export const isArmstrongNumber = num =>
+  num === [...String(num)].map(c => Math.pow(Number(c), [...String(num)].length)).reduce((acc,n)=> acc + n, 0)
