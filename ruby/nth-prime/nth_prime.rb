@@ -4,10 +4,10 @@ module Prime
   def nth(n)
     raise ArgumentError.new "n must be positive" if n < 1
     primes = [2]
-    curr = 2
+    curr = 3
     while primes.size < n
-      curr += 1
       primes << curr if prime?(curr)
+      curr += 2
     end
     primes[-1]
   end
