@@ -1,24 +1,34 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+modifier() {
+	tmp=$(($1 - 10))
+	if ((tmp % 2 != 0 && tmp < 0)); then
+        ((--tmp))
+	fi
+	echo $((tmp / 2))
+}
+
+diceX3() {
+	echo $((RANDOM % 16 + 3))
+}
+
+generate() {
+	constitution="$(diceX3)"
+	echo "strength $(diceX3)"
+	echo "dexterity $(diceX3)"
+	echo "constitution $constitution"
+	echo "intelligence $(diceX3)"
+	echo "wisdom $(diceX3)"
+	echo "charisma $(diceX3)"
+	echo "hitpoints $((10 + $(modifier "$constitution")))"
+}
+
+case "$1" in
+    modifier)
+        modifier "$2"
+        ;;
+    generate)
+        generate
+        ;;
+esac
+
