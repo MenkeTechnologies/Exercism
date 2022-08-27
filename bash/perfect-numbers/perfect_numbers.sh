@@ -1,24 +1,27 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+num=$1
+sum=0
+
+if (( num < 1 )); then
+    echo 'Classification is only possible for natural numbers.'
+    exit 1
+fi
+
+for (( i = 1; i * i <= num; i++ )); do
+    if (( num % i == 0 )); then
+        factors[i]=1
+        factors[num / i]=1
+    fi
+done
+unset factors[num]
+
+for i in "${!factors[@]}"; do
+    (( sum+=i ))
+done
+
+(( sum == num )) && type='perfect'
+(( sum > num )) && type='abundant'
+(( sum < num )) && type='deficient'
+
+echo "$type"
