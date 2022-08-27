@@ -1,24 +1,22 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+declare -A dict
+alpha=abcdefghijklmnopqrstuvwxyz
+
+for i in {0..25}; do
+    dict[${alpha:i:1}]=${alpha:25-$i:1}
+done
+
+s=${2//[^[:alnum:]]/}
+s=${s,,}
+
+for (( i=0; i < ${#s}; ++i )); do
+    c="${s:$i:1}"
+    [[ $c == [[:alpha:]] ]] && c=${dict[$c]}
+    r+=$c
+    (((i + 1) % 5 == 0)) && r+=' '
+done
+
+[[ $1 == decode ]] && r=${r//[[:space:]]/}
+
+echo "${r% }"
