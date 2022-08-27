@@ -1,24 +1,21 @@
 #!/usr/bin/env bash
+(( $# == 1 )) || exit 1
+if (( $# != 1 || $1 < 1 )); then
+    echo "invalid input"
+    exit 1
+fi
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+count=0
+for ((i = 2; count < $1; ++i)); do
+  prime=1
+  for (( j = 2; j * j <= i; ++j )); do
+    if (( i % j == 0 ));then
+        prime=0
+        break
+    fi
+  done
+  (( prime && count++ ))
+done
+
+echo "$((i - 1))"
+
