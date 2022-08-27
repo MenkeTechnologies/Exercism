@@ -1,24 +1,28 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+die() {
+	echo "$*"
+	exit 1
+}
+
+(( $# == 4 )) || die "Usage: $0 -w x,y -b x,y"
+declare -i {x,y}{a,b}
+
+while (( $# > 0 )); do
+	case "$1" in
+	-w) IFS="," read -r xa ya <<<"$2" ;;
+	-b) IFS="," read -r xb yb <<<"$2" ;;
+	*) die "unknown option" ;;
+	esac
+	shift 2
+done
+(( xa >= 0 && xb >= 0 )) || die "row not positive"
+(( xa <= 7 && xb <= 7 )) || die "row not on board"
+(( ya >= 0 && yb >= 0 )) || die "column not positive"
+(( ya <= 7 && yb <= 7 )) || die "column not on board"
+(( xa != xb || ya != yb )) || die "same position"
+
+dx=$(( xa - xb))
+dy=$(( ya - yb ))
+
+(( dx == 0 || dy == 0 || dx == dy || dx == -dy )) && echo true || echo false
