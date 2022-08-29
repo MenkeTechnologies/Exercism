@@ -6,9 +6,9 @@ import (
 )
 
 func lcSort(s string) string {
-	ch := strings.Split(strings.ToLower(s), "")
-	sort.Strings(ch)
-	return strings.Join(ch, "")
+	c := strings.Split(strings.ToLower(s), "")
+	sort.Strings(c)
+	return strings.Join(c, "")
 }
 
 func Detect(s string, candidates []string) (anagrams []string) {

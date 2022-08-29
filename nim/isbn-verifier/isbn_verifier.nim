@@ -5,7 +5,7 @@ proc isValid*(isbn: string): bool =
         return false
 
     var sum = 0
-    for i, ch in isbn.filterIt(it.isDigit or it == 'X').reversed:
-        sum += (if ch == 'X': 10 else: (int(ch) - int('0')) * (i + 1))
+    for i, c in isbn.filterIt(it.isDigit or it == 'X').reversed:
+        sum += (if c == 'X': 10 else: (int(c) - int('0')) * (i + 1))
 
     sum mod 11 == 0

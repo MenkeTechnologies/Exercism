@@ -23,8 +23,8 @@ end
 function sortStr(s)
     local lett = {}
     local lc = s:lower()
-    for ch in string.gmatch(lc, ".") do
-        table.insert(lett, ch)
+    for c in string.gmatch(lc, ".") do
+        table.insert(lett, c)
     end
 
     table.sort(lett)

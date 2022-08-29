@@ -2,7 +2,7 @@ package ScrabbleScore;
 use strict;
 use warnings;
 use Exporter 'import';
-our @EXPORT_OK = qw(score);
+our @EXPORT_OK = qw(scrabble_score);
 
 my %points = (
     (map { $_ => 1 } qw(A E I O U L N R S T)),
@@ -15,14 +15,14 @@ my %points = (
 );
 
 
-sub score {
+sub scrabble_score {
   local $_ = shift;
 
-  my @ch = split //, uc;
+  my @c = split //, uc;
 
   my $sc = 0;
 
-  $sc += $points{$_} for @ch;
+  $sc += $points{$_} for @c;
 
   $sc
 }

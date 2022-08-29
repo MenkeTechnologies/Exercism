@@ -29,4 +29,4 @@ scrabble_points = {
 
 
 def score(word):
-    return sum([scrabble_points[ch] for ch in word.upper()])
+    return sum([scrabble_points[c] for c in word.upper()])
