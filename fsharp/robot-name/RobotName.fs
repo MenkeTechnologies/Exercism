@@ -1,7 +1,23 @@
 module RobotName
 
-let mkRobot() = failwith "You need to implement this function."
+open System
+open System.Collections.Generic
 
-let name robot = failwith "You need to implement this function."
+let used = HashSet()
+let mkRobot =
+    let rand = Random()
+    let digit() = '0' + char (rand.Next(10))
+    let letter() = 'A' + char (rand.Next(26))
+    fun () ->
+        fun _ ->
+            String.Concat
+                [ letter()
+                  letter()
+                  digit()
+                  digit()
+                  digit() ]
+        |> Seq.initInfinite
+        |> Seq.find used.Add
 
-let reset robot = failwith "You need to implement this function."
+let name robot = robot
+let reset _ = mkRobot()
