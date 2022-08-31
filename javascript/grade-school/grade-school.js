@@ -12,7 +12,7 @@ export class GradeSchool {
     this._roster[grade] = [...students, name].sort();
   };
 
-  grade = grade => this.deepClone(this._roster[grade] || []);
+  grade = gr => this.deepClone(this._roster[gr ] || []);
 
   deepClone = obj => JSON.parse(JSON.stringify(obj));
 }
