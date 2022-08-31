@@ -1,5 +1,3 @@
-# Please implement your solution to armstrong-numbers in this file
-
 module ArmstrongNumbers
 
   def self.armstrong_number?(num : Int)
