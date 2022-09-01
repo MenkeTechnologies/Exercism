@@ -1,11 +1,19 @@
 module BankAccount
 
-let mkBankAccount() = failwith "You need to implement this function."
+open System
 
-let openAccount account = failwith "You need to implement this function."
+type Account = Account of decimal option ref * Object
 
-let closeAccount account = failwith "You need to implement this function."
+let mkBankAccount() = Account(ref None, obj)
 
-let getBalance account = failwith "You need to implement this function."
+let update (Account(balance, lockObj) as account) f =
+    lock lockObj (fun () -> f balance)
+    account
 
-let updateBalance change account = failwith "You need to implement this function."
+let openAccount account = update account (fun b -> b.Value <- Some 0.0m)
+
+let closeAccount account = update account (fun b -> b.Value <- None)
+
+let getBalance (Account(balance, _)) = balance.Value
+
+let updateBalance change account = update account (fun b -> b.Value <- b.Value |> Option.map ((+) change))
