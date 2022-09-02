@@ -1,25 +1,25 @@
-"""Solution to Ellen's Alien Game exercise."""
+def new_aliens_collection(positions):
+    return list(map(lambda position: Alien(position[0], position[1]), positions))
 
 
 class Alien:
-    """Create an Alien object with location x_coordinate and y_coordinate.
+    total_aliens_created = 0
 
-    Attributes
-    ----------
-    (class)total_aliens_created: int
-    x_coordinate: int - Position on the x-axis.
-    y_coordinate: int - Position on the y-axis.
-    health: int - Amount of health points.
+    def __init__(self, x, y, health=3):
+        self.x_coordinate = x
+        self.y_coordinate = y
+        self.health = health
+        Alien.total_aliens_created += 1
 
-    Methods
-    -------
-    hit(): Decrement Alien health by one point.
-    is_alive(): Return a boolean for if Alien is alive (if health is > 0).
-    teleport(new_x_coordinate, new_y_coordinate): Move Alien object to new coordinates.
-    collision_detection(other): Implementation TBD.
-    """
+    def hit(self):
+        self.health -= 1
 
-    pass
+    def is_alive(self):
+        return self.health > 0
 
+    def teleport(self, x, y):
+        self.x_coordinate = x
+        self.y_coordinate = y
 
-#TODO:  create the new_aliens_collection() function below to call your Alien class with a list of coordinates.
+    def collision_detection(self, _):
+        pass
