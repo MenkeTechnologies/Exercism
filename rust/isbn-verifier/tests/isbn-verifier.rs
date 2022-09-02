@@ -30,7 +30,6 @@ fn test_invalid_character_in_isbn() {
 }
 
 #[test]
-
 #[allow(non_snake_case)]
 fn test_invalid_isbn_with_invalid_X() {
     assert!(!is_valid_isbn("3-598-2X507-9"));
@@ -43,7 +42,6 @@ fn test_valid_isbn_without_dashes() {
 }
 
 #[test]
-
 #[allow(non_snake_case)]
 fn test_valid_isbn_without_dashes_and_X_as_check() {
     assert!(is_valid_isbn("359821507X"));
@@ -86,7 +84,6 @@ fn test_special_characters() {
 }
 
 #[test]
-
 #[allow(non_snake_case)]
 fn test_invalid_isbn_with_check_digit_X_instead_of_0() {
     assert!(!is_valid_isbn("3-598-21515-X"));
