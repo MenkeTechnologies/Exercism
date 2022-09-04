@@ -29,10 +29,15 @@ impl Display for Roman {
 impl From<u32> for Roman {
     fn from(n: u32) -> Self {
         Self {
-            s: MAP.iter().fold((String::new(), n), |(acc_str, acc), &(val, sym)| {
-                (format!("{}{}", acc_str, sym.repeat((acc / val) as usize)), acc % val)
-            },
-            ).0
+            s: MAP
+                .iter()
+                .fold((String::new(), n), |(acc_str, acc), &(val, sym)| {
+                    (
+                        format!("{}{}", acc_str, sym.repeat((acc / val) as usize)),
+                        acc % val,
+                    )
+                })
+                .0,
         }
     }
 }

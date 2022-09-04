@@ -30,11 +30,15 @@ fn math_full(left: i32, op: Option<Match>, right: Option<Match>) -> i32 {
 }
 
 pub fn answer(command: &str) -> Option<i32> {
-    let supported_ops = format!("{}|{}|{}|{}", PLUS, MINUS, DIVIDE, MULT, );
-    let prefix = Regex::new(format!("{}{}{}",
-                                    r"^What\s+is\s+(-?\d+)\s*((?:(?:",
-                                    supported_ops,
-                                    r")\s+(?:-?\d+)\s*)*)\s*\?").as_str()).unwrap();
+    let supported_ops = format!("{}|{}|{}|{}", PLUS, MINUS, DIVIDE, MULT,);
+    let prefix = Regex::new(
+        format!(
+            "{}{}{}",
+            r"^What\s+is\s+(-?\d+)\s*((?:(?:", supported_ops, r")\s+(?:-?\d+)\s*)*)\s*\?"
+        )
+        .as_str(),
+    )
+    .unwrap();
     let op_matches = Regex::new(format!("({}){}", supported_ops, r"\s+(-?\d+)").as_str()).unwrap();
 
     match prefix.captures(command) {

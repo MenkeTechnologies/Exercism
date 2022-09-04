@@ -6,7 +6,7 @@ pub fn divmod(dividend: i16, divisor: i16) -> (i16, i16) {
     (dividend / divisor, dividend % divisor)
 }
 
-pub fn evens<T>(iter: impl Iterator<Item=T>) -> impl Iterator<Item=T> {
+pub fn evens<T>(iter: impl Iterator<Item = T>) -> impl Iterator<Item = T> {
     iter.step_by(2)
 }
 

@@ -27,7 +27,9 @@ pub fn palindrome_products(min: u64, max: u64) -> Option<(Palindrome, Palindrome
         }
     }
 
-    if v.is_empty() { return None; }
+    if v.is_empty() {
+        return None;
+    }
 
     let mut min = v[0];
     let mut max = v[0];

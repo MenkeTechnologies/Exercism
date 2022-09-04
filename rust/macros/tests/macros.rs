@@ -69,7 +69,7 @@ fn test_nested() {
 
 mod test {
     #[test]
-    
+
     fn type_not_in_scope() {
         use macros::hashmap;
 
@@ -79,7 +79,7 @@ mod test {
     }
 
     #[test]
-    
+
     fn test_macro_out_of_scope() {
         let _empty: ::std::collections::HashMap<(), ()> = macros::hashmap!();
         let _without_comma = macros::hashmap!(23=> 623, 34 => 21);

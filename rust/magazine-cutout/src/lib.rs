@@ -12,12 +12,11 @@ pub fn can_construct_note(magazine: &[&str], note: &[&str]) -> bool {
     }
 
     for &word in note {
-
         match map.get_mut(word) {
             None => return false,
             Some(&mut v) => {
                 if v == 0 {
-                    return false
+                    return false;
                 }
 
                 map.insert(word, v - 1);

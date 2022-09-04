@@ -7,8 +7,8 @@ pub struct Triangle<T> {
 }
 
 impl<T> Triangle<T>
-    where
-        T: PartialOrd + Zero + Copy + AddAssign,
+where
+    T: PartialOrd + Zero + Copy + AddAssign,
 {
     pub fn build(sides: [T; 3]) -> Option<Triangle<T>> {
         let mut v: Vec<T> = [].to_vec();

@@ -24,11 +24,17 @@ fn numeric_hint(count: u8) -> char {
 }
 
 pub fn annotate(minefield: &[&str]) -> Vec<String> {
-    minefield.iter().enumerate().map(|(r, row)| {
-        row.chars().enumerate().map(|(c, ch)|
-            match ch {
-                '*' => '*',
-                _ => numeric_hint(count_mines(minefield, r, c)),
-            }).collect()
-    }).collect()
+    minefield
+        .iter()
+        .enumerate()
+        .map(|(r, row)| {
+            row.chars()
+                .enumerate()
+                .map(|(c, ch)| match ch {
+                    '*' => '*',
+                    _ => numeric_hint(count_mines(minefield, r, c)),
+                })
+                .collect()
+        })
+        .collect()
 }

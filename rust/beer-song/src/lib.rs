@@ -1,4 +1,3 @@
-
 pub fn verse(n: u32) -> String {
     let mut orig = String::from("No more bottles");
     let mut orig2 = String::from("no more bottles");

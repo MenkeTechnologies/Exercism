@@ -12,27 +12,30 @@ const POW: u32 = 128;
 
 /// Convert a list of numbers to a stream of bytes encoded with variable length encoding.
 pub fn to_bytes(values: &[u32]) -> Vec<u8> {
-    values.to_vec().into_iter().fold(Vec::new(), |mut v, mut n| {
-        let mut v2 = vec![];
-        if n == 0 {
-            v.push(0);
-        } else {
-            while n > 0 {
-                let mut r = n & R_BITS;
-                n >>= SHIFT_AMT;
-                if !v2.is_empty() {
-                    r += POW;
+    values
+        .to_vec()
+        .into_iter()
+        .fold(Vec::new(), |mut v, mut n| {
+            let mut v2 = vec![];
+            if n == 0 {
+                v.push(0);
+            } else {
+                while n > 0 {
+                    let mut r = n & R_BITS;
+                    n >>= SHIFT_AMT;
+                    if !v2.is_empty() {
+                        r += POW;
+                    }
+                    v2.push(r as u8);
                 }
-                v2.push(r as u8);
+
+                v2.reverse();
+
+                v.extend(v2.into_iter());
             }
 
-            v2.reverse();
-
-            v.extend(v2.into_iter());
-        }
-
-        v
-    })
+            v
+        })
 }
 
 /// Given a stream of bytes, extract all numbers which are encoded in there.
@@ -61,13 +64,14 @@ pub fn from_bytes(bytes: &[u8]) -> Result<Vec<u32>, Error> {
         return Err(Error::IncompleteNumber);
     }
 
-    Ok(
-        end.into_iter().map(|v| {
+    Ok(end
+        .into_iter()
+        .map(|v| {
             v.into_iter().rev().enumerate().fold(0, |mut s, (idx, n)| {
                 let aadd = (n & R_BITS) * POW.pow(idx as u32);
                 s += aadd;
                 s
             })
-        }).collect()
-    )
+        })
+        .collect())
 }

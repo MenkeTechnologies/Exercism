@@ -15,8 +15,8 @@ pub fn count(nt: char, dna: &str) -> Result<usize, char> {
     match nucleotide_counts(dna) {
         Ok(dict) => match dict.get(&nt) {
             Some(&cnt) => Ok(cnt),
-            _ => Err(nt)
-        }
+            _ => Err(nt),
+        },
         Err(dna) => Err(dna),
     }
 }

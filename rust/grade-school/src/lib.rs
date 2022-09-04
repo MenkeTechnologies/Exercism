@@ -7,7 +7,9 @@ pub struct School {
 
 impl School {
     pub fn new() -> School {
-        Self { dict: HashMap::new() }
+        Self {
+            dict: HashMap::new(),
+        }
     }
 
     pub fn add(&mut self, gr: u32, student: &str) {

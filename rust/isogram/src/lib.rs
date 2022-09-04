@@ -9,12 +9,8 @@ pub fn check(candidate: &str) -> bool {
 
     let pre = v.len();
     v.sort();
-    v.dedup_by(|a, b| {
-        *a == *b
-    });
+    v.dedup_by(|a, b| *a == *b);
     let post = v.len();
 
-
     pre == post
-
 }

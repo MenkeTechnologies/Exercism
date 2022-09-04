@@ -5,11 +5,12 @@ pub fn rot(first: char, offset: i8, transform: char) -> char {
 }
 
 pub fn rotate(input: &str, offset: i8) -> String {
-    input.chars()
+    input
+        .chars()
         .map(|ch| match ch {
             'a'..='z' => rot('a', offset, ch),
             'A'..='Z' => rot('A', offset, ch),
-            _ => ch
+            _ => ch,
         })
         .collect::<String>()
 }
