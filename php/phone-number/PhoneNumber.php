@@ -1,33 +1,30 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
-
 class PhoneNumber
 {
+    public function __construct(string $user_entered)
+    {
+        $this->numbers = preg_replace('/[ +\-\(\).]/', '', $user_entered);
+        $this->numbers = strlen($this->numbers) === 10 ? '1' . $this->numbers : $this->numbers;
+        $err = match (true) {
+            !!preg_match('/[A-Za-z]/', $this->numbers) => 'letters not permitted',
+            !!preg_match('/[@:!]/', $this->numbers) => 'punctuations not permitted',
+            strlen($this->numbers) < 11 => 'incorrect number of digits',
+            strlen($this->numbers) > 11 => 'more than 11 digits',
+            $this->numbers[0] !== '1' =>  '11 digits must start with 1',
+            $this->numbers[1] === '0' => 'area code cannot start with zero',
+            $this->numbers[1] === '1' => 'area code cannot start with one',
+            $this->numbers[4] === '0' => 'exchange code cannot start with zero',
+            $this->numbers[4] === '1' => 'exchange code cannot start with one',
+            default => ''
+        };
+        if ($err) {
+            throw new InvalidArgumentException($err);
+        }
+    }
     public function number(): string
     {
-        throw new \BadMethodCallException("Implement the number method");
+        return substr($this->numbers, 1);
     }
 }
