@@ -13,12 +13,9 @@ class PhoneNumber(num: String) {
 
         val matchResult = regex.find(num)
 
-        val str = matchResult?.groupValues?.get(2) +
+        number = matchResult?.groupValues?.get(2) +
                 matchResult?.groupValues?.get(3) +
                 matchResult?.groupValues?.get(4)
-
-        number = str
-
     }
 
 }
