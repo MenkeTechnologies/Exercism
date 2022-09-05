@@ -4,17 +4,18 @@ use JSON::PP;
 use constant JSON => JSON::PP->new;
 
 use FindBin qw<$Bin>;
-use lib $Bin, "$Bin/local/lib/perl5";    # Find modules in the same dir as this file.
+use lib $Bin,
+  "$Bin/local/lib/perl5";    # Find modules in the same dir as this file.
 
 use Bob qw<hey>;
 
 my @test_cases = do { local $/; @{ JSON->decode(<DATA>) }; };
-plan 26;                                 # This is how many tests we expect to run.
+plan 26;                     # This is how many tests we expect to run.
 
 imported_ok qw<hey> or bail_out;
 
 for (@test_cases) {
-  is hey( $_->{input}{heyBob} ), $_->{expected}, $_->{description};
+    is hey( $_->{input}{heyBob} ), $_->{expected}, $_->{description};
 }
 
 __DATA__

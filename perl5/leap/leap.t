@@ -4,21 +4,22 @@ use JSON::PP;
 use constant JSON => JSON::PP->new;
 
 use FindBin qw<$Bin>;
-use lib $Bin, "$Bin/local/lib/perl5";    # Find modules in the same dir as this file.
+use lib $Bin,
+  "$Bin/local/lib/perl5";    # Find modules in the same dir as this file.
 
 use Leap qw<is_leap_year>;
 
 my @test_cases = do { local $/; @{ JSON->decode(<DATA>) }; };
-plan 10;                                 # This is how many tests we expect to run.
+plan 10;                     # This is how many tests we expect to run.
 
 imported_ok qw<is_leap_year> or bail_out;
 
 for my $case (@test_cases) {
-  is(
-    is_leap_year( $case->{input}{year} ),
-    $case->{expected} ? T : DF,    # Check if True, or Defined but False
-    $case->{description}
-  );
+    is(
+        is_leap_year( $case->{input}{year} ),
+        $case->{expected} ? T : DF,    # Check if True, or Defined but False
+        $case->{description}
+    );
 }
 
 __DATA__

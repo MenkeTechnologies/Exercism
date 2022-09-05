@@ -14,7 +14,8 @@ plan 15;
 imported_ok qw<encode_atbash decode_atbash> or bail_out;
 
 for my $case (@test_cases) {
-    is( $case->{property} eq 'encode'
+    is(
+        $case->{property} eq 'encode'
         ? encode_atbash( $case->{input}{phrase} )
         : decode_atbash( $case->{input}{phrase} ),
         $case->{expected}, $case->{description}

@@ -15,8 +15,7 @@ ok -e "$Bin/$module.pm", "Missing $module.pm"
 
 eval "use $module";
 ok !$@, "Cannot load $module"
-  or BAIL_OUT
-  "Cannot load $module; Does it compile? Does it end with 1;?";
+  or BAIL_OUT "Cannot load $module; Does it compile? Does it end with 1;?";
 
 can_ok $module, "new"
   or BAIL_OUT "Missing package $module; or missing sub new()";
@@ -28,8 +27,7 @@ can_ok $module, "columns"
   or BAIL_OUT "Missing package $module; or missing sub columns()";
 
 can_ok $module, "saddle_points"
-  or BAIL_OUT
-  "Missing package $module; or missing sub saddle_points()";
+  or BAIL_OUT "Missing package $module; or missing sub saddle_points()";
 
 my $matrix;
 
@@ -55,8 +53,7 @@ is_deeply $matrix->columns(0), [ 1, 4, 7, 8 ], "extract a column"
   or diag explain $matrix->columns(0);
 
 $matrix = $module->new("89 1903 3\n18 3 1\n9 4 800");
-is_deeply $matrix->columns(1), [ 1903, 3, 4 ],
-  "extract another column"
+is_deeply $matrix->columns(1), [ 1903, 3, 4 ], "extract another column"
   or diag explain $matrix->columns(1);
 
 # test saddle-points

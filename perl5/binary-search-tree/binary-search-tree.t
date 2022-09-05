@@ -13,18 +13,17 @@ my @test_cases = do { local $/; @{ JSON->decode(<DATA>) }; };
 imported_ok qw<tree treeSort> or bail_out;
 
 subtest data => sub {
-  for my $case ( grep { $_->{property} eq 'data' } @test_cases ) {
-    is( tree( $case->{input}{treeData} ),
-      $case->{expected}, $case->{description}, );
-  }
+    for my $case ( grep { $_->{property} eq 'data' } @test_cases ) {
+        is( tree( $case->{input}{treeData} ),
+            $case->{expected}, $case->{description}, );
+    }
 };
 
 subtest sorting => sub {
-  for my $case ( grep { $_->{property} eq 'sortedData' } @test_cases )
-  {
-    is( treeSort( $case->{input}{treeData} ),
-      $case->{expected}, $case->{description}, );
-  }
+    for my $case ( grep { $_->{property} eq 'sortedData' } @test_cases ) {
+        is( treeSort( $case->{input}{treeData} ),
+            $case->{expected}, $case->{description}, );
+    }
 };
 
 done_testing;

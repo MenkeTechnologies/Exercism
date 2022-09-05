@@ -14,8 +14,7 @@ plan 96;
 imported_ok qw<meetup> or bail_out;
 
 for my $case (@test_cases) {
-  is meetup( $case->{input} ), $case->{expected},
-    $case->{description};
+    is meetup( $case->{input} ), $case->{expected}, $case->{description};
 }
 
 __DATA__

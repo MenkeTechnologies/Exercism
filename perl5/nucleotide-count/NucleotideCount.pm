@@ -6,14 +6,14 @@ our @EXPORT_OK = qw(count_nucleotides);
 
 sub count_nucleotides {
     my ($strand) = @_;
-    my %map = ("A", 0, "G", 0, "C", 0, "T", 0);
+    my %map = ( "A", 0, "G", 0, "C", 0, "T", 0 );
 
-    for (split //, $strand) {
+    for ( split //, $strand ) {
         die "Invalid nucleotide in strand" if !/[AGCT]/;
-        ++$map{$_}
+        ++$map{$_};
     }
 
-    \%map
+    \%map;
 }
 
 1

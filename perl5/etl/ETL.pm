@@ -9,9 +9,9 @@ sub transform {
     my %map = %$data;
     my %out;
 
-    for my $point (keys %map) {
-        my @letters = @{$map{$point}};
-        $out{lc $_} = $point for @letters;
+    for my $point ( keys %map ) {
+        my @letters = @{ $map{$point} };
+        $out{ lc $_ } = $point for @letters;
 
     }
 

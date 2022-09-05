@@ -16,8 +16,7 @@ ok -e "$Bin/$module.pm", "Missing $module.pm"
 eval "use $module";
 
 ok !$@, "Cannot load $module"
-  or BAIL_OUT
-  "Cannot load $module; Does it compile? Does it end with 1;?";
+  or BAIL_OUT "Cannot load $module; Does it compile? Does it end with 1;?";
 
 can_ok $module, "new"
   or BAIL_OUT "Missing package $module; or missing sub new()";
@@ -47,63 +46,51 @@ my $robot = $module->new;
 my ( $east, $west, $north, $south ) = qw(east west north south);
 
 $robot->orient($east);
-is $robot->bearing, $east,
-  "robot is facing east after robot->orient(east)";
+is $robot->bearing, $east, "robot is facing east after robot->orient(east)";
 
 $robot->orient($west);
-is $robot->bearing, $west,
-  "robot is facing west after robot->orient(west)";
+is $robot->bearing, $west, "robot is facing west after robot->orient(west)";
 
 $robot->orient($north);
-is $robot->bearing, $north,
-  "robot is facing north after robot->orient(north)";
+is $robot->bearing, $north, "robot is facing north after robot->orient(north)";
 
 $robot->orient($south);
-is $robot->bearing, $south,
-  "robot is facing south after robot->orient(south)";
+is $robot->bearing, $south, "robot is facing south after robot->orient(south)";
 
 eval { $robot->orient("crood"); };
 like $@, qr/ArgumentError/, "throw exception for invalid orientation";
 
 $robot->orient($north);
 $robot->turn_right;
-is $robot->bearing, $east,
-  "robot is facing east after turn_right from north";
+is $robot->bearing, $east, "robot is facing east after turn_right from north";
 
 $robot->orient($east);
 $robot->turn_right;
-is $robot->bearing, $south,
-  "robot is facing south after turn_right from east";
+is $robot->bearing, $south, "robot is facing south after turn_right from east";
 
 $robot->orient($south);
 $robot->turn_right;
-is $robot->bearing, $west,
-  "robot is facing west after turn_right from south";
+is $robot->bearing, $west, "robot is facing west after turn_right from south";
 
 $robot->orient($west);
 $robot->turn_right;
-is $robot->bearing, $north,
-  "robot is facing north after turn_right from west";
+is $robot->bearing, $north, "robot is facing north after turn_right from west";
 
 $robot->orient($north);
 $robot->turn_left;
-is $robot->bearing, $west,
-  "robot is facing west after turn_left from north";
+is $robot->bearing, $west, "robot is facing west after turn_left from north";
 
 $robot->orient($east);
 $robot->turn_left;
-is $robot->bearing, $north,
-  "robot is facing north after turn_left from east";
+is $robot->bearing, $north, "robot is facing north after turn_left from east";
 
 $robot->orient($south);
 $robot->turn_left;
-is $robot->bearing, $east,
-  "robot is facing east after turn_left from south";
+is $robot->bearing, $east, "robot is facing east after turn_left from south";
 
 $robot->orient($west);
 $robot->turn_left;
-is $robot->bearing, $south,
-  "robot is facing south after turn_left from west";
+is $robot->bearing, $south, "robot is facing south after turn_left from west";
 
 $robot->at( 3, 0 );
 is_deeply $robot->coordinates, [ 3, 0 ], "set robot coordinates"
@@ -145,9 +132,9 @@ is_deeply $robot->coordinates, [ -1, 0 ],
 my $sim_module = "Simulator";
 
 {
-  no strict 'refs';
-  scalar %{ join( '::', $sim_module, '' ) }
-    or BAIL_OUT "You need to implement the $sim_module class";
+    no strict 'refs';
+    scalar %{ join( '::', $sim_module, '' ) }
+      or BAIL_OUT "You need to implement the $sim_module class";
 }
 
 can_ok $sim_module, "new"
@@ -190,14 +177,11 @@ is_deeply $robot->coordinates, [ 0, 2 ],
 is $robot->bearing, $west, "test bearing after instructing robot";
 
 # test multiple robots
-my ( $robot_1, $robot_2, $robot_3 )
-  = ( $module->new, $module->new, $module->new );
-$simulator->place( $robot_1,
-  { x => 0, y => 0, direction => $north } );
-$simulator->place( $robot_2,
-  { x => 2, y => -7, direction => $east } );
-$simulator->place( $robot_3,
-  { x => 8, y => 4, direction => $south } );
+my ( $robot_1, $robot_2, $robot_3 ) =
+  ( $module->new, $module->new, $module->new );
+$simulator->place( $robot_1, { x => 0, y => 0,  direction => $north } );
+$simulator->place( $robot_2, { x => 2, y => -7, direction => $east } );
+$simulator->place( $robot_3, { x => 8, y => 4,  direction => $south } );
 $simulator->evaluate( $robot_1, "LAAARALA" );
 $simulator->evaluate( $robot_2, "RRAAAAALA" );
 $simulator->evaluate( $robot_3, "LAAARRRALLLL" );
@@ -210,11 +194,9 @@ is $robot_1->bearing, $west, "test bearing after instructing robot_1";
 is_deeply $robot_2->coordinates, [ -3, -8 ],
   "test coordinates after instructing robot_2"
   or diag explain $robot_2->coordinates;
-is $robot_2->bearing, $south,
-  "test bearing after instructing robot_2";
+is $robot_2->bearing, $south, "test bearing after instructing robot_2";
 
 is_deeply $robot_3->coordinates, [ 11, 5 ],
   "test coordinates after instructing robot_3"
   or diag explain $robot_3->coordinates;
-is $robot_3->bearing, $north,
-  "test bearing after instructing robot_3";
+is $robot_3->bearing, $north, "test bearing after instructing robot_3";

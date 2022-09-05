@@ -15,11 +15,12 @@ sub is_luhn_valid {
     my $sum = 0;
 
     do {
-        $_ *= 2 if $cnt++ % 2 == 1;
-        $sum += $_ > 9 ? $_ - 9 : $_
-    } for split('', reverse($input));
+        $_   *= 2 if $cnt++ % 2 == 1;
+        $sum += $_ > 9 ? $_ - 9 : $_;
+      }
+      for split( '', reverse($input) );
 
-    $sum % 10 == 0
+    $sum % 10 == 0;
 }
 
 1;

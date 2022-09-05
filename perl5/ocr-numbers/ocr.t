@@ -15,8 +15,7 @@ ok -e "$Bin/$module.pm", "Missing $module.pm"
 
 eval "use $module";
 ok !$@, "Cannot load $module"
-  or BAIL_OUT
-  "Cannot load $module. Does it compile? Does it end with 1;?";
+  or BAIL_OUT "Cannot load $module. Does it compile? Does it end with 1;?";
 can_ok $module, "new"
   or BAIL_OUT "Missing package $module; or missing sub new()";
 can_ok $module, "convert"
@@ -158,5 +157,4 @@ chomp( my $multiline = <<'MULTILINE');
   ||_| _|
          
 MULTILINE
-is $module->new($multiline)->convert, '123,456,789',
-  "multiline input";
+is $module->new($multiline)->convert, '123,456,789', "multiline input";

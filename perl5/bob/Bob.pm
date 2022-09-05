@@ -11,17 +11,17 @@ sub hey {
 
     return "Fine. Be that way!" if !length;
 
-    if (/[A-Z]/ && !/[a-z]/) {
+    if ( /[A-Z]/ && !/[a-z]/ ) {
 
         return "Calm down, I know what I'm doing!" if /\?$/;
 
-        return "Whoa, chill out!"
+        return "Whoa, chill out!";
 
     }
 
     return "Sure." if /\?$/;
 
-    'Whatever.'
+    'Whatever.';
 }
 
 1;

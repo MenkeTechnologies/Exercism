@@ -3,19 +3,19 @@ use strict;
 use warnings;
 
 sub factors {
-  my ($n) = @_;
-  my @factors;
-  my $divisor = 2;
+    my ($n) = @_;
+    my @factors;
+    my $divisor = 2;
 
-  while ($n > 1) {
-    while ($n % $divisor == 0) {
-        push @factors, $divisor;
-        $n /= $divisor;
+    while ( $n > 1 ) {
+        while ( $n % $divisor == 0 ) {
+            push @factors, $divisor;
+            $n /= $divisor;
+        }
+        ++$divisor;
     }
-    ++$divisor;
-  }
 
-  \@factors
+    \@factors;
 }
 
 1

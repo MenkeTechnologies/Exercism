@@ -9,16 +9,16 @@ sub raindrop {
 
     my $res = "";
 
-    if ($number % 3 == 0) {
+    if ( $number % 3 == 0 ) {
         $res .= "Pling";
     }
-    if ($number % 5 == 0) {
+    if ( $number % 5 == 0 ) {
         $res .= "Plang";
     }
-    if ($number % 7 == 0) {
+    if ( $number % 7 == 0 ) {
         $res .= "Plong";
     }
-    if ($res eq "") {
+    if ( $res eq "" ) {
         $res = "$number";
     }
 

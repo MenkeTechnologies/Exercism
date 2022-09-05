@@ -6,13 +6,13 @@ my $module = 'Prime';
 
 use Test2::Bundle::More;
 use JSON::PP qw(decode_json);
-use FindBin qw($Bin);
+use FindBin  qw($Bin);
 use lib $Bin, "$Bin/local/lib/perl5";
 
 my $cases;
 {
-  local $/ = undef;
-  $cases = decode_json scalar <DATA>;
+    local $/ = undef;
+    $cases = decode_json scalar <DATA>;
 }
 
 #plan 3 + @$cases;
@@ -20,7 +20,7 @@ my $cases;
 
 ok -e "$Bin/$module.pm", "missing $module.pm"
   or BAIL_OUT(
-  "You need to create a class called $module.pm with a constructor called factors."
+"You need to create a class called $module.pm with a constructor called factors."
   );
 
 eval "use $module";
@@ -33,8 +33,8 @@ can_ok( $module, 'factors' )
 my $sub = $module . '::factors';
 
 foreach my $c (@$cases) {
-  no strict 'refs';
-  is_deeply $sub->( $c->{input} ), $c->{expected}, $c->{name};
+    no strict 'refs';
+    is_deeply $sub->( $c->{input} ), $c->{expected}, $c->{name};
 }
 
 done_testing();

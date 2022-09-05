@@ -5,13 +5,12 @@ use Exporter 'import';
 our @EXPORT_OK = qw(roster);
 
 sub roster {
-    my ($students, $grade) = @_;
+    my ( $students, $grade ) = @_;
     [
-        map  {$_->[0]}
-        grep {defined $grade ? $_->[1] == $grade : 'all'}
-        sort {$a->[1] <=> $b->[1] or $a->[0] cmp $b->[0]}
-        @$students
-    ]
+        map  { $_->[0] }
+        grep { defined $grade ? $_->[1] == $grade : 'all' }
+        sort { $a->[1] <=> $b->[1] or $a->[0] cmp $b->[0] } @$students
+    ];
 }
 
 1

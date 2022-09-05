@@ -10,12 +10,13 @@ my %lookup;
 @lookup{@letters} = reverse @letters;
 
 sub encode_atbash {
-  my ($s) = @_;
-  decode_atbash($s) =~ s@(.{5})(?=.)@$1 @gr
+    my ($s) = @_;
+    decode_atbash($s) =~ s@(.{5})(?=.)@$1 @gr;
 }
+
 sub decode_atbash {
-  my ($s) = @_;
-  join '', map { $lookup{lc $_} // (/\d/ ? $_ : '') } split //, $s
+    my ($s) = @_;
+    join '', map { $lookup{ lc $_ } // ( /\d/ ? $_ : '' ) } split //, $s;
 }
 
 1

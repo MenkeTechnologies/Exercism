@@ -4,7 +4,7 @@ use warnings;
 
 use Test2::Bundle::More;
 use JSON::PP qw(decode_json);
-use FindBin qw($Bin);
+use FindBin  qw($Bin);
 use lib $Bin, "$Bin/local/lib/perl5";
 
 my $module = 'Proverb';
@@ -12,8 +12,8 @@ my $sub    = 'proverb';
 
 my $cases;
 {
-  local $/ = undef;
-  $cases = decode_json scalar <DATA>;
+    local $/ = undef;
+    $cases = decode_json scalar <DATA>;
 }
 
 plan 3 + @$cases;
@@ -31,10 +31,9 @@ can_ok( $module, 'proverb' )
 $sub = "${module}::proverb";
 
 foreach my $c (@$cases) {
-  no strict 'refs';
-  my $expected = join "" => @{ $c->{expected} };
-  is $sub->( $c->{param}, $c->{qualifier} || "" ), $expected,
-    $c->{name};
+    no strict 'refs';
+    my $expected = join "" => @{ $c->{expected} };
+    is $sub->( $c->{param}, $c->{qualifier} || "" ), $expected, $c->{name};
 }
 
 __DATA__
