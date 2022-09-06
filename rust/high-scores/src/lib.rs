@@ -5,7 +5,7 @@ pub struct HighScores {
 
 impl HighScores {
     pub fn new(scores: &[u32]) -> Self {
-        HighScores {
+        Self {
             vec: scores.to_vec(),
         }
     }
