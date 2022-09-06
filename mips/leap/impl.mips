@@ -1,0 +1,19 @@
+.text
+.globl is_leap_year
+.macro modzero($check, $jump)
+	li    $t0, $check #400, 100, 4
+	div   $a0, $t0
+	mfhi  $t0         #0 if divisible
+	beqz  $t0, $jump  #if divisible, branch
+.end_macro
+is_leap_year:
+	modzero(400, leap)
+	modzero(100, norm)
+	modzero(4,   leap)
+norm:
+	li    $v0, 0
+	jr    $ra
+leap:
+	li    $v0, 1
+	jr    $ra
+
