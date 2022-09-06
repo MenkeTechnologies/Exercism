@@ -1,2 +1,2 @@
 export const twoFer = (name = 'you') =>
-  `One for ${name}, one for me.`
+    `One for ${name}, one for me.`

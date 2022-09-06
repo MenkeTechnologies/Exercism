@@ -24,7 +24,7 @@ export const frontDoorPassword = word => word.toUpperCase().substr(0, 1) + word.
  * @returns {string}
  */
 export const backDoorResponse = line =>
-  line.trim().substr(line.trim().length-1,1)
+    line.trim().substr(line.trim().length - 1, 1)
 
 /**
  * Format the password for the back door, given the response

@@ -20,8 +20,8 @@ export const getItem = (cards, position) => cards[position]
  * @returns {number[]} the cards with the change applied
  */
 export const setItem = (cards, position, replacementCard) => {
-  cards[position] = replacementCard
-  return cards
+    cards[position] = replacementCard
+    return cards
 }
 
 /**
@@ -33,8 +33,8 @@ export const setItem = (cards, position, replacementCard) => {
  * @returns {number[]} the cards with the newCard applied
  */
 export const insertItemAtTop = (cards, newCard) => {
-  cards.push(newCard)
-  return cards
+    cards.push(newCard)
+    return cards
 }
 
 
@@ -48,8 +48,8 @@ export const insertItemAtTop = (cards, newCard) => {
  */
 export const removeItem = (cards, position) => {
 
-  cards.splice(position, 1)
-  return cards;
+    cards.splice(position, 1)
+    return cards;
 }
 
 /**
@@ -60,8 +60,8 @@ export const removeItem = (cards, position) => {
  * @returns {number[]} the cards without the removed card
  */
 export const removeItemFromTop = (cards) => {
-  cards.pop()
-  return cards
+    cards.pop()
+    return cards
 }
 
 /**
@@ -74,8 +74,8 @@ export const removeItemFromTop = (cards) => {
  */
 export const insertItemAtBottom = (cards, newCard) => {
 
-  cards.unshift(newCard)
-  return cards;
+    cards.unshift(newCard)
+    return cards;
 }
 
 /**
@@ -87,8 +87,8 @@ export const insertItemAtBottom = (cards, newCard) => {
  */
 export const removeItemAtBottom = (cards) => {
 
-  cards.shift()
-  return cards;
+    cards.shift()
+    return cards;
 }
 
 /**
@@ -100,4 +100,4 @@ export const removeItemAtBottom = (cards) => {
  * @returns {boolean} true if there are exactly stackSize number of cards, false otherwise
  */
 export const checkSizeOfStack = (cards, stackSize) =>
-  cards.length === stackSize
+    cards.length === stackSize

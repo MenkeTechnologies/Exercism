@@ -39,8 +39,8 @@ export const canSignalPrisoner = (archerIsAwake, prisonerIsAwake) => prisonerIsA
  * @returns {boolean} Whether or not you can free Annalyn's friend.
  */
 export const canFreePrisoner = (
-  knightIsAwake,
-  archerIsAwake,
-  prisonerIsAwake,
-  petDogIsPresent
+    knightIsAwake,
+    archerIsAwake,
+    prisonerIsAwake,
+    petDogIsPresent
 ) => petDogIsPresent ? !archerIsAwake : prisonerIsAwake && !knightIsAwake && !archerIsAwake

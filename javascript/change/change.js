@@ -1,7 +1,5 @@
-
-
 export class Change {
-  calculate(coinArray, target) {
-    throw new Error('Remove this statement and implement this function');
-  }
+    calculate(coinArray, target) {
+        throw new Error('Remove this statement and implement this function');
+    }
 }

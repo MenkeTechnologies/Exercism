@@ -18,4 +18,4 @@ export const cardTypeCheck = (stack, card) => stack.filter(c => c === card).leng
  * @returns {number} number of cards that are either odd or even (depending on `type`)
  */
 export const determineOddEvenCards = (stack, type) =>
-  stack.filter(c => c % 2 === (type ? 0 : 1)).length
+    stack.filter(c => c % 2 === (type ? 0 : 1)).length

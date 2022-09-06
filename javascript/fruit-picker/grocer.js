@@ -9,14 +9,14 @@ let storeStatus = 'OFFLINE';
  * @param  {string} status
  */
 export function setStatus(status) {
-  storeStatus = status;
+    storeStatus = status;
 }
 
 /**
  * For testing purposes, reset the store status
  */
 export function resetStatus() {
-  storeStatus = 'OFFLINE';
+    storeStatus = 'OFFLINE';
 }
 
 /**
@@ -24,7 +24,7 @@ export function resetStatus() {
  * @param  {StatusCallback} callback
  */
 export function checkStatus(callback) {
-  return callback(storeStatus);
+    return callback(storeStatus);
 }
 
 /**
@@ -39,7 +39,7 @@ let inventoryResponse = undefined;
  * @param  {any} ...nextResponse
  */
 export function setResponse(...nextResponse) {
-  inventoryResponse = nextResponse;
+    inventoryResponse = nextResponse;
 }
 
 /**
@@ -47,15 +47,15 @@ export function setResponse(...nextResponse) {
  * @return {string}
  */
 export function getLastQuery() {
-  return lastInventoryQuery;
+    return lastInventoryQuery;
 }
 
 /**
  * For testing purposes, reset the last query
  */
 export function resetQuery() {
-  lastInventoryQuery = undefined;
-  inventoryResponse = ['undefined response'];
+    lastInventoryQuery = undefined;
+    inventoryResponse = ['undefined response'];
 }
 
 /**
@@ -65,6 +65,6 @@ export function resetQuery() {
  * @return {AvailabilityAction} return the result of the callback
  */
 export function checkInventory(query, callback) {
-  lastInventoryQuery = query;
-  return callback.apply(null, inventoryResponse);
+    lastInventoryQuery = query;
+    return callback.apply(null, inventoryResponse);
 }

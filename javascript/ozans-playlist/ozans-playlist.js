@@ -27,9 +27,9 @@ export const hasTrack = (playlist, track) => new Set(playlist).has(track);
  * @returns {string[]} new playlist
  */
 export const addTrack = (playlist, track) => {
-  const set = new Set(playlist)
-  set.add(track)
-  return [...set]
+    const set = new Set(playlist)
+    set.add(track)
+    return [...set]
 };
 
 /**
@@ -40,9 +40,9 @@ export const addTrack = (playlist, track) => {
  * @returns {string[]} new playlist
  */
 export const deleteTrack = (playlist, track) => {
-  const set = new Set(playlist)
-  set.delete(track)
-  return [...set]
+    const set = new Set(playlist)
+    set.delete(track)
+    return [...set]
 };
 
 /**

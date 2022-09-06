@@ -14,7 +14,7 @@ export const dayRate = (ratePerHour) => ratePerHour * 8
  * @returns {number} the number of days
  */
 export const daysInBudget = (budget, ratePerHour) =>
-  Math.floor(budget / dayRate(ratePerHour))
+    Math.floor(budget / dayRate(ratePerHour))
 
 /**
  * Calculates the discounted rate for large projects, rounded up
@@ -26,9 +26,9 @@ export const daysInBudget = (budget, ratePerHour) =>
  */
 export const priceWithMonthlyDiscount = (ratePerHour, numDays, discount) => {
 
-  let discountDays = Math.floor(numDays / 22) * 22;
-  let fullDays = numDays - discountDays
-  let rate = dayRate(ratePerHour);
-  let disc = 1 - discount;
-  return Math.ceil(rate * discountDays * disc + rate * fullDays)
+    let discountDays = Math.floor(numDays / 22) * 22;
+    let fullDays = numDays - discountDays
+    let rate = dayRate(ratePerHour);
+    let disc = 1 - discount;
+    return Math.ceil(rate * discountDays * disc + rate * fullDays)
 }

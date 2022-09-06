@@ -7,7 +7,7 @@
  * @returns {Record<string, number>} new score board
  */
 export const createScoreBoard = () => ({
-  "The Best Ever": 1000000
+    "The Best Ever": 1000000
 })
 
 /**
@@ -32,8 +32,8 @@ export const addPlayer = (scoreBoard, player, score) => {
  * @returns {Record<string, number>} updated score board
  */
 export const removePlayer = (scoreBoard, player) => {
-  delete scoreBoard[player]
-  return scoreBoard
+    delete scoreBoard[player]
+    return scoreBoard
 };
 
 /**
@@ -45,8 +45,8 @@ export const removePlayer = (scoreBoard, player) => {
  * @returns {Record<string, number>} updated score board
  */
 export const updateScore = (scoreBoard, player, points) => {
-  scoreBoard[player] += points;
-  return scoreBoard;
+    scoreBoard[player] += points;
+    return scoreBoard;
 }
 
 /**
@@ -56,8 +56,8 @@ export const updateScore = (scoreBoard, player, points) => {
  * @returns {Record<string, number>} updated score board
  */
 export const applyMondayBonus = scoreBoard => {
-  Object.keys(scoreBoard).map(k => scoreBoard[k] += 100);
-  return scoreBoard;
+    Object.keys(scoreBoard).map(k => scoreBoard[k] += 100);
+    return scoreBoard;
 };
 
 /**
@@ -67,4 +67,4 @@ export const applyMondayBonus = scoreBoard => {
  * @returns {number} normalized score
  */
 export const normalizeScore = params =>
-  params.normalizeFunction(params.score)
+    params.normalizeFunction(params.score)

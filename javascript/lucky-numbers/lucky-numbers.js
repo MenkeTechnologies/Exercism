@@ -8,7 +8,7 @@
  * @returns {number} sum of the two arrays
  */
 export const twoSum = (array1, array2) =>
-  Number(array1.join('')) + Number(array2.join(''))
+    Number(array1.join('')) + Number(array2.join(''))
 
 /**
  * Checks whether a number is a palindrome.
@@ -26,11 +26,11 @@ export const luckyNumber = value => `${value}` === `${value}`.split('').reverse(
  * @returns {string} error message
  */
 export const errorMessage = input => {
-  if (!input) {
-      return 'Required field'
-  }
-  if (!Number(input) || Number(input) === 0) {
-      return 'Must be a number besides 0';
-  }
-  return '';
+    if (!input) {
+        return 'Required field'
+    }
+    if (!Number(input) || Number(input) === 0) {
+        return 'Must be a number besides 0';
+    }
+    return '';
 };

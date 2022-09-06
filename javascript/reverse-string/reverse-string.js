@@ -1,4 +1,2 @@
-
-
 export const reverseString = (str) =>
-  str.split("").reverse().join("")
+    str.split("").reverse().join("")

@@ -17,7 +17,7 @@ export const seeingDouble = deck => deck.map(i => i * 2)
  * @returns {number[]} deck with triplicate 3s
  */
 export const threeOfEachThree = deck =>
-  deck.flatMap(i => i === 3 ? [i, i, i] : [i])
+    deck.flatMap(i => i === 3 ? [i, i, i] : [i])
 
 /**
  * Extracts the middle two cards from a deck.
@@ -28,7 +28,7 @@ export const threeOfEachThree = deck =>
  * @returns {number[]} deck with only two middle cards
  */
 export const middleTwo = deck =>
-  deck.slice(Math.floor(deck.length / 2) - 1, Math.floor(deck.length / 2) + 1)
+    deck.slice(Math.floor(deck.length / 2) - 1, Math.floor(deck.length / 2) + 1)
 
 /**
  * Moves the outside two cards to the middle.
@@ -38,10 +38,10 @@ export const middleTwo = deck =>
  * @returns {number[]} transformed deck
  */
 export const sandwichTrick = deck => {
-  let f = deck.shift();
-  let l = deck.pop();
-  deck.splice(Math.round(deck.length / 2), 0, l, f)
-  return deck
+    let f = deck.shift();
+    let l = deck.pop();
+    deck.splice(Math.round(deck.length / 2), 0, l, f)
+    return deck
 
 }
 
@@ -71,4 +71,4 @@ export const perfectlyOrdered = deck => deck.sort((a, b) => a - b)
  * @returns {number[]} reordered deck
  */
 export const reorder = deck =>
-  deck.reverse()
+    deck.reverse()

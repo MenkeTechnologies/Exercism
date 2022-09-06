@@ -9,7 +9,10 @@
 //
 // In your own projects, files, and code, you can play with @ts-check as well.
 
-import { checkStatus, checkInventory } from './grocer';
+import {
+    checkStatus,
+    checkInventory
+} from './grocer';
 
 /**
  * Returns the service status as a boolean value
@@ -26,7 +29,10 @@ export const isServiceOnline = () => checkStatus(x => x === 'ONLINE')
  * @return {AvailabilityAction} the result from checkInventory
  */
 export const pickFruit = (variety, quantity, callback) =>
-  checkInventory({variety, quantity}, callback)
+    checkInventory({
+        variety,
+        quantity
+    }, callback)
 
 /**
  * This is a callback function to be passed to the checkInventory API
@@ -36,11 +42,11 @@ export const pickFruit = (variety, quantity, callback) =>
  * @return {AvailabilityAction} whether the fruit was purchased 'PURCHASE' or 'NOOP'
  */
 export const purchaseInventoryIfAvailable = (err, isAvailable) => {
-  if (err) {
-    throw new Error();
-  }
+    if (err) {
+        throw new Error();
+    }
 
-  return isAvailable ? 'PURCHASE' : 'NOOP';
+    return isAvailable ? 'PURCHASE' : 'NOOP';
 };
 
 /**
@@ -51,4 +57,4 @@ export const purchaseInventoryIfAvailable = (err, isAvailable) => {
  * @return {AvailabilityAction} whether the fruit was purchased 'PURCHASE' or 'NOOP'
  */
 export const pickAndPurchaseFruit = (variety, quantity) =>
-  pickFruit(variety, quantity, purchaseInventoryIfAvailable)
+    pickFruit(variety, quantity, purchaseInventoryIfAvailable)

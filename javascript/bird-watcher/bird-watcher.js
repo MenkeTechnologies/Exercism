@@ -6,7 +6,7 @@
  * @returns {number} total bird count
  */
 export const totalBirdCount = birdsPerDay =>
-  birdsPerDay.reduce((acc, n) => acc + n)
+    birdsPerDay.reduce((acc, n) => acc + n)
 
 /**
  * Calculates the total number of birds seen in a specific week.
@@ -16,7 +16,7 @@ export const totalBirdCount = birdsPerDay =>
  * @returns {number} birds counted in the given week
  */
 export const birdsInWeek = (birdsPerDay, week) =>
-  birdsPerDay.splice((week - 1) * 7, 7).reduce((acc,n) => acc + n)
+    birdsPerDay.splice((week - 1) * 7, 7).reduce((acc, n) => acc + n)
 
 /**
  * Fixes the counting mistake by increasing the bird count
@@ -25,6 +25,6 @@ export const birdsInWeek = (birdsPerDay, week) =>
  * @param {number[]} birdsPerDay
  * @returns {number[]} corrected bird count data
  */
-export const fixBirdCountLog = birdsPerDay => 
-  birdsPerDay.forEach((n,i) =>  i % 2 === 0 ? birdsPerDay[i] = n + 1 : 0)
-  || birdsPerDay
+export const fixBirdCountLog = birdsPerDay =>
+    birdsPerDay.forEach((n, i) => i % 2 === 0 ? birdsPerDay[i] = n + 1 : 0) ||
+    birdsPerDay

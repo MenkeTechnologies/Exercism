@@ -15,7 +15,7 @@
  *  translated coordinate pair in the form [x, y]
  */
 export const translate2d = (dx, dy) =>
-  (x, y) => [x + dx, y + dy]
+    (x, y) => [x + dx, y + dy]
 
 /**
  * Create a function that returns a function making use of a closure to
@@ -28,7 +28,7 @@ export const translate2d = (dx, dy) =>
  *  scaled coordinate pair in the form [x, y]
  */
 export const scale2d = (sx, sy) =>
-  (x, y) => [x * sx, y * sy]
+    (x, y) => [x * sx, y * sy]
 
 /**
  * Create a composition function that returns a function that combines two
@@ -41,10 +41,10 @@ export const scale2d = (sx, sy) =>
  *  transformed coordinate pair in the form [x, y]
  */
 export const composeTransform = (f, g) =>
-  (x, y) => {
-    let r = f(x, y);
-    return g(r[0], r[1])
-  }
+    (x, y) => {
+        let r = f(x, y);
+        return g(r[0], r[1])
+    }
 
 
 /**
@@ -58,14 +58,14 @@ export const composeTransform = (f, g) =>
  */
 export const memoizeTransform = f => {
 
-  let oldX, oldY, oldR;
-  return (x, y) => {
-    if (x !== oldX && y !== oldY) {
-      oldX = x;
-      oldY = y
-      oldR = f(x, y);
-    }
-    return oldR
+    let oldX, oldY, oldR;
+    return (x, y) => {
+        if (x !== oldX && y !== oldY) {
+            oldX = x;
+            oldY = y
+            oldR = f(x, y);
+        }
+        return oldR
 
-  }
+    }
 }

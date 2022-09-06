@@ -10,9 +10,9 @@
  * @returns {Visitor} the visitor that was created
  */
 export const createVisitor = (name, age, ticketId) => ({
-  name,
-  age,
-  ticketId
+    name,
+    age,
+    ticketId
 })
 
 /**
@@ -22,8 +22,8 @@ export const createVisitor = (name, age, ticketId) => ({
  * @returns {Visitor} the visitor without a ticket
  */
 export const revokeTicket = visitor => {
-  visitor.ticketId = null;
-  return visitor;
+    visitor.ticketId = null;
+    return visitor;
 
 }
 
@@ -35,7 +35,7 @@ export const revokeTicket = visitor => {
  * @returns {string} ticket status
  */
 export const ticketStatus = (tickets, ticketId) =>
-  tickets[ticketId] ? `sold to ${tickets[ticketId]}` : tickets[ticketId] === undefined ? 'unknown ticket id' : 'not sold'
+    tickets[ticketId] ? `sold to ${tickets[ticketId]}` : tickets[ticketId] === undefined ? 'unknown ticket id' : 'not sold'
 
 /**
  * Determines the status a ticket has in the ticket tracking object
@@ -46,7 +46,7 @@ export const ticketStatus = (tickets, ticketId) =>
  * @returns {string} ticket status
  */
 export const simpleTicketStatus = (tickets, ticketId) =>
-  tickets[ticketId] != null ? tickets[ticketId] : 'invalid ticket !!!'
+    tickets[ticketId] != null ? tickets[ticketId] : 'invalid ticket !!!'
 
 /**e
  * Determines the version of the GTC that was signed by the visitor.
@@ -55,4 +55,4 @@ export const simpleTicketStatus = (tickets, ticketId) =>
  * @returns {string | undefined} version
  */
 export const gtcVersion = visitor =>
-  visitor?.gtc?.version
+    visitor?.gtc?.version

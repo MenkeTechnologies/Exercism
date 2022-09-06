@@ -1,5 +1,3 @@
-
-
 export function hello() {
-  return 'Hello, World!';
+    return 'Hello, World!';
 }

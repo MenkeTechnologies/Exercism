@@ -9,7 +9,7 @@
  * @returns {number} position of the card in the stack
  */
 export const getCardPosition = (stack, card) =>
-  stack.indexOf(card);
+    stack.indexOf(card);
 
 /**
  * Determine if the stack contains the card
