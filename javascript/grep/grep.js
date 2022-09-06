@@ -41,9 +41,6 @@ const VALID_OPTIONS = [
 
 const ARGS = process.argv;
 
-//
-// This is only a SKELETON file for the 'Grep' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+
 // This file should *not* export a function. Use ARGS to determine what to grep
 // and use console.log(output) to write to the standard output.

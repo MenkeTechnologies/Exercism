@@ -1,7 +1,4 @@
-//
-// This is only a SKELETON file for the 'Custom Set' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+
 
 export class CustomSet {
   constructor() {

@@ -1,7 +1,4 @@
-//
-// This is only a SKELETON file for the 'Simple Linked List' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+
 
 export class Element {
   constructor() {
