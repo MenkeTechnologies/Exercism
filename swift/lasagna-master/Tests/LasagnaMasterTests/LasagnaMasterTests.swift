@@ -10,12 +10,10 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testRemainingMinutesDefault() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     XCTAssertEqual(remainingMinutesInOven(elapsedMinutes: 22), 18)
   }
 
   func testPreparationTime() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     XCTAssertEqual(
       preparationTimeInMinutes(
         layers: "sauce", "noodles", "béchamel", "meat", "mozzarella", "noodles", "ricotta",
@@ -23,12 +21,10 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testPreparationTimeEmpty() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     XCTAssertEqual(preparationTimeInMinutes(), 0)
   }
 
   func testQuantities() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     let amount = quantities(
       layers: "sauce", "noodles", "béchamel", "meat", "mozzarella", "noodles", "ricotta",
       "eggplant", "béchamel", "noodles", "sauce", "mozzarella")
@@ -37,7 +33,6 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testQuantitiesNoSauce() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     let amount = quantities(
       layers: "noodles", "béchamel", "noodles", "ricotta", "eggplant", "mozzarella")
     XCTAssertTrue(
@@ -45,7 +40,6 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testQuantitiesNoNoodles() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     let amount = quantities(
       layers: "sauce", "meat", "mozzarella", "eggplant", "béchamel", "sauce", "mozzarella")
     XCTAssertTrue(
@@ -53,7 +47,6 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testToOz() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     var amount = quantities(
       layers: "sauce", "noodles", "béchamel", "meat", "sauce", "noodles", "sauce", "mozzarella")
     toOz(&amount)
@@ -61,13 +54,11 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testRedWineRedInequalLayerCount() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     XCTAssertTrue(
       redWine(layers: "sauce", "noodles", "sauce", "noodles", "meat", "noodles", "mozzarella"))
   }
-  
+
   func testRedWineRedEqualLayerCount() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     XCTAssertTrue(
       redWine(
         layers: "sauce", "noodles", "ricotta", "sauce", "noodles", "béchamel", "meat", "noodles", 
@@ -75,7 +66,6 @@ final class LasagnaMasterTests: XCTestCase {
   }
 
   func testRedWineWhite() throws {
-    try XCTSkipIf(true && !runAll)  // change true to false to run this test
     XCTAssertFalse(
       redWine(
         layers: "sauce", "noodles", "béchamel", "meat", "mozzarella", "noodles", "sauce", "ricotta",

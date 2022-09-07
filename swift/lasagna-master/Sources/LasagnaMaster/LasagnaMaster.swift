@@ -24,8 +24,8 @@ func toOz(_ tuple: inout (noodles: Double, sauce: Double)) {
 
 func redWine(layers: String...) -> Bool {
 
-    let w = ["mozzarella", "ricotta", "béchamel"]
     let r = ["meat", "sauce"]
+    let w = ["mozzarella", "ricotta", "béchamel"]
 
     return layers.filter { r.contains($0) } .count >= layers.filter { w.contains($0) } .count
 }
