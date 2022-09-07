@@ -1,6 +1,8 @@
 package perfect
 
-import "errors"
+import (
+	"errors"
+)
 
 var ErrOnlyPositive = errors.New("no!")
 
@@ -19,7 +21,7 @@ func Classify(n int64) (Classification, error) {
 
 	sum := int64(0)
 
-	for i := int64(1); i < n; i++ {
+	for i := int64(1); i <= n/2; i++ {
 		if n%i == 0 {
 			sum += i
 		}
