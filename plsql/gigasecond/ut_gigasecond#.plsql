@@ -1,3 +1,19 @@
+create or replace package gigasecond#
+is
+  C_GIGASECOND constant number := 1000000000.0;
+  
+  function since(p_date in date) return date;
+end gigasecond#;
+/
+create or replace package body gigasecond#
+is
+  function since(p_date in date) return date
+  is
+  begin
+    return trunc(p_date + numToDSInterval(C_GIGASECOND, 'second'));
+  end since;
+end gigasecond#;
+/
 create or replace package ut_gigasecond#
 is
   procedure run;
