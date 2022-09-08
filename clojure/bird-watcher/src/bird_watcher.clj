@@ -4,9 +4,7 @@
   [0 2 5 3 7 8 4]
   )
 
-(defn today [birds]
-  (last birds)
-  )
+(def today last)
 
 (defn inc-bird [birds]
   (-> birds
