@@ -6,22 +6,17 @@
 using namespace std;
 
 namespace nth_prime {
-    unsigned nth(unsigned n) {
-        vector<unsigned> primes = {2, 3};
-        
-        if (n == 0)
-            throw domain_error("Input must be a positive integer");
-        if (n <= primes.size())
-            return primes[n - 1];
-        auto next_odd = 5;
-        while (true) {
+    size_t nth(size_t n) {
+        vector<size_t> primes = {2};
+        if (n < 1) throw domain_error("Input must be a positive integer");
+        auto next_odd = 3;
+        while (primes.size() < n) {
             if (none_of(primes.begin(), primes.end(),
                         [next_odd](int p) { return next_odd % p == 0; })) {
                 primes.push_back(next_odd);
-                if (primes.size() == n)
-                    return next_odd;
             }
             next_odd += 2;
         }
+        return primes[n - 1];
     }
 }
