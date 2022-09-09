@@ -7,7 +7,7 @@
    taking into account its success rate"
   [speed]
   (let [rate
-        (condp # speed
+        (condp <= speed
           10 0.77
           9 0.8
           5 0.9
@@ -15,13 +15,9 @@
           0 0.0
           )
         ]
-    (* speed cars-per-hour rate)
-    )
-  )
+    (* speed cars-per-hour rate)))
 
 (defn working-items
   "Calculates how many working cars are produced per minute"
   [speed]
-  (int (/ (production-rate speed) 60))
-
-  )
+  (int (/ (production-rate speed) 60)))
