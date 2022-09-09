@@ -3,6 +3,6 @@
 
 #include <stdint.h>
 
-uint32_t nth(uint32_t n);
+uint32_t nth(uint32_t nth);
 
 #endif
