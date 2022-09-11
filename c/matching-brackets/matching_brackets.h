@@ -1,8 +1,4 @@
-#ifndef MATCHING_BRACKETS_H
-#define MATCHING_BRACKETS_H
+#pragma once
 
 #include <stdbool.h>
-
-bool is_paired(const char *input);
-
-#endif
+bool is_paired(const char *s);
