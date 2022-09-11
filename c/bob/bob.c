@@ -6,9 +6,9 @@ char *hey_bob(char *s) {
     int c = 0;
     char *ptr = s;
     while (*ptr) {
-        if (isupper(*ptr)) uc++;
-        else if (islower(*ptr)) lc++;
-        if (!isspace(*ptr)) c++;
+        if (isupper(*ptr)) ++uc;
+        else if (islower(*ptr)) ++lc;
+        if (!isspace(*ptr)) ++c;
         ++ptr;
     }
     do --ptr; while (isspace(*ptr));
