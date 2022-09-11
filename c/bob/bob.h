@@ -1,6 +1,4 @@
-#ifndef BOB_H
-#define BOB_H
+#pragma once
 
-char *hey_bob(char *greeting);
-
-#endif
+#include <ctype.h>
+char *hey_bob(char *s);
