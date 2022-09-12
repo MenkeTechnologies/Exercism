@@ -1,24 +1,11 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+isbn=${1//-/}
+[[ $isbn =~ ^[0-9]{9}[0-9X]$ ]] || { echo false; exit; }
+declare -i checksum=0
+for (( i = 0; i < 10; ++i )); do
+    digit="${isbn:$((9 - i)):1}"
+    [[ "$digit" == "X" ]] && digit="10"
+    checksum+=$((digit * (i + 1) ))
+done
+(( checksum % 11 == 0 )) && echo true || echo false
