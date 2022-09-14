@@ -1,4 +1,4 @@
 #pragma once
 
-#define INVALID -1
+#define INVALID (-1)
 int convert(const char *s);
