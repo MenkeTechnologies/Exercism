@@ -1,8 +1,5 @@
-#ifndef LUHN_H
-#define LUHN_H
+#pragma once
 
 #include <stdbool.h>
 
 bool luhn(const char *num);
-
-#endif
