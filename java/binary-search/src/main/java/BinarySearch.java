@@ -6,19 +6,19 @@ public class BinarySearch {
         this.lst = lst;
     }
     public int indexOf(int pos) throws ValueNotFoundException{
-        int first = 0;
-        int last = lst.size()-1;
-        int mid = (first + last) /2;
+        int lo = 0;
+        int hi = lst.size()-1;
 
-        while(first <= last){
+        int mid = 0;
+        while(lo <= hi){
+            mid = (lo + hi) /2;
             if(pos == lst.get(mid)){
                 return mid;
             } else if(pos > lst.get(mid)){
-                first = mid + 1;
+                lo = mid + 1;
             } else{
-                last = mid - 1;
+                hi = mid - 1;
             }
-            mid = (first + last) /2;
         }
         throw new ValueNotFoundException("Value not in array");
     }
