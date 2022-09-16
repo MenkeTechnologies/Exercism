@@ -22,7 +22,7 @@ impl Allergies {
     }
 
     pub fn is_allergic_to(&self, allergen: &Allergen) -> bool {
-        self.score & *allergen as u32 != 0
+        self.score & *allergen as u32 > 0
     }
 
     pub fn allergies(&self) -> Vec<Allergen> {
