@@ -1,6 +1,6 @@
 class Isogram
 
-  def self.isogram?(input)
-    !input.downcase.match? /([a-z]).*\1/
+  def self.isogram?(s)
+    s.downcase !~ /([a-z]).*\1/
   end
 end
