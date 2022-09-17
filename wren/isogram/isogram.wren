@@ -1,5 +1,15 @@
+import "essentials" for Strings
 class Isogram {
   static isIsogram(string) {
-    Fiber.abort("Remove this statement and implement this function")
+    var res = true
+    var seen = {}
+    for (c in Strings.downcase(string)) {
+      if (!"abcdefghijklmnopqrstuvwxyz".contains(c)) continue
+      if (seen.containsKey(c)) {
+        return false
+      }
+      seen[c] = true
+    }
+    return res
   }
 }
