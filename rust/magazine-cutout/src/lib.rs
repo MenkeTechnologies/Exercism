@@ -1,28 +1,15 @@
-// This stub file contains items which aren't used yet; feel free to remove this module attribute
-// to enable stricter warnings.
-#![allow(unused)]
-
 use std::collections::HashMap;
 
 pub fn can_construct_note(magazine: &[&str], note: &[&str]) -> bool {
-    let mut map: HashMap<&str, i32> = HashMap::new();
+    let mag_hash = magazine.iter().fold(HashMap::new(), |mut acc, &s| {
+        *acc.entry(s).or_insert(0) += 1;
+        acc
+    });
 
-    for &word in magazine {
-        map.insert(word, *map.get(word).get_or_insert(&0) + 1);
-    }
+    let note_hash = note.iter().fold(HashMap::new(), |mut acc, &s| {
+        *acc.entry(s).or_insert(0) += 1;
+        acc
+    });
 
-    for &word in note {
-        match map.get_mut(word) {
-            None => return false,
-            Some(&mut v) => {
-                if v == 0 {
-                    return false;
-                }
-
-                map.insert(word, v - 1);
-            }
-        }
-    }
-
-    true
+    note_hash.iter().all(|(&k, v)| matches!(mag_hash.get(k), Some(val) if val >= v))
 }
