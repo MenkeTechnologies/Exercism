@@ -1,8 +1,9 @@
 class Binary {
   construct new(number) {
-    Fiber.abort("Remove this statement and implement this function")
+    _num = number
   }
   toDecimal {
-    Fiber.abort("Remove this statement and implement this function")
+    if (_num.any {|c| c != "1" && c != "0" }) return null
+    return _num.reduce(0) {|acc, c| acc << 1 | Num.fromString(c) }
   }
 }
