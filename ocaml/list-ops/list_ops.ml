@@ -1,20 +1,34 @@
-let length _ = 
-  failwith "'length' is missing"
+let length l =
+  let rec aux count = function
+    | _ :: t -> aux (count + 1) t
+    | _ -> count
+  in aux 0 l
 
-let reverse _ =
-  failwith "'reverse' is missing"
+let reverse l =
+  let rec aux res = function
+    | h :: t -> aux (h :: res) t
+    | _ -> res
+  in aux [] l
 
-let map ~f _ =
-  failwith "'map' is missing"
+let rec map ~f = function
+  | h :: t -> f h :: map ~f:f t
+  | _ -> []
 
-let filter ~f _ =
-  failwith "'filter' is missing"
+let rec filter ~f = function
+  | h :: t when f h -> h :: filter ~f:f t
+  | _ :: t -> filter ~f:f t
+  | _ -> []
 
-let fold ~init ~f _ =
-  failwith "'fold' is missing"
+let rec fold ~init ~f = function
+  | h :: t -> fold ~init:(f init h) ~f:f t
+  | _ -> init
 
-let append _ _ =
-  failwith "'append' is missing"
+let rec append l l' =
+  match l with
+  | h :: t -> h :: append t l'
+  | [] -> l'
 
-let concat _ =
-  failwith "'concat' is missing"
+let rec concat = function
+  | h :: t -> append h (concat t)
+  | _ -> []
+
