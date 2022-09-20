@@ -9,9 +9,8 @@ fn lcsort(s: &str) -> Vec<char> {
 pub fn anagrams_for<'a>(target: &str, possible_anagrams: &'a [&str]) -> HashSet<&'a str> {
     let sorted = lcsort(target);
     possible_anagrams
-        .clone()
-        .into_iter()
+        .iter()
         .filter(|&&p| target.to_lowercase() != p.to_lowercase() && sorted == lcsort(p))
         .map(|p| *p)
-        .collect::<HashSet<&str>>()
+        .collect()
 }
