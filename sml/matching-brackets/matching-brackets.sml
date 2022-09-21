@@ -18,9 +18,8 @@ fun processChar c stk =
             else stk
         end
 
-fun aux [] [] = true |
-    aux [] stk = false |
-    aux (h :: t) stk = aux t (processChar h stk)
-    handle Empty => false
+fun aux [] [] = true
+  | aux [] stk = false
+  | aux (h :: t) stk = aux t (processChar h stk) handle Empty => false
 
 fun isBalanced s = aux (String.explode s) []
