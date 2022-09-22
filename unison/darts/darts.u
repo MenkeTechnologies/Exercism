@@ -1,2 +1,10 @@
 darts.score : Float -> Float -> Nat
-darts.score x y = todo "implement score"
+darts.score x y =
+  use Float >
+  dist = Float.sqrt ((Float.pow x 2.0) + (Float.pow y 2.0))
+  match dist with
+    r
+      | r > 10.0 -> 0
+      | r > 5.0 -> 1
+      | r > 1.0 -> 5
+    _ -> 10
