@@ -1,19 +1,19 @@
-using System;
-
-public class Clock
+public struct Clock
 {
-    public Clock(int hours, int minutes)
+    public Clock(int hours, int minutes = 0)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        Hours = Mod((hours * 60 + minutes) / 60.0, 24);
+        Minutes = Mod(minutes, 60);
     }
 
-    public Clock Add(int minutesToAdd)
-    {
-        throw new NotImplementedException("You need to implement this function.");
-    }
+    public int Hours { get; }
+    public int Minutes { get; }
 
-    public Clock Subtract(int minutesToSubtract)
-    {
-        throw new NotImplementedException("You need to implement this function.");
-    }
+    public Clock Add(int minutesToAdd) => new(Hours, Minutes + minutesToAdd);
+
+    public Clock Subtract(int minutesToSubtract) => new(Hours, Minutes - minutesToSubtract);
+
+    public override string ToString() => $"{Hours:00}:{Minutes:00}";
+
+    private static int Mod(double x, double y) => (int)((x % y + y) % y);
 }
