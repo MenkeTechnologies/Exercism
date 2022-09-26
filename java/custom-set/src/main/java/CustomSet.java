@@ -54,7 +54,7 @@ public class CustomSet<T> {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass() || o.getClass() != CustomSet.class) {
+        if (o == null || getClass() != o.getClass()) {
             return false;
         }
         CustomSet<T> customSet = (CustomSet<T>) o;

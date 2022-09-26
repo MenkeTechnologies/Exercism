@@ -2,21 +2,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class DoublyLinkedList<Object> {
-    private List<Object> doubleLinkedList = new ArrayList<>();
+    private List<Object> lst = new ArrayList<>();
 
     public void push(Object i) {
-        doubleLinkedList.add(i);
+        lst.add(i);
     }
 
     public Object pop() {
-        return doubleLinkedList.remove(doubleLinkedList.size() - 1);
+        return lst.remove(lst.size() - 1);
     }
 
     public Object shift() {
-        return doubleLinkedList.remove(0);
+        return lst.remove(0);
     }
 
     public void unshift(Object c) {
-        doubleLinkedList.add(0, c);
+        lst.add(0, c);
     }
 }
