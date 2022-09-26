@@ -1,10 +1,22 @@
-/*
+import java.util.ArrayList;
+import java.util.List;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+public class DoublyLinkedList<Object> {
+    private List<Object> doubleLinkedList = new ArrayList<>();
 
-Please remove this comment when submitting your solution.
+    public void push(Object i) {
+        doubleLinkedList.add(i);
+    }
 
-*/
+    public Object pop() {
+        return doubleLinkedList.remove(doubleLinkedList.size() - 1);
+    }
+
+    public Object shift() {
+        return doubleLinkedList.remove(0);
+    }
+
+    public void unshift(Object c) {
+        doubleLinkedList.add(0, c);
+    }
+}
