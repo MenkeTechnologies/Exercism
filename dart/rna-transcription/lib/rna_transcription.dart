@@ -8,5 +8,4 @@ class RnaTranscription {
   };
 
   String toRna(String s) => s.split('').map((e) => MAP[e]).join('');
-  // Put your code here
 }
