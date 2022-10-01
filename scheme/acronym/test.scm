@@ -1,57 +1,27 @@
-(load "acronym.scm")
+(load "test-util.ss")
 
-(use-modules (srfi srfi-64))
+(define test-cases
+  `((test-success "basic" equal? acronym
+      '("Portable Network Graphics") "PNG")
+     (test-success "lowercase words" equal? acronym
+       '("Ruby on Rails") "ROR")
+     (test-success "punctuation" equal? acronym
+       '("First In, First Out") "FIFO")
+     (test-success "all caps word" equal? acronym
+       '("GNU Image Manipulation Program") "GIMP")
+     (test-success "colon" equal? acronym
+       '("PHP: Hypertext Preprocessor") "PHP")
+     (test-success "punctuation without whitespace" equal? acronym
+       '("Complementary metal-oxide semiconductor") "CMOS")
+     (test-success "very long abbreviation" equal? acronym
+       '("Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me")
+       "ROTFLSHTMDCOALM")
+     (test-success "consecutive delimiters" equal? acronym
+       '("Something - I made up from thin air") "SIMUFTA")
+     (test-success "apostrophes" equal? acronym
+       '("Halley's Comet") "HC")
+     (test-success "underscore emphasis" equal? acronym
+       '("The Road _Not_ Taken") "TRNT")))
 
-(test-begin "acronym")
+(run-with-cli "acronym.scm" (list test-cases))
 
-; (test-skip "basic")
-(test-equal "basic"
-  (acronym "Portable Network Graphics")
-  "PNG")
-
-(test-skip "lowercase words")
-(test-equal "lowercase words"
-  (acronym "Ruby on Rails")
-  "ROR")
-
-(test-skip "punctuation")
-(test-equal "punctuation"
-  (acronym "First In, First Out")
-  "FIFO")
-
-(test-skip "all caps words")
-(test-equal "all caps word"
-  (acronym "GNU Image Manipulation Program")
-  "GIMP")
-
-(test-skip "colon")
-(test-equal "colon"
-  (acronym "PHP: Hypertext Preprocessor")
-  "PHP")
-
-(test-skip "punctuation without whitespace")
-(test-equal "punctuation without whitespace"
-  (acronym "Complementary metal-oxide semiconductor")
-  "CMOS")
-
-(test-skip "very long abbreviation")
-(test-equal "very long abbreviation"
-  (acronym "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me")
-  "ROTFLSHTMDCOALM")
-
-(test-skip "consecutive delimiters")
-(test-equal "consecutive delimiters"
-  (acronym "Something - I made up from thin air")
-  "SIMUFTA")
-
-(test-skip "apostrophes")
-(test-equal "apostrophes"
-  (acronym "Halley's Comet")
-  "HC")
-
-(test-skip "underscore emphasis")
-(test-equal "underscore emphasis"
-  (acronym "The Road _Not_ Taken")
-  "TRNT")
-
-(test-end "acronym")
