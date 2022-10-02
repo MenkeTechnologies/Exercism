@@ -1,6 +1,6 @@
 solution := 
 
-chez := chez
+chez := scheme
 guile := guile
 
 help :

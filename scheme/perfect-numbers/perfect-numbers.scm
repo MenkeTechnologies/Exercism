@@ -12,8 +12,8 @@
     (assertion-violation 'sum-pos-factors "limit must be a positive natural number" limit))
   (cond
     ((> n (/ limit 2)) 0)
-    ((factor? n limit) (+ n (sum-pos-factors (+ n 1) limit)))
-    (else (sum-pos-factors (+ n 1) limit))))
+    ((factor? n limit) (+ n (sum-pos-factors (1+ n) limit)))
+    (else (sum-pos-factors (1+ n) limit))))
 
 (define (factor? m limit)
   (zero? (modulo limit m)))
