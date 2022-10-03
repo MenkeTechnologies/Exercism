@@ -1,24 +1,40 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+(( $# == 3 || $# == 2 )) || exit 1
+
+allergens=(
+    eggs
+    peanuts
+    shellfish
+    strawberries
+    tomatoes
+    chocolate
+    pollen
+    cats
+)
+
+allergic_to () {
+    score=$1
+    allergen=$2
+    val=1
+    for a in "${allergens[@]}" ; do
+        if [[ $a = "$allergen" ]]; then
+            (( score & val )) && echo true || echo false
+            exit
+        fi
+        (( val <<= 1 ))
+    done
+}
+
+list () {
+    score=$1
+    val=1
+    allergies=()
+    for a in "${allergens[@]}" ; do
+        (( score & val )) && allergies+=( "$a" )
+        (( val <<= 1 ))
+    done
+    echo "${allergies[@]}"
+}
+
+"$2" "$1" "$3"
