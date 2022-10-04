@@ -1,24 +1,23 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+die() { echo "Error: $*" >&2; exit 1; }
+typeset -ra directions=( north east south west )
+typeset -ri north=0 east=1 south=2 west=3
+typeset -i x="$1" y="$2" direction="${!3}"
+
+(( $# < 3 )) || [[ "${directions[$direction]}" = "$3" ]] || die "invalid direction $3"
+
+typeset -ra advance=( '((++y))' '((++x))' '((--y))' '((--x))' )
+typeset c fn
+
+action_L() { (( direction = (direction + 3) % 4 )); }
+action_R() { (( direction = (direction + 1) % 4 )); }
+action_A() { eval "${advance[$direction]}"; }
+
+while read -rn1 c; do
+    fn="action_$c"
+    [[ $(type -t "$fn") = function ]] || die "Error: invalid instruction: $c."
+    $fn
+done < <(printf "$4")
+
+echo "$x $y ${directions[$direction]}"
