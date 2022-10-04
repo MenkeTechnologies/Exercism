@@ -1,6 +1,5 @@
 import org.junit.Before
 import org.junit.Test
-import org.junit.Ignore
 import kotlin.test.assertEquals
 
 class DequeTest {
@@ -20,7 +19,7 @@ class DequeTest {
         assertEquals(10, subject.pop())
     }
 
-    
+
     @Test
     fun pushShift() {
         subject.push(10)
@@ -29,7 +28,7 @@ class DequeTest {
         assertEquals(20, subject.shift())
     }
 
-    
+
     @Test
     fun unshiftShift() {
         subject.unshift(10)
@@ -38,7 +37,7 @@ class DequeTest {
         assertEquals(10, subject.shift())
     }
 
-    
+
     @Test
     fun unshiftPop() {
         subject.unshift(10)
@@ -47,7 +46,7 @@ class DequeTest {
         assertEquals(20, subject.pop())
     }
 
-    
+
     @Test
     fun example() {
         subject.push(10)
