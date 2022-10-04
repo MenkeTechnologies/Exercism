@@ -9,16 +9,10 @@ object HighScores {
     s"Your latest score was ${late}. $p2 your personal best!"
   }
 
-  def personalTop(ints: List[Int]) = {
-    ints.sorted.reverse.take(3)
-  }
+  def personalTop(ints: List[Int]) = ints.sorted.reverse.take(3)
 
-  def personalBest(ints: List[Int]) = {
-    ints.max
-  }
+  def personalBest(ints: List[Int]) = ints.max
 
-  def latest(ints: List[Int]) = {
-    ints.last
-  }
+  def latest(ints: List[Int]) = ints.last
 
 }
