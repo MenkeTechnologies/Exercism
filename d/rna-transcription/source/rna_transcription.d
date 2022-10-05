@@ -1,5 +1,11 @@
 module rna_transcription;
 
+import std.string : tr;
+
+string toRna(string dna) {
+    return dna.tr("CGTA", "GCAU");
+}
+
 unittest
 {
     import std.exception : assertThrown;
