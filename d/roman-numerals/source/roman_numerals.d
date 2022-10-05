@@ -1,6 +1,19 @@
 module roman_numerals;
 
 import std.stdio;
+import std.array;
+
+string convert(int number){
+  static immutable weights = [1000, 900, 500, 400, 100, 90, 50, 40, 10, 9, 5, 4, 1];
+  static immutable symbols = ["M", "CM", "D", "CD", "C", "XC", "L", "XL", "X", "IX", "V", "IV", "I"];
+  string roman;
+  foreach(i, w; weights){
+      roman ~= replicate(symbols[i], number / weights[i]);
+      number %= weights[i];
+  }
+  return roman;
+}
+
 
 unittest
 {
