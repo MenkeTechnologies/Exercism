@@ -5,6 +5,30 @@ import std.array;
 import std.algorithm.sorting : sort;
 import std.algorithm.comparison : equal;
 
+class Counter
+{
+    string s;
+    this(string s) {
+        this.s = s;
+        string refList = "ACGT";
+        foreach (c; s) {
+            if (indexOf(refList, c) == -1) {
+                throw new Exception(format("Damaged DNA Sequence (contains an invalid nucleotide): %s",
+                        s));
+            }
+        }
+    }
+
+    const ulong[char] nucleotideCounts()
+    {
+        ulong[char] counts = ['A' : 0, 'C' : 0, 'G' : 0, 'T' : 0];
+        foreach (c; s) {
+            ++counts[c];
+        }
+        return counts;
+    }
+}
+
 unittest
 {
 
