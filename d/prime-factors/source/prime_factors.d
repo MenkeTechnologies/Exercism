@@ -1,5 +1,22 @@
 module prime_factors;
 
+pure int[] factors(immutable long value)
+{
+    long val = value;
+    int[] fac;
+    int divisor = 2;
+    while (val > 1)
+    {
+        while (val % divisor == 0)
+        {
+            val /= divisor;
+            fac ~= divisor;
+        }
+        ++divisor;
+    }
+    return fac;
+}
+
 unittest
 {
     immutable bool allTestsEnabled = false;
