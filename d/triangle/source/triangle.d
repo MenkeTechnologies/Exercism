@@ -1,11 +1,23 @@
 module triangle;
 
+import std.algorithm.sorting : sort;
+
 enum TriangleType
 {
     equilateral,
     isosceles,
     scalene
 }
+int kind(double a, double b, double c) {
+    auto sorted = [a, b, c].sort;
+
+    if (sorted[0] <= 0 || sorted[0] + sorted[1] <= sorted[2]) throw new Exception("Invalid input.");
+    if (sorted[0] == sorted[2]) return TriangleType.equilateral;
+    if (sorted[0] == sorted[1] || sorted[1] == sorted[2]) return TriangleType.isosceles;
+    return TriangleType.scalene;
+}
+
+
 
 unittest
 {
