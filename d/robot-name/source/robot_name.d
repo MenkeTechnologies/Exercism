@@ -2,6 +2,45 @@ module robot;
 
 import std.regex;
 import std.stdio;
+import std.random : uniform, Random, unpredictableSeed;
+import std.ascii : letters, digits;
+class Robot
+{
+    bool[string] usedNames;
+    static int collisons;
+    string name = "";
+    this() {
+        name = newName();
+        collisons = 10;
+    }
+    string newName() {
+        string genName;
+        auto rnd = Random(unpredictableSeed);
+        while (true)
+        {
+            genName = "";
+            foreach (_; 0 .. 2) {
+                auto n1 = uniform(0, 26, rnd);
+                genName ~= letters[n1];
+            }
+            foreach (_; 0 .. 3) {
+                auto n2 = uniform(0, 10, rnd);
+                genName ~= digits[n2];
+            }
+            if (genName in usedNames) {
+                ++collisons;
+                continue;
+            }
+            break;
+        }
+        usedNames[genName] = true;
+        return genName;
+    }
+    void reset() {
+        name = newName();
+    };
+};
+
 
 unittest
 {
