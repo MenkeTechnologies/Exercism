@@ -1,5 +1,15 @@
 module sum_of_multiples;
 
+import std.range;
+import std.algorithm.searching;
+import std.algorithm.iteration;
+
+pure int calculateSum(immutable int[] factors, immutable int limit)
+{
+    return iota(1, limit).filter!(n => factors.any!(t => t != 0 && n % t == 0)).sum;
+}
+
+
 unittest
 {
     immutable int allTestsEnabled = 0;
