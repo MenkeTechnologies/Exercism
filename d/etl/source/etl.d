@@ -1,8 +1,13 @@
 module etl;
 
-import std.array : array;
-import std.algorithm.sorting : sort;
-import std.algorithm.comparison : equal;
+import std.algorithm;
+import std.array;
+import std.range : repeat, zip;
+import std.uni : asLowerCase;
+
+int[dchar] transform(immutable string[int] input) {
+    return input.byKeyValue.map!(kv => zip(kv.value.asLowerCase, kv.key.repeat)).join.assocArray;
+}
 
 unittest
 {
