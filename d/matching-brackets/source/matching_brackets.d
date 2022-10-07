@@ -1,5 +1,28 @@
 module matching_brackets;
 
+import std.array : array, back, empty, popBack;
+import std.string : indexOf;
+
+static immutable string open = "[{(";
+static immutable string close = "]})";
+
+pure bool isPaired(immutable string input)
+{
+    dchar[] stk;
+    foreach (immutable c; input.array) {
+        if (open.indexOf(c) != -1) {
+            stk ~= c;
+        }
+        else if (close.indexOf(c) != -1) {
+            if (stk.empty || open[close.indexOf(c)] != stk.back) {
+                return false;
+            }
+            stk.popBack();
+        }
+    }
+    return stk.empty;
+}
+
 unittest
 {
     immutable int allTestsEnabled = 0;
