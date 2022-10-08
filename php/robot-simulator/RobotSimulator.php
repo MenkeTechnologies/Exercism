@@ -1,60 +1,40 @@
+
 <?php
+class Robot {
+    public const DIRECTION_NORTH = 0;
+    public const DIRECTION_EAST = 1;
+    public const DIRECTION_SOUTH = 2;
+    public const DIRECTION_WEST = 3;
+    public function __construct(public array $position, public int $direction) { }
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
-declare(strict_types=1);
-
-class Robot
-{
-    /**
-     *
-     * @var int[]
-     */
-    protected $position;
-
-    /**
-     *
-     * @var string
-     */
-    protected $direction;
-
-    public function __construct(array $position, string $direction)
-    {
-        throw new \BadMethodCallException("Implement the __construct method");
+    public function turnRight() {
+        $this->direction = ($this->direction + 1) % 4;
+        return $this;
+    }
+    public function turnLeft() {
+        $this->direction = ($this->direction + 3) % 4;
+        return $this;
     }
 
-    public function turnRight(): self
-    {
-        throw new \BadMethodCallException("Implement the turnRight method");
+    public function advance() {
+        match ($this->direction) {
+            self::DIRECTION_NORTH => ++$this->position[1],
+            self::DIRECTION_EAST => ++$this->position[0],
+            self::DIRECTION_SOUTH => --$this->position[1],
+            self::DIRECTION_WEST => --$this->position[0]
+        };
+        return $this;
     }
-
-    public function turnLeft(): self
+    public function instructions(string $instructions)
     {
-        throw new \BadMethodCallException("Implement the turnLeft method");
-    }
+        if (!preg_match('/^[LRA]+$/', $instructions)) throw new InvalidArgumentException();
 
-    public function advance(): self
-    {
-        throw new \BadMethodCallException("Implement the advance method");
+        foreach (str_split($instructions) as $instruction) {
+            match ($instruction) {
+                'L' => $this->turnLeft(),
+                'R' => $this->turnRight(),
+                'A' => $this->advance()
+            };
+        }
     }
 }
