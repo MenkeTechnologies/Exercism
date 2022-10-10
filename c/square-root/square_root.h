@@ -1,4 +1,6 @@
-#ifndef SQUARE_ROOT_H
-#define SQUARE_ROOT_H
+#pragma once
 
-#endif
+#include <math.h>
+#include <stdint.h>
+#include <stdio.h>
+uint16_t square_root(int number);
