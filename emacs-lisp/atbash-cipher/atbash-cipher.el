@@ -1,17 +1,13 @@
-;;; atbash-cipher.el --- Atbash-Cipher (exercism)
+(require 'subr-x)
 
-;;; Commentary:
-
-
-
-
-;;; Code:
-
-(defun encode (plaintext)
-  "Encode PLAINTEXT to atbash-cipher encoding."
-
-  )
-
+(defun encode (s)
+  (string-trim
+   (replace-regexp-in-string
+    ".\\{5\\}"
+    (lambda (s) (concat s " "))
+    (apply 'string
+           (mapcar
+            (lambda (c) (if (>= ?z c ?a) (abs (- c ?a ?z)) c))
+            (replace-regexp-in-string "[^a-z0-9]" "" (downcase s)))))))
 
 (provide 'atbash-cipher)
-;;; atbash-cipher.el ends here
