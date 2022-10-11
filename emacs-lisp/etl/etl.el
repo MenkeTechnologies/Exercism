@@ -1,9 +1,12 @@
-;;; etl.el --- etl Exercise (exercism)
-
-;;; Commentary:
-
-;;; Code:
-
+(defun etl (table)
+  (let ((dict (make-hash-table :test 'equal)))
+    (maphash (lambda (score chars)
+               (when (< score 0) (error "negative score"))
+               (mapcar (lambda (c)
+                         (unless (stringp c) (error "non-string value"))
+                         (puthash (downcase c) score dict))
+                       chars))
+             table)
+    dict))
 
 (provide 'etl)
-;;; etl.el ends here
