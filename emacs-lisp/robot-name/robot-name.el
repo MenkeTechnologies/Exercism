@@ -1,15 +1,14 @@
-;;; robot-name.el --- Robot Name (exercism)
+(defun build-robot ()
+  (reset-robot '()))
 
-;;; Commentary:
-;;
-;; Build a robot with a name like AA000, that can be reset
-;; to a new name. Instructions are in README.md
-;;
+(defun robot-name (robot)
+  (plist-get robot :name))
 
-;;; Code:
-
-
-
+(defun reset-robot (robot)
+  (plist-put robot :name
+             (format "%c%c%03d"
+                     (+ ?A (random 26))
+                     (+ ?A (random 26))
+                     (random 1000))))
 
 (provide 'robot-name)
-;;; robot-name.el ends here
