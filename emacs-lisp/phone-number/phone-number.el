@@ -1,3 +1,5 @@
+(provide 'phone-number)
+
 (defun match-number (number)
   (string-match
    "^\\(+?1\\)?\s*(?\\([0-9]\\{3\\}\\))?[ .-]*\\([0-9]\\{3\\}\\)[ .-]*\\([0-9]\\{4\\}\\)$"
@@ -33,5 +35,3 @@
        (cdr (assoc 'exchange-code num-parts))
        "-"
        (cdr (assoc 'subs-number num-parts))))))
-
-(provide 'phone-number)

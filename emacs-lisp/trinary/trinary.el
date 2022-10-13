@@ -1,3 +1,5 @@
+(provide 'trinary)
+
 (require 'seq)
 
 (defun trinary-to-decimal (s)
@@ -6,5 +8,3 @@
     (seq-reduce #'(lambda (acc n) (+ (* acc 3) n))
                 (mapcar #'(lambda (c) (- c ?0)) s)
                 0)))
-
-(provide 'trinary)

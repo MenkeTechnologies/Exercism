@@ -1,3 +1,5 @@
+(provide 'atbash-cipher)
+
 (require 'subr-x)
 
 (defun encode (s)
@@ -9,5 +11,3 @@
            (mapcar
             (lambda (c) (if (>= ?z c ?a) (abs (- c ?a ?z)) c))
             (replace-regexp-in-string "[^a-z0-9]" "" (downcase s)))))))
-
-(provide 'atbash-cipher)

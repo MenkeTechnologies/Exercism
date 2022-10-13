@@ -1,3 +1,5 @@
+(provide 'word-count)
+
 (require 'seq)
 
 (defun word-count (s)
@@ -7,5 +9,3 @@
     (seq-map (lambda (w) (cons w (seq-count (lambda (w2) (string= w w2))
                                             word-list)))
              uniq-list)))
-
-(provide 'word-count)

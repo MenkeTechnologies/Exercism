@@ -1,3 +1,5 @@
+(provide 'crypto-square)
+
 (require 'cl)
 (require 'subr-x)
 (require 'seq)
@@ -11,5 +13,3 @@
                      (mapcar #'(lambda (chunk) (format fmt chunk)))
                      (apply #'cl-mapcar #'string))
                    " "))))
-
-(provide 'crypto-square)

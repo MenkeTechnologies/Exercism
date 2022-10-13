@@ -1,3 +1,5 @@
+(provide 'etl)
+
 (defun etl (table)
   (let ((dict (make-hash-table :test 'equal)))
     (maphash (lambda (score chars)
@@ -8,5 +10,3 @@
                        chars))
              table)
     dict))
-
-(provide 'etl)

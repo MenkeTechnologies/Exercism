@@ -1,3 +1,5 @@
+(provide 'robot-name)
+
 (defun build-robot ()
   (reset-robot '()))
 
@@ -10,5 +12,3 @@
                      (+ ?A (random 26))
                      (+ ?A (random 26))
                      (random 1000))))
-
-(provide 'robot-name)

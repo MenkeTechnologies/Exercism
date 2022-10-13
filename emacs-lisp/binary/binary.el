@@ -1,3 +1,5 @@
+(provide 'binary)
+
 (defun to-decimal (s)
   (condition-case nil
       (cl-reduce (lambda (i c)
@@ -7,6 +9,3 @@
                  s
                  :initial-value 0)
     (error 0)))
-
-
-(provide 'binary)

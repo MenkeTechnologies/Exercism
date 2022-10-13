@@ -1,3 +1,5 @@
+(provide 'perfect-numbers)
+
 (require 'seq)
 
 (defun aliquot (n)
@@ -14,5 +16,3 @@
 
   ))
  )
-
-(provide 'perfect-numbers)

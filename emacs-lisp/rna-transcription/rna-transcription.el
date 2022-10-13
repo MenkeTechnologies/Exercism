@@ -1,6 +1,4 @@
-
 (provide 'rna-transcription)
-
 
 (defun to-rna (s)
  (mapconcat (lambda (c)

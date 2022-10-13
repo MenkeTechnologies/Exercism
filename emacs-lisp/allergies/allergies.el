@@ -15,5 +15,4 @@
  (seq-filter (lambda (a) (allergic-to-p mask a)) allergen-names))
 
 (defun allergic-to-p (mask a)
- (< 0 (logand mask (expt 2 (seq-position allergen-names a))))
- )
+ (< 0 (logand mask (expt 2 (seq-position allergen-names a)))))

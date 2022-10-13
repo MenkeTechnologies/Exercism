@@ -1,3 +1,5 @@
+(provide 'luhn)
+
 (require 'cl-lib)
 
 (defun luhn-p (card-number)
@@ -24,4 +26,3 @@
                          nows))
                 10))))))
 
-(provide 'luhn)

@@ -1,3 +1,5 @@
+(provide 'anagram)
+
 (require 'cl)
 
 (defun anagram? (word1 word2)
@@ -5,12 +7,8 @@
      (not (equal word1 word2))
      (equal
       (cl-sort (downcase word1) #'<)
-      (cl-sort (downcase word2) #'<)
-      )))
+      (cl-sort (downcase word2) #'<))))
 
 (defun anagrams-for (word cands)
- (remove-if-not (apply-partially #'anagram? word) cands)
- )
-
-(provide 'anagram)
+ (remove-if-not (apply-partially #'anagram? word) cands))
 

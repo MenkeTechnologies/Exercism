@@ -1,4 +1,5 @@
 (provide 'hamming)
+
 (require 'seq)
 
 (defun hamming-distance (s1 s2)
