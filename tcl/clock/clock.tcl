@@ -1,22 +1,24 @@
 oo::class create Clock {
-
-    constructor {hour minute} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+    variable mins
+    constructor {h m} {
+        set mins [expr {$h * 60 + $m}]
     }
-
     method toString {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        set mins [expr {$mins % (24 * 60)}]
+        set h [expr {$mins / 60}]
+        set m [expr {$mins % 60}]
+        return [format {%02d:%02d} $h $m]
     }
-
     method add {minutes} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        incr mins $minutes
+        return [self]
     }
-
     method subtract {minutes} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        my add [expr {-1 * $minutes}]
     }
-
     method equals {other} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        expr {[my toString] eq [$other toString]}
     }
+    forward "==" my equals
+    export  "=="
 }
