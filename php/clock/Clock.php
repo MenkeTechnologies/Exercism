@@ -1,33 +1,32 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
+class Clock {
+    private int $h;
+    private int $m;
 
-declare(strict_types=1);
+    function __construct(int $h, int $m = 0) {
+        $this->h = $h % 24;
+        $this->m = 0;
+        $this->add($m);
+    }
 
-class Clock
-{
-    public function __toString(): string
-    {
-        throw new \BadMethodCallException("Implement the __toString function");
+    public function add(int $minutes) {
+        $this->h = ($this->h + intval(($this->m + $minutes) / 60)) % 24;
+        $this->m = ($this->m + $minutes) % 60;
+        if ($this->m < 0) {
+            $this->h = ($this->h - 1) % 24;
+            $this->m += 60;
+        }
+        if ($this->h < 0) $this->h += 24;
+        return $this;
+    }
+
+    public function sub(int $minutes) {
+        return $this->add(-$minutes);
+    }
+
+    public function __toString() {
+        return sprintf("%02d:%02d", $this->h, $this->m);
     }
 }
+
