@@ -4,11 +4,13 @@ You can edit this file as you like.
 -}
 { name = "sum-of-multiples"
 , dependencies =
-  [ "console"
+  [ "arrays"
+  , "console"
   , "datetime"
   , "effect"
   , "either"
   , "enums"
+  , "foldable-traversable"
   , "integers"
   , "lists"
   , "ordered-collections"
