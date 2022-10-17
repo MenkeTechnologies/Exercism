@@ -4,14 +4,17 @@ You can edit this file as you like.
 -}
 { name = "binary-search"
 , dependencies =
-  [ "console"
+  [ "arrays"
+  , "console"
   , "datetime"
   , "effect"
   , "either"
   , "enums"
   , "integers"
   , "lists"
+  , "maybe"
   , "ordered-collections"
+  , "partial"
   , "prelude"
   , "psci-support"
   , "strings"
