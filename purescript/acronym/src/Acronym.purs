@@ -9,8 +9,8 @@ import Data.String.CodePoints
 
 isUpper c = c >= codePointFromChar 'A' && c <= codePointFromChar 'Z'
 
-abbreviate = toUpper <<< joinWith "" <<< map firstAndCaps <<< split (Pattern " ")
+abbreviate = split (Pattern " ") >>> map firstAndCaps >>> joinWith "" >>> toUpper
   where firstAndCaps s = case uncons s of
-          Just uc -> fromCodePointArray (cons uc.head (filter isUpper (toCodePointArray uc.tail)))
+          Just uc -> toCodePointArray uc.tail # filter isUpper # cons uc.head # fromCodePointArray
           Nothing -> s
 
