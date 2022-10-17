@@ -4,13 +4,15 @@ You can edit this file as you like.
 -}
 { name = "atbash-cipher"
 , dependencies =
-  [ "console"
+  [ "arrays"
+  , "console"
   , "datetime"
   , "effect"
   , "either"
   , "enums"
   , "integers"
   , "lists"
+  , "maybe"
   , "ordered-collections"
   , "prelude"
   , "psci-support"
