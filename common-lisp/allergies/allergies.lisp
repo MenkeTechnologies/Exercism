@@ -1,14 +1,16 @@
-(defpackage :allergies
-  (:use :cl)
-  (:shadow :list)
-  (:export :allergic-to-p :list))
+(in-package #:cl-user)
+(defpackage #:allergies
+  (:use #:common-lisp)
+  (:shadow #:list)
+  (:export #:allergic-to-p #:list))
+(in-package #:allergies)
 
-(in-package :allergies)
+(defparameter *items*
+  '("eggs" "peanuts" "shellfish" "strawberries" "tomatoes" "chocolate" "pollen" "cats"))
 
-(defun allergic-to-p (score allergen)
-  "Returns true if given allergy score includes given allergen."
-  )
+(defun list (mask)
+    (loop for index from 0 below 8
+       when (logbitp index mask) collect (elt *items* index)))
 
-(defun list (score)
-  "Returns a list of allergens for a given allergy score."
-  )
+(defun allergic-to-p (mask allergy)
+  (member allergy (list mask) :test #'string-equal))
