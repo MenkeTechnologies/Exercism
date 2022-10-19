@@ -13,6 +13,6 @@ module Prime
   end
 
   def prime?(n)
-    (2..Math.sqrt(n)).none? { |i| n % i == 0 }
+    (2..Math.sqrt(n)).none? { n % _1 == 0 }
   end
 end
