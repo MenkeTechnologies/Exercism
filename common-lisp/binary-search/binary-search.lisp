@@ -1,8 +1,15 @@
-(defpackage :binary-search
-  (:use :cl)
-  (:export :binary-find :value-error))
+(in-package #:cl-user)
+(defpackage #:binary-search
+  (:use #:common-lisp)
+  (:export #:binary-find #:value-error))
+(in-package #:binary-search)
+(defun binary-find (ary target)
+  (labels ((aux (lo hi)
+             (when (< lo hi)
+               (let* ((mid (floor (+ lo hi) 2))
+                      (mid-elem (elt ary mid)))
+                 (cond ((= mid-elem target) mid)
+                       ((> mid-elem target) (aux lo mid))
+                       (t (aux (1+ mid) hi)))))))
+    (aux 0 (length ary))))
 
-(in-package :binary-search)
-
-(defun binary-find (arr el)
-  )
