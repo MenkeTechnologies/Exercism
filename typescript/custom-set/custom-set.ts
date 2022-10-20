@@ -1,41 +1,47 @@
-export class CustomSet {
-  constructor(initial?: unknown) {
-    throw new Error('Remove this statement and implement this function')
-  }
+export class CustomSet<T> {
 
-  empty(): unknown {
-    throw new Error('Remove this statement and implement this function')
-  }
+  private _elements: Map<T, undefined>
 
-  contains(element: unknown): unknown {
-    throw new Error('Remove this statement and implement this function')
+  constructor(elements: T[] = []) {
+    const iterable = elements.reduce(
+      (acc, elem) => acc.concat( [[ elem, undefined ]] ),
+      new Array<[T, undefined]>()
+    )
+    this._elements = new Map(iterable)
   }
-
-  add(element: unknown): CustomSet {
-    throw new Error('Remove this statement and implement this function')
+  get elements(): T[] {
+    return [...this._elements.keys()]
   }
-
-  subset(other: unknown): CustomSet {
-    throw new Error('Remove this statement and implement this function')
+  get size(): number {
+    return this._elements.size
   }
-
-  disjoint(other: unknown): CustomSet {
-    throw new Error('Remove this statement and implement this function')
+  empty(): boolean {
+    return this.size === 0
   }
-
-  eql(other: unknown): unknown {
-    throw new Error('Remove this statement and implement this function')
+  add(element: T): CustomSet<T> {
+    this._elements.set(element, undefined)
+    return this
   }
-
-  union(other: unknown): CustomSet {
-    throw new Error('Remove this statement and implement this function')
+  contains(element: T): boolean {
+    return this._elements.has(element)
   }
-
-  intersection(other: unknown): CustomSet {
-    throw new Error('Remove this statement and implement this function')
+  subset(other: CustomSet<T>): boolean {
+    return this.elements.every((elem) => other.contains(elem))
   }
-
-  difference(other: unknown): CustomSet {
-    throw new Error('Remove this statement and implement this function')
+  disjoint(other: CustomSet<T>): boolean {
+    return this.elements.every((elem) => !other.contains(elem))
+  }
+  eql(other: CustomSet<T>): boolean {
+    return this.size === other.size && this.subset(other)
+  }
+  intersection(other: CustomSet<T>): CustomSet<T> {
+    return new CustomSet( this.elements.filter((e) => other.contains(e)) )
+  }
+  difference(other: CustomSet<T>): CustomSet<T> {
+    return new CustomSet( this.elements.filter((e) => !other.contains(e)) )
+  }
+  union(other: CustomSet<T>): CustomSet<T> {
+    return new CustomSet( this.elements.concat( other.difference(this).elements ))
   }
 }
+
