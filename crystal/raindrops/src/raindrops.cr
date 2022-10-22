@@ -1,25 +1,12 @@
-# Please implement your solution to raindrops in this file
-
 class Raindrops
 
-    def self.convert(num)
-        str = ""
+    def self.convert(n)
+        r = ""
 
-        if num % 3 == 0
-            str += "Pling"
-        end
-        if num % 5 == 0
-            str += "Plang"
-        end
-        if num % 7 == 0
-            str += "Plong"
-        end
+        r += "Pling" if n % 3 == 0
+        r += "Plang" if n % 5 == 0
+        r += "Plong" if n % 7 == 0
 
-        if str == ""
-            str = "#{num}"
-        end
-
-        str
+        r.empty? ? n.to_s : r
     end
-    
 end
