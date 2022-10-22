@@ -1,4 +1,4 @@
-export const hey = (s) => {
+export const hey = s => {
 
     s = s.replace(/\s+/g, '')
 
