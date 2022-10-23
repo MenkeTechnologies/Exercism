@@ -1,8 +1,7 @@
-#if !defined(BEER_SONG_H)
-#define BEER_SONG_H
-
+#pragma once
+#include <string>
+using namespace std;
 namespace beer_song {
-
-}  // namespace beer_song
-
-#endif // BEER_SONG_H
+    string verse(int at);
+    string sing(int from, int to = 0);
+}
