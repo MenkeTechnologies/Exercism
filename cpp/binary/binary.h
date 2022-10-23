@@ -1,8 +1,5 @@
-#if !defined(BINARY_H)
-#define BINARY_H
-
+#pragma once
+#include <string>
 namespace binary {
-
-}  // namespace binary
-
-#endif // BINARY_H
+    int convert(const std::string& s);
+}
