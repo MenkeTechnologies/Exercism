@@ -10,7 +10,6 @@ TEST_CASE("_1_yields_decimal_1")
     REQUIRE(1 == trinary::to_decimal("1"));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("_2_yields_decimal_2")
 {
     REQUIRE(2 == trinary::to_decimal("2"));
@@ -50,4 +49,3 @@ TEST_CASE("invalid_yields_decimal_0")
 {
     REQUIRE(0 == trinary::to_decimal("carrot"));
 }
-#endif
