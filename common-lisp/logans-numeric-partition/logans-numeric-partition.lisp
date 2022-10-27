@@ -4,12 +4,12 @@
 
 (in-package :logans-numeric-partition)
 
-(defun categorize-number (lists num)
-  (let ((oddl (car lists))
-        (evenl (cdr lists)))
-    (if (oddp num)
-      (cons (cons num oddl) evenl)
-      (cons oddl (cons num evenl)))))
+(defun categorize-number (acc n)
+  (let ((oddl (car acc))
+        (evenl (cdr acc)))
+    (if (oddp n)
+      (cons (cons n oddl) evenl)
+      (cons oddl (cons n evenl)))))
 
 (defun partition-numbers (numbers)
   (reduce #'categorize-number numbers :initial-value '(nil)))
