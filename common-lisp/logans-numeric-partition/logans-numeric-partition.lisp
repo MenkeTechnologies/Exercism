@@ -4,6 +4,13 @@
 
 (in-package :logans-numeric-partition)
 
-;; Define categorize-number function
+(defun categorize-number (lists num)
+  (let ((oddl (car lists))
+        (evenl (cdr lists)))
+    (if (oddp num)
+      (cons (cons num oddl) evenl)
+      (cons oddl (cons num evenl)))))
 
-;; Define partition-numbers function
+(defun partition-numbers (numbers)
+  (reduce #'categorize-number numbers :initial-value '(nil)))
+
