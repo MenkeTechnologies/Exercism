@@ -10,7 +10,7 @@ case class Robot(bearing: Bearing, coordinates: (Int, Int)) {
   var ptr = bearing.id
 
   def bounds(dir: String): Robot = {
-    if (dir == "R") if (ptr == lst.size - 1) ptr = 0 else ptr += 1
+    if (dir == "R") ptr = (ptr + 1) % lst.size
     else if (ptr == 0) ptr = lst.size - 1 else ptr -= 1
     Robot(lst(ptr), coordinates)
   }
