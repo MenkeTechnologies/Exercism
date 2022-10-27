@@ -1,10 +1,23 @@
-/*
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+public class Series {
+    private String numStr;
 
-Please remove this comment when submitting your solution.
+    public Series(String number) {
+        this.numStr = number;
+    }
 
-*/
+    public List<String> slices(int n) {
+        if (numStr.length() < n)
+            throw new IllegalArgumentException("Slice size is too big.");
+        if (n < 1)
+            throw new IllegalArgumentException("Slice size is too small.");
+        
+        return IntStream.rangeClosed(0, numStr.length() - n)
+                .mapToObj(i -> numStr.substring(i, i + n))
+                .collect(Collectors.toList());
+      
+    }
+}
