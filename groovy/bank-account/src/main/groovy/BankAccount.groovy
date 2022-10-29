@@ -1,30 +1,32 @@
+import java.util.concurrent.atomic.AtomicInteger
+
 class BankAccount {
+    private AtomicInteger balance
 
-    // You cannot do any operations before you open the account.
-    // An account opens with a balance of 0
-    // You can reopen an account
     void open() {
+        balance = new AtomicInteger()
     }
 
-    // you cannot do any operations after you close the account
     void close() {
+        balance = null
     }
 
-    // this should increment the balance
-    // you cannot deposit into a closed account
-    // you cannot deposit a negative amount 
     void deposit(int amount) {
+        if (amount < 0) throw new Exception()
+        balance.addAndGet(amount)
     }
 
-    // this should decrement the balance
-    // you cannot withdraw into a closed account
-    // you cannot withdraw a negative amount 
     void withdraw(int amount) {
+        if (amount < 0) throw new Exception()
+        balance.getAndUpdate {
+            int newBalance = it - amount
+            if (newBalance < 0) throw new Exception()
+            
+            newBalance
+        }
     }
 
-    // returns the current balance
     int getBalance() {
-        return 0
+        balance.get()
     }
-
 }
