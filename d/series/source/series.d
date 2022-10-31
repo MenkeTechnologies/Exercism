@@ -1,6 +1,21 @@
 module series;
 
-import std.algorithm.comparison : equal;
+import std.algorithm;
+import std.array : array;
+import std.conv : to;
+import std.exception : enforce;
+import std.range : slide;
+
+int[] digits(string str) pure @safe
+{
+    return str.map!`to!int([a])`.array;
+}
+int[][] slice(string str, size_t size) pure @safe
+{
+    enforce(size <= str.length, "Not enough digits.");
+    return str.digits.slide(size).array;
+}
+
 
 unittest
 {
