@@ -1,0 +1,2 @@
+collatz-conjecture_test 3 0.074669
+---
