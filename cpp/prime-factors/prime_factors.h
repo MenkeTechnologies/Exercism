@@ -1,8 +1,9 @@
-#if !defined(PRIME_FACTORS_H)
-#define PRIME_FACTORS_H
+#pragma once
 
-namespace prime_factors {
+#include <vector>
 
-}  // namespace prime_factors
+using namespace std;
 
-#endif // PRIME_FACTORS_H
+namespace prime_factors{
+    vector<int> of(unsigned int);
+}
