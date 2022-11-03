@@ -1,8 +1,3 @@
-"
-" Given a DNA string, compute how many times each nucleotide occurs in the
-" string.
-"
-" Examples:
 function! NucleotideCounts(s) abort
   let map = {'A': 0, 'C': 0, 'T': 0, 'G': 0}
 

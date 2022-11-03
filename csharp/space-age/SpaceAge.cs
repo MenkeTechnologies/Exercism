@@ -5,7 +5,6 @@ public class SpaceAge
     private int seconds;
     public SpaceAge(int seconds)
     {
-
         this.seconds = seconds;
     }
 
