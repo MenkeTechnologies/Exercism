@@ -1,0 +1,2 @@
+perfect-numbers_test 1 0.612251
+---
