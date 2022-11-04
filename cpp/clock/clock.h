@@ -19,7 +19,7 @@ namespace date_independent {
 
         [[nodiscard]] clock plus(int min) const { return clock(minutes + min); }
 
-        explicit operator std::string() const {
+        explicit operator string() const {
             ostringstream ss;
             ss << setfill('0') << setw(2) << minutes / 60 << ":" << setw(2) << minutes % 60;
             return ss.str();

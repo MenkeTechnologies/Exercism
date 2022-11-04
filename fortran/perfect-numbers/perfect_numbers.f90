@@ -11,7 +11,7 @@ contains
     else
       allocate(lst(num))
       lst(:) = 0
-      DO i = 1, num - 1
+      do i = 1, num - 1
         if(mod(num, i) == 0) then
           lst(i) = i
         end if

@@ -1,2 +1,2 @@
-perfect-numbers_test 1 0.612251
+perfect-numbers_test 2 0.319307
 ---
