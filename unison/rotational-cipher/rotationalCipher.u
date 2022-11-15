@@ -1,2 +1,19 @@
+rotationalCipher.rotateChar : Nat -> Char -> Char
+rotationalCipher.rotateChar rot char =
+  match char with
+    c | Char.ascii.isLower c ->
+      inputIndex = (Char.toNat c) - (Char.toNat ?a)
+      outputIndex = Nat.mod (inputIndex + rot) 26
+      Char.fromNat ((Char.toNat ?a) + outputIndex)
+    c | Char.ascii.isUpper c ->
+      inputIndex = (Char.toNat c) - (Char.toNat ?A)
+      outputIndex = Nat.mod (inputIndex + rot) 26
+      Char.fromNat ((Char.toNat ?A) + outputIndex)
+    c -> c
+
 rotationalCipher.rotate : Text -> Nat -> Text
-rotationalCipher.rotate text shiftKey = todo "implement rotate"
+rotationalCipher.rotate s shiftKey =
+  s
+    |> Text.toCharList
+    |> List.map (rotateChar shiftKey)
+    |> Text.fromCharList
