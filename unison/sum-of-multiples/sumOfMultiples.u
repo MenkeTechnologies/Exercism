@@ -1,2 +1,11 @@
 sumOfMultiples : [Nat] -> Nat -> Nat
-sumOfMultiples targets upperBound = todo "implement sumOfMultiples"
+sumOfMultiples targets upperBound =
+  Stream.to (upperBound - 1)
+    |> Stream.filter (divisibleByAny targets)
+    |> Stream.fold! (+) 0
+
+divisibleByAny : [Nat] -> Nat -> Boolean
+divisibleByAny lst n = any (divisible n) lst
+
+divisible : Nat -> Nat -> Boolean
+divisible n m = m != 0 && (mod n m == 0)
