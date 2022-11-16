@@ -1,11 +1,9 @@
 (import (rnrs))
 
 (define (square n)
- (assert (< 0 n 65))
- (expt 2 (- n 1))
-)
+  (assert (< 0 n 65))
+  (expt 2 (- n 1)))
 
 (define total
- (fold-right + 0 (map square (iota 64 1 1)))
-)
+  (fold-left + 0 (map square (iota 64 1 1))))
 
