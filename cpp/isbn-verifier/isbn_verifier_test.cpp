@@ -11,7 +11,6 @@ TEST_CASE("valid_isbn")
     REQUIRE(isbn_verifier::is_valid("3-598-21508-8"));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 
 TEST_CASE("invalid_isbn_check_digit")
 {
@@ -102,4 +101,3 @@ TEST_CASE("input_is_too_long_but_contains_a_valid_isbn")
 {
     REQUIRE_FALSE(isbn_verifier::is_valid("98245726788"));
 }
-#endif

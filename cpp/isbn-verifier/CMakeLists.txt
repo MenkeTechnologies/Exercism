@@ -43,22 +43,5 @@ set_target_properties(${exercise} PROPERTIES
 
 set(CMAKE_BUILD_TYPE Debug)
 
-if("${CMAKE_CXX_COMPILER_ID}" MATCHES "(GNU|Clang)")
-    set_target_properties(${exercise} PROPERTIES
-        COMPILE_FLAGS "-Wall -Wextra -Wpedantic -Werror"
-    )
-endif()
-
-# Configure to run all the tests?
-if(${EXERCISM_RUN_ALL_TESTS})
-    target_compile_definitions(${exercise} PRIVATE EXERCISM_RUN_ALL_TESTS)
-endif()
-
-# Tell MSVC not to warn us about unchecked iterators in debug builds
-if(${MSVC})
-    set_target_properties(${exercise} PROPERTIES
-        COMPILE_DEFINITIONS_DEBUG _SCL_SECURE_NO_WARNINGS)
-endif()
-
 # Run the tests on every build
 add_custom_target(test_${exercise} ALL DEPENDS ${exercise} COMMAND ${exercise})
