@@ -1,6 +1,9 @@
 -module(etl).
 
--export([transform/1]).
+-export([transform/1, test_version/0]).
 
+transform(Dict) ->
+    [{string:lowercase(Letter), Score} || {Score, Letters} <- Dict, Letter <- Letters].
 
-transform(_Old) -> undefined.
+test_version() ->
+    1.
