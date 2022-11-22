@@ -1,6 +1,9 @@
 -module(isogram).
+-export([is_isogram/1, test_version/0]).
 
--export([is_isogram/1]).
+is_isogram(Lst) ->
+	Letters = lists:filter(fun(C) -> not lists:member(C, "- ") end, string:to_lower(Lst)),
+	length(Letters) == sets:size(sets:from_list(Letters)).
 
-
-is_isogram(_Phrase) -> undefined.
+test_version() ->
+    1.
