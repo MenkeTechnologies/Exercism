@@ -1,6 +1,24 @@
 #!/usr/bin/env gawk -f
-
+#
 BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+    FS = ""
+    dict["]"] = "["
+    dict[")"] = "("
+    dict["}"] = "{"
+}
+
+{
+    for (i = 1; i <= NF; ++i) {
+        if ($i ~ /[({[]/) {
+            stack[size++] = $i
+        } else if ($i ~ /[])}]/) {
+            if (stack[size - 1] == dict[$i]) {
+                del stack[--size]
+            } else {
+                print "false"
+                exit
+            }
+        }
+    }
+    print !size ? "true" : "false"
 }
