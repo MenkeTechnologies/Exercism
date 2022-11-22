@@ -1,9 +1,14 @@
 #!/usr/bin/env gawk -f
 
-# These variables are initialized on the command line (using '-v'):
-# - limit
-
-BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+{
+    sum = 0
+    for (i = 1; i < limit; ++i)
+        for (j = 1; j <= NF; ++j)
+            if ($j > 0 && i % $j == 0) {
+                sum += i
+                break
+            }
+    print(sum)
 }
+
+
