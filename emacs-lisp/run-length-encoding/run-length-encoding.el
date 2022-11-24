@@ -1,1 +1,31 @@
 (provide 'run-length-encoding)
+
+(defun run-length-encode (s)
+  (let ((res ""))
+    (with-temp-buffer
+      (insert s)
+      (goto-char (point-min))
+      (while (not (eobp))
+        (let* ((c (char-to-string (char-after)))
+               (cnt (skip-chars-forward c)))
+          (if (> cnt 1)
+              (setq res (concat res (number-to-string cnt) c))
+            (setq res (concat res c))))))
+    res))
+
+(defun run-length-decode (s)
+  (let ((res ""))
+    (with-temp-buffer
+      (insert s)
+      (goto-char (point-min))
+      (while (not (eobp))
+        (let ((count-len (skip-chars-forward "0-9")))
+          (if (> count-len 0)
+              (let* ((cnt (string-to-number
+                             (buffer-substring (- (point) count-len) (point))))
+                     (expansion (make-string cnt (char-after))))
+                (setq res (concat res expansion))
+                (forward-char 1))
+            (setq res (concat res (char-to-string (char-after))))
+            (forward-char 1)))))
+    res))
