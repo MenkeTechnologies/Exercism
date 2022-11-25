@@ -1,11 +1,9 @@
 module BinarySearch exposing (find)
 import Array exposing (Array)
 
-find : Int -> Array Int -> Maybe Int
 find target lst =
     aux target 0 (Array.length lst) lst
 
-aux : Int -> Int -> Int -> Array Int -> Maybe Int
 aux target lo hi lst =
     let
         mid =

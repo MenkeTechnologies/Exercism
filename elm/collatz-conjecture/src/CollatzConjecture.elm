@@ -1,12 +1,11 @@
 module CollatzConjecture exposing (collatz)
-collatz : Int -> Result String Int
+
 collatz start =
   if start < 1 then
     Err "Only positive integers are allowed"
   else
     Ok (aux start)
 
-aux : Int -> Int
 aux n =
   if n < 2 then
     0
