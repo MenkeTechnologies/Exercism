@@ -2,7 +2,11 @@ module Etl exposing (transform)
 
 import Dict exposing (Dict)
 
-
-transform : Dict Int (List String) -> Dict String Int
 transform input =
-    Debug.todo "Please implement this function"
+    input
+        |> Dict.toList
+        |> List.concatMap
+            (\( score, letters ) ->
+                List.map (\l -> ( String.toLower l, score )) letters
+            )
+        |> Dict.fromList
