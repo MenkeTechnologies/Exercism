@@ -1,11 +1,10 @@
 module Strain exposing (discard, keep)
 
+keep f lst =
+    let prepends n acc =
+            case f n of
+                True -> n :: acc
+                False -> acc
+    in List.foldr prepends [] lst
 
-keep : (a -> Bool) -> List a -> List a
-keep predicate list =
-    Debug.todo "Please implement this function"
-
-
-discard : (a -> Bool) -> List a -> List a
-discard predicate list =
-    Debug.todo "Please implement this function"
+discard f lst = keep (f >> not) lst
