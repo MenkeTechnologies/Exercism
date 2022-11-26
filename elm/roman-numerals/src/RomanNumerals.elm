@@ -1,5 +1,8 @@
 module RomanNumerals exposing (toRoman)
 
+import List exposing (map, foldl, range)
+import String exposing (join)
+
 dict =
     [ ("M", 1000)
     , ("CM", 900)
@@ -16,18 +19,14 @@ dict =
     , ("I", 1)
     ]
 
-toRoman number =
-    List.foldl (\(symbol, value) (roman_numeral, decrement) ->
-        let
-            dividend =
-                decrement // value
-        in
-        (roman_numeral ++ (multiplyString dividend symbol), modBy value decrement)
-    ) ("", number) dict
-    |> Tuple.first
+toRoman init =
+    foldl (\(symbol, value) (acc_str, acc_n) ->
+            (acc_str ++ multiplyString (acc_n // value) symbol, modBy value acc_n))
+            ("", init) dict
+            |> Tuple.first
 
 multiplyString cnt s =
-    List.foldl (\_ acc ->
-        acc ++ s
-    ) "" (List.range 1 cnt)
+    range 1 cnt |>
+    map(\_ -> s) |>
+    join ""
 

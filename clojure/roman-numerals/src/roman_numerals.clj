@@ -16,9 +16,7 @@
 
 (defn numerals [init]
   (->> num-roman-pairs
-    (reduce
-      (fn [[acc-str acc-n] [val sym]] (list (apply str acc-str (repeat (quot acc-n val) sym)) (rem acc-n val)))
-      (list "" init))
-     first
-  )
-)
+       (reduce
+         (fn [[acc-str acc-n] [val sym]] (list (apply str acc-str (repeat (quot acc-n val) sym)) (rem acc-n val)))
+         (list "" init))
+       first))
