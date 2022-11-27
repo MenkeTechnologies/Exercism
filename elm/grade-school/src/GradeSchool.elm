@@ -1,35 +1,29 @@
-module GradeSchool exposing (addStudent, allStudents, empty, studentsInGrade)
+module GradeSchool exposing (Grade, Result(..), School, Student, addStudent, allStudents, emptySchool, studentsInGrade)
+import Dict exposing (..)
+import List exposing (concatMap, sort)
+type alias Grade = Int
+type alias Student = String
+type alias School = Dict Int (List Student)
+type Result = Added | Duplicate
 
-import Dict exposing (Dict)
+emptySchool = empty
 
-
-type alias Grade =
-    Int
-
-
-type alias Student =
-    String
-
-
-type alias School =
-    Dict Grade (List Student)
-
-
-empty : School
-empty =
-    Dict.empty
-
-
-addStudent : Grade -> Student -> School -> School
 addStudent grade student school =
-    Debug.todo "Please implement this function"
+        if allStudents school |>  List.member student then
+            (Duplicate, school)
+        else
+            let
+                updatedStudents =
+                    case get grade school of
+                        Nothing -> [student]
+                        Just students -> student :: students |> sort
+            in
+            (Added, insert grade updatedStudents school)
 
-
-studentsInGrade : Grade -> School -> List Student
 studentsInGrade grade school =
-    Debug.todo "Please implement this function"
+        case get grade school of
+            Nothing -> []
+            Just students -> students
 
-
-allStudents : School -> List ( Grade, List Student )
-allStudents school =
-    Debug.todo "Please implement this function"
+allStudents school = keys school |>
+    concatMap (\grade -> studentsInGrade grade school)
