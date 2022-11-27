@@ -3,6 +3,7 @@ import String exposing (length, slice, filter, fromList, toList)
 import Char exposing (isDigit)
 import Maybe exposing (andThen)
 
+
 getNumber = digitsStripIntl
     >> andThen (validateNumber)
     >> andThen (validateDigitAt 0)
