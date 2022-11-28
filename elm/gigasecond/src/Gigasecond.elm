@@ -1,8 +1,7 @@
 module Gigasecond exposing (add)
 
-import Time
+import Time exposing (..)
 
+gigasecond = 10^9
 
-add : Time.Posix -> Time.Posix
-add timestamp =
-    Debug.todo "Please implement this function"
+add timestamp = posixToMillis timestamp + (gigasecond * 1000) |> millisToPosix
