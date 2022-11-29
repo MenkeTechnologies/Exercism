@@ -1,8 +1,12 @@
 module WordCount exposing (wordCount)
 
-import Dict exposing (Dict)
+import Dict
+import Regex exposing (find, never, fromString)
 
+wordCount s = s |> String.toLower |> find words
+        |> List.foldl (\{ match } acc -> Dict.update match countWord acc ) Dict.empty
 
-wordCount : String -> Dict String Int
-wordCount sentence =
-    Debug.todo "Please implement this function"
+countWord curr = curr |> Maybe.map ((+) 1) |> Maybe.withDefault 1
+        |> Just
+
+words = fromString "\\w+'\\w+|\\w+" |> Maybe.withDefault Regex.never
