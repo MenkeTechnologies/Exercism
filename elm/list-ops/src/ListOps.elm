@@ -1,50 +1,35 @@
-module ListOps exposing
-    ( append
-    , concat
-    , filter
-    , foldl
-    , foldr
-    , length
-    , map
-    , reverse
-    )
+module ListOps exposing ( append , concat , filter , foldl , foldr , length , map , reverse)
 
+length lst = case lst of
+        _ :: rest -> 1 + length rest
+        [] -> 0
 
-length : List a -> Int
-length list =
-    Debug.todo "Please implement this function"
+reverse lst = case lst of
+        x :: xs -> (reverse xs) ++ [x]
+        [] -> []
 
+foldl f acc lst = case lst of
+        x :: xs -> foldl f (f x acc) xs
+        [] -> acc
 
-reverse : List a -> List a
-reverse list =
-    Debug.todo "Please implement this function"
+foldr f acc = reverse >> foldl f acc
 
+map f lst = case lst of
+        x :: xs -> (f x) :: (map f xs)
+        [] -> []
 
-foldl : (a -> b -> b) -> b -> List a -> b
-foldl f acc list =
-    Debug.todo "Please implement this function"
+filter f lst = case lst of
+        x :: xs -> if f x == True then
+                x :: filter f xs
+            else
+                filter f xs
+        [] -> []
 
+appendAux lstA lstB = case lstA of
+        a :: otherA -> appendAux otherA (a :: lstB)
+        [] -> lstB
 
-foldr : (a -> b -> b) -> b -> List a -> b
-foldr f acc list =
-    Debug.todo "Please implement this function"
+append xs = appendAux (reverse xs)
 
+concat = foldr (++) []
 
-map : (a -> b) -> List a -> List b
-map f list =
-    Debug.todo "Please implement this function"
-
-
-filter : (a -> Bool) -> List a -> List a
-filter f list =
-    Debug.todo "Please implement this function"
-
-
-append : List a -> List a -> List a
-append xs ys =
-    Debug.todo "Please implement this function"
-
-
-concat : List (List a) -> List a
-concat list =
-    Debug.todo "Please implement this function"
