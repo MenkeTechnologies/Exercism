@@ -13,7 +13,7 @@ NSString *sort_str(NSString *unsorted) {
     int len = (int) ([unsorted length] + 1);
     char *cstr = malloc(len);
     [unsorted getCString:cstr maxLength:len encoding:NSISOLatin1StringEncoding];
-    qsort(cstr, (size_t) (len - 1), sizeof(char), char_compare);
+    qsort(cstr, (size_t) len - 1, sizeof(char), char_compare);
     NSString *sorted = [NSString stringWithCString:cstr encoding:NSISOLatin1StringEncoding];
     free(cstr);
     return sorted;
@@ -21,7 +21,6 @@ NSString *sort_str(NSString *unsorted) {
 
 @implementation Anagram
 - (instancetype)initWithString:(NSString *)input {
-    self = [super init];
     self.input = [input lowercaseString];
     return self;
 }

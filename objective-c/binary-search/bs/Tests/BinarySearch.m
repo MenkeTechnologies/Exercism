@@ -1,13 +1,9 @@
 #import "BinarySearch.h"
-@interface BinarySearch ()
-@property (strong, nonatomic) NSArray* list;
-@end
 @implementation BinarySearch
 - (instancetype)initWithArray:(NSArray *)lst {
     for (int i = 1; i < lst.count; ++i) {
         if ([lst[i] integerValue] < [lst[i - 1] integerValue]) { return nil; }
     }
-    self = [super init];
     self.list = lst;
     return self;
 }
