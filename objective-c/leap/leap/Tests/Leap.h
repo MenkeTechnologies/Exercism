@@ -1,9 +1,7 @@
-@import Foundation;
+#import "Foundation/Foundation.h"
 
-@interface Leap: NSNumber
-
-- (instancetype) initWithCalendarYear:(NSNumber *)year;
-
-@property (readonly, nonatomic) BOOL isLeapYear;
-
+@interface Leap : NSNumber
+@property(nonatomic) NSInteger year;
+- (BOOL) isLeapYear;
+- (instancetype)initWithCalendarYear:(NSNumber *)year;
 @end
