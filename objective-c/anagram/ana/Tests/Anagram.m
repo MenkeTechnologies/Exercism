@@ -21,14 +21,14 @@ NSString *sort_str(NSString *unsorted) {
 
 @implementation Anagram
 - (instancetype)initWithString:(NSString *)input {
-    self.input = [input lowercaseString];
+    _input = [input lowercaseString];
     return self;
 }
 
 - (NSArray<NSString *> *)match:(NSArray<NSString *> *)words {
     NSMutableArray *result = [NSMutableArray arrayWithCapacity:words.count];
     for (NSString *word in words) {
-        if (sort_str([word lowercaseString]) == sort_str(self.input) && ![[word lowercaseString] isEqualToString:self.input]) {
+        if (sort_str([word lowercaseString]) == sort_str(_input) && ![[word lowercaseString] isEqualToString:_input]) {
             [result addObject:word];
         }
     }

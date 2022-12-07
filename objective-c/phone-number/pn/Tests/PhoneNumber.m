@@ -2,17 +2,17 @@
 
 @implementation PhoneNumber
 - (instancetype)initWithString:(NSString *)input {
-    self.number = [self normalize:input];
-    if (!self.number) {
-        self.number = @"0000000000";
+    _number = [self normalize:input];
+    if (!_number) {
+        _number = @"0000000000";
     }
     return self;
 }
 
 - (NSString *)description {
     NSString *area = [self getArea];
-    NSString *prefix = [self.number substringWithRange:NSMakeRange(3, 3)];
-    NSString *line = [self.number substringFromIndex:6];
+    NSString *prefix = [_number substringWithRange:NSMakeRange(3, 3)];
+    NSString *line = [_number substringFromIndex:6];
     return [NSString stringWithFormat:@"(%@) %@-%@", area, prefix, line];
 }
 
@@ -21,7 +21,7 @@
 }
 
 - (NSString *)getArea {
-    return [self.number substringToIndex:3];
+    return [_number substringToIndex:3];
 }
 
 - (NSString *)normalize:(NSString *)input {

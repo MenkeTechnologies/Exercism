@@ -2,12 +2,12 @@
 
 @implementation Leap
 - (instancetype)initWithCalendarYear:(NSNumber *)year {
-    self.year = year.integerValue;
+    _year = year.integerValue;
     return self;
 }
 
 - (BOOL)isLeapYear {
-    return self.year % 4 == 0 && self.year % 100 != 0 || self.year % 400 == 0;
+    return _year % 4 == 0 && _year % 100 != 0 || _year % 400 == 0;
 }
 
 @end

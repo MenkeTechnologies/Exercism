@@ -7,7 +7,7 @@
     if (number & 2) {[cmds addObject:@"double blink"];}
     if (number & 4) {[cmds addObject:@"close your eyes"];}
     if (number & 8) {[cmds addObject:@"jump"];}
-    if (number & 16) self.cmds = cmds.reverseObjectEnumerator.allObjects; else self.cmds = cmds;
+    if (number & 16) _cmds = cmds.reverseObjectEnumerator.allObjects; else _cmds = cmds;
     return self;
 }
 @end

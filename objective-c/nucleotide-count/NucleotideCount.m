@@ -13,12 +13,12 @@ static NSString *thymine = @"T";
     if (self = [super init]) {
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", @"[CTAG]*"];
         NSAssert([predicate evaluateWithObject:strand], @"Invalid DNA Strand");
-        self.strand = strand;
+        _strand = strand;
     }
     return self;
 }
 -(NSInteger)count:(NSString *)nucleotide {
-    return self.strand.length - [[self.strand copy] stringByReplacingOccurrencesOfString:nucleotide withString:@""].length;
+    return _strand.length - [[_strand copy] stringByReplacingOccurrencesOfString:nucleotide withString:@""].length;
 }
 -(NSDictionary<NSString *,NSNumber *> *)nucleotideCounts {
     return @{ adenine: [NSNumber numberWithInteger:[self count:adenine]],

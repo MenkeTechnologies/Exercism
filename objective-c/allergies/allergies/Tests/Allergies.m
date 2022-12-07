@@ -2,11 +2,11 @@
 
 @implementation Allergies
 - (instancetype)initWithScore:(Allergen)score {
-    self.score = score;
+    _score = score;
     return self;
 }
 
 - (BOOL)hasAllergy:(Allergen)allergen {
-    return self.score & allergen;
+    return _score & allergen;
 }
 @end

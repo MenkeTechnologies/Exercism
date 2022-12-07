@@ -5,32 +5,32 @@
 @implementation SpaceAge
 -(instancetype)initWithSeconds:(NSInteger)seconds {
     if (self = [super init]) {
-        self.seconds = seconds;
+        _seconds = seconds;
     }
     return self;
 }
 -(double)onEarth {
-    return self.seconds / NUM_SECONDS_IN_YEAR;
+    return _seconds / NUM_SECONDS_IN_YEAR;
 }
 -(double)onSaturn {
-    return self.onEarth / 29.447498;
+    return _onEarth / 29.447498;
 }
 -(double)onMars {
-    return self.onEarth / 1.8808158;
+    return _onEarth / 1.8808158;
 }
 -(double)onJupiter {
-    return self.onEarth / 11.862615;
+    return _onEarth / 11.862615;
 }
 -(double)onMercury {
-    return self.onEarth / 0.2408467;
+    return _onEarth / 0.2408467;
 }
 -(double)onVenus {
-    return self.onEarth / 0.61519726;
+    return _onEarth / 0.61519726;
 }
 -(double)onNeptune {
-    return self.onEarth / 164.79132;
+    return _onEarth / 164.79132;
 }
 -(double)onUranus {
-    return self.onEarth / 84.016846;
+    return _onEarth / 84.016846;
 }
 @end
