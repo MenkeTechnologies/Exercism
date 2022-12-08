@@ -1,23 +1,21 @@
 module TicketPlease exposing (..)
-
 import TicketPleaseSupport exposing (Status(..), Ticket(..), User(..))
 
+devNames = [ "Alice", "Bob", "Charlie" ]
 
-emptyComment : ( User, String ) -> Bool
-emptyComment =
-    Debug.todo "Please implement the function emptyComment"
+emptyComment ( _, comment ) = String.isEmpty comment
 
+numberOfCreatorComments (Ticket ticket) =
+    let ( creator, _ ) = ticket.createdBy in
+    ticket.comments |> List.filter (\( user, _ ) -> user == creator)
+        |> List.filter (emptyComment >> not)
+        |> List.length
 
-numberOfCreatorComments : Ticket -> Int
-numberOfCreatorComments =
-    Debug.todo "Please implement the function numberOfCreatorComments"
+assignedToDevTeam (Ticket ticket) = ticket.assignedTo |> Maybe.map (\user -> isDev user) |> Maybe.withDefault False
 
+assignTicketTo user (Ticket ticket) = case ticket.status of
+        New -> Ticket { ticket | status = InProgress, assignedTo = Just user }
+        Archived -> Ticket ticket
+        _ -> Ticket { ticket | assignedTo = Just user }
 
-assignedToDevTeam : Ticket -> Bool
-assignedToDevTeam =
-    Debug.todo "Please implement the function assignedToDevTeam"
-
-
-assignTicketTo : User -> Ticket -> Ticket
-assignTicketTo =
-    Debug.todo "Please implement the function assignTicketTo"
+isDev user = devNames |> List.map (\name -> User name) |> List.member user
