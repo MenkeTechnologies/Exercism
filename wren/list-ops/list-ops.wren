@@ -1,67 +1,78 @@
 class ListOps {
-  construct new(elements) {
-    Fiber.abort("Remove this statement and implement this class")
+  construct new(ary) { _lst = ary[0..-1] }
+
+  construct new() { _lst = [] }
+
+  toList { _lst[0..-1] }
+
+  add(n) { _lst.add(n) }
+
+  addAll(ary) {
+    for (n in ary.toList) {
+      _lst.add(n)
+    }
+    return this
   }
 
-  // no-arguments constructor
-  construct new() {
-    Fiber.abort("Remove this statement and implement this class")
+  addList(list) { _lst.addAll(list) }
+
+  iterate(iterator) {
+    return _lst.iterate(iterator)
+  }
+  iteratorValue(iterator) { _lst.iteratorValue(iterator) }
+
+  +(ary) { type.new(_lst).addAll(ary) }
+
+  static concat(lsts) {
+    var it = ListOps.new()
+    for (l in lsts) {
+      it.addList(l)
+    }
+    return it
   }
 
-  // return the items as a List
-  toList {
-    Fiber.abort("Remove this statement and implement this method")
+  where(f) {
+    var res = []
+    for (n in _lst) {
+      if (f.call(n)) {
+        res.add(n)
+      }
+    }
+    _lst = res
+    return this
   }
 
-  // add an item to the end of this list
-  add(item) {
-    Fiber.abort("Remove this statement and implement this method")
+  count { _lst.count }
+
+  map(f) {
+    var res = []
+    for (n in _lst) {
+      res.add(f.call(n))
+    }
+    _lst = res
+    return this
   }
 
-  // add all items in the other list to the end of this list
-  addAll(other) {
-    Fiber.abort("Remove this statement and implement this method")
+  reduce(acc, f) {
+    for (n in _lst) {
+      acc = f.call(acc, n)
+    }
+    return acc
   }
 
-  // return a new list, adding all items in the other list to the end of this list
-  +(other) {
-    Fiber.abort("Remove this statement and implement this method")
+  reduceRight(acc, f) {
+    for (i in 0..._lst.count) {
+      acc = f.call(_lst[_lst.count - i - 1], acc)
+    }
+    return acc
   }
 
-  // given a series of lists, combine all items in all lists into one flattened list
-  static concat(lists) {
-    Fiber.abort("Remove this statement and implement this method")
-  }
-
-  // given a predicate, return the list of all items for which `predicate(item)` is True
-  where(predicateFn) {
-    Fiber.abort("Remove this statement and implement this method")
-  }
-
-  // return the total number of items within this list
-  count {
-    Fiber.abort("Remove this statement and implement this method")
-  }
-
-  // given a function, return the list of the results of applying `function(item)` on all items
-  map(transformFn) {
-    Fiber.abort("Remove this statement and implement this method")
-  }
-
-  // given an initial accumulator and a function, fold (reduce) each item
-  // into the accumulator from the left using `function(accumulator, item)`
-  reduce(initialValue, reducerFn) {
-    Fiber.abort("Remove this statement and implement this method")
-  }
-
-  // given an initial accumulator and a function, fold (reduce) each item
-  // into the accumulator from the right using `function(item, accumulator)`
-  reduceRight(initialValue, reducerFn) {
-    Fiber.abort("Remove this statement and implement this method")
-  }
-
-  // return a list with all the original items, but in reversed order
   reverse() {
-    Fiber.abort("Remove this statement and implement this method")
+    var res = []
+    for (i in 0..._lst.count) {
+      res.add(_lst[_lst.count - i - 1])
+    }
+    _lst = res
+    return this
   }
 }
