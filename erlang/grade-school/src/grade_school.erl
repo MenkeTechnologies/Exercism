@@ -1,12 +1,15 @@
 -module(grade_school).
-
 -export([add/3, get/2, get/1, new/0]).
 
+new() -> [].
 
-add(_Name, _Grade, _School) -> undefined.
+add(Name, Grade, School) -> Students = lists:sort([S || {_, S} <- School]),
+    case lists:member(Name, Students) of
+        true -> School;
+        _    -> [{Grade, Name} | School]
+    end.
 
-get(_Grade, _School) -> undefined.
+get(Grade, School) -> [Student || {_, Student} <- lists:sort([{G, _S}
+             || {G, _S} <- School, G == Grade])].
 
-get(_School) -> undefined.
-
-new() -> undefined.
+get(School) -> lists:sort([Student || {_, Student} <- School]).
