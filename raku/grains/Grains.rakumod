@@ -6,5 +6,5 @@ sub grains-on-square ($n) is export {
 }
 
 sub total-grains is export {
-    (1..64).map({ grains-on-square($_) }).sum
+    (1..64).map(&grains-on-square).sum
 }

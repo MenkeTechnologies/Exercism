@@ -1,5 +1,5 @@
 unit module Pangram;
 
-sub is-pangram ($string) is export {
-    $string.lc.contains(('a'..'z').all).so
+sub is-pangram ($s) is export {
+    $s.lc.contains(('a'..'z').all).so
 }
