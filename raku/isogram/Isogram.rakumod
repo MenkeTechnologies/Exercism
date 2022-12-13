@@ -1,5 +1,5 @@
 unit module Isogram;
 
-sub is-isogram ($phrase) is export {
-    ($phrase.lc !~~ /(<[a..z]>).*$0/).Bool
+sub is-isogram ($s) is export {
+    ($s.lc !~~ /(<[a..z]>).*$0/).Bool
 }
