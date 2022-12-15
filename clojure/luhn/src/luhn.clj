@@ -4,10 +4,8 @@
 (defn str->int [s]
   (Integer.(str s)))
 
-(defn double-digit->single-digit [number]
-  (if (>= number 10)
-    (- number 9)
-    number))
+(defn double-digit->single-digit [n]
+  (if (> n 9) (- n 9) n))
 
 (defn double-every-second-digit [index value]
   (->> value
@@ -32,6 +30,6 @@
 (defn valid? [s]
   (let [nows (str/replace s #"\s" "")]
     (cond
-      (< (count nows ) 2) false
-      (has-invalid-chars? nows ) false
-      :else (valid-number? nows ))))
+      (< (count nows) 2) false
+      (has-invalid-chars? nows) false
+      :else (valid-number? nows))))

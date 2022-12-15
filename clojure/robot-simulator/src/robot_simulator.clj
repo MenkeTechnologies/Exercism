@@ -22,4 +22,4 @@
     \L (->> turn-left (update robot :bearing))))
 
 (defn simulate [commands robot]
-  (reduce command robot commands))
+  (->> commands (reduce command robot)))

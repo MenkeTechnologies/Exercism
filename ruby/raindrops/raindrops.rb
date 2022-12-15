@@ -1,27 +1,9 @@
 class Raindrops
+  @@dict = {3 => 'Pling', 5 => 'Plang', 7 => 'Plong'}
 
-  def self.convert(num)
-
-    str = ''
-
-    if num % 3 == 0
-      str += 'Pling'
-    end
-
-    if num % 5 == 0
-      str += 'Plang'
-    end
-
-    if num % 7 == 0
-      str += 'Plong'
-    end
-
-    if str.empty?
-      str = num.to_s
-    end
-
-    str
-
+  def self.convert(n)
+    r = @@dict.map { n % _1 == 0 ? _2 : ''}.join
+    r.empty? ? n.to_s : r
   end
 
 end
