@@ -1,20 +1,37 @@
-(ns luhn)
+(ns luhn
+  (:require [clojure.string :as str]))
 
-(defn doubler [n]
-  (if (> n 4)
-    (+ n n -9)
-    (+ n n)))
+(defn str->int [s]
+  (Integer.(str s)))
 
-(defn sum [input]
-  (->> input
-       (re-seq #"\d")
-       (map #(Integer/parseInt %))
+(defn double-digit->single-digit [number]
+  (if (>= number 10)
+    (- number 9)
+    number))
+
+(defn double-every-second-digit [index value]
+  (->> value
+      (* (inc (mod index 2)))
+      double-digit->single-digit))
+
+(defn has-invalid-chars? [s]
+  (->> s
+       (re-find #"\D")
+       empty?
+       not))
+
+(defn valid-number? [s]
+  (->> s
+       (map str->int)
        reverse
-       (partition 2 2 [0])
-       (reduce (fn [sum [a b]] (+ sum a (doubler b))) 0)))
+       (map-indexed double-every-second-digit)
+       (reduce +)
+       (#(mod % 10))
+       (= 0)))
 
-(defn valid? [input]
-  (boolean
-    (and (re-matches #"[\d\s]*" input)
-         (zero? (rem (sum input) 10))
-         (< 1 (count (re-seq #"\d" input))))))
+(defn valid? [s]
+  (let [nows (str/replace s #"\s" "")]
+    (cond
+      (< (count nows ) 2) false
+      (has-invalid-chars? nows ) false
+      :else (valid-number? nows ))))
