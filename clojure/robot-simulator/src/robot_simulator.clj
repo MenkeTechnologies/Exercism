@@ -1,17 +1,25 @@
 (ns robot-simulator)
 
-(defn robot [] ;; <- arglist goes here
-      ;; your code goes here
-)
+(defn robot [coordinates bearing]
+  {:coordinates coordinates :bearing bearing})
 
-(defn simulate [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(def turn-right
+  {:north :east, :east :south,
+   :south :west, :west :north})
 
-(defn turn-right [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(def turn-left (zipmap (vals turn-right) (keys turn-right)))
 
-(defn turn-left [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(def advance
+  {:north #(update % :y inc)
+   :east  #(update % :x inc)
+   :south #(update % :y dec)
+   :west  #(update % :x dec)})
+
+(defn command [robot cmd]
+  (case cmd
+    \A (->> (:bearing robot) advance (update robot :coordinates))
+    \R (->> turn-right (update robot :bearing))
+    \L (->> turn-left (update robot :bearing))))
+
+(defn simulate [commands robot]
+  (reduce command robot commands))
