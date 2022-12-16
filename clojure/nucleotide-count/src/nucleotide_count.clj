@@ -2,14 +2,12 @@
 
 (def nucleotides {\A 0 \T 0 \C 0 \G 0})
 
-(defn nucleotide-counts [dna-strand]
-  (->> dna-strand
+(defn nucleotide-counts [s]
+  (->> s
        (frequencies)
-       (#(conj nucleotides %))
-       ))
+       (#(conj nucleotides %))))
 
-(defn count-of-nucleotide-in-strand [nucleotide dna-strand]
-  (if (nucleotides nucleotide)
-    ((nucleotide-counts dna-strand) nucleotide)
-    (throw (Exception. "Bad nucleotide")))
-  )
+(defn count-of-nucleotide-in-strand [nt s]
+  (if (nucleotides nt)
+    ((nucleotide-counts s) nt)
+    (throw (Exception. "Bad nucleotide"))))
