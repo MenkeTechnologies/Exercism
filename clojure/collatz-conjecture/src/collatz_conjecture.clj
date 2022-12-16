@@ -6,7 +6,7 @@
     (inc (* num 3))))
 
 (defn collatz [num]
-  (if (< num 1) (throw "Input cannot be < 1")
+  (when (< num 1) (throw "Input cannot be < 1"))
     (loop [cur num cnt 0]
-      (if (= 1 cur) cnt
-      (recur (work cur) (inc cnt))))))
+      (if (< cur 2) cnt
+      (recur (work cur) (inc cnt)))))
