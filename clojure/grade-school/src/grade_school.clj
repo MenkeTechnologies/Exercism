@@ -1,13 +1,12 @@
 (ns grade-school)
 
-(defn grade [school grade]  ;; <- arglist goes here
-    ;; your code goes here
-)
+(defn add [db name grade]
+  (merge-with concat db {grade [name]}))
 
-(defn add [school name grade]  ;; <- arglist goes here
-    ;; your code goes here
-)
+(defn grade [db grade]
+  (db grade []))
 
-(defn sorted [school]  ;; <- arglist goes here
-    ;; your code goes here
-)
+(defn sorted [db]
+  (->> db
+      (map (fn [[k v]] [k (sort v)]))
+      (into (sorted-map))))
