@@ -1,17 +1,13 @@
 (ns secret-handshake)
-(def dict    {1 "wink"
-              2 "double blink"
-              4 "close your eyes"
-              8 "jump"})
+(def ^:private dict    {1 "wink"
+                        2 "double blink"
+                        4 "close your eyes"
+                        8 "jump"})
 
-(defn commands [n]
+(defn commands [mask]
   (let [msg (->> dict
-             (filter #(->> (key %)
-                           (bit-and n)
-                           pos?))
-             (map #(val %))
-             (apply vector))]
-    (if (zero? (bit-and n 16))
-      msg
-      (reverse msg))))
+                 (filter #(->> (key %) (bit-and mask) pos?))
+                 (map #(val %))
+                 (apply vector))]
+    (if (->> 16 (bit-and mask) zero?) msg (->> msg reverse))))
 

@@ -1,9 +1,6 @@
 (ns octal)
 
-(defn octal? [s]
-  (->> s
-       (re-matches #"[0-7]+")
-       (boolean)))
+(defn octal? [s] (->> s (re-matches #"[0-7]+") boolean))
 
 (defn to-decimal [s]
   (if (not (octal? s)) 0

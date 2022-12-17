@@ -1,13 +1,9 @@
 (ns clock)
 
-(defn clock->string [clock] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn- norm [clk] (mod clk 1440))
 
-(defn clock [hours minutes] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn clock [hr min] (->> min (+ (* 60 hr)) norm))
 
-(defn add-time [clock time] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn add-time [clk min] (->> min (+ clk) norm))
+
+(defn clock->string [clk] (format "%02d:%02d" (quot clk 60) (mod clk 60)))

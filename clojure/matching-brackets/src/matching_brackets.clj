@@ -14,4 +14,4 @@
     (->> s
          (filter bracket?)
          (reduce update-stack [])
-         (empty?))))
+         empty?)))
