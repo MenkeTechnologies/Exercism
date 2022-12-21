@@ -1,8 +1,11 @@
-fun is_delim c = Char.contains " -_," c
-fun first_char_up s = Char.toUpper (String.sub (s, 0))
+infixr |>
+fun x |> f = f x
+
+fun is_delim c = c |> Char.contains " -_,"
+fun first_char_up s = String.sub (s, 0) |> Char.toUpper
 
 fun abbreviate s =
-  let val tokens = String.tokens is_delim s
+  let val tokens = s |> String.tokens is_delim
   in
-    String.implode (List.map first_char_up tokens)
+    List.map first_char_up tokens |> String.implode
   end
