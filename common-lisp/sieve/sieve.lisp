@@ -5,6 +5,13 @@
 
 (in-package :sieve)
 
-(defun primes-to (n)
-  "List primes up to `n' using sieve of Eratosthenes."
-  )
+(defun primes-to (limit)
+  (loop with numbers = (make-array (1+ limit) :element-type 'boolean
+                                   :initial-element t)
+        for n from 2 to (sqrt limit)
+        when (aref numbers n)
+        do (loop for m from (+ n n) to limit by n
+                 do (setf (aref numbers m) nil))
+        finally (return (loop for i from 2 to limit
+                              when (aref numbers i)
+                              collect i))))
