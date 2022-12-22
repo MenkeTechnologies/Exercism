@@ -11,5 +11,7 @@ pub fn can_construct_note(magazine: &[&str], note: &[&str]) -> bool {
         acc
     });
 
-    note_hash.iter().all(|(&k, v)| matches!(mag_hash.get(k), Some(val) if val >= v))
+    note_hash
+        .iter()
+        .all(|(&k, v)| matches!(mag_hash.get(k), Some(val) if val >= v))
 }

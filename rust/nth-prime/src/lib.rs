@@ -9,4 +9,3 @@ pub fn nth(n: u32) -> u32 {
     }
     primes[n as usize]
 }
-
