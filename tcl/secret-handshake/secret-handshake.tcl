@@ -1,6 +1,6 @@
 proc secretHandshake {code} {
     set dict {1 wink 2 "double blink" 4 "close your eyes" 8 jump}
-    set output [list]
+    set output {}
 
     foreach {k v} $dict {
         if {$code & $k} {
