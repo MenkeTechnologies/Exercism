@@ -5,8 +5,7 @@ proc verse {n} {
        return  "1 bottle of beer on the wall, 1 bottle of beer.\nTake it down and pass it around, no more bottles of beer on the wall."
 	} else {
        if {$n > 2} { set plural "s" } else { set plural "" }
-       set next [expr $n - 1]
-       return "$n bottles of beer on the wall, $n bottles of beer.\nTake one down and pass it around, $next bottle$plural of beer on the wall."
+       return "$n bottles of beer on the wall, $n bottles of beer.\nTake one down and pass it around, [expr $n - 1] bottle$plural of beer on the wall."
     }
 }
 
@@ -16,5 +15,5 @@ proc beerSong {start take} {
         set current [expr $start - $i]
         lappend output [verse $current]
     }
-    return [join $output \n]
+    join $output \n
 }
