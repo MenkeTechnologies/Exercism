@@ -1,33 +1,41 @@
 namespace eval listOps {
     proc append {listname values} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+        upvar $listname llist
+        lappend llist {*}$values
     }
-
     proc concat {listOfLists} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+        set ret {}
+        foreach l $listOfLists {
+            append ret $l
+        }
+        return $ret
     }
-
-    proc filter {list func} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+    proc filter {lst f} {
+        lmap n $lst {expr {[apply $f $n] ? $n : [continue]}}
     }
-
-    proc length {list} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+    proc length {lst} {
+        llength $lst
     }
-
-    proc map {list func} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+    proc map {lst f} {
+        lmap n $lst {apply $f $n}
     }
-
-    proc foldl {list accumulator func} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+    proc foldl {lst acc f} {
+        foreach n $lst { 
+            set acc [apply $f $acc $n]
+        }
+        return $acc
     }
-
-    proc foldr {list accumulator func} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+    proc foldr {lst acc f} {
+        foreach n [reverse $lst] { 
+            set acc [apply $f $n $acc]
+        }
+        return $acc
     }
-
-    proc reverse {list} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+    proc reverse {lst} {
+        set ret {}
+        for {set i [expr {[llength $lst] - 1}]} {$i >= 0} {incr i -1} {
+            lappend ret [lindex $lst $i]
+        }
+        return $ret
     }
 }
