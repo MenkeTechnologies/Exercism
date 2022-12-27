@@ -1,25 +1,32 @@
 oo::class create BankAccount {
+    variable money
+    variable opened 
     constructor {} {
-        throw {NOT_IMPLEMENTED} "Implement this class."
+        set money 0
+        set opened false
     }
-
     method open {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        if {$opened} {error "account is already open"}
+        set opened true
     }
-
     method close {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        if {!$opened} {error "account is not open"}
+        set money 0
+        set opened false
     }
-
     method balance {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        if {!$opened} {error "account is not open"}
+        return $money
     }
-
     method deposit {amount} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        if {!$opened} {error "account is not open"}
+        if {$amount < 0} {error "invalid amount"}
+        incr money $amount
     }
-
     method withdraw {amount} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        if {!$opened} {error "account is not open"}
+        if {$amount < 0} {error "invalid amount"}
+        if {$amount > $money} {error "insufficient funds"}
+        incr money [expr $amount * -1]
     }
 }
