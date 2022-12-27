@@ -1,26 +1,15 @@
 defmodule Squares do
-  @moduledoc """
-  Calculate sum of squares, square of sum, difference between two sums from 1 to a given end number.
-  """
-
-  @doc """
-  Calculate sum of squares from 1 to a given end number.
-  """
-  @spec sum_of_squares(pos_integer) :: pos_integer
-  def sum_of_squares(number) do
+  def sum_of_squares(n) do
+      1..n
+      |> Enum.map(& Integer.pow(&1, 2))
+      |> Enum.sum()
   end
-
-  @doc """
-  Calculate square of sum from 1 to a given end number.
-  """
-  @spec square_of_sum(pos_integer) :: pos_integer
-  def square_of_sum(number) do
+      
+  def square_of_sum(n) do
+      1..n
+      |> Enum.sum()
+      |> Integer.pow(2)
   end
-
-  @doc """
-  Calculate difference between sum of squares and square of sum from 1 to a given end number.
-  """
-  @spec difference(pos_integer) :: pos_integer
-  def difference(number) do
-  end
+      
+  def difference(number), do: square_of_sum(number) - sum_of_squares(number)
 end
