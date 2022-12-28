@@ -1,39 +1,45 @@
 defmodule RobotSimulator do
-  @type robot() :: any()
-  @type direction() :: :north | :east | :south | :west
-  @type position() :: {integer(), integer()}
-
-  @doc """
-  Create a Robot Simulator given an initial direction and position.
-
-  Valid directions are: `:north`, `:east`, `:south`, `:west`
-  """
-  @spec create(direction, position) :: robot() | {:error, String.t()}
-  def create(direction \\ nil, position \\ nil) do
+  defstruct position: {0, 0}, direction: :north
+  
+  @right_rotation %{:north => :east, :east => :south, :south => :west, :west => :north}
+  @left_rotation %{:north => :west, :west => :south, :south => :east, :east => :north}
+  @advance %{:north => {0, 1}, :east => {1, 0}, :south => {0, -1}, :west => {-1, 0}}
+  
+  def create(direction \\ :north, position \\ {0, 0})
+  def create(direction, {x, y}) do
+    if direction not in [:north, :south, :east, :west] or !is_integer(x) or !is_integer(y) do
+        {:error, "invalid position"}
+    else
+        %RobotSimulator{direction: direction, position: {x, y}}
+    end
   end
-
-  @doc """
-  Simulate the robot's movement given a string of instructions.
-
-  Valid instructions are: "R" (turn right), "L", (turn left), and "A" (advance)
-  """
-  @spec simulate(robot, instructions :: String.t()) :: robot() | {:error, String.t()}
+  
   def simulate(robot, instructions) do
+    instructions
+      |> String.to_charlist
+      |> Enum.reduce_while(robot, fn
+        (?R, robot) ->
+          {:cont,
+            %{robot | direction: Map.fetch!(@right_rotation, robot.direction)}
+          }
+        (?L, robot) ->
+          {:cont,
+            %{robot | direction: Map.fetch!(@left_rotation, robot.direction)}
+          }
+        (?A, robot) ->
+          {sx, sy} = robot.position
+          {cx, cy} = Map.fetch!(@advance, robot.direction)
+          {:cont,
+            %{robot | position: {sx + cx, sy + cy}}
+          }
+        (_invalid, _robot) ->
+          {:halt,
+            {:error, "invalid instruction"}
+          }
+        end)
   end
-
-  @doc """
-  Return the robot's direction.
-
-  Valid directions are: `:north`, `:east`, `:south`, `:west`
-  """
-  @spec direction(robot) :: direction()
-  def direction(robot) do
-  end
-
-  @doc """
-  Return the robot's position.
-  """
-  @spec position(robot) :: position()
-  def position(robot) do
-  end
+  
+  def direction(robot), do: robot.direction
+  
+  def position(robot), do: robot.position
 end

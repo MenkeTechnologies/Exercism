@@ -15,10 +15,12 @@ func Verse(i int) (verse string, err error) {
 	switch {
 	case i == 0, i == 1:
 		verse = verses[i]
-	case i == 2:
-		verse = fmt.Sprintf(verses[2], i, i, i-1, "")
-	case i > 2 && i < 100:
-		verse = fmt.Sprintf(verses[2], i, i, i-1, "s")
+	case i > 1 && i < 100:
+		pl := ""
+		if i > 2 {
+			pl = "s"
+		}
+		verse = fmt.Sprintf(verses[2], i, i, i-1, pl)
 	default:
 		verse, err = "", errors.New("invalid verse")
 	}
