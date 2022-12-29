@@ -2,26 +2,22 @@
 
 public class BankAccount
 {
+    private decimal _balance;
+    private readonly object _balanceLock = new();
+
+    private bool Active { get; set; }
+
     public void Open()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        Active = true;
+        _balance = 0;
     }
 
-    public void Close()
-    {
-        throw new NotImplementedException("You need to implement this function.");
-    }
-
-    public decimal Balance
-    {
-        get
-        {
-            throw new NotImplementedException("You need to implement this property.");
-        }
-    }
+    public void Close() => Active = false;
+    public decimal Balance => !Active ? throw new InvalidOperationException() : _balance;
 
     public void UpdateBalance(decimal change)
     {
-        throw new NotImplementedException("You need to implement this function.");
+        lock (_balanceLock) _balance += change;
     }
 }
