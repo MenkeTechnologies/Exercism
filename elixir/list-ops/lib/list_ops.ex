@@ -1,40 +1,18 @@
 defmodule ListOps do
-  # Please don't use any external modules (especially List or Enum) in your
-  # implementation. The point of this exercise is to create these basic
-  # functions yourself. You may use basic Kernel functions (like `Kernel.+/2`
-  # for adding numbers), but please do not use Kernel functions for Lists like
-  # `++`, `--`, `hd`, `tl`, `in`, and `length`.
+  def count(l), do: l |> fold(0, fn _, acc -> acc + 1 end)
+  def reverse(l), do: l |> fold([], fn n, acc -> [n | acc] end)
+  def map(l, f), do: l |> reverse |> fold([], fn n, acc -> [f.(n) | acc] end)
 
-  @spec count(list) :: non_neg_integer
-  def count(l) do
-  end
+  def filter(l, f),
+    do: l |> reverse |> fold([], fn n, acc -> if f.(n), do: [n | acc], else: acc end)
 
-  @spec reverse(list) :: list
-  def reverse(l) do
-  end
+  def foldl(l, acc, f), do: l |> fold(acc, f)
+  def foldr(l, acc, f), do: l |> reverse |> fold(acc, f)
 
-  @spec map(list, (any -> any)) :: list
-  def map(l, f) do
-  end
+  def append(left, right),
+    do: left |> reverse |> fold(right, fn n, acc -> [n | acc] end)
 
-  @spec filter(list, (any -> as_boolean(term))) :: list
-  def filter(l, f) do
-  end
-
-  @type acc :: any
-  @spec foldl(list, acc, (any, acc -> acc)) :: acc
-  def foldl(l, acc, f) do
-  end
-
-  @spec foldr(list, acc, (any, acc -> acc)) :: acc
-  def foldr(l, acc, f) do
-  end
-
-  @spec append(list, list) :: list
-  def append(a, b) do
-  end
-
-  @spec concat([[any]]) :: [any]
-  def concat(ll) do
-  end
+  def concat(ll), do: ll |> reverse |> fold([], &append/2)
+  defp fold([], acc, _f), do: acc
+  defp fold([h | t], acc, f), do: t |> fold(f.(h, acc), f)
 end
