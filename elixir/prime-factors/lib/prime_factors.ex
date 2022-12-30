@@ -1,13 +1,21 @@
 defmodule PrimeFactors do
-  @doc """
-  Compute the prime factors for 'number'.
+  def factors_for(number) when number < 2, do: []
 
-  The prime factors are prime numbers that when multiplied give the desired
-  number.
-
-  The prime factors of 'number' will be ordered lowest to highest.
-  """
-  @spec factors_for(pos_integer) :: [pos_integer]
   def factors_for(number) do
+    Stream.unfold(
+      {number, 2},
+      fn
+        {1, _} ->
+          nil
+        {n, d} ->
+          d = next_divisor(n, d)
+          {d, {div(n, d), d}}
+      end
+    )
+    |> Enum.to_list()
   end
+
+  defp next_divisor(n, d) when rem(n, d) == 0, do: d
+  defp next_divisor(n, d) when d * d > n, do: n
+  defp next_divisor(n, d), do: next_divisor(n, d + 1)
 end
