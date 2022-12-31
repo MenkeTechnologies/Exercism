@@ -1,12 +1,34 @@
 using System;
+using System.Globalization;
 
 class WeighingMachine
 {
-    // TODO: define the 'Precision' property
+    public int Precision { get; }
 
-    // TODO: define the 'Weight' property
+    public double TareAdjustment { get; set; } = 5;
+    private double _weight;
 
-    // TODO: define the 'DisplayWeight' property
+    public double Weight
+    {
+        get => _weight;
+        set
+        {
+            if (value >= 0)
+                _weight = value;
+            else
+                throw new ArgumentOutOfRangeException("Weight cannot be negative.");
+        }
+    }
 
-    // TODO: define the 'TareAdjustment' property
+    public string DisplayWeight
+    {
+        get
+        {
+            var format = new NumberFormatInfo { NumberDecimalDigits = Precision };
+            var weightString = (Weight - TareAdjustment).ToString("f", format);
+            return $"{weightString} kg";
+        }
+    }
+
+    public WeighingMachine(int precision) => Precision = precision;
 }
