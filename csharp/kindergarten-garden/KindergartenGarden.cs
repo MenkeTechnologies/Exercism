@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 
 public enum Plant
@@ -12,25 +11,21 @@ public enum Plant
 
 public class KindergartenGarden
 {
-    private readonly string diagram;
+    private readonly string _diagram;
 
-    private readonly List<string> studentsName = new List<string>()
+    private readonly List<string> _studentsName = new()
     {
         "Alice", "Bob", "Charlie", "David",
         "Eve", "Fred", "Ginny", "Harriet",
         "Ileana", "Joseph", "Kincaid", "Larry"
     };
 
-    public KindergartenGarden(string diagram)
-    {
-        this.diagram = diagram;
-    }
+    public KindergartenGarden(string diagram) => _diagram = diagram;
 
     public IEnumerable<Plant> Plants(string student)
     {
-        int index = studentsName.IndexOf(student) * 2;
-        return from line in diagram.Split('\n')
-            from idx in Enumerable.Range(index, 2)
-            select (Plant)line[idx];
+        var index = _studentsName.IndexOf(student) * 2;
+        var range = Enumerable.Range(index, 2);
+        return _diagram.Split('\n').SelectMany(s => range.Select(i => s[i]).Select(c => (Plant)c));
     }
 }
