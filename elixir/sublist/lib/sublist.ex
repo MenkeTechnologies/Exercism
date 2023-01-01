@@ -1,8 +1,17 @@
 defmodule Sublist do
-  @doc """
-  Returns whether the first list is a sublist or a superlist of the second list
-  and if not whether it is equal or unequal to the second list.
-  """
   def compare(a, b) do
+    cond do
+      a == b -> :equal
+      is_subset_of?(a, b) -> :sublist
+      is_subset_of?(b, a) -> :superlist
+      true -> :unequal
+    end
+  end
+  defp is_subset_of?(a, b) do
+    case a do
+      [] -> true 
+      _ -> Stream.chunk_every(b, length(a), 1, :discard)
+        |> Enum.any?(&(&1 === a))
+    end
   end
 end

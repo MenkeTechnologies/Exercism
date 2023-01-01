@@ -4,14 +4,14 @@ defmodule Garden do
   
   @all_plants %{"C" => :clover, "G" => :grass, "R" => :radishes, "V" => :violets}
   
-  def info(info_string, student_names \\ @default_names) do
-    plants = info_string
+  def info(s, student_names \\ @default_names) do
+    plants = s
       |> String.split("\n")
       |> Enum.map(&String.graphemes/1)
       |> Enum.map(& &1 |> Enum.map(fn c -> @all_plants |> Map.get(c) end))
       |> Enum.map(&Enum.chunk_every(&1, 2))
       |> Enum.zip()
-      |> Enum.map(fn {p1, p2} -> (p1 ++ p2) |> List.to_tuple() end)
+      |> Enum.map(fn {row1, row2} -> (row1 ++ row2) |> List.to_tuple() end)
     student_names
     |> Enum.sort()
     |> Enum.with_index()
