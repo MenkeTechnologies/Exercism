@@ -6,16 +6,16 @@ our @EXPORT_OK = qw<binary_search>;
 
 sub binary_search {
     my ($input) = @_;
-    my @array   = $input->{array}->@*;
-    my $value   = $input->{value};
-    my ( $l, $r ) = ( 0, $#array );
-    while ( $l <= $r ) {
-        my $mid = int( ( $l + $r ) / 2 );
-        if ( $value < $array[$mid] ) {
-            $r = $mid - 1;
+    my @lst = $input->{array}->@*;
+    my $search = $input->{value};
+    my ($lo, $hi) = (0, $#lst);
+    while ($lo <= $hi) {
+        my $mid = int(($lo + $hi) / 2);
+        if ($search < $lst[$mid]) {
+            $hi = $mid - 1;
         }
-        elsif ( $value > $array[$mid] ) {
-            $l = $mid + 1;
+        elsif ($search > $lst[$mid]) {
+            $lo = $mid + 1;
         }
         else {
             return $mid;
