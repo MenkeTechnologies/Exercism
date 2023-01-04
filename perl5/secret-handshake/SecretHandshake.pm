@@ -12,7 +12,7 @@ sub handshake {
     my $c = shift;
     return [] if $c =~ /\D/;
 
-    my $aref = [ map {dict->{$_}} grep {$_ & $c} sort keys %{(dict)} ];
+    my $aref = [ map {dict->{$_}} grep {$_ & $c} sort keys dict->%* ];
     RVS & $c ? [ reverse @$aref ] : $aref
 
 }

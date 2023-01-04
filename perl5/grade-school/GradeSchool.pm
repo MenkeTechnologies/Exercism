@@ -16,11 +16,11 @@ sub add {
 
 sub roster {
     my ($self, $grade) = @_;
-    my @grades = uniq($grade ? $grade : sort values %{$self->{roster}});
+    my @grades = uniq($grade ? $grade : sort values $self->{roster}->%*);
     [ map { my $gr = $_;
         sort
         grep {$self->{roster}->{$_} == $gr}
-        keys %{$self->{roster}};
+        keys $self->{roster}->%*;
     } @grades ]
 }
 

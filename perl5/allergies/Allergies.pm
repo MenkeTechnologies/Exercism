@@ -16,7 +16,7 @@ sub allergic_to {
 
 sub list_allergies {
     my $score = shift;
-    [ grep {allergic_to $_, $score} keys %{(dict)} ];
+    [ grep {allergic_to $_, $score} keys dict->%* ];
 }
 
 1

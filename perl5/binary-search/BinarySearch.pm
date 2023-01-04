@@ -5,9 +5,8 @@ use Exporter qw<import>;
 our @EXPORT_OK = qw<binary_search>;
 
 sub binary_search {
-    my ($input) = @_;
-    my @lst = $input->{array}->@*;
-    my $search = $input->{value};
+    my ($array, $search) = @_;
+    my @lst = $array->@*;
     my ($lo, $hi) = (0, $#lst);
     while ($lo <= $hi) {
         my $mid = int(($lo + $hi) / 2);
