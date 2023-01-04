@@ -1,4 +1,3 @@
-# Declare package 'Bob'
 package Bob;
 use strict;
 use warnings;
@@ -11,17 +10,11 @@ sub hey {
 
     return "Fine. Be that way!" if !length;
 
-    if ( /[A-Z]/ && !/[a-z]/ ) {
-
-        return "Calm down, I know what I'm doing!" if /\?$/;
-
-        return "Whoa, chill out!";
-
+    if (/[A-Z]/ && !/[a-z]/) {
+        return /\?$/ ? "Calm down, I know what I'm doing!" : "Whoa, chill out!";
     }
 
-    return "Sure." if /\?$/;
-
-    'Whatever.';
+    /\?$/ ? "Sure." : 'Whatever.';
 }
 
 1;
