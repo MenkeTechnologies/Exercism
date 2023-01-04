@@ -13,14 +13,28 @@ my @test_cases = do { local $/; @{ JSON->decode(<DATA>) }; };
 imported_ok qw<count_words> or bail_out;
 
 for my $case (@test_cases) {
-    is( count_words( $case->{input}{sentence} ),
-        $case->{expected}, $case->{description}, );
+    is(
+        count_words( $case->{input}{sentence} ),
+        $case->{expected},
+        $case->{description},
+    );
 }
 
 done_testing;
 
 __DATA__
 [
+  {
+    "description": "multiple spaces not detected as a word",
+    "expected": {
+      "multiple": 1,
+      "whitespaces": 1
+    },
+    "input": {
+      "sentence": " multiple   whitespaces"
+    },
+    "property": "countWords"
+  },
   {
     "description": "count one word",
     "expected": {
@@ -124,11 +138,14 @@ __DATA__
       "cry": 1,
       "don't": 2,
       "first": 1,
+      "getting": 1,
+      "it": 1,
       "laugh": 1,
-      "then": 1
+      "then": 1,
+      "you're": 1
     },
     "input": {
-      "sentence": "First: don't laugh. Then: don't cry."
+      "sentence": "'First: don't laugh. Then: don't cry. You're getting it.'"
     },
     "property": "countWords"
   },

@@ -1,12 +1,16 @@
 package WordCount;
+
 use strict;
 use warnings;
-use Exporter qw<import>;
-our @EXPORT_OK = qw<count_words>;
+use Exporter 'import';
+our @EXPORT_OK = qw(count_words);
 
 sub count_words {
-    my ($sentence) = @_;
-    return undef;
+    my $s = shift;
+    my @words = $s =~ m/\w+(?:'\w+)?/g;
+    my $dict;
+    map {++$dict->{$_}} map {lc} @words;
+    $dict
 }
 
 1;
