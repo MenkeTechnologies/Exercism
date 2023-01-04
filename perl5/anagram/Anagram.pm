@@ -1,22 +1,14 @@
 package Anagram;
 use strict;
-use warnings FATAL => 'all';
-our @EXPORT_OK = qw<match>;
+use warnings;
+use Exporter 'import';
+our @EXPORT_OK = qw<match_anagrams>;
 
-sub match {
-    my ( $phrase, @words ) = @_;
-    my $sortedPhrase = join "", sort split //, lc $phrase;
-    my @ana;
-
-    for (@words) {
-        my $sortedCand = join "", sort split //, lc;
-
-        if ( $_ ne $phrase && $sortedCand eq $sortedPhrase ) {
-            push @ana, $_;
-        }
-
-    }
-    return \@ana;
+sub match_anagrams {
+    my $lcTarget = lc shift;
+    my $cands = shift;
+    my $sortedTarget = join "", sort split //, $lcTarget;
+    [ grep {lc ne $lcTarget && (join "", sort split //, lc) eq $sortedTarget} @$cands ];
 }
 
 1;
