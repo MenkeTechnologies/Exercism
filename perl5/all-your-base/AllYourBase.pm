@@ -1,43 +1,32 @@
 package AllYourBase;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
 use integer;
 
-sub convert_base {
-    my ( $dig, $baseIn, $baseOut ) = @_;
+use Exporter qw<import>;
+our @EXPORT_OK = qw<rebase>;
+use List::Util 'reduce';
 
-    if ( $baseIn <= 1 || $baseOut <= 1 ) {
-        die 'base must be greater than 1';
-    }
+sub rebase {
+    my ($dig, $baseIn, $baseOut) = @_;
 
-    my $sum = 0;
-    my @out = ();
+    die "input base must be >= 2" if $baseIn < 2;
+    die "output base must be >= 2" if $baseOut < 2;
 
-    for ( @{$dig} ) {
+    do {die "all digits must satisfy 0 <= d < input base" if $_ < 0 || $_ >= $baseIn} for $dig->@*;
 
-        if ( $_ >= $baseIn ) {
-            die 'digit equal of greater than the base';
-        }
-        if ( $_ < 0 ) {
-            die 'negative digit not allowed';
-        }
+    my $sum = reduce {$a * $baseIn + $b} 0, $dig->@*;
 
-        $sum *= $baseIn;
-        $sum += $_;
-    }
+    return [ 0 ] if !$sum;
 
-    if ( $sum == 0 ) {
-        return [0];
-    }
+    my $ret = [];
 
-    while ( $sum > 0 ) {
-
-        unshift @out, $sum % $baseOut;
-
+    do {
+        unshift $ret->@*, $sum % $baseOut;
         $sum /= $baseOut;
-    }
+    } while $sum;
 
-    \@out;
+    $ret
 
 }
 
