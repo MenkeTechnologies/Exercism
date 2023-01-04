@@ -6,10 +6,7 @@ our @EXPORT_OK = qw<keep discard>;
 
 sub keep {
     my ( $lst, $f ) = @_;
-    my @keep;
-    do { push @keep => $_ if &$f($_) }
-      for @$lst;
-    \@keep;
+    [ grep { $_ if &$f($_) } @$lst ];
 }
 
 sub discard {
