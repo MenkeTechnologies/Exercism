@@ -17,7 +17,7 @@ sub to_roman {
         my $r = $sym x int($num / $val);
         $num %= $val;
         $r
-    } @{(dict)};
+    } dict->@*;
 }
 1;
 

@@ -8,11 +8,11 @@ sub map {
 }
 
 sub length {
-    scalar @{$_[0]};
+    scalar $_[0]->@*;
 }
 
 sub reduce {
-    my $acc = shift @{$_[1]};
+    my $acc = shift $_[1]->@*;
     $acc = $_[0]->($acc, $_) for $_[1]->@*;
     $acc;
 }

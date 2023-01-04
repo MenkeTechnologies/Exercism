@@ -3,19 +3,15 @@ use strict;
 use warnings FATAL => 'all';
 
 sub proverb {
-    my ( $ref, $qualifier ) = @_;
+    my ($ref, $qualifier) = @_;
 
-    my @phr = @{$ref};
-
-    local $_ = '';
+    my @phr = $ref->@*;
 
     $qualifier .= " " if length $qualifier;
 
-    for ( my $i = 0 ; $i < scalar(@phr) - 1 ; $i++ ) {
-        $_ .= "For want of a $phr[$i] the $phr[$i + 1] was lost.\n";
-    }
+    my $s =  join "", map {"For want of a $phr[$_] the $phr[$_ + 1] was lost.\n"} 0 .. $#phr -1;
 
-    $_ .= "And all for the want of a $qualifier$phr[0].";
+    $s .= "And all for the want of a $qualifier$phr[0].";
 
 }
 

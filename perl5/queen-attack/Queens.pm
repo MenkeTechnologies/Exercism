@@ -29,13 +29,13 @@ sub black {
 }
 
 sub to_string {
-    my ($self) = @_;
+    my $self = shift;
 
     my @board = map { [ ("O") x 8 ] } 0 .. 7;
     $board[ $self->{white}->[0] ][ $self->{white}->[1] ] = 'W';
     $board[ $self->{black}->[0] ][ $self->{black}->[1] ] = 'B';
 
-    ( join "\n", map { join ' ', @$_ } @board ) . "\n";
+    ( join "\n", map { join ' ', $_->@* } @board ) . "\n";
 }
 
 sub can_attack {
