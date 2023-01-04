@@ -1,15 +1,12 @@
 package Accumulate;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
+use Exporter 'import';
+our @EXPORT_OK = qw<accumulate>;
 
 sub accumulate {
-    my ( $lst, $fn ) = @_;
-    my @res = ();
-
-    push @res, &{$fn}($_) for @{$lst};
-
-    \@res;
-
+    my ($lst, $fn) = @_;
+    [ map {&$fn($_)} @$lst ]
 }
 
 1;
