@@ -5,8 +5,6 @@ use warnings;
 use Exporter qw<import>;
 our @EXPORT_OK = qw<hello>;
 
-sub hello {
-    return 'Goodbye, Mars!';
-}
+sub hello { 'Hello, World!' }
 
-1;
+1
