@@ -6,10 +6,10 @@ use constant JSON => JSON::PP->new;
 use FindBin qw<$Bin>;
 use lib $Bin, "$Bin/local/lib/perl5";
 
-use Clock      ();
+use Clock;
 use List::Util qw(any);
 
-my @test_cases = do { local $/; @{ JSON->decode(<DATA>) }; };
+my @test_cases = do { local $/; JSON->decode(<DATA>)->@* };
 plan 4;
 
 can_ok 'Clock', qw<new time add_minutes subtract_minutes> or bail_out;
@@ -30,40 +30,34 @@ subtest create => sub {
 
 subtest 'add/subtract' => sub {
     plan 16;
-    for my $case (
-        grep {
-            my $prop = $_->{property};
-            any { $prop eq $_ } qw< add subtract >;
-        } @test_cases
-      )
+   
+    do
     {
         is(
             Clock->new(
                 {
-                    hour   => $case->{input}{hour},
-                    minute => $case->{input}{minute},
+                    hour   => $_->{input}{hour},
+                    minute => $_->{input}{minute},
                 }
             ),
-
-            # Check that the add/subtract_minutes methods
-            # return a Clock object with the correct time
             object {
-                call [ $case->{property} . '_minutes',
-                    $case->{input}{value} ] => object {
+                call [ $_->{property} . '_minutes',
+                    $_->{input}{value} ] => object {
                     prop blessed => 'Clock';
-                    call time => $case->{expected};
+                    call time => $_->{expected};
                     };
             },
-            $case->{description}
+            $_->{description}
         );
-    }
+    }  for grep { my $prop = $_->{property}; any { $prop eq $_ } qw< add subtract >; } @test_cases
+    
 };
 
 subtest equal => sub {
     plan 16;
     for my $case ( grep { $_->{property} eq 'equal' } @test_cases ) {
         my ( $clock1, $clock2 ) =
-          ( map { Clock->new($_) } @{ $case->{input} }{qw<clock1 clock2>} );
+          ( map { Clock->new($_) } @{ $case->{input}} {qw<clock1 clock2>} );
         if ( $case->{expected} ) {
             is $clock1, $clock2, $case->{description};
         }
