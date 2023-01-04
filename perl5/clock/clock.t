@@ -30,9 +30,8 @@ subtest create => sub {
 
 subtest 'add/subtract' => sub {
     plan 16;
-   
-    do
-    {
+
+    do {
         is(
             Clock->new(
                 {
@@ -41,23 +40,27 @@ subtest 'add/subtract' => sub {
                 }
             ),
             object {
-                call [ $_->{property} . '_minutes',
-                    $_->{input}{value} ] => object {
+                call [ $_->{property} . '_minutes', $_->{input}{value} ] =>
+                  object {
                     prop blessed => 'Clock';
                     call time => $_->{expected};
-                    };
+                  };
             },
             $_->{description}
         );
-    }  for grep { my $prop = $_->{property}; any { $prop eq $_ } qw< add subtract >; } @test_cases
-    
+      }
+      for grep {
+        my $prop = $_->{property};
+        any { $prop eq $_ } qw< add subtract >;
+      } @test_cases;
+
 };
 
 subtest equal => sub {
     plan 16;
     for my $case ( grep { $_->{property} eq 'equal' } @test_cases ) {
         my ( $clock1, $clock2 ) =
-          ( map { Clock->new($_) } @{ $case->{input}} {qw<clock1 clock2>} );
+          ( map { Clock->new($_) } @{ $case->{input} }{qw<clock1 clock2>} );
         if ( $case->{expected} ) {
             is $clock1, $clock2, $case->{description};
         }
