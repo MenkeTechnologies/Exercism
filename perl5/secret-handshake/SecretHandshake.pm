@@ -1,33 +1,19 @@
 package SecretHandshake;
 use strict;
-use warnings FATAL => 'all';
+use warnings;
+use Exporter qw<import>;
+our @EXPORT_OK = qw<handshake>;
 
-sub new {
-    my ( $class, $cnt ) = @_;
-
-    bless { cnt => $cnt }, $class;
-}
-
-my %map = ( 1, "wink", 2, "double blink", 4, "close your eyes", 8, "jump" );
-
+use constant dict => { 1 => "wink", 2 => "double blink", 4 => "close your eyes", 8 => "jump" };
 use constant RVS => 16;
 
-sub commands {
-    my ($self) = @_;
+sub handshake {
 
-    my $c = $self->{cnt};
+    my $c = shift;
+    return [] if $c =~ /\D/;
 
-    return [] if $c !~ /^\d+$/;
-
-    my @l = ();
-
-    for ( sort keys %map ) {
-        push @l, $map{$_} if $_ & $c;
-    }
-
-    @l = reverse @l if RVS & $c;
-
-    \@l;
+    my $aref = [ map {dict->{$_}} grep {$_ & $c} sort keys %{(dict)} ];
+    RVS & $c ? [ reverse @$aref ] : $aref
 
 }
 1

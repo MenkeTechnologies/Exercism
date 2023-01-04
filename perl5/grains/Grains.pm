@@ -3,18 +3,17 @@ use strict;
 use warnings;
 use bignum;
 use Exporter 'import';
+use List::Util 'sum';
 our @EXPORT_OK = qw(grains_on_square total_grains);
 
 sub grains_on_square {
-    my ($square) = @_;
-    if ( $square < 1 or $square > 64 ) {
-        die "square must be between 1 and 64";
-    }
-    return 2**( $square - 1 );
+    my $n = shift;
+    die "square must be between 1 and 64" if $n < 1 or $n > 64;
+    2 ** ($n - 1);
 }
 
 sub total_grains {
-    return 1 * ( 1 - 2**64 ) / ( 1 - 2 );
+    sum map {grains_on_square $_} 1 .. 64
 }
 
 1;
