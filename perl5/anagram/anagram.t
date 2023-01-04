@@ -54,25 +54,19 @@ is(
 );
 
 is(
-    match_anagrams(
-        "Orchestra", [ "cashregister", "Carthorse", "radishes" ]
-    ),
+    match_anagrams( "Orchestra", [ "cashregister", "Carthorse", "radishes" ] ),
     bag { item "Carthorse"; end; },
     "detects anagrams case-insensitively",
 );
 
 is(
-    match_anagrams(
-        "Orchestra", [ "cashregister", "carthorse", "radishes" ]
-    ),
+    match_anagrams( "Orchestra", [ "cashregister", "carthorse", "radishes" ] ),
     bag { item "carthorse"; end; },
     "detects anagrams using case-insensitive subject",
 );
 
 is(
-    match_anagrams(
-        "orchestra", [ "cashregister", "Carthorse", "radishes" ]
-    ),
+    match_anagrams( "orchestra", [ "cashregister", "Carthorse", "radishes" ] ),
     bag { item "Carthorse"; end; },
     "detects anagrams using case-insensitive possible matches",
 );
@@ -98,13 +92,13 @@ is(
 is(
     match_anagrams( "BANANA", ["Banana"] ),
     bag { end; },
-    "words are not anagrams of themselves even if letter case is partially different",
+"words are not anagrams of themselves even if letter case is partially different",
 );
 
 is(
     match_anagrams( "BANANA", ["banana"] ),
     bag { end; },
-    "words are not anagrams of themselves even if letter case is completely different",
+"words are not anagrams of themselves even if letter case is completely different",
 );
 
 is(

@@ -13,7 +13,7 @@ sub length {
 
 sub reduce {
     my $acc = shift $_[1]->@*;
-    $acc = $_[0]->($acc, $_) for $_[1]->@*;
+    $acc = $_[0]->( $acc, $_ ) for $_[1]->@*;
     $acc;
 }
 

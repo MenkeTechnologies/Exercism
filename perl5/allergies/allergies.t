@@ -113,13 +113,13 @@ is(
 is(
     allergic_to( "strawberries", 28 ),
     T,     # True
-    "testing for strawberries allergy: allergic to strawberries and something else",
+"testing for strawberries allergy: allergic to strawberries and something else",
 );
 
 is(
     allergic_to( "strawberries", 20 ),
     DF,    # Defined but False
-    "testing for strawberries allergy: allergic to something, but not strawberries",
+"testing for strawberries allergy: allergic to something, but not strawberries",
 );
 
 is(
@@ -248,17 +248,9 @@ is(
     "testing for cats allergy: allergic to everything",
 );
 
-is(
-    list_allergies(0),
-    bag { end; },
-    "list when: no allergies",
-);
+is( list_allergies(0), bag { end; }, "list when: no allergies", );
 
-is(
-    list_allergies(1),
-    bag { item "eggs"; end; },
-    "list when: just eggs",
-);
+is( list_allergies(1), bag { item "eggs"; end; }, "list when: just eggs", );
 
 is(
     list_allergies(2),

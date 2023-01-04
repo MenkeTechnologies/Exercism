@@ -10,7 +10,7 @@ sub hey {
 
     return "Fine. Be that way!" if !length;
 
-    if (/[A-Z]/ && !/[a-z]/) {
+    if ( /[A-Z]/ && !/[a-z]/ ) {
         return /\?$/ ? "Calm down, I know what I'm doing!" : "Whoa, chill out!";
     }
 

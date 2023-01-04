@@ -9,11 +9,7 @@ use experimental qw<signatures>;
 
 imported_ok qw<accumulate> or bail_out;
 
-is(
-    accumulate( [], sub ($x) { $x * $x } ),
-    [],
-    "accumulate empty",
-);
+is( accumulate( [], sub ($x) { $x * $x } ), [], "accumulate empty", );
 
 is(
     accumulate( [ 1, 2, 3 ], sub ($x) { $x * $x } ),

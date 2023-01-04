@@ -6,27 +6,33 @@ sub new {
     my $self = bless {} => shift;
     $self->{tail} = undef;
     $self->{head} = undef;
+
     # cause need to check if empty
     $self->{total} = 0;
     return $self;
 }
-sub push :method {
-    my ($self, $value) = @_;
+
+sub push : method {
+    my ( $self, $value ) = @_;
     my $node = {
         value => $value,
         next  => $self->{head},
         prev  => $self->{tail}
     };
+
     # prev tail->next set to new node
     $self->{tail}->{next} = $node;
+
     # set tail to new node
     $self->{tail} = $node if $self->{tail};
+
     # if empty
     $self->{tail} = $node unless $self->{total};
     $self->{head} = $node unless $self->{total};
     $self->{total}++;
 }
-sub pop :method {
+
+sub pop : method {
     my $self = shift;
 
     my $node = $self->{tail};
@@ -34,8 +40,9 @@ sub pop :method {
     $self->{total}--;
     return $node->{value};
 }
-sub unshift :method {
-    my ($self, $value) = @_;
+
+sub unshift : method {
+    my ( $self, $value ) = @_;
     my $node = {
         value => $value,
         next  => $self->{head},
@@ -48,6 +55,7 @@ sub unshift :method {
     $self->{head} = $node unless $self->{total};
     $self->{total}++;
 }
+
 sub shift {
     my $self = shift;
 

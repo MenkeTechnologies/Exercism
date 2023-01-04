@@ -2,7 +2,7 @@ package RobotName;
 use strict;
 use warnings;
 
-our @letters =  'A' .. 'Z';
+our @letters = 'A' .. 'Z';
 
 sub irand {
     int rand(10);
@@ -18,7 +18,7 @@ sub new {
 
 sub name {
     my $self = shift;
-    if (!$self->{name} ) {
+    if ( !$self->{name} ) {
         $self->reset_name;
     }
     $self->{name};

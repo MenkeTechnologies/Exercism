@@ -17,8 +17,7 @@ use constant RELATIVE_YEARS => {
 };
 
 sub age_on_planet {
-    my ($planet, $seconds) = shift->@{'planet', 'seconds'};
-    sprintf "%.2f", $seconds / SPY
-        / RELATIVE_YEARS->{lc $planet};
+    my ( $planet, $seconds ) = shift->@{ 'planet', 'seconds' };
+    sprintf "%.2f", $seconds / SPY / RELATIVE_YEARS->{ lc $planet };
 }
 1;

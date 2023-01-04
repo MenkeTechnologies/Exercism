@@ -3,7 +3,7 @@ use strict;
 use warnings;
 
 sub new {
-    my ($class, $data, $next) = @_;
+    my ( $class, $data, $next ) = @_;
     bless {
         data => $data,
         next => $next,
@@ -11,9 +11,9 @@ sub new {
 }
 
 sub from_array {
-    my ($self, $values) = @_;
+    my ( $self, $values ) = @_;
     my $prev;
-    $prev = $self->new($_, $prev) for reverse $values->@*;
+    $prev = $self->new( $_, $prev ) for reverse $values->@*;
     $prev;
 }
 
@@ -22,16 +22,16 @@ sub to_array {
     my $ref;
     do {
         push $ref->@*, $self->data();
-    } while ($self = $self->next());
-    $ref
+    } while ( $self = $self->next() );
+    $ref;
 }
 
 sub reverse {
     my $self = shift;
     my $head;
     do {
-        $head = (ref $self)->new($self->data(), $head);
-    } while ($self = $self->next());
+        $head = ( ref $self )->new( $self->data(), $head );
+    } while ( $self = $self->next() );
     $head;
 }
 
