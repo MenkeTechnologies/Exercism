@@ -6,25 +6,22 @@ use constant JSON => JSON::PP->new;
 use FindBin qw<$Bin>;
 use lib $Bin, "$Bin/local/lib/perl5";
 
-use Series qw<slices>;
+use Series qw/slices/;
 
-my @test_cases = do { local $/; @{ JSON->decode(<DATA>) }; };
+my @test_cases = do { local $/; JSON->decode(<DATA>)->@*; };
 
-imported_ok qw<slices> or bail_out;
+imported_ok qw/slices/ or bail_out;
 
-for my $case (@test_cases) {
-    if ( ref $case->{expected} ne 'HASH' ) {
-        is(
-            slices( $case->{input} ),
-            $case->{expected},
-            $case->{description},
-        );
+do {
+    if ( ref $_->{expected} ne 'HASH' ) {
+        is( slices( $_->{input} ), $_->{expected},
+            $_->{description}, );
     }
     else {
-        like dies( sub { slices( $case->{input} ) } ),
-            qr/$case->{expected}{error}/, $case->{description};
+        like dies( sub { slices( $_->{input} ) } ),
+          qr/$_->{expected}{error}/, $_->{description};
     }
-}
+} for @test_cases;
 
 done_testing;
 
