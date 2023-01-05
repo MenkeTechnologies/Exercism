@@ -14,12 +14,15 @@ imported_ok qw<slices> or bail_out;
 
 for my $case (@test_cases) {
     if ( ref $case->{expected} ne 'HASH' ) {
-        is( slices( $case->{input} ),
-            $case->{expected}, $case->{description}, );
+        is(
+            slices( $case->{input} ),
+            $case->{expected},
+            $case->{description},
+        );
     }
     else {
         like dies( sub { slices( $case->{input} ) } ),
-          qr/$case->{expected}{error}/, $case->{description};
+            qr/$case->{expected}{error}/, $case->{description};
     }
 }
 
