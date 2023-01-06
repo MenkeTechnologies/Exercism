@@ -2,7 +2,7 @@ package Cipher;
 use strict;
 use warnings;
 
-use constant {LC_A  => 97, ALPHA => 26};
+use constant { LC_A => 97, ALPHA => 26 };
 
 sub new {
     my ( $class, $key ) = @_;

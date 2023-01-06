@@ -1,8 +1,8 @@
 package Bob;
 use strict;
 use warnings;
-use Exporter 'import';
-our @EXPORT_OK = qw(hey);
+use Exporter qw/import/;
+our @EXPORT_OK = qw/hey/;
 
 sub hey {
     local $_ = shift;
@@ -10,9 +10,9 @@ sub hey {
 
     return "Fine. Be that way!" if !length;
 
-    if ( /[A-Z]/ && !/[a-z]/ ) {
+    do {
         return /\?$/ ? "Calm down, I know what I'm doing!" : "Whoa, chill out!";
-    }
+    } if /[A-Z]/ && !/[a-z]/;
 
     /\?$/ ? "Sure." : 'Whatever.';
 }

@@ -1,9 +1,9 @@
 package ScrabbleScore;
 use strict;
 use warnings;
-use Exporter 'import';
-our @EXPORT_OK = qw(scrabble_score);
-use List::Util 'sum';
+use Exporter qw/import/;
+our @EXPORT_OK = qw/scrabble_score/;
+use List::Util qw/sum/;
 
 use constant points => {
     ( map { $_ => 1 }  qw(A E I O U L N R S T) ),

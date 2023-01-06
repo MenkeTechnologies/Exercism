@@ -2,9 +2,9 @@ package Grains;
 use strict;
 use warnings;
 use bignum;
-use Exporter 'import';
-use List::Util 'sum';
-our @EXPORT_OK = qw(grains_on_square total_grains);
+use Exporter   qw/import/;
+use List::Util qw/sum/;
+our @EXPORT_OK = qw/grains_on_square total_grains/;
 
 sub grains_on_square {
     my $n = shift;

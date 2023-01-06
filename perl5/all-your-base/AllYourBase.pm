@@ -3,9 +3,9 @@ use strict;
 use warnings;
 use integer;
 
-use Exporter qw<import>;
-our @EXPORT_OK = qw<rebase>;
-use List::Util 'reduce';
+use Exporter qw/import/;
+our @EXPORT_OK = qw/rebase/;
+use List::Util qw/reduce/;
 
 sub rebase {
     my ( $dig, $baseIn, $baseOut ) = @_;
