@@ -1,6 +1,6 @@
 # Pythagorean Triplet
 
-Welcome to Pythagorean Triplet on Exercism's Perl 5 Track.
+Welcome to Pythagorean Triplet on Exercism's Perl Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
@@ -9,7 +9,7 @@ A Pythagorean triplet is a set of three natural numbers, {a, b, c}, for
 which,
 
 ```text
-a**2 + b**2 = c**2
+a² + b² = c²
 ```
 
 and such that,
@@ -21,7 +21,7 @@ a < b < c
 For example,
 
 ```text
-3**2 + 4**2 = 9 + 16 = 25 = 5**2.
+3² + 4² = 9 + 16 = 25 = 5².
 ```
 
 Given an input integer N, find all Pythagorean triplets for which `a + b + c = N`.
