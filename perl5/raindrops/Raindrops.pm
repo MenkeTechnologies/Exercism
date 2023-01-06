@@ -1,8 +1,8 @@
 package Raindrops;
 use strict;
 use warnings;
-use Exporter 'import';
-our @EXPORT_OK = qw(raindrop);
+use Exporter qw/import/;
+our @EXPORT_OK = qw/raindrop/;
 
 use constant dict => { 3 => "Pling", 5 => "Plang", 7 => "Plong" };
 

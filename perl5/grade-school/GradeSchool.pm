@@ -1,9 +1,9 @@
 package GradeSchool;
 use strict;
 use warnings;
-use Exporter 'import';
-our @EXPORT_OK = qw(roster);
-use List::Util 'uniq';
+use Exporter qw/import/;
+our @EXPORT_OK = qw/roster/;
+use List::Util qw/uniq/;
 
 sub new {
     my ($class) = @_;
@@ -12,7 +12,7 @@ sub new {
 
 sub add {
     my ( $self, $student, $grade ) = @_;
-    $self->{roster}->{$student} = $grade if !$self->{roster}->{$student};
+    $self->{roster}{$student} = $grade if !$self->{roster}{$student};
 }
 
 sub roster {
@@ -22,7 +22,7 @@ sub roster {
         map {
             my $gr = $_;
             sort
-              grep { $self->{roster}->{$_} == $gr }
+              grep { $self->{roster}{$_} == $gr }
               keys $self->{roster}->%*;
         } @grades
     ];
