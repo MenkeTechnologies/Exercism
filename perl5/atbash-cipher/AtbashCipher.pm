@@ -12,7 +12,7 @@ my %lookup;
 sub encode_atbash { decode_atbash(shift) =~ s@(.{5})(?=.)@$1 @gr; }
 
 sub decode_atbash {
-    join '', map { $lookup{ lc $_ } // ( /\d/ ? $_ : '' ) } split //, shift;
+    join '', map { /\d/ ? $_ : $lookup{ (lc) } // '' } split //, shift;
 }
 
 1

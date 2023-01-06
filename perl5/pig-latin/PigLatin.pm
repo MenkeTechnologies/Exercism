@@ -5,6 +5,7 @@ use Exporter qw/import/;
 our @EXPORT_OK = qw/translate/;
 
 sub trans {
+
     do {
         /^([aeiou] | xr | yt)/x && return "${_}ay";
         /^([^aeiouy]+)  (y.+)/x && return "$2$1ay";
@@ -13,11 +14,11 @@ sub trans {
 
         die "Not translated: $_";
       }
-      for lc shift;
+      for lc @_ ? shift : $_;
 }
 
 sub translate {
-    join ' ', map { trans $_} split ' ', shift;
+    join ' ', map { trans } split ' ', shift;
 }
 
 1

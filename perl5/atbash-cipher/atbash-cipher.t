@@ -3,24 +3,19 @@ use Test2::V0;
 use JSON::PP;
 use constant JSON => JSON::PP->new;
 
-use FindBin qw<$Bin>;
-use lib $Bin, "$Bin/local/lib/perl5";
+use File::Basename;
+use lib dirname __FILE__;
+use AtbashCipher qw/encode_atbash decode_atbash/;
 
-use AtbashCipher qw<encode_atbash decode_atbash>;
-
-my @test_cases = do { local $/; @{ JSON->decode(<DATA>) }; };
-plan 15;
+my @test_cases = do { local $/; JSON->decode(<DATA>)->@* };
+plan scalar @test_cases + 1;
 
 imported_ok qw<encode_atbash decode_atbash> or bail_out;
 
-for my $case (@test_cases) {
-    is(
-        $case->{property} eq 'encode'
-        ? encode_atbash( $case->{input}{phrase} )
-        : decode_atbash( $case->{input}{phrase} ),
-        $case->{expected}, $case->{description}
-    );
-}
+is $_->{property} eq 'encode'
+  ? encode_atbash( $_->{input}{phrase} )
+  : decode_atbash( $_->{input}{phrase} ), $_->{expected}, $_->{description}
+  for @test_cases;
 
 __DATA__
 [

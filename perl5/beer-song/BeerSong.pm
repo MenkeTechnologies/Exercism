@@ -5,7 +5,7 @@ use Exporter qw/import/;
 our @EXPORT_OK = qw/sing/;
 
 sub verse {
-    my $n = shift;
+    my $n = @_ ? shift : $_;
     $n < 1
       ? "No more bottles of beer on the wall, no more bottles of beer.\nGo to the store and buy some more, 99 bottles of beer on the wall."
       : $n == 1
@@ -19,7 +19,7 @@ sub sing {
     my $top    = $args->{bottles};
     my $bottom = $top - $args->{verses} + 1;
 
-    join "\n\n", map { verse $_} reverse $bottom .. $top;
+    join "\n\n", map { verse } reverse $bottom .. $top;
 }
 
 1;
