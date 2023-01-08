@@ -25,13 +25,13 @@ twelve Drummers Drumming
 );
 
 sub recite {
-    my ( $start, $end ) = @{ (shift) }{qw/start end/};
+    my $args = shift;
     join "\n", map {
         my $verse   = $_;
         my $phrases = join ', ',
           map { ( $_ == 1 && $verse != 1 ? 'and ' : '' ) . $VERSES[$_] }
           reverse 1 .. $verse;
-        sprintf PATTERN, @{ (ORDINALS) }[$verse], $phrases;
-    } $start .. $end;
+        sprintf PATTERN, ORDINALS->[$verse], $phrases;
+    } $args->{start} .. $args->{end};
 }
 1;

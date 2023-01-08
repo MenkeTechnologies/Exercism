@@ -8,7 +8,8 @@ use List::Util qw/first/;
 use Carp;
 use Time::Piece;
 use Time::Seconds;
-use constant {WD => [qw/Sunday Monday Tuesday Wednesday Thursday Friday Saturday/]};
+use constant {
+    WD => [qw/Sunday Monday Tuesday Wednesday Thursday Friday Saturday/] };
 
 sub last_day_of_month {
 
@@ -23,7 +24,7 @@ sub last_day_of_month {
 
 sub day_index {
     my $weekday = shift;
-    first {(WD->@*)[$_] eq $weekday} 0 .. scalar(WD->@* - 1);
+    first { WD->[$_] eq $weekday } 0 .. scalar( WD->@* - 1 );
 }
 
 sub meetup {
