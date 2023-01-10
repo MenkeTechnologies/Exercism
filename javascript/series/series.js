@@ -1,6 +1,6 @@
 export class Series {
   constructor(series) {
-    this._series = series.split('').map(ch => 1 * ch);
+    this._series = series.split('').map(c => parseInt(c));
   }
 
   slices = len => {
