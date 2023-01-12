@@ -1,14 +1,36 @@
 pub trait Luhn {
     fn valid_luhn(&self) -> bool;
 }
-
-/// Here is the example of how to implement custom Luhn trait
-/// for the &str type. Naturally, you can implement this trait
-/// by hand for the every other type presented in the test suite,
-/// but your solution will fail if a new type is presented.
-/// Perhaps there exists a better solution for this problem?
-impl<'a> Luhn for &'a str {
+impl<T> Luhn for T
+where
+    T: ToString,
+{
     fn valid_luhn(&self) -> bool {
-        unimplemented!("Determine if '{}' is a valid credit card number.", self);
+        let no_ws: String = self
+            .to_string()
+            .chars()
+            .filter(|c| !c.is_whitespace())
+            .collect();
+
+        no_ws.len() > 1
+            && no_ws.chars().all(|c| c.is_digit(10))
+            && no_ws
+                .chars()
+                .rev()
+                .map(|c| c.to_digit(10).unwrap())
+                .enumerate()
+                .map(|(i, n)| {
+                    let mut doubled = n;
+                    if i % 2 == 1 {
+                        doubled *= 2
+                    }
+                    if doubled > 9 {
+                        doubled -= 9;
+                    }
+                    doubled
+                })
+                .sum::<u32>()
+                % 10
+                == 0
     }
 }
