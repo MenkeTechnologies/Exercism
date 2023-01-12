@@ -1,12 +1,13 @@
 use regex::Regex;
 
 pub fn is_valid(code: &str) -> bool {
-    let no_ws: String = code.chars().rev().filter(|c| !c.is_whitespace()).collect();
+    let no_ws: String = code.chars().filter(|c| !c.is_whitespace()).collect();
 
     no_ws.len() > 1
         && Regex::new(r"^\d+$").unwrap().is_match(no_ws.as_str())
         && no_ws
             .chars()
+            .rev()
             .map(|c| c.to_digit(10).unwrap())
             .enumerate()
             .map(|(i, n)| {

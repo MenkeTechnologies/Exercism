@@ -11,7 +11,8 @@ macro_rules! expect {
 
 #[test]
 fn test_simple() {
-    let got = fizz_buzz::<i32>().apply(1..=16).collect::<Vec<_>>();
+    let fizzy = fizz_buzz::<i32>();
+    let got = fizzy.apply(1..=16).collect::<Vec<_>>();
     assert_eq!(expect!(), got);
 }
 
