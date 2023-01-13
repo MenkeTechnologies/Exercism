@@ -5,5 +5,5 @@ const MAP = {
     A: 'U'
 };
 
-export const toRna = (str) =>
-    str.toUpperCase().split("").map(c => MAP[c]).reduce((acc, n) => acc + n, "");
+export const toRna = s =>
+    s.toUpperCase().split("").map(c => MAP[c]).reduce((acc, n) => acc + n, "");

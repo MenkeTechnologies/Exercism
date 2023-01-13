@@ -1,1 +1,1 @@
-export const isLeap = (year) => year % 4 === 0 && year % 100 !== 0 || year % 400 === 0
+export const isLeap = y => y % 4 === 0 && y % 100 !== 0 || y % 400 === 0
