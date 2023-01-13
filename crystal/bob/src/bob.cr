@@ -1,26 +1,13 @@
-# Please implement your solution to bob in this file
-
 class Bob
     def self.hey(s)
 
-        if s.blank?
-            return "Fine. Be that way!"
-        end
+        return "Fine. Be that way!" if s.blank?
 
         if /[A-Z]/ =~ s && /[a-z]/ !~ s
-
-            if /\?$/ =~ s
-                return "Calm down, I know what I'm doing!"
-            end
-
-            return "Whoa, chill out!"
+           return (/\?$/ =~ s ?  "Calm down, I know what I'm doing!" : "Whoa, chill out!")
         end
 
-        if /\?$/ =~ s
-            return "Sure."
-        end
-
-        "Whatever."
+        /\?$/ =~ s ?  "Sure." : "Whatever."
 
 
     end
