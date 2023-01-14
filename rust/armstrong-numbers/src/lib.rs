@@ -1,12 +1,8 @@
-pub fn is_armstrong_number(num: u32) -> bool {
+pub fn is_armstrong_number(num: usize) -> bool {
+    let len = num.to_string().chars().count() as u32;
     num == num
         .to_string()
         .chars()
-        .map(|d| {
-            u32::pow(
-                d.to_digit(10).unwrap(),
-                num.to_string().chars().count() as u32,
-            )
-        })
+        .map(|c| (c.to_digit(10).expect("Non digit") as usize).pow(len))
         .sum()
 }
