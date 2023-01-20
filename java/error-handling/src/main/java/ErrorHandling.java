@@ -1,49 +1,51 @@
 import java.util.Optional;
 
 class ErrorHandling {
-
     void handleErrorByThrowingIllegalArgumentException() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        throw new IllegalArgumentException();
     }
 
-    void handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage(String message) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    void handleErrorByThrowingIllegalArgumentExceptionWithDetailMessage(String message) throws IllegalArgumentException {
+        throw new IllegalArgumentException(message);
     }
 
-    void handleErrorByThrowingAnyCheckedException() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    void handleErrorByThrowingAnyCheckedException() throws ClassNotFoundException {
+        throw new ClassNotFoundException();
     }
 
-    void handleErrorByThrowingAnyCheckedExceptionWithDetailMessage(String message) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    void handleErrorByThrowingAnyCheckedExceptionWithDetailMessage(String message) throws ClassNotFoundException {
+        throw new ClassNotFoundException(message);
     }
 
     void handleErrorByThrowingAnyUncheckedException() {
-        // Delete this statement and write your own implementation.
+        throw new ArrayIndexOutOfBoundsException();
     }
 
     void handleErrorByThrowingAnyUncheckedExceptionWithDetailMessage(String message) {
-        // Delete this statement and write your own implementation.
+        throw new ArithmeticException(message);
     }
 
-    void handleErrorByThrowingCustomCheckedException() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    void handleErrorByThrowingCustomCheckedException() throws CustomCheckedException {
+        throw new CustomCheckedException();
     }
 
-    void handleErrorByThrowingCustomCheckedExceptionWithDetailMessage(String message) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+    void handleErrorByThrowingCustomCheckedExceptionWithDetailMessage(String message) throws CustomCheckedException {
+        throw new CustomCheckedException(message);
     }
 
     void handleErrorByThrowingCustomUncheckedException() {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        throw new CustomUncheckedException();
     }
 
     void handleErrorByThrowingCustomUncheckedExceptionWithDetailMessage(String message) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        throw new CustomUncheckedException(message);
     }
 
     Optional<Integer> handleErrorByReturningOptionalInstance(String integer) {
-        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
+        try {
+            return Optional.of(Integer.parseInt(integer));
+        } catch (NumberFormatException e) {
+            return Optional.empty();
+        }
     }
-
 }
