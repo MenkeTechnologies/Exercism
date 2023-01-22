@@ -6,7 +6,7 @@ class Series(val input: String) {
         span == 0 -> 1L
         span > input.length -> throw IllegalArgumentException()
         else -> input.map(Character::getNumericValue).windowed(span).maxOf {
-            it.fold(1L) { acc, n -> acc * n }
+            it.reduce { acc, n -> acc * n }.toLong()
         }
     }
 }
