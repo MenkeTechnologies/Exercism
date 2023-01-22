@@ -4,9 +4,7 @@ module CollatzConjecture
 
     def self.steps(n)
 
-        if n <= 0
-            raise ArgumentError.new
-        end
+        raise ArgumentError.new if n < 1
 
         cnt=0
 
