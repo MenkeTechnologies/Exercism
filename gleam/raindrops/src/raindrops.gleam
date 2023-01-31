@@ -6,7 +6,7 @@ pub fn convert(n: Int) -> String {
     <> raindrop(n, 7, "Plong")
   case raindrops {
     "" -> n |> int.to_string
-    _ -> _
+    s -> s
   }
 }
 fn raindrop(n, factor, s) {
