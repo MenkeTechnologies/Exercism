@@ -13,12 +13,9 @@ class Squares {
 
     public var sumOfSquares: Int {
         (0...square).reduce(0, { $0 + $1 * $1 })
-
     }
 
     public var differenceOfSquares: Int {
         squareOfSum - sumOfSquares
     }
-
-
 }
