@@ -9,42 +9,42 @@ describe "BinarySearch" do
     binary.find(value).should eq(0)
   end
 
-  pending "finds a value in the middle of an array" do
+  it "finds a value in the middle of an array" do
     binary = BinarySearch.new([1, 3, 4, 6, 8, 9, 11] of Int32)
     value = 6
 
     binary.find(value).should eq(3)
   end
 
-  pending "finds a value at the beginning of an array" do
+  it "finds a value at the beginning of an array" do
     binary = BinarySearch.new([1, 3, 4, 6, 8, 9, 11] of Int32)
     value = 1
 
     binary.find(value).should eq(0)
   end
 
-  pending "finds a value at the end of an array" do
+  it "finds a value at the end of an array" do
     binary = BinarySearch.new([1, 3, 4, 6, 8, 9, 11] of Int32)
     value = 11
 
     binary.find(value).should eq(6)
   end
 
-  pending "finds a value in an array of odd length" do
+  it "finds a value in an array of odd length" do
     binary = BinarySearch.new([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 634] of Int32)
     value = 144
 
     binary.find(value).should eq(9)
   end
 
-  pending "finds a value in an array of even length" do
+  it "finds a value in an array of even length" do
     binary = BinarySearch.new([1, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377] of Int32)
     value = 21
 
     binary.find(value).should eq(5)
   end
 
-  pending "identifies that a value is not included in the array" do
+  it "identifies that a value is not included in the array" do
     binary = BinarySearch.new([1, 3, 4, 6, 8, 9, 11] of Int32)
     value = 7
 
@@ -53,7 +53,7 @@ describe "BinarySearch" do
     end
   end
 
-  pending "a value smaller than the array's smallest value is not found" do
+  it "a value smaller than the array's smallest value is not found" do
     binary = BinarySearch.new([1, 3, 4, 6, 8, 9, 11] of Int32)
     value = 0
 
@@ -62,7 +62,7 @@ describe "BinarySearch" do
     end
   end
 
-  pending "a value larger than the array's largest value is not found" do
+  it "a value larger than the array's largest value is not found" do
     binary = BinarySearch.new([1, 3, 4, 6, 8, 9, 11] of Int32)
     value = 13
 
@@ -71,7 +71,7 @@ describe "BinarySearch" do
     end
   end
 
-  pending "nothing is found in an empty array" do
+  it "nothing is found in an empty array" do
     binary = BinarySearch.new([] of Int32)
     value = 1
 
@@ -80,7 +80,7 @@ describe "BinarySearch" do
     end
   end
 
-  pending "nothing is found when the left and right bounds cross" do
+  it "nothing is found when the left and right bounds cross" do
     binary = BinarySearch.new([1, 2] of Int32)
     value = 0
 
