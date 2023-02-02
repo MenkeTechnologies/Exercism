@@ -1,26 +1,10 @@
-//Solution goes in Sources
-
 public class Year {
 
     public let isLeapYear: Bool
 
-    public init(calendarYear:Int)
+    public init(calendarYear year:Int)
     {
-        if calendarYear % 4 == 0 {
-            if calendarYear % 100 == 0{
-
-                if calendarYear % 400 == 0{
-
-                    isLeapYear = true;
-                    return
-                }
-
-            } else {
-                isLeapYear = true;
-                return
-            }
-        }
-        isLeapYear = false;
+        isLeapYear = year % 4 == 0 && year % 100 != 0 || year % 400 == 0
     }
 
 }
