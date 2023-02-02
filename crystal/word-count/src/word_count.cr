@@ -1,5 +1,5 @@
 module WordCount
-  def self.count_words(sentence : String) : Hash(String, Int32)
-    # Write your code for the 'Word Count' exercise in this file.
+  def self.count_words(s : String)
+    s.downcase.scan(/\w+(?:'\w+)?/).map(&.[0]).tally
   end
 end
