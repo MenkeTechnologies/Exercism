@@ -1,8 +1,19 @@
 defmodule MatchingBrackets do
-  @doc """
-  Checks that all the brackets and braces in the string are matched correctly, and nested correctly
-  """
-  @spec check_brackets(String.t()) :: boolean
-  def check_brackets(str) do
-  end
+  @brackets %{"[" => "]", "(" => ")", "{" =>"}" }
+  
+  def check_brackets(""), do: true
+  def check_brackets(s), do:
+    s
+    |> String.replace(~r/[^(){}[\]]/, "")
+    |> String.codepoints()
+    |> do_find_pairs()
+    |> Enum.empty?()
+  defp do_find_pairs(chars), do:
+    Enum.reduce(chars, [], fn bracket, acc ->
+      cond do
+        bracket in Map.keys(@brackets) -> [bracket | acc]
+        bracket == @brackets[Enum.at(acc, 0)] -> List.delete_at(acc, 0)
+        true -> [:error | acc]
+      end
+    end)
 end
