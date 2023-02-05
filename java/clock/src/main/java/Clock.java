@@ -1,10 +1,34 @@
-/*
+public class Clock {
+    private int minutes = 0;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+    public Clock(int hours, int minutes) {
+        add(hours * 60 + minutes);
+    }
 
-Please remove this comment when submitting your solution.
+    public void add(int minutes) {
+        this.minutes += minutes;
+    }
 
-*/
+    @Override
+    public String toString() {
+        return String.format("%02d:%02d", getHours(), getMinutes());
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        return other != null && getClass() == other.getClass() && hashCode() == other.hashCode();
+    }
+
+    @Override
+    public int hashCode() {
+        return toString().hashCode();
+    }
+
+    private int getHours() {
+        return Math.floorMod(Math.floorDiv(minutes, 60), 24);
+    }
+
+    private int getMinutes() {
+        return Math.floorMod(minutes, 60);
+    }
+}
