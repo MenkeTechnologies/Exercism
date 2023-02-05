@@ -15,18 +15,21 @@ CLASS zcl_difference_of_squares DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
-
-
 CLASS zcl_difference_of_squares IMPLEMENTATION.
   METHOD ret_difference_of_squares.
-    "Implement solution
+      diff = ret_square_of_sum( num ) - ret_sum_of_squares( num ).
   ENDMETHOD.
 
   METHOD ret_sum_of_squares.
-    "Implement solution
+    DO num TIMES.
+      sum_of_squares = sum_of_squares + ( sy-index ** 2 ).
+    ENDDO.
   ENDMETHOD.
 
   METHOD ret_square_of_sum.
-    "Implement solution
+    DO num TIMES.  
+      square_of_sum = square_of_sum + sy-index.
+    ENDDO.
+    square_of_sum = square_of_sum ** 2.
   ENDMETHOD.
 ENDCLASS.
