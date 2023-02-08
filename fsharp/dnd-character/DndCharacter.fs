@@ -1,14 +1,29 @@
 module DndCharacter
 
-open System
+let modifier constitution =
+    float (constitution - 10) / 2.0
+    |> floor
+    |> int
 
-let modifier x =
-    failwith "You need to implement this function."
+let ability() =
+    List.init 4 (fun _ -> System.Random().Next(1, 7))
+    |> List.sort
+    |> List.tail
+    |> List.sum
 
-let ability() = 
-    failwith "You need to implement this function."
-
-// TODO: define the Character type
+type Character =
+    { Strength: int
+      Dexterity: int
+      Constitution: int
+      Intelligence: int
+      Wisdom: int
+      Charisma: int }
+    member this.Hitpoints = 10 + modifier (this.Constitution)
 
 let createCharacter() =
-    failwith "You need to implement this function."
+    { Strength = ability()
+      Dexterity = ability()
+      Constitution = ability()
+      Intelligence = ability()
+      Wisdom = ability()
+      Charisma = ability() }
