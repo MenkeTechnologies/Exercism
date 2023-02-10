@@ -1,7 +1,3 @@
-(provide 'trinary)
-
-(require 'seq)
-
 (defun trinary-to-decimal (s)
   (if (string-match "[^0-2]" s)
     0
