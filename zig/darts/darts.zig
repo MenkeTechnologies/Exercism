@@ -1,10 +1,21 @@
 pub const Coordinate = struct {
-    // This struct, as well as it's fields and methods, needs to be implemented.
+    x: f32,
+    y: f32,
 
-    pub fn init(x_coord: f32, y_coord: f32) Coordinate {
-        @panic("please implement the init method");
+    pub fn init(x: f32, y: f32) Coordinate {
+        return Coordinate{ .x = x, .y = y };
     }
     pub fn score(self: Coordinate) isize {
-        @panic("please implement the score method");
+        const dist = @sqrt((self.x * self.x) + (self.y * self.y));
+        if (dist > 10) {
+            return 0;
+        }
+        if (dist > 5) {
+            return 1;
+        }
+        if (dist > 1) {
+            return 5;
+        }
+        return 10;
     }
 };
