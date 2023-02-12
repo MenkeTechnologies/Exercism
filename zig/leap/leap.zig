@@ -1,3 +1,3 @@
 pub fn leap(year: u32) bool {
-    @panic("please implement the leap function");
+    return year % 4 == 0 and year % 100 != 0 or year % 400 == 0;
 }
