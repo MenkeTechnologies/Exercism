@@ -1,11 +1,19 @@
 pub fn squareOfSum(number: isize) isize {
-    @panic("compute the sum of i from 0 to n then square it");
+    var n: isize = number;
+    var sum: isize = 0;
+    while (n != 0) : (n -= 1) {
+        sum += n;
+    }
+    return sum * sum;
 }
-
 pub fn sumOfSquares(number: isize) isize {
-    @panic("compute the sum of i^2 from 0 to n");
+    var n: isize = number;
+    var sum: isize = 0;
+    while (n != 0) : (n -= 1) {
+        sum += n * n;
+    }
+    return sum;
 }
-
 pub fn differenceOfSquares(number: isize) isize {
-    @panic("compute the difference between the square of sum and sum of squares");
+    return squareOfSum(number) - sumOfSquares(number);
 }
