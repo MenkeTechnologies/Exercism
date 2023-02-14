@@ -18,7 +18,6 @@ toDecimal () {
 }
 fromDecimal () {
   val=$1 obase=$2 result=()
-  if ((val == 0)); then echo 0; return 0; fi
   while (( val > 0 )); do
     (( digit = val % obase ))
     (( val /= obase ))
