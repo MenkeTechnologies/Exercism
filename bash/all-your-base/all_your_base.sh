@@ -1,24 +1,32 @@
 #!/usr/bin/env bash
+error () {
+  echo error
+  exit 1
+}
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+(( $# == 3 )) || error
+
+toDecimal () {
+  ibase=$1
+  read -a words <<< "$2"
+  local -i acc=0
+  for w in "${words[@]}"; do
+    (( w >= 0 && w < ibase )) || return 1
+    (( acc = acc * ibase + w ))
+  done
+  echo "$acc"
+}
+fromDecimal () {
+  val=$1 obase=$2 result=()
+  if ((val == 0)); then echo 0; return 0; fi
+  while (( val > 0 )); do
+    (( digit = val % obase ))
+    (( val /= obase ))
+    result=( "$digit" "${result[@]}" )
+  done
+  echo "${result[@]}"
+}
+
+(( $3 > 1 )) && (( $1 > 1 )) || error
+decimalVal="$(toDecimal "$1" "$2")" || error
+fromDecimal "$decimalVal" "$3" || error
