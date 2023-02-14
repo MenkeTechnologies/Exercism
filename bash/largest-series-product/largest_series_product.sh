@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 str="$1"
-str_len="${#str}"
 substr_len="$2"
+
+str_len="${#str}"
 max=$((str_len - substr_len))
 max_product=0
 
@@ -20,11 +21,11 @@ fi
 for ((i = 0; i <= max; ++i)); do
   substr="${str:i:substr_len}"
   product=1
-  digits=($(grep -oP '\d' <<<"$substr"))
+  digits=( $(grep -o . <<<"$substr") )
   for digit in "${digits[@]}"; do
     ((product *= digit))
   done
-  if ((product > max_product)); then
+  if (( product > max_product)); then
     max_product="$product"
   fi
 done
