@@ -1,24 +1,18 @@
 #!/usr/bin/env bash
+add () {
+	out+=( ${plant[$1]} )
+}
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+declare -a rows=( $1 ) out=() names=(Alice Bob Charlie David Eve Fred Ginny Harriet Ileana Joseph Kincaid Larry)
+declare -A plant=( R radishes G grass C clover V violets )
+declare name=$2
+for (( i = 0; i < 13; ++i )); do
+  [[ "$name" = "${names[i]}" ]] && break
+done
+(( i == 12 )) && exit 1
+add ${rows[0]:i*2+0:1}
+add ${rows[0]:i*2+1:1}
+add ${rows[1]:i*2+0:1}
+add ${rows[1]:i*2+1:1}
+
+echo "${out[*]}"
