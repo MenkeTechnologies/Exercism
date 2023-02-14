@@ -1,24 +1,19 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+list_one=${1//[\]\[]}
+list_two=${2//[\]\[]}
+
+[[ $list_one ]] && list_one=${list_one//[[:space:]]/,},
+[[ $list_two ]] && list_two=${list_two//[[:space:]]/,},
+
+if [[ $list_one == *"$list_two"* ]]; then
+    if [[ $list_two == *"$list_one"* ]]; then
+        echo 'equal'
+    else
+        echo 'superlist'
+    fi
+elif [[ $list_two == *"$list_one"* ]]; then
+    echo 'sublist'
+else
+    echo 'unequal'
+fi
