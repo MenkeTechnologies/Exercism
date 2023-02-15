@@ -6,10 +6,10 @@ proc verse {n} {
 }
 
 proc beerSong {start take} {
-    set output [list]
-    for {set i 0} {$i < $take} {incr i} {
-        set current [expr $start - $i]
-        lappend output [verse $current]
+    set output {}
+    set ending [expr $start - $take]
+    for {set i $start} {$i > $ending} {incr i -1} {
+        lappend output [verse $i]
     }
     join $output \n
 }
