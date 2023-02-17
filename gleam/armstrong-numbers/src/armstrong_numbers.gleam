@@ -10,5 +10,5 @@ pub fn is_armstrong_number(number: Int) -> Bool {
   let number_of_digits = list.length(digits)
   number == digits
     |> list.map(int_power(_, number_of_digits))
-    |> int.sum()
+    |> int.sum
 }

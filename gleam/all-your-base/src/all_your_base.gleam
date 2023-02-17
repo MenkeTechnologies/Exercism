@@ -16,8 +16,8 @@ pub fn rebase(digits digits: List(Int), input_base input_base: Int, output_base 
         Error(Nil) -> {
 		  let sum = digits |> digits_to_integer(input_base)
           case sum {
-              0 -> [0] |> Ok()
-              _ -> sum |> integer_to_digits(output_base, []) |> Ok()
+              0 -> [0] |> Ok
+              _ -> sum |> integer_to_digits(output_base, []) |> Ok
           }
 
         }

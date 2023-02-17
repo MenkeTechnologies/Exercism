@@ -12,6 +12,6 @@ pub fn find_anagrams(target: String, candidates: List(String)) -> List(String) {
 
 fn to_sorted_letters(word: String) -> List(String) {
   word
-  |> string.to_graphemes()
+  |> string.to_graphemes
   |> list.sort(string.compare)
 }
