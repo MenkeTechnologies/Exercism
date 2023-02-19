@@ -1,50 +1,30 @@
-// An enum should be helpful for this exercise.
-
 pub const SpaceAge = struct {
-    // This struct, as well as it's fields and methods, needs to be
-    // implemented.
-
+    seconds: f64,
     pub fn init(seconds: isize) SpaceAge {
-        @panic("please implement the init method");
+        return SpaceAge{ .seconds = @intToFloat(f64, seconds) };
     }
-
-    fn getOrbitalPeriodInSecondsFromEarthYearsOf(planet: Planet) f64 {
-        @panic("please implement the getOrbitalPeriodInSecondsFromEarthYearsOf method");
-    }
-
-    fn getOrbitalPeriodInEarthYearsOf(planet: Planet) f64 {
-        @panic("please implement the getOrbitalPeriodInEarthYearsOf method");
-    }
-
     pub fn onMercury(self: SpaceAge) f64 {
-        @panic("please implement the onMercury method");
+        return self.onEarth() / 0.2408467;
     }
-
     pub fn onVenus(self: SpaceAge) f64 {
-        @panic("please implement the onVenus method");
+        return self.onEarth() / 0.61519726;
     }
-
     pub fn onEarth(self: SpaceAge) f64 {
-        @panic("please implement the onEarth method");
+        return self.seconds / 31557600;
     }
-
     pub fn onMars(self: SpaceAge) f64 {
-        @panic("please implement the onMars method");
+        return self.onEarth() / 1.8808158;
     }
-
     pub fn onJupiter(self: SpaceAge) f64 {
-        @panic("please implement the onJupiter method");
+        return self.onEarth() / 11.862615;
     }
-
     pub fn onSaturn(self: SpaceAge) f64 {
-        @panic("please implement the onSaturn method");
+        return self.onEarth() / 29.447498;
     }
-
     pub fn onUranus(self: SpaceAge) f64 {
-        @panic("please implement the onUranus method");
+        return self.onEarth() / 84.016846;
     }
-
     pub fn onNeptune(self: SpaceAge) f64 {
-        @panic("please implement the onNeptune method");
+        return self.onEarth() / 164.79132;
     }
 };
