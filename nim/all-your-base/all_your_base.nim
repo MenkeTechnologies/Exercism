@@ -1,9 +1,9 @@
 
 func toDigits(n, b: int): seq[int] =
-    var n = n
-    while n > 0:
-        result.insert(n mod b, 0)
-        n = int(n / b)
+    var dup = n
+    while dup > 0:
+        result.insert(dup mod b, 0)
+        dup = int(dup / b)
 
 func fromDigits(digits: openArray[int], input_base: int): int =
     for n in digits:
