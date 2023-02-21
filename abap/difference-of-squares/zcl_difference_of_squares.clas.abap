@@ -15,6 +15,8 @@ CLASS zcl_difference_of_squares DEFINITION
   PRIVATE SECTION.
 ENDCLASS.
 
+
+
 CLASS zcl_difference_of_squares IMPLEMENTATION.
   METHOD ret_difference_of_squares.
       diff = ret_square_of_sum( num ) - ret_sum_of_squares( num ).
