@@ -5,12 +5,12 @@ local function to_decimal(digits, base)
     assert(n < base, 'digit out of range')
     acc = acc * base + n
   end
-  return math.floor(acc)
+  return acc
 end
 local function from_decimal(decimal, base)
   local digits = {}
   while decimal > 0 do
-    table.insert(digits, 1, (decimal % base))
+    table.insert(digits, 1, decimal % base)
     decimal = decimal // base
   end
   return #digits > 0 and digits or { 0 }
