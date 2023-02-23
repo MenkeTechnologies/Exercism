@@ -85,6 +85,7 @@ in Go. For example you see it in
 - @robphoenix
 - @sebito91
 - @tleen
+- @eklatzer
 
 ### Based on
 
