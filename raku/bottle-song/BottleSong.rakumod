@@ -18,4 +18,4 @@ sub sing ( :$bottles, :$verses ) is export {
         sprintf "There'll be %s green bottle%s hanging on the wall.",
         %numbers{ .pred }, pluralize .pred with $stanza
     }.join: "\n\n"
-}
+
