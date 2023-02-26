@@ -1,8 +1,10 @@
-#if !defined(PROTEIN_TRANSLATION_H)
-#define PROTEIN_TRANSLATION_H
+#pragma once
+
+#include <vector>
+#include <string>
+
+using namespace std;
 
 namespace protein_translation {
-
-}  // namespace protein_translation
-
-#endif // PROTEIN_TRANSLATION_H
+    vector<string> proteins(const string &rna);
+}
