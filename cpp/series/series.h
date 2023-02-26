@@ -1,8 +1,8 @@
-#if !defined(SERIES_H)
-#define SERIES_H
+#pragma once
+#include <string>
+#include <vector>
+using namespace std;
 
 namespace series {
-
-}  // namespace series
-
-#endif // SERIES_H
+    vector<string> slice(const string& s, int n);
+} 
