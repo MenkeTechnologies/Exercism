@@ -11,7 +11,6 @@ TEST_CASE("finds_the_largest_product_if_span_equals_length")
     REQUIRE(largest_series_product::largest_product("29", 2) == 18);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 
 TEST_CASE("can_find_the_largest_product_of_2_with_numbers_in_order")
 {
@@ -82,4 +81,3 @@ TEST_CASE("rejects_negative_span")
 {
     REQUIRE_THROWS_AS(largest_series_product::largest_product("12345", -1), std::domain_error);
 }
-#endif
