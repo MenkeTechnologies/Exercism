@@ -16,11 +16,11 @@ aux([$\s|Digits], Double, Sum) ->
 aux([Digit|_], _, _) when Digit < $0; Digit > $9 ->
     false;
 aux([Digit|Digits], true, Sum) ->
-    Integer = Digit - 48,
+    Integer = Digit - $0,
     Result = double(Integer),
     aux(Digits, false, Sum + Result);
 aux([Digit|Digits], false, Sum) ->
-    Integer = Digit - 48,
+    Integer = Digit - $0,
     aux(Digits, true, Sum + Integer);
 aux([], _, Sum) ->
     Sum rem 10 == 0.
