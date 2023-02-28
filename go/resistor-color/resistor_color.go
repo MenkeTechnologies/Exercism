@@ -12,15 +12,14 @@ var encoded = map[string]int{
 	"grey":   8,
 	"white":  9,
 }
-var colors []string
 
-func Colors() []string {
-	if len(colors) == 0 {
+func Colors() (result []string) {
+	if len(result) == 0 {
 		for color := range encoded {
-			colors = append(colors, color)
+			result = append(result, color)
 		}
 	}
-	return colors
+	return
 }
 func ColorCode(color string) int {
 	return encoded[color]
