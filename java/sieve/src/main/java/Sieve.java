@@ -17,7 +17,7 @@ class Sieve {
         sieve[1] = false;
         for (int i = 2; i < Math.sqrt(maxPrime); ++i) {
             if (sieve[i]) {
-                for (int j = i * i; j < maxPrime; j = j + i) {
+                for (int j = i * i; j < maxPrime; j += i) {
                     sieve[j] = false;
                 }
             }
