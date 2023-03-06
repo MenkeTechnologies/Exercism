@@ -1,5 +1,6 @@
 (ns series)
 
-(defn slices [s n]
-  ;; your code goes here...
-  )
+(defn slices [s len]
+  (if (zero? len)
+    [""]
+    (mapv #(apply str %) (partition len 1 s))))
