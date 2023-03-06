@@ -3,7 +3,6 @@
 namespace space_age {
 
     static const int SPY = 31557600;
-    double earth_years_per_second = 1.0 / SPY;
     double mercury_years_per_earth = 0.2408467;
     double venus_years_per_earth = 0.61519726;
     double mars_years_per_earth = 1.8808158;
@@ -19,7 +18,7 @@ namespace space_age {
     }
 
     double space_age::on_earth() const {
-        return sec * earth_years_per_second;
+        return sec / SPY;
     }
 
     double space_age::on_mercury() const {
@@ -51,4 +50,4 @@ namespace space_age {
     }
 
 
-}  // namespace space_age
+}
