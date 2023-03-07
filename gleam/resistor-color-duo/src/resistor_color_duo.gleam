@@ -10,12 +10,6 @@ pub type Color {
   Grey
   White
 }
-pub fn value(colors: List(Color)) -> Result(Int, Nil) {
-  case colors {
-    [tens, ones, ..] -> Ok(10 * code(tens) + code(ones))
-    _ -> Error(Nil)
-  }
-}
 fn code(color: Color) -> Int {
   case color {
     Black ->  0
@@ -28,5 +22,11 @@ fn code(color: Color) -> Int {
     Violet -> 7
     Grey ->   8
     White ->  9
+  }
+}
+pub fn value(colors: List(Color)) -> Result(Int, Nil) {
+  case colors {
+    [tens, ones, ..] -> Ok(10 * code(tens) + code(ones))
+    _ -> Error(Nil)
   }
 }
