@@ -2,54 +2,41 @@ package kindergarten
 
 import (
 	"errors"
-	"fmt"
 	"sort"
 	"strings"
 )
 
 type Garden map[string][]string
 
-var plantMap = map[rune]string{
-	'V': "violets",
-	'R': "radishes",
-	'C': "clover",
-	'G': "grass",
-}
+var plantDict = map[string]string{"V": "violets", "R": "radishes", "G": "grass", "C": "clover"}
 
 func NewGarden(diagram string, children []string) (*Garden, error) {
-	if children == nil {
-		return nil, errors.New("no children")
+	g := Garden{}
+	rows := strings.Split(strings.TrimSpace(diagram), "\n")
+	if len(rows[0]) != len(rows[1]) || string(diagram[0]) != "\n" || len(rows[0])%2 != 0 {
+		return &g, errors.New("")
 	}
-	orderedChildren := make([]string, len(children))
-	copy(orderedChildren, children)
-	sort.Sort(sort.StringSlice(orderedChildren))
-	garden := make(Garden)
-	rows := strings.Split(diagram, "\n")
-	if len(rows) != 3 {
-		return nil, fmt.Errorf("expected 3 lines in diagram bug got %v", len(rows))
-	}
-	row0 := []rune(rows[1])
-	row1 := []rune(rows[2])
-	if len(row0) != 2*len(orderedChildren) || len(row1) != 2*len(orderedChildren) {
-		return nil, errors.New("number of plants in row is illegal")
-	}
-	for i, child := range orderedChildren {
-		plant0, ok0 := plantMap[row0[2*i]]
-		plant1, ok1 := plantMap[row0[2*i+1]]
-		plant2, ok2 := plantMap[row1[2*i]]
-		plant3, ok3 := plantMap[row1[2*i+1]]
-		if !(ok0 && ok1 && ok2 && ok3) {
-			return nil, errors.New("one or more cups have invalid codes")
+	kids := append(make([]string, 0, len(children)), children...)
+	sort.Strings(kids)
+	for i, child := range kids {
+		_, exists := g[child]
+		if exists {
+			return &g, errors.New("child already has plants")
 		}
-		plants := []string{plant0, plant1, plant2, plant3}
-		garden[child] = plants
+		base := 2 * i
+		g[child] = make([]string, 0, 4)
+		for j := range rows {
+			val1, exists1 := plantDict[string(rows[j][base])]
+			val2, exists2 := plantDict[string(rows[j][base+1])]
+			if !exists1 || !exists2 {
+				return &g, errors.New("invalid plant abbreviation")
+			}
+			g[child] = append(g[child], val1, val2)
+		}
 	}
-	if len(garden) != len(children) {
-		return nil, errors.New("duplicate name found in children names")
-	}
-	return &garden, nil
+	return &g, nil
 }
-func (g *Garden) Plants(child string) (plants []string, ok bool) {
-	plants, ok = (*g)[child]
+func (g *Garden) Plants(child string) (row []string, exists bool) {
+	row, exists = (*g)[child]
 	return
 }
