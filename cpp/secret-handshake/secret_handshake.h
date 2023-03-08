@@ -1,5 +1,4 @@
-#if !defined(SECRET_HANDSHAKE_H)
-#define SECRET_HANDSHAKE_H
+#pragma once
 
 #include <vector>
 #include <string>
@@ -7,7 +6,5 @@
 using namespace std;
 
 namespace secret_handshake {
-    vector<string> commands(int n);
+    vector<string> commands(int mask);
 }
-
-#endif
