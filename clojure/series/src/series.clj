@@ -1,5 +1,5 @@
 (ns series
-  (:require [clojure.string :as s]))
-(defn slices [string n]
-  (cond (zero? n) [""]
-        :else (map s/join (partition n 1 string))))
+  (:require [clojure.string :as str]))
+(defn slices [s len]
+  (cond (zero? len) [""]
+        :else (->> s (partition len 1) (map str/join))))
