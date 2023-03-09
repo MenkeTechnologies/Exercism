@@ -10,7 +10,7 @@ pub fn anagrams_for<'a>(target: &str, possible_anagrams: &'a [&str]) -> HashSet<
     let sorted = lcsort(target);
     possible_anagrams
         .iter()
-        .filter(|&&p| target.to_lowercase() != p.to_lowercase() && sorted == lcsort(p))
-        .map(|p| *p)
+        .filter(|&&s| target.to_lowercase() != s.to_lowercase() && sorted == lcsort(s))
+        .map(|s| *s)
         .collect()
 }
