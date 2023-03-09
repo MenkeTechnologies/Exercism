@@ -3,6 +3,7 @@ import gleam/regex
 import gleam/list
 import gleam/string
 import gleam/function
+
 pub fn count_words(input: String) -> Map(String, Int) {
   assert Ok(re) = regex.from_string("\\w+('\\w+)*")
   input
