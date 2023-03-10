@@ -1,24 +1,21 @@
 #!/usr/bin/env bash
+function die () {
+    echo 'invalid arguments' >&2
+    exit 1
+}
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+(( $# == 2 || $# == 4 )) || die
+[[ "$1" =~ ^-?[0-9]+$ ]] || die
+[[ "$2" =~ ^-?[0-9]+$ ]] || die
+[[ "$3" =~ ^[+-]?$ ]] || die
+[[ "$4" =~ ^[0-9]*$ ]] || die
+
+declare hours=$1 minutes=$2 delta="${3}${4-0}" clock minutes_day
+
+(( minutes_day = 24 * 60 ))
+(( clock = hours * 60 + minutes + delta ))
+(( clock = (clock % minutes_day + minutes_day) % minutes_day ))
+(( hours = clock / 60 ))
+(( minutes = clock % 60 ))
+
+printf '%02d:%02d' "$hours" "$minutes"
