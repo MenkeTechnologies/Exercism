@@ -3,7 +3,7 @@ add () {
 	out+=( ${plant[$1]} )
 }
 
-declare -a rows=( $1 ) out=() names=(Alice Bob Charlie David Eve Fred Ginny Harriet Ileana Joseph Kincaid Larry)
+declare -a names=(Alice Bob Charlie David Eve Fred Ginny Harriet Ileana Joseph Kincaid Larry) rows=( $1 ) out=()
 declare -A plant=( R radishes G grass C clover V violets )
 declare name=$2
 for (( i = 0; i < 13; ++i )); do

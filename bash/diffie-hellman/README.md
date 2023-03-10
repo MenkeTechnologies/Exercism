@@ -1,6 +1,6 @@
-# Diffie Hellman
+# Diffie-Hellman
 
-Welcome to Diffie Hellman on Exercism's Bash Track.
+Welcome to Diffie-Hellman on Exercism's Bash Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
