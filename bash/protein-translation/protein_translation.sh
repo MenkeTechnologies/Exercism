@@ -1,24 +1,19 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+declare -r rna="$1"
+declare i res=''
+
+for (( i = 0; i < ${#rna}; i += 3 )); do
+    case "${rna:$i:3}" in
+        'AUG' ) res+='Methionine ' ;;
+        'UUU'|'UUC' ) res+='Phenylalanine ' ;;
+        'UUA'|'UUG' ) res+='Leucine ' ;;
+        'UCU'|'UCC'|'UCA'|'UCG') res+='Serine ' ;;
+        'UAU'|'UAC' ) res+='Tyrosine ' ;;
+        'UGU'|'UGC' ) res+='Cysteine ' ;;
+        'UGG' ) res+='Tryptophan ' ;;
+        'UAA'|'UAG'|'UGA' ) break ;;
+        * ) echo 'Invalid codon'; exit 1 ;;
+    esac
+done
+echo "${res% }"
