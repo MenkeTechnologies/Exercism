@@ -1,24 +1,20 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+declare series=$1 slice=$2
+
+function die(){
+	echo "$1" >&2
+	exit 1
+}
+
+(( slice == 0 )) && die 'slice length cannot be zero'
+(( slice < 0 )) && die 'slice length cannot be negative'
+(( ${#series} == 0 )) && die 'series cannot be empty'
+(( ${#series} < slice )) && die 'slice length cannot be greater than series length'
+
+declare res=''
+for (( i = 0; i < ${#series} - slice + 1; ++i )); do
+    res="$res ${series:$i:$slice}"
+done
+echo "${res# }"
+
