@@ -1,21 +1,30 @@
 module main
-
-// you'll probably want this
 import rand
 
-// define the Robot struct here
+const (
+	letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+	nums = '0123456789'
+)
+
 struct Robot {
-
+mut:
+  name string
 }
-
-// we need a place to store all these robots!
-// make sure to update all the <TYPE>s to match
-// this should probably be an array or a map ;)
-fn create_robot_storage() <TYPE> {
+fn create_robot_storage() map[string]Robot {
+    return map[string]Robot{}
 }
-
-fn create_robot(mut robots <TYPE>) Robot {
+fn random_name() string {
+	return rand.string_from_set(letters, 2) + rand.string_from_set(nums, 3)
 }
-
-fn (mut r Robot) reset(mut robots <TYPE>) {
+fn create_robot(mut robots map[string]Robot) Robot {
+    mut r := Robot{name: random_name()}
+    for r.name in robots {r.name = random_name()}
+    robots[r.name] = r
+    return r
+}
+fn (mut r Robot) reset(mut robots map[string]Robot) {
+    robots.delete(r.name)
+    r.name = random_name()
+    for r.name in robots {r.name = random_name()}
+    robots[r.name] = r
 }
