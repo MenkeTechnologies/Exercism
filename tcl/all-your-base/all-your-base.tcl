@@ -9,11 +9,11 @@ proc rebase {inputBase digits outputBase} {
         set sum [expr {$sum * $inputBase + $digit}]
     }
     if {$sum == 0} {return {0}}
-    set output [list]
+    set output {}
     while {$sum > 0} {
-        lappend output [expr $sum % $outputBase]
+        set output [linsert $output 0 [expr $sum % $outputBase]]
         set sum [expr $sum / $outputBase]
     }
-    return [lreverse $output]
+    return $output
 }
 
