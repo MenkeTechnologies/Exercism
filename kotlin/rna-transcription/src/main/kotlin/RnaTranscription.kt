@@ -1,23 +1,24 @@
-fun transcribeToRna(dna: String): String {
+fun transcribeToRna(s: String) = s.toCharArray().map { xform(it) }.joinToString("")
 
-    var res = ""
-    for (char in dna.toCharArray()) {
-        res += xform(char)
+private fun xform(c: Char) =
+    when (c) {
+        'G' -> {
+            'C'
+        }
+
+        'C' -> {
+            'G'
+        }
+
+        'T' -> {
+            'A'
+        }
+
+        'A' -> {
+            'U'
+        }
+
+        else -> {
+            throw RuntimeException("invalid dna $c")
+        }
     }
-
-    return res
-}
-
-private fun xform(char: Char): Char {
-    if (char == 'G') {
-        return 'C'
-    } else if (char == 'C') {
-        return 'G'
-    } else if (char == 'T') {
-        return 'A'
-    } else if (char == 'A') {
-        return 'U'
-    } else {
-        throw RuntimeException("invalid dna $char")
-    }
-}
