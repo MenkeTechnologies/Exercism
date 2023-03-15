@@ -1,8 +1,6 @@
 object PrimeFactorCalculator {
 
-    fun primeFactors(int: Int): List<Int> {
-        return primeFactors(int.toLong()).map { it.toInt() }
-    }
+    fun primeFactors(int: Int) = primeFactors(int.toLong()).map { it.toInt() }
 
     fun primeFactors(long: Long): List<Long> {
 
