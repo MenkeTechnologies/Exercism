@@ -1,11 +1,21 @@
 Red [
-	description: {"Raindrops" exercise solution for exercism platform}
-	author: "" ; you can write your name here, in quotes
+    description: {"Raindrops" exercise solution for exercism platform}
+    author: ""
 ]
 
-convert: function [
-	number
-] [
-	cause-error 'user 'message ["You need to implement this function."]
+factor-sounds: [
+    3 "Pling"
+    5 "Plang"
+    7 "Plong"
 ]
+
+convert: function [ number ] [
+    sounds: rejoin collect [
+            foreach [factor sound] factor-sounds [
+                        if zero? number % factor [keep sound]
+                    ]
+        ]
+    either empty? sounds [to string! number][sounds]
+]
+
 
