@@ -64,6 +64,7 @@ Learn more about [protein translation on Wikipedia](http://en.wikipedia.org/wiki
 - @robphoenix
 - @sebito91
 - @tleen
+- @eklatzer
 
 ### Based on
 
