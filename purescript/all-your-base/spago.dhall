@@ -4,18 +4,23 @@ You can edit this file as you like.
 -}
 { name = "all-your-base"
 , dependencies =
-  [ "console"
+  [ "arrays"
+  , "console"
   , "datetime"
   , "effect"
   , "either"
   , "enums"
+  , "foldable-traversable"
   , "integers"
   , "lists"
+  , "maybe"
   , "ordered-collections"
   , "prelude"
   , "psci-support"
   , "strings"
   , "test-unit"
+  , "tuples"
+  , "unfoldable"
   , "unicode"
   ]
 , packages = ./packages.dhall
