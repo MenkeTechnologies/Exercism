@@ -1,21 +1,19 @@
 module SecureTreasureChest exposing (..)
 
-
-type Password
-    = TODO
-
-
-type SecureTreasureChest treasure
-    = SecureTreasureChest String treasure
-
+type Password = Password String
+type SecureTreasureChest treasure = SecureTreasureChest String treasure
 
 createPassword passwordCandidate =
-    Debug.todo "Please implement createPassword"
+    if String.length passwordCandidate < 8 then
+        Nothing
+    else
+        Password passwordCandidate |> Just
 
+createTreasure treasure (Password password) =
+    SecureTreasureChest password treasure
 
-createTreasure treasure password =
-    Debug.todo "Please implement createTreasure"
-
-
-getTreasure passwordAttempt secureTreasureChest =
-    Debug.todo "Please implement getTreasure"
+getTreasure passwordAttempt (SecureTreasureChest password treasure) =
+    if not (passwordAttempt == password) then
+        Nothing
+    else
+        Just treasure
