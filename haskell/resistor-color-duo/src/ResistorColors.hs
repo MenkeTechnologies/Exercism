@@ -1,7 +1,7 @@
-module ResistorColors (Color(..), value) where
+module ResistorColors (Color (..), value) where
 
-data Color =
-    Black
+data Color
+  = Black
   | Brown
   | Red
   | Orange
@@ -14,4 +14,4 @@ data Color =
   deriving (Eq, Show, Enum, Bounded)
 
 value :: (Color, Color) -> Int
-value (a, b) = error "You need to implement this function."
+value (a, b) = fromEnum a * 10 + fromEnum b
