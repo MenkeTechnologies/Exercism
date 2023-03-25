@@ -1,4 +1,9 @@
 module Series (slices) where
 
 slices :: Int -> String -> [[Int]]
-slices n xs = error "You need to implement this function."
+slices 0 [] = [[]]
+slices _ [] = []
+slices n xs
+  | length xs < n = []
+  | otherwise = map (\x -> read [x] :: Int) (take n xs) : slices n (tail xs)
+
