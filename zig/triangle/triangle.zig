@@ -1,39 +1,24 @@
+const std = @import("std");
+
+pub const TriangleError = error{Invalid};
+
 pub const Triangle = struct {
-    // This struct, as well as it's fields and methods, needs to be implemented.
-
-    pub fn init(
-        first: f64,
-        second: f64,
-        third: f64
-    ) TriangleError!Triangle {
-        @panic("please implement the init method");
+    sides: [3]f64,
+    pub fn init(a: f64, b: f64, c: f64) TriangleError!Triangle {
+        var sides = [3]f64{ a, b, c };
+        std.sort.sort(f64, &sides, {}, comptime std.sort.asc(f64));
+        if (sides[0] + sides[1] <= sides[2] or sides[0] <= 0) {
+            return TriangleError.Invalid;
+        }
+        return Triangle{ .sides = sides };
     }
-
-    fn verifyIfDegenerateAttributesExist(
-        first: f64,
-        second: f64,
-        third: f64
-    ) TriangleError!void {
-        @panic("optional verifyIfDegenerateAttributesExist method");
-    }
-
-    fn verifyIfTriangleInequalityHolds(
-        first: f64,
-        second: f64,
-        third: f64
-    ) TriangleError!void {
-        @panic("please implement the verifyIfTriangleInequalityHolds method");
-    }
-
     pub fn isEquilateral(self: Triangle) bool {
-        @panic("please implement the isEquilateral method");
+        return self.sides[0] == self.sides[2];
     }
-
     pub fn isIsosceles(self: Triangle) bool {
-        @panic("please implement the isIsosceles method");
+        return self.sides[0] == self.sides[1] or self.sides[1] == self.sides[2];
     }
-
     pub fn isScalene(self: Triangle) bool {
-        @panic("please implement the isScalene method");
+        return self.sides[0] != self.sides[1] and self.sides[1] != self.sides[2];
     }
 };
