@@ -1,10 +1,19 @@
+const std = @import("std");
+
+var prng = std.rand.DefaultPrng.init(0);
+
 pub fn modifier(score: i8) i8 {
-    _ = score;
-    @compileError("please implement the modifier function");
+    return @divFloor(score, 2) - 5;
 }
 
 pub fn ability() i8 {
-    @compileError("please implement the ability function");
+    var random = prng.random();
+    var rolls: [4]i8 = undefined;
+    for (rolls) |*roll| {
+        roll.* = random.intRangeAtMost(i8, 1, 6);
+    }
+    std.sort.sort(i8, &rolls, {}, std.sort.desc(i8));
+    return rolls[0] + rolls[1] + rolls[2];
 }
 
 pub const Character = struct {
@@ -15,8 +24,16 @@ pub const Character = struct {
     wisdom: i8,
     charisma: i8,
     hitpoints: i8,
-
     pub fn init() Character {
-        @compileError("please implement the init method");
+        const constitution = ability();
+        return @This(){
+            .strength = ability(),
+            .dexterity = ability(),
+            .constitution = constitution,
+            .intelligence = ability(),
+            .wisdom = ability(),
+            .charisma = ability(),
+            .hitpoints = 10 + modifier(constitution),
+        };
     }
 };
