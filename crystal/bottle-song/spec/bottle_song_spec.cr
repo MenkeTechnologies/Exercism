@@ -12,7 +12,7 @@ describe "BottleSong" do
       ])
     end
 
-    pending "last generic verse" do
+    it "last generic verse" do
       BottleSong.recite(start_bottles: 3, take_down: 1).should eq([
         "Three green bottles hanging on the wall,",
         "Three green bottles hanging on the wall,",
@@ -21,7 +21,7 @@ describe "BottleSong" do
       ])
     end
 
-    pending "verse with 2 bottles" do
+    it "verse with 2 bottles" do
       BottleSong.recite(start_bottles: 2, take_down: 1).should eq([
         "Two green bottles hanging on the wall,",
         "Two green bottles hanging on the wall,",
@@ -30,7 +30,7 @@ describe "BottleSong" do
       ])
     end
 
-    pending "verse with 1 bottle" do
+    it "verse with 1 bottle" do
       BottleSong.recite(start_bottles: 1, take_down: 1).should eq([
         "One green bottle hanging on the wall,",
         "One green bottle hanging on the wall,",
@@ -41,7 +41,7 @@ describe "BottleSong" do
   end
 
   describe "lyrics" do
-    pending "first two verses" do
+    it "first two verses" do
       BottleSong.recite(start_bottles: 10, take_down: 2).should eq([
         "Ten green bottles hanging on the wall,",
         "Ten green bottles hanging on the wall,",
@@ -55,7 +55,7 @@ describe "BottleSong" do
       ])
     end
 
-    pending "last three verses" do
+    it "last three verses" do
       BottleSong.recite(start_bottles: 3, take_down: 3).should eq([
         "Three green bottles hanging on the wall,",
         "Three green bottles hanging on the wall,",
@@ -74,7 +74,7 @@ describe "BottleSong" do
       ])
     end
 
-    pending "all verses" do
+    it "all verses" do
       BottleSong.recite(start_bottles: 10, take_down: 10).should eq([
         "Ten green bottles hanging on the wall,",
         "Ten green bottles hanging on the wall,",
