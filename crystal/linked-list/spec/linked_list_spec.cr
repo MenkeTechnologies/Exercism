@@ -8,7 +8,7 @@ describe "LinkedList" do
     list.pop.should eq(7)
   end
 
-  pending "push/pop respectively add/remove at the end of the list" do
+  it "push/pop respectively add/remove at the end of the list" do
     list = LinkedList.new
     list.push(11)
     list.push(13)
@@ -16,13 +16,13 @@ describe "LinkedList" do
     list.pop.should eq(11)
   end
 
-  pending "shift gets an element from the list" do
+  it "shift gets an element from the list" do
     list = LinkedList.new
     list.push(17)
     list.shift.should eq(17)
   end
 
-  pending "shift gets first element from the list" do
+  it "shift gets first element from the list" do
     list = LinkedList.new
     list.push(23)
     list.push(5)
@@ -30,7 +30,7 @@ describe "LinkedList" do
     list.shift.should eq(5)
   end
 
-  pending "unshift adds element at start of the list" do
+  it "unshift adds element at start of the list" do
     list = LinkedList.new
     list.unshift(23)
     list.unshift(5)
@@ -38,7 +38,7 @@ describe "LinkedList" do
     list.shift.should eq(23)
   end
 
-  pending "pop, push, shift, and unshift can be used in any order" do
+  it "pop, push, shift, and unshift can be used in any order" do
     list = LinkedList.new
     list.push(1)
     list.push(2)
@@ -52,19 +52,19 @@ describe "LinkedList" do
     list.shift.should eq(3)
   end
 
-  pending "count an empty list" do
+  it "count an empty list" do
     list = LinkedList.new
     list.count.should eq(0)
   end
 
-  pending "count a list with items" do
+  it "count a list with items" do
     list = LinkedList.new
     list.push(37)
     list.push(1)
     list.count.should eq(2)
   end
 
-  pending "count is correct after mutation" do
+  it "count is correct after mutation" do
     list = LinkedList.new
     list.push(31)
     list.count.should eq(1)
@@ -76,7 +76,7 @@ describe "LinkedList" do
     list.count.should eq(0)
   end
 
-  pending "popping to empty doesn't break the list" do
+  it "popping to empty doesn't break the list" do
     list = LinkedList.new
     list.push(41)
     list.push(59)
@@ -87,7 +87,7 @@ describe "LinkedList" do
     list.pop.should eq(47)
   end
 
-  pending "shifting to empty doesn't break the list" do
+  it "shifting to empty doesn't break the list" do
     list = LinkedList.new
     list.push(41)
     list.push(59)
@@ -98,14 +98,14 @@ describe "LinkedList" do
     list.shift.should eq(47)
   end
 
-  pending "deletes the only element" do
+  it "deletes the only element" do
     list = LinkedList.new
     list.push(61)
     list.delete(61)
     list.count.should eq(0)
   end
 
-  pending "deletes the element with the specified value from the list" do
+  it "deletes the element with the specified value from the list" do
     list = LinkedList.new
     list.push(71)
     list.push(83)
@@ -116,7 +116,7 @@ describe "LinkedList" do
     list.shift.should eq(71)
   end
 
-  pending "deletes the element with the specified value from the list, re-assigns tail" do
+  it "deletes the element with the specified value from the list, re-assigns tail" do
     list = LinkedList.new
     list.push(71)
     list.push(83)
@@ -127,7 +127,7 @@ describe "LinkedList" do
     list.pop.should eq(71)
   end
 
-  pending "deletes the element with the specified value from the list, re-assigns head" do
+  it "deletes the element with the specified value from the list, re-assigns head" do
     list = LinkedList.new
     list.push(71)
     list.push(83)
@@ -138,7 +138,7 @@ describe "LinkedList" do
     list.shift.should eq(79)
   end
 
-  pending "deletes the first of two elements" do
+  it "deletes the first of two elements" do
     list = LinkedList.new
     list.push(97)
     list.push(101)
@@ -147,7 +147,7 @@ describe "LinkedList" do
     list.pop.should eq(101)
   end
 
-  pending "deletes the second of two elements" do
+  it "deletes the second of two elements" do
     list = LinkedList.new
     list.push(97)
     list.push(101)
@@ -156,14 +156,14 @@ describe "LinkedList" do
     list.pop.should eq(97)
   end
 
-  pending "delete does not modify the list if the element is not found" do
+  it "delete does not modify the list if the element is not found" do
     list = LinkedList.new
     list.push(89)
     list.delete(103)
     list.count.should eq(1)
   end
 
-  pending "deletes only the first occurrence" do
+  it "deletes only the first occurrence" do
     list = LinkedList.new
     list.push(73)
     list.push(9)

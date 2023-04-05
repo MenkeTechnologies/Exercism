@@ -6,105 +6,105 @@ describe "Wordy" do
     Wordy.answer("What is 5?").should eq(5)
   end
 
-  pending "addition" do
+  it "addition" do
     Wordy.answer("What is 1 plus 1?").should eq(2)
   end
 
-  pending "more addition" do
+  it "more addition" do
     Wordy.answer("What is 53 plus 2?").should eq(55)
   end
 
-  pending "addition with negative numbers" do
+  it "addition with negative numbers" do
     Wordy.answer("What is -1 plus -10?").should eq(-11)
   end
 
-  pending "large addition" do
+  it "large addition" do
     Wordy.answer("What is 123 plus 45678?").should eq(45801)
   end
 
-  pending "subtraction" do
+  it "subtraction" do
     Wordy.answer("What is 4 minus -12?").should eq(16)
   end
 
-  pending "multiplication" do
+  it "multiplication" do
     Wordy.answer("What is -3 multiplied by 25?").should eq(-75)
   end
 
-  pending "division" do
+  it "division" do
     Wordy.answer("What is 33 divided by -3?").should eq(-11)
   end
 
-  pending "multiple additions" do
+  it "multiple additions" do
     Wordy.answer("What is 1 plus 1 plus 1?").should eq(3)
   end
 
-  pending "addition and subtraction" do
+  it "addition and subtraction" do
     Wordy.answer("What is 1 plus 5 minus -2?").should eq(8)
   end
 
-  pending "multiple subtraction" do
+  it "multiple subtraction" do
     Wordy.answer("What is 20 minus 4 minus 13?").should eq(3)
   end
 
-  pending "subtraction then addition" do
+  it "subtraction then addition" do
     Wordy.answer("What is 17 minus 6 plus 3?").should eq(14)
   end
 
-  pending "multiple multiplication" do
+  it "multiple multiplication" do
     Wordy.answer("What is 2 multiplied by -2 multiplied by 3?").should eq(-12)
   end
 
-  pending "addition and multiplication" do
+  it "addition and multiplication" do
     Wordy.answer("What is -3 plus 7 multiplied by -2?").should eq(-8)
   end
 
-  pending "multiple division" do
+  it "multiple division" do
     Wordy.answer("What is -12 divided by 2 divided by -3?").should eq(2)
   end
 
-  pending "unknown operation" do
+  it "unknown operation" do
     expect_raises(ArgumentError) do
       Wordy.answer("What is 52 cubed?")
     end
   end
 
-  pending "Non math question" do
+  it "Non math question" do
     expect_raises(ArgumentError) do
       Wordy.answer("Who is the President of the United States?")
     end
   end
 
-  pending "reject problem missing an operand" do
+  it "reject problem missing an operand" do
     expect_raises(ArgumentError) do
       Wordy.answer("What is 1 plus?")
     end
   end
 
-  pending "reject problem with no operands or operators" do
+  it "reject problem with no operands or operators" do
     expect_raises(ArgumentError) do
       Wordy.answer("What is?")
     end
   end
 
-  pending "reject two operations in a row" do
+  it "reject two operations in a row" do
     expect_raises(ArgumentError) do
       Wordy.answer("What is 1 plus plus 2?")
     end
   end
 
-  pending "reject two numbers in a row" do
+  it "reject two numbers in a row" do
     expect_raises(ArgumentError) do
       Wordy.answer("What is 1 plus 2 1?")
     end
   end
 
-  pending "reject postfix notation" do
+  it "reject postfix notation" do
     expect_raises(ArgumentError) do
       Wordy.answer("What is 1 2 plus?")
     end
   end
 
-  pending "reject prefix notation" do
+  it "reject prefix notation" do
     expect_raises(ArgumentError) do
       Wordy.answer("What is plus 1 2?")
     end
