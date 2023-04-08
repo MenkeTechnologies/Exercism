@@ -26,7 +26,7 @@ fn test_example_knapsack() {
 }
 
 #[test]
-#[ignore]
+
 fn test_no_items() {
     let max_weight = 100;
     let items = vec![];
@@ -35,7 +35,7 @@ fn test_no_items() {
 }
 
 #[test]
-#[ignore]
+
 fn test_one_item_too_heavy() {
     let max_weight = 10;
     let items = vec![Item {
@@ -47,7 +47,7 @@ fn test_one_item_too_heavy() {
 }
 
 #[test]
-#[ignore]
+
 fn test_five_items_cannot_be_greedy_by_weight() {
     let max_weight = 10;
     let items = vec![
@@ -77,7 +77,7 @@ fn test_five_items_cannot_be_greedy_by_weight() {
 }
 
 #[test]
-#[ignore]
+
 fn test_five_items_cannot_be_greedy_by_value() {
     let max_weight = 10;
     let items = vec![
@@ -107,7 +107,7 @@ fn test_five_items_cannot_be_greedy_by_value() {
 }
 
 #[test]
-#[ignore]
+
 fn test_8_items() {
     let max_weight = 104;
     let items = vec![
@@ -149,7 +149,7 @@ fn test_8_items() {
 }
 
 #[test]
-#[ignore]
+
 fn test_15_items() {
     let max_weight = 750;
     let items = vec![
