@@ -9,7 +9,7 @@ describe "Diamond" do
     Diamond.rows('A').should eq(expected)
   end
 
-  pending "Degenerate case with no row containing 3 distinct groups of spaces" do
+  it "Degenerate case with no row containing 3 distinct groups of spaces" do
     expected = [
       " A ",
       "B B",
@@ -18,7 +18,7 @@ describe "Diamond" do
     Diamond.rows('B').should eq(expected)
   end
 
-  pending "Smallest non-degenerate case with odd diamond side length" do
+  it "Smallest non-degenerate case with odd diamond side length" do
     expected = [
       "  A  ",
       " B B ",
@@ -29,7 +29,7 @@ describe "Diamond" do
     Diamond.rows('C').should eq(expected)
   end
 
-  pending "Smallest non-degenerate case with even diamond side length" do
+  it "Smallest non-degenerate case with even diamond side length" do
     expected = [
       "   A   ",
       "  B B  ",
@@ -42,7 +42,7 @@ describe "Diamond" do
     Diamond.rows('D').should eq(expected)
   end
 
-  pending "Largest possible diamond" do
+  it "Largest possible diamond" do
     expected = [
       "                         A                         ",
       "                        B B                        ",
