@@ -20,7 +20,7 @@ public class LedgerTest {
         ledger = new Ledger();
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void emptyLedgerUS() {
         // given
@@ -34,7 +34,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void emptyLedgerNL() {
         // given
@@ -48,7 +48,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void oneEntry() {
         // given
@@ -65,7 +65,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void creditAndDebit() {
         // given
@@ -85,7 +85,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void multipleEntriesOnSameDateOrderedByDescription() {
         // given
@@ -105,7 +105,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void finalOrderTieBreakerIsChange() {
         // given
@@ -128,7 +128,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void overlongDescriptions() {
         // given
@@ -146,7 +146,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void euros() {
         // given
@@ -164,7 +164,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void dutchLocale() {
         // given
@@ -182,7 +182,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void dutchNegativeNumberWith3DigitsBeforeDecimalPoint() {
         // given
@@ -200,7 +200,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void americanNegativeNumberWith3DigitsBeforeDecimalPoint() {
 
@@ -219,7 +219,7 @@ public class LedgerTest {
         Assert.assertEquals(expected, actual);
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void givenInvalidLocale_ThenException() {
         // given
@@ -236,7 +236,7 @@ public class LedgerTest {
 
     }
 
-    @Ignore("Remove to run test")
+    
     @Test
     public void givenInvalidCurrency_ThenException() {
         // given
