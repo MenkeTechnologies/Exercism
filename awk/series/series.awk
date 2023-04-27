@@ -1,9 +1,12 @@
 #!/usr/bin/env gawk -f
 
-# These variables are initialized on the command line (using '-v'):
-# - len
-
-BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+@include "assert"
+{
+    assert(NF, "series cannot be empty")
+    assert(len > 0 && len <= length(), "invalid length")
+    n = $0
+    while (i++ <= length(n) - len)
+        $i = substr(n, i, len)
+    print
 }
+
