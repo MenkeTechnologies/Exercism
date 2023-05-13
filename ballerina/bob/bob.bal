@@ -1,7 +1,14 @@
-# Returns Bob's response to someone talking to him.
-#
-# + input - whatever is said to Bob
-# + return - Bob's response
 public function hey(string input) returns string {
-    // TODO: implement this function
+    string nows = input.trim();
+    boolean empty = nows.length() == 0;
+    boolean yell = nows == nows.toUpperAscii() && nows != nows.toLowerAscii();
+    boolean question = nows.endsWith("?");
+    if empty {
+        return "Fine. Be that way!";
+    }
+    if (yell) {
+        return question ? "Calm down, I know what I'm doing!" : "Whoa, chill out!";
+    }
+
+    return question ? "Sure." : "Whatever.";
 }
