@@ -1,24 +1,19 @@
-def new_remote_control_car:
-  # Populate the object with the required attributes
-  {}
-;
-
 def new_remote_control_car(nickname):
-  # Populate the object with the required attributes
-  {}
+  {
+    "battery_percentage": 100,
+    "distance_driven_in_meters": 0,
+    "nickname": nickname
+  }
 ;
 
-def display_distance:
-  # Implement the required output string
-  ""
-;
+def new_remote_control_car: new_remote_control_car(null);
 
-def display_battery:
-  # Implement the required output string
-  ""
-;
+def display_distance: "\(.distance_driven_in_meters) meters";
+
+def display_battery: "Battery " + if .battery_percentage == 0 then "empty" else "at \(.battery_percentage)%" end;
 
 def drive:
-  # Update the input's attributes as required
-  .
+  if .battery_percentage == 0 then .
+  else (.battery_percentage -= 1 | .distance_driven_in_meters += 20)
+  end
 ;
