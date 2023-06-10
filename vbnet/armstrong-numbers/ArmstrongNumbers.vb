@@ -1,7 +1,10 @@
-Imports System
-
 Public Module ArmstrongNumbers
     Public Function IsArmstrongNumber(ByVal number As Integer) As Boolean
-        Throw New NotImplementedException("You need to implement this function.")
+        Dim intAsString As String = number.ToString()
+        Dim sum As Integer = 0
+        For Each c As Char In intAsString
+            sum += CInt(Math.Pow(CInt(Char.GetNumericValue(c)), intAsString.Length))
+        Next
+        Return sum = number
     End Function
 End Module
