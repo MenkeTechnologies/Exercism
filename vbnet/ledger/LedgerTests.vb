@@ -11,7 +11,7 @@ Public Class LedgerTests
         Assert.Equal(expected, Format(currency, locale, entries))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_entry()
         Dim currency = "USD"
         Dim locale = "en-US"
@@ -21,7 +21,7 @@ Public Class LedgerTests
         Assert.Equal(expected, Format(currency, locale, entries))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Credit_and_debit()
         Dim currency = "USD"
         Dim locale = "en-US"
@@ -31,7 +31,7 @@ Public Class LedgerTests
         Assert.Equal(expected, Format(currency, locale, entries))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_entries_on_same_date_ordered_by_description()
         Dim currency = "USD"
         Dim locale = "en-US"
@@ -41,7 +41,7 @@ Public Class LedgerTests
         Assert.Equal(expected, Format(currency, locale, entries))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Final_order_tie_breaker_is_change()
         Dim currency = "USD"
         Dim locale = "en-US"
@@ -51,7 +51,7 @@ Public Class LedgerTests
         Assert.Equal(expected, Format(currency, locale, entries))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Overlong_descriptions()
         Dim currency = "USD"
         Dim locale = "en-US"
@@ -61,7 +61,7 @@ Public Class LedgerTests
         Assert.Equal(expected, Format(currency, locale, entries))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Euros()
         Dim currency = "EUR"
         Dim locale = "en-US"
@@ -71,7 +71,7 @@ Public Class LedgerTests
         Assert.Equal(expected, Format(currency, locale, entries))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Dutch_locale()
         Dim currency = "USD"
         Dim locale = "nl-NL"
@@ -81,7 +81,7 @@ Public Class LedgerTests
         Assert.Equal(expected, Format(currency, locale, entries))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Dutch_negative_number_with_3_digits_before_decimal_point()
         Dim currency = "USD"
         Dim locale = "nl-NL"
@@ -91,7 +91,7 @@ Public Class LedgerTests
         Assert.Equal(expected, Format(currency, locale, entries))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub American_negative_number_with_3_digits_before_decimal_point()
         Dim currency = "USD"
         Dim locale = "en-US"

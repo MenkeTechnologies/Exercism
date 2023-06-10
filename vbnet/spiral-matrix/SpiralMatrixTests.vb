@@ -6,14 +6,14 @@ Public Class SpiralMatrixTests
         Assert.Empty(SpiralMatrix.GetMatrix(0))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Trivial_spiral()
         Dim expected = {
                      {1}}
         Assert.Equal(expected, SpiralMatrix.GetMatrix(1))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Spiral_of_size_2()
         Dim expected = {
              {1, 2},
@@ -21,7 +21,7 @@ Public Class SpiralMatrixTests
         Assert.Equal(expected, SpiralMatrix.GetMatrix(2))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Spiral_of_size_3()
         Dim expected = {
              {1, 2, 3},
@@ -30,7 +30,7 @@ Public Class SpiralMatrixTests
         Assert.Equal(expected, SpiralMatrix.GetMatrix(3))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Spiral_of_size_4()
         Dim expected = {
              {1, 2, 3, 4},
@@ -40,7 +40,7 @@ Public Class SpiralMatrixTests
         Assert.Equal(expected, SpiralMatrix.GetMatrix(4))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Spiral_of_size_5()
         Dim expected = {
              {1, 2, 3, 4, 5},

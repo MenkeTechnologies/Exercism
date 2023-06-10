@@ -12,7 +12,7 @@ Public Class BankAccountTests
         Assert.Equal(0D, account.Balance)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Check_basic_balance()
         Dim account = New BankAccount()
         account.Open()
@@ -26,7 +26,7 @@ Public Class BankAccountTests
         Assert.Equal(10D, updatedBalance)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Balance_can_increment_and_decrement()
         Dim account = New BankAccount()
         account.Open()
@@ -43,7 +43,7 @@ Public Class BankAccountTests
         Assert.Equal(-5D, subtractedBalance)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Closed_account_throws_exception_when_checking_balance()
         Dim account = New BankAccount()
         account.Open()
@@ -52,7 +52,7 @@ Public Class BankAccountTests
         Assert.Throws(Of InvalidOperationException)(Function() account.Balance)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Change_account_balance_from_multiple_threads()
         Dim account = New BankAccount()
         Dim tasks = New List(Of Task)()

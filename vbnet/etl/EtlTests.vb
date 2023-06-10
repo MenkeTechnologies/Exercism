@@ -14,7 +14,7 @@ Public Class EtlTests
         Assert.Equal(expected, Transform(input))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Single_score_with_multiple_letters()
         Dim input = New Dictionary(Of Integer, String()) From {
     {1,
@@ -30,7 +30,7 @@ Public Class EtlTests
         Assert.Equal(expected, Transform(input))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_scores_with_multiple_letters()
         Dim input = New Dictionary(Of Integer, String()) From {
     {1,
@@ -47,7 +47,7 @@ Public Class EtlTests
         Assert.Equal(expected, Transform(input))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_scores_with_differing_numbers_of_letters()
         Dim input = New Dictionary(Of Integer, String()) From {
     {1,

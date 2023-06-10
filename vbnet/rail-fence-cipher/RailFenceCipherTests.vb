@@ -9,7 +9,7 @@ Public Class RailFenceCipherTests
         Assert.Equal(expected, sut.Encode(msg))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Encode_with_three_rails()
         Dim msg = "WEAREDISCOVEREDFLEEATONCE"
         Dim sut = New RailFenceCipher(3)
@@ -17,7 +17,7 @@ Public Class RailFenceCipherTests
         Assert.Equal(expected, sut.Encode(msg))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Encode_with_ending_in_the_middle()
         Dim msg = "EXERCISES"
         Dim sut = New RailFenceCipher(4)
@@ -25,7 +25,7 @@ Public Class RailFenceCipherTests
         Assert.Equal(expected, sut.Encode(msg))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Decode_with_three_rails()
         Dim msg = "TEITELHDVLSNHDTISEIIEA"
         Dim sut = New RailFenceCipher(3)
@@ -33,7 +33,7 @@ Public Class RailFenceCipherTests
         Assert.Equal(expected, sut.Decode(msg))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Decode_with_five_rails()
         Dim msg = "EIEXMSMESAORIWSCE"
         Dim sut = New RailFenceCipher(5)
@@ -41,7 +41,7 @@ Public Class RailFenceCipherTests
         Assert.Equal(expected, sut.Decode(msg))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Decode_with_six_rails()
         Dim msg = "133714114238148966225439541018335470986172518171757571896261"
         Dim sut = New RailFenceCipher(6)

@@ -11,7 +11,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Count_one_of_each_word()
         Dim actual = CountWords("one of each")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -22,7 +22,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_occurrences_of_a_word()
         Dim actual = CountWords("one fish two fish red fish blue fish")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -35,7 +35,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Handles_cramped_lists()
         Dim actual = CountWords("one,two,three")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -46,7 +46,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Handles_expanded_lists()
         Dim actual = CountWords("one," & vbLf & "two," & vbLf & "three")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -57,7 +57,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Ignore_punctuation()
         Dim actual = CountWords("car: carpet as java: javascript!!&@$%^&")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -70,7 +70,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Include_numbers()
         Dim actual = CountWords("testing, 1, 2 testing")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -81,7 +81,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Normalize_case()
         Dim actual = CountWords("go Go GO Stop stop")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -91,7 +91,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub With_apostrophes()
         Dim actual = CountWords("'First: don't laugh. Then: don't cry. You're getting it.'")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -107,7 +107,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub With_quotations()
         Dim actual = CountWords("Joe can't tell between 'large' and large.")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -121,7 +121,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Substrings_from_the_beginning()
         Dim actual = CountWords("Joe can't tell between app, apple and a.")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -137,7 +137,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_spaces_not_detected_as_a_word()
         Dim actual = CountWords(" multiple   whitespaces")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -147,7 +147,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Alternating_word_separators_not_detected_as_a_word()
         Dim actual = CountWords("," & vbLf & ",one," & vbLf & " ,two " & vbLf & " 'three'")
         Dim expected = New Dictionary(Of String, Integer) From {
@@ -158,7 +158,7 @@ Public Class WordCountTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Quotation_for_word_with_apostrophe()
         Dim actual = CountWords("can, can't, 'can't'")
         Dim expected = New Dictionary(Of String, Integer) From {

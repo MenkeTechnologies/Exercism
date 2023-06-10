@@ -2,7 +2,7 @@ Imports XUnit
 
 
 Public Class BinaryTest
-	<Fact>
+    <Fact>
     Public Sub BinaryCanConvertFormattedStrings()
         Assert.Equal(New Binary("011").ToDecimal(), 3)
     End Sub

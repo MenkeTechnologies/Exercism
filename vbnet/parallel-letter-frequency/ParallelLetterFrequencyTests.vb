@@ -20,7 +20,7 @@ Public Class ParallelLetterFrequencyTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_letter()
         Dim input = {"a"}
         Dim actual = Calculate(input)
@@ -30,7 +30,7 @@ Public Class ParallelLetterFrequencyTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Case_insensitivity()
         Dim input = {"aA"}
         Dim actual = Calculate(input)
@@ -40,7 +40,7 @@ Public Class ParallelLetterFrequencyTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Many_empty_texts_still_mean_no_letters()
         Dim input = Enumerable.Repeat("  ", 10000)
         Dim actual = Calculate(input)
@@ -48,7 +48,7 @@ Public Class ParallelLetterFrequencyTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Many_times_the_same_text_gives_a_predictable_result()
         Dim input = Enumerable.Repeat("abc", 1000)
         Dim actual = Calculate(input)
@@ -60,21 +60,21 @@ Public Class ParallelLetterFrequencyTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Punctuation_doesnt_count()
         Dim input = {OdeAnDieFreude}
         Dim actual = Calculate(input)
         Assert.False(actual.ContainsKey(","c))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Numbers_dont_count()
         Dim input = {"Testing, 1, 2, 3"}
         Dim actual = Calculate(input)
         Assert.False(actual.ContainsKey("1"c))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub All_three_anthems_together()
         Dim input = {OdeAnDieFreude, Wilhelmus, StarSpangledBanner}
         Dim actual = Calculate(input)

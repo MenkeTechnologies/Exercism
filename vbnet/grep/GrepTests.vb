@@ -13,7 +13,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_one_match_print_line_numbers_flag()
         Dim pattern = "Forbidden"
         Dim flags = "-n"
@@ -22,7 +22,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_one_match_case_insensitive_flag()
         Dim pattern = "FORBIDDEN"
         Dim flags = "-i"
@@ -31,7 +31,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_one_match_print_file_names_flag()
         Dim pattern = "Forbidden"
         Dim flags = "-l"
@@ -40,7 +40,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_one_match_match_entire_lines_flag()
         Dim pattern = "With loss of Eden, till one greater Man"
         Dim flags = "-x"
@@ -49,7 +49,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_one_match_multiple_flags()
         Dim pattern = "OF ATREUS, Agamemnon, KIng of MEN."
         Dim flags = "-n -i -x"
@@ -58,7 +58,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_several_matches_no_flags()
         Dim pattern = "may"
         Dim flags = ""
@@ -67,7 +67,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_several_matches_print_line_numbers_flag()
         Dim pattern = "may"
         Dim flags = "-n"
@@ -76,7 +76,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_several_matches_match_entire_lines_flag()
         Dim pattern = "may"
         Dim flags = "-x"
@@ -85,7 +85,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_several_matches_case_insensitive_flag()
         Dim pattern = "ACHILLES"
         Dim flags = "-i"
@@ -94,7 +94,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_several_matches_inverted_flag()
         Dim pattern = "Of"
         Dim flags = "-v"
@@ -103,7 +103,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_no_matches_various_flags()
         Dim pattern = "Gandalf"
         Dim flags = "-n -l -x -i"
@@ -112,7 +112,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_one_match_file_flag_takes_precedence_over_line_flag()
         Dim pattern = "ten"
         Dim flags = "-n -l"
@@ -121,7 +121,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub One_file_several_matches_inverted_and_match_entire_lines_flags()
         Dim pattern = "Illustrious into Ades premature,"
         Dim flags = "-x -v"
@@ -130,7 +130,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_one_match_no_flags()
         Dim pattern = "Agamemnon"
         Dim flags = ""
@@ -139,7 +139,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_several_matches_no_flags()
         Dim pattern = "may"
         Dim flags = ""
@@ -148,7 +148,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_several_matches_print_line_numbers_flag()
         Dim pattern = "that"
         Dim flags = "-n"
@@ -157,7 +157,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_one_match_print_file_names_flag()
         Dim pattern = "who"
         Dim flags = "-l"
@@ -166,7 +166,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_several_matches_case_insensitive_flag()
         Dim pattern = "TO"
         Dim flags = "-i"
@@ -175,7 +175,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_several_matches_inverted_flag()
         Dim pattern = "a"
         Dim flags = "-v"
@@ -184,7 +184,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_one_match_match_entire_lines_flag()
         Dim pattern = "But I beseech your grace that I may know"
         Dim flags = "-x"
@@ -193,7 +193,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_one_match_multiple_flags()
         Dim pattern = "WITH LOSS OF EDEN, TILL ONE GREATER MAN"
         Dim flags = "-n -i -x"
@@ -202,7 +202,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_no_matches_various_flags()
         Dim pattern = "Frodo"
         Dim flags = "-n -l -x -i"
@@ -211,7 +211,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_several_matches_file_flag_takes_precedence_over_line_number_flag()
         Dim pattern = "who"
         Dim flags = "-n -l"
@@ -220,7 +220,7 @@ Public Class GrepTests
         Assert.Equal(expected, Match(pattern, flags, files))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_files_several_matches_inverted_and_match_entire_lines_flags()
         Dim pattern = "Illustrious into Ades premature,"
         Dim flags = "-x -v"

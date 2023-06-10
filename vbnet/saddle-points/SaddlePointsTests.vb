@@ -12,14 +12,14 @@ Public Class SaddlePointsTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_identify_that_empty_matrix_has_no_saddle_points()
         Dim matrix = New Integer(,) {}
         Dim actual = SaddlePoints.Calculate(matrix)
         Assert.Empty(actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_identify_lack_of_saddle_points_when_there_are_none()
         Dim matrix = {
              {1, 2, 3},
@@ -29,7 +29,7 @@ Public Class SaddlePointsTests
         Assert.Empty(actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_identify_multiple_saddle_points_in_a_column()
         Dim matrix = {
              {4, 5, 4},
@@ -40,7 +40,7 @@ Public Class SaddlePointsTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_identify_multiple_saddle_points_in_a_row()
         Dim matrix = {
              {6, 7, 8},
@@ -51,7 +51,7 @@ Public Class SaddlePointsTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_identify_saddle_point_in_bottom_right_corner()
         Dim matrix = {
              {8, 7, 9},
@@ -62,7 +62,7 @@ Public Class SaddlePointsTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_identify_saddle_points_in_a_non_square_matrix()
         Dim matrix = {
              {3, 1, 3},
@@ -72,7 +72,7 @@ Public Class SaddlePointsTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_identify_that_saddle_points_in_a_single_column_matrix_are_those_with_the_minimum_value()
         Dim matrix = {
              {2},
@@ -84,7 +84,7 @@ Public Class SaddlePointsTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_identify_that_saddle_points_in_a_single_row_matrix_are_those_with_the_maximum_value()
         Dim matrix = {
                      {2, 5, 3, 5}}
