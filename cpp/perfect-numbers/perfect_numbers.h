@@ -1,6 +1,8 @@
-#if !defined(PERFECT_NUMBERS_H)
-#define PERFECT_NUMBERS_H
+#pragma once
 
-namespace perfect_numbers {}  // namespace perfect_numbers
-
-#endif  // PERFECT_NUMBERS_H
+namespace perfect_numbers {
+	const int perfect = 0;
+	const int abundant = 1;
+	const int deficient = 2;
+	int classify(int);
+}
