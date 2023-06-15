@@ -1,1 +1,25 @@
-"Remove this line and implement your solution" | halt_error
+.strand
+| [scan(".{1,3}")]
+| {
+  "AUG": "Methionine",
+  "UUU": "Phenylalanine",
+  "UUC": "Phenylalanine",
+  "UUA": "Leucine",
+  "UUG": "Leucine",
+  "UCU": "Serine",
+  "UCC": "Serine",
+  "UCA": "Serine",
+  "UCG": "Serine",
+  "UAU": "Tyrosine",
+  "UAC": "Tyrosine",
+  "UGU": "Cysteine",
+  "UGC": "Cysteine",
+  "UGG": "Tryptophan",
+  "UAA": "STOP",
+  "UAG": "STOP",
+  "UGA": "STOP"
+} as $proteins
+| map($proteins[.])
+| .[0:(index("STOP") // length)]
+| map(if . == null then "Invalid codon" | halt_error else . end)
+
