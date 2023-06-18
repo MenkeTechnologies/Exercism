@@ -29,6 +29,7 @@ extern "C"
  * executable built. If you are using the test runner generator and/or
  * Ceedling, these are optional. */
 void setUp(void);
+
 void tearDown(void);
 
 /* These functions are intended to be called at the beginning and end of an
@@ -38,6 +39,7 @@ void tearDown(void);
  * If using Ceedling or the test runner generator, these will be called
  * automatically if they exist. */
 void suiteSetUp(void);
+
 int suiteTearDown(int num_failures);
 
 /*-------------------------------------------------------
@@ -50,6 +52,7 @@ int suiteTearDown(int num_failures);
  * setup again, verifying any end-of-test needs between. verifyTest will only
  * run the verification. */
 void resetTest(void);
+
 void verifyTest(void);
 
 /*-------------------------------------------------------
