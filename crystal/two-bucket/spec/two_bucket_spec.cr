@@ -15,7 +15,7 @@ describe "TwoBucket" do
     )
   end
 
-  pending "Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two" do
+  it "Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two" do
     TwoBucket.measure(
       bucket_one: 3,
       bucket_two: 5,
@@ -28,7 +28,7 @@ describe "TwoBucket" do
     )
   end
 
-  pending "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket one" do
+  it "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket one" do
     TwoBucket.measure(
       bucket_one: 7,
       bucket_two: 11,
@@ -41,7 +41,7 @@ describe "TwoBucket" do
     )
   end
 
-  pending "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket two" do
+  it "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket two" do
     TwoBucket.measure(
       bucket_one: 7,
       bucket_two: 11,
@@ -54,7 +54,7 @@ describe "TwoBucket" do
     )
   end
 
-  pending "Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two" do
+  it "Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two" do
     TwoBucket.measure(
       bucket_one: 1,
       bucket_two: 3,
@@ -67,7 +67,7 @@ describe "TwoBucket" do
     )
   end
 
-  pending "Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two" do
+  it "Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two" do
     TwoBucket.measure(
       bucket_one: 2,
       bucket_two: 3,
@@ -80,7 +80,7 @@ describe "TwoBucket" do
     )
   end
 
-  pending "Not possible to reach the goal" do
+  it "Not possible to reach the goal" do
     expect_raises(ArgumentError) do
       TwoBucket.measure(
         bucket_one: 6,
@@ -91,7 +91,7 @@ describe "TwoBucket" do
     end
   end
 
-  pending "With the same buckets but a different goal, then it is possible" do
+  it "With the same buckets but a different goal, then it is possible" do
     TwoBucket.measure(
       bucket_one: 6,
       bucket_two: 15,
@@ -104,7 +104,7 @@ describe "TwoBucket" do
     )
   end
 
-  pending "Goal larger than both buckets is impossible" do
+  it "Goal larger than both buckets is impossible" do
     expect_raises(ArgumentError) do
       TwoBucket.measure(
         bucket_one: 5,

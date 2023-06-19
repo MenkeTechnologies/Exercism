@@ -13,21 +13,21 @@ describe "Connect" do
     Connect.winner(board).should eq ""
   end
 
-  pending "X can win on a 1x1 board" do
+  it "X can win on a 1x1 board" do
     board = [
       "X",
     ]
     Connect.winner(board).should eq "X"
   end
 
-  pending "O can win on a 1x1 board" do
+  it "O can win on a 1x1 board" do
     board = [
       "O",
     ]
     Connect.winner(board).should eq "O"
   end
 
-  pending "only edges does not make a winner" do
+  it "only edges does not make a winner" do
     board = [
       "O O O X",
       " X . . X",
@@ -37,7 +37,7 @@ describe "Connect" do
     Connect.winner(board).should eq ""
   end
 
-  pending "illegal diagonal does not make a winner" do
+  it "illegal diagonal does not make a winner" do
     board = [
       "X O . .",
       " O X X X",
@@ -48,7 +48,7 @@ describe "Connect" do
     Connect.winner(board).should eq ""
   end
 
-  pending "nobody wins crossing adjacent angles" do
+  it "nobody wins crossing adjacent angles" do
     board = [
       "X . . .",
       " . X O .",
@@ -59,7 +59,7 @@ describe "Connect" do
     Connect.winner(board).should eq ""
   end
 
-  pending "X wins crossing from left to right" do
+  it "X wins crossing from left to right" do
     board = [
       ". O . .",
       " O X X X",
@@ -70,7 +70,7 @@ describe "Connect" do
     Connect.winner(board).should eq "X"
   end
 
-  pending "O wins crossing from top to bottom" do
+  it "O wins crossing from top to bottom" do
     board = [
       ". O . .",
       " O X X X",
@@ -81,7 +81,7 @@ describe "Connect" do
     Connect.winner(board).should eq "O"
   end
 
-  pending "X wins using a convoluted path" do
+  it "X wins using a convoluted path" do
     board = [
       ". X X . .",
       " X . X . X",
@@ -92,7 +92,7 @@ describe "Connect" do
     Connect.winner(board).should eq "X"
   end
 
-  pending "X wins using a spiral path" do
+  it "X wins using a spiral path" do
     board = [
       "O X X X X X X X X",
       " O X O O O O O O O",

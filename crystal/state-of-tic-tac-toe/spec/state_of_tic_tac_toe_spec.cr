@@ -12,7 +12,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where X won via middle column victory" do
+    it "Finished game where X won via middle column victory" do
       board = [
         "OXO",
         " X ",
@@ -21,7 +21,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where X won via right column victory" do
+    it "Finished game where X won via right column victory" do
       board = [
         "OOX",
         "  X",
@@ -30,7 +30,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where O won via left column victory" do
+    it "Finished game where O won via left column victory" do
       board = [
         "OXX",
         "OX ",
@@ -39,7 +39,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where O won via middle column victory" do
+    it "Finished game where O won via middle column victory" do
       board = [
         "XOX",
         " OX",
@@ -48,7 +48,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where O won via right column victory" do
+    it "Finished game where O won via right column victory" do
       board = [
         "XXO",
         " XO",
@@ -57,7 +57,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where X won via top row victory" do
+    it "Finished game where X won via top row victory" do
       board = [
         "XXX",
         "XOO",
@@ -66,7 +66,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where X won via middle row victory" do
+    it "Finished game where X won via middle row victory" do
       board = [
         "O  ",
         "XXX",
@@ -75,7 +75,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where X won via bottom row victory" do
+    it "Finished game where X won via bottom row victory" do
       board = [
         " OO",
         "O X",
@@ -84,7 +84,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where O won via top row victory" do
+    it "Finished game where O won via top row victory" do
       board = [
         "OOO",
         "XXO",
@@ -93,7 +93,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where O won via middle row victory" do
+    it "Finished game where O won via middle row victory" do
       board = [
         "XX ",
         "OOO",
@@ -102,7 +102,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where O won via bottom row victory" do
+    it "Finished game where O won via bottom row victory" do
       board = [
         "XOX",
         " XX",
@@ -111,7 +111,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where X won via falling diagonal victory" do
+    it "Finished game where X won via falling diagonal victory" do
       board = [
         "XOO",
         " X ",
@@ -120,7 +120,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where X won via rising diagonal victory" do
+    it "Finished game where X won via rising diagonal victory" do
       board = [
         "O X",
         "OX ",
@@ -129,7 +129,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where O won via falling diagonal victory" do
+    it "Finished game where O won via falling diagonal victory" do
       board = [
         "OXX",
         "OOX",
@@ -138,7 +138,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where O won via rising diagonal victory" do
+    it "Finished game where O won via rising diagonal victory" do
       board = [
         "  O",
         " OX",
@@ -147,7 +147,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where X won via a row and a column victory" do
+    it "Finished game where X won via a row and a column victory" do
       board = [
         "XXX",
         "XOO",
@@ -156,7 +156,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Win)
     end
 
-    pending "Finished game where X won via two diagonal victories" do
+    it "Finished game where X won via two diagonal victories" do
       board = [
         "XOX",
         "OXO",
@@ -167,7 +167,7 @@ describe "StateOfTicTacToe" do
   end
 
   describe "Drawn games" do
-    pending "Draw" do
+    it "Draw" do
       board = [
         "XOX",
         "XXO",
@@ -176,7 +176,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Draw)
     end
 
-    pending "Another draw" do
+    it "Another draw" do
       board = [
         "XXO",
         "OXX",
@@ -187,7 +187,7 @@ describe "StateOfTicTacToe" do
   end
 
   describe "Ongoing games" do
-    pending "Ongoing game: one move in" do
+    it "Ongoing game: one move in" do
       board = [
         "   ",
         "X  ",
@@ -196,7 +196,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Ongoing)
     end
 
-    pending "Ongoing game: two moves in" do
+    it "Ongoing game: two moves in" do
       board = [
         "O  ",
         " X ",
@@ -205,7 +205,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::State::Ongoing)
     end
 
-    pending "Ongoing game: five moves in" do
+    it "Ongoing game: five moves in" do
       board = [
         "X  ",
         " XO",
@@ -216,7 +216,7 @@ describe "StateOfTicTacToe" do
   end
 
   describe "Invalid boards" do
-    pending "Invalid board: X went twice" do
+    it "Invalid board: X went twice" do
       board = [
         "XX ",
         "   ",
@@ -225,7 +225,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::Error::XWentTwice)
     end
 
-    pending "Invalid board: O started" do
+    it "Invalid board: O started" do
       board = [
         "OOX",
         "   ",
@@ -234,7 +234,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::Error::OStarted)
     end
 
-    pending "Invalid board: X won and O kept playing" do
+    it "Invalid board: X won and O kept playing" do
       board = [
         "XXX",
         "OOO",
@@ -243,7 +243,7 @@ describe "StateOfTicTacToe" do
       TicTacToe.state(board).should eq(TicTacToe::Error::GameShouldHaveEndedAfterTheGameWasWon)
     end
 
-    pending "Invalid board: players kept playing after a win" do
+    it "Invalid board: players kept playing after a win" do
       board = [
         "XXX",
         "OOO",
