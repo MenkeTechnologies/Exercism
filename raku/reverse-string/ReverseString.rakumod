@@ -1,4 +1,5 @@
 unit module ReverseString;
 
-sub reverse-string($string) is export {
+sub reverse-string( $_ ) is export {
+    .comb.reverse.join
 }
