@@ -3,14 +3,13 @@ unit module MatchingBrackets;
 constant %brackets = <( ) [ ] { }>;
 
 sub has-matching-brackets ($s) is export {
-    say %brackets;
-    my @stack;
+    my @stk;
     for $s.comb(/<[()[\]{}]>/) -> $c {
         with %brackets{$c} {
-            @stack.push($_);
+            @stk.push($_);
         } else {
-            return False unless @stack && $c eq @stack.pop;
+            return False unless @stk && $c eq @stk.pop;
         }
     }
-    @stack.elems == 0;
+    @stk.elems == 0;
 }
