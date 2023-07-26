@@ -1,9 +1,10 @@
-function Get-HammingDifference([string]$A, [string]$B) {
-    if ($A.Length -ne $B.Length) {
-        Throw("Left and right strands must be of equal length.")
+function Get-HammingDifference($strand1, $strand2) {
+ 
+    if ($strand1.Length -ne $strand2.Length) {
+        Throw "strands must be of equal length."
     }
-    [int] $hamming = 0
-    0..$A.Length | % { if ($A[$_] -ne $B[$_]) { $hamming++ } }
+    $hamming = 0
+    0..$strand1.Length | % { if ($strand1[$_] -ne $strand2[$_]) { $hamming++ } }
     return $hamming
 }
 
