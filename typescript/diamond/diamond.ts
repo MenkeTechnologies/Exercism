@@ -1,10 +1,5 @@
-export const makeDiamond = (c: string) => {
-    const A = 'A'.charCodeAt(0), len = c.charCodeAt(0) - A, halfRow = []
-    for (let i = 0; i <= len; ++i) {
-        halfRow.push(' '.repeat(len - i) + String.fromCharCode(A + i) + ' '.repeat(i))
-    }
-    const rows = halfRow.map(line => line + [...line]
-        .reverse().slice(1).join(''))
-    const full = [...rows, ...[...rows].reverse().slice(1)]
-    return full.join('\n') + '\n'
+export const makeDiamond = (c: string): string => {
+    let offset = c.charCodeAt(0) - 'A'.charCodeAt(0) + 1
+    return [...Array(offset).keys(), ...[...Array(offset).keys()].slice(0, -1).reverse()].map((row) => [...[...Array(offset).keys()].reverse(), ...[...Array(offset).keys()].slice(1)].reduce((acc, midOffset) => acc + (row === midOffset ? String.fromCharCode('A'.charCodeAt(0) + row) : ' '), "")).join("\n") + "\n";
+
 };
