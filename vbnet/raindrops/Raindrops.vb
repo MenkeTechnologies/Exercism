@@ -9,6 +9,6 @@ Public Module Raindrops
         {7, "Plong"}
     }
     Public Function Convert(number As Integer) As String
-        Return String.Join("", dict.Where(Function(x) number Mod x.Key = 0).Select(Function(x) x.Value).DefaultIfEmpty(number.ToString()))
+        Return String.Join("", dict.Where(Function(kv) number Mod kv.Key = 0).Select(Function(kv) kv.Value).DefaultIfEmpty(number.ToString()))
     End Function
 End Module
