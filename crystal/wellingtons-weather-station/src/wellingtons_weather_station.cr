@@ -1,17 +1,14 @@
 class Temperature
   def to_kelvin(celsius)
-    raise "Please implement the Temperature#to_kelvin method"
+    celsius + 273.15
   end
-
   def round(celsius)
-    raise "Please implement the Temperature#round method"
+    celsius.round(1)
   end
-
   def to_fahrenheit(celsius)
-    raise "Please implement the Temperature#to_fahrenheit method"
+    (celsius * 9 / 5 + 32).to_i
   end
-
   def number_missing_sensors(number_of_sensors)
-    raise "Please implement the Temperature#number_missing_sensors method"
+    4 - (number_of_sensors % 4 == 0 ? 4 : number_of_sensors % 4)
   end
 end
