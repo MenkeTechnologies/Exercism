@@ -1,15 +1,15 @@
 unit module Lasagna;
-
-constant $EXPECTED-MINUTES-IN-OVEN = Nil;
-
-sub remaining-minutes-in-oven ($actual-minutes-in-oven) is export {
+constant $EXPECTED-MINUTES-IN-OVEN = 40;
+sub remaining-minutes-in-oven ($actualMinutesInOven) is export {
+  $EXPECTED-MINUTES-IN-OVEN - $actualMinutesInOven
 }
-
-sub preparation-time-in-minutes ($number-of-layers) is export {
+sub preparation-time-in-minutes ($numberOfLayers) is export {
+  2 * $numberOfLayers
 }
-
-sub total-time-in-minutes ( $number-of-layers, $actual-minutes-in-oven ) is export {
+sub total-time-in-minutes ( $numberOfLayers, $actualMinutesInOven ) is export {
+  $actualMinutesInOven + preparation-time-in-minutes $numberOfLayers
 }
-
 sub oven-alarm () is export {
+  'Ding!'
 }
+
