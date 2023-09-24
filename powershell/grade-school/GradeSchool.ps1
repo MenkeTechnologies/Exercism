@@ -8,16 +8,14 @@ class Student {
 }
 class Roster {
     [Student[]]$Student = @()
+
     [void] AddStudent([int]$grade, [string]$name) {
         $this.Student += [Student]::new($grade, $name)
     }
     [Student[]] GetRoster() {
-        return $this.Student `
-               | Sort-Object -Property Grade,Name
+        $this.Student | Sort-Object -Property Grade,Name
     }
     [Student[]] GetRoster([int]$grade) {
-        return $this.Student `
-               | Where-Object -Property Grade -eq $grade `
-               | Sort-Object -Property Name
+        $this.Student | Where-Object -Property Grade -eq $grade | Sort-Object -Property Name
     }
 }
