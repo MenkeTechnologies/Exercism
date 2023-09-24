@@ -8,7 +8,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "a win is three points, a loss is zero points" do
+  it "a win is three points, a loss is zero points" do
     Tournament.tally([
       "Allegoric Alaskans;Blithering Badgers;win",
     ]).should eq([
@@ -18,7 +18,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "a win can also be expressed as a loss" do
+  it "a win can also be expressed as a loss" do
     Tournament.tally([
       "Blithering Badgers;Allegoric Alaskans;loss",
     ]).should eq([
@@ -28,7 +28,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "a different team can win" do
+  it "a different team can win" do
     Tournament.tally([
       "Blithering Badgers;Allegoric Alaskans;win",
     ]).should eq([
@@ -38,7 +38,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "a draw is one point each" do
+  it "a draw is one point each" do
     Tournament.tally([
       "Allegoric Alaskans;Blithering Badgers;draw",
     ]).should eq([
@@ -48,7 +48,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "There can be more than one match" do
+  it "There can be more than one match" do
     Tournament.tally([
       "Allegoric Alaskans;Blithering Badgers;win",
       "Allegoric Alaskans;Blithering Badgers;win",
@@ -59,7 +59,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "There can be more than one winner" do
+  it "There can be more than one winner" do
     Tournament.tally([
       "Allegoric Alaskans;Blithering Badgers;loss",
       "Allegoric Alaskans;Blithering Badgers;win",
@@ -70,7 +70,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "There can be more than two teams" do
+  it "There can be more than two teams" do
     Tournament.tally([
       "Allegoric Alaskans;Blithering Badgers;win",
       "Blithering Badgers;Courageous Californians;win",
@@ -83,7 +83,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "typical input" do
+  it "typical input" do
     Tournament.tally([
       "Allegoric Alaskans;Blithering Badgers;win",
       "Devastating Donkeys;Courageous Californians;draw",
@@ -100,7 +100,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "incomplete competition (not all pairs have played)" do
+  it "incomplete competition (not all pairs have played)" do
     Tournament.tally([
       "Allegoric Alaskans;Blithering Badgers;loss",
       "Devastating Donkeys;Allegoric Alaskans;loss",
@@ -115,7 +115,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "ties broken alphabetically" do
+  it "ties broken alphabetically" do
     Tournament.tally([
       "Courageous Californians;Devastating Donkeys;win",
       "Allegoric Alaskans;Blithering Badgers;win",
@@ -132,7 +132,7 @@ describe "Tournament" do
     ])
   end
 
-  pending "ensure points sorted numerically" do
+  it "ensure points sorted numerically" do
     Tournament.tally([
       "Devastating Donkeys;Blithering Badgers;win",
       "Devastating Donkeys;Blithering Badgers;win",

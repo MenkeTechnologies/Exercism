@@ -7,21 +7,21 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(0)
   end
 
-  pending "no columns" do
+  it "no columns" do
     input = [
       "",
     ]
     Rectangles.rectangles(input).should eq(0)
   end
 
-  pending "no rectangles" do
+  it "no rectangles" do
     input = [
       " ",
     ]
     Rectangles.rectangles(input).should eq(0)
   end
 
-  pending "one rectangle" do
+  it "one rectangle" do
     input = [
       "+-+",
       "| |",
@@ -30,7 +30,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(1)
   end
 
-  pending "two rectangles without shared parts" do
+  it "two rectangles without shared parts" do
     input = [
       "  +-+",
       "  | |",
@@ -41,7 +41,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(2)
   end
 
-  pending "five rectangles with shared parts" do
+  it "five rectangles with shared parts" do
     input = [
       "  +-+",
       "  | |",
@@ -52,7 +52,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(5)
   end
 
-  pending "rectangle of height 1 is counted" do
+  it "rectangle of height 1 is counted" do
     input = [
       "+--+",
       "+--+",
@@ -60,7 +60,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(1)
   end
 
-  pending "rectangle of width 1 is counted" do
+  it "rectangle of width 1 is counted" do
     input = [
       "++",
       "||",
@@ -69,7 +69,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(1)
   end
 
-  pending "1x1 square is counted" do
+  it "1x1 square is counted" do
     input = [
       "++",
       "++",
@@ -77,7 +77,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(1)
   end
 
-  pending "only complete rectangles are counted" do
+  it "only complete rectangles are counted" do
     input = [
       "  +-+",
       "    |",
@@ -88,7 +88,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(1)
   end
 
-  pending "rectangles can be of different sizes" do
+  it "rectangles can be of different sizes" do
     input = [
       "+------+----+",
       "|      |    |",
@@ -99,7 +99,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(3)
   end
 
-  pending "corner is required for a rectangle to be complete" do
+  it "corner is required for a rectangle to be complete" do
     input = [
       "+------+----+",
       "|      |    |",
@@ -110,7 +110,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(2)
   end
 
-  pending "large input with many rectangles" do
+  it "large input with many rectangles" do
     input = [
       "+---+--+----+",
       "|   +--+----+",
@@ -124,7 +124,7 @@ describe "Rectangles" do
     Rectangles.rectangles(input).should eq(60)
   end
 
-  pending "rectangles must have four sides" do
+  it "rectangles must have four sides" do
     input = [
       "+-+ +-+",
       "| | | |",

@@ -9,13 +9,13 @@ describe "CircularBuffer" do
     end
   end
 
-  pending "can read an item just written" do
+  it "can read an item just written" do
     buffer = CircularBuffer.new(1)
     buffer.write(1)
     buffer.read.should eq(1)
   end
 
-  pending "each item may only be read once" do
+  it "each item may only be read once" do
     buffer = CircularBuffer.new(1)
     buffer.write(1)
     buffer.read.should eq(1)
@@ -24,7 +24,7 @@ describe "CircularBuffer" do
     end
   end
 
-  pending "items are read in the order they are written" do
+  it "items are read in the order they are written" do
     buffer = CircularBuffer.new(2)
     buffer.write(1)
     buffer.write(2)
@@ -32,7 +32,7 @@ describe "CircularBuffer" do
     buffer.read.should eq(2)
   end
 
-  pending "full buffer can't be written to" do
+  it "full buffer can't be written to" do
     buffer = CircularBuffer.new(1)
     buffer.write(1)
     expect_raises(RuntimeError) do
@@ -40,7 +40,7 @@ describe "CircularBuffer" do
     end
   end
 
-  pending "a read frees up capacity for another write" do
+  it "a read frees up capacity for another write" do
     buffer = CircularBuffer.new(1)
     buffer.write(1)
     buffer.read.should eq(1)
@@ -48,7 +48,7 @@ describe "CircularBuffer" do
     buffer.read.should eq(2)
   end
 
-  pending "read position is maintained even across multiple writes" do
+  it "read position is maintained even across multiple writes" do
     buffer = CircularBuffer.new(3)
     buffer.write(1)
     buffer.write(2)
@@ -58,7 +58,7 @@ describe "CircularBuffer" do
     buffer.read.should eq(3)
   end
 
-  pending "items cleared out of buffer can't be read" do
+  it "items cleared out of buffer can't be read" do
     buffer = CircularBuffer.new(1)
     buffer.write(1)
     buffer.clear
@@ -67,7 +67,7 @@ describe "CircularBuffer" do
     end
   end
 
-  pending "clear frees up capacity for another write" do
+  it "clear frees up capacity for another write" do
     buffer = CircularBuffer.new(1)
     buffer.write(1)
     buffer.clear
@@ -75,14 +75,14 @@ describe "CircularBuffer" do
     buffer.read.should eq(2)
   end
 
-  pending "clear does nothing on empty buffer" do
+  it "clear does nothing on empty buffer" do
     buffer = CircularBuffer.new(1)
     buffer.clear
     buffer.write(1)
     buffer.read.should eq(1)
   end
 
-  pending "overwrite acts like write on non-full buffer" do
+  it "overwrite acts like write on non-full buffer" do
     buffer = CircularBuffer.new(2)
     buffer.write(1)
     buffer.overwrite(2)
@@ -90,7 +90,7 @@ describe "CircularBuffer" do
     buffer.read.should eq(2)
   end
 
-  pending "overwrite replaces the oldest item on full buffer" do
+  it "overwrite replaces the oldest item on full buffer" do
     buffer = CircularBuffer.new(2)
     buffer.write(1)
     buffer.write(2)
@@ -99,7 +99,7 @@ describe "CircularBuffer" do
     buffer.read.should eq(3)
   end
 
-  pending "overwrite replaces the oldest item remaining in buffer following a read" do
+  it "overwrite replaces the oldest item remaining in buffer following a read" do
     buffer = CircularBuffer.new(3)
     buffer.write(1)
     buffer.write(2)
@@ -112,7 +112,7 @@ describe "CircularBuffer" do
     buffer.read.should eq(5)
   end
 
-  pending "initial clear does not affect wrapping around" do
+  it "initial clear does not affect wrapping around" do
     buffer = CircularBuffer.new(2)
     buffer.clear
     buffer.write(1)

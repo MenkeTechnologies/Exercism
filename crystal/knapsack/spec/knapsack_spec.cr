@@ -7,14 +7,14 @@ describe "Knapsack" do
     maximum_value.should eq(0)
   end
 
-  pending "one item, too heavy" do
+  it "one item, too heavy" do
     maximum_value = Knapsack.maximum_value(10, [
       {weight: 100, value: 1},
     ])
     maximum_value.should eq(0)
   end
 
-  pending "five items (cannot be greedy by weight)" do
+  it "five items (cannot be greedy by weight)" do
     maximum_value = Knapsack.maximum_value(10, [
       {weight: 2, value: 5},
       {weight: 2, value: 5},
@@ -25,7 +25,7 @@ describe "Knapsack" do
     maximum_value.should eq(21)
   end
 
-  pending "five items (cannot be greedy by value)" do
+  it "five items (cannot be greedy by value)" do
     maximum_value = Knapsack.maximum_value(10, [
       {weight: 2, value: 20},
       {weight: 2, value: 20},
@@ -36,7 +36,7 @@ describe "Knapsack" do
     maximum_value.should eq(80)
   end
 
-  pending "example knapsack" do
+  it "example knapsack" do
     maximum_value = Knapsack.maximum_value(10, [
       {weight: 5, value: 10},
       {weight: 4, value: 40},
@@ -46,7 +46,7 @@ describe "Knapsack" do
     maximum_value.should eq(90)
   end
 
-  pending "8 items" do
+  it "8 items" do
     maximum_value = Knapsack.maximum_value(104, [
       {weight: 25, value: 350},
       {weight: 35, value: 400},
@@ -60,7 +60,7 @@ describe "Knapsack" do
     maximum_value.should eq(900)
   end
 
-  pending "15 items" do
+  it "15 items" do
     maximum_value = Knapsack.maximum_value(750, [
       {weight: 70, value: 135},
       {weight: 73, value: 139},
