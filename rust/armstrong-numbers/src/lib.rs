@@ -3,6 +3,6 @@ pub fn is_armstrong_number(num: usize) -> bool {
     num == num
         .to_string()
         .chars()
-        .map(|c| (c.to_digit(10).expect("Non digit") as usize).pow(len))
+        .map(|c| (c.to_digit(10).unwrap() as usize).pow(len))
         .sum()
 }

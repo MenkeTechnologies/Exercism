@@ -1,13 +1,24 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class LogLine {
+    static Pattern regex = Pattern.compile("^\\[(.*)]:\\s+(.*\\S+)\\s*$");
+    private final LogLevel logLevel;
+    private final String message;
 
     public LogLine(String logLine) {
+        Matcher matcher = regex.matcher(logLine);
+        matcher.matches();
+
+        logLevel = LogLevel.from(matcher.group(1));
+        message = matcher.group(2);
     }
 
     public LogLevel getLogLevel() {
-        throw new UnsupportedOperationException("Please implement the getLogLevel() method");
+        return logLevel;
     }
 
     public String getOutputForShortLog() {
-        throw new UnsupportedOperationException("Please implement the getOutputForShortLog() method");
+        return String.format("%d:%s", logLevel.getValue(), message);
     }
 }
