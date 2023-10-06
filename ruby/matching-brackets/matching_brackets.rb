@@ -8,8 +8,8 @@ class Brackets
   def self.paired?(str)
     stk = []
     str.chars.each {
-      MAP[_1] ? stk << MAP[_1] : MAP.value?(_1) &&
-        (return false if stk.empty? || stk.pop != _1)
+      MAP[_1] ? stk << _1 : MAP.value?(_1) &&
+        (return false if stk.empty? || MAP[stk.pop] != _1)
     }
     stk.empty?
   end
