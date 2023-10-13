@@ -11,7 +11,7 @@ namespace eval resistorColor {
 
     }
 
-    proc colors {args} {
-        return {black brown red orange yellow green blue violet grey white}
+    proc colors {} {
+        list black brown red orange yellow green blue violet grey white
     }
 }

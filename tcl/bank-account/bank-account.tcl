@@ -1,13 +1,13 @@
 oo::class create BankAccount {
     variable money
-    variable opened 
+    variable opened
     constructor {} {
         set money 0
         set opened false
-    }w
+    }
     method open {} {
         if {$opened} {error "account is already open"}
-        set opened w
+        set opened true
     }
     method close {} {
         if {!$opened} {error "account is not open"}
