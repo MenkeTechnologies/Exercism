@@ -7,5 +7,5 @@ proc abbreviate {phrase} {
         append res [string index $x 0]
     }
 
-    return [string toupper $res]
+    string toupper $res
 }
