@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-function talk() {
+talk() {
     printf '%s\n' "$@"
     exit 0
 }
