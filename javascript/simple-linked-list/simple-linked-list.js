@@ -1,39 +1,30 @@
 export class Element {
-    constructor() {
-        throw new Error('Remove this statement and implement this function');
-    }
-
-    get value() {
-        throw new Error('Remove this statement and implement this function');
-    }
-
-    get next() {
-        throw new Error('Remove this statement and implement this function');
+    constructor(value, next = null) {
+        this.value = value
+        this.next = next
     }
 }
 
 export class List {
-    constructor() {
-        throw new Error('Remove this statement and implement this function');
+    constructor(values = []) {
+        this.head = null
+        this.length = 0
+        values.forEach(value => this.add(new Element(value)))
+    }
+
+    * [Symbol.iterator]() {
+        for (let node = this.head; node != null; node = node.next) {
+            yield node.value
+        }
     }
 
     add(nextValue) {
-        throw new Error('Remove this statement and implement this function');
+        nextValue.next = this.head
+        this.head = nextValue
+        ++this.length
     }
 
-    get length() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    toArray = () => [...this];
 
-    get head() {
-        throw new Error('Remove this statement and implement this function');
-    }
-
-    toArray() {
-        throw new Error('Remove this statement and implement this function');
-    }
-
-    reverse() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    reverse = () => new List(this.toArray());
 }

@@ -1,5 +1,5 @@
 def score(x, y):
-    dist = pow(pow(x, 2) + pow(y, 2), 0.5)
+    dist = (x ** 2 + y ** 2) ** 0.5
 
     if dist <= 1:
         return 10
