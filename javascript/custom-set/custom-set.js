@@ -1,41 +1,46 @@
 export class CustomSet {
-    constructor() {
-        throw new Error('Remove this statement and implement this function');
+    constructor(arr = []) {
+        this.lst = arr.sort((a, b) => a - b);
     }
 
-    empty() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    empty = () => !this.lst.length;
 
-    contains() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    contains = element => this.lst.includes(element);
 
-    add() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    add = element => {
+        if (this.lst.indexOf(element) < 0) this.lst.push(element);
+        this.lst = this.lst.sort((a, b) => a - b);
+        return this;
+    };
 
-    subset() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    subset = anotherSet => {
+        if (!this.lst.length) return true;
+        return this.lst.every(item => anotherSet.lst.indexOf(item) > -1);
+    };
 
-    disjoint() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    disjoint = anotherSet => anotherSet.lst.every(item => this.lst.indexOf(item) === -1);
 
-    eql() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    eql = anotherSet => anotherSet.lst.toString() === this.lst.toString();
 
-    union() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    union = anotherSet => {
+        const joined = [...this.lst, ...anotherSet.lst];
+        this.lst = joined.filter((item, index) => joined.indexOf(item) === index).sort((a, b) => a - b);
+        return this;
+    };
 
-    intersection() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    intersection = anotherSet => {
+        this.lst = this.lst.reduce((total, current) => {
+            if (anotherSet.lst.indexOf(current) > -1) total.push(current);
+            return total;
+        }, []);
+        return this;
+    };
 
-    difference() {
-        throw new Error('Remove this statement and implement this function');
-    }
+    difference = anotherSet => {
+        this.lst = this.lst.reduce((total, current) => {
+            if (anotherSet.lst.indexOf(current) < 0) total.push(current);
+            return total;
+        }, []);
+        return this;
+    };
 }
