@@ -6,13 +6,11 @@ class Acronym {
     String phrase;
 
     Acronym(String phrase) {
-        this.phrase = phrase.toUpperCase();
+        this.phrase = Arrays.stream(phrase.toUpperCase().replaceAll("[_']", "").split("\\W+")).map(c -> c.substring(0,1)).collect(Collectors.joining(""));
     }
 
     String get() {
-
-       return Arrays.stream(phrase.replaceAll("[_']", "").split("\\W+")).map(c -> c.substring(0,1)).collect(Collectors.joining(""));
-
+       return phrase;
     }
 
 }
