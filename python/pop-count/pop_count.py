@@ -1,2 +1,2 @@
 def egg_count(display_value):
-    pass
+    return bin(display_value).count("1")
