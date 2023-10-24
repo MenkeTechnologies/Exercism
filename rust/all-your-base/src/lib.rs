@@ -37,31 +37,37 @@ pub enum Error {
 ///    However, your function must be able to process input with leading 0 digits.
 ///
 pub fn convert(number: &[u32], from_base: u32, to_base: u32) -> Result<Vec<u32>, Error> {
-    if from_base <= 1 {
+    if from_base < 2 {
         return Err(Error::InvalidInputBase);
     }
-    if to_base <= 1 {
+    if to_base < 2 {
         return Err(Error::InvalidOutputBase);
     }
 
-    if let Some(d) = number.iter().find(|n| **n >= from_base) {
-        return Err(Error::InvalidDigit(*d));
-    }
+    let sum_res = number.iter().try_fold(0, |acc, n| {
+        if *n >= from_base {
+            return Err(Error::InvalidDigit(*n));
+        }
+        Ok(acc * from_base + n)
+    });
 
-    let mut sum = number.iter().fold(0, |n, k| n * from_base + k);
-
-    if sum == 0 {
-        return Ok(vec![0]);
+    match sum_res {
+        Ok(success) => {
+            if success == 0 {
+                return Ok(vec![0]);
+            }
+        }
+        Err(e) => return Err(e),
     }
 
     let mut v = vec![];
 
+    let mut sum = sum_res.unwrap();
+
     while sum > 0 {
-        v.push(sum % to_base);
+        v.insert(0, sum % to_base);
         sum /= to_base;
     }
-
-    v.reverse();
 
     Ok(v)
 }
