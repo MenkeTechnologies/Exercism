@@ -5,14 +5,7 @@ class Hamming {
             throw new ArithmeticException("not equal lengths")
         }
 
-        def zip = [strand1.toCharArray(), strand2.toCharArray()].transpose()
-
-        zip.inject 0, { res, i ->
-            if (i[0] == i[1]) {
-                return res
-            }
-            ++res
-        }
+        [strand1.toCharArray(), strand2.toCharArray()].transpose().count { it[0] != it[1] }
 
     }
 
