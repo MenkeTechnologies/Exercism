@@ -1,5 +1,5 @@
 class PopCount
-  def self.egg_count(number : Int32) : Int32
-    # Write your code for the 'Pop Count' exercise in this file.
+  def self.egg_count(n : Int32) : Int32
+      n.to_s(2).chars.select{|c| c == '1'}.size
   end
 end
