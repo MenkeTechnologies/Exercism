@@ -1,25 +1,27 @@
 class BankAccount {
   construct new() {
-    Fiber.abort("Remove this statement and implement this function")
+    _balance = 0
+    _open = false
   }
-
   open() {
-    Fiber.abort("Remove this statement and implement this function")
+    if (_open) Fiber.abort("Bank account error")
+    _open = true
   }
-
   close() {
-    Fiber.abort("Remove this statement and implement this function")
+    if (!_open) Fiber.abort("Bank account error")
+    _open = false
+    _balance = 0
   }
-
-  deposit(amount) {
-    Fiber.abort("Remove this statement and implement this function")
+  deposit(amt) {
+    if (!_open || amt < 0) Fiber.abort("Bank account error")
+    _balance = _balance + amt
   }
-
-  withdraw(amount) {
-    Fiber.abort("Remove this statement and implement this function")
+  withdraw(amt) {
+    if (!_open || amt > _balance || amt < 0) Fiber.abort("Bank account error")
+    _balance = _balance - amt
   }
-
   balance {
-    Fiber.abort("Remove this statement and implement this function")
+    if (!_open) Fiber.abort("Bank account error")
+    return _balance
   }
 }
