@@ -1,6 +1,6 @@
 class QueenAttack {
 
     static canAttack(Queen q1, Queen q2) {
-        throw new UnsupportedOperationException('Method implementation is missing')
+        int dx = q1.row - q1.row;
     }
 }
