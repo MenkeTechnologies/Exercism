@@ -7,8 +7,6 @@
 
 using namespace std;
 
-// Isogram exercise test case data version 1.7.0
-
 TEST_CASE("empty_string")
 {
     const bool actual = isogram::is_isogram("");
@@ -18,7 +16,6 @@ TEST_CASE("empty_string")
     REQUIRE(expected == actual);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("isogram_with_only_lower_case_characters")
 {
     const bool actual = isogram::is_isogram("isogram");
@@ -126,5 +123,3 @@ TEST_CASE("same_first_and_last_characters")
 
     REQUIRE(expected == actual);
 }
-
-#endif
