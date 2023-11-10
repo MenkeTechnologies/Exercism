@@ -18,7 +18,7 @@ $ ./gradlew test
 
 ## Skipped tests
 
-After the first test(s) pass, continue by commenting out or removing the `@Ignore` annotations prepending other tests.
+After the first test(s) pass, continue by commenting out or removing the `` annotations prepending other tests.
 
 ## Submitting your solution
 
