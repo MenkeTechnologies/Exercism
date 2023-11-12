@@ -1,5 +1,5 @@
 #pragma once
 
 namespace darts {
-    int score(float x, float y);
+    int score(float, float);
 }
