@@ -1,15 +1,30 @@
-"
-" Convert a sequence of digits representing a number in the input base
-" to a sequence of digits in the output base.
-" 
-" Input and output bases must be >= 2.
-" All digits in the sequence must be positive but less than the input base. 
-"
-" Examples:
-"
-"   :echo Rebase([1, 0, 1], 2, 10)
-"   [5]
-"
 function! Rebase(digits, inputBase, outputBase) abort
-  " your code goes here
-endfunction 
+    if a:inputBase < 2
+        throw 'input base must be >= 2'
+    endif
+
+    if a:outputBase < 2
+        throw 'output base must be >= 2'
+    endif
+    let sum = 0
+    for n in a:digits
+        if n < 0 || n >= a:inputBase
+            throw 'all digits must satisfy 0 <= d < input base'
+        endif
+        let sum = sum * a:inputBase + n
+    endfor
+
+    if sum == 0
+        return [0]
+    endif
+
+    let res = []
+
+    while sum > 0
+        let res = [sum % a:outputBase] + res
+        let sum /= a:outputBase
+    endwhile
+
+    return res
+
+endfunction
