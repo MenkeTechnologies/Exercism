@@ -15,7 +15,6 @@ TEST_CASE("fly")
     REQUIRE(expected == food_chain::verse(1));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("spider")
 {
     string expected = "I know an old lady who swallowed a spider.\n"
@@ -122,4 +121,3 @@ TEST_CASE("the_whole_song")
 {
     REQUIRE(food_chain::verses(1, 8) == food_chain::sing());
 }
-#endif

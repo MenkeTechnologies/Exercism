@@ -21,8 +21,6 @@ TEST_CASE("Smallest prime deficient number is classified correctly") {
     REQUIRE(perfect_numbers::classify(2) == perfect_numbers::deficient);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
-
 TEST_CASE("Medium perfect number is classified correctly") {
     REQUIRE(perfect_numbers::classify(28) == perfect_numbers::perfect);
 }
@@ -53,5 +51,3 @@ TEST_CASE("Zero is rejected (as it is not a positive integer)") {
 TEST_CASE("Negative numbers are rejected") {
     REQUIRE_THROWS_AS(perfect_numbers::classify(-1), std::domain_error);
 }
-
-#endif

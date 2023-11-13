@@ -36,7 +36,6 @@ TEST_CASE("Real part of a purely real number") {
     REQUIRE(Approx(1.0) == c.real());
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 TEST_CASE("Real part of a purely imaginary number") {
     const Complex c{0.0, 1.0};
 
@@ -234,5 +233,3 @@ TEST_CASE("Exponential of a number with real and imaginary part") {
 
     require_approx_equal(Complex(-2.0, 0.0), c.exp());
 }
-
-#endif

@@ -44,8 +44,6 @@ TEST_CASE("data_is_retained")
     test_leaf<uint32_t>(tested, 4, false, false);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
-
 TEST_CASE("smaller_number_at_left_node")
 {
     auto tested = make_tree<uint32_t>({4, 2});
@@ -145,5 +143,3 @@ TEST_CASE("can_sort_complex_tree_strings")
 {
     test_sort(make_tree<std::string>({"A", "few", "random", "strings", "that", "should", "be", "sorted"}), {"A", "be", "few", "random", "should", "sorted", "strings", "that"});
 }
-
-#endif
