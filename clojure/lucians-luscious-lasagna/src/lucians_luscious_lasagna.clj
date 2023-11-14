@@ -15,4 +15,6 @@
 (defn total-time
   "Takes the number of layers of lasagna and the actual time in minutes it has been in the oven.
    Returns how many minutes in total you've worked on cooking the lasagna"
-  [num-layers actual-time] (+ (prep-time num-layers) actual-time))
+  [num-layers actual-time] (->> num-layers
+                               prep-time
+                               (+ actual-time)))
