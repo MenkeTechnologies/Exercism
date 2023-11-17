@@ -8,11 +8,11 @@ class SpaceAge {
     }
 
     double getSeconds() {
-        return this.seconds;
+        return seconds;
     }
 
     double onEarth() {
-        return this.seconds / SEC_PER_Y;
+        return seconds / SEC_PER_Y;
     }
 
     double onMercury() {
