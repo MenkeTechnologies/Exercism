@@ -1,14 +1,17 @@
-"
-" Returns the postion of an item in a sorted list using a binary search
-" Throws an error if item isn't present
-" Example:
-"
-"   :echo Find([4, 8, 12, 16, 23, 28, 32], 23)
-"   4
-"
-"   :echo Find([1, 2, 3], 4)
-"   E605: Exception not caught: value not in list
-"
 function! Find(list, value) abort
-  " your solution goes here
+  let lo = 0
+  let hi = len(a:list) - 1
+  while lo <= hi
+      let mid = (lo + hi) / 2
+      if a:value == a:list[mid]
+          return mid
+      elseif a:value > a:list[mid]
+          let lo = mid + 1
+      else
+          let hi = mid - 1
+      endif
+  endwhile
+
+  throw 'value not in list'
+
 endfunction
