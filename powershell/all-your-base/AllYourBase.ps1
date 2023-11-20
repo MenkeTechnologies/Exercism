@@ -1,30 +1,24 @@
-Function Invoke-Rebase() {
-    <#
-    .SYNOPSIS
-    Convert a number, represented as a sequence of digits in one base, to any other base.
+Function Invoke-Rebase($Digits, $InputBase, $OutputBase) {
 
-    .DESCRIPTION
-    Implement general base conversion of a number.
-    Given an array of digits represent a number in base "a", convert it and return an array of digits represent the same number in base "b".
+    if ($InputBase -lt 2) { throw "input base must be >= 2" }
+    if ($OutputBase -lt 2) { throw "output base must be >= 2" }
 
-    .PARAMETER Digits
-    Array of digits represent the number to be converted.
+    $sum = 0
 
-    .PARAMETER InputBase
-    The original base of the number.
+    foreach($c in $Digits) {
+        if ($c -ge $InputBase -or $c -lt 0) { throw "all digits must satisfy 0 <= digit < input base" }
+        $sum = $sum * $InputBase + $c
+    }
 
-    .PARAMETER OutputBase
-    The base to be converted to.
+    if ($sum -eq 0) { return @(0) }
 
-    .EXAMPLE
-    Invoke-Rebase -Digits @(1, 0, 1 , 0 ,1 ) -InputBase 2 -OutputBase 10
-    return : @(2, 1)
-    #>
-    [CmdletBinding()]
-    Param(
-        [int[]]$Digits,
-        [int]$InputBase,
-        [int]$OutputBase
-    )
-    Throw "Please implement this function"
+    $res = @()
+
+    while ($sum -gt 0) {
+        $digit = $sum % $OutputBase
+        $res = ,$digit + $res
+        $sum = [math]::floor($sum / $OutputBase)
+    }
+
+    $res
 }
