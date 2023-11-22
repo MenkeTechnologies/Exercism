@@ -1,25 +1,21 @@
-Function Get-LargestSeriesProduct() {
-    <#
-    .SYNOPSIS
-    Get the largest product in a given span of long sequence of digits.
-    
-    .DESCRIPTION
-    Given a string made up by number and a span lenght, find the largest product of all the number in that span.
-    
-    .PARAMETER Digits
-    The string digits to be analyzed.
+Function Get-LargestSeriesProduct($Digits, $Span) {
 
-    .PARAMETER Span
-    The lenght of the span.
-    
-    .EXAMPLE
-    Get-LargestSeriesProduct -Digits "63915" -Span 3
-    Return: 162
-    #>
-    [CmdletBinding()]
-    Param(
-        [string]$Digits,
-        [int]$Span
-    )
-    Throw "Please implement this function."
+    $cnt = $Digits.Length
+
+    if ($cnt -lt $Span) { throw "span must be smaller than string length" }
+    if ($Span -lt 0) { throw "span must not be negative" }
+    if ($Digits -match '\D') { throw "digits input must only contain digits" }
+
+    $max = 0
+
+    for ($i = 0; $i -le $cnt - $Span; ++$i) {
+        $product = 1
+        foreach ($digit in $Digits.Substring($i, $Span).toCharArray()) {
+            $product *= [int]::Parse($digit)
+        }
+        if ($product -gt $max) {
+            $max = $product
+        }
+    }
+    $max
 }
