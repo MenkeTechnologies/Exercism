@@ -1,7 +1,11 @@
-"
-" Tests whether a number is equal to the sum of its digits, 
-" each raised to the power of the overall number of digits.
-"
-function! IsArmstrongNumber(number) abort
-  " your solution goes here
+function! IsArmstrongNumber(n) abort
+  let s = string(a:n)
+  let digits = len(s)
+  let sum = 0
+  for c in split(s, '\zs')
+      let sum += pow(str2nr(c, 10), digits)
+  endfor
+
+  return sum == a:n
+
 endfunction
