@@ -1,6 +1,5 @@
 module PopCount exposing (eggCount)
 
+eggCount = aux >> List.sum 
 
-eggCount : Int -> Int
-eggCount n =
-    Debug.todo "implement this function"
+aux n = if n == 0 then [] else modBy 2 n :: aux (n // 2)
