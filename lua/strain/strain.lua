@@ -1,12 +1,6 @@
-local function keep(xs, pred)
-
+local function keep(lst, pred)
+    local out = {}
+    for _, v in ipairs(lst) do if pred(v) then out[#out + 1] = v end end
+    return out
 end
-
-local function discard(xs, pred)
-
-end
-
-return {
-  keep = keep,
-  discard = discard
-}
+return {keep = keep, discard = function (lst, pred) return keep(lst, function(x) return not pred(x) end) end }
