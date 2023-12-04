@@ -1,15 +1,13 @@
-"
-" Given a list and a predicate working on each element, returns a new list
-" of those elements satisfying the predicate
-"
 function! Keep(list, predicate) abort
-  " your code goes here
+  let lst = []
+  for c in a:list
+      if a:predicate(c)
+          let lst += [c]
+      endif
+  endfor
+  return lst
 endfunction
 
-"
-" Given a list and a predicate working on each element, returns a new list
-" of those elements not satisfying the predicate
-"
 function! Discard(list, predicate) abort
-  " your code goes here
+    return Keep(a:list, {x -> !a:predicate(x)} )
 endfunction
