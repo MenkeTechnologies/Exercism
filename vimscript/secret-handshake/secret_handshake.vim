@@ -1,13 +1,20 @@
+let g:codes = { 1: 'wink', 2: 'double blink', 4: 'close your eyes', 8: 'jump' }
 
-"
-" Returns a list of actions for a secret handshake given a number in binary.
-" Each action is determined by a bit in the rightmost five digits.
-"
-" Example:
-"
-"   :echo Commands('11111')
-"   ['jump', 'close your eyes', 'double blink', 'wink']
-"
 function! Commands(binary) abort
-  " your code goes here
+    let res = []
+    let n = str2nr(a:binary, 2)
+
+    for [k, v] in items(g:codes)
+        if and(n, k) > 0
+            let res += [v]
+        endif
+
+    endfor
+
+    if and(n, 16) > 0
+        let res = reverse(res)
+    endif
+
+    return res
+
 endfunction
