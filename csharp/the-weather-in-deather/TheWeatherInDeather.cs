@@ -1,142 +1,49 @@
 using System;
 using System.Collections.Generic;
 
-public class WeatherStation
-{
+public class WeatherStation {
     private Reading reading;
-    private List<DateTime> recordDates = new List<DateTime>();
-    private List<decimal> temperatures = new List<decimal>();
+    private readonly List<DateTime> recordDates = new();
 
-    public void AcceptReading(Reading reading)
-    {
+    public void AcceptReading(Reading reading) {
         this.reading = reading;
         recordDates.Add(DateTime.Now);
-        temperatures.Add(reading.Temperature);
     }
 
-    public void ClearAll()
-    {
+    public void ClearAll() {
         reading = new Reading();
         recordDates.Clear();
-        temperatures.Clear();
     }
 
-    public decimal LatestTemperature
-    {
-        get
-        {
-            return reading.Temperature;
-        }
-    }
+    public decimal LatestTemperature => reading.Temperature;
+	public decimal LatestPressure => reading.Pressure;
+    public decimal LatestRainfall => reading.Rainfall;
+    public bool HasHistory => recordDates.Count > 1;
 
-    public decimal LatestPressure
-    {
-        get
-        {
-            return reading.Pressure;
-        }
-    }
+    public Outlook ShortTermOutlook => reading switch {
+		_ when reading.Equals(new Reading()) => throw new ArgumentException(),
+        { Pressure: < 10m, Temperature: < 30m } => Outlook.Cool,
+		_ when reading.Temperature > 50 => Outlook.Good,
+		_ => Outlook.Warm };
 
-    public decimal LatestRainfall
-    {
-        get
-        {
-            return reading.Rainfall;
-        }
-    }
+    public Outlook LongTermOutlook => reading switch {
+    	_ when reading.WindDirection == WindDirection.Southerly || reading is { WindDirection: WindDirection.Easterly, Temperature: > 20 } => Outlook.Good,
+        _ when reading.WindDirection == WindDirection.Northerly => Outlook.Cool,
+        { WindDirection: WindDirection.Easterly, Temperature: <= 20 } => Outlook.Warm,
+        _ when reading.WindDirection == WindDirection.Westerly => Outlook.Rainy,
+        _ => throw new ArgumentException() };
 
-    public bool HasHistory
-    {
-        get
-        {
-            if (recordDates.Count > 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-    }
-
-    public Outlook ShortTermOutlook
-    {
-        get
-        {
-            if (reading.Equals(new Reading()))
-            {
-                throw new ArgumentException();
-            }
-            else
-            {
-                if (reading.Pressure < 10m && reading.Temperature < 30m)
-                {
-                    return Outlook.Cool;
-                }
-                else if (reading.Temperature > 50)
-                {
-                    return Outlook.Good;
-                }
-                else
-                {
-                    return Outlook.Warm;
-                }
-            }
-        }
-    }
-
-    public Outlook LongTermOutlook
-    {
-        get
-        {
-            if (reading.WindDirection == WindDirection.Southerly
-                || reading.WindDirection == WindDirection.Easterly
-                && reading.Temperature > 20)
-            {
-                return Outlook.Good;
-            }
-            if (reading.WindDirection == WindDirection.Northerly)
-            {
-                return Outlook.Cool;
-            }
-            if (reading.WindDirection == WindDirection.Easterly
-                && reading.Temperature <= 20)
-            {
-                return Outlook.Warm;
-            }
-            if (reading.WindDirection == WindDirection.Westerly)
-            {
-                return Outlook.Rainy;
-            }
-            throw new ArgumentException();
-        }
-    }
-
-    public State RunSelfTest()
-    {
-        if (reading.Equals(new Reading()))
-        {
-            return State.Bad;
-        }
-        else
-        {
-            return State.Good;
-        }
-    }
+    public State RunSelfTest() => reading.Equals(new Reading()) ? State.Bad : State.Good;
 }
 
 /*** Please do not modify this struct ***/
-public struct Reading
-{
+public struct Reading {
     public decimal Temperature { get; }
     public decimal Pressure { get; }
     public decimal Rainfall { get; }
     public WindDirection WindDirection { get; }
 
-    public Reading(decimal temperature, decimal pressure,
-        decimal rainfall, WindDirection windDirection)
-    {
+    public Reading(decimal temperature, decimal pressure, decimal rainfall, WindDirection windDirection) {
         Temperature = temperature;
         Pressure = pressure;
         Rainfall = rainfall;
@@ -145,27 +52,8 @@ public struct Reading
 }
 
 /*** Please do not modify this enum ***/
-public enum State
-{
-    Good,
-    Bad
-}
-
+public enum State { Good, Bad }
 /*** Please do not modify this enum ***/
-public enum Outlook
-{
-    Cool,
-    Rainy,
-    Warm,
-    Good
-}
-
+public enum Outlook { Cool, Rainy, Warm, Good }
 /*** Please do not modify this enum ***/
-public enum WindDirection
-{
-    Unknown, // default
-    Northerly,
-    Easterly,
-    Southerly,
-    Westerly
-}
+public enum WindDirection { Unknown, Northerly, Easterly, Southerly, Westerly }
