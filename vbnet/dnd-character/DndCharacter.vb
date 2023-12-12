@@ -1,23 +1,25 @@
 Imports System
+Imports System.Linq
 
 Public Class DndCharacter
-    Public ReadOnly Property StrengthProp As Integer
-    Public ReadOnly Property DexterityProp As Integer
-    Public ReadOnly Property ConstitutionProp As Integer
-    Public ReadOnly Property IntelligenceProp As Integer
-    Public ReadOnly Property WisdomProp As Integer
-    Public ReadOnly Property CharismaProp As Integer
-    Public ReadOnly Property HitpointsProp As Integer
-
+    Public ReadOnly Property Strength As Integer = Ability()
+    Public ReadOnly Property Dexterity As Integer = Ability()
+    Public ReadOnly Property Constitution As Integer = Ability()
+    Public ReadOnly Property Intelligence As Integer = Ability()
+    Public ReadOnly Property Wisdom As Integer = Ability()
+    Public ReadOnly Property Charisma As Integer = Ability()
+    Public ReadOnly Property Hitpoints As Integer = 10 + Modifier(Constitution)
     Public Shared Function Modifier(ByVal score As Integer) As Integer
-        Throw New NotImplementedException("You need to implement this function.")
+        Return Math.Floor((score - 10)/2.0)
     End Function
 
     Public Shared Function Ability() As Integer
-        Throw New NotImplementedException("You need to implement this function.")
+        Dim random As New Random()
+        Return Enumerable.Repeat(0, 4).Select(Function(x) random.Next(1, 7)) _
+                .OrderByDescending(Function(x) x).Take(3).ToArray().Sum()
     End Function
 
     Public Shared Function Generate() As DndCharacter
-        Throw New NotImplementedException("You need to implement this function.")
+        Return New DndCharacter()
     End Function
 End Class
