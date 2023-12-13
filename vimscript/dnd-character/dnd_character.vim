@@ -1,20 +1,20 @@
-"
-" Calculates the constitution modifier using the passed ability score
-"
 function! Modifier(score) abort
-  " your implemention goes here
+  return float2nr(floor((a:score - 10) / 2.0))
 endfunction
 
-"
-" Calculates an ability score randomly by summing the top three of four randomly generated numbers
-"
 function! Ability() abort
-  " your implemention goes here
+  let rolls = map(repeat([0], 4), 'rand() % 6 + 1')
+  let kept = sort(rolls)[1:]
+  let sum = 0
+    for dice in kept
+    let sum += dice
+  endfor
+  return sum
 endfunction
 
-"
-" Returns a dictionary representing a D&D character with randomly generated ability scores
-"
 function! Character() abort
-  " your implemention goes here
+  let constitution = Ability()
+  return {'strength': Ability(), 'dexterity': Ability(), 'constitution': constitution,
+  \       'intelligence': Ability(), 'wisdom': Ability(), 'charisma': Ability(),
+  \       'hitpoints': 10 + Modifier(constitution)}
 endfunction
