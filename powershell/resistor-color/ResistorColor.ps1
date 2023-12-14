@@ -10,8 +10,7 @@ $Colors = [ordered]@{
     grey = 8
     white = 9
 }
-Function Get-ColorCode {
-    [CmdletBinding()] Param([string] $Color)
+Function Get-ColorCode($Color) {
     $Colors[$Color]
 }
 Function Get-Colors() {
