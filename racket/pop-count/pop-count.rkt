@@ -3,5 +3,4 @@
 (provide number->eggs)
 
 (define (number->eggs n)
-  (error "Not implemented yet"))
-
+  (count (lambda (c) (char=? c #\1)) (string->list (format "~b" n))))
