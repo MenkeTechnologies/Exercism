@@ -5,13 +5,14 @@ UNEQUAL = 4
 
 
 def sublist(lstA, lstB):
-    list_one_check = ",".join(map(str, lstA)) + ","
-    list_two_check = ",".join(map(str, lstB)) + ","
-    if list_one_check == list_two_check:
+    s1 = ",".join(map(str, lstA)) + ","
+    s2 = ",".join(map(str, lstB)) + ","
+
+    if s1 == s2:
         return EQUAL
-    elif list_one_check in list_two_check:
+    if s1 in s2:
         return SUBLIST
-    elif list_two_check in list_one_check:
+    if s2 in s1:
         return SUPERLIST
-    else:
-        return UNEQUAL
+
+    return UNEQUAL
