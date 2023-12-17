@@ -1,30 +1,17 @@
-Function Invoke-Sublist() {
-    <#
-    .SYNOPSIS
-    Determine the relationship of two arrays.
+Function Invoke-Sublist($Data1, $Data2) {
 
-    .DESCRIPTION
-    Given two arrays, determine the relationship of the first array relating to the second array.
-    There are four possible categories: EQUAL, UNEQUAL, SUBLIST and SUPERLIST.
-    Note: This exercise use Enum values for return.
-    
-    .PARAMETER Data1
-    The first array
+    $s1 = ($Data1 -join ",") + ","
+    $s2 = ($Data2 -join ",") + ","
 
-    .PARAMETER Data2
-    The second array
+    if ($s1 -eq $s2) { [Sublist]::EQUAL }
+    elseif ($s2.Contains($s1)) { [Sublist]::SUBLIST }
+    elseif ($s1.Contains($s2)) { [Sublist]::SUPERLIST }
+    else { [Sublist]::UNEQUAL }
+}
 
-    .EXAMPLE
-    Invoke-Sublist -Data1 @(1,2,3) -Data2 @(1,2,3)
-    Return: [Sublist]::EQUAL
-
-    Invoke-Sublist -Data1 @(1,2) -Data2 @(1,2,3)
-    Return: [Sublist]::SUBLIST
-    #>
-    [CmdletBinding()]
-    Param (
-        [object[]]$Data1,
-        [object[]]$Data2
-    )
-    Throw "Please implement this function"
+enum Sublist {
+    EQUAL
+    SUBLIST
+    SUPERLIST
+    UNEQUAL
 }
