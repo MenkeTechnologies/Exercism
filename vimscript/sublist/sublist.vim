@@ -1,10 +1,8 @@
-"
-" Determines the relationship between two lists.
-" Returns 'equal' if list1 is equal to list2.
-" Returns 'superlist' if list1 contains list2.
-" Returns 'sublist' if list1 is contained by list2.
-" Returns 'unequal' otherwise.
-"
+
 function! Sublist(list1, list2) abort
-  " your code goes here
+    let s1 = join(a:list1, ',') . ','
+    let s2 = join(a:list2, ',') . ','
+
+    return s1 == s2 ? 'equal' : stridx(s2, s1) > -1 ? 'sublist' : stridx(s1, s2) > -1 ? 'superlist' : 'unequal'
+
 endfunction
