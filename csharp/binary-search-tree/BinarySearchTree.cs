@@ -1,53 +1,36 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class BinarySearchTree : IEnumerable<int>
 {
-    public BinarySearchTree(int value)
-    {
-    }
+    public int Value { get; }
+    public BinarySearchTree Left { get; private set; }
+    public BinarySearchTree Right { get; private set; }
+
+    public BinarySearchTree(int value) => Value = value;
 
     public BinarySearchTree(IEnumerable<int> values)
     {
+        Value = values.First();
+        foreach (var value in values.Skip(1)) Add(value);
     }
 
-    public int Value
+    private BinarySearchTree Add(int value)
     {
-        get
-        {
-            throw new NotImplementedException("You need to implement this function.");
-        }
-    }
+        if (value <= Value) Left = Left?.Add(value) ?? new BinarySearchTree(value);
+        else Right = Right?.Add(value) ?? new BinarySearchTree(value);
 
-    public BinarySearchTree Left
-    {
-        get
-        {
-            throw new NotImplementedException("You need to implement this function.");
-        }
-    }
-
-    public BinarySearchTree Right
-    {
-        get
-        {
-            throw new NotImplementedException("You need to implement this function.");
-        }
-    }
-
-    public BinarySearchTree Add(int value)
-    {
-        throw new NotImplementedException("You need to implement this function.");
+        return this;
     }
 
     public IEnumerator<int> GetEnumerator()
     {
-        throw new NotImplementedException("You need to implement this function.");
+        foreach (var n in Left?.AsEnumerable() ?? Enumerable.Empty<int>()) yield return n;
+        yield return Value;
+        foreach (var n in Right?.AsEnumerable() ?? Enumerable.Empty<int>()) yield return n;
     }
 
-    IEnumerator IEnumerable.GetEnumerator()
-    {
-        throw new NotImplementedException("You need to implement this function.");
-    }
+    IEnumerator IEnumerable.GetEnumerator() => this.GetEnumerator();
 }
