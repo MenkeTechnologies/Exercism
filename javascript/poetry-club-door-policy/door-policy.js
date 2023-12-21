@@ -5,7 +5,7 @@
  * @param {string} line
  * @returns {string}
  */
-export const frontDoorResponse = line => line.trim().substr(0, 1);
+export const frontDoorResponse = line => line.trim().slice(0,1)
 
 /**
  * Format the password for the front-door, given the response
@@ -14,7 +14,7 @@ export const frontDoorResponse = line => line.trim().substr(0, 1);
  * @param {string} word the letters you responded with before
  * @returns {string} the front door password
  */
-export const frontDoorPassword = word => word.toUpperCase().substr(0, 1) + word.toLowerCase().substr(1);
+export const frontDoorPassword = word => word.toUpperCase().slice(0, 1) + word.toLowerCase().slice(1)
 
 /**
  * Respond with the correct character, given the line of the
@@ -24,7 +24,7 @@ export const frontDoorPassword = word => word.toUpperCase().substr(0, 1) + word.
  * @returns {string}
  */
 export const backDoorResponse = line =>
-    line.trim().substr(line.trim().length - 1, 1)
+    line.trim().slice(-1)
 
 /**
  * Format the password for the back door, given the response
