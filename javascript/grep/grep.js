@@ -1,48 +1,43 @@
 #!/usr/bin/env node
 
-// The above line is a shebang. On Unix-like operating systems, or environments,
-// this will allow the script to be run by node, and thus turn this JavaScript
-// file into an executable. In other words, to execute this file, you may run
-// the following from your terminal:
-//
-// ./grep.js args
-//
-// If you don't have a Unix-like operating system or environment, for example
-// Windows without WSL, you can use the following inside a window terminal,
-// such as cmd.exe:
-//
-// node grep.js args
-//
-// Read more about shebangs here: https://en.wikipedia.org/wiki/Shebang_(Unix)
-
 const fs = require('fs');
-const path = require('path');
 
-/**
- * Reads the given file and returns lines.
- *
- * This function works regardless of POSIX (LF) or windows (CRLF) encoding.
- *
- * @param {string} file path to file
- * @returns {string[]} the lines
- */
-function readLines(file) {
-    const data = fs.readFileSync(path.resolve(file), {
-        encoding: 'utf-8'
-    });
-    return data.split(/\r?\n/);
+const args = process.argv.slice(2);
+const OPTINDEX = args.findIndex(a => a[0] !== "-")
+const flags = args.slice(0, OPTINDEX);
+let pattern = args[OPTINDEX];
+const files = args.slice(OPTINDEX + 1);
+
+const matchEntire = flags.includes("-x");
+const printFileNames = flags.includes("-l");
+const addLines = flags.includes("-n");
+const ignoreCase = flags.includes("-i");
+const invert = flags.includes("-v");
+if (ignoreCase) {
+    pattern = pattern.toLowerCase();
 }
 
-const VALID_OPTIONS = [
-    'n', // add line numbers
-    'l', // print file names where pattern is found
-    'i', // ignore case
-    'v', // reverse files results
-    'x', // match entire line
-];
+const readLines = file => fs.readFileSync(file, {
+    encoding: 'utf-8'
+}).split(/\r?\n/);
 
-const ARGS = process.argv;
+const re = new RegExp(matchEntire ? `^${pattern}$` : `${pattern}`);
 
+for (const file of files) {
+    const lines = readLines(file);
+    let fName = files.length > 1 ? file + ':' : '';
 
-// This file should *not* export a function. Use ARGS to determine what to grep
-// and use console.log(output) to write to the standard output.
+    for (const [j, line] of lines.entries()) {
+        if (re.test(ignoreCase ? line.toLowerCase() : line) ^ invert) {
+
+            if (printFileNames) {
+                console.log(file);
+                break;
+            }
+            const data = fName + (addLines ? (j + 1 + ':') : '') + line;
+            console.log(data);
+        }
+    }
+   
+
+}
