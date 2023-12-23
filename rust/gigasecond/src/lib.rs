@@ -1,4 +1,4 @@
-use chrono::{DateTime, Duration, Utc};
+use chrono::{DateTime, Utc, Duration};
 use std::ops::Add;
 
 // Returns a Utc DateTime one billion seconds after start.
