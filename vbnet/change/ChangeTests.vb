@@ -10,7 +10,7 @@ Public Class ChangeTests
         Assert.Equal(expected, FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Single_coin_change()
         Dim coins = {1, 5, 10, 25, 100}
         Dim target = 25
@@ -18,7 +18,7 @@ Public Class ChangeTests
         Assert.Equal(expected, FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_coin_change()
         Dim coins = {1, 5, 10, 25, 100}
         Dim target = 15
@@ -26,7 +26,7 @@ Public Class ChangeTests
         Assert.Equal(expected, FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Change_with_lilliputian_coins()
         Dim coins = {1, 4, 15, 20, 50}
         Dim target = 23
@@ -34,7 +34,7 @@ Public Class ChangeTests
         Assert.Equal(expected, FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Change_with_lower_elbonia_coins()
         Dim coins = {1, 5, 10, 21, 25}
         Dim target = 63
@@ -42,7 +42,7 @@ Public Class ChangeTests
         Assert.Equal(expected, FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Large_target_values()
         Dim coins = {1, 2, 5, 10, 20, 50, 100}
         Dim target = 999
@@ -50,7 +50,7 @@ Public Class ChangeTests
         Assert.Equal(expected, FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Possible_change_without_unit_coins_available()
         Dim coins = {2, 5, 10, 20, 50}
         Dim target = 21
@@ -58,7 +58,7 @@ Public Class ChangeTests
         Assert.Equal(expected, FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Another_possible_change_without_unit_coins_available()
         Dim coins = {4, 5}
         Dim target = 27
@@ -66,28 +66,28 @@ Public Class ChangeTests
         Assert.Equal(expected, FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub No_coins_make_0_change()
         Dim coins = {1, 5, 10, 21, 25}
         Dim target = 0
         Assert.Empty(FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Error_testing_for_change_smaller_than_the_smallest_of_coins()
         Dim coins = {5, 10}
         Dim target = 3
         Assert.Throws(Of ArgumentException)(Function() FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Error_if_no_combination_can_add_up_to_target()
         Dim coins = {5, 10}
         Dim target = 94
         Assert.Throws(Of ArgumentException)(Function() FindFewestCoins(coins, target))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Cannot_find_negative_change_values()
         Dim coins = {1, 2, 5}
         Dim target = -5

@@ -13,14 +13,14 @@ Public Class DiffieHellmanTests
         Next
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Private_key_is_random()
         Dim p = New BigInteger(7919)
         Dim privateKeys = Enumerable.Range(0, 1000).[Select](Function(__) DiffieHellman.PrivateKey(p)).ToArray()
         Assert.InRange(privateKeys.Distinct().Count(), privateKeys.Length - 100, privateKeys.Length)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_calculate_public_key_using_private_key()
         Dim p = New BigInteger(23)
         Dim g = New BigInteger(5)
@@ -28,7 +28,7 @@ Public Class DiffieHellmanTests
         Assert.Equal(New BigInteger(8), DiffieHellman.PublicKey(p, g, privateKey))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_calculate_public_key_when_given_a_different_private_key()
         Dim p = New BigInteger(23)
         Dim g = New BigInteger(5)
@@ -36,7 +36,7 @@ Public Class DiffieHellmanTests
         Assert.Equal(New BigInteger(19), DiffieHellman.PublicKey(p, g, privateKey))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Can_calculate_secret_using_other_partys_public_key()
         Dim p = New BigInteger(23)
         Dim theirPublicKey = New BigInteger(19)
@@ -44,7 +44,7 @@ Public Class DiffieHellmanTests
         Assert.Equal(New BigInteger(2), DiffieHellman.Secret(p, theirPublicKey, myPrivateKey))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Key_exchange()
         Dim p = New BigInteger(23)
         Dim g = New BigInteger(5)

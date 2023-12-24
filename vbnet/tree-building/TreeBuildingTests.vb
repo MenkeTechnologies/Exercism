@@ -14,7 +14,7 @@ Public Class TreeBuildingTests
         AssertTreeIsLeaf(tree, id:=0)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Three_nodes_in_order()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 0,
@@ -34,7 +34,7 @@ Public Class TreeBuildingTests
         AssertTreeIsLeaf(tree.Children(1), id:=2)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Three_nodes_in_reverse_order()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 2,
@@ -54,7 +54,7 @@ Public Class TreeBuildingTests
         AssertTreeIsLeaf(tree.Children(1), id:=2)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub More_than_two_children()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 3,
@@ -78,7 +78,7 @@ Public Class TreeBuildingTests
         AssertTreeIsLeaf(tree.Children(2), id:=3)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Binary_tree()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 5,
@@ -115,7 +115,7 @@ Public Class TreeBuildingTests
         AssertTreeIsLeaf(tree.Children(1).Children(1), id:=6)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Unbalanced_tree()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 5,
@@ -152,14 +152,14 @@ Public Class TreeBuildingTests
         AssertTreeIsLeaf(tree.Children(1).Children(2), id:=6)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Empty_input()
         Dim records = New TreeBuildingRecord(-1) {}
 
         Assert.Throws(Of ArgumentException)(Function() BuildTree(records))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Root_node_has_parent()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 0,
@@ -172,7 +172,7 @@ Public Class TreeBuildingTests
         Assert.Throws(Of ArgumentException)(Function() BuildTree(records))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub No_root_node()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 1,
@@ -183,7 +183,7 @@ Public Class TreeBuildingTests
     End Sub
 
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Non_continuous()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 2,
@@ -202,7 +202,7 @@ Public Class TreeBuildingTests
         Assert.Throws(Of ArgumentException)(Function() BuildTree(records))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Cycle_directly()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 5,
@@ -230,7 +230,7 @@ Public Class TreeBuildingTests
         Assert.Throws(Of ArgumentException)(Function() BuildTree(records))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Cycle_indirectly()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 5,
@@ -258,7 +258,7 @@ Public Class TreeBuildingTests
         Assert.Throws(Of ArgumentException)(Function() BuildTree(records))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Higher_id_parent_of_lower_id()
         Dim records = {New TreeBuildingRecord With {
 .RecordId = 0,

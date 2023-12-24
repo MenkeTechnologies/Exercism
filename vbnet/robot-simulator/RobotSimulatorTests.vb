@@ -9,7 +9,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Create_robot_at_negative_position_facing_south()
         Dim sut = New RobotSimulator(DirectionType.South, -1, -1)
         Assert.Equal(DirectionType.South, sut.Direction)
@@ -17,7 +17,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(-1, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Rotating_clockwise_changes_north_to_east()
         Dim sut = New RobotSimulator(DirectionType.North, 0, 0)
         sut.Move("R")
@@ -26,7 +26,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Rotating_clockwise_changes_east_to_south()
         Dim sut = New RobotSimulator(DirectionType.East, 0, 0)
         sut.Move("R")
@@ -35,7 +35,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Rotating_clockwise_changes_south_to_west()
         Dim sut = New RobotSimulator(DirectionType.South, 0, 0)
         sut.Move("R")
@@ -44,7 +44,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Rotating_clockwise_changes_west_to_north()
         Dim sut = New RobotSimulator(DirectionType.West, 0, 0)
         sut.Move("R")
@@ -53,7 +53,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Rotating_counter_clockwise_changes_north_to_west()
         Dim sut = New RobotSimulator(DirectionType.North, 0, 0)
         sut.Move("L")
@@ -62,7 +62,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Rotating_counter_clockwise_changes_west_to_south()
         Dim sut = New RobotSimulator(DirectionType.West, 0, 0)
         sut.Move("L")
@@ -71,7 +71,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Rotating_counter_clockwise_changes_south_to_east()
         Dim sut = New RobotSimulator(DirectionType.South, 0, 0)
         sut.Move("L")
@@ -80,7 +80,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Rotating_counter_clockwise_changes_east_to_north()
         Dim sut = New RobotSimulator(DirectionType.East, 0, 0)
         sut.Move("L")
@@ -89,7 +89,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Moving_forward_one_facing_north_increments_y()
         Dim sut = New RobotSimulator(DirectionType.North, 0, 0)
         sut.Move("A")
@@ -98,7 +98,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(1, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Moving_forward_one_facing_south_decrements_y()
         Dim sut = New RobotSimulator(DirectionType.South, 0, 0)
         sut.Move("A")
@@ -107,7 +107,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(-1, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Moving_forward_one_facing_east_increments_x()
         Dim sut = New RobotSimulator(DirectionType.East, 0, 0)
         sut.Move("A")
@@ -116,7 +116,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Moving_forward_one_facing_west_decrements_x()
         Dim sut = New RobotSimulator(DirectionType.West, 0, 0)
         sut.Move("A")
@@ -125,7 +125,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(0, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Follow_series_of_instructions_moving_east_and_north_from_readme()
         Dim sut = New RobotSimulator(DirectionType.North, 7, 3)
         sut.Move("RAALAL")
@@ -134,7 +134,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(4, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Follow_series_of_instructions_moving_west_and_north()
         Dim sut = New RobotSimulator(DirectionType.North, 0, 0)
         sut.Move("LAAARALA")
@@ -143,7 +143,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(1, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Follow_series_of_instructions_moving_west_and_south()
         Dim sut = New RobotSimulator(DirectionType.East, 2, -7)
         sut.Move("RRAAAAALA")
@@ -152,7 +152,7 @@ Public Class RobotSimulatorTests
         Assert.Equal(-8, sut.Y)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Follow_series_of_instructions_moving_east_and_north()
         Dim sut = New RobotSimulator(DirectionType.South, 8, 4)
         sut.Move("LAAARRRALLLL")

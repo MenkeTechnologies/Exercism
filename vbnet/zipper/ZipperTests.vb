@@ -10,7 +10,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Left_right_and_value()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -19,7 +19,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Dead_end()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -27,7 +27,7 @@ Public Class ZipperTests
         Assert.Null(actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Tree_from_deep_focus()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -36,7 +36,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Traversing_up_from_top()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -44,7 +44,7 @@ Public Class ZipperTests
         Assert.Null(actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Left_right_and_up()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -53,7 +53,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Test_ability_to_descend_multiple_levels_and_return()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -62,7 +62,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Set_value()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -71,7 +71,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Set_value_after_traversing_up()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -80,7 +80,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Set_left_with_leaf()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -89,7 +89,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Set_right_with_null()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -98,7 +98,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Set_right_with_subtree()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -107,7 +107,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Set_value_on_deep_focus()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
@@ -116,7 +116,7 @@ Public Class ZipperTests
         Assert.Equal(expected, actual)
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Different_paths_to_same_zipper()
         Dim tree = New BinTree(1, New BinTree(2, Nothing, New BinTree(3, Nothing, Nothing)), New BinTree(4, Nothing, Nothing))
         Dim sut = Zipper.FromTree(tree)
