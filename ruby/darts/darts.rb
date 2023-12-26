@@ -1,5 +1,5 @@
 class Darts
-  def initialize (x, y)
+  def initialize(x, y)
     @x = x
     @y = y
     @dist = ( @x * @x + @y * @y ) ** 0.5
