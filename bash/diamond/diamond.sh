@@ -1,24 +1,46 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+ord() {
+    local val
+    LC_CTYPE=C printf -v val %d "'$1"
+    echo $(( val - 65 ))
+}
+
+chr () {
+    local val
+    printf -v val %x "$(( $1 + 65 ))"
+    printf "\\x$val"
+}
+
+printRow () {
+  local -i rowOffset=$1 size=$2 colOffset
+  local line=''
+  for (( colOffset = size; colOffset >= 0; --colOffset )); do
+      if (( colOffset == rowOffset )); then
+        line+=$(chr $rowOffset)
+    else
+        line+=' '
+      fi
+  done
+  for (( colOffset = 1; colOffset <= size; ++colOffset )); do
+      if (( colOffset == rowOffset )); then
+        line+=$(chr $rowOffset)
+    else
+        line+=' '
+      fi
+  done
+  echo "$line"
+}
+
+declare -i rowOffset size
+
+(( $# == 1 )) || exit 1
+
+size=$(ord $1)
+
+for (( rowOffset = 0; rowOffset <= size; ++rowOffset )); do
+    printRow $rowOffset $size
+done
+for (( rowOffset = size - 1; rowOffset >= 0; --rowOffset )); do
+    printRow $rowOffset $size
+done
