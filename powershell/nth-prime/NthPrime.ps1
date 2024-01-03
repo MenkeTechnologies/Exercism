@@ -1,21 +1,23 @@
-Function Get-NthPrime() {
-    <#
-    .SYNOPSIS
-    Given a number n, determine what the nth prime is.
+Function Prime($N){
+    for ($i = 2; $i -le [Math]::floor([Math]::sqrt($N)); ++$i) {
+        if ($N % $i -eq 0) {
+            return $False
+        }
+    }
+    $True
+}
 
-    .DESCRIPTION
-    By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
-
-    .PARAMETER Number
-    The number of the prime to return.
-
-    .EXAMPLE
-    Get-NthPrime -Number 5
-    #>
-    [CmdletBinding()]
-    Param(
-        [Int64]$Number
-    )
-    
-    throw "Please implement this function"
+Function Get-NthPrime($Number){
+    if ($Number -lt 1) {
+        Throw "error: there is no zeroth prime"
+    }
+    $primes = @(2)
+    $curr = 3
+    while ($primes.Length -lt $Number) {
+      if (Prime($curr)) {
+        $primes += $curr
+      }
+      $curr += 2
+    }
+    $primes[-1]
 }
