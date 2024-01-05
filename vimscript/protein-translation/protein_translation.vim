@@ -1,14 +1,36 @@
-"
-" Given a string comprised of three-letter DNA codons, return a list of encoded proteins
-" An error will be thrown if an invalid codon is encountered. 
-" Examples:
-"
-"   :echo Proteins('AUGUUUUGG')
-"   ['Methionine', 'Phenylalanine', 'Tryptophan']
-"
-"   :echo Proteins('AUGXYZ')
-"   E605: Exception not caught: Invalid codon
-"
+let s:dict = {
+\   'AUG': 'Methionine',
+\   'UUU': 'Phenylalanine',
+\   'UUC': 'Phenylalanine',
+\   'UUA': 'Leucine',
+\   'UUG': 'Leucine',
+\   'UCU': 'Serine',
+\   'UCC': 'Serine',
+\   'UCA': 'Serine',
+\   'UCG': 'Serine',
+\   'UAU': 'Tyrosine',
+\   'UAC': 'Tyrosine',
+\   'UGU': 'Cysteine',
+\   'UGC': 'Cysteine',
+\   'UGG': 'Tryptophan',
+\   'UAA': 'STOP',
+\   'UAG': 'STOP',
+\   'UGA': 'STOP'
+\ }
+
 function! Proteins(strand) abort
-  " your code goes here'
+  let res = []
+  for i in range(0, len(a:strand) - 1, 3)
+    let s = strpart(a:strand, i, 3)
+    if !has_key(s:dict, s)
+        throw 'Invalid codon'
+    endif
+    let protein = get(s:dict, s)
+
+    if protein ==# 'STOP'
+        break
+    endif
+    let res = add(res, protein)
+  endfor
+  return res
 endfunction
