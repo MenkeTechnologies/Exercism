@@ -1,13 +1,13 @@
-/**
-* Your implementation of the PopCount exercise
-*/
 component {
 
-	/**
-	* @returns 
-	*/
-	function eggCount( number ) {
-		// Implement me here
+	function eggCount(number) {
+        var cnt = 0
+        while (number > 0) {
+            cnt += number % 2
+            number = BitSHRN(number, 1)
+
+        }
+        return cnt
 	}
 
 }
