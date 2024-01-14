@@ -1,4 +1,3 @@
-class Isogram
-  @isIsogram: (phrase) ->
+module.exports = class Isogram
+  @isIsogram: (s) -> !s.toLowerCase().match /(\w).*\1/
 
-module.exports = Isogram

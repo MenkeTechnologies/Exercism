@@ -9,84 +9,84 @@ describe 'Darts', ->
     expected = 0
     expect(results).toEqual expected
 
-  xit 'On the outer circle', ->
+  it 'On the outer circle', ->
     x = 0
     y = 10
     results = darts.score(x, y)
     expected = 1
     expect(results).toEqual expected
 
-  xit 'On the middle circle', ->
+  it 'On the middle circle', ->
     x = -5
     y = 0
     results = darts.score(x, y)
     expected = 5
     expect(results).toEqual expected
 
-  xit 'On the inner circle', ->
+  it 'On the inner circle', ->
     x = 0
     y = -1
     results = darts.score(x, y)
     expected = 10
     expect(results).toEqual expected
 
-  xit 'Exactly on center', ->
+  it 'Exactly on center', ->
     x = 0
     y = 0
     results = darts.score(x, y)
     expected = 10
     expect(results).toEqual expected
 
-  xit 'Near the center', ->
+  it 'Near the center', ->
     x = -0.1
     y = -0.1
     results = darts.score(x, y)
     expected = 10
     expect(results).toEqual expected
 
-  xit 'Just within the inner circle', ->
+  it 'Just within the inner circle', ->
     x = 0.7
     y = 0.7
     results = darts.score(x, y)
     expected = 10
     expect(results).toEqual expected
 
-  xit 'Just outside the inner circle', ->
+  it 'Just outside the inner circle', ->
     x = 0.8
     y = -0.8
     results = darts.score(x, y)
     expected = 5
     expect(results).toEqual expected
 
-  xit 'Just within the middle circle', ->
+  it 'Just within the middle circle', ->
     x = -3.5
     y = 3.5
     results = darts.score(x, y)
     expected = 5
     expect(results).toEqual expected
 
-  xit 'Just outside the middle circle', ->
+  it 'Just outside the middle circle', ->
     x = -3.6
     y = -3.6
     results = darts.score(x, y)
     expected = 1
     expect(results).toEqual expected
 
-  xit 'Just within the outer circle', ->
+  it 'Just within the outer circle', ->
     x = -7.0
     y = 7.0
     results = darts.score(x, y)
     expected = 1
     expect(results).toEqual expected
 
-  xit 'Just outside the outer circle', ->
+  it 'Just outside the outer circle', ->
     x = 7.1
     y = -7.1
     results = darts.score(x, y)
     expected = 0
     expect(results).toEqual expected
 
-  xit 'Asymmetric position between the inner and middle circles', ->
+  it 'Asymmetric position between the inner and middle circles', ->
     x = 0.5
     y = -4
     results = darts.score(x, y)

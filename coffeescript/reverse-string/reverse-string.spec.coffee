@@ -5,22 +5,22 @@ describe 'ReverseString', ->
     reversed = ReverseString.reverse("")
     expect(reversed).toEqual("")
 
-  xit 'A word', ->
+  it 'A word', ->
     reversed = ReverseString.reverse("robot")
     expect(reversed).toEqual("tobor")
 
-  xit 'A capitalized word', ->
+  it 'A capitalized word', ->
     reversed = ReverseString.reverse("Ramen")
     expect(reversed).toEqual("nemaR")
 
-  xit 'A sentence with punctuation', ->
+  it 'A sentence with punctuation', ->
     reversed = ReverseString.reverse("I'm hungry!")
     expect(reversed).toEqual("!yrgnuh m'I")
 
-  xit 'A palindrome', ->
+  it 'A palindrome', ->
     reversed = ReverseString.reverse("racecar")
     expect(reversed).toEqual("racecar")
 
-  xit 'An even-sized word', ->
+  it 'An even-sized word', ->
     reversed = ReverseString.reverse("drawer")
     expect(reversed).toEqual("reward")

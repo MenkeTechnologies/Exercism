@@ -16,37 +16,37 @@ describe 'Strain', ->
     expected = []
     expect(result).toEqual expected
 
-  xit 'keeps everything', ->
+  it 'keeps everything', ->
     data = [1, 3, 5]
     result = strain.keep(data, alwaysTrue)
     expected = [1, 3, 5]
     expect(result).toEqual expected
 
-  xit 'keeps nothing', ->
+  it 'keeps nothing', ->
     data = [1, 3, 5]
     result = strain.keep(data, alwaysFalse)
     expected = []
     expect(result).toEqual expected
 
-  xit 'keeps first and last', ->
+  it 'keeps first and last', ->
     data = [1, 2, 3]
     result = strain.keep(data, isOdd)
     expected = [1, 3]
     expect(result).toEqual expected
 
-  xit 'keeps neither first nor last', ->
+  it 'keeps neither first nor last', ->
     data = [1, 2, 3]
     result = strain.keep(data, isEven)
     expected = [2]
     expect(result).toEqual expected
 
-  xit 'keeps strings', ->
+  it 'keeps strings', ->
     data = ["apple", "zebra", "banana", "zombies", "cherimoya", "zealot"]
     result = strain.keep(data, startsWithZ)
     expected = ["zebra", "zombies", "zealot"]
     expect(result).toEqual expected
 
-  xit 'keeps lists', ->
+  it 'keeps lists', ->
     data = [
         [1, 2, 3],
         [5, 5, 5],
@@ -65,43 +65,43 @@ describe 'Strain', ->
     ]
     expect(result).toEqual expected
 
-  xit 'discard on empty list returns empty list', ->
+  it 'discard on empty list returns empty list', ->
     data = []
     result = strain.discard(data, alwaysTrue)
     expected = []
     expect(result).toEqual expected
 
-  xit 'discards everything', ->
+  it 'discards everything', ->
     data = [1, 3, 5]
     result = strain.discard(data, alwaysTrue)
     expected = []
     expect(result).toEqual expected
 
-  xit 'discards nothing', ->
+  it 'discards nothing', ->
     data = [1, 3, 5]
     result = strain.discard(data, alwaysFalse)
     expected = [1, 3, 5]
     expect(result).toEqual expected
 
-  xit 'discards first and last', ->
+  it 'discards first and last', ->
     data = [1, 2, 3]
     result = strain.discard(data, isOdd)
     expected = [2]
     expect(result).toEqual expected
 
-  xit 'discards neither first or last', ->
+  it 'discards neither first or last', ->
     data = [1, 2, 3]
     result = strain.discard(data, isEven)
     expected = [1, 3]
     expect(result).toEqual expected
 
-  xit 'discards strings', ->
+  it 'discards strings', ->
     data = ["apple", "zebra", "banana", "zombies", "cherimoya", "zealot"]
     result = strain.discard(data, startsWithZ)
     expected = ["apple", "banana", "cherimoya"]
     expect(result).toEqual expected
 
-  xit 'discards lists', ->
+  it 'discards lists', ->
     data = [
         [1, 2, 3],
         [5, 5, 5],

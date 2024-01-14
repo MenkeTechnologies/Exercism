@@ -6,17 +6,17 @@ describe 'ResistorColor', ->
     expected = 0
     expect(results).toEqual expected
 
-  xit 'White', ->
+  it 'White', ->
     results = ResistorColor.colorCode('white')
     expected = 9
     expect(results).toEqual expected
 
-  xit 'Orange', ->
+  it 'Orange', ->
     results = ResistorColor.colorCode('orange')
     expected = 3
     expect(results).toEqual expected
 
-  xit 'Colors', ->
+  it 'Colors', ->
     results = ResistorColor.colors()
     expected = [
         'black'
