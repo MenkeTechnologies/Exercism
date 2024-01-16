@@ -1,6 +1,3 @@
-class Strain
-  @keep: (lst, predicate) -> 
-
-  @discard: (lst, predicate) ->
-
-module.exports = Strain
+module.exports = class Strain
+  @keep: (lst, f) -> x for x in lst when f(x)
+  @discard: (lst, f) -> x for x in lst when !f(x)
