@@ -1,26 +1,26 @@
-RnaTrascription = require './rna-transcription'
+RnaTranscription = require './rna-transcription'
 
-describe 'RnaTrascription', ->
+describe 'RnaTranscription', ->
   it 'Empty RNA sequence', ->
-    dna = new RnaTrascription ""
+    dna = new RnaTranscription ""
     expect(dna.toRna()).toEqual("")
 
   it 'RNA complement of cytosine is guanine', ->
-    dna = new RnaTrascription "C"
+    dna = new RnaTranscription "C"
     expect(dna.toRna()).toEqual("G")
 
   it 'RNA complement of guanine is cytosine', ->
-    dna = new RnaTrascription "G"
+    dna = new RnaTranscription "G"
     expect(dna.toRna()).toEqual("C")
 
   it 'RNA complement of thymine is adenine', ->
-    dna = new RnaTrascription "T"
+    dna = new RnaTranscription "T"
     expect(dna.toRna()).toEqual("A")
 
   it 'RNA complement of adenine is uracil', ->
-    dna = new RnaTrascription "A"
+    dna = new RnaTranscription "A"
     expect(dna.toRna()).toEqual("U")
 
   it 'RNA complement', ->
-    dna = new RnaTrascription "ACGTGGTCTTAA"
+    dna = new RnaTranscription "ACGTGGTCTTAA"
     expect(dna.toRna()).toEqual("UGCACCAGAAUU")
