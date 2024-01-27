@@ -10,7 +10,7 @@ pub fn brackets_are_balanced(string: &str) -> bool {
         if map.contains_key(&c) {
             stk.push(c)
         } else if map.values().any(|&v| v == c) {
-            if stk.is_empty() || map[(&stk.pop().unwrap())] != c {
+            if stk.is_empty() || map[&stk.pop().unwrap()] != c {
                 return false;
             }
         }

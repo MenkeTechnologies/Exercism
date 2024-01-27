@@ -7,10 +7,10 @@ pub fn rot(first: char, offset: i8, transform: char) -> char {
 pub fn rotate(input: &str, offset: i8) -> String {
     input
         .chars()
-        .map(|ch| match ch {
-            'a'..='z' => rot('a', offset, ch),
-            'A'..='Z' => rot('A', offset, ch),
-            _ => ch,
+        .map(|c| match c {
+            'a'..='z' => rot('a', offset, c),
+            'A'..='Z' => rot('A', offset, c),
+            _ => c,
         })
-        .collect::<String>()
+        .collect()
 }

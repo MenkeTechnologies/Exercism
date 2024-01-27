@@ -1,6 +1,6 @@
 pub fn collatz(n: u64) -> Option<u64> {
     if n < 1 {
-        return None
+        return None;
     }
     let mut cnt = 0;
     let mut dup = n;
@@ -21,6 +21,6 @@ pub fn collatz(n: u64) -> Option<u64> {
 
         cnt += 1;
     }
-    
+
     Some(cnt)
 }
