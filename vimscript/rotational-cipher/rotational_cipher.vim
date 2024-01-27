@@ -1,14 +1,11 @@
+function! s:shift(shiftKey, c)
+    if a:c =~ '\a'
+        let offset = char2nr(a:c =~ '\u' ? 'A' : 'a')
+        return nr2char((char2nr(a:c) - offset + a:shiftKey) % 26 + offset)
+    endif
+    return a:c
+endfunction
 
-"
-" Encrypts the passed text using a simple shift cipher 
-" and the supplied shiftKey between 0 and 26.
-" Non-alphabetic characters are kept as-is.
-"
-" Example:
-"
-"   :echo Rotate('Testing 1 2 3 testing')
-"   Xiwxmrk 1 2 3 xiwxmrk
-"
-function! Rotate(shiftKey, text) abort
-  " your code goes here
+function! Rotate(shiftKey, s) abort
+  return join(map(split(a:s, '\zs'), 's:shift(a:shiftKey, v:val)'), '')
 endfunction
