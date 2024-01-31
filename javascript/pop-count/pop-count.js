@@ -1,8 +1,3 @@
-//
-// This is only a SKELETON file for the 'Poker' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
+export const eggCount = (displayValue) =>
+  [...displayValue.toString(2)].filter(c => c === '1').reduce((acc, n) => acc + parseInt(n), 0)
 
-export const eggCount = (displayValue) => {
-  throw new Error('Remove this statement and implement this function');
-};
