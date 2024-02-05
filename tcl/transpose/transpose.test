@@ -10,12 +10,12 @@ test transpose-1 "empty string" -body {
     transpose {}
 } -returnCodes OK -match orderedLists -result {}
 
-skip transpose-2
+
 test transpose-2 "two characters in a row" -body {
     transpose {"A1"}
 } -returnCodes OK -match orderedLists -result {"A" "1"}
 
-skip transpose-3
+
 test transpose-3 "two characters in a column" -body {
     transpose {
         "A"
@@ -25,7 +25,7 @@ test transpose-3 "two characters in a column" -body {
     "A1"
 }
 
-skip transpose-4
+
 test transpose-4 "simple" -body {
     transpose {
         "ABC"
@@ -37,7 +37,7 @@ test transpose-4 "simple" -body {
     "C3"
 }
 
-skip transpose-5
+
 test transpose-5 "single line" -body {
     transpose {
         "Single line."
@@ -57,7 +57,7 @@ test transpose-5 "single line" -body {
     "."
 }
 
-skip transpose-6
+
 test transpose-6 "first line longer than second line" -body {
     transpose {
         "The fourth line."
@@ -82,7 +82,7 @@ test transpose-6 "first line longer than second line" -body {
     "."
 }
 
-skip transpose-7
+
 test transpose-7 "second line longer than first line" -body {
     transpose {
         "The first line."
@@ -107,7 +107,7 @@ test transpose-7 "second line longer than first line" -body {
     " ."
 }
 
-skip transpose-8
+
 test transpose-8 "mixed line length" -body {
     transpose {
         "The longest line."
@@ -135,7 +135,7 @@ test transpose-8 "mixed line length" -body {
     "."
 }
 
-skip transpose-9
+
 test transpose-9 "square" -body {
     transpose {
         "HEART"
@@ -152,7 +152,7 @@ test transpose-9 "square" -body {
     "TREND"
 }
 
-skip transpose-10
+
 test transpose-10 "rectangle" -body {
     transpose {
         "FRACTURE"
@@ -171,7 +171,7 @@ test transpose-10 "rectangle" -body {
     "EDGE"
 }
 
-skip transpose-11
+
 test transpose-11 "triangle" -body {
     transpose {
         "T"
@@ -190,7 +190,7 @@ test transpose-11 "triangle" -body {
     "     R"
 }
 
-skip transpose-12
+
 test transpose-12 "jagged triangle" -body {
     transpose {
         "11"

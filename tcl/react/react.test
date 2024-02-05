@@ -11,14 +11,14 @@ test react-1 "input cells have a value" -body {
     $cell value
 } -result 10
 
-skip react-2
+
 test react-2 "an input cell's value can be set" -body {
     set cell [InputCell new 4]
     $cell setValue 20
     $cell value
 } -result 20
 
-skip react-3
+
 test react-3 "compute cells calculate initial value" -body {
     set input [InputCell new 1]
 
@@ -32,7 +32,7 @@ test react-3 "compute cells calculate initial value" -body {
     $compute value
 } -result 2
 
-skip react-4
+
 test react-4 "compute cells take inputs in the right order" -body {
     set input1 [InputCell new 1]
     set input2 [InputCell new 2]
@@ -42,7 +42,7 @@ test react-4 "compute cells take inputs in the right order" -body {
     $compute value
 } -result 21
 
-skip react-5
+
 test react-5 "compute cells update value when dependencies are changed" -body {
     set input [InputCell new 1]
     set compute [ComputeCell new [list $input] {{inputs} {
@@ -52,7 +52,7 @@ test react-5 "compute cells update value when dependencies are changed" -body {
     $compute value
 } -result 4
 
-skip react-6
+
 test react-6 "compute cells can depend on other compute cells" -body {
     set input [InputCell new 1]
     set times2 [ComputeCell new [list $input] {{inputs} {
@@ -72,7 +72,7 @@ test react-6 "compute cells can depend on other compute cells" -body {
     list $before $after
 } -result {32 96}
 
-skip react-7
+
 test react-7 "compute cells fire callbacks" -body {
     set input [InputCell new 1]
     set output [ComputeCell new [list $input] {{inputs} {
@@ -85,7 +85,7 @@ test react-7 "compute cells fire callbacks" -body {
     $callback value
 } -result {4}
 
-skip react-8
+
 test react-8 "callback cells only fire on change" -body {
     set input [InputCell new 1]
     set output [ComputeCell new [list $input] {{inputs} {
@@ -103,7 +103,7 @@ test react-8 "callback cells only fire on change" -body {
     list $stage1 $stage2
 } -match orderedLists -result {{} {222}}
 
-skip react-9
+
 test react-9 "callbacks do not report already reported values" -body {
     set input [InputCell new 1]
     set output [ComputeCell new [list $input] {{inputs} {
@@ -121,7 +121,7 @@ test react-9 "callbacks do not report already reported values" -body {
     list $stage1 $stage2
 } -result {3 4}
 
-skip react-10
+
 test react-10 "callbacks can fire from multiple cells" -body {
     set input [InputCell new 1]
     set plus1 [ComputeCell new [list $input] {{inputs} {
@@ -138,7 +138,7 @@ test react-10 "callbacks can fire from multiple cells" -body {
     list [$callback1 value] [$callback2 value]
 } -result {11 9}
 
-skip react-11
+
 test react-11 "callbacks can be added and removed" -body {
     set input [InputCell new 11]
     set output [ComputeCell new [list $input] {{inputs} {
@@ -160,7 +160,7 @@ test react-11 "callbacks can be added and removed" -body {
     list $before $after
 } -result {{32 32} {32 42 42}}
 
-skip react-12
+
 test react-12 "removing a callback multiple times doesn't interfere with other callbacks" -body {
     set input [InputCell new 11]
     set output [ComputeCell new [list $input] {{inputs} {
@@ -177,7 +177,7 @@ test react-12 "removing a callback multiple times doesn't interfere with other c
     list [$callback1 value] [$callback2 value]
 } -result {{} 3}
 
-skip react-13
+
 test react-13 "callbacks should only be called once even if multiple dependencies change" -body {
     set input [InputCell new 1]
     set plus1 [ComputeCell new [list $input] {{inputs} {
@@ -198,7 +198,7 @@ test react-13 "callbacks should only be called once even if multiple dependencie
     $callback value
 } -result 10
 
-skip react-14
+
 test react-14 "callbacks should not be called if dependencies change but output value doesn't change" -body {
     set input [InputCell new 1]
     set plus1 [ComputeCell new [list $input] {{inputs} {

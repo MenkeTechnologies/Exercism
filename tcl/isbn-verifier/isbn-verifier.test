@@ -10,82 +10,82 @@ test isbn-1 "valid isbn number" -body {
     isValid "3-598-21508-8"
 } -returnCodes ok -match boolean -result true
 
-skip isbn-2
+
 test isbn-2 "invalid isbn check digit" -body {
     isValid "3-598-21508-9"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-3
+
 test isbn-3 "valid isbn number with a check digit of 10" -body {
     isValid "3-598-21507-X"
 } -returnCodes ok -match boolean -result true
 
-skip isbn-4
+
 test isbn-4 "check digit is a character other than X" -body {
     isValid "3-598-21507-A"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-5
+
 test isbn-5 "invalid character in isbn" -body {
     isValid "3-598-P1581-X"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-6
+
 test isbn-6 "X is only valid as a check digit" -body {
     isValid "3-598-2X507-9"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-7
+
 test isbn-7 "valid isbn without separating dashes" -body {
     isValid "3598215088"
 } -returnCodes ok -match boolean -result true
 
-skip isbn-8
+
 test isbn-8 "isbn without separating dashes and X as check digit" -body {
     isValid "359821507X"
 } -returnCodes ok -match boolean -result true
 
-skip isbn-9
+
 test isbn-9 "isbn without check digit and dashes" -body {
     isValid "359821507"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-10
+
 test isbn-10 "too long isbn and no dashes" -body {
     isValid "3598215078X"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-11
+
 test isbn-11 "too short isbn" -body {
     isValid "00"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-12
+
 test isbn-12 "isbn without check digit" -body {
     isValid "3-598-21507"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-13
+
 test isbn-13 "check digit of X should not be used for 0" -body {
     isValid "3-598-21515-X"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-14
+
 test isbn-14 "empty isbn" -body {
     isValid ""
 } -returnCodes ok -match boolean -result false
 
-skip isbn-15
+
 test isbn-15 "input is 9 characters" -body {
     isValid "134456729"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-16
+
 test isbn-16 "invalid characters are not ignored" -body {
     isValid "3132P34035"
 } -returnCodes ok -match boolean -result false
 
-skip isbn-17
+
 test isbn-17 "input is too long but contains a valid isbn" -body {
     isValid "98245726788"
 } -returnCodes ok -match boolean -result false

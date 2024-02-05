@@ -14,14 +14,14 @@ test high-scores-1.1 {List of scores} -setup {
 } -returnCodes ok -result {30 50 20 70}
 
 # track test
-skip high-scores-1.2
+
 test high-scores-1.2 {List of scores, uninitialized} -setup {
     set hs [HighScores new]
 } -body {
     $hs scores
 } -returnCodes ok -result {}
 
-skip high-scores-2.1
+
 test high-scores-2.1 {Latest score} -setup {
     set hs [HighScores new]
     $hs addScores 100 0 90 30
@@ -30,14 +30,14 @@ test high-scores-2.1 {Latest score} -setup {
 } -returnCodes ok -result 30
 
 # track test
-skip high-scores-2.2
+
 test high-scores-2.2 {Latest scores, uninitialized} -setup {
     set hs [HighScores new]
 } -body {
     $hs latest
 } -returnCodes ok -result {}
 
-skip high-scores-3.1
+
 test high-scores-3.1 {Personal best} -setup {
     set hs [HighScores new]
     $hs addScores 40 100 70
@@ -46,7 +46,7 @@ test high-scores-3.1 {Personal best} -setup {
 } -returnCodes ok -result 100
 
 # track test
-skip high-scores-3.2
+
 test high-scores-3.2 {Personal best, uninitialized} -setup {
     set hs [HighScores new]
 } -body {
@@ -54,7 +54,7 @@ test high-scores-3.2 {Personal best, uninitialized} -setup {
 } -returnCodes ok -result {}
 
 # Top three
-skip high-scores-4.1
+
 test high-scores-4.1 {Personal top three from a list of scores} -setup {
     set hs [HighScores new]
     $hs addScores 10 30 90 30 100 20 10 0 30 40 40 70 70
@@ -62,7 +62,7 @@ test high-scores-4.1 {Personal top three from a list of scores} -setup {
     $hs topThree
 } -returnCodes ok -result {100 90 70}
 
-skip high-scores-4.2
+
 test high-scores-4.2 {Personal top highest to lowest} -setup {
     set hs [HighScores new]
     $hs addScores 20 10 30
@@ -70,7 +70,7 @@ test high-scores-4.2 {Personal top highest to lowest} -setup {
     $hs topThree
 } -returnCodes ok -result {30 20 10}
 
-skip high-scores-4.3
+
 test high-scores-4.3 {Personal top when there is a tie} -setup {
     set hs [HighScores new]
     $hs addScores 40 20 40 30
@@ -78,7 +78,7 @@ test high-scores-4.3 {Personal top when there is a tie} -setup {
     $hs topThree
 } -returnCodes ok -result {40 40 30}
 
-skip high-scores-4.4
+
 test high-scores-4.4 {Personal top when there are less than 3} -setup {
     set hs [HighScores new]
     $hs addScores 30 70
@@ -86,7 +86,7 @@ test high-scores-4.4 {Personal top when there are less than 3} -setup {
     $hs topThree
 } -returnCodes ok -result {70 30}
 
-skip high-scores-4.5
+
 test high-scores-4.5 {Personal top when there is only one} -setup {
     set hs [HighScores new]
     $hs addScores 40
@@ -95,14 +95,14 @@ test high-scores-4.5 {Personal top when there is only one} -setup {
 } -returnCodes ok -result {40}
 
 # track test
-skip high-scores-4.6
+
 test high-scores-4.6 {Personal top when there are no scores} -setup {
     set hs [HighScores new]
 } -body {
     $hs topThree
 } -returnCodes ok -result {}
 
-skip high-scores-4.7
+
 test high-scores-4.7 {Latest score after personal top scores} -setup {
     set hs [HighScores new]
     $hs addScores 70 50 20 30
@@ -111,7 +111,7 @@ test high-scores-4.7 {Latest score after personal top scores} -setup {
     $hs latest
 } -returnCodes ok -result 30
 
-skip high-scores-4.8
+
 test high-scores-4.8 {Scores after personal top scores} -setup {
     set hs [HighScores new]
     $hs addScores 30 50 20 70
@@ -121,7 +121,7 @@ test high-scores-4.8 {Scores after personal top scores} -setup {
 } -returnCodes ok -result {30 50 20 70}
 
 # track test
-skip high-scores-5
+
 test high-scores-5 {Object data is private} -setup {
     set h1 [HighScores new]
     set h2 [HighScores new]

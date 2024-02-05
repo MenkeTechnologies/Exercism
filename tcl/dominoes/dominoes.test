@@ -39,7 +39,7 @@ lappend cases {*}{
     dominoes-12 "nine elements" true  {{1 2} {5 3} {3 1} {1 2} {2 4} {1 6} {2 3} {3 4} {5 6}}
 }
 
-skip {
+
     dominoes-2
     dominoes-3
     dominoes-4

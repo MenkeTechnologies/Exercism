@@ -11,43 +11,43 @@ test robot-1.1 "default position is (0,0) facing north" -body {
     $robot position
 } -returnCodes ok -match dictionary -result {x 0 y 0 direction north}
 
-skip robot-1.2
+
 test robot-1.2 "position (1,2) default direction" -body {
     set robot [Robot new {x 1 y 2}]
     $robot position
 } -returnCodes ok -match dictionary -result {x 1 y 2 direction north}
 
-skip robot-1.3
+
 test robot-1.3 "at negative position facing south" -body {
     set robot [Robot new {x -1 y -1 direction south}]
     $robot position
 } -returnCodes ok -match dictionary -result {x -1 y -1 direction south}
 
-skip robot-1.4
+
 test robot-1.4 "facing east, default x and y" -body {
     set robot [Robot new {direction east}]
     $robot position
 } -returnCodes ok -match dictionary -result {x 0 y 0 direction east}
 
-skip robot-1.5
+
 test robot-1.5 "facing west, default x and y" -body {
     set robot [Robot new {direction west}]
     $robot position
 } -returnCodes ok -match dictionary -result {x 0 y 0 direction west}
 
-skip robot-1.6
+
 test robot-1.6 "invalid direction" -body {
     set robot [Robot new {direction southwest}]
     $robot position
 } -returnCodes error -result "invalid direction"
 
-skip robot-1.7
+
 test robot-1.7 "invalid x coordinate" -body {
     set robot [Robot new {x foo y 0}]
     $robot position
 } -returnCodes error -result "invalid x coordinate"
 
-skip robot-1.8
+
 test robot-1.8 "invalid y coordinate" -body {
     set robot [Robot new {x 0 y bar}]
     $robot position
@@ -76,7 +76,7 @@ set instruction_cases {
     robot-5.4 "moving east and north" {x 8 y 4 direction south} "LAAARRRALLLL" {x 11 y 5 direction north}
 }
 
-skip {robot-2* robot-3* robot-4* robot-5*}
+
 foreach {name description init instructions result} $instruction_cases {
     test $name $description -body {
         set robot [Robot new $init]
@@ -85,7 +85,7 @@ foreach {name description init instructions result} $instruction_cases {
     } -returnCodes ok -match dictionary -result $result
 }
 
-skip robot-6.1
+
 test robot-6.1 "invalid instruction" -body {
     set robot [Robot new]
     $robot move "RALB"

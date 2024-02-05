@@ -10,53 +10,53 @@ test binary-search-1.1 "finds a value in an array with one element" -body {
     binarySearch {6} 6
 } -returnCodes ok -result 0
 
-skip binary-search-1.2
+
 test binary-search-1.2 "finds a value in the middle of an array" -body {
     binarySearch {1 3 4 6 8 9 11} 6
 } -returnCodes ok -result 3
 
-skip binary-search-1.3
+
 test binary-search-1.3 "finds a value at the beginning of an array" -body {
     binarySearch {1 3 4 6 8 9 11} 1
 } -returnCodes ok -result 0
 
-skip binary-search-1.4
+
 test binary-search-1.4 "finds a value at the end of an array" -body {
     binarySearch {1 3 4 6 8 9 11} 11
 } -returnCodes ok -result 6
 
-skip binary-search-1.5
+
 test binary-search-1.5 "finds a value in an array of odd length" -body {
     binarySearch {1 3 5 8 13 21 34 55 89 144 233 377 634} 144
 } -returnCodes ok -result 9
 
-skip binary-search-1.6
+
 test binary-search-1.6 "finds a value in an array of even length" -body {
     binarySearch {1 3 5 8 13 21 34 55 89 144 233 377} 21
 } -returnCodes ok -result 5
 
 
-skip binary-search-2.1
+
 test binary-search-2.1 "identifies that a value is not included in the array" -body {
     binarySearch {1 3 4 6 8 9 11} 7 
 } -returnCodes ok -result -1
 
-skip binary-search-2.2
+
 test binary-search-2.2 "a value smaller than the array's smallest value is not found" -body {
     binarySearch {1 3 4 6 8 9 11} 0 
 } -returnCodes ok -result -1
 
-skip binary-search-2.3
+
 test binary-search-2.3 "a value larger than the array's largest value is not found" -body {
     binarySearch {1 3 4 6 8 9 11} 13 
 } -returnCodes ok -result -1
 
-skip binary-search-2.4
+
 test binary-search-2.4 "nothing is found in an empty array" -body {
     binarySearch {} 1 
 } -returnCodes ok -result -1
 
-skip binary-search-2.4
+
 test binary-search-2.4 "nothing is found when the left and right bounds cross" -body {
     binarySearch {1 2} 0 
 } -returnCodes ok -result -1

@@ -16,21 +16,21 @@ test connect-1 "an empty board has no winner" -body {
     }
 } -returnCodes ok -result ""
 
-skip connect-2
+
 test connect-2 "X can win on a 1x1 board" -body {
     winner {
         "X"
     }
 } -returnCodes ok -result "X"
 
-skip connect-3
+
 test connect-3 "O can win on a 1x1 board" -body {
     winner {
         "O"
     }
 } -returnCodes ok -result "O"
 
-skip connect-4
+
 test connect-4 "only edges does not make a winner" -body {
     winner {
         "O O O X"
@@ -40,7 +40,7 @@ test connect-4 "only edges does not make a winner" -body {
     }
 } -returnCodes ok -result ""
 
-skip connect-5
+
 test connect-5 "illegal diagonal does not make a winner" -body {
     winner {
         "X O . ."
@@ -51,7 +51,7 @@ test connect-5 "illegal diagonal does not make a winner" -body {
     }
 } -returnCodes ok -result ""
 
-skip connect-6
+
 test connect-6 "nobody wins crossing adjacent angles" -body {
     winner {
         "X . . ."
@@ -62,7 +62,7 @@ test connect-6 "nobody wins crossing adjacent angles" -body {
     }
 } -returnCodes ok -result ""
 
-skip connect-7
+
 test connect-7 "X wins crossing from left to right" -body {
     winner {
         ". O . ."
@@ -73,7 +73,7 @@ test connect-7 "X wins crossing from left to right" -body {
     }
 } -returnCodes ok -result "X"
 
-skip connect-8
+
 test connect-8 "O wins crossing from top to bottom" -body {
     winner {
         ". O . ."
@@ -84,7 +84,7 @@ test connect-8 "O wins crossing from top to bottom" -body {
     }
 } -returnCodes ok -result "O"
 
-skip connect-9
+
 test connect-9 "X wins using a convoluted path" -body {
     winner {
         ". X X . ."
@@ -95,7 +95,7 @@ test connect-9 "X wins using a convoluted path" -body {
     }
 } -returnCodes ok -result "X"
 
-skip connect-10
+
 test connect-10 "X wins using a spiral path" -body {
     winner {
         "O X X X X X X X X"

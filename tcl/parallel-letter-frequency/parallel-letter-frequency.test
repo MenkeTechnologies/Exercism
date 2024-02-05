@@ -11,32 +11,32 @@ test plf-1 "one letter" -body {
     calculate "a"
 } -returnCodes ok -match dictionary -result {a 1}
 
-skip plf-2
+
 test plf-2 "case insensitive" -body {
     calculate "aA"
 } -returnCodes ok -match dictionary -result {a 2}
 
-skip plf-3
+
 test plf-3 "numbers are ignored" -body {
     calculate {"123" "456" "789"}
 } -returnCodes ok -match dictionary -result {}
 
-skip plf-4
+
 test plf-4 "punctuation is ignored" -body {
     calculate {"\[]\\;," "./{}!" ":\"<>?"}
 } -returnCodes ok -match dictionary -result {}
 
-skip plf-5
+
 test plf-5 "whitespace is ignored" -body {
     calculate {" \r" "\t\n" "\f\v" "\b "}
 } -returnCodes ok -match dictionary -result {}
 
-skip plf-6
+
 test plf-6 "repeated string" -body {
     calculate {"abc" "abc" "abc"}
 } -returnCodes ok -match dictionary -result {a 3 b 3 c 3}
 
-skip plf-7
+
 test plf-7 "large text" -body {
     calculate {
         "3 Quotes from Excerism Homepage:"

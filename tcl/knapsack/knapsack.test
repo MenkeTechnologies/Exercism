@@ -10,12 +10,12 @@ test knapsack-1 "no items" -body {
     maximumValue 100 {}
 } -returnCodes ok -result 0
 
-skip knapsack-2
+
 test knapsack-2 "one item, too heavy" -body {
     maximumValue 10 { {weight 100 value 1} }
 } -returnCodes ok -result 0
 
-skip knapsack-3
+
 test knapsack-3 "five items (cannot be greedy by weight)" -body {
     maximumValue 10 {
         { weight 2 value 5 }
@@ -26,7 +26,7 @@ test knapsack-3 "five items (cannot be greedy by weight)" -body {
     }
 } -returnCodes ok -result 21
 
-skip knapsack-4
+
 test knapsack-4 "five items (cannot be greedy by value)" -body {
     maximumValue 10 {
         { weight 2 value 20 }
@@ -37,7 +37,7 @@ test knapsack-4 "five items (cannot be greedy by value)" -body {
     }
 } -returnCodes ok -result 80
 
-skip knapsack-5
+
 test knapsack-5 "example knapsack" -body {
     maximumValue 10 {
         { weight 5 value 10 }
@@ -47,7 +47,7 @@ test knapsack-5 "example knapsack" -body {
     }
 } -returnCodes ok -result 90
 
-skip knapsack-6
+
 test knapsack-6 "8 items" -body {
     maximumValue 104 {
         { weight 25 value 350 }
@@ -61,7 +61,7 @@ test knapsack-6 "8 items" -body {
     }
 } -returnCodes ok -result 900
 
-skip knapsack-7
+
 test knapsack-7 "15 items" -body {
     maximumValue 750 {
         { weight 70 value 135 }

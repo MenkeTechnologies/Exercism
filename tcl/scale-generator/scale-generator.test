@@ -13,7 +13,7 @@ test scale-1 "Chromatic scale with sharps" -body {
     C C# D D# E F F# G G# A A# B 
 }
 
-skip scale-2
+
 test scale-2 "Chromatic scale with flats" -body {
     set scale [Scale new F]
     $scale chromatic
@@ -21,7 +21,7 @@ test scale-2 "Chromatic scale with flats" -body {
     F Gb G Ab A Bb B C Db D Eb E
 }
 
-skip scale-3
+
 test scale-3 "Simple major scale" -body {
     set scale [Scale new C]
     $scale intervals "MMmMMMm"
@@ -29,7 +29,7 @@ test scale-3 "Simple major scale" -body {
     C D E F G A B
 }
 
-skip scale-4
+
 test scale-4 "Major scale with sharps" -body {
     set scale [Scale new G]
     $scale intervals "MMmMMMm"
@@ -37,7 +37,7 @@ test scale-4 "Major scale with sharps" -body {
     G A B C D E "F#"
 }
 
-skip scale-5
+
 test scale-5 "Major scale with flats" -body {
     set scale [Scale new F]
     $scale intervals "MMmMMMm"
@@ -45,7 +45,7 @@ test scale-5 "Major scale with flats" -body {
     F G A Bb C D E
 }
 
-skip scale-6
+
 test scale-6 "Minor scale with sharps" -body {
     set scale [Scale new f#]
     $scale intervals "MmMMmMM"
@@ -53,7 +53,7 @@ test scale-6 "Minor scale with sharps" -body {
     F# G# A B C# D E
 }
 
-skip scale-7
+
 test scale-7 "Minor scale with flats" -body {
     set scale [Scale new bb]
     $scale intervals "MmMMmMM"
@@ -61,7 +61,7 @@ test scale-7 "Minor scale with flats" -body {
     Bb C Db Eb F Gb Ab
 }
 
-skip scale-8
+
 test scale-8 "Dorian mode" -body {
     set scale [Scale new d]
     $scale intervals "MmMMMmM"
@@ -69,7 +69,7 @@ test scale-8 "Dorian mode" -body {
     D E F G A B C
 }
 
-skip scale-9
+
 test scale-9 "Mixolydian mode" -body {
     set scale [Scale new Eb]
     $scale intervals "MMmMMmM"
@@ -77,7 +77,7 @@ test scale-9 "Mixolydian mode" -body {
     Eb F G Ab Bb C Db
 }
 
-skip scale-10
+
 test scale-10 "Lydian mode" -body {
     set scale [Scale new a]
     $scale intervals "MMMmMMm"
@@ -85,7 +85,7 @@ test scale-10 "Lydian mode" -body {
     A B C# D# E F# G#
 }
 
-skip scale-11
+
 test scale-11 "Phrygian mode" -body {
     set scale [Scale new e]
     $scale intervals "mMMMmMM"
@@ -93,7 +93,7 @@ test scale-11 "Phrygian mode" -body {
     E F G A B C D
 }
 
-skip scale-12
+
 test scale-12 "Lacrian mode" -body {
     set scale [Scale new g]
     $scale intervals "mMMmMMM"
@@ -101,7 +101,7 @@ test scale-12 "Lacrian mode" -body {
     G Ab Bb C Db Eb F
 }
 
-skip scale-13
+
 test scale-13 "Harmonic minor" -body {
     set scale [Scale new d]
     $scale intervals "MmMMmAm"
@@ -109,7 +109,7 @@ test scale-13 "Harmonic minor" -body {
     D E F G A Bb Db
 }
 
-skip scale-14
+
 test scale-14 "Octatonic" -body {
     set scale [Scale new C]
     $scale intervals "MmMmMmMm"
@@ -117,7 +117,7 @@ test scale-14 "Octatonic" -body {
     C D D# F F# G# A B
 }
 
-skip scale-15
+
 test scale-15 "Hexatonic" -body {
     set scale [Scale new Db]
     $scale intervals "MMMMMM"
@@ -125,7 +125,7 @@ test scale-15 "Hexatonic" -body {
     Db Eb F G A B
 }
 
-skip scale-16
+
 test scale-16 "Pentatonic" -body {
     set scale [Scale new A]
     $scale intervals "MMAMA"
@@ -133,7 +133,7 @@ test scale-16 "Pentatonic" -body {
     A B C# E F#
 }
 
-skip scale-17
+
 test scale-17 "Enigmatic" -body {
     set scale [Scale new G]
     $scale intervals "mAMMMmm"

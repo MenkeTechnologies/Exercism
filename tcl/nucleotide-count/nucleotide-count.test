@@ -10,23 +10,23 @@ test nuc-count-1 "empty strand" -body {
     nucleotideCounts ""
 } -returnCodes ok -match dictionary -result { A 0 C 0 G 0 T 0 }
 
-skip nuc-count-2
+
 test nuc-count-2 "can count one nucleotide in single-character input" -body {
     nucleotideCounts "G"
 } -returnCodes ok -match dictionary -result { A 0 C 0 G 1 T 0 }
 
-skip nuc-count-3
+
 test nuc-count-3 "strand with repeated nucleotide" -body {
     nucleotideCounts "GGGGGGG"
 } -returnCodes ok -match dictionary -result { A 0 C 0 G 7 T 0 }
 
-skip nuc-count-4
+
 test nuc-count-4 "strand with multiple nucleotides" -body {
     nucleotideCounts "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
 } -returnCodes ok -match dictionary -result { A 20 C 12 G 17 T 21 }
 
 
-skip nuc-count-5
+
 test nuc-count-5 "strand with invalid nucleotides" -body {
     nucleotideCounts "AGXXACT"
 } -returnCodes error -result "Invalid nucleotide in strand"

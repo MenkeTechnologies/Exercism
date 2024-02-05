@@ -10,12 +10,12 @@ test spiral-1 "empty spiral" -body {
     spiralMatrix 0
 } -returnCodes ok -match listOfLists -result {}
 
-skip spiral-2
+
 test spiral-2 "trivial spiral" -body {
     spiralMatrix 1
 } -returnCodes ok -match listOfLists -result { {1} }
 
-skip spiral-3
+
 test spiral-3 "spiral of size 2" -body {
     spiralMatrix 2
 } -returnCodes ok -match listOfLists -result {
@@ -23,7 +23,7 @@ test spiral-3 "spiral of size 2" -body {
     {4 3}
 }
 
-skip spiral-4
+
 test spiral-4 "spiral of size 3" -body {
     spiralMatrix 3
 } -returnCodes ok -match listOfLists -result {
@@ -32,7 +32,7 @@ test spiral-4 "spiral of size 3" -body {
     {7 6 5}
 }
 
-skip spiral-5
+
 test spiral-5 "spiral of size 4" -body {
     spiralMatrix 4
 } -returnCodes ok -match listOfLists -result {
@@ -42,7 +42,7 @@ test spiral-5 "spiral of size 4" -body {
     {10  9  8 7}
 }
 
-skip spiral-6
+
 test spiral-6 "spiral of size 5" -body {
     spiralMatrix 5
 } -returnCodes ok -match listOfLists -result {

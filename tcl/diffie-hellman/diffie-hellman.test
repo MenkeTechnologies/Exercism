@@ -18,7 +18,7 @@ test dh-1 "private key is in range 1..p" -body {
     set result
 } -returnCodes ok -match boolean -result true
 
-skip dh-2
+
 test dh-2 "private key is random" -body {
     # there is a slim chance this test will fail
     set privateKeys {}
@@ -29,7 +29,7 @@ test dh-2 "private key is random" -body {
     dict size $privateKeys
 } -returnCodes ok -result 5
 
-skip dh-3
+
 test dh-3 "can calculate public key using private key" -body {
     set p 23
     set g 5
@@ -37,7 +37,7 @@ test dh-3 "can calculate public key using private key" -body {
     set publicKey [diffieHellman::publicKey $p $g $private]
 } -returnCodes ok -result 8
 
-skip dh-5
+
 test dh-5 "can calculate public key using aaa different privaate key" -body {
     set p 23
     set g 5
@@ -45,7 +45,7 @@ test dh-5 "can calculate public key using aaa different privaate key" -body {
     set publicKey [diffieHellman::publicKey $p $g $private]
 } -returnCodes ok -result 19
 
-skip dh-5
+
 test dh-5 "can calculate secret key using other party's public key" -body {
     set p 23
     set public 19
@@ -53,7 +53,7 @@ test dh-5 "can calculate secret key using other party's public key" -body {
     set secret [diffieHellman::secret $p $public $private]
 } -returnCodes ok -result 2
 
-skip dh-6
+
 test dh-6 "key exchange" -body {
     set p 23
     set g 5

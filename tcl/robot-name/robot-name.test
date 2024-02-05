@@ -15,7 +15,7 @@ test robot-1 "can create a robot" -setup {
     expr {$robot eq ""}
 } -returnCodes ok -match boolean -result no
     
-skip robot-2
+
 test robot-2 "robot has a name" -setup {
     resetRobotNames
 } -body {
@@ -23,7 +23,7 @@ test robot-2 "robot has a name" -setup {
     $robot name
 } -returnCodes ok -match robotName -result true
 
-skip robot-3
+
 test robot-3 "name sticks" -setup {
     resetRobotNames
 } -body {
@@ -32,7 +32,7 @@ test robot-3 "name sticks" -setup {
     expr {$theName eq [$robot name]}
 } -returnCodes ok -match boolean -result true
 
-skip robot-4
+
 test robot-4 "reset changes name" -setup {
     resetRobotNames
 } -body {
@@ -42,7 +42,7 @@ test robot-4 "reset changes name" -setup {
     expr {$theName eq [$robot name]}
 } -returnCodes ok -match boolean -result false
 
-skip robot-5
+
 test robot-5 "reset before name called does not cause an error" -setup {
     resetRobotNames
 } -body {
@@ -51,7 +51,7 @@ test robot-5 "reset before name called does not cause an error" -setup {
     $robot name
 } -returnCodes ok -match robotName -result true
 
-skip robot-6
+
 test robot-6 "reset multiple times" -setup {
     resetRobotNames
 } -body {
@@ -64,7 +64,7 @@ test robot-6 "reset multiple times" -setup {
     expr {[dict size $names] == 5}
 } -returnCodes ok -match boolean -result true
 
-skip robot-7
+
 test robot-7 "different robots have different names" -setup {
     resetRobotNames
 } -body {
@@ -73,7 +73,7 @@ test robot-7 "different robots have different names" -setup {
     expr {[$r1 name] eq [$r2 name]}
 } -returnCodes ok -match boolean -result false
 
-skip robot-8
+
 test robot-8 "different name when chosen name is taken" -setup {
     resetRobotNames
 } -body {
@@ -87,7 +87,7 @@ test robot-8 "different name when chosen name is taken" -setup {
     expr {[$r1 name] eq [$r2 name]}
 } -returnCodes ok -match boolean -result false
 
-skip robot-9
+
 test robot-9 "generate lots of robots" -setup {
     resetRobotNames
 } -body {
@@ -99,7 +99,7 @@ test robot-9 "generate lots of robots" -setup {
     expr {[dict size $seenNames] == $iterations}
 } -returnCodes ok -match boolean -result true
 
-skip robot-10
+
 test robot-10 "generate all robots" -setup {
     resetRobotNames
 } -body {

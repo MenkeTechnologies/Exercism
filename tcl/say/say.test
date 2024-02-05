@@ -10,74 +10,74 @@ test say-1 "zero" -body {
     say 0
 } -returnCodes ok -result "zero"
 
-skip say-2
+
 test say-2 "one" -body {
     say 1
 } -returnCodes ok -result "one"
 
-skip say-3
+
 test say-3 "fourteen" -body {
     say 14
 } -returnCodes ok -result "fourteen"
 
-skip say-4
+
 test say-4 "twenty" -body {
     say 20
 } -returnCodes ok -result "twenty"
 
-skip say-5
+
 test say-5 "twenty-two" -body {
     say 22
 } -returnCodes ok -result "twenty-two"
 
-skip say-6
+
 test say-6 "one hundred" -body {
     say 100
 } -returnCodes ok -result "one hundred"
 
-skip say-7
+
 test say-7 "one hundred twenty-three" -body {
     say 123
 } -returnCodes ok -result "one hundred twenty-three"
 
-skip say-8
+
 test say-8 "one thousand" -body {
     say 1000
 } -returnCodes ok -result "one thousand"
 
-skip say-9
+
 test say-9 "one thousand two hundred thirty-four" -body {
     say 1234
 } -returnCodes ok -result "one thousand two hundred thirty-four"
 
-skip say-10
+
 test say-10 "one million" -body {
     say 1000000
 } -returnCodes ok -result "one million"
 
-skip say-11
+
 test say-11 "one million two thousand three hundred forty-five" -body {
     say 1002345
 } -returnCodes ok -result "one million two thousand three hundred forty-five"
 
-skip say-12
+
 test say-12 "one billion" -body {
     say 1000000000
 } -returnCodes ok -result "one billion"
 
-skip say-13
+
 test say-13 "a big number" -body {
     say 987654321123
 } -returnCodes ok -result "nine hundred eighty-seven billion six hundred fifty-four million three hundred twenty-one thousand one hundred twenty-three"
 
 
 
-skip say-14
+
 test say-14 "numbers below zero are out of range" -body {
     say -1
 } -returnCodes error -result "input out of range"
 
-skip say-15
+
 test say-15 "numbers above 999,999,999,999 are out of range" -body {
     say 1000000000000
 } -returnCodes error -result "input out of range"

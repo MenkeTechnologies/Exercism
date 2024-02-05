@@ -10,27 +10,27 @@ test sqrt-1 "root of 1" -body {
     squareRoot 1
 } -returnCodes ok -result 1
 
-skip sqrt-2
+
 test sqrt-2 "root of 4" -body {
     squareRoot 4
 } -returnCodes ok -result 2
 
-skip sqrt-3
+
 test sqrt-3 "root of 25" -body {
     squareRoot 25
 } -returnCodes ok -result 5
 
-skip sqrt-4
+
 test sqrt-4 "root of 81" -body {
     squareRoot 81
 } -returnCodes ok -result 9
 
-skip sqrt-5
+
 test sqrt-5 "root of 196" -body {
     squareRoot 196
 } -returnCodes ok -result 14
 
-skip sqrt-6
+
 test sqrt-6 "root of 65025" -body {
     squareRoot 65025
 } -returnCodes ok -result 255

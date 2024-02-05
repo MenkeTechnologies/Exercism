@@ -14,7 +14,7 @@ test poker-1 "single hand always wins" -body {
     {4S 5S 7H 8D JC}
 }
 
-skip poker-2
+
 test poker-2 "highest card out of all hands wins" -body {
     bestHands {
         {4D 5S 6S 8D 3C}
@@ -25,7 +25,7 @@ test poker-2 "highest card out of all hands wins" -body {
     {3S 4S 5D 6H JH}
 }
 
-skip poker-3
+
 test poker-3 "a tie has multiple winners" -body {
     bestHands {
         {4D 5S 6S 8D 3C}
@@ -38,7 +38,7 @@ test poker-3 "a tie has multiple winners" -body {
     {3H 4H 5C 6C JD}
 }
 
-skip poker-4
+
 test poker-4 "multiple hands with the same high cards, tie compares next highest ranked, down to last card" -body {
     bestHands {
         {3S 5H 6S 8D 7H}
@@ -48,7 +48,7 @@ test poker-4 "multiple hands with the same high cards, tie compares next highest
     {3S 5H 6S 8D 7H}
 }
 
-skip poker-5
+
 test poker-5 "one pair beats high card" -body {
     bestHands {
         {4S 5H 6C 8D KH}
@@ -58,7 +58,7 @@ test poker-5 "one pair beats high card" -body {
     {2S 4H 6S 4D JH}
 }
 
-skip poker-6
+
 test poker-6 "highest pair wins" -body {
     bestHands {
         {4S 2H 6S 2D JH}
@@ -68,7 +68,7 @@ test poker-6 "highest pair wins" -body {
     {2S 4H 6C 4D JD}
 }
 
-skip poker-7
+
 test poker-7 "two pairs beats one pair" -body {
     bestHands {
         {2S 8H 6S 8D JH}
@@ -78,7 +78,7 @@ test poker-7 "two pairs beats one pair" -body {
     {4S 5H 4C 8C 5C}
 }
 
-skip poker-8
+
 test poker-8 "both hands have two pairs, highest ranked pair wins" -body {
     bestHands {
         {2S 8H 2D 8D 3H}
@@ -88,7 +88,7 @@ test poker-8 "both hands have two pairs, highest ranked pair wins" -body {
     {2S 8H 2D 8D 3H}
 }
 
-skip poker-9
+
 test poker-9 "both hands have two pairs, with the same highest ranked pair, tie goes to low pair" -body {
     bestHands {
         {2S QS 2C QD JH}
@@ -98,7 +98,7 @@ test poker-9 "both hands have two pairs, with the same highest ranked pair, tie 
     {JD QH JS 8D QC}
 }
 
-skip poker-10
+
 test poker-10 "both hands have two identically ranked pairs, tie goes to remaining card (kicker)" -body {
     bestHands {
         {JD QH JS 8D QC}
@@ -108,7 +108,7 @@ test poker-10 "both hands have two identically ranked pairs, tie goes to remaini
     {JD QH JS 8D QC}
 }
 
-skip poker-11
+
 test poker-11 "three of a kind beats two pair" -body {
     bestHands {
         {2S 8H 2H 8D JH}
@@ -118,7 +118,7 @@ test poker-11 "three of a kind beats two pair" -body {
     {4S 5H 4C 8S 4H}
 }
 
-skip poker-12
+
 test poker-12 "both hands have three of a kind, tie goes to highest ranked triplet" -body {
     bestHands {
         {2S 2H 2C 8D JH}
@@ -128,7 +128,7 @@ test poker-12 "both hands have three of a kind, tie goes to highest ranked tripl
     {4S AH AS 8C AD}
 }
 
-skip poker-13
+
 test poker-13 "with multiple decks, two players can have same three of a kind, ties go to highest remaining cards" -body {
     bestHands {
         {4S AH AS 7C AD}
@@ -138,7 +138,7 @@ test poker-13 "with multiple decks, two players can have same three of a kind, t
     {4S AH AS 8C AD}
 }
 
-skip poker-14
+
 test poker-14 "a straight beats three of a kind" -body {
     bestHands {
         {4S 5H 4C 8D 4H}
@@ -148,7 +148,7 @@ test poker-14 "a straight beats three of a kind" -body {
     {3S 4D 2S 6D 5C}
 }
 
-skip poker-15
+
 test poker-15 "aces can end a straight (10 J Q K A)" -body {
     bestHands {
         {4S 5H 4C 8D 4H}
@@ -158,7 +158,7 @@ test poker-15 "aces can end a straight (10 J Q K A)" -body {
     {10D JH QS KD AC}
 }
 
-skip poker-16
+
 test poker-16 "aces can start a straight (A 2 3 4 5)" -body {
     bestHands {
         {4S 5H 4C 8D 4H}
@@ -168,7 +168,7 @@ test poker-16 "aces can start a straight (A 2 3 4 5)" -body {
     {4D AH 3S 2D 5C}
 }
 
-skip poker-17
+
 test poker-17 "both hands with a straight, tie goes to highest ranked card" -body {
     bestHands {
         {4S 6C 7S 8D 5H}
@@ -178,7 +178,7 @@ test poker-17 "both hands with a straight, tie goes to highest ranked card" -bod
     {5S 7H 8S 9D 6H}
 }
 
-skip poker-18
+
 test poker-18 "even though an ace is usually high, a 5-high straight is the lowest-scoring straight" -body {
     bestHands {
         {2H 3C 4D 5D 6H}
@@ -188,7 +188,7 @@ test poker-18 "even though an ace is usually high, a 5-high straight is the lowe
     {2H 3C 4D 5D 6H}
 }
 
-skip poker-19
+
 test poker-19 "flush beats a straight" -body {
     bestHands {
         {4C 6H 7D 8D 5H}
@@ -198,7 +198,7 @@ test poker-19 "flush beats a straight" -body {
     {2S 4S 5S 6S 7S}
 }
 
-skip poker-20
+
 test poker-20 "both hands have a flush, tie goes to high card, down to the last one if necessary" -body {
     bestHands {
         {4H 7H 8H 9H 6H}
@@ -208,7 +208,7 @@ test poker-20 "both hands have a flush, tie goes to high card, down to the last 
     {4H 7H 8H 9H 6H}
 }
 
-skip poker-21
+
 test poker-21 "full house beats a flush" -body {
     bestHands {
         {3H 6H 7H 8H 5H}
@@ -218,7 +218,7 @@ test poker-21 "full house beats a flush" -body {
     {4S 5H 4C 5D 4H}
 }
 
-skip poker-22
+
 test poker-22 "both hands have a full house, tie goes to highest-ranked triplet" -body {
     bestHands {
         {4H 4S 4D 9S 9D}
@@ -228,7 +228,7 @@ test poker-22 "both hands have a full house, tie goes to highest-ranked triplet"
     {5H 5S 5D 8S 8D}
 }
 
-skip poker-23
+
 test poker-23 "with multiple decks, both hands have a full house with the same triplet, tie goes to the pair" -body {
     bestHands {
         {5H 5S 5D 9S 9D}
@@ -238,7 +238,7 @@ test poker-23 "with multiple decks, both hands have a full house with the same t
     {5H 5S 5D 9S 9D}
 }
 
-skip poker-24
+
 test poker-24 "four of a kind beats a full house" -body {
     bestHands {
         {4S 5H 4D 5D 4H}
@@ -248,7 +248,7 @@ test poker-24 "four of a kind beats a full house" -body {
     {3S 3H 2S 3D 3C}
 }
 
-skip poker-25
+
 test poker-25 "both hands have four of a kind, tie goes to high quad" -body {
     bestHands {
         {2S 2H 2C 8D 2D}
@@ -258,7 +258,7 @@ test poker-25 "both hands have four of a kind, tie goes to high quad" -body {
     {4S 5H 5S 5D 5C}
 }
 
-skip poker-26
+
 test poker-26 "with multiple decks, both hands with identical four of a kind, tie determined by kicker" -body { 
     bestHands {
         {3S 3H 2S 3D 3C}
@@ -268,7 +268,7 @@ test poker-26 "with multiple decks, both hands with identical four of a kind, ti
     {3S 3H 4S 3D 3C}
 }
 
-skip poker-27
+
 test poker-27 "straight flush beats four of a kind" -body {
     bestHands {
         {4S 5H 5S 5D 5C}
@@ -278,7 +278,7 @@ test poker-27 "straight flush beats four of a kind" -body {
     {7S 8S 9S 6S 10S}
 }
 
-skip poker-28
+
 test poker-28 "both hands have straight flush, tie goes to highest-ranked card" -body {
     bestHands {
         {4H 6H 7H 8H 5H}

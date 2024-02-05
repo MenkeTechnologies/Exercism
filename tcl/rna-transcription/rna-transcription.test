@@ -9,23 +9,23 @@ source "rna-transcription.tcl"
 test rna-transcription-1 "Empty RNA sequence" \
     -body {to-rna ""} -result ""
 
-skip rna-transcription-2
+
 test rna-transcription-2 "RNA complement of cytosine is guanine" \
     -body {to-rna "C"} -result "G"
 
-skip rna-transcription-3
+
 test rna-transcription-3 "RNA complement of guanine is cytosine" \
     -body {to-rna "G"} -result "C"
 
-skip rna-transcription-4
+
 test rna-transcription-4 "RNA complement of thymine is adenine" \
     -body {to-rna "T"} -result "A"
 
-skip rna-transcription-5
+
 test rna-transcription-5 "RNA complement of adenine is uracil" \
     -body {to-rna "A"} -result "U"
 
-skip rna-transcription-6
+
 test rna-transcription-6 "RNA complement" \
     -body {to-rna "ACGTGGTCTTAA"} -result "UGCACCAGAAUU"
 

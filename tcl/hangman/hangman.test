@@ -43,7 +43,7 @@ test hangman-1 "initial state" -setup {
     set initialState
 } -cleanup quitGame -result "9 _____ ongoing"
 
-skip hangman-2
+
 test hangman-2 "after 10 failures the game is over" -setup {
     launchGame "cat"
 } -body {
@@ -55,7 +55,7 @@ test hangman-2 "after 10 failures the game is over" -setup {
     set state
 } -cleanup quitGame -result "0 ___ lose"
 
-skip hangman-3
+
 test hangman-3 "a correct letter removes underscores" -setup {
     launchGame "banana"
 } -body {
@@ -71,7 +71,7 @@ test hangman-3 "a correct letter removes underscores" -setup {
     "9 BA_A_A ongoing"
 }
 
-skip hangman-4
+
 test hangman-4 "a correct letter a second time is a failure" -setup {
     launchGame "noodle"
 } -body {
@@ -87,7 +87,7 @@ test hangman-4 "a correct letter a second time is a failure" -setup {
     "8 _OO___ ongoing"
 }
 
-skip hangman-5
+
 test hangman-5 "guessing all the letters" -setup {
     launchGame "noodle"
 } -body {
@@ -115,7 +115,7 @@ test hangman-5 "guessing all the letters" -setup {
     "8 NOODLE win"
 }
 
-skip hangman-6
+
 test hangman-6 "winning on the last guess is still a win" -setup {
     launchGame iiiii
 } -body {

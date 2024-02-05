@@ -16,7 +16,7 @@ test ws-1 "Should accept an initial game grid and a target search word" -body {
     clojure {}
 }
 
-skip ws-2
+
 test ws-2 "Should locate one word written left to right" -body {
     wordSearch {
         clojurermt
@@ -25,7 +25,7 @@ test ws-2 "Should locate one word written left to right" -body {
     clojure {{1 1} {7 1}}
 }
 
-skip ws-3
+
 test ws-3 "Should locate the same word written left to right in a different position" -body {
     wordSearch {
         mtclojurer
@@ -34,7 +34,7 @@ test ws-3 "Should locate the same word written left to right in a different posi
     clojure {{3 1} {9 1}}
 }
 
-skip ws-4
+
 test ws-4 "Should locate a different left to right word" -body {
     wordSearch {
         coffeelplx
@@ -43,7 +43,7 @@ test ws-4 "Should locate a different left to right word" -body {
     coffee {{1 1} {6 1}}
 }
 
-skip ws-5
+
 test ws-5 "Should locate that different left to right word in a different position" -body {
     wordSearch {
         xcoffeezlp
@@ -52,7 +52,7 @@ test ws-5 "Should locate that different left to right word in a different positi
     coffee {{2 1} {7 1}}
 }
 
-skip ws-6
+
 test ws-6 "Should locate a left to right word in two line grid" -body {
     wordSearch {
         jefblpepre
@@ -62,7 +62,7 @@ test ws-6 "Should locate a left to right word in two line grid" -body {
     clojure {{2 2} {8 2}}
 }
 
-skip ws-7
+
 test ws-7 "Should locate a left to right word in three line grid" -body {
     wordSearch {
         camdcimgtc
@@ -73,7 +73,7 @@ test ws-7 "Should locate a left to right word in three line grid" -body {
     clojure {{1 3} {7 3}}
 }
 
-skip ws-8
+
 test ws-8 "Should locate a left to right word in ten line grid" -body {
     wordSearch {
         jefblpepre
@@ -91,7 +91,7 @@ test ws-8 "Should locate a left to right word in ten line grid" -body {
     clojure {{1 10} {7 10}}
 }
 
-skip ws-9
+
 test ws-9 "Should locate that left to right word in a different position in a ten line grid" -body {
     wordSearch {
         jefblpepre
@@ -109,7 +109,7 @@ test ws-9 "Should locate that left to right word in a different position in a te
     clojure {{1 9} {7 9}}
 }
 
-skip ws-10
+
 test ws-10 "Should locate a different left to right word in a ten line grid" -body {
     wordSearch {
         jefblpepre
@@ -127,7 +127,7 @@ test ws-10 "Should locate a different left to right word in a ten line grid" -bo
     fortran {{1 7} {7 7}}
 }
 
-skip ws-11
+
 test ws-11 "Should locate multiple words" -body {
     wordSearch {
         jefblpepre
@@ -146,7 +146,7 @@ test ws-11 "Should locate multiple words" -body {
     fortran {{1 7} {7 7}}
 }
 
-skip ws-12
+
 test ws-12 "Should locate a single word written right to left" -body {
     wordSearch {
         rixilelhrs
@@ -155,7 +155,7 @@ test ws-12 "Should locate a single word written right to left" -body {
     elixir {{6 1} {1 1}}
 }
 
-skip ws-13
+
 test ws-13 "Should locate multiple words written in different horizontal directions" -body {
     wordSearch {
         jefblpepre
@@ -174,7 +174,7 @@ test ws-13 "Should locate multiple words written in different horizontal directi
     elixir {{6 5} {1 5}}
 }
 
-skip ws-14
+
 test ws-14 "Should locate words written top to bottom" -body {
     wordSearch {
         jefblpepre
@@ -194,7 +194,7 @@ test ws-14 "Should locate words written top to bottom" -body {
     ecmascript {{10 1} {10 10}}
 }
 
-skip ws-15
+
 test ws-15 "Should locate words written bottom to top" -body {
     wordSearch {
         jefblpepre
@@ -215,7 +215,7 @@ test ws-15 "Should locate words written bottom to top" -body {
     rust {{9 5} {9 2}}
 }
 
-skip ws-16
+
 test ws-16 "Should locate words written top left to bottom right" -body {
     wordSearch {
         jefblpepre
@@ -237,7 +237,7 @@ test ws-16 "Should locate words written top left to bottom right" -body {
     java {{1 1} {4 4}}
 }
 
-skip ws-17
+
 test ws-17 "Should locate words written bottom right to top left" -body {
     wordSearch {
         jefblpepre
@@ -260,7 +260,7 @@ test ws-17 "Should locate words written bottom right to top left" -body {
     lua {{8 9} {6 7}}
 }
 
-skip ws-18
+
 test ws-18 "Should locate words written bottom left to top right" -body {
     wordSearch {
         jefblpepre
@@ -284,7 +284,7 @@ test ws-18 "Should locate words written bottom left to top right" -body {
     lisp {{3 6} {6 3}}
 }
 
-skip ws-19
+
 test ws-19 "Should locate words written top right to bottom left" -body {
     wordSearch {
         jefblpepre
@@ -309,7 +309,7 @@ test ws-19 "Should locate words written top right to bottom left" -body {
     ruby {{8 6} {5 9}}
 }
 
-skip ws-20
+
 test ws-20 "Should fail to locate a word that is not in the puzzle" -body {
     wordSearch {
         jefblpepre

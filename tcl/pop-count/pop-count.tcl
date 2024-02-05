@@ -1,3 +1,3 @@
 proc eggCount {number} {
-    tcl::mathop::+ {*}[split [format %b $number] ""]
+    tcl::mathop::+ {*}[lsearch -all -inline [split [format %b $number] ""] 1]
 }

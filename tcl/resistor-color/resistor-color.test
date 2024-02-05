@@ -28,7 +28,7 @@ set cases {
     resistor-color-ok-10  grey    8
 }
 
-skip resistor-color-ok-*
+
 foreach {name color value} $cases {
     test $name "Color $color" \
         -body [list resistorColor::colorCode $color] \
@@ -42,7 +42,7 @@ set cases {
     resistor-color-err-2 "bl*" "test for lsearch with glob"
 }
 
-skip resistor-color-err-*
+
 foreach {name color desc} $cases {
     test $name $desc \
         -body [list resistorColor::colorCode $color] \

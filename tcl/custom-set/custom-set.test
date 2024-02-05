@@ -12,20 +12,20 @@ test set-11.1 "sets with no elements" -body {
     $s toList
 } -returnCodes ok -match unorderedLists -result {}
 
-skip set-11.2
+
 test set-11.2 "sets with elements" -body {
     set s [Set new {1 2 3 4}]
     $s toList
 } -returnCodes ok -match unorderedLists -result {4 3 1 2}
 
 # Size of a set
-skip set-12.1
+
 test set-12.1 "size of sets with no elements" -body {
     set s [Set new {}]
     $s size
 } -returnCodes ok -result 0
 
-skip set-12.2
+
 test set-12.2 "size of sets with elements" -body {
     set s [Set new {3 2 1}]
     $s size
@@ -33,32 +33,32 @@ test set-12.2 "size of sets with elements" -body {
 
 
 # Returns true if the set contains no elements
-skip set-1.1
+
 test set-1.1 "sets with no elements are empty" -body {
     set s [Set new {}]
     $s isEmpty
 } -returnCodes ok -match boolean -result true
 
-skip set-1.2
+
 test set-1.2 "sets with elements are not empty" -body {
     set s [Set new {1}]
     $s isEmpty
 } -returnCodes ok -match boolean -result false
 
 # Sets can report if they contain an element
-skip set-2.1
+
 test set-2.1 "nothing is contained in an empty set" -body {
     set s [Set new {}]
     $s contains 1
 } -returnCodes ok -match boolean -result false
 
-skip set-2.2
+
 test set-2.2 "when the element is in the set" -body {
     set s [Set new {1 2 3}]
     $s contains 1
 } -returnCodes ok -match boolean -result true
 
-skip set-2.3
+
 test set-2.3 "when the element is not in the set" -body {
     set s [Set new {1 2 3}]
     $s contains 4
@@ -66,42 +66,42 @@ test set-2.3 "when the element is not in the set" -body {
 
 
 # A set is a subset if all of its elements are contained in the other set
-skip set-3.1
+
 test set-3.1 "empty set is a subset of another empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {}]
     $s1 subsetOf $s2
 } -returnCodes ok -match boolean -result true
 
-skip set-3.2
+
 test set-3.2 "empty set is a subset of non-empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {1}]
     $s1 subsetOf $s2
 } -returnCodes ok -match boolean -result true
 
-skip set-3.3
+
 test set-3.3 "non-empty set is not a subset of empty set" -body {
     set s1 [Set new {1}]
     set s2 [Set new {}]
     $s1 subsetOf $s2
 } -returnCodes ok -match boolean -result false
 
-skip set-3.4
+
 test set-3.4 "set is a subset of set with exact same elements" -body {
     set s1 [Set new {1 2 3}]
     set s2 [Set new {1 2 3}]
     $s1 subsetOf $s2
 } -returnCodes ok -match boolean -result true
 
-skip set-3.5
+
 test set-3.5 "set is a subset of larger set with same elements" -body {
     set s1 [Set new {1 2 3}]
     set s2 [Set new {4 1 2 3}]
     $s1 subsetOf $s2
 } -returnCodes ok -match boolean -result true
 
-skip set-3.6
+
 test set-3.6 "set is not a subset of set that does not contain its elements" -body {
     set s1 [Set new {1 2 3}]
     set s2 [Set new {4 1 3}]
@@ -109,35 +109,35 @@ test set-3.6 "set is not a subset of set that does not contain its elements" -bo
 } -returnCodes ok -match boolean -result false
 
 # Sets are disjoint if they share no elements
-skip set-4.1
+
 test set-4.1 "the empty set is disjoint with itself" -body {
     set s1 [Set new {}]
     set s2 [Set new {}]
     $s1 disjoint $s2
 } -returnCodes ok -match boolean -result true
 
-skip set-4.2
+
 test set-4.2 "empty set is disjoint with non-empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {1}]
     $s1 disjoint $s2
 } -returnCodes ok -match boolean -result true
 
-skip set-4.3
+
 test set-4.3 "non-empty set is disjoint with empty set" -body {
     set s1 [Set new {1}]
     set s2 [Set new {}]
     $s1 disjoint $s2
 } -returnCodes ok -match boolean -result true
 
-skip set-4.4
+
 test set-4.4 "sets are not disjoint if they share an element" -body {
     set s1 [Set new {1 2}]
     set s2 [Set new {2 3}]
     $s1 disjoint $s2
 } -returnCodes ok -match boolean -result false
 
-skip set-4.5
+
 test set-4.5 "sets are disjoint if they share no elements" -body {
     set s1 [Set new {1 2}]
     set s2 [Set new {3 4}]
@@ -146,42 +146,42 @@ test set-4.5 "sets are disjoint if they share no elements" -body {
 
 
 # Sets with the same elements are equal
-skip set-5.1
+
 test set-5.1 "empty sets are equal" -body {
     set s1 [Set new {}]
     set s2 [Set new {}]
     $s1 equals $s2
 } -returnCodes ok -match boolean -result true
 
-skip set-5.2
+
 test set-5.2 "empty set is not equal to non-empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {1 2 3}]
     $s1 equals $s2
 } -returnCodes ok -match boolean -result false
 
-skip set-5.3
+
 test set-5.3 "non-empty set is not equal to empty set" -body {
     set s1 [Set new {1 2 3}]
     set s2 [Set new {}]
     $s1 equals $s2
 } -returnCodes ok -match boolean -result false
 
-skip set-5.4
+
 test set-5.4 "sets with the same elements are equal" -body {
     set s1 [Set new {1 2}]
     set s2 [Set new {2 1}]
     $s1 equals $s2
 } -returnCodes ok -match boolean -result true
 
-skip set-5.5
+
 test set-5.5 "sets with different elements are not equal" -body {
     set s1 [Set new {1 2 3}]
     set s2 [Set new {1 2 4}]
     $s1 equals $s2
 } -returnCodes ok -match boolean -result false
 
-skip set-5.6
+
 test set-5.6 "set is not equal to larger set with same elements" -body {
     set s1 [Set new {1 2 3}]
     set s2 [Set new {1 2 3 4}]
@@ -189,21 +189,21 @@ test set-5.6 "set is not equal to larger set with same elements" -body {
 } -returnCodes ok -match boolean -result false
 
 # Unique elements can be added to a set
-skip set-6.1
+
 test set-6.1 "add to empty set" -body {
     set s [Set new {}]
     $s add 3
     $s toList
 } -match unorderedLists -returnCodes ok -result {3}
 
-skip set-6.2
+
 test set-6.2 "add to non-empty set" -body {
     set s [Set new {1 2 4}]
     $s add 3
     $s toList
 } -match unorderedLists -returnCodes ok -result {1 2 3 4}
 
-skip set-6.3
+
 test set-6.3 "adding an existing element does not change the set" -body {
     set s [Set new {1 2 3}]
     $s add 3
@@ -212,7 +212,7 @@ test set-6.3 "adding an existing element does not change the set" -body {
 
 
 # Intersection returns a set of all shared elements
-skip set-7.1
+
 test set-7.1 "intersection of two empty sets is an empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {}]
@@ -220,7 +220,7 @@ test set-7.1 "intersection of two empty sets is an empty set" -body {
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {}
 
-skip set-7.2
+
 test set-7.2 "intersection of an empty set and non-empty set is an empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {3 2 5}]
@@ -228,7 +228,7 @@ test set-7.2 "intersection of an empty set and non-empty set is an empty set" -b
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {}
 
-skip set-7.3
+
 test set-7.3 "intersection of a non-empty set and an empty set is an empty set" -body {
     set s1 [Set new {1 2 3 4}]
     set s2 [Set new {}]
@@ -236,7 +236,7 @@ test set-7.3 "intersection of a non-empty set and an empty set is an empty set" 
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {}
 
-skip set-7.4
+
 test set-7.4 "intersection of two sets with no shared elements is an empty set" -body {
     set s1 [Set new {1 2 3}]
     set s2 [Set new {4 5 6}]
@@ -244,7 +244,7 @@ test set-7.4 "intersection of two sets with no shared elements is an empty set" 
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {}
 
-skip set-7.5
+
 test set-7.5 "intersection of two sets with shared elements is a set of the shared elements" -body {
     set s1 [Set new {1 2 3 4}]
     set s2 [Set new {3 2 5}]
@@ -254,7 +254,7 @@ test set-7.5 "intersection of two sets with shared elements is a set of the shar
 
 
 # Difference (or Complement) of a set is a set of all elements that are only in the first set
-skip set-8.1
+
 test set-8.1 "difference of two empty sets is an empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {}]
@@ -262,7 +262,7 @@ test set-8.1 "difference of two empty sets is an empty set" -body {
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {}
 
-skip set-8.2
+
 test set-8.2 "difference of empty set and non-empty set is an empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {3 2 5}]
@@ -270,7 +270,7 @@ test set-8.2 "difference of empty set and non-empty set is an empty set" -body {
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {}
 
-skip set-8.3
+
 test set-8.3 "difference of a non-empty set and an empty set is the non-empty set" -body {
     set s1 [Set new {1 2 3 4}]
     set s2 [Set new {}]
@@ -278,7 +278,7 @@ test set-8.3 "difference of a non-empty set and an empty set is the non-empty se
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {1 2 3 4}
 
-skip set-8.4
+
 test set-8.4 "difference of two non-empty sets is a set of elements that are only in the first set" -body {
     set s1 [Set new {3 2 1}]
     set s2 [Set new {2 4}]
@@ -287,7 +287,7 @@ test set-8.4 "difference of two non-empty sets is a set of elements that are onl
 } -returnCodes ok -match unorderedLists -result {1 3}
 
 # Union returns a set of all elements in either set
-skip set-9.1
+
 test set-9.1 "union of empty sets is an empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {}]
@@ -295,7 +295,7 @@ test set-9.1 "union of empty sets is an empty set" -body {
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {}
 
-skip set-9.2
+
 test set-9.2 "union of an empty set and non-empty set is the non-empty set" -body {
     set s1 [Set new {}]
     set s2 [Set new {2}]
@@ -303,7 +303,7 @@ test set-9.2 "union of an empty set and non-empty set is the non-empty set" -bod
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {2}
 
-skip set-9.3
+
 test set-9.3 "union of a non-empty set and empty set is the non-empty set" -body {
     set s1 [Set new {1 3}]
     set s2 [Set new {}]
@@ -311,7 +311,7 @@ test set-9.3 "union of a non-empty set and empty set is the non-empty set" -body
     $s3 toList
 } -returnCodes ok -match unorderedLists -result {1 3}
 
-skip set-9.4
+
 test set-9.4 "union of non-empty sets contains all unique elements" -body {
     set s1 [Set new {1 3}]
     set s2 [Set new {2 3}]

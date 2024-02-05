@@ -17,7 +17,7 @@ test pp-1.1 "finds the smallest palindrome from single digit factors" -body {
     set factors
 } -returnCodes ok -result {{1 1}}
 
-skip pp-1.2
+
 test pp-1.2 "finds the largest palindrome from single digit factors" -body {
     lassign [palindromeProducts largest 1 9] value factors
     set expected 9
@@ -27,7 +27,7 @@ test pp-1.2 "finds the largest palindrome from single digit factors" -body {
     set factors
 } -returnCodes ok -result {{1 9} {3 3}}
 
-skip pp-1.3
+
 test pp-1.3 "find the smallest palindrome from double digit factors" -body {
     lassign [palindromeProducts smallest 10 99] value factors
     set expected 121
@@ -37,7 +37,7 @@ test pp-1.3 "find the smallest palindrome from double digit factors" -body {
     set factors
 } -returnCodes ok -result {{11 11}}
 
-skip pp-1.4
+
 test pp-1.4 "find the largest palindrome from double digit factors" -body {
     lassign [palindromeProducts largest 10 99] value factors
     set expected 9009
@@ -47,7 +47,7 @@ test pp-1.4 "find the largest palindrome from double digit factors" -body {
     set factors
 } -returnCodes ok -result {{91 99}}
 
-skip pp-1.5
+
 test pp-1.5 "find smallest palindrome from triple digit factors" -body {
     lassign [palindromeProducts smallest 100 999] value factors
     set expected 10201
@@ -57,7 +57,7 @@ test pp-1.5 "find smallest palindrome from triple digit factors" -body {
     set factors
 } -returnCodes ok -result {{101 101}}
 
-skip pp-1.6
+
 test pp-1.6 "find the largest palindrome from triple digit factors" -body {
     lassign [palindromeProducts largest 100 999] value factors
     set expected 906609
@@ -67,7 +67,7 @@ test pp-1.6 "find the largest palindrome from triple digit factors" -body {
     set factors
 } -returnCodes ok -result {{913 993}}
 
-skip pp-1.7
+
 test pp-1.7 "find smallest palindrome from four digit factors" -body {
     lassign [palindromeProducts smallest 1000 9999] value factors
     set expected 1002001
@@ -77,7 +77,7 @@ test pp-1.7 "find smallest palindrome from four digit factors" -body {
     set factors
 } -returnCodes ok -result {{1001 1001}}
 
-skip pp-1.8
+
 test pp-1.8 "find the largest palindrome from four digit factors" -body {
     lassign [palindromeProducts largest 1000 9999] value factors
     set expected 99000099
@@ -87,7 +87,7 @@ test pp-1.8 "find the largest palindrome from four digit factors" -body {
     set factors
 } -returnCodes ok -result {{9901 9999}}
 
-skip pp-1.9
+
 test pp-1.9 "empty result for smallest if no palindrome in the range" -body {
     lassign [palindromeProducts smallest 1002 1003] value factors
     set expected -1
@@ -97,7 +97,7 @@ test pp-1.9 "empty result for smallest if no palindrome in the range" -body {
     set factors
 } -returnCodes ok -result {}
 
-skip pp-1.10
+
 test pp-1.10 "empty result for largest if no palindrome in the range" -body {
     lassign [palindromeProducts largest 15 15] value factors
     set expected -1
@@ -108,12 +108,12 @@ test pp-1.10 "empty result for largest if no palindrome in the range" -body {
 } -returnCodes ok -result {}
 
 
-skip pp-2.1
+
 test pp-2.1 "error result for smallest if min is more than max" -body {
     palindromeProducts smallest 10000 1
 } -returnCodes error -result "min must be <= max"
 
-skip pp-2.2
+
 test pp-2.2 "error result for largest if min is more than max" -body {
     palindromeProducts largest 2 1 
 } -returnCodes error -result "min must be <= max"

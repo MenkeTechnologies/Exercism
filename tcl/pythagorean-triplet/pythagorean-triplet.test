@@ -12,26 +12,26 @@ test triplets-1 "triplets whose sum is 12" -body {
     {3 4 5}
 }
 
-skip triplets-2
+
 test triplets-2 "triplets whose sum is 108" -body {
     tripletsWithSum 108
 } -returnCodes ok -match unorderedLists -result {
     {27 36 45}
 }
 
-skip triplets-3
+
 test triplets-3 "triplets whose sum is 1000" -body {
     tripletsWithSum 1000
 } -returnCodes ok -match unorderedLists -result {
     {200 375 425}
 }
 
-skip triplets-4
+
 test triplets-4 "no matching triplets for 1001" -body {
     tripletsWithSum 1001
 } -returnCodes ok -match unorderedLists -result {}
 
-skip triplets-5
+
 test triplets-5 "returns all matching triplets" -body {
     tripletsWithSum 90
 } -returnCodes ok -match unorderedLists -result {
@@ -39,7 +39,7 @@ test triplets-5 "returns all matching triplets" -body {
     {15 36 39}
 }
 
-skip triplets-6
+
 test triplets-6 "several matching triplets" -body {
     tripletsWithSum 840
 } -returnCodes ok -match unorderedLists -result {
@@ -53,7 +53,7 @@ test triplets-6 "several matching triplets" -body {
     {240 252 348}
 }
 
-skip triplets-7
+
 test triplets-7 "triplets for large number" -body {
     tripletsWithSum 30000
 } -returnCodes ok -match unorderedLists -result {

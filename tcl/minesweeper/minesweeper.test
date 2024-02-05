@@ -10,12 +10,12 @@ test minesweeper-1 "no rows" -body {
     annotate {}
 } -returnCodes ok -match orderedLists -result {}
 
-skip minesweeper-2
+
 test minesweeper-2 "no columns" -body {
     annotate {""}
 } -returnCodes ok -match orderedLists -result {""}
 
-skip minesweeper-3
+
 test minesweeper-3 "no mines" -body {
     annotate {
         "   "
@@ -28,7 +28,7 @@ test minesweeper-3 "no mines" -body {
         "   "
 }
 
-skip minesweeper-4
+
 test minesweeper-4 "minefield with only mines" -body {
     annotate {
         "***"
@@ -41,7 +41,7 @@ test minesweeper-4 "minefield with only mines" -body {
         "***"
 }
 
-skip minesweeper-5
+
 test minesweeper-5 "mine surrounded by spaces" -body {
     annotate {
         "   "
@@ -54,7 +54,7 @@ test minesweeper-5 "mine surrounded by spaces" -body {
         "111"
 }
 
-skip minesweeper-6
+
 test minesweeper-6 "space surrounded by mines" -body {
     annotate {
         "***"
@@ -67,7 +67,7 @@ test minesweeper-6 "space surrounded by mines" -body {
         "***"
 }
 
-skip minesweeper-7
+
 test minesweeper-7 "horizontal line" -body {
     annotate {
         " * * "
@@ -76,7 +76,7 @@ test minesweeper-7 "horizontal line" -body {
         "1*2*1"
 }
 
-skip minesweeper-8
+
 test minesweeper-8 "horizontal line, mines at edges" -body {
     annotate {
         "*   *"
@@ -85,7 +85,7 @@ test minesweeper-8 "horizontal line, mines at edges" -body {
         "*1 1*"
 }
 
-skip minesweeper-9
+
 test minesweeper-9 "vertical line" -body {
     annotate {
         " "
@@ -102,7 +102,7 @@ test minesweeper-9 "vertical line" -body {
         "1"
 }
 
-skip minesweeper-10
+
 test minesweeper-10 "vertical line, mines at edges" -body {
     annotate {
         "*"
@@ -119,7 +119,7 @@ test minesweeper-10 "vertical line, mines at edges" -body {
         "*"
 }
 
-skip minesweeper-11
+
 test minesweeper-11 "cross" -body {
     annotate {
         "  *  "
@@ -136,7 +136,7 @@ test minesweeper-11 "cross" -body {
         " 2*2 "
 }
 
-skip minesweeper-12
+
 test minesweeper-12 "large minefield" -body {
     annotate {
         " *  * "

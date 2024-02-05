@@ -12,7 +12,7 @@ test diamond-1 "Degenerate case with a single 'A' row" -body {
 } -returnCodes ok -result "A"
 
 
-skip diamond-2
+
 test diamond-2 "Degenerate case with no row containing 3 distinct groups of spaces" -body {
     diamond  "B"
 } -returnCodes ok -result [join {
@@ -22,7 +22,7 @@ test diamond-2 "Degenerate case with no row containing 3 distinct groups of spac
 } \n]
 
 
-skip diamond-3
+
 test diamond-3 "Smallest non-degenerate case with odd diamond side length" -body {
     diamond  "C"
 } -returnCodes ok -result [join {
@@ -34,7 +34,7 @@ test diamond-3 "Smallest non-degenerate case with odd diamond side length" -body
 } \n]
 
 
-skip diamond-4
+
 test diamond-4 "Smallest non-degenerate case with even diamond side length" -body {
     diamond  "D"
 } -returnCodes ok -result [join {
@@ -48,7 +48,7 @@ test diamond-4 "Smallest non-degenerate case with even diamond side length" -bod
 } \n]
 
 
-skip diamond-5
+
 test diamond-5 "Largest possible diamond" -body {
     diamond  "Z"
 } -returnCodes ok -result [join {

@@ -16,7 +16,7 @@ test bst-1 "data is retained" -body {
     right {}
 }
 
-skip bst-2
+
 test bst-2 "insert smaller number" -body {
     set b [BinarySearchTree new]
     $b insert 4
@@ -32,7 +32,7 @@ test bst-2 "insert smaller number" -body {
     right {}
 }
 
-skip bst-3
+
 test bst-3 "insert same number" -body {
     set b [BinarySearchTree new]
     $b insert 4
@@ -48,7 +48,7 @@ test bst-3 "insert same number" -body {
     right {}
 }
 
-skip bst-4
+
 test bst-4 "insert larger number" -body {
     set b [BinarySearchTree new]
     $b insert 4
@@ -64,7 +64,7 @@ test bst-4 "insert larger number" -body {
     }
 }
 
-skip bst-5
+
 test bst-5 "create complex tree" -body {
     set b [BinarySearchTree new]
     foreach n {4 2 6 1 3 5 7} {
@@ -85,14 +85,14 @@ test bst-5 "create complex tree" -body {
     }
 }
 
-skip bst-6
+
 test bst-6 "can sort single number" -body {
     set b [BinarySearchTree new]
     $b insert 2
     $b sorted
 } -returnCodes ok -result {2}
 
-skip bst-7
+
 test bst-7 "can sort if second number is smaller than first" -body {
     set b [BinarySearchTree new]
     $b insert 2
@@ -100,7 +100,7 @@ test bst-7 "can sort if second number is smaller than first" -body {
     $b sorted
 } -returnCodes ok -result {1 2}
 
-skip bst-8
+
 test bst-8 "can sort if second number is same as first" -body {
     set b [BinarySearchTree new]
     $b insert 2
@@ -108,7 +108,7 @@ test bst-8 "can sort if second number is same as first" -body {
     $b sorted
 } -returnCodes ok -result {2 2}
 
-skip bst-9
+
 test bst-9 "can sort if second number is greater than first" -body {
     set b [BinarySearchTree new]
     $b insert 2
@@ -116,7 +116,7 @@ test bst-9 "can sort if second number is greater than first" -body {
     $b sorted
 } -returnCodes ok -result {2 3}
 
-skip bst-10
+
 test bst-10 "can sort complex tree" -body {
     set b [BinarySearchTree new]
     foreach n {4 2 6 1 3 5 7} {
@@ -125,7 +125,7 @@ test bst-10 "can sort complex tree" -body {
     $b sorted
 } -returnCodes ok -result {1 2 3 4 5 6 7}
 
-skip bst-extra-challenge
+
 test bst-extra-challenge "can iterate over sorted data" -body {
     set b [BinarySearchTree new]
     foreach n {4 2 6 1 3 5 7} {

@@ -10,12 +10,12 @@ test proverb-1 "zero pieces" -body {
     recite {}
 } -returnCodes ok -match orderedLists -result {}
 
-skip proverb-2
+
 test proverb-2 "one piece" -body {
     recite { nail }
 } -returnCodes ok -match orderedLists -result { "And all for the want of a nail." }
 
-skip proverb-3
+
 test proverb-3 "two pieces" -body {
     recite { nail shoe }
 } -returnCodes ok -match orderedLists -result {
@@ -23,7 +23,7 @@ test proverb-3 "two pieces" -body {
     "And all for the want of a nail." 
 }
 
-skip proverb-4
+
 test proverb-4 "three pieces" -body {
     recite { nail shoe horse }
 } -returnCodes ok -match orderedLists -result {
@@ -32,7 +32,7 @@ test proverb-4 "three pieces" -body {
     "And all for the want of a nail." 
 }
 
-skip proverb-5
+
 test proverb-5 "full proverb" -body {
     recite { nail shoe horse rider message battle kingdom }
 } -returnCodes ok -match orderedLists -result {
@@ -45,7 +45,7 @@ test proverb-5 "full proverb" -body {
     "And all for the want of a nail." 
 }
 
-skip proverb-6
+
 test proverb-6 "four pieces modernized" -body {
     recite { pin gun soldier battle }
 } -returnCodes ok -match orderedLists -result {

@@ -25,7 +25,7 @@ test tournament-1 "just the header if no input" -setup {
 } -returnCodes ok -result "Team                           | MP |  W |  D |  L |  P"
 
 
-skip tournament-2
+
 test tournament-2 "a win is three points, a loss is zero points" -setup {
     set filename [writeFile {
         "Allegoric Alaskans;Blithering Badgers;win"
@@ -40,7 +40,7 @@ test tournament-2 "a win is three points, a loss is zero points" -setup {
     "Blithering Badgers             |  1 |  0 |  0 |  1 |  0"
 } \n]
 
-skip tournament-3
+
 test tournament-3 "a win can also be expressed as a loss" -setup {
     set filename [writeFile {
         "Blithering Badgers;Allegoric Alaskans;loss"
@@ -56,7 +56,7 @@ test tournament-3 "a win can also be expressed as a loss" -setup {
 } \n]
 
 
-skip tournament-4
+
 test tournament-4 "a different team can win" -setup {
     set filename [writeFile {
         "Blithering Badgers;Allegoric Alaskans;win"
@@ -72,7 +72,7 @@ test tournament-4 "a different team can win" -setup {
 } \n]
 
 
-skip tournament-5
+
 test tournament-5 "a draw is one point each" -setup {
     set filename [writeFile {
         "Allegoric Alaskans;Blithering Badgers;draw"
@@ -88,7 +88,7 @@ test tournament-5 "a draw is one point each" -setup {
 } \n]
 
 
-skip tournament-6
+
 test tournament-6 "There can be more than one match" -setup {
     set filename [writeFile {
         "Allegoric Alaskans;Blithering Badgers;win"
@@ -105,7 +105,7 @@ test tournament-6 "There can be more than one match" -setup {
 } \n]
 
 
-skip tournament-7
+
 test tournament-7 "There can be more than one winner" -setup {
     set filename [writeFile {
         "Allegoric Alaskans;Blithering Badgers;loss"
@@ -122,7 +122,7 @@ test tournament-7 "There can be more than one winner" -setup {
 } \n]
 
 
-skip tournament-8
+
 test tournament-8 "There can be more than two teams" -setup {
     set filename [writeFile {
         "Allegoric Alaskans;Blithering Badgers;win"
@@ -141,7 +141,7 @@ test tournament-8 "There can be more than two teams" -setup {
 } \n]
 
 
-skip tournament-9
+
 test tournament-9 "typical input" -setup {
     set filename [writeFile {
         "Allegoric Alaskans;Blithering Badgers;win"
@@ -164,7 +164,7 @@ test tournament-9 "typical input" -setup {
 } \n]
 
 
-skip tournament-10
+
 test tournament-10 "incomplete competition (not all pairs have played)" -setup {
     set filename [writeFile {
         "Allegoric Alaskans;Blithering Badgers;loss"
@@ -185,7 +185,7 @@ test tournament-10 "incomplete competition (not all pairs have played)" -setup {
 } \n]
 
 
-skip tournament-11
+
 test tournament-11 "ties broken alphabetically" -setup {
     set filename [writeFile {
         "Courageous Californians;Devastating Donkeys;win"
@@ -207,7 +207,7 @@ test tournament-11 "ties broken alphabetically" -setup {
     "Devastating Donkeys            |  3 |  0 |  1 |  2 |  1"
 } \n]
 
-skip tournament-12
+
 test tournament-12 "ensure points sorted numerically" -setup {
     set filename [writeFile {
         "Devastating Donkeys;Blithering Badgers;win"

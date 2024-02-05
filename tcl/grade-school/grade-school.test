@@ -13,14 +13,14 @@ test grade-school-1.0 "Roster is empty when no student is added" -setup {
     school roster
 } -returnCodes ok -match orderedLists -result {}
 
-skip grade-school-1.1
+
 test grade-school-1.1 "Add a student" -setup {
     school reset
 } -body {
     school add {{Aimee 2}}
 } -returnCodes ok -match orderedLists -result {true}
 
-skip grade-school-1.2
+
 test grade-school-1.2 "Student is added to the roster" -setup {
     school reset
 } -body {
@@ -28,14 +28,14 @@ test grade-school-1.2 "Student is added to the roster" -setup {
     school roster
 } -returnCodes ok -match orderedLists -result {Aimee}
 
-skip grade-school-2.1
+
 test grade-school-2.1 "Adding multiple students in the same grade in the roster" -setup {
     school reset
 } -body {
     school add {{Blair 2} {James 2} {Paul 2}}
 } -returnCodes ok -match orderedLists -result {true true true}
 
-skip grade-school-2.2
+
 test grade-school-2.2 "Multiple students in the same grade are added to the roster" -setup {
     school reset
 } -body {
@@ -43,14 +43,14 @@ test grade-school-2.2 "Multiple students in the same grade are added to the rost
     school roster
 } -returnCodes ok -match orderedLists -result {Blair James Paul}
 
-skip grade-school-3.1
+
 test grade-school-3.1 "Cannot add student to same grade in the roster more than once" -setup {
     school reset
 } -body {
     school add {{Blair 2} {James 2} {James 2} {Paul 2}}
 } -returnCodes ok -match orderedLists -result {true true false true}
 
-skip grade-school-3.2
+
 test grade-school-3.2 "Student not added to same grade in the roster more than once" -setup {
     school reset
 } -body {
@@ -58,14 +58,14 @@ test grade-school-3.2 "Student not added to same grade in the roster more than o
     school roster
 } -returnCodes ok -match orderedLists -result {Blair James Paul}
 
-skip grade-school-4.1
+
 test grade-school-4.1 "Adding students in multiple grades" -setup {
     school reset
 } -body {
     school add {{Chelsea 3} {Logan 7}}
 } -returnCodes ok -match orderedLists -result {true true}
 
-skip grade-school-4.2
+
 test grade-school-4.2 "Students in multiple grades are added to the roster" -setup {
     school reset
 } -body {
@@ -73,14 +73,14 @@ test grade-school-4.2 "Students in multiple grades are added to the roster" -set
     school roster
 } -returnCodes ok -match orderedLists -result {Chelsea Logan}
 
-skip grade-school-5.1
+
 test grade-school-5.1 "Cannot add same student to multiple grades in the roster" -setup {
     school reset
 } -body {
     school add {{Blair 2} {James 2} {James 3} {Paul 3}}
 } -returnCodes ok -match orderedLists -result {true true false true}
 
-skip grade-school-5.2
+
 test grade-school-5.2 "Student not added to multiple grades in the roster" -setup {
     school reset
 } -body {
@@ -88,7 +88,7 @@ test grade-school-5.2 "Student not added to multiple grades in the roster" -setu
     school roster
 } -returnCodes ok -match orderedLists -result {Blair James Paul}
 
-skip grade-school-6.1
+
 test grade-school-6.1 "Students are sorted by grades in the roster" -setup {
     school reset
 } -body {
@@ -96,7 +96,7 @@ test grade-school-6.1 "Students are sorted by grades in the roster" -setup {
     school roster
 } -returnCodes ok -match orderedLists -result {Anna Peter Jim}
 
-skip grade-school-6.2
+
 test grade-school-6.2 "Students are sorted by name in the roster" -setup {
     school reset
 } -body {
@@ -104,7 +104,7 @@ test grade-school-6.2 "Students are sorted by name in the roster" -setup {
     school roster
 } -returnCodes ok -match orderedLists -result {Alex Peter Zoe}
 
-skip grade-school-6.3
+
 test grade-school-6.3 "Students are sorted by grades and then by name in the roster" -setup {
     school reset
 } -body {
@@ -112,7 +112,7 @@ test grade-school-6.3 "Students are sorted by grades and then by name in the ros
     school roster
 } -returnCodes ok -match orderedLists -result {Anna Barb Charlie Alex Peter Zoe Jim}
 
-skip grade-school-7.1
+
 test grade-school-7.1 "Grade is empty if no students in the roster" -setup {
     school reset
 } -body {
@@ -120,7 +120,7 @@ test grade-school-7.1 "Grade is empty if no students in the roster" -setup {
     school grade 1
 } -returnCodes OK -match orderedLists -result {}
 
-skip grade-school-7.2
+
 test grade-school-7.2 "Grade is empty if no students in that grade" -setup {
     school reset
 } -body {
@@ -128,7 +128,7 @@ test grade-school-7.2 "Grade is empty if no students in that grade" -setup {
     school grade 1
 } -returnCodes OK -match orderedLists -result {}
 
-skip grade-school-7.3
+
 test grade-school-7.3 "Student not added to same grade more than once" -setup {
     school reset
 } -body {
@@ -136,7 +136,7 @@ test grade-school-7.3 "Student not added to same grade more than once" -setup {
     school grade 2
 } -returnCodes OK -match orderedLists -result {Blair James Paul}
 
-skip grade-school-7.4
+
 test grade-school-7.4 "Student not added to multiple grades" -setup {
     school reset
 } -body {
@@ -144,7 +144,7 @@ test grade-school-7.4 "Student not added to multiple grades" -setup {
     school grade 2
 } -returnCodes OK -match orderedLists -result {Blair James}
 
-skip grade-school-7.5
+
 test grade-school-7.5 "Student not added to other grade for multiple grades" -setup {
     school reset
 } -body {
@@ -152,7 +152,7 @@ test grade-school-7.5 "Student not added to other grade for multiple grades" -se
     school grade 3
 } -returnCodes OK -match orderedLists -result {Paul}
 
-skip grade-school-7.6
+
 test grade-school-7.6 "Students are sorted by name in a grade" -setup {
     school reset
 } -body {

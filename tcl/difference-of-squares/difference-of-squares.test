@@ -10,42 +10,42 @@ test squares-1 "square of sum 1" -body {
     squareOfSum 1
 } -returnCodes ok -result 1
 
-skip squares-2
+
 test squares-2 "square of sum 5" -body {
     squareOfSum 5
 } -returnCodes ok -result 225
 
-skip squares-3
+
 test squares-3 "square of sum 100" -body {
     squareOfSum 100
 } -returnCodes ok -result 25502500
 
-skip squares-4
+
 test squares-4 "sum of squares 1" -body {
     sumOfSquares 1
 } -returnCodes ok -result 1
 
-skip squares-5
+
 test squares-5 "sum of squares 5" -body {
     sumOfSquares 5
 } -returnCodes ok -result 55
 
-skip squares-6
+
 test squares-6 "sum of squares 100" -body {
     sumOfSquares 100
 } -returnCodes ok -result 338350
 
-skip squares-7
+
 test squares-7 "difference of squares 1" -body {
     differenceOfSquares 1
 } -returnCodes ok -result 0
 
-skip squares-8
+
 test squares-8 "difference of squares 5" -body {
     differenceOfSquares 5
 } -returnCodes ok -result 170
 
-skip squares-9
+
 test squares-9 "difference of squares 100" -body {
     differenceOfSquares 100
 } -returnCodes ok -result 25164150

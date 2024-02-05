@@ -12,72 +12,72 @@ test bookstore-1 "Only a single book" -body {
     basketCost {1}
 } -returnCodes ok -result 800
 
-skip bookstore-2
+
 test bookstore-2 "Two of the same book" -body {
     basketCost {2 2}
 } -returnCodes ok -result 1600
 
-skip bookstore-3
+
 test bookstore-3 "Empty basket" -body {
     basketCost {}
 } -returnCodes ok -result 0
 
-skip bookstore-4
+
 test bookstore-4 "Two different books" -body {
     basketCost {1 2}
 } -returnCodes ok -result 1520
 
-skip bookstore-5
+
 test bookstore-5 "Three different books" -body {
     basketCost {1 2 3}
 } -returnCodes ok -result 2160
 
-skip bookstore-6
+
 test bookstore-6 "Four different books" -body {
     basketCost {1 2 3 4}
 } -returnCodes ok -result 2560
 
-skip bookstore-7
+
 test bookstore-7 "Five different books" -body {
     basketCost {1 2 3 4 5}
 } -returnCodes ok -result 3000
 
-skip bookstore-8
+
 test bookstore-8 "Two groups of four is cheaper than group of five plus group of three" -body {
     basketCost {1 1 2 2 3 3 4 5}
 } -returnCodes ok -result 5120
 
-skip bookstore-9
+
 test bookstore-9 "Two groups of four is cheaper than group of five plus group of three, alternate basket" -body {
     basketCost {1 1 2 3 4 4 5 5}
 } -returnCodes ok -result 5120
 
-skip bookstore-10
+
 test bookstore-10 "Group of four plus group of two is cheaper than two groups of three" -body {
     basketCost {1 1 2 2 3 4}
 } -returnCodes ok -result 4080
 
-skip bookstore-11
+
 test bookstore-11 "Two each of first 4 books and 1 copy each of rest" -body {
     basketCost {1 1 2 2 3 3 4 4 5}
 } -returnCodes ok -result 5560
 
-skip bookstore-12
+
 test bookstore-12 "Two copies of each book" -body {
     basketCost {1 1 2 2 3 3 4 4 5 5}
 } -returnCodes ok -result 6000
 
-skip bookstore-13
+
 test bookstore-13 "Three copies of first book and 2 each of remaining" -body {
     basketCost {1 1 2 2 3 3 4 4 5 5 1}
 } -returnCodes ok -result 6800
 
-skip bookstore-14
+
 test bookstore-14 "Three each of first 2 books and 2 each of remaining books" -body {
     basketCost {1 1 2 2 3 3 4 4 5 5 1 2}
 } -returnCodes ok -result 7520
 
-skip bookstore-15
+
 test bookstore-15 "Four groups of four are cheaper than two groups each of five and three" -body {
     basketCost {1 1 2 2 3 3 4 5 1 1 2 2 3 3 4 5}
 } -returnCodes ok -result 10240
