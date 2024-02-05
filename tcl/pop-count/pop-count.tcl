@@ -1,3 +1,3 @@
 proc eggCount {number} {
-    throw {NOT_IMPLEMENTED} "Implement this procedure."
+    tcl::mathop::+ {*}[split [format %b $number] ""]
 }
