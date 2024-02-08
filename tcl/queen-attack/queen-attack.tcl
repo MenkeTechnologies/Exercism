@@ -1,17 +1,37 @@
 oo::class create Queen {
-    constructor {row row} {
-        throw {NOT_IMPLEMENTED} "Implement this class."
+    variable x
+    variable y
+
+    constructor {row col} {
+        my Validate $row "row"
+        my Validate $col "column"
+        set x $row
+        set y $col
     }
 
-    method row {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+    method Validate {value s} {
+        assert {$value >= 0} "$s not positive"
+        assert {$value < 8} "$s not on board"
     }
 
-    method col {} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
-    }
+    method row {} { return $x}
+    method col {} { return $y}
 
     method canAttack {other} {
-        throw {NOT_IMPLEMENTED} "Implement this method."
+        assert {[info object isa typeof $other [self class]]} "not a Queen"
+
+        set dx [expr {abs([my row] - [$other row])}]
+        set dy [expr {abs([my col] - [$other col])}]
+
+        assert {$dx != 0 || $dy != 0} "same position"
+
+        expr {$dx == 0 || $dy == 0 || $dx == $dy}
     }
 }
+
+proc assert {condition errMsg} {
+    if {![uplevel 1 [list expr $condition]]} {
+        error $errMsg
+    }
+}
+
