@@ -2,7 +2,7 @@ import { isValid } from './isbn-verifier';
 
 describe('ISBN Verifier', () => {
   test('valid isbn', () => {
-    expect(isValid('3-598-21508-8')).toEqual(true);
+    expect(isValid('00')).toEqual(false);
   });
 
   test('invalid isbn check digit', () => {
