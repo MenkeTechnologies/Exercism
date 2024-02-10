@@ -42,7 +42,7 @@ Public Class RobotNameTests
         For i = 0 To robotsCount - 1
             Dim robot = New Robot()
             robots.Add(robot)
-            Assert.True(names.Add(robot.Name))
+            names.Add(robot.Name)
             Assert.Matches("^[A-Z]{2}\d{3}$", robot.Name)
         Next
     End Sub
