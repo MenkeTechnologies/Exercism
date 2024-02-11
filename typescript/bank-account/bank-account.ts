@@ -1,36 +1,30 @@
-//
-// This is only a SKELETON file for the 'Bank Account' exercise. It's been provided as a
-// convenience to get you started writing code faster.
-//
-
 export class ValueError extends Error {
   constructor() {
-    super('Bank account error')
+    super('Bank account error');
   }
 }
-
 export class BankAccount {
-  constructor() {
-    throw new Error('Remove this statement and implement this function')
+  private isOpen = false;
+  private _balance = 0;
+  public open(): void {
+    if (this.isOpen) throw new ValueError();
+    this.isOpen = true;
   }
-
-  open(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public close(): void {
+    if (!this.isOpen) throw new ValueError();
+    this.isOpen = false;
+    this._balance = 0;
   }
-
-  close(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public deposit(amt: number): void {
+    if (!this.isOpen || amt < 0) throw new ValueError();
+    this._balance += amt;
   }
-
-  deposit(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public withdraw(amt: number): void {
+    if (!this.isOpen || amt < 0 || amt > this._balance) throw new ValueError();
+    this._balance -= amt;
   }
-
-  withdraw(): unknown {
-    throw new Error('Remove this statement and implement this function')
-  }
-
-  get balance(): unknown {
-    throw new Error('Remove this statement and implement this function')
+  public get balance(): number {
+    if (!this.isOpen) throw new ValueError();
+    return this._balance;
   }
 }
