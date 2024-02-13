@@ -28,7 +28,6 @@ static void test_partial_garden_garden_with_single_student(void)
 
 static void test_partial_garden_different_garden_with_single_student(void)
 {
-   TEST_IGNORE();   // delete this line to run test
    const plants_t expected = { .plants = { VIOLETS, CLOVER, RADISHES,
                                            CLOVER } };
    test_kindergarten_garden("VC\n"
@@ -38,7 +37,6 @@ static void test_partial_garden_different_garden_with_single_student(void)
 
 static void test_partial_garden_garden_with_two_students(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { CLOVER, GRASS, RADISHES, CLOVER } };
    test_kindergarten_garden("VVCG\n"
                             "VVRC",
@@ -47,7 +45,6 @@ static void test_partial_garden_garden_with_two_students(void)
 
 static void test_partial_garden_second_student_s_garden(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { CLOVER, CLOVER, CLOVER, CLOVER } };
    test_kindergarten_garden("VVCCGG\n"
                             "VVCCGG",
@@ -56,7 +53,6 @@ static void test_partial_garden_second_student_s_garden(void)
 
 static void test_partial_garden_third_student_s_garden(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { GRASS, GRASS, GRASS, GRASS } };
    test_kindergarten_garden("VVCCGG\n"
                             "VVCCGG",
@@ -65,7 +61,6 @@ static void test_partial_garden_third_student_s_garden(void)
 
 static void test_full_garden_for_alice_first_student_s_garden(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { VIOLETS, RADISHES, VIOLETS,
                                            RADISHES } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
@@ -75,7 +70,6 @@ static void test_full_garden_for_alice_first_student_s_garden(void)
 
 static void test_full_garden_for_bob_second_student_s_garden(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { CLOVER, GRASS, CLOVER, CLOVER } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
                             "VRCCCGCRRGVCGCRVVCVGCGCV",
@@ -84,7 +78,6 @@ static void test_full_garden_for_bob_second_student_s_garden(void)
 
 static void test_full_garden_for_charlie(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { VIOLETS, VIOLETS, CLOVER, GRASS } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
                             "VRCCCGCRRGVCGCRVVCVGCGCV",
@@ -93,7 +86,6 @@ static void test_full_garden_for_charlie(void)
 
 static void test_full_garden_for_david(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { RADISHES, VIOLETS, CLOVER,
                                            RADISHES } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
@@ -103,7 +95,6 @@ static void test_full_garden_for_david(void)
 
 static void test_full_garden_for_eve(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { CLOVER, GRASS, RADISHES, GRASS } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
                             "VRCCCGCRRGVCGCRVVCVGCGCV",
@@ -112,7 +103,6 @@ static void test_full_garden_for_eve(void)
 
 static void test_full_garden_for_fred(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { GRASS, CLOVER, VIOLETS, CLOVER } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
                             "VRCCCGCRRGVCGCRVVCVGCGCV",
@@ -121,7 +111,6 @@ static void test_full_garden_for_fred(void)
 
 static void test_full_garden_for_ginny(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { CLOVER, GRASS, GRASS, CLOVER } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
                             "VRCCCGCRRGVCGCRVVCVGCGCV",
@@ -130,7 +119,6 @@ static void test_full_garden_for_ginny(void)
 
 static void test_full_garden_for_harriet(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { VIOLETS, RADISHES, RADISHES,
                                            VIOLETS } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
@@ -140,7 +128,6 @@ static void test_full_garden_for_harriet(void)
 
 static void test_full_garden_for_ileana(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { GRASS, CLOVER, VIOLETS, CLOVER } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
                             "VRCCCGCRRGVCGCRVVCVGCGCV",
@@ -149,7 +136,6 @@ static void test_full_garden_for_ileana(void)
 
 static void test_full_garden_for_joseph(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { VIOLETS, CLOVER, VIOLETS, GRASS } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
                             "VRCCCGCRRGVCGCRVVCVGCGCV",
@@ -158,7 +144,6 @@ static void test_full_garden_for_joseph(void)
 
 static void test_full_garden_for_kincaid_second_to_last_student_s_garden(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { GRASS, CLOVER, CLOVER, GRASS } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
                             "VRCCCGCRRGVCGCRVVCVGCGCV",
@@ -167,7 +152,6 @@ static void test_full_garden_for_kincaid_second_to_last_student_s_garden(void)
 
 static void test_full_garden_for_larry_last_student_s_garden(void)
 {
-   TEST_IGNORE();
    const plants_t expected = { .plants = { GRASS, VIOLETS, CLOVER, VIOLETS } };
    test_kindergarten_garden("VRCGVVRVCGGCCGVRGCVCGCGV\n"
                             "VRCCCGCRRGVCGCRVVCVGCGCV",
