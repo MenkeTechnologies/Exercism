@@ -1,2 +1,7 @@
 : eggCount  \ n -- n
+  0 >r
+  repeat
+    dup 1 n:band n:r+
+    1 shr
+  while drop r>
 ;
