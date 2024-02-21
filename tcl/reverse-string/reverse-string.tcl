@@ -1,3 +1,3 @@
-proc reverse {input} {
-    throw {NOT_IMPLEMENTED} "Implement this procedure."
+proc reverse {s} {
+    join [lreverse [split $s ""]] ""
 }
