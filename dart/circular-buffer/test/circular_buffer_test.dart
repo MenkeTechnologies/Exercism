@@ -12,7 +12,7 @@ void main() {
     buff.write(1);
     var value = buff.read();
     expect(value, 1);
-  }, skip: true);
+  });
 
   test("each item may only be read once", () {
     final buff = CircularBuffer(1);
@@ -20,7 +20,7 @@ void main() {
     var value = buff.read();
     expect(value, 1);
     expect(() => buff.read(), throwsA(isA<EmptyBufferException>()));
-  }, skip: true);
+  });
 
   test("items are read in the order they are written", () {
     final buff = CircularBuffer(2);
@@ -30,13 +30,13 @@ void main() {
     expect(value, 1);
     value = buff.read();
     expect(value, 2);
-  }, skip: true);
+  });
 
   test("full buffer can't be written to", () {
     final buff = CircularBuffer(1);
     buff.write(1);
     expect(() => buff.write(2), throwsA(isA<FullBufferException>()));
-  }, skip: true);
+  });
 
   test("a read frees up capacity for another write", () {
     final buff = CircularBuffer(1);
@@ -46,7 +46,7 @@ void main() {
     buff.write(2);
     value = buff.read();
     expect(value, 2);
-  }, skip: true);
+  });
 
   test("read position is maintained even across multiple writes", () {
     final buff = CircularBuffer(3);
@@ -59,14 +59,14 @@ void main() {
     expect(value, 2);
     value = buff.read();
     expect(value, 3);
-  }, skip: true);
+  });
 
   test("items cleared out of buffer can't be read", () {
     final buff = CircularBuffer(1);
     buff.write(1);
     buff.clear();
     expect(() => buff.read(), throwsA(isA<EmptyBufferException>()));
-  }, skip: true);
+  });
 
   test("clear frees up capacity for another write", () {
     final buff = CircularBuffer(1);
@@ -75,7 +75,7 @@ void main() {
     buff.write(2);
     var value = buff.read();
     expect(value, 2);
-  }, skip: true);
+  });
 
   test("clear does nothing on empty buffer", () {
     final buff = CircularBuffer(1);
@@ -83,7 +83,7 @@ void main() {
     buff.write(1);
     var value = buff.read();
     expect(value, 1);
-  }, skip: true);
+  });
 
   test("overwrite acts like write on non-full buffer", () {
     final buff = CircularBuffer(2);
@@ -93,7 +93,7 @@ void main() {
     expect(value, 1);
     value = buff.read();
     expect(value, 2);
-  }, skip: true);
+  });
 
   test("overwrite replaces the oldest item on full buffer", () {
     final buff = CircularBuffer(2);
@@ -104,7 +104,7 @@ void main() {
     expect(value, 2);
     value = buff.read();
     expect(value, 3);
-  }, skip: true);
+  });
 
   test("overwrite replaces the oldest item remaining in buffer following a read", () {
     final buff = CircularBuffer(3);
@@ -121,7 +121,7 @@ void main() {
     expect(value, 4);
     value = buff.read();
     expect(value, 5);
-  }, skip: true);
+  });
 
   test("initial clear does not affect wrapping around", () {
     final buff = CircularBuffer(2);
@@ -135,5 +135,5 @@ void main() {
     value = buff.read();
     expect(value, 4);
     expect(() => buff.read(), throwsA(isA<EmptyBufferException>()));
-  }, skip: true);
+  });
 }

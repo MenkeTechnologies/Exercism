@@ -11,17 +11,17 @@ void main() {
     test("find first prime", () {
       final actual = Sieve(2).primes;
       expect(actual, equals([2]));
-    }, skip: true);
+    });
 
     test("find primes up to 10", () {
       final actual = Sieve(10).primes;
       expect(actual, equals([2, 3, 5, 7]));
-    }, skip: true);
+    });
 
     test("limit is prime", () {
       final actual = Sieve(13).primes;
       expect(actual, equals([2, 3, 5, 7, 11, 13]));
-    }, skip: true);
+    });
 
     test("find primes up to 1000", () {
       final actual = Sieve(1000).primes;
@@ -196,6 +196,6 @@ void main() {
         997
       ];
       expect(actual, equals(expected));
-    }, skip: true);
+    });
   });
 }
