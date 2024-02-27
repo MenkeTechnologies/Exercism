@@ -7,7 +7,7 @@ void main() {
   test('Empty RNA sequence results in no proteins', () {
     final result = translator.translate("");
     expect(result, equals([]));
-  }, skip: false);
+  });
 
   test('Methionine RNA sequence', () {
     final result = translator.translate("AUG");
