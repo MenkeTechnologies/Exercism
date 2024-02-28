@@ -1,33 +1,59 @@
 extension ListOps on List {
   void append<T>(List<T> other) {
-    // Add your implemenation here.
+    for (final each in other) {
+      add(each);
+    }
   }
 
   List<T> concat<T>() {
-    // Add your implemenation here.
+    final List<T> lst = [];
+    for (final each in this) {
+      lst.addAll(each);
+    }
+    return lst;
   }
 
-  List<T> filter<T>(bool Function(T elem) predicate) {
-    // Add your implemenation here.
+  List<T> filter<T>(bool Function(T elem) pred) {
+    final List<T> lst = [];
+    for (final each in this) {
+      if (pred(each)) {
+        lst.add(each);
+      }
+    }
+    return lst;
   }
 
   int count() {
-    // Add your implemenation here.
+    return length;
   }
 
-  List<T> myMap<T>(T Function(T elem) fn) {
-    // Add your implemenation here.
+  List<T> myMap<T>(T Function(T elem) f) {
+    final List<T> lst = [];
+    for (final each in this) {
+      lst.add(f(each));
+    }
+    return lst;
   }
 
-  U foldl<T, U>(U initial, U Function(U acc, T elem) fn) {
-    // Add your implemenation here.
+  U foldl<T, U>(U initial, U Function(U acc, T elem) f) {
+    for (final each in this) {
+      initial = f(initial, each);
+    }
+    return initial;
   }
 
-  U foldr<T, U>(U initial, U Function(T elem, U acc) fn) {
-    // Add your implemenation here.
+  U foldr<T, U>(U initial, U Function(T elem, U acc) f) {
+    for (final each in reversed) {
+      initial = f(each, initial);
+    }
+    return initial;
   }
 
   List<T> reverse<T>() {
-    // Add your implemenation here.
+    final List<T> lst = [];
+    for (final each in reversed) {
+      lst.add(each);
+    }
+    return lst;
   }
 }
