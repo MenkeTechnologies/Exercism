@@ -1,16 +1,25 @@
 namespace eval dnd {
+
     namespace export character ability modifier
     namespace ensemble create
 
     proc modifier {score} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+        expr {($score - 10) / 2}
     }
-
+    proc roll {} {
+        expr {1 + int(rand() * 6)}
+    }
     proc ability {} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+        set rolls [list [roll] [roll] [roll] [roll]]
+        set sorted [lsort -integer $rolls]
+        ::tcl::mathop::+ {*}[lrange $sorted 1 end]
     }
-
     proc character {} {
-        throw {NOT_IMPLEMENTED} "Implement this procedure."
+        set c [dict create]
+        foreach stat {charisma constitution dexterity intelligence strength wisdom} {
+            dict set c $stat [ability]
+        }
+        dict set c hitpoints [expr {10 + [modifier [dict get $c constitution]]}]
+        expr {$c}
     }
 }
