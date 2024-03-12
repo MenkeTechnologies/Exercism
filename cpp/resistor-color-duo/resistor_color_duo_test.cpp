@@ -10,8 +10,6 @@ TEST_CASE("Brown and black", "[ce11995a-5b93-4950-a5e9-93423693b2fc]") {
 	REQUIRE(10 == resistor_color_duo::value({"brown", "black"}));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
-
 TEST_CASE("Blue and grey", "[7bf82f7a-af23-48ba-a97d-38d59406a920]") {
 	REQUIRE(68 == resistor_color_duo::value({"blue", "grey"}));
 }
@@ -35,5 +33,3 @@ TEST_CASE("Ignore additional colors", "[0c4fb44f-db7c-4d03-afa8-054350f156a8]") 
 TEST_CASE("Black and brown, one-digit", "[4a8ceec5-0ab4-4904-88a4-daf953a5e818]") {
 	REQUIRE(1 == resistor_color_duo::value({"black", "brown"}));
 }
-
-#endif
