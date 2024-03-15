@@ -8,7 +8,7 @@ void main() {
       final list2 = [];
       list1.append(list2);
       expect(list1, equals([]));
-    }, skip: false);
+    });
 
     test('list to empty list', () {
       final list1 = [];
