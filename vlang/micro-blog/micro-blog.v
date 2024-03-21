@@ -1,4 +1,6 @@
 module main
 
-fn truncate(phrase string) string {
+fn truncate(s string) string {
+	return s.limit(5)
 }
+
