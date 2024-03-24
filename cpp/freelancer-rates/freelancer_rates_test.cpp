@@ -9,7 +9,6 @@ using namespace std;
 
 TEST_CASE("it's the hourly_rate times 8", "[task_1]") { REQUIRE(daily_rate(50) == 400.0); }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 
 TEST_CASE("it always returns a float", "[task_1]") { REQUIRE(daily_rate(60) == 480.0); }
 
@@ -58,5 +57,3 @@ TEST_CASE("it applies the discount", "[task_4]") {
     // With discount: 1.07
     REQUIRE(days_in_budget(480, 70, 20) == 1);
 }
-
-#endif
