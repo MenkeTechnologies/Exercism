@@ -9,7 +9,7 @@ public class BinarySearch {
         int lo = 0;
         int hi = lst.size()-1;
 
-        int mid = 0;
+        int mid;
         while(lo <= hi){
             mid = (lo + hi) /2;
             if(target == lst.get(mid)){
