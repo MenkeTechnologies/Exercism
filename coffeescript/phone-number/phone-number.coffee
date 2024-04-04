@@ -1,4 +1,4 @@
-module.exports = class PhoneNumber
+module.exports = class
   constructor: (@num) ->
   clean: ->
     throw "letters not permitted" if /[a-zA-Z]/.test @num

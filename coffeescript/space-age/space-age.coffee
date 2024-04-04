@@ -1,4 +1,4 @@
-module.exports = class SpaceAge
+module.exports = class
   @onEarth: (seconds) -> seconds / 31557600
   @onMercury: (seconds) -> @onEarth seconds / 0.2408467
   @onVenus: (seconds) -> @onEarth seconds / 0.61519726

@@ -1,4 +1,4 @@
-module.exports = class Clock
+module.exports = class
 	@at: (h, m)->
 		new Clock h, m
 	constructor: (h = 0, m = 0)->

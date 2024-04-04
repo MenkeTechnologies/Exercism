@@ -1,4 +1,4 @@
-module.exports = class DndCharacter
+module.exports = class
   constructor: () ->
     @strength = @ability()
     @dexterity = @ability()

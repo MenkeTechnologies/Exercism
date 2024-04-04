@@ -1,4 +1,4 @@
-module.exports = class Raindrops
+module.exports = class
     sounds = { 3: "Pling", 5: "Plang", 7: "Plong" }
     @convert = (n) ->
         msg = ""

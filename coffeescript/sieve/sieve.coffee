@@ -1,4 +1,4 @@
-module.exports = class Sieve
+module.exports = class
   @primes: (max) ->
     results = []
     return results if max == 1

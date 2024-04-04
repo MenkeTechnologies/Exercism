@@ -1,4 +1,4 @@
-module.exports = class RomanNumerals
+module.exports = class
   mappings =
     1000: "M"
     900: "CM"

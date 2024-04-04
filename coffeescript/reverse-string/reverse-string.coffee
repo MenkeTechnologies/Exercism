@@ -1,2 +1,2 @@
-module.exports = class ReverseString
+module.exports = class
   @reverse: (s) -> s.split("").reverse().join("")

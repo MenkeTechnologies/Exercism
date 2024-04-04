@@ -8,7 +8,7 @@ ALLERGENS = [
   "pollen"
   "cats"
 ]
-module.exports = class Allergies
+module.exports = class
   constructor: (@score) ->
   list: () -> ALLERGENS.filter (_, index) => @score & (1 << index)
   allergicTo: (food) -> @list().some (allergen) -> allergen == food

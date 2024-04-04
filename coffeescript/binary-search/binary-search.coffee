@@ -1,4 +1,4 @@
-module.exports = class BinarySearch
+module.exports = class
   constructor: (@values) ->
   find: (target) ->
     lo = 0

@@ -1,4 +1,4 @@
-module.exports = class CollatzConjecture
+module.exports = class
   @steps: (n) ->
     throw new Error('Only positive integers are allowed') if n < 1
     cnt = 0

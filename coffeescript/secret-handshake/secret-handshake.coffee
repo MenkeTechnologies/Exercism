@@ -1,4 +1,4 @@
-module.exports = class SecretHandshake
+module.exports = class
   allowed_actions = ["wink", "double blink",
                       "close your eyes", "jump"]
   @commands: (n) ->

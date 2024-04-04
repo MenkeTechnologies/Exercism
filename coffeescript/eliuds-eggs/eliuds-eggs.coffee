@@ -1,4 +1,4 @@
-module.exports = class EliudsEggs
+module.exports = class
   @eggCount: (displayValue) ->
     cnt = 0
     while displayValue

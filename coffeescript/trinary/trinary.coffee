@@ -1,4 +1,4 @@
-module.exports = class Trinary
+module.exports = class
   constructor: (@value) ->
   toDecimal: () ->
     return 0 if ! /^[012]+$/.test @value
