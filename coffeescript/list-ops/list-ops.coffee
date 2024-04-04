@@ -1,18 +1,23 @@
-class ListOps
-  @append: (list1, list2) ->
+module.exports = class
+  @append: (lst1, lst2) -> @concat([lst1, lst2])
+  @concat: (lsts) ->
+    results = []
+    for lst in lsts
+      for elem in lst
+        results.push elem
+    results
+  @filter: (lst, f) -> (elem for elem in lst when f(elem))
+  @mylength: (lst) -> @foldl(lst, ((acc, _) -> acc + 1), 0)
+  @map: (lst, f) -> (f(elem) for elem in lst)
 
-  @concat: (lists) ->
+  @foldl: (lst, f, initial) ->
+    acc = initial
+    for elem in lst
+      acc = f(acc, elem)
+    acc
+  @foldr: (lst, f, initial) -> @foldl(@reverse(lst), f, initial)
 
-  @filter: (list, f) ->
-
-  @mylength: (list) ->
-
-  @map: (list, fn) ->
-
-  @foldl: (list, fn, initial) ->
-
-  @foldr: (list, fn, initial) ->
-
-  @reverse: (list) ->
-
-module.exports = ListOps
+  @reverse: (lst) -> if lst.length == 0
+    lst
+  else
+    (lst[index] for index in [(lst.length - 1)..0])
