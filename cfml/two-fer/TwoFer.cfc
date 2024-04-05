@@ -1,13 +1,7 @@
-/**
-* Your implementation of the TwoFer exercise
-*/
 component {
 	
-	/**
-	* @returns 
-	*/
-	function twoFer( name ) {
-		// Implement me here
+    function twoFer( name="you" ) {
+		return "One for " & name & ", one for me."
 	}
 	
 }
