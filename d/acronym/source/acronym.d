@@ -1,13 +1,22 @@
 module acronym;
 
-string abbreviate(immutable string phrase)
+import std.algorithm;
+import std.conv;
+import std.string;
+import std.regex;
+
+string abbreviate(immutable string s)
 {
-    // implement this function
+        return replaceAll(s, regex(r"[-_]"), " ")
+        .split()
+        .map!(s => to!string(toUpper(s[0])))
+        .join("");
 }
+
 
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // Basic abbreviation
     {
