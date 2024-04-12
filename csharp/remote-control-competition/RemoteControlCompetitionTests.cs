@@ -16,9 +16,8 @@ public class RemoteControlCompetitionTests
         TestTrack.Race((IRemoteControlCar)experimentalCar);
         Assert.Equal(20, experimentalCar.DistanceTravelled - productionCar.DistanceTravelled);
     }
-    
+
     [Fact]
-    [Task(2)]
     public void EnsureInterfaceExposesDistanceTravelled()
     {
         var car = Assert.IsAssignableFrom<IRemoteControlCar>(new ProductionRemoteControlCar());
@@ -27,7 +26,6 @@ public class RemoteControlCompetitionTests
     }
 
     [Fact]
-    [Task(2)]
     public void EnsureCarsAreComparable()
     {
         var fast = new ProductionRemoteControlCar();
@@ -42,7 +40,6 @@ public class RemoteControlCompetitionTests
     }
 
     [Fact]
-    [Task(3)]
     public void RankCars()
     {
         var prc1 = new ProductionRemoteControlCar();
