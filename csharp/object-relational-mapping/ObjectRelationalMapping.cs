@@ -1,26 +1,23 @@
 using System;
 
-public class Orm
+public class Orm(Database database) : IDisposable
 {
-    private Database database;
+    public void Begin() => database.BeginTransaction();
+    public void Write(string data) => Execute(() => database.Write(data));
+    public void Commit() => Execute(() => database.EndTransaction());
 
-    public Orm(Database database)
+    private void Execute(Action operation)
     {
-        this.database = database;
+        try
+        {
+            operation();
+        }
+        catch (Exception e)
+        {
+            CleanUp();
+        }
     }
 
-    public void Begin()
-    {
-        throw new NotImplementedException($"Please implement the Orm.Begin() method");
-    }
-
-    public void Write(string data)
-    {
-        throw new NotImplementedException($"Please implement the Orm.Write() method");
-    }
-
-    public void Commit()
-    {
-        throw new NotImplementedException($"Please implement the Orm.Commit() method");
-    }
+    private void CleanUp() => database.Dispose();
+    public void Dispose() => CleanUp();
 }
