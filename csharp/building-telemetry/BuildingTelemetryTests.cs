@@ -4,7 +4,6 @@ using Exercism.Tests;
 public class BuildingTelemetryTests
 {
     [Fact]
-    [Task(1)]
     public void DisplayNextSponsor_for_3_sponsors()
     {
         var car = RemoteControlCar.Buy();
@@ -16,7 +15,6 @@ public class BuildingTelemetryTests
     }
 
     [Fact]
-    [Task(2)]
     public void GetTelemetryData_good()
     {
         var car = RemoteControlCar.Buy();
@@ -29,7 +27,6 @@ public class BuildingTelemetryTests
     }
 
     [Fact]
-    [Task(2)]
     public void GetTelemetryData_bad()
     {
         var car = RemoteControlCar.Buy();
@@ -45,17 +42,16 @@ public class BuildingTelemetryTests
     }
 
     [Fact]
-    [Task(3)]
     public void GetUsagePerMeter_good()
     {
         var car = RemoteControlCar.Buy();
-        car.Drive(); car.Drive();
+        car.Drive();
+        car.Drive();
         var tc = new TelemetryClient(car);
         Assert.Equal("usage-per-meter=5", tc.GetBatteryUsagePerMeter(serialNum: 1));
     }
 
     [Fact]
-    [Task(3)]
     public void GetUsagePerMeter_not_started()
     {
         var car = RemoteControlCar.Buy();
