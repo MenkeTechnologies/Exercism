@@ -1,3 +1,9 @@
 public function eggCount(int displayValue) returns int {
-    // TODO: implement this function
+    int cnt = 0;
+    int dup = displayValue;
+    while (dup > 0){
+        cnt += dup & 1;
+        dup >>= 1;
+    }
+    return cnt;
 }

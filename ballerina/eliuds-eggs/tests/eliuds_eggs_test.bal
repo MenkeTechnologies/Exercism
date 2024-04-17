@@ -6,21 +6,21 @@ function testZeroEggs() {
 }
 
 @test:Config {
-    enable: false
+    enable: true
 }
 function testOneEgg() {
     test:assertEquals(eggCount(16), 1);
 }
 
 @test:Config {
-    enable: false
+    enable: true
 }
 function testFourEggs() {
     test:assertEquals(eggCount(89), 4);
 }
 
 @test:Config {
-    enable: false
+    enable: true
 }
 function testThirteenEggs() {
     test:assertEquals(eggCount(2000000000), 13);
