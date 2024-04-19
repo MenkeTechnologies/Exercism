@@ -55,7 +55,8 @@ class MechaMunchManagementTest(unittest.TestCase):
             ({'Banana Bread': {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1},
               'Raspberry Pie': {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1}},
              (
-             ('Banana Bread', {'Banana': 4, 'Walnuts': 2, 'Flour': 1, 'Eggs': 2, 'Butter': 1, 'Milk': 2, 'Eggs': 3}),)),
+                 ('Banana Bread',
+                  {'Banana': 4, 'Walnuts': 2, 'Flour': 1, 'Eggs': 2, 'Butter': 1, 'Milk': 2, 'Eggs': 3}),)),
 
             ({'Apple Pie': {'Apple': 1, 'Pie Crust': 1, 'Cream Custard': 1},
               'Blueberry Pie': {'Blueberries': 1, 'Pie Crust': 1, 'Cream Custard': 1}},

@@ -31,7 +31,7 @@ class RobotSimulator {
 
     private String getNewDirection(String turn) {
         int currentIndex = movements.keySet().toList().indexOf(direction)
-        int newIndex = turn == 'right' ? (currentIndex + 1) % 4 : (currentIndex - 1) % 4
+        int newIndex = turn == 'right' ? (currentIndex + 1) % 4 : (currentIndex + 3) % 4
         movements.keySet().toList()[newIndex]
     }
 }
