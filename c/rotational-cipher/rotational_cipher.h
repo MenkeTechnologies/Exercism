@@ -1,6 +1,3 @@
-#ifndef ROTATIONAL_CIPHER_H
-#define ROTATIONAL_CIPHER_H
+#pragma once
 
-char *rotate(const char *text, int shift_key);
-
-#endif
+char *rotate(const char *s, int shift_key);

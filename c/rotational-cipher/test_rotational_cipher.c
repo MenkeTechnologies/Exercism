@@ -28,55 +28,53 @@ static void test_rotate_a_by_0_same_output_as_input(void)
 
 static void test_rotate_a_by_1(void)
 {
-   TEST_IGNORE();   // delete this line to run test
+      // delete this line to run test
    test_rotate("b", "a", 1);
 }
 
 static void test_rotate_a_by_26_same_output_as_input(void)
 {
-   TEST_IGNORE();
+   
    test_rotate("a", "a", 26);
 }
 
 static void test_rotate_m_by_13(void)
 {
-   TEST_IGNORE();
+   
    test_rotate("z", "m", 13);
 }
 
 static void test_rotate_n_by_13_with_wrap_around_alphabet(void)
 {
-   TEST_IGNORE();
+   
    test_rotate("a", "n", 13);
 }
 
 static void test_rotate_capital_letters(void)
 {
-   TEST_IGNORE();
+   
    test_rotate("TRL", "OMG", 5);
 }
 
 static void test_rotate_spaces(void)
 {
-   TEST_IGNORE();
+   
    test_rotate("T R L", "O M G", 5);
 }
 
 static void test_rotate_numbers(void)
 {
-   TEST_IGNORE();
    test_rotate("Xiwxmrk 1 2 3 xiwxmrk", "Testing 1 2 3 testing", 4);
 }
 
 static void test_rotate_punctuation(void)
 {
-   TEST_IGNORE();
    test_rotate("Gzo'n zvo, Bmviyhv!", "Let's eat, Grandma!", 21);
 }
 
 static void test_rotate_all_letters(void)
 {
-   TEST_IGNORE();
+   
    test_rotate("Gur dhvpx oebja sbk whzcf bire gur ynml qbt.",
                "The quick brown fox jumps over the lazy dog.", 13);
 }
