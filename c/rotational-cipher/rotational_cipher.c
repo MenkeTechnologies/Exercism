@@ -10,7 +10,6 @@ char *rotate(const char *s, int shift_key) {
             res[i] = (s[i] - 'a' + shift_key) % 26 + 'a';
         } else if ('A' <= s[i] && s[i] <= 'Z') {
             res[i] = (s[i] - 'A' + shift_key) % 26 + 'A';
-
         } else res[i] = s[i];
     }
 
