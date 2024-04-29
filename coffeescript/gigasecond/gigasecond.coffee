@@ -1,4 +1,2 @@
-class Gigasecond
-  @add: (moment) ->
-
-module.exports = Gigasecond
+module.exports = class
+  @add: (moment) -> new Date(moment.getTime() + 1e12)
