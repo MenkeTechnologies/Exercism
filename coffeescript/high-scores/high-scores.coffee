@@ -1,10 +1,11 @@
-class HighScores
-  constructor: (scores) ->
+module.exports = class
 
-  latest: () ->
+  constructor: (@scores) ->
 
-  personalBest: () ->
+  latest: () -> @scores[@scores.length - 1]
+
+  personalBest: () -> Math.max.apply(null, @scores)
 
   personalTopThree: () ->
-
-module.exports = HighScores
+    scoresCopy = @scores.slice()
+    scoresCopy.sort((a, b) -> b - a).slice(0, 3)
