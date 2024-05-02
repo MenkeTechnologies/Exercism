@@ -1,9 +1,12 @@
-# This is a stub file for the CoffeeScript track
-class BinarySearchTree
-  constructor: (args) ->
+module.exports = class BinarySearchTree
+  constructor: (@data) ->
+  insert: (value) ->
+    if value > @data
+      @right?.insert(value) || @right = new BinarySearchTree(value)
+    else
+      @left?.insert(value) || @left = new BinarySearchTree(value)
 
-  insert: (args) ->
-
-  data: ->
-
-module.exports = BinarySearchTree
+  each: (f) ->
+    @left?.each f
+    f @data
+    @right?.each f
