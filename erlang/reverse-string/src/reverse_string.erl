@@ -2,5 +2,11 @@
 
 -export([reverse/1]).
 
-reverse(_String) ->
-    undefined.
+reverse(S) ->
+    aux(S, []).
+
+aux([], Result) ->
+    Result;
+
+aux([H | T], Acc)->
+    aux(T, [H | Acc]).
