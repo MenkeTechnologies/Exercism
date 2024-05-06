@@ -1,7 +1,7 @@
+using System;
+using System.Linq;
+
 public static class EliudsEggs
 {
-    public static int EggCount(int encodedCount)
-    {
-        throw new System.NotImplementedException("You need to implement this method.");
-    }
+    public static int EggCount(int encodedCount) => Convert.ToString(encodedCount, 2).Count(c => c == '1');
 }
