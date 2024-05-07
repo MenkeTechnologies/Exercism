@@ -1,14 +1,9 @@
-;;; eliuds-eggs.el --- Eliud's Eggs (exercism)  -*- lexical-binding: t; -*-
-
-;;; Commentary:
-
-;;; Code:
-
-
 (defun egg-count (number)
-  (error "Delete this S-Expression and write your own implementation"))
-
+  "Count the number of 1 bits in the binary representation of NUMBER."
+  (let ((count 0))
+    (while (> number 0)
+      (setq count (+ count (logand number 1)))
+      (setq number (lsh number -1)))
+    count))
 
 (provide 'eliuds-eggs)
-;;; eliuds-eggs.el ends here
-
