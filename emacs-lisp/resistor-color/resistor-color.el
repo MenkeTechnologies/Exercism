@@ -1,17 +1,7 @@
-;;; resistor-color.el --- Resistor Color (exercism)  -*- lexical-binding: t; -*-
+(defconst dict '(("black" . 0) ("brown" . 1) ("red" . 2) ("orange" . 3) ("yellow" . 4)
+                ("green" . 5) ("blue" . 6) ("violet" . 7) ("grey" . 8) ("white" . 9 )))
 
-;;; Commentary:
+(defun color-code (color) (cdr (assoc color dict)))
 
-;;; Code:
-
-
-(defun color-code (color)
-  (error "Delete this S-Expression and write your own implementation"))
-
-(defun colors ()
-  (error "Delete this S-Expression and write your own implementation"))
-
-
-(provide 'resistor-color)
-;;; resistor-color.el ends here
+(defun colors () (mapcar #'car dict))
 
