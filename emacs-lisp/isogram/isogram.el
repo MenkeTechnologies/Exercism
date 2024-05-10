@@ -1,13 +1,3 @@
-;;; isogram.el --- isogram (exercism)  -*- lexical-binding: t; -*-
-
-;;; Commentary:
-
-;;; Code:
-
-
-(defun isogramp (phrase)
-  (error "Delete this S-Expression and write your own implementation"))
-
+(defun isogramp (s) (not (string-match-p "\\(\\w\\).*\\1" s)))
 
 (provide 'isogram)
-;;; isogram.el ends here
