@@ -1,14 +1,13 @@
-;;; binary-search.el --- Binary Search (exercism)  -*- lexical-binding: t; -*-
-
-;;; Commentary:
-
-;;; Code:
-
-
 (defun find-binary (array value)
-  (error
-   "Delete this S-Expression and write your own implementation"))
-
-
+  (let ((lo 0)
+        (hi (- (length array) 1))
+        mid retval)
+    (while (and(not retval) (<= lo hi))
+      (setq mid (/ (+ lo hi) 2))
+      (cond
+       ((equal (aref array mid) value) (setq retval mid))
+       ((< (aref array mid) value) (setq lo (+ mid 1)))
+       ((> (aref array mid) value )(setq hi (- mid 1)))
+       ))
+    retval))
 (provide 'binary-search)
-;;; binary-search.el ends here
