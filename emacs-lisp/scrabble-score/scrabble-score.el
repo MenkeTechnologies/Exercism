@@ -1,11 +1,12 @@
-;;; scrabble-score.el --- Scrabble Score (exercism)  -*- lexical-binding: t; -*-
+(defvar *letter-values* '((?a . 1) (?e . 1) (?i . 1) (?o . 1) (?u . 1) (?l . 1) (?n . 1) (?r . 1) (?s . 1) (?t . 1)
+                          (?d . 2) (?g . 2)
+                          (?b . 3) (?c . 3) (?m . 3) (?p . 3)
+                          (?f . 4) (?h . 4) (?v . 4) (?w . 4) (?y . 4)
+                          (?k . 5)
+                          (?j . 8) (?x . 8)
+                          (?q . 10) (?z . 10)))
 
-;;; Commentary:
-
-;;; Code:
-
-(defun score (word)
-  (error "Delete this S-Expression and write your own implementation"))
+(defun score (s)
+    (apply '+ (mapcar (lambda (letter) (cdr (assoc letter *letter-values*))) (string-to-list (downcase s)))))
 
 (provide 'scrabble-score)
-;;; scrabble-score.el ends here
