@@ -1,26 +1,25 @@
 namespace hellmath {
+    enum AccountStatus {
+        troll, guest, user, mod
+    };
+    enum Action {
+        read, write, remove
+    };
 
-// TODO: Task 1 - Define an `AccountStatus` enumeration to represent the four
-// account types: `troll`, `guest`, `user`, and `mod`.
+    bool display_post(AccountStatus poster, AccountStatus viewer) {
+        return poster == viewer || poster != 0;
+    }
 
-// TODO: Task 1 - Define an `Action` enumeration to represent the three
-// permission types: `read`, `write`, and `remove`.
+    bool permission_check(Action action, AccountStatus account_status) {
+        return account_status == 3 || (account_status == 1 && action == 0) ||
+               ((account_status == 0 || account_status == 2) && action != 2);
+    }
 
-// TODO: Task 2 - Implement the `display_post` function, that gets two arguments
-// of `AccountStatus` and returns a `bool`. The first argument is the status of
-// the poster, the second one is the status of the viewer.
+    bool valid_player_combination(AccountStatus player1, AccountStatus player2) {
+        return player1 != 1 && player2 != 1 && ((player1 == 0 && player2 == 0) || (player1 != 0 && player2 != 0));
+    }
 
-// TODO: Task 3 - Implement the `permission_check` function, that takes an
-// `Action` as a first argument and an `AccountStatus` to check against. It
-// should return a `bool`.
-
-// TODO: Task 4 - Implement the `valid_player_combination` function that
-// checks if two players can join the same game. The function has two parameters
-// of type `AccountStatus` and returns a `bool`.
-
-// TODO: Task 5 - Implement the `has_priority` function that takes two
-// `AccountStatus` arguments and returns `true`, if and only if the first
-// account has a strictly higher priority than the second.
-
-
-}  // namespace hellmath
+    bool has_priority(AccountStatus account1, AccountStatus account2) {
+        return account1 > account2;
+    }
+}
