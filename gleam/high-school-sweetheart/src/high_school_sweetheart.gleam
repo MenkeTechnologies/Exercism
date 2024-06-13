@@ -1,29 +1,21 @@
+import gleam/string
+import gleam/list
+
 pub fn first_letter(name: String) {
-  todo
+  let assert Ok(first) = name |> string.trim |> string.to_graphemes |> list.first
+  first
 }
 
 pub fn initial(name: String) {
-  todo
+  name |> first_letter |> string.uppercase <> "."
 }
 
 pub fn initials(full_name: String) {
-  todo
+  let names = full_name |> string.split(" ")
+  names |> list.map(fn(name) {initial(name)}) |> string.join(" ")
 }
 
 pub fn pair(full_name1: String, full_name2: String) {
-  //      ******       ******
-  //    **      **   **      **
-  //  **         ** **         **
-  // **            *            **
-  // **                         **
-  // **     X. X.  +  X. X.     **
-  //  **                       **
-  //    **                   **
-  //      **               **
-  //        **           **
-  //          **       **
-  //            **   **
-  //              ***
-  //               *
-  todo
+  "\n     ******       ******\n" <> "   **      **   **      **\n" <> " **         ** **         **\n" <> "**            *            **\n" <> "**                         **\n" <> "**     " <> initials(full_name1,) <> "  +  " <> initials(full_name2) <> "     **\n" <> " **                       **\n" <> "   **                   **\n" <> "     **               **\n" <> "       **           **\n" <> "         **       **\n" <> "           **   **\n" <> "             ***\n" <> "              *\n"
 }
+
