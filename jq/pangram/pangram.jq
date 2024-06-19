@@ -1,1 +1,2 @@
-"Remove this line and implement your solution" | halt_error
+.sentence | ascii_downcase | [ scan("[a-z]") ] | unique | length == 26
+
