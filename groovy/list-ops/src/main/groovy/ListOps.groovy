@@ -1,35 +1,27 @@
 class ListOps {
-
-    static append(list1, list2) {
-        throw new UnsupportedOperationException('method not implemented.')
+    static foldl(lst, f, acc) {
+        lst.each { acc = f(acc, it)}
+        acc
     }
-
-    static concatenate(lists) {
-        throw new UnsupportedOperationException('method not implemented.')
+    static length(lst) {
+        foldl(lst, { acc, n -> acc + 1 }, 0)
     }
-
-    static filter(list, fn) {
-        throw new UnsupportedOperationException('method not implemented.')
+    static append(lst1, lst2) {
+        foldl(lst2, { acc, n -> acc + n }, lst1)
     }
-
-    static length(list) {
-        throw new UnsupportedOperationException('method not implemented.')
+    static concatenate(lsts) {
+        foldl(lsts, { acc, n -> append(acc, [n]) }, [])
     }
-
-    static map(list, fn) {
-        throw new UnsupportedOperationException('method not implemented.')
+    static filter(lst, f) {
+        foldl(lst, { acc, n -> f(n) ? append(acc, [n]) : acc }, [])
     }
-
-    static foldl(list, fn, initial) {
-        throw new UnsupportedOperationException('method not implemented.')
+    static map(lst, f) {
+        foldl(lst, {acc, n -> append(acc, f(n)) }, [])
     }
-
-    static foldr(list, fn, initial) {
-        throw new UnsupportedOperationException('method not implemented.')
+    static reverse(lst) {
+        foldl(lst, { acc, n -> concatenate([[n], acc]) }, [])
     }
-
-    static reverse(list) {
-        throw new UnsupportedOperationException('method not implemented.')
+    static foldr(lst, f, init) {
+        foldl(reverse(lst), { acc, n -> f(acc, n) }, init)
     }
-
 }
