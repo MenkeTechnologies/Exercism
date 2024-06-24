@@ -1,13 +1,28 @@
 module anagram;
 
-pure string[] findAnagrams(immutable string subject, immutable string[] candidates)
-{
-    // implement this function
+import std.algorithm.sorting : sort;
+import std.array : array;
+import std.uni : toLower;
+
+pure string[] findAnagrams(immutable string subject, immutable string[] candidates) {
+    string[] res;
+    auto lcTarget = toLower(subject).dup.array.sort;
+
+    foreach (candidate; candidates) {
+        if (toLower(candidate) != toLower(subject)) {
+            auto lcCand = toLower(candidate).dup.array.sort;
+            if (lcTarget == lcCand) {
+                res ~= candidate;
+            }
+        }
+
+    }
+    return res;
 }
 
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // no matches
     {
