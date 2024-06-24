@@ -2,25 +2,36 @@ module allergies;
 
 class Allergies
 {
-    this(immutable uint score)
-    {
-        // implement this function
+    immutable uint score;
+
+    static const string[] lst = ["eggs", "peanuts", "shellfish", "strawberries",
+				     "tomatoes", "chocolate", "pollen", "cats"];
+    int[string] dict;
+
+    this(immutable uint score) {
+        this.score = score;
+        this.dict = ["eggs":1,"peanuts":2,"shellfish":4,"strawberries":8,"tomatoes":16,"chocolate":32,"pollen":64,"cats":128];
     }
 
-    final bool allergicTo(immutable string item)
-    {
-        // implement this function
+    final bool allergicTo(immutable string item) {
+        return (dict[item] & this.score) > 0;
     }
 
-    final string[] list()
-    {
-        // implement this function
+      final string[] list() {
+        string[] res;
+
+        foreach(k; lst){
+            if ((dict[k] & this.score) > 0) {
+                res~= k;
+            }
+        }
+        return res;
     }
 }
 
 unittest
 {
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // testing for eggs allergy: not allergic to anything
     {
