@@ -1,8 +1,26 @@
 module isbn_verifier;
 
+import std.string : stripLeft, stripRight, replace;
+import std.ascii : isDigit;
+import std.algorithm: reverse;
+
 pure bool isValid(immutable string isbn)
 {
-    // implement this function
+    auto cleanedIsbn = isbn.replace("-", "").dup.reverse;
+    if (cleanedIsbn.length != 10) {
+        return false;
+    }
+    int sum = 0;
+    for (int i = 0; i < 10; i++) {
+        if (cleanedIsbn[i] == 'X'){
+            sum += 10;
+        } else if (!cleanedIsbn[i].isDigit) {
+            return false;
+        } else {
+            sum += (cast(int)cleanedIsbn[i] - '0') * (i + 1);
+        }
+    }
+    return sum % 11 == 0;
 }
 
 unittest
