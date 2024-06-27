@@ -1,15 +1,30 @@
 module largest_series_product;
+import std.algorithm : max;
+import std.algorithm.searching : canFind;
+import std.conv : to;
+import std.exception : enforce;
 
-pure ulong largestProduct(immutable string digits, int span)
-{
-    // implement this function
+pure ulong largestProduct(immutable string digits, int span) {
+    enforce(span >= 0, "Span must be non-negative");
+    enforce(span <= digits.length, "Span must be less than or equal to string length");
+    enforce(!digits.canFind!(a => a < '0' || a > '9'), "Digits must be numeric");
+
+    ulong maxProduct = 0;
+    for (size_t i = 0; i <= digits.length - span; ++i) {
+        ulong product = 1;
+        foreach (j; i .. i + span) {
+            product *= to!ulong(digits[j] - '0');
+        }
+        maxProduct = max(maxProduct, product);
+    }
+    return maxProduct;
 }
 
 unittest
 {
     import std.exception : assertThrown;
 
-    immutable int allTestsEnabled = 0;
+    immutable int allTestsEnabled = 1;
 
     // Finds the largest product if span equals length
     assert(largestProduct("29", 2) == 18);
