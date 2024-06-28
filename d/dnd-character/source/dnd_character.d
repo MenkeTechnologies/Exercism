@@ -1,21 +1,42 @@
 module dnd_character;
-
+import std.random;
+import std.algorithm;
+import std.range;
+import std.math;
+import std.conv;
 class DndCharacter
 {
+    public int strength;
+    public int dexterity;
+    public int constitution;
+    public int intelligence;
+    public int wisdom;
+    public int charisma;
+    public int hitpoints;
     this()
     {
-        // implement this function
+        strength = ability();
+        dexterity = ability();
+        constitution = ability();
+        intelligence = ability();
+        wisdom = ability();
+        charisma = ability();
+        hitpoints = 10 + modifier(constitution);
     }
 }
-
 int ability()
 {
-    // implement this function
+    int[] rolls = new int[4];
+    foreach (i; 0 .. 3)
+    {
+        rolls[i] = uniform(1, 7);
+    }
+    rolls.sort().popFront();
+    return rolls.sum();
 }
-
 pure int modifier(immutable int value)
 {
-    // implement this function
+    return to!int(floor((value - 10.0) / 2));
 }
 
 unittest
