@@ -1,5 +1,10 @@
 class EliudsEggs {
   static eggCount(number) {
-    Fiber.abort("Remove this statement and implement this function")
+    var count = 0
+    while (number > 0) {
+      count = count + (number & 1)
+      number = number >> 1
+    }
+    return count
   }
 }
