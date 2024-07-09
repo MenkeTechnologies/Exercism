@@ -1,17 +1,9 @@
 (ns bank-account)
 
-(defn open-account [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn open-account [] (atom  0))
 
-(defn close-account [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn close-account [acct] (reset! acct nil))
 
-(defn get-balance [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(def get-balance deref)
 
-(defn update-balance [] ;; <- arglist goes here
-  ;; your code goes here
-)
+(defn update-balance [acct amt]  (swap! acct (partial + amt)))
