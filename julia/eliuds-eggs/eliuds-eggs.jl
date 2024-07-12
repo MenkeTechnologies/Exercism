@@ -1,3 +1,1 @@
-function eggcount(number)
-
-end
+eggcount(number) = digits(number, base = 2) |> sum
