@@ -1,9 +1,15 @@
 class Strain {
-  static keep(list, predicate) {
-    Fiber.abort("Remove this statement and implement this function")
+  static keep(lst, f) {
+    var res = []
+    for (item in lst) {
+      if (f.call(item)) {
+        res.add(item)
+      }
+    }
+    return res
   }
-
-  static discard(list, predicate) {
-    Fiber.abort("Remove this statement and implement this function")
+  static discard(lst, f) {
+    return keep(lst) { |n| !f.call(n) }
   }
 }
+
