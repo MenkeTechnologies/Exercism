@@ -1,34 +1,45 @@
-use anyhow::Error;
-
-/// While using `&[&str]` to handle flags is convenient for exercise purposes,
-/// and resembles the output of [`std::env::args`], in real-world projects it is
-/// both more convenient and more idiomatic to contain runtime configuration in
-/// a dedicated struct. Therefore, we suggest that you do so in this exercise.
-///
-/// In the real world, it's common to use crates such as [`clap`] or
-/// [`structopt`] to handle argument parsing, and of course doing so is
-/// permitted in this exercise as well, though it may be somewhat overkill.
-///
-/// [`clap`]: https://crates.io/crates/clap
-/// [`std::env::args`]: https://doc.rust-lang.org/std/env/fn.args.html
-/// [`structopt`]: https://crates.io/crates/structopt
+use std::fs::File;
+use std::io::{Error, BufReader, BufRead};
 #[derive(Debug)]
-pub struct Flags;
-
+pub struct Flags {
+    n: bool,
+    l: bool,
+    i: bool,
+    v: bool,
+    x: bool,
+}
 impl Flags {
     pub fn new(flags: &[&str]) -> Self {
-        unimplemented!(
-            "Given the flags {:?} implement your own 'Flags' struct to handle flags-related logic",
-            flags
-        );
+        Self {
+            n: flags.contains(&"-n"),
+            l: flags.contains(&"-l"),
+            i: flags.contains(&"-i"),
+            v: flags.contains(&"-v"),
+            x: flags.contains(&"-x"),
+        }
     }
 }
-
 pub fn grep(pattern: &str, flags: &Flags, files: &[&str]) -> Result<Vec<String>, Error> {
-    unimplemented!(
-        "Search the files '{:?}' for '{}' pattern and save the matches in a vector. Your search logic should be aware of the given flags '{:?}'",
-        files,
-        pattern,
-        flags
-    );
+    let pattern = if flags.i { pattern.to_lowercase() } else { pattern.to_owned() };
+    let mut res = vec![];
+    for file in files {
+        let f = File::open(file)?;
+        let prefix = if files.len() > 1 { format!("{}:", file) } else { "".to_owned() };
+        for (i, line_res) in BufReader::new(f).lines().enumerate() {
+            let line = line_res.expect("could not read line");
+            let formatted_line = if flags.i { line.to_lowercase() } else { line.to_string() };
+            let found = if flags.x { formatted_line == pattern } else { formatted_line.contains(&pattern) };
+            let inverted_found = if flags.v { !found } else { found };
+            if inverted_found {
+                if flags.l {
+                    res.push(file.to_string());
+                    break;
+                } else {
+                    let prefix2 = if flags.n { format!("{}:", i + 1) } else { "".to_owned() };
+                    res.push(format!("{}{}{}", prefix, prefix2, line));
+                }
+            }
+        }
+    }
+    Ok(res)
 }
