@@ -1,1 +1,8 @@
-"Remove this line and implement your solution" | halt_error
+def flat:
+  if type == "array" then
+    .[] | flat
+  else
+    .
+  end;
+
+[ .array | flat | select(. != null) ]
