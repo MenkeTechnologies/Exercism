@@ -1,13 +1,4 @@
-;;; accumulate.el --- Accumulate (exercism)  -*- lexical-binding: t; -*-
-
-;;; Commentary:
-
-;;; Code:
-
-
-(defun accumulate (lst op)
-  (error "Delete this S-Expression and write your own implementation"))
-
+(defun accumulate (lst f)
+  (when lst (cons (funcall f (car lst)) (accumulate (cdr lst) f))))
 
 (provide 'accumulate)
-;;; accumulate.el ends here
