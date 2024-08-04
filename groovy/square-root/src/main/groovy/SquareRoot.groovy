@@ -1,7 +1,5 @@
 class SquareRoot {
-
     static Integer squareRoot(Integer radicand) {
-        throw new UnsupportedOperationException('squareRoot implementation is missing')
+        (1..radicand / 2).find { it * it == radicand }
     }
-
 }
