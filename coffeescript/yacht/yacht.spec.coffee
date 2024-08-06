@@ -5,114 +5,114 @@ describe 'Yacht', ->
     result = Yacht.score [5, 5, 5, 5, 5], 'yacht'
     expect(result).toEqual 50
 
-  xit 'Not Yacht', ->
+  it 'Not Yacht', ->
     result = Yacht.score [1, 3, 3, 2, 5], 'yacht'
     expect(result).toEqual 0
 
-  xit 'Ones', ->
+  it 'Ones', ->
     result = Yacht.score [1, 1, 1, 3, 5], 'ones'
     expect(result).toEqual 3
 
-  xit 'Ones, out of order', ->
+  it 'Ones, out of order', ->
     result = Yacht.score [3, 1, 1, 5, 1], 'ones'
     expect(result).toEqual 3
 
-  xit 'No ones', ->
+  it 'No ones', ->
     result = Yacht.score [4, 3, 6, 5, 5], 'ones'
     expect(result).toEqual 0
 
-  xit 'Twos', ->
+  it 'Twos', ->
     result = Yacht.score [2, 3, 4, 5, 6], 'twos'
     expect(result).toEqual 2
   
-  xit 'Fours', ->
+  it 'Fours', ->
     result = Yacht.score [1, 4, 1, 4, 1], 'fours'
     expect(result).toEqual 8
 
-  xit 'Yacht counted as threes', ->
+  it 'Yacht counted as threes', ->
     result = Yacht.score [3, 3, 3, 3, 3], 'threes'
     expect(result).toEqual 15
 
-  xit 'Yacht of threes counted as fives', ->
+  it 'Yacht of threes counted as fives', ->
     result = Yacht.score [3, 3, 3, 3, 3], 'fives'
     expect(result).toEqual 0
   
-  xit 'Fives', ->
+  it 'Fives', ->
     result = Yacht.score [1, 5, 3, 5, 3], 'fives'
     expect(result).toEqual 10
 
-  xit 'Sixes', ->
+  it 'Sixes', ->
     result = Yacht.score [2, 3, 4, 5, 6], 'sixes'
     expect(result).toEqual 6
 
-  xit 'Full house two small, three big', ->
+  it 'Full house two small, three big', ->
     result = Yacht.score [2, 2, 4, 4, 4], 'full house'
     expect(result).toEqual 16
 
-  xit 'Full house three small, two big', ->
+  it 'Full house three small, two big', ->
     result = Yacht.score [5, 3, 3, 5, 3], 'full house'
     expect(result).toEqual 19
   
-  xit 'Two pair is not a full house', ->
+  it 'Two pair is not a full house', ->
     result = Yacht.score [2, 2, 4, 4, 5], 'full house'
     expect(result).toEqual 0
 
-  xit 'Four of a kind is not a full house', ->
+  it 'Four of a kind is not a full house', ->
     result = Yacht.score [1, 4, 4, 4, 4], 'full house'
     expect(result).toEqual 0
 
-  xit 'Yacht is not a full house', ->
+  it 'Yacht is not a full house', ->
     result = Yacht.score [2, 2, 2, 2, 2], 'full house'
     expect(result).toEqual 0
   
-  xit 'Four of a Kind', ->
+  it 'Four of a Kind', ->
     result = Yacht.score [6, 6, 4, 6, 6], 'four of a kind'
     expect(result).toEqual 24
 
-  xit 'Yacht can be scored as Four of a Kind', ->
+  it 'Yacht can be scored as Four of a Kind', ->
     result = Yacht.score [3, 3, 3, 3, 3], 'four of a kind'
     expect(result).toEqual 12
 
-  xit 'Full house is not Four of a Kind', ->
+  it 'Full house is not Four of a Kind', ->
     result = Yacht.score [3, 3, 3, 5, 5], 'four of a kind'
     expect(result).toEqual 0
 
-  xit 'Little Straight', ->
+  it 'Little Straight', ->
     result = Yacht.score [3, 5, 4, 1, 2], 'little straight'
     expect(result).toEqual 30
 
-  xit 'Little Straight as Big Straight', ->
+  it 'Little Straight as Big Straight', ->
     result = Yacht.score [1, 2, 3, 4, 5], 'big straight'
     expect(result).toEqual 0
 
-  xit 'Four in order but not a little straight', ->
+  it 'Four in order but not a little straight', ->
     result = Yacht.score [1, 1, 2, 3, 4], 'little straight'
     expect(result).toEqual 0
 
-  xit 'No pairs but not a little straight', ->
+  it 'No pairs but not a little straight', ->
     result = Yacht.score [1, 2, 3, 4, 6], 'little straight'
     expect(result).toEqual 0
 
-  xit 'Minimum is 1, maximum is 5, but not a little straight', ->
+  it 'Minimum is 1, maximum is 5, but not a little straight', ->
     result = Yacht.score [1, 1, 3, 4, 5], 'little straight'
     expect(result).toEqual 0
   
-  xit 'Big Straight', ->
+  it 'Big Straight', ->
     result = Yacht.score [4, 6, 2, 5, 3], 'big straight'
     expect(result).toEqual 30
 
-  xit 'Big Straight as little straight', ->
+  it 'Big Straight as little straight', ->
     result = Yacht.score [6, 5, 4, 3, 2], 'little straight'
     expect(result).toEqual 0
 
-  xit 'No pairs but not a big straight', ->
+  it 'No pairs but not a big straight', ->
     result = Yacht.score [6, 5, 4, 3, 1], 'big straight'
     expect(result).toEqual 0
 
-  xit 'Choice', ->
+  it 'Choice', ->
     result = Yacht.score [3, 3, 5, 6, 6], 'choice'
     expect(result).toEqual 23
 
-  xit 'Yacht as choice', ->
+  it 'Yacht as choice', ->
     result = Yacht.score [2, 2, 2, 2, 2], 'choice'
     expect(result).toEqual 10

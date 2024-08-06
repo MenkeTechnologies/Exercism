@@ -5,11 +5,11 @@ describe 'Minesweeper', ->
     minefield = []
     expect(Minesweeper.annotate minefield).toEqual []
 
-  xit 'no columns', ->
+  it 'no columns', ->
     minefield = ['']
     expect(Minesweeper.annotate minefield).toEqual ['']
 
-  xit 'no mines', ->
+  it 'no mines', ->
     minefield = [
       '   '
       '   '
@@ -21,7 +21,7 @@ describe 'Minesweeper', ->
       '   '
     ]
 
-  xit 'minefield with only mines', ->
+  it 'minefield with only mines', ->
     minefield = [
       '***'
       '***'
@@ -33,7 +33,7 @@ describe 'Minesweeper', ->
       '***'
     ]
 
-  xit 'mine surrounded by spaces', ->
+  it 'mine surrounded by spaces', ->
     minefield = [
       '   '
       ' * '
@@ -45,7 +45,7 @@ describe 'Minesweeper', ->
       '111'
     ]
 
-  xit 'space surrounded by mines', ->
+  it 'space surrounded by mines', ->
     minefield = [
       '***'
       '* *'
@@ -57,15 +57,15 @@ describe 'Minesweeper', ->
       '***'
     ]
 
-  xit 'horizontal line', ->
+  it 'horizontal line', ->
     minefield = [' * * ']
     expect(Minesweeper.annotate minefield).toEqual ['1*2*1']
 
-  xit 'horizontal line, mines at edges', ->
+  it 'horizontal line, mines at edges', ->
     minefield = ['*   *']
     expect(Minesweeper.annotate minefield).toEqual ['*1 1*']
 
-  xit 'vertical line', ->
+  it 'vertical line', ->
     minefield = [
       ' '
       '*'
@@ -81,7 +81,7 @@ describe 'Minesweeper', ->
       '1'
     ]
 
-  xit 'vertical line, mines at edges', ->
+  it 'vertical line, mines at edges', ->
     minefield = [
       '*'
       ' '
@@ -97,7 +97,7 @@ describe 'Minesweeper', ->
       '*'
     ]
 
-  xit 'cross', ->
+  it 'cross', ->
     minefield = [
       '  *  '
       '  *  '
@@ -113,7 +113,7 @@ describe 'Minesweeper', ->
       ' 2*2 '
     ]
 
-  xit 'large minefield', ->
+  it 'large minefield', ->
     minefield = [
       ' *  * '
       '  *   '

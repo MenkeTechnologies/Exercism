@@ -4,16 +4,16 @@ describe "Sieve", ->
   it "No primes under two", ->
     expect(Sieve.primes(1)).toEqual []
 
-  xit "Find first prime", ->
+  it "Find first prime", ->
     expect(Sieve.primes(2)).toEqual [2]
 
-  xit "Find primes up to 10", ->
+  it "Find primes up to 10", ->
     expect(Sieve.primes(10)).toEqual [2, 3, 5, 7]
 
-  xit "Limit is prime", -> 
+  it "Limit is prime", -> 
     expect(Sieve.primes(13)).toEqual [2, 3, 5, 7, 11, 13]
   
-  xit "Find primes up to 1000", ->
+  it "Find primes up to 1000", ->
     expect(Sieve.primes(1000)).toEqual(
       [2,  3,   5,   7,   11,  13,  17,  19,  23,  29,  31,  37,  41,  43,
       47,  53,  59,  61,  67,  71,  73,  79,  83,  89,  97,  101, 103, 107,
