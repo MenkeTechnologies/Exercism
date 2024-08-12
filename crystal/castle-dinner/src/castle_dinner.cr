@@ -1,13 +1,13 @@
 class CastleDinner
   def self.check_food?(food)
-    raise "Please implement the CastleDinner.check_food? method"
+    food == "Mushroom pasties" ? food  : nil
   end
 
   def self.check_drink?(drink)
-    raise "Please implement the CastleDinner.check_drink? method"
+    drink =~ /i/i ? drink : nil
   end
 
   def self.replace_drink(drink)
-    raise "Please implement the CastleDinner.replace_drink method"
+    check_drink?(drink) ? drink : "Apple juice"
   end
 end
