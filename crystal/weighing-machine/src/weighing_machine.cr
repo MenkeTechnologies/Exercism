@@ -1,10 +1,12 @@
 class WeighingMachine
-  # Write your code here
+  getter precision : Int32
+  property weight : Float64 = 0.0
+  setter metric : Bool
 
-  # DO NOT MODIFY ANYTHING BELOW THIS LINE
-  def weigh : String
+  def initialize(@precision : Int32, @metric : Bool); end
+
+  def weigh
     weight = @metric ? @weight : @weight * 2.20462
-    weight = weight.round(@precision)
-    weight.to_s
+    weight.round(@precision).to_s
   end
 end
