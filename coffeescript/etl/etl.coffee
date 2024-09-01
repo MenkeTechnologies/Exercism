@@ -1,4 +1,7 @@
-class Etl
+module.exports = class
   @transform: (legacy) ->
-
-module.exports = Etl
+    res = {}
+    for score, letters of legacy
+      for c in letters
+        res[c.toLowerCase()] = +score
+    res
