@@ -5,15 +5,15 @@ describe "ETL", ->
     result = Etl.transform { 1: ['A'] }
     expect(result).toEqual { 'a': 1 }
 
-  xit 'single score with multiple letters', ->
+  it 'single score with multiple letters', ->
     result = Etl.transform { 1: ['A', 'E', 'I', 'O', 'U'] }
     expect(result).toEqual { 'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1 }
 
-  xit 'multiple scores with multiple letters', ->
+  it 'multiple scores with multiple letters', ->
     result = Etl.transform { 1: ['A', 'E'], 2: ['D', 'G'] }
     expect(result).toEqual { 'a': 1, 'd': 2, 'e': 1, 'g': 2 }
 
-  xit 'multiple scores with differing numbers of letters', ->
+  it 'multiple scores with differing numbers of letters', ->
     result = Etl.transform {
       1: ['A', 'E', 'I', 'O', 'U', 'L', 'N', 'R', 'S', 'T']
       2: ['D', 'G']
