@@ -1,4 +1,2 @@
-class Microblog
-  @truncate: (phrase) ->
-
-module.exports = Microblog
+module.exports = class
+  @truncate: (s) -> Array.from(s).slice(0, 5).join('')
