@@ -1,12 +1,32 @@
 enum TriangleType {
- // TODO: implement this enum
+    EQUILATERAL,
+    ISOSCELES,
+    SCALENE
 }
-
-# Determines the type of triangle based on the sides
-# 
-# + sides - The sides of the triangle
-# + t - The type of triangle
-# + return - Whether the sides form the triangle type
-function kind(float[]|int[] sides, TriangleType t) returns boolean {
-    // TODO: implement this function
+function kind(anydata[] sides, TriangleType t) returns boolean {
+    if !valid(sides) {
+        return false;
+    }
+    match t {
+        EQUILATERAL => {
+            return sides[0] == sides[1] && sides[1] == sides[2];
+        }
+        ISOSCELES => {
+            return sides[0] == sides[1] || sides[1] == sides[2] || sides[0] == sides[2];
+        }
+        SCALENE => {
+            return sides[0] != sides[1] && sides[1] != sides[2] && sides[0] != sides[2];
+        }
+    }
+    return false;
+}
+function valid(anydata[] sides) returns boolean {
+    if sides is float[] {
+        float[] sorted = sides.sort();
+        return sorted[0] > 0.0 && sorted[0] + sorted[1] > sorted[2];
+    } else if sides is int[]{
+        int[] sorted = sides.sort();
+        return sorted[0] > 0 && sorted[0] + sorted[1] > sorted[2];
+    }
+    return false;
 }
