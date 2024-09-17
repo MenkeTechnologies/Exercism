@@ -12,12 +12,12 @@ module TheFarm
         0
     end
   end
- 
+
   def self.validate_input_and_divide_food(food : FodderCalculator, number_of_cows : Int32)
     raise Exception.new("Number of cows must be greater than 0") if number_of_cows < 1
     divide_food(food, number_of_cows)
   end
- 
+
   def self.validate_number_of_cows(number_of_cows : Int32)
     raise InvalidCowsError.new(number_of_cows) if number_of_cows < 1
   end
