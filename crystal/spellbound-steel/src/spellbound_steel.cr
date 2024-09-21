@@ -1,17 +1,19 @@
 module SpellboundSteel
+  POWERS = {"Warrior": 10, "Mage": 20, "Rogue": 30, "Fireball": 15, "Ice Storm": 25, "Lightning Bolt": 35}
+
   def self.find_card?(cards, card)
-    raise "Please implement the SpellboundSteel.find_card? method"
+    cards.index(card)
   end
 
   def self.capitalize_names(characters)
-    raise "Please implement the SpellboundSteel.capitalize_names method"
+    characters.map &.split.map(&.capitalize).join " "
   end
 
   def self.calculate_power_level(cards)
-    raise "Please implement the SpellboundSteel.calculate_power_level method"
+    cards.sum { |c| POWERS[c] }
   end
 
   def self.decode_characters(character)
-    raise "Please implement the SpellboundSteel.decode_characters method"
+      character.chars.each_slice(2).join &.first
   end
 end
