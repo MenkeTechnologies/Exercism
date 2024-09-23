@@ -1,17 +1,20 @@
 module KitchenCalculator
-  def self.get_volume(volume_pair)
-    raise "Please implement the KitchenCalculator.get_volume method"
-  end
+  MILLILITERS = {milliliter: 1, cup: 240, fluid_ounce: 30, teaspoon: 5, tablespoon: 15}
 
+  def self.get_volume(volume_pair)
+    _, volume = volume_pair
+    volume
+  end
   def self.to_milliliter(volume_pair)
-    raise "Please implement the KitchenCalculator.to_milliliter method"
+    unit, _ = volume_pair
+    {:milliliter, get_volume(volume_pair) * MILLILITERS[unit] }
   end
 
   def self.from_milliliter(volume_pair, unit)
-    raise "Please implement the KitchenCalculator.from_milliliter method"
+    { unit, get_volume(volume_pair) / MILLILITERS[unit] }
   end
 
   def self.convert(volume_pair, unit)
-    raise "Please implement the KitchenCalculator.convert method"
+    from_milliliter(to_milliliter(volume_pair), unit)
   end
 end
