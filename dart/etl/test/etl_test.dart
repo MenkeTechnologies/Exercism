@@ -21,7 +21,7 @@ void main() {
       final result = etl.transform(legacy);
       final expected = {"a": 1, "e": 1, "i": 1, "o": 1, "u": 1};
       expect(result, equals(expected));
-    }, skip: true);
+    }, skip: false);
 
     test('Single score with multiple letters', () {
       final legacy = {
@@ -30,7 +30,7 @@ void main() {
       final result = etl.transform(legacy);
       final expected = {"a": 1, "e": 1, "i": 1, "o": 1, "u": 1};
       expect(result, equals(expected));
-    }, skip: true);
+    }, skip: false);
 
     test('Multiple scores with multiple letters', () {
       final legacy = {
@@ -40,7 +40,7 @@ void main() {
       final result = etl.transform(legacy);
       final expected = {"a": 1, "d": 2, "e": 1, "g": 2};
       expect(result, equals(expected));
-    }, skip: true);
+    }, skip: false);
 
     test('Multiple scores with differing numbers of letter', () {
       final legacy = {
@@ -82,6 +82,6 @@ void main() {
         "z": 10
       };
       expect(result, equals(expected));
-    }, skip: true);
+    }, skip: false);
   });
 }
