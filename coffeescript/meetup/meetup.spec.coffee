@@ -19,7 +19,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 5 - 1, 13
     expect(meetup input).toEqual expected
 
-  xit "when teenth Monday is the 19th, the last day of the teenth week", ->
+  it "when teenth Monday is the 19th, the last day of the teenth week", ->
     input = {
       year: 2013,
       month: 8,
@@ -29,7 +29,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 8 - 1, 19
     expect(meetup input).toEqual expected
 
-  xit "when teenth Monday is some day in the middle of the teenth week", ->
+  it "when teenth Monday is some day in the middle of the teenth week", ->
     input = {
       year: 2013,
       month: 9,
@@ -39,7 +39,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 9 - 1, 16
     expect(meetup input).toEqual expected
 
-  xit "when teenth Tuesday is the 19th, the last day of the teenth week", ->
+  it "when teenth Tuesday is the 19th, the last day of the teenth week", ->
     input = {
       year: 2013,
       month: 3,
@@ -49,7 +49,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 19
     expect(meetup input).toEqual expected
 
-  xit "when teenth Tuesday is some day in the middle of the teenth week", ->
+  it "when teenth Tuesday is some day in the middle of the teenth week", ->
     input = {
       year: 2013,
       month: 4,
@@ -59,7 +59,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 16
     expect(meetup input).toEqual expected
 
-  xit "when teenth Tuesday is the 13th, the first day of the teenth week", ->
+  it "when teenth Tuesday is the 13th, the first day of the teenth week", ->
     input = {
       year: 2013,
       month: 8,
@@ -69,7 +69,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 8 - 1, 13
     expect(meetup input).toEqual expected
 
-  xit "when teenth Wednesday is some day in the middle of the teenth week", ->
+  it "when teenth Wednesday is some day in the middle of the teenth week", ->
     input = {
       year: 2013,
       month: 1,
@@ -79,7 +79,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 1 - 1, 16
     expect(meetup input).toEqual expected
 
-  xit "when teenth Wednesday is the 13th, the first day of the teenth week", ->
+  it "when teenth Wednesday is the 13th, the first day of the teenth week", ->
     input = {
       year: 2013,
       month: 2,
@@ -89,7 +89,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 2 - 1, 13
     expect(meetup input).toEqual expected
 
-  xit "when teenth Wednesday is the 19th, the last day of the teenth week", ->
+  it "when teenth Wednesday is the 19th, the last day of the teenth week", ->
     input = {
       year: 2013,
       month: 6,
@@ -99,7 +99,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 6 - 1, 19
     expect(meetup input).toEqual expected
 
-  xit "when teenth Thursday is some day in the middle of the teenth week", ->
+  it "when teenth Thursday is some day in the middle of the teenth week", ->
     input = {
       year: 2013,
       month: 5,
@@ -109,7 +109,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 5 - 1, 16
     expect(meetup input).toEqual expected
 
-  xit "when teenth Thursday is the 13th, the first day of the teenth week", ->
+  it "when teenth Thursday is the 13th, the first day of the teenth week", ->
     input = {
       year: 2013,
       month: 6,
@@ -119,7 +119,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 6 - 1, 13
     expect(meetup input).toEqual expected
 
-  xit "when teenth Thursday is the 19th, the last day of the teenth week", ->
+  it "when teenth Thursday is the 19th, the last day of the teenth week", ->
     input = {
       year: 2013,
       month: 9,
@@ -129,7 +129,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 9 - 1, 19
     expect(meetup input).toEqual expected
 
-  xit "when teenth Friday is the 19th, the last day of the teenth week", ->
+  it "when teenth Friday is the 19th, the last day of the teenth week", ->
     input = {
       year: 2013,
       month: 4,
@@ -139,7 +139,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 19
     expect(meetup input).toEqual expected
 
-  xit "when teenth Friday is some day in the middle of the teenth week", ->
+  it "when teenth Friday is some day in the middle of the teenth week", ->
     input = {
       year: 2013,
       month: 8,
@@ -149,7 +149,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 8 - 1, 16
     expect(meetup input).toEqual expected
 
-  xit "when teenth Friday is the 13th, the first day of the teenth week", ->
+  it "when teenth Friday is the 13th, the first day of the teenth week", ->
     input = {
       year: 2013,
       month: 9,
@@ -159,7 +159,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 9 - 1, 13
     expect(meetup input).toEqual expected
 
-  xit "when teenth Saturday is some day in the middle of the teenth week", ->
+  it "when teenth Saturday is some day in the middle of the teenth week", ->
     input = {
       year: 2013,
       month: 2,
@@ -169,7 +169,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 2 - 1, 16
     expect(meetup input).toEqual expected
 
-  xit "when teenth Saturday is the 13th, the first day of the teenth week", ->
+  it "when teenth Saturday is the 13th, the first day of the teenth week", ->
     input = {
       year: 2013,
       month: 4,
@@ -179,7 +179,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 13
     expect(meetup input).toEqual expected
 
-  xit "when teenth Saturday is the 19th, the last day of the teenth week", ->
+  it "when teenth Saturday is the 19th, the last day of the teenth week", ->
     input = {
       year: 2013,
       month: 10,
@@ -189,7 +189,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 10 - 1, 19
     expect(meetup input).toEqual expected
 
-  xit "when teenth Sunday is the 19th, the last day of the teenth week", ->
+  it "when teenth Sunday is the 19th, the last day of the teenth week", ->
     input = {
       year: 2013,
       month: 5,
@@ -199,7 +199,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 5 - 1, 19
     expect(meetup input).toEqual expected
 
-  xit "when teenth Sunday is some day in the middle of the teenth week", ->
+  it "when teenth Sunday is some day in the middle of the teenth week", ->
     input = {
       year: 2013,
       month: 6,
@@ -209,7 +209,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 6 - 1, 16
     expect(meetup input).toEqual expected
 
-  xit "when teenth Sunday is the 13th, the first day of the teenth week", ->
+  it "when teenth Sunday is the 13th, the first day of the teenth week", ->
     input = {
       year: 2013,
       month: 10,
@@ -219,7 +219,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 10 - 1, 13
     expect(meetup input).toEqual expected
 
-  xit "when first Monday is some day in the middle of the first week", ->
+  it "when first Monday is some day in the middle of the first week", ->
     input = {
       year: 2013,
       month: 3,
@@ -229,7 +229,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 4
     expect(meetup input).toEqual expected
 
-  xit "when first Monday is the 1st, the first day of the first week", ->
+  it "when first Monday is the 1st, the first day of the first week", ->
     input = {
       year: 2013,
       month: 4,
@@ -239,7 +239,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 1
     expect(meetup input).toEqual expected
 
-  xit "when first Tuesday is the 7th, the last day of the first week", ->
+  it "when first Tuesday is the 7th, the last day of the first week", ->
     input = {
       year: 2013,
       month: 5,
@@ -249,7 +249,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 5 - 1, 7
     expect(meetup input).toEqual expected
 
-  xit "when first Tuesday is some day in the middle of the first week", ->
+  it "when first Tuesday is some day in the middle of the first week", ->
     input = {
       year: 2013,
       month: 6,
@@ -259,7 +259,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 6 - 1, 4
     expect(meetup input).toEqual expected
 
-  xit "when first Wednesday is some day in the middle of the first week", ->
+  it "when first Wednesday is some day in the middle of the first week", ->
     input = {
       year: 2013,
       month: 7,
@@ -269,7 +269,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 7 - 1, 3
     expect(meetup input).toEqual expected
 
-  xit "when first Wednesday is the 7th, the last day of the first week", ->
+  it "when first Wednesday is the 7th, the last day of the first week", ->
     input = {
       year: 2013,
       month: 8,
@@ -279,7 +279,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 8 - 1, 7
     expect(meetup input).toEqual expected
 
-  xit "when first Thursday is some day in the middle of the first week", ->
+  it "when first Thursday is some day in the middle of the first week", ->
     input = {
       year: 2013,
       month: 9,
@@ -289,7 +289,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 9 - 1, 5
     expect(meetup input).toEqual expected
 
-  xit "when first Thursday is another day in the middle of the first week", ->
+  it "when first Thursday is another day in the middle of the first week", ->
     input = {
       year: 2013,
       month: 10,
@@ -299,7 +299,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 10 - 1, 3
     expect(meetup input).toEqual expected
 
-  xit "when first Friday is the 1st, the first day of the first week", ->
+  it "when first Friday is the 1st, the first day of the first week", ->
     input = {
       year: 2013,
       month: 11,
@@ -309,7 +309,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 11 - 1, 1
     expect(meetup input).toEqual expected
 
-  xit "when first Friday is some day in the middle of the first week", ->
+  it "when first Friday is some day in the middle of the first week", ->
     input = {
       year: 2013,
       month: 12,
@@ -319,7 +319,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 12 - 1, 6
     expect(meetup input).toEqual expected
 
-  xit "when first Saturday is some day in the middle of the first week", ->
+  it "when first Saturday is some day in the middle of the first week", ->
     input = {
       year: 2013,
       month: 1,
@@ -329,7 +329,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 1 - 1, 5
     expect(meetup input).toEqual expected
 
-  xit "when first Saturday is another day in the middle of the first week", ->
+  it "when first Saturday is another day in the middle of the first week", ->
     input = {
       year: 2013,
       month: 2,
@@ -339,7 +339,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 2 - 1, 2
     expect(meetup input).toEqual expected
 
-  xit "when first Sunday is some day in the middle of the first week", ->
+  it "when first Sunday is some day in the middle of the first week", ->
     input = {
       year: 2013,
       month: 3,
@@ -349,7 +349,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 3
     expect(meetup input).toEqual expected
 
-  xit "when first Sunday is the 7th, the last day of the first week", ->
+  it "when first Sunday is the 7th, the last day of the first week", ->
     input = {
       year: 2013,
       month: 4,
@@ -359,7 +359,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 7
     expect(meetup input).toEqual expected
 
-  xit "when second Monday is some day in the middle of the second week", ->
+  it "when second Monday is some day in the middle of the second week", ->
     input = {
       year: 2013,
       month: 3,
@@ -369,7 +369,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 11
     expect(meetup input).toEqual expected
 
-  xit "when second Monday is the 8th, the first day of the second week", ->
+  it "when second Monday is the 8th, the first day of the second week", ->
     input = {
       year: 2013,
       month: 4,
@@ -379,7 +379,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 8
     expect(meetup input).toEqual expected
 
-  xit "when second Tuesday is the 14th, the last day of the second week", ->
+  it "when second Tuesday is the 14th, the last day of the second week", ->
     input = {
       year: 2013,
       month: 5,
@@ -389,7 +389,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 5 - 1, 14
     expect(meetup input).toEqual expected
 
-  xit "when second Tuesday is some day in the middle of the second week", ->
+  it "when second Tuesday is some day in the middle of the second week", ->
     input = {
       year: 2013,
       month: 6,
@@ -399,7 +399,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 6 - 1, 11
     expect(meetup input).toEqual expected
 
-  xit "when second Wednesday is some day in the middle of the second week", ->
+  it "when second Wednesday is some day in the middle of the second week", ->
     input = {
       year: 2013,
       month: 7,
@@ -409,7 +409,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 7 - 1, 10
     expect(meetup input).toEqual expected
 
-  xit "when second Wednesday is the 14th, the last day of the second week", ->
+  it "when second Wednesday is the 14th, the last day of the second week", ->
     input = {
       year: 2013,
       month: 8,
@@ -419,7 +419,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 8 - 1, 14
     expect(meetup input).toEqual expected
 
-  xit "when second Thursday is some day in the middle of the second week", ->
+  it "when second Thursday is some day in the middle of the second week", ->
     input = {
       year: 2013,
       month: 9,
@@ -429,7 +429,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 9 - 1, 12
     expect(meetup input).toEqual expected
 
-  xit "when second Thursday is another day in the middle of the second week", ->
+  it "when second Thursday is another day in the middle of the second week", ->
     input = {
       year: 2013,
       month: 10,
@@ -439,7 +439,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 10 - 1, 10
     expect(meetup input).toEqual expected
 
-  xit "when second Friday is the 8th, the first day of the second week", ->
+  it "when second Friday is the 8th, the first day of the second week", ->
     input = {
       year: 2013,
       month: 11,
@@ -449,7 +449,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 11 - 1, 8
     expect(meetup input).toEqual expected
 
-  xit "when second Friday is some day in the middle of the second week", ->
+  it "when second Friday is some day in the middle of the second week", ->
     input = {
       year: 2013,
       month: 12,
@@ -459,7 +459,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 12 - 1, 13
     expect(meetup input).toEqual expected
 
-  xit "when second Saturday is some day in the middle of the second week", ->
+  it "when second Saturday is some day in the middle of the second week", ->
     input = {
       year: 2013,
       month: 1,
@@ -469,7 +469,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 1 - 1, 12
     expect(meetup input).toEqual expected
 
-  xit "when second Saturday is another day in the middle of the second week", ->
+  it "when second Saturday is another day in the middle of the second week", ->
     input = {
       year: 2013,
       month: 2,
@@ -479,7 +479,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 2 - 1, 9
     expect(meetup input).toEqual expected
 
-  xit "when second Sunday is some day in the middle of the second week", ->
+  it "when second Sunday is some day in the middle of the second week", ->
     input = {
       year: 2013,
       month: 3,
@@ -489,7 +489,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 10
     expect(meetup input).toEqual expected
 
-  xit "when second Sunday is the 14th, the last day of the second week", ->
+  it "when second Sunday is the 14th, the last day of the second week", ->
     input = {
       year: 2013,
       month: 4,
@@ -499,7 +499,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 14
     expect(meetup input).toEqual expected
 
-  xit "when third Monday is some day in the middle of the third week", ->
+  it "when third Monday is some day in the middle of the third week", ->
     input = {
       year: 2013,
       month: 3,
@@ -509,7 +509,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 18
     expect(meetup input).toEqual expected
 
-  xit "when third Monday is the 15th, the first day of the third week", ->
+  it "when third Monday is the 15th, the first day of the third week", ->
     input = {
       year: 2013,
       month: 4,
@@ -519,7 +519,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 15
     expect(meetup input).toEqual expected
 
-  xit "when third Tuesday is the 21st, the last day of the third week", ->
+  it "when third Tuesday is the 21st, the last day of the third week", ->
     input = {
       year: 2013,
       month: 5,
@@ -529,7 +529,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 5 - 1, 21
     expect(meetup input).toEqual expected
 
-  xit "when third Tuesday is some day in the middle of the third week", ->
+  it "when third Tuesday is some day in the middle of the third week", ->
     input = {
       year: 2013,
       month: 6,
@@ -539,7 +539,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 6 - 1, 18
     expect(meetup input).toEqual expected
 
-  xit "when third Wednesday is some day in the middle of the third week", ->
+  it "when third Wednesday is some day in the middle of the third week", ->
     input = {
       year: 2013,
       month: 7,
@@ -549,7 +549,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 7 - 1, 17
     expect(meetup input).toEqual expected
 
-  xit "when third Wednesday is the 21st, the last day of the third week", ->
+  it "when third Wednesday is the 21st, the last day of the third week", ->
     input = {
       year: 2013,
       month: 8,
@@ -559,7 +559,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 8 - 1, 21
     expect(meetup input).toEqual expected
 
-  xit "when third Thursday is some day in the middle of the third week", ->
+  it "when third Thursday is some day in the middle of the third week", ->
     input = {
       year: 2013,
       month: 9,
@@ -569,7 +569,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 9 - 1, 19
     expect(meetup input).toEqual expected
 
-  xit "when third Thursday is another day in the middle of the third week", ->
+  it "when third Thursday is another day in the middle of the third week", ->
     input = {
       year: 2013,
       month: 10,
@@ -579,7 +579,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 10 - 1, 17
     expect(meetup input).toEqual expected
 
-  xit "when third Friday is the 15th, the first day of the third week", ->
+  it "when third Friday is the 15th, the first day of the third week", ->
     input = {
       year: 2013,
       month: 11,
@@ -589,7 +589,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 11 - 1, 15
     expect(meetup input).toEqual expected
 
-  xit "when third Friday is some day in the middle of the third week", ->
+  it "when third Friday is some day in the middle of the third week", ->
     input = {
       year: 2013,
       month: 12,
@@ -599,7 +599,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 12 - 1, 20
     expect(meetup input).toEqual expected
 
-  xit "when third Saturday is some day in the middle of the third week", ->
+  it "when third Saturday is some day in the middle of the third week", ->
     input = {
       year: 2013,
       month: 1,
@@ -609,7 +609,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 1 - 1, 19
     expect(meetup input).toEqual expected
 
-  xit "when third Saturday is another day in the middle of the third week", ->
+  it "when third Saturday is another day in the middle of the third week", ->
     input = {
       year: 2013,
       month: 2,
@@ -619,7 +619,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 2 - 1, 16
     expect(meetup input).toEqual expected
 
-  xit "when third Sunday is some day in the middle of the third week", ->
+  it "when third Sunday is some day in the middle of the third week", ->
     input = {
       year: 2013,
       month: 3,
@@ -629,7 +629,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 17
     expect(meetup input).toEqual expected
 
-  xit "when third Sunday is the 21st, the last day of the third week", ->
+  it "when third Sunday is the 21st, the last day of the third week", ->
     input = {
       year: 2013,
       month: 4,
@@ -639,7 +639,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 21
     expect(meetup input).toEqual expected
 
-  xit "when fourth Monday is some day in the middle of the fourth week", ->
+  it "when fourth Monday is some day in the middle of the fourth week", ->
     input = {
       year: 2013,
       month: 3,
@@ -649,7 +649,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 25
     expect(meetup input).toEqual expected
 
-  xit "when fourth Monday is the 22nd, the first day of the fourth week", ->
+  it "when fourth Monday is the 22nd, the first day of the fourth week", ->
     input = {
       year: 2013,
       month: 4,
@@ -659,7 +659,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 22
     expect(meetup input).toEqual expected
 
-  xit "when fourth Tuesday is the 28th, the last day of the fourth week", ->
+  it "when fourth Tuesday is the 28th, the last day of the fourth week", ->
     input = {
       year: 2013,
       month: 5,
@@ -669,7 +669,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 5 - 1, 28
     expect(meetup input).toEqual expected
 
-  xit "when fourth Tuesday is some day in the middle of the fourth week", ->
+  it "when fourth Tuesday is some day in the middle of the fourth week", ->
     input = {
       year: 2013,
       month: 6,
@@ -679,7 +679,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 6 - 1, 25
     expect(meetup input).toEqual expected
 
-  xit "when fourth Wednesday is some day in the middle of the fourth week", ->
+  it "when fourth Wednesday is some day in the middle of the fourth week", ->
     input = {
       year: 2013,
       month: 7,
@@ -689,7 +689,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 7 - 1, 24
     expect(meetup input).toEqual expected
 
-  xit "when fourth Wednesday is the 28th, the last day of the fourth week", ->
+  it "when fourth Wednesday is the 28th, the last day of the fourth week", ->
     input = {
       year: 2013,
       month: 8,
@@ -699,7 +699,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 8 - 1, 28
     expect(meetup input).toEqual expected
 
-  xit "when fourth Thursday is some day in the middle of the fourth week", ->
+  it "when fourth Thursday is some day in the middle of the fourth week", ->
     input = {
       year: 2013,
       month: 9,
@@ -709,7 +709,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 9 - 1, 26
     expect(meetup input).toEqual expected
 
-  xit "when fourth Thursday is another day in the middle of the fourth week", ->
+  it "when fourth Thursday is another day in the middle of the fourth week", ->
     input = {
       year: 2013,
       month: 10,
@@ -719,7 +719,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 10 - 1, 24
     expect(meetup input).toEqual expected
 
-  xit "when fourth Friday is the 22nd, the first day of the fourth week", ->
+  it "when fourth Friday is the 22nd, the first day of the fourth week", ->
     input = {
       year: 2013,
       month: 11,
@@ -729,7 +729,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 11 - 1, 22
     expect(meetup input).toEqual expected
 
-  xit "when fourth Friday is some day in the middle of the fourth week", ->
+  it "when fourth Friday is some day in the middle of the fourth week", ->
     input = {
       year: 2013,
       month: 12,
@@ -739,7 +739,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 12 - 1, 27
     expect(meetup input).toEqual expected
 
-  xit "when fourth Saturday is some day in the middle of the fourth week", ->
+  it "when fourth Saturday is some day in the middle of the fourth week", ->
     input = {
       year: 2013,
       month: 1,
@@ -749,7 +749,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 1 - 1, 26
     expect(meetup input).toEqual expected
 
-  xit "when fourth Saturday is another day in the middle of the fourth week", ->
+  it "when fourth Saturday is another day in the middle of the fourth week", ->
     input = {
       year: 2013,
       month: 2,
@@ -759,7 +759,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 2 - 1, 23
     expect(meetup input).toEqual expected
 
-  xit "when fourth Sunday is some day in the middle of the fourth week", ->
+  it "when fourth Sunday is some day in the middle of the fourth week", ->
     input = {
       year: 2013,
       month: 3,
@@ -769,7 +769,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 24
     expect(meetup input).toEqual expected
 
-  xit "when fourth Sunday is the 28th, the last day of the fourth week", ->
+  it "when fourth Sunday is the 28th, the last day of the fourth week", ->
     input = {
       year: 2013,
       month: 4,
@@ -779,7 +779,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 28
     expect(meetup input).toEqual expected
 
-  xit "last Monday in a month with four Mondays", ->
+  it "last Monday in a month with four Mondays", ->
     input = {
       year: 2013,
       month: 3,
@@ -789,7 +789,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 25
     expect(meetup input).toEqual expected
 
-  xit "last Monday in a month with five Mondays", ->
+  it "last Monday in a month with five Mondays", ->
     input = {
       year: 2013,
       month: 4,
@@ -799,7 +799,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 29
     expect(meetup input).toEqual expected
 
-  xit "last Tuesday in a month with four Tuesdays", ->
+  it "last Tuesday in a month with four Tuesdays", ->
     input = {
       year: 2013,
       month: 5,
@@ -809,7 +809,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 5 - 1, 28
     expect(meetup input).toEqual expected
 
-  xit "last Tuesday in another month with four Tuesdays", ->
+  it "last Tuesday in another month with four Tuesdays", ->
     input = {
       year: 2013,
       month: 6,
@@ -819,7 +819,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 6 - 1, 25
     expect(meetup input).toEqual expected
 
-  xit "last Wednesday in a month with five Wednesdays", ->
+  it "last Wednesday in a month with five Wednesdays", ->
     input = {
       year: 2013,
       month: 7,
@@ -829,7 +829,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 7 - 1, 31
     expect(meetup input).toEqual expected
 
-  xit "last Wednesday in a month with four Wednesdays", ->
+  it "last Wednesday in a month with four Wednesdays", ->
     input = {
       year: 2013,
       month: 8,
@@ -839,7 +839,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 8 - 1, 28
     expect(meetup input).toEqual expected
 
-  xit "last Thursday in a month with four Thursdays", ->
+  it "last Thursday in a month with four Thursdays", ->
     input = {
       year: 2013,
       month: 9,
@@ -849,7 +849,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 9 - 1, 26
     expect(meetup input).toEqual expected
 
-  xit "last Thursday in a month with five Thursdays", ->
+  it "last Thursday in a month with five Thursdays", ->
     input = {
       year: 2013,
       month: 10,
@@ -859,7 +859,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 10 - 1, 31
     expect(meetup input).toEqual expected
 
-  xit "last Friday in a month with five Fridays", ->
+  it "last Friday in a month with five Fridays", ->
     input = {
       year: 2013,
       month: 11,
@@ -869,7 +869,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 11 - 1, 29
     expect(meetup input).toEqual expected
 
-  xit "last Friday in a month with four Fridays", ->
+  it "last Friday in a month with four Fridays", ->
     input = {
       year: 2013,
       month: 12,
@@ -879,7 +879,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 12 - 1, 27
     expect(meetup input).toEqual expected
 
-  xit "last Saturday in a month with four Saturdays", ->
+  it "last Saturday in a month with four Saturdays", ->
     input = {
       year: 2013,
       month: 1,
@@ -889,7 +889,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 1 - 1, 26
     expect(meetup input).toEqual expected
 
-  xit "last Saturday in another month with four Saturdays", ->
+  it "last Saturday in another month with four Saturdays", ->
     input = {
       year: 2013,
       month: 2,
@@ -899,7 +899,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 2 - 1, 23
     expect(meetup input).toEqual expected
 
-  xit "last Sunday in a month with five Sundays", ->
+  it "last Sunday in a month with five Sundays", ->
     input = {
       year: 2013,
       month: 3,
@@ -909,7 +909,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 3 - 1, 31
     expect(meetup input).toEqual expected
 
-  xit "last Sunday in a month with four Sundays", ->
+  it "last Sunday in a month with four Sundays", ->
     input = {
       year: 2013,
       month: 4,
@@ -919,7 +919,7 @@ describe 'Meetup', ->
     expected = new Date 2013, 4 - 1, 28
     expect(meetup input).toEqual expected
 
-  xit "when last Wednesday in February in a leap year is the 29th", ->
+  it "when last Wednesday in February in a leap year is the 29th", ->
     input = {
       year: 2012,
       month: 2,
@@ -929,7 +929,7 @@ describe 'Meetup', ->
     expected = new Date 2012, 2 - 1, 29
     expect(meetup input).toEqual expected
 
-  xit "last Wednesday in December that is also the last day of the year", ->
+  it "last Wednesday in December that is also the last day of the year", ->
     input = {
       year: 2014,
       month: 12,
@@ -939,7 +939,7 @@ describe 'Meetup', ->
     expected = new Date 2014, 12 - 1, 31
     expect(meetup input).toEqual expected
 
-  xit "when last Sunday in February in a non-leap year is not the 29th", ->
+  it "when last Sunday in February in a non-leap year is not the 29th", ->
     input = {
       year: 2015,
       month: 2,
@@ -949,7 +949,7 @@ describe 'Meetup', ->
     expected = new Date 2015, 2 - 1, 22
     expect(meetup input).toEqual expected
 
-  xit "when first Friday is the 7th, the last day of the first week", ->
+  it "when first Friday is the 7th, the last day of the first week", ->
     input = {
       year: 2012,
       month: 12,

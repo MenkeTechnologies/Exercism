@@ -1,14 +1,27 @@
-class BankAccount
-  constructor: (args) ->
+module.exports = class
+  constructor: ->
+    @_open = false
 
-  open: () ->
+  open: ->
+    throw Error 'account already open' if @_open
+    @_open = true
+    @_balance = 0
 
-  close: () ->
+  close: ->
+    throw Error 'account not open' if !@_open
+    @_open = false
 
-  balance: () ->
+  balance: ->
+    throw Error 'account not open' if !@_open
+    @_balance
 
-  deposit: (args) ->
+  deposit: (amt) ->
+    throw Error 'account not open' if !@_open
+    throw Error 'amount must be greater than 0' if amt < 1
+    @_balance += amt
 
-  withdraw: (args) ->
-
-module.exports = BankAccount
+  withdraw: (amt) ->
+    throw Error 'account not open' if !@_open
+    throw Error 'amount must be less than balance' if amt > @_balance
+    throw Error 'amount must be greater than 0' if amt < 1
+    @_balance -= amt

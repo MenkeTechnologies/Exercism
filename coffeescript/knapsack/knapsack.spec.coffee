@@ -8,14 +8,14 @@ describe 'Knapsack', ->
     }
     expect(Knapsack.maximumValue input).toEqual 0
 
-  xit 'one item, too heavy', ->
+  it 'one item, too heavy', ->
     input = {
       maximumWeight: 10,
       items: [{ weight: 100, value: 1 }]
     }
     expect(Knapsack.maximumValue input).toEqual 0
 
-  xit 'five items (cannot be greedy by weight)', ->
+  it 'five items (cannot be greedy by weight)', ->
     input = {
       maximumWeight: 10,
       items: [
@@ -28,7 +28,7 @@ describe 'Knapsack', ->
     }
     expect(Knapsack.maximumValue input).toEqual 21
 
-  xit 'five items (cannot be greedy by value)', ->
+  it 'five items (cannot be greedy by value)', ->
     input = {
       maximumWeight: 10,
       items: [
@@ -41,7 +41,7 @@ describe 'Knapsack', ->
     }
     expect(Knapsack.maximumValue input).toEqual 80
 
-  xit 'example knapsack', ->
+  it 'example knapsack', ->
     input = {
       maximumWeight: 10,
       items: [
@@ -53,7 +53,7 @@ describe 'Knapsack', ->
     }
     expect(Knapsack.maximumValue input).toEqual 90
 
-  xit '8 items', ->
+  it '8 items', ->
     input = {
       maximumWeight: 104,
       items: [
@@ -69,7 +69,7 @@ describe 'Knapsack', ->
     }
     expect(Knapsack.maximumValue input).toEqual 900
 
-  xit '15 items', ->
+  it '15 items', ->
     input = {
       maximumWeight: 750,
       items: [
