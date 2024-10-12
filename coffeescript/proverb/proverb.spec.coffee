@@ -6,12 +6,12 @@ describe 'Proverb', ->
     expected = ''
     expect(Proverb.recite items).toEqual expected
 
-  xit 'one piece', ->
+  it 'one piece', ->
     items = ['nail']
     expected = 'And all for the want of a nail.'
     expect(Proverb.recite items).toEqual expected
 
-  xit 'two pieces', ->
+  it 'two pieces', ->
     items = ['nail', 'shoe']
     expected = """
       For want of a nail the shoe was lost.
@@ -19,7 +19,7 @@ describe 'Proverb', ->
     """
     expect(Proverb.recite items).toEqual expected
 
-  xit 'three pieces', ->
+  it 'three pieces', ->
     items = ['nail', 'shoe', 'horse']
     expected = """
       For want of a nail the shoe was lost.
@@ -28,7 +28,7 @@ describe 'Proverb', ->
     """
     expect(Proverb.recite items).toEqual expected
 
-  xit 'full proverb', ->
+  it 'full proverb', ->
     items = [
       'nail'
       'shoe'
@@ -49,7 +49,7 @@ describe 'Proverb', ->
     """
     expect(Proverb.recite items).toEqual expected
 
-  xit 'four pieces modernized', ->
+  it 'four pieces modernized', ->
     items = ['pin', 'gun', 'soldier', 'battle']
     expected = """
       For want of a pin the gun was lost.
