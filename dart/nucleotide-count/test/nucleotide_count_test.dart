@@ -17,25 +17,25 @@ void main() {
       final result = counter.count(strand);
       final expected = {"A": 0, "C": 0, "G": 1, "T": 0};
       expect(result, equals(expected));
-    }, skip: true);
+    }, skip: false);
 
     test('Strand with repeated nucleotide', () {
       final strand = "GGGGGGG";
       final result = counter.count(strand);
       final expected = {"A": 0, "C": 0, "G": 7, "T": 0};
       expect(result, equals(expected));
-    }, skip: true);
+    }, skip: false);
 
     test('Strand with multiple nucleotides', () {
       final strand = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
       final result = counter.count(strand);
       final expected = {"A": 20, "C": 12, "G": 17, "T": 21};
       expect(result, equals(expected));
-    }, skip: true);
+    }, skip: false);
 
     test('Handles invalid nucleotides', () {
       final strand = "AGXXACT";
       expect(() => counter.count(strand), throwsA(const TypeMatcher<InvalidNucleotideException>()));
-    }, skip: true);
+    }, skip: false);
   });
 }
