@@ -1,6 +1,5 @@
 module ResistorColor
 
-let colors: string list = failwith "You need to define the 'colors' binding."
+let colors = ["black"; "brown"; "red"; "orange"; "yellow"; "green"; "blue"; "violet"; "grey"; "white"]
 
-let colorCode (color: string) string =
-    failwith "Please implement the 'colorCode' function"
+let colorCode (target: string) = colors |> List.findIndex(fun colo -> colo = target)
