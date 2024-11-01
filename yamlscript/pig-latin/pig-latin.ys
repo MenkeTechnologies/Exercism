@@ -1,0 +1,4 @@
+!yamlscript/v0
+
+defn translate(phrase):
+  # Implement the 'translate' function.

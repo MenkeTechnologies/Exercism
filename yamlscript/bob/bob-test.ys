@@ -1,0 +1,108 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: bob
+
+test::
+- name: Stating something
+  code: response("Tom-ay-to, tom-aaaah-to.")
+  want: Whatever.
+
+- name: Shouting
+  code: response("WATCH OUT!")
+  want: Whoa, chill out!
+
+- name: Shouting gibberish
+  code: response("FCECDFCAAB")
+  want: Whoa, chill out!
+
+- name: Asking a question
+  code: response("Does this cryogenic chamber make me look fat?")
+  want: Sure.
+
+- name: Asking a numeric question
+  code: response("You are, what, like 15?")
+  want: Sure.
+
+- name: Asking gibberish
+  code: response("fffbbcbeab?")
+  want: Sure.
+
+- name: Talking forcefully
+  code: response("Hi there!")
+  want: Whatever.
+
+- name: Using acronyms in regular speech
+  code: response("It's OK if you don't want to go work for NASA.")
+  want: Whatever.
+
+- name: Forceful question
+  code: response("WHAT'S GOING ON?")
+  want: Calm down, I know what I'm doing!
+
+- name: Shouting numbers
+  code: response("1, 2, 3 GO!")
+  want: Whoa, chill out!
+
+- name: No letters
+  code: response("1, 2, 3")
+  want: Whatever.
+
+- name: Question with no letters
+  code: response("4?")
+  want: Sure.
+
+- name: Shouting with special characters
+  code: response("ZOMG THE %^*@#$(*^ ZOMBIES ARE COMING!!11!!1!")
+  want: Whoa, chill out!
+
+- name: Shouting with no exclamation mark
+  code: response("I HATE THE DENTIST")
+  want: Whoa, chill out!
+
+- name: Statement containing question mark
+  code: response("Ending with ? means a question.")
+  want: Whatever.
+
+- name: Non-letters with question
+  code: response(":) ?")
+  want: Sure.
+
+- name: Prattling on
+  code: response("Wait! Hang on. Are you going to be OK?")
+  want: Sure.
+
+- name: Silence
+  code: response("")
+  want: Fine. Be that way!
+
+- name: Prolonged silence
+  code: response("          ")
+  want: Fine. Be that way!
+
+- name: Alternate silence
+  code: response("\t\t\t\t\t\t\t\t\t\t")
+  want: Fine. Be that way!
+
+- name: Multiple line question
+  code: response("\nDoes this cryogenic chamber make me look fat?\nNo.")
+  want: Whatever.
+
+- name: Starting with whitespace
+  code: response("         hmmmmmmm...")
+  want: Whatever.
+
+- name: Ending with whitespace
+  code: response("Okay if like my  spacebar  quite a bit?   ")
+  want: Sure.
+
+- name: Other whitespace
+  code: response("\n\r \t")
+  want: Fine. Be that way!
+
+- name: Non-question ending with whitespace
+  code: response("This is a statement ending with whitespace      ")
+  want: Whatever.
+
+done: 25

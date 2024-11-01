@@ -1,0 +1,92 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: minesweeper
+
+test::
+- name: No rows
+  code: annotate([])
+  want: []
+
+- name: No columns
+  code: annotate([""])
+  want:
+  - ''
+
+- name: No mines
+  code: annotate(["   " "   " "   "])
+  want:
+  - '   '
+  - '   '
+  - '   '
+
+- name: Minefield with only mines
+  code: annotate(["***" "***" "***"])
+  want:
+  - '***'
+  - '***'
+  - '***'
+
+- name: Mine surrounded by spaces
+  code: annotate(["   " " * " "   "])
+  want:
+  - '111'
+  - 1*1
+  - '111'
+
+- name: Space surrounded by mines
+  code: annotate(["***" "* *" "***"])
+  want:
+  - '***'
+  - '*8*'
+  - '***'
+
+- name: Horizontal line
+  code: annotate([" * * "])
+  want:
+  - 1*2*1
+
+- name: Horizontal line, mines at edges
+  code: annotate(["*   *"])
+  want:
+  - '*1 1*'
+
+- name: Vertical line
+  code: annotate([" " "*" " " "*" " "])
+  want:
+  - '1'
+  - '*'
+  - '2'
+  - '*'
+  - '1'
+
+- name: Vertical line, mines at edges
+  code: annotate(["*" " " " " " " "*"])
+  want:
+  - '*'
+  - '1'
+  - ' '
+  - '1'
+  - '*'
+
+- name: Cross
+  code: annotate(["  *  " "  *  " "*****" "  *  " "  *  "])
+  want:
+  - ' 2*2 '
+  - 25*52
+  - '*****'
+  - 25*52
+  - ' 2*2 '
+
+- name: Large minefield
+  code: annotate([" *  * " "  *   " "    * " "   * *" " *  * " "      "])
+  want:
+  - 1*22*1
+  - 12*322
+  - ' 123*2'
+  - 112*4*
+  - 1*22*2
+  - '111111'
+
+done: 12

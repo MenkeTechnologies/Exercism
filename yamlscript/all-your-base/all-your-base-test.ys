@@ -1,0 +1,123 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: all-your-base
+
+test::
+- name: Single bit one to decimal
+  code: rebase(2 [1] 10)
+  want:
+  - 1
+
+- name: Binary to single decimal
+  code: rebase(2 [1 0 1] 10)
+  want:
+  - 5
+
+- name: Single decimal to binary
+  code: rebase(10 [5] 2)
+  want:
+  - 1
+  - 0
+  - 1
+
+- name: Binary to multiple decimal
+  code: rebase(2 [1 0 1 0 1 0] 10)
+  want:
+  - 4
+  - 2
+
+- name: Decimal to binary
+  code: rebase(10 [4 2] 2)
+  want:
+  - 1
+  - 0
+  - 1
+  - 0
+  - 1
+  - 0
+
+- name: Trinary to hexadecimal
+  code: rebase(3 [1 1 2 0] 16)
+  want:
+  - 2
+  - 10
+
+- name: Hexadecimal to trinary
+  code: rebase(16 [2 10] 3)
+  want:
+  - 1
+  - 1
+  - 2
+  - 0
+
+- name: 15-bit integer
+  code: rebase(97 [3 46 60] 73)
+  want:
+  - 6
+  - 10
+  - 45
+
+- name: Empty list
+  code: rebase(2 [] 10)
+  want:
+  - 0
+
+- name: Single zero
+  code: rebase(10 [0] 2)
+  want:
+  - 0
+
+- name: Multiple zeros
+  code: rebase(10 [0 0 0] 2)
+  want:
+  - 0
+
+- name: Leading zeros
+  code: rebase(7 [0 6 0] 10)
+  want:
+  - 4
+  - 2
+
+- name: Input base is one
+  code: rebase(1 [0] 10)
+  what: error
+  want: input base must be >= 2
+
+- name: Input base is zero
+  code: rebase(0 [] 10)
+  what: error
+  want: input base must be >= 2
+
+- name: Input base is negative
+  code: rebase(-2 [1] 10)
+  what: error
+  want: input base must be >= 2
+
+- name: Negative digit
+  code: rebase(2 [1 -1 1 0 1 0] 10)
+  what: error
+  want: all digits must satisfy 0 <= d < input base
+
+- name: Invalid positive digit
+  code: rebase(2 [1 2 1 0 1 0] 10)
+  what: error
+  want: all digits must satisfy 0 <= d < input base
+
+- name: Output base is one
+  code: rebase(2 [1 0 1 0 1 0] 1)
+  what: error
+  want: output base must be >= 2
+
+- name: Output base is zero
+  code: rebase(10 [7] 0)
+  what: error
+  want: output base must be >= 2
+
+- name: Output base is negative
+  code: rebase(2 [1] -7)
+  what: error
+  want: output base must be >= 2
+
+done: 20

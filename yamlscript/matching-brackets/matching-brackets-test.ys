@@ -1,0 +1,88 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: matching-brackets
+
+test::
+- name: Paired square brackets
+  code: is-paired("[]")
+  want: true
+
+- name: Empty string
+  code: is-paired("")
+  want: true
+
+- name: Unpaired brackets
+  code: is-paired("[[")
+  want: false
+
+- name: Wrong ordered brackets
+  code: is-paired("}{")
+  want: false
+
+- name: Wrong closing bracket
+  code: is-paired("{]")
+  want: false
+
+- name: Paired with whitespace
+  code: is-paired("{ }")
+  want: true
+
+- name: Partially paired brackets
+  code: is-paired("{[])")
+  want: false
+
+- name: Simple nested brackets
+  code: is-paired("{[]}")
+  want: true
+
+- name: Several paired brackets
+  code: is-paired("{}[]")
+  want: true
+
+- name: Paired and nested brackets
+  code: is-paired("([{}({}[])])")
+  want: true
+
+- name: Unopened closing brackets
+  code: is-paired("{[)][]}")
+  want: false
+
+- name: Unpaired and nested brackets
+  code: is-paired("([{])")
+  want: false
+
+- name: Paired and wrong nested brackets
+  code: is-paired("[({]})")
+  want: false
+
+- name: Paired and wrong nested brackets but innermost are correct
+  code: is-paired("[({}])")
+  want: false
+
+- name: Paired and incomplete brackets
+  code: is-paired("{}[")
+  want: false
+
+- name: Too many closing brackets
+  code: is-paired("[]]")
+  want: false
+
+- name: Early unexpected brackets
+  code: is-paired(")()")
+  want: false
+
+- name: Early mismatched brackets
+  code: is-paired("{)()")
+  want: false
+
+- name: Math expression
+  code: is-paired("(((185 + 223.85) * 15) - 543)/2")
+  want: true
+
+- name: Complex latex expression
+  code: is-paired("\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)")
+  want: true
+
+done: 20

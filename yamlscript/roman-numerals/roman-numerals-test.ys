@@ -1,0 +1,116 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: roman-numerals
+
+test::
+- name: 1 is i
+  code: roman(1)
+  want: I
+
+- name: 2 is ii
+  code: roman(2)
+  want: II
+
+- name: 3 is iii
+  code: roman(3)
+  want: III
+
+- name: 4 is iv
+  code: roman(4)
+  want: IV
+
+- name: 5 is v
+  code: roman(5)
+  want: V
+
+- name: 6 is vi
+  code: roman(6)
+  want: VI
+
+- name: 9 is ix
+  code: roman(9)
+  want: IX
+
+- name: 16 is xvi
+  code: roman(16)
+  want: XVI
+
+- name: 27 is xxvii
+  code: roman(27)
+  want: XXVII
+
+- name: 48 is xlviii
+  code: roman(48)
+  want: XLVIII
+
+- name: 49 is xlix
+  code: roman(49)
+  want: XLIX
+
+- name: 59 is lix
+  code: roman(59)
+  want: LIX
+
+- name: 66 is lxvi
+  code: roman(66)
+  want: LXVI
+
+- name: 93 is xciii
+  code: roman(93)
+  want: XCIII
+
+- name: 141 is cxli
+  code: roman(141)
+  want: CXLI
+
+- name: 163 is clxiii
+  code: roman(163)
+  want: CLXIII
+
+- name: 166 is clxvi
+  code: roman(166)
+  want: CLXVI
+
+- name: 402 is cdii
+  code: roman(402)
+  want: CDII
+
+- name: 575 is dlxxv
+  code: roman(575)
+  want: DLXXV
+
+- name: 666 is dclxvi
+  code: roman(666)
+  want: DCLXVI
+
+- name: 911 is cmxi
+  code: roman(911)
+  want: CMXI
+
+- name: 1024 is mxxiv
+  code: roman(1024)
+  want: MXXIV
+
+- name: 1666 is mdclxvi
+  code: roman(1666)
+  want: MDCLXVI
+
+- name: 3000 is mmm
+  code: roman(3000)
+  want: MMM
+
+- name: 3001 is mmmi
+  code: roman(3001)
+  want: MMMI
+
+- name: 3888 is mmmdccclxxxviii
+  code: roman(3888)
+  want: MMMDCCCLXXXVIII
+
+- name: 3999 is mmmcmxcix
+  code: roman(3999)
+  want: MMMCMXCIX
+
+done: 27

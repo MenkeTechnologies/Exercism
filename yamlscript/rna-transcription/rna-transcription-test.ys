@@ -1,0 +1,32 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: rna-transcription
+
+test::
+- name: Empty rna sequence
+  code: to-rna("")
+  want: ''
+
+- name: Rna complement of cytosine is guanine
+  code: to-rna("C")
+  want: G
+
+- name: Rna complement of guanine is cytosine
+  code: to-rna("G")
+  want: C
+
+- name: Rna complement of thymine is adenine
+  code: to-rna("T")
+  want: A
+
+- name: Rna complement of adenine is uracil
+  code: to-rna("A")
+  want: U
+
+- name: Rna complement
+  code: to-rna("ACGTGGTCTTAA")
+  want: UGCACCAGAAUU
+
+done: 6

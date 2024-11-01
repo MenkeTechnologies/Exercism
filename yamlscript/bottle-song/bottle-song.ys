@@ -1,0 +1,4 @@
+!yamlscript/v0
+
+defn recite(start-bottles take-down):
+  # Implement the 'recite' function.

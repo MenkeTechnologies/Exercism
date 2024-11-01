@@ -1,0 +1,58 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: hamming
+
+test::
+- name: Empty strands
+  code: distance("" "")
+  want: 0
+
+- name: Single letter identical strands
+  code: distance("A" "A")
+  want: 0
+
+- name: Single letter different strands
+  code: distance("G" "T")
+  want: 1
+
+- name: Long identical strands
+  code: distance("GGACTGAAATCTG" "GGACTGAAATCTG")
+  want: 0
+
+- name: Long different strands
+  code: distance("GGACGGATTCTG" "AGGACGGATTCT")
+  want: 9
+
+- name: Disallow first strand longer
+  code: distance("AATG" "AAA")
+  what: error
+  want: strands must be of equal length
+
+- name: Disallow second strand longer
+  code: distance("ATA" "AGTG")
+  what: error
+  want: strands must be of equal length
+
+- name: Disallow left empty strand
+  code: distance("" "G")
+  what: error
+  want: strands must be of equal length
+
+- name: Disallow empty first strand
+  code: distance("" "G")
+  what: error
+  want: strands must be of equal length
+
+- name: Disallow right empty strand
+  code: distance("G" "")
+  what: error
+  want: strands must be of equal length
+
+- name: Disallow empty second strand
+  code: distance("G" "")
+  what: error
+  want: strands must be of equal length
+
+done: 11

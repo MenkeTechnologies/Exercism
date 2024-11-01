@@ -1,0 +1,92 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: triangle
+
+test::
+- name: All sides are equal
+  code: equilateral([2 2 2])
+  want: true
+
+- name: Any side is unequal
+  code: equilateral([2 3 2])
+  want: false
+
+- name: No sides are equal
+  code: equilateral([5 4 6])
+  want: false
+
+- name: All zero sides is not a triangle
+  code: equilateral([0 0 0])
+  want: false
+
+- name: Sides may be floats
+  code: equilateral([0.5 0.5 0.5])
+  want: true
+
+- name: Last two sides are equal
+  code: isosceles([3 4 4])
+  want: true
+
+- name: First two sides are equal
+  code: isosceles([4 4 3])
+  want: true
+
+- name: First and last sides are equal
+  code: isosceles([4 3 4])
+  want: true
+
+- name: Equilateral triangles are also isosceles
+  code: isosceles([4 4 4])
+  want: true
+
+- name: No sides are equal
+  code: isosceles([2 3 4])
+  want: false
+
+- name: First triangle inequality violation
+  code: isosceles([1 1 3])
+  want: false
+
+- name: Second triangle inequality violation
+  code: isosceles([1 3 1])
+  want: false
+
+- name: Third triangle inequality violation
+  code: isosceles([3 1 1])
+  want: false
+
+- name: Sides may be floats
+  code: isosceles([0.5 0.4 0.5])
+  want: true
+
+- name: No sides are equal
+  code: scalene([5 4 6])
+  want: true
+
+- name: All sides are equal
+  code: scalene([4 4 4])
+  want: false
+
+- name: First and second sides are equal
+  code: scalene([4 4 3])
+  want: false
+
+- name: First and third sides are equal
+  code: scalene([3 4 3])
+  want: false
+
+- name: Second and third sides are equal
+  code: scalene([4 3 3])
+  want: false
+
+- name: May not violate triangle inequality
+  code: scalene([7 3 2])
+  want: false
+
+- name: Sides may be floats
+  code: scalene([0.5 0.4 0.6])
+  want: true
+
+done: 21

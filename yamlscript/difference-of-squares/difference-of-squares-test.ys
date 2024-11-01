@@ -1,0 +1,44 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: difference-of-squares
+
+test::
+- name: Square of sum 1
+  code: square-of-sum(1)
+  want: 1
+
+- name: Square of sum 5
+  code: square-of-sum(5)
+  want: 225
+
+- name: Square of sum 100
+  code: square-of-sum(100)
+  want: 25502500
+
+- name: Sum of squares 1
+  code: sum-of-squares(1)
+  want: 1
+
+- name: Sum of squares 5
+  code: sum-of-squares(5)
+  want: 55
+
+- name: Sum of squares 100
+  code: sum-of-squares(100)
+  want: 338350
+
+- name: Difference of squares 1
+  code: difference-of-squares(1)
+  want: 0
+
+- name: Difference of squares 5
+  code: difference-of-squares(5)
+  want: 170
+
+- name: Difference of squares 100
+  code: difference-of-squares(100)
+  want: 25164150
+
+done: 9

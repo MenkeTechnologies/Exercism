@@ -1,0 +1,152 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: robot-simulator
+
+test::
+- name: At origin facing north
+  code: create({"x" 0, "y" 0} "north")
+  want:
+    position:
+      x: 0
+      y: 0
+    direction: north
+
+- name: At negative position facing south
+  code: create({"x" -1, "y" -1} "south")
+  want:
+    position:
+      x: -1
+      y: -1
+    direction: south
+
+- name: Changes north to east
+  code: move({"x" 0, "y" 0} "north" "R")
+  want:
+    position:
+      x: 0
+      y: 0
+    direction: east
+
+- name: Changes east to south
+  code: move({"x" 0, "y" 0} "east" "R")
+  want:
+    position:
+      x: 0
+      y: 0
+    direction: south
+
+- name: Changes south to west
+  code: move({"x" 0, "y" 0} "south" "R")
+  want:
+    position:
+      x: 0
+      y: 0
+    direction: west
+
+- name: Changes west to north
+  code: move({"x" 0, "y" 0} "west" "R")
+  want:
+    position:
+      x: 0
+      y: 0
+    direction: north
+
+- name: Changes north to west
+  code: move({"x" 0, "y" 0} "north" "L")
+  want:
+    position:
+      x: 0
+      y: 0
+    direction: west
+
+- name: Changes west to south
+  code: move({"x" 0, "y" 0} "west" "L")
+  want:
+    position:
+      x: 0
+      y: 0
+    direction: south
+
+- name: Changes south to east
+  code: move({"x" 0, "y" 0} "south" "L")
+  want:
+    position:
+      x: 0
+      y: 0
+    direction: east
+
+- name: Changes east to north
+  code: move({"x" 0, "y" 0} "east" "L")
+  want:
+    position:
+      x: 0
+      y: 0
+    direction: north
+
+- name: Facing north increments y
+  code: move({"x" 0, "y" 0} "north" "A")
+  want:
+    position:
+      x: 0
+      y: 1
+    direction: north
+
+- name: Facing south decrements y
+  code: move({"x" 0, "y" 0} "south" "A")
+  want:
+    position:
+      x: 0
+      y: -1
+    direction: south
+
+- name: Facing east increments x
+  code: move({"x" 0, "y" 0} "east" "A")
+  want:
+    position:
+      x: 1
+      y: 0
+    direction: east
+
+- name: Facing west decrements x
+  code: move({"x" 0, "y" 0} "west" "A")
+  want:
+    position:
+      x: -1
+      y: 0
+    direction: west
+
+- name: Moving east and north from readme
+  code: move({"x" 7, "y" 3} "north" "RAALAL")
+  want:
+    position:
+      x: 9
+      y: 4
+    direction: west
+
+- name: Moving west and north
+  code: move({"x" 0, "y" 0} "north" "LAAARALA")
+  want:
+    position:
+      x: -4
+      y: 1
+    direction: west
+
+- name: Moving west and south
+  code: move({"x" 2, "y" -7} "east" "RRAAAAALA")
+  want:
+    position:
+      x: -3
+      y: -8
+    direction: south
+
+- name: Moving east and north
+  code: move({"x" 8, "y" 4} "south" "LAAARRRALLLL")
+  want:
+    position:
+      x: 11
+      y: 5
+    direction: north
+
+done: 18

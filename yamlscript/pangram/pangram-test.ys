@@ -1,0 +1,52 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: pangram
+
+test::
+- name: Empty sentence
+  code: is-pangram("")
+  want: false
+
+- name: Perfect lower case
+  code: is-pangram("abcdefghijklmnopqrstuvwxyz")
+  want: true
+
+- name: Only lower case
+  code: is-pangram("the quick brown fox jumps over the lazy dog")
+  want: true
+
+- name: Missing the letter 'x'
+  code: is-pangram("a quick movement of the enemy will jeopardize five gunboats")
+  want: false
+
+- name: Missing the letter 'h'
+  code: is-pangram("five boxing wizards jump quickly at it")
+  want: false
+
+- name: With underscores
+  code: is-pangram("the_quick_brown_fox_jumps_over_the_lazy_dog")
+  want: true
+
+- name: With numbers
+  code: is-pangram("the 1 quick brown fox jumps over the 2 lazy dogs")
+  want: true
+
+- name: Missing letters replaced by numbers
+  code: is-pangram("7h3 qu1ck brown fox jumps ov3r 7h3 lazy dog")
+  want: false
+
+- name: Mixed case and punctuation
+  code: is-pangram("\"Five quacking Zephyrs jolt my wax bed.\"")
+  want: true
+
+- name: Case insensitive
+  code: is-pangram("the quick brown fox jumps over with lazy FX")
+  want: false
+
+- name: A-m and a-m are 26 different characters but not a pangram
+  code: is-pangram("abcdefghijklm ABCDEFGHIJKLM")
+  want: false
+
+done: 11

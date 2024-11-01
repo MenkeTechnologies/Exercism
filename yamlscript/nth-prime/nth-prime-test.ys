@@ -1,0 +1,24 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: nth-prime
+
+test::
+- name: First prime
+  code: prime(1)
+  want: 2
+
+- name: Second prime
+  code: prime(2)
+  want: 3
+
+- name: Sixth prime
+  code: prime(6)
+  want: 13
+
+- name: Big prime
+  code: prime(10001)
+  want: 104743
+
+done: 4

@@ -1,0 +1,127 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: word-count
+
+test::
+- name: Count one word
+  code: count-words("word")
+  want:
+    word: 1
+
+- name: Count one of each word
+  code: count-words("one of each")
+  want:
+    one: 1
+    of: 1
+    each: 1
+
+- name: Multiple occurrences of a word
+  code: count-words("one fish two fish red fish blue fish")
+  want:
+    one: 1
+    fish: 4
+    two: 1
+    red: 1
+    blue: 1
+
+- name: Handles cramped lists
+  code: count-words("one,two,three")
+  want:
+    one: 1
+    two: 1
+    three: 1
+
+- name: Handles expanded lists
+  code: count-words("one,\ntwo,\nthree")
+  want:
+    one: 1
+    two: 1
+    three: 1
+
+- name: Ignore punctuation
+  code: 'count-words("car:\ carpet as java:\ javascript!!&@$%^&")'
+  want:
+    car: 1
+    carpet: 1
+    as: 1
+    java: 1
+    javascript: 1
+
+- name: Include numbers
+  code: count-words("testing, 1, 2 testing")
+  want:
+    testing: 2
+    '1': 1
+    '2': 1
+
+- name: Normalize case
+  code: count-words("go Go GO Stop stop")
+  want:
+    go: 3
+    stop: 2
+
+- name: With apostrophes
+  code: 'count-words("First:\ don''t laugh. Then:\ don''t cry.")'
+  want:
+    first: 1
+    don't: 2
+    laugh: 1
+    then: 1
+    cry: 1
+
+- name: With apostrophes
+  code: 'count-words("''First:\ don''t laugh. Then:\ don''t cry. You''re getting it.''")'
+  want:
+    first: 1
+    don't: 2
+    laugh: 1
+    then: 1
+    cry: 1
+    you're: 1
+    getting: 1
+    it: 1
+
+- name: With quotations
+  code: count-words("Joe can't tell between 'large' and large.")
+  want:
+    joe: 1
+    can't: 1
+    tell: 1
+    between: 1
+    large: 2
+    and: 1
+
+- name: Substrings from the beginning
+  code: count-words("Joe can't tell between app, apple and a.")
+  want:
+    joe: 1
+    can't: 1
+    tell: 1
+    between: 1
+    app: 1
+    apple: 1
+    and: 1
+    a: 1
+
+- name: Multiple spaces not detected as a word
+  code: count-words(" multiple   whitespaces")
+  want:
+    multiple: 1
+    whitespaces: 1
+
+- name: Alternating word separators not detected as a word
+  code: count-words(",\n,one,\n ,two \n 'three'")
+  want:
+    one: 1
+    two: 1
+    three: 1
+
+- name: Quotation for word with apostrophe
+  code: count-words("can, can't, 'can't'")
+  want:
+    can: 1
+    can't: 2
+
+done: 15

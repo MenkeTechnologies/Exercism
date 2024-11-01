@@ -1,0 +1,167 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: protein-translation
+
+test::
+- name: Empty rna sequence results in no proteins
+  code: proteins("")
+  want: []
+
+- name: Methionine rna sequence
+  code: proteins("AUG")
+  want:
+  - Methionine
+
+- name: Phenylalanine rna sequence 1
+  code: proteins("UUU")
+  want:
+  - Phenylalanine
+
+- name: Phenylalanine rna sequence 2
+  code: proteins("UUC")
+  want:
+  - Phenylalanine
+
+- name: Leucine rna sequence 1
+  code: proteins("UUA")
+  want:
+  - Leucine
+
+- name: Leucine rna sequence 2
+  code: proteins("UUG")
+  want:
+  - Leucine
+
+- name: Serine rna sequence 1
+  code: proteins("UCU")
+  want:
+  - Serine
+
+- name: Serine rna sequence 2
+  code: proteins("UCC")
+  want:
+  - Serine
+
+- name: Serine rna sequence 3
+  code: proteins("UCA")
+  want:
+  - Serine
+
+- name: Serine rna sequence 4
+  code: proteins("UCG")
+  want:
+  - Serine
+
+- name: Tyrosine rna sequence 1
+  code: proteins("UAU")
+  want:
+  - Tyrosine
+
+- name: Tyrosine rna sequence 2
+  code: proteins("UAC")
+  want:
+  - Tyrosine
+
+- name: Cysteine rna sequence 1
+  code: proteins("UGU")
+  want:
+  - Cysteine
+
+- name: Cysteine rna sequence 2
+  code: proteins("UGC")
+  want:
+  - Cysteine
+
+- name: Tryptophan rna sequence
+  code: proteins("UGG")
+  want:
+  - Tryptophan
+
+- name: Stop codon rna sequence 1
+  code: proteins("UAA")
+  want: []
+
+- name: Stop codon rna sequence 2
+  code: proteins("UAG")
+  want: []
+
+- name: Stop codon rna sequence 3
+  code: proteins("UGA")
+  want: []
+
+- name: Sequence of two protein codons translates into proteins
+  code: proteins("UUUUUU")
+  want:
+  - Phenylalanine
+  - Phenylalanine
+
+- name: Sequence of two different protein codons translates into proteins
+  code: proteins("UUAUUG")
+  want:
+  - Leucine
+  - Leucine
+
+- name: Translate rna strand into correct protein list
+  code: proteins("AUGUUUUGG")
+  want:
+  - Methionine
+  - Phenylalanine
+  - Tryptophan
+
+- name: Translation stops if stop codon at beginning of sequence
+  code: proteins("UAGUGG")
+  want: []
+
+- name: Translation stops if stop codon at end of two-codon sequence
+  code: proteins("UGGUAG")
+  want:
+  - Tryptophan
+
+- name: Translation stops if stop codon at end of three-codon sequence
+  code: proteins("AUGUUUUAA")
+  want:
+  - Methionine
+  - Phenylalanine
+
+- name: Translation stops if stop codon in middle of three-codon sequence
+  code: proteins("UGGUAGUGG")
+  want:
+  - Tryptophan
+
+- name: Translation stops if stop codon in middle of six-codon sequence
+  code: proteins("UGGUGUUAUUAAUGGUUU")
+  want:
+  - Tryptophan
+  - Cysteine
+  - Tyrosine
+
+- name: Sequence of two non-stop codons does not translate to a stop codon
+  code: proteins("AUGAUG")
+  want:
+  - Methionine
+  - Methionine
+
+- name: Non-existing codon can't translate
+  code: proteins("AAA")
+  what: error
+  want: Invalid codon
+
+- name: Unknown amino acids, not part of a codon, can't translate
+  code: proteins("XYZ")
+  what: error
+  want: Invalid codon
+
+- name: Incomplete rna sequence can't translate
+  code: proteins("AUGU")
+  what: error
+  want: Invalid codon
+
+- name: Incomplete rna sequence can translate if valid until a stop codon
+  code: proteins("UUCUUCUAAUGGU")
+  want:
+  - Phenylalanine
+  - Phenylalanine
+
+done: 31

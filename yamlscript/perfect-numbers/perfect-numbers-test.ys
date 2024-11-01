@@ -1,0 +1,65 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: perfect-numbers
+
+test::
+- name: Smallest perfect number is classified correctly
+  code: classify(6)
+  want: perfect
+
+- name: Medium perfect number is classified correctly
+  code: classify(28)
+  want: perfect
+
+- name: Large perfect number is classified correctly
+  code: classify(33550336)
+  want: perfect
+  SKIP: true   # SLOW
+
+- name: Smallest abundant number is classified correctly
+  code: classify(12)
+  want: abundant
+
+- name: Medium abundant number is classified correctly
+  code: classify(30)
+  want: abundant
+
+- name: Large abundant number is classified correctly
+  code: classify(33550335)
+  want: abundant
+  SKIP: true   # SLOW
+
+- name: Smallest prime deficient number is classified correctly
+  code: classify(2)
+  want: deficient
+
+- name: Smallest non-prime deficient number is classified correctly
+  code: classify(4)
+  want: deficient
+
+- name: Medium deficient number is classified correctly
+  code: classify(32)
+  want: deficient
+
+- name: Large deficient number is classified correctly
+  code: classify(33550337)
+  want: deficient
+  SKIP: true   # SLOW
+
+- name: Edge case (no factors other than itself) is classified correctly
+  code: classify(1)
+  want: deficient
+
+- name: Zero is rejected (as it is not a positive integer)
+  code: classify(0)
+  what: error
+  want: Classification is only possible for positive integers.
+
+- name: Negative integer is rejected (as it is not a positive integer)
+  code: classify(-1)
+  what: error
+  want: Classification is only possible for positive integers.
+
+done: 10 # 13

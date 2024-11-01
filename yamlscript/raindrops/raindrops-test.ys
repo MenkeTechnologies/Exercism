@@ -1,0 +1,80 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: raindrops
+
+test::
+- name: The sound for 1 is 1
+  code: convert(1)
+  want: '1'
+
+- name: The sound for 3 is pling
+  code: convert(3)
+  want: Pling
+
+- name: The sound for 5 is plang
+  code: convert(5)
+  want: Plang
+
+- name: The sound for 7 is plong
+  code: convert(7)
+  want: Plong
+
+- name: The sound for 6 is pling as it has a factor 3
+  code: convert(6)
+  want: Pling
+
+- name: 2 to the power 3 does not make a raindrop sound as 3 is the exponent not the base
+  code: convert(8)
+  want: '8'
+
+- name: The sound for 9 is pling as it has a factor 3
+  code: convert(9)
+  want: Pling
+
+- name: The sound for 10 is plang as it has a factor 5
+  code: convert(10)
+  want: Plang
+
+- name: The sound for 14 is plong as it has a factor of 7
+  code: convert(14)
+  want: Plong
+
+- name: The sound for 15 is plingplang as it has factors 3 and 5
+  code: convert(15)
+  want: PlingPlang
+
+- name: The sound for 21 is plingplong as it has factors 3 and 7
+  code: convert(21)
+  want: PlingPlong
+
+- name: The sound for 25 is plang as it has a factor 5
+  code: convert(25)
+  want: Plang
+
+- name: The sound for 27 is pling as it has a factor 3
+  code: convert(27)
+  want: Pling
+
+- name: The sound for 35 is plangplong as it has factors 5 and 7
+  code: convert(35)
+  want: PlangPlong
+
+- name: The sound for 49 is plong as it has a factor 7
+  code: convert(49)
+  want: Plong
+
+- name: The sound for 52 is 52
+  code: convert(52)
+  want: '52'
+
+- name: The sound for 105 is plingplangplong as it has factors 3, 5 and 7
+  code: convert(105)
+  want: PlingPlangPlong
+
+- name: The sound for 3125 is plang as it has a factor 5
+  code: convert(3125)
+  want: Plang
+
+done: 18

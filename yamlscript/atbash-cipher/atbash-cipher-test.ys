@@ -1,0 +1,64 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: atbash-cipher
+
+test::
+- name: Encode yes
+  code: encode("yes")
+  want: bvh
+
+- name: Encode no
+  code: encode("no")
+  want: ml
+
+- name: Encode omg
+  code: encode("OMG")
+  want: lnt
+
+- name: Encode spaces
+  code: encode("O M G")
+  want: lnt
+
+- name: Encode mindblowingly
+  code: encode("mindblowingly")
+  want: nrmwy oldrm tob
+
+- name: Encode numbers
+  code: encode("Testing,1 2 3, testing.")
+  want: gvhgr mt123 gvhgr mt
+
+- name: Encode deep thought
+  code: encode("Truth is fiction.")
+  want: gifgs rhurx grlm
+
+- name: Encode all the letters
+  code: encode("The quick brown fox jumps over the lazy dog.")
+  want: gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt
+
+- name: Decode exercism
+  code: decode("vcvix rhn")
+  want: exercism
+
+- name: Decode a sentence
+  code: decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v")
+  want: anobstacleisoftenasteppingstone
+
+- name: Decode numbers
+  code: decode("gvhgr mt123 gvhgr mt")
+  want: testing123testing
+
+- name: Decode all the letters
+  code: decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt")
+  want: thequickbrownfoxjumpsoverthelazydog
+
+- name: Decode with too many spaces
+  code: decode("vc vix    r hn")
+  want: exercism
+
+- name: Decode with no spaces
+  code: decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv")
+  want: anobstacleisoftenasteppingstone
+
+done: 14

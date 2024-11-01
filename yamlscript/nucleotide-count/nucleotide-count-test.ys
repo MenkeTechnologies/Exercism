@@ -1,0 +1,45 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: nucleotide-count
+
+test::
+- name: Empty strand
+  code: nucleotide-counts("")
+  want:
+    A: 0
+    C: 0
+    G: 0
+    T: 0
+
+- name: Can count one nucleotide in single-character input
+  code: nucleotide-counts("G")
+  want:
+    A: 0
+    C: 0
+    G: 1
+    T: 0
+
+- name: Strand with repeated nucleotide
+  code: nucleotide-counts("GGGGGGG")
+  want:
+    A: 0
+    C: 0
+    G: 7
+    T: 0
+
+- name: Strand with multiple nucleotides
+  code: nucleotide-counts("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC")
+  want:
+    A: 20
+    C: 12
+    G: 17
+    T: 21
+
+- name: Strand with invalid nucleotides
+  code: nucleotide-counts("AGXXACT")
+  what: error
+  want: Invalid nucleotide in strand
+
+done: 5

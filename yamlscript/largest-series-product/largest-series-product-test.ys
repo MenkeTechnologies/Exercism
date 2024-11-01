@@ -1,0 +1,72 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: largest-series-product
+
+test::
+- name: Finds the largest product if span equals length
+  code: largest-product("29" 2)
+  want: 18
+
+- name: Can find the largest product of 2 with numbers in order
+  code: largest-product("0123456789" 2)
+  want: 72
+
+- name: Can find the largest product of 2
+  code: largest-product("576802143" 2)
+  want: 48
+
+- name: Can find the largest product of 3 with numbers in order
+  code: largest-product("0123456789" 3)
+  want: 504
+
+- name: Can find the largest product of 3
+  code: largest-product("1027839564" 3)
+  want: 270
+
+- name: Can find the largest product of 5 with numbers in order
+  code: largest-product("0123456789" 5)
+  want: 15120
+
+- name: Can get the largest product of a big number
+  code: largest-product("73167176531330624919225119674426574742355349194934" 6)
+  want: 23520
+
+- name: Reports zero if the only digits are zero
+  code: largest-product("0000" 2)
+  want: 0
+
+- name: Reports zero if all spans include zero
+  code: largest-product("99099" 3)
+  want: 0
+
+- name: Rejects span longer than string length
+  code: largest-product("123" 4)
+  what: error
+  want: span must be smaller than string length
+
+- name: Reports 1 for empty string and empty product (0 span)
+  code: largest-product("" 0)
+  want: 1
+
+- name: Reports 1 for nonempty string and empty product (0 span)
+  code: largest-product("123" 0)
+  want: 1
+
+- name: Rejects empty string and nonzero span
+  code: largest-product("" 1)
+  what: error
+  want: span must be smaller than string length
+
+- name: Rejects invalid character in digits
+  code: largest-product("1234a5" 2)
+  what: error
+  want: digits input must only contain digits
+
+- name: Rejects negative span
+  code: largest-product("12345" -1)
+  what: error
+  want: span must not be negative
+
+done: 15

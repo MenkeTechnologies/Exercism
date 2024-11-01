@@ -1,0 +1,52 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: scrabble-score
+
+test::
+- name: Lowercase letter
+  code: score("a")
+  want: 1
+
+- name: Uppercase letter
+  code: score("A")
+  want: 1
+
+- name: Valuable letter
+  code: score("f")
+  want: 4
+
+- name: Short word
+  code: score("at")
+  want: 2
+
+- name: Short, valuable word
+  code: score("zoo")
+  want: 12
+
+- name: Medium word
+  code: score("street")
+  want: 6
+
+- name: Medium, valuable word
+  code: score("quirky")
+  want: 22
+
+- name: Long, mixed-case word
+  code: score("OxyphenButazone")
+  want: 41
+
+- name: English-like word
+  code: score("pinata")
+  want: 8
+
+- name: Empty input
+  code: score("")
+  want: 0
+
+- name: Entire alphabet available
+  code: score("abcdefghijklmnopqrstuvwxyz")
+  want: 87
+
+done: 11

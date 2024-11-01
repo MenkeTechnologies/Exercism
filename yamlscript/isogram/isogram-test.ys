@@ -1,0 +1,64 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: isogram
+
+test::
+- name: Empty string
+  code: isogram("")
+  want: true
+
+- name: Isogram with only lower case characters
+  code: isogram('isogram')
+  want: true
+
+- name: Word with one duplicated character
+  code: isogram('eleven')
+  want: false
+
+- name: Word with one duplicated character from the end of the alphabet
+  code: isogram('zzyzx')
+  want: false
+
+- name: Word with duplicated character in mixed case
+  code: isogram('Alphabet')
+  want: false
+
+- name: Word with duplicated character in mixed case, lowercase first
+  code: isogram('alphAbet')
+  want: false
+
+- name: Hypothetical isogrammic word with hyphen
+  code: isogram('thumbscrew-japingly')
+  want: true
+
+- name: Hypothetical word with duplicated character following hyphen
+  code: isogram('thumbscrew-jappingly')
+  want: false
+
+- name: Isogram with duplicated hyphen
+  code: isogram('six-year-old')
+  want: true
+
+- name: Made-up name that is an isogram
+  code: isogram('Emily Jung Schwartzkopf')
+  want: true
+
+- name: Duplicated character in the middle
+  code: isogram('accentor')
+  want: false
+
+- name: Same first and last characters
+  code: isogram('angola')
+  want: false
+
+- name: Word with duplicated character and with two hyphens
+  code: isogram('up-to-date')
+  want: false
+
+- name: Longest reported english isogram
+  code: isogram("subdermatoglyphic")
+  want: true
+
+done: 14

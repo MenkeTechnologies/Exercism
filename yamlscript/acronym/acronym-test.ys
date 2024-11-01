@@ -1,0 +1,40 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: acronym
+
+test::
+- name: Basic
+  code: abbreviate('Portable Network Graphics')
+  want: PNG
+
+- name: Lowercase words
+  code: abbreviate('Ruby on Rails')
+  want: ROR
+
+- name: Punctuation
+  code: abbreviate('First In, First Out')
+  want: FIFO
+
+- name: All caps word
+  code: abbreviate('GNU Image Manipulation Program')
+  want: GIMP
+
+- name: Punctuation without whitespace
+  code: abbreviate('Complementary metal-oxide semiconductor')
+  want: CMOS
+
+- name: Very long abbreviation
+  code: abbreviate('Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me')
+  want: ROTFLSHTMDCOALM
+
+- name: Consecutive delimiters
+  code: abbreviate('Something - I made up from thin air')
+  want: SIMUFTA
+
+- name: Apostrophes
+  code: abbreviate("Halley's Comet")
+  want: HC
+
+done: 8

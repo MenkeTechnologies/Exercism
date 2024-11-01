@@ -1,0 +1,48 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: rotational-cipher
+
+test::
+- name: Rotate a by 0, same output as input
+  code: rotate("a" 0)
+  want: a
+
+- name: Rotate a by 1
+  code: rotate("a" 1)
+  want: b
+
+- name: Rotate a by 26, same output as input
+  code: rotate("a" 26)
+  want: a
+
+- name: Rotate m by 13
+  code: rotate("m" 13)
+  want: z
+
+- name: Rotate n by 13 with wrap around alphabet
+  code: rotate("n" 13)
+  want: a
+
+- name: Rotate capital letters
+  code: rotate("OMG" 5)
+  want: TRL
+
+- name: Rotate spaces
+  code: rotate("O M G" 5)
+  want: T R L
+
+- name: Rotate numbers
+  code: rotate("Testing 1 2 3 testing" 4)
+  want: Xiwxmrk 1 2 3 xiwxmrk
+
+- name: Rotate punctuation
+  code: rotate("Let's eat, Grandma!" 21)
+  want: Gzo'n zvo, Bmviyhv!
+
+- name: Rotate all letters
+  code: rotate("The quick brown fox jumps over the lazy dog." 13)
+  want: Gur dhvpx oebja sbk whzcf bire gur ynml qbt.
+
+done: 10

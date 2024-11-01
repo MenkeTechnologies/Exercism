@@ -1,0 +1,236 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: allergies
+
+test::
+- name: Not allergic to anything
+  code: allergic-to("eggs" 0)
+  want: false
+
+- name: Allergic only to eggs
+  code: allergic-to("eggs" 1)
+  want: true
+
+- name: Allergic to eggs and something else
+  code: allergic-to("eggs" 3)
+  want: true
+
+- name: Allergic to something, but not eggs
+  code: allergic-to("eggs" 2)
+  want: false
+
+- name: Allergic to everything
+  code: allergic-to("eggs" 255)
+  want: true
+
+- name: Not allergic to anything
+  code: allergic-to("peanuts" 0)
+  want: false
+
+- name: Allergic only to peanuts
+  code: allergic-to("peanuts" 2)
+  want: true
+
+- name: Allergic to peanuts and something else
+  code: allergic-to("peanuts" 7)
+  want: true
+
+- name: Allergic to something, but not peanuts
+  code: allergic-to("peanuts" 5)
+  want: false
+
+- name: Allergic to everything
+  code: allergic-to("peanuts" 255)
+  want: true
+
+- name: Not allergic to anything
+  code: allergic-to("shellfish" 0)
+  want: false
+
+- name: Allergic only to shellfish
+  code: allergic-to("shellfish" 4)
+  want: true
+
+- name: Allergic to shellfish and something else
+  code: allergic-to("shellfish" 14)
+  want: true
+
+- name: Allergic to something, but not shellfish
+  code: allergic-to("shellfish" 10)
+  want: false
+
+- name: Allergic to everything
+  code: allergic-to("shellfish" 255)
+  want: true
+
+- name: Not allergic to anything
+  code: allergic-to("strawberries" 0)
+  want: false
+
+- name: Allergic only to strawberries
+  code: allergic-to("strawberries" 8)
+  want: true
+
+- name: Allergic to strawberries and something else
+  code: allergic-to("strawberries" 28)
+  want: true
+
+- name: Allergic to something, but not strawberries
+  code: allergic-to("strawberries" 20)
+  want: false
+
+- name: Allergic to everything
+  code: allergic-to("strawberries" 255)
+  want: true
+
+- name: Not allergic to anything
+  code: allergic-to("tomatoes" 0)
+  want: false
+
+- name: Allergic only to tomatoes
+  code: allergic-to("tomatoes" 16)
+  want: true
+
+- name: Allergic to tomatoes and something else
+  code: allergic-to("tomatoes" 56)
+  want: true
+
+- name: Allergic to something, but not tomatoes
+  code: allergic-to("tomatoes" 40)
+  want: false
+
+- name: Allergic to everything
+  code: allergic-to("tomatoes" 255)
+  want: true
+
+- name: Not allergic to anything
+  code: allergic-to("chocolate" 0)
+  want: false
+
+- name: Allergic only to chocolate
+  code: allergic-to("chocolate" 32)
+  want: true
+
+- name: Allergic to chocolate and something else
+  code: allergic-to("chocolate" 112)
+  want: true
+
+- name: Allergic to something, but not chocolate
+  code: allergic-to("chocolate" 80)
+  want: false
+
+- name: Allergic to everything
+  code: allergic-to("chocolate" 255)
+  want: true
+
+- name: Not allergic to anything
+  code: allergic-to("pollen" 0)
+  want: false
+
+- name: Allergic only to pollen
+  code: allergic-to("pollen" 64)
+  want: true
+
+- name: Allergic to pollen and something else
+  code: allergic-to("pollen" 224)
+  want: true
+
+- name: Allergic to something, but not pollen
+  code: allergic-to("pollen" 160)
+  want: false
+
+- name: Allergic to everything
+  code: allergic-to("pollen" 255)
+  want: true
+
+- name: Not allergic to anything
+  code: allergic-to("cats" 0)
+  want: false
+
+- name: Allergic only to cats
+  code: allergic-to("cats" 128)
+  want: true
+
+- name: Allergic to cats and something else
+  code: allergic-to("cats" 192)
+  want: true
+
+- name: Allergic to something, but not cats
+  code: allergic-to("cats" 64)
+  want: false
+
+- name: Allergic to everything
+  code: allergic-to("cats" 255)
+  want: true
+
+- name: No allergies
+  code: list-allergens(0)
+  want: []
+
+- name: Just eggs
+  code: list-allergens(1)
+  want:
+  - eggs
+
+- name: Just peanuts
+  code: list-allergens(2)
+  want:
+  - peanuts
+
+- name: Just strawberries
+  code: list-allergens(8)
+  want:
+  - strawberries
+
+- name: Eggs and peanuts
+  code: list-allergens(3)
+  want:
+  - eggs
+  - peanuts
+
+- name: More than eggs but not peanuts
+  code: list-allergens(5)
+  want:
+  - eggs
+  - shellfish
+
+- name: Lots of stuff
+  code: list-allergens(248)
+  want:
+  - strawberries
+  - tomatoes
+  - chocolate
+  - pollen
+  - cats
+
+- name: Everything
+  code: list-allergens(255)
+  want:
+  - eggs
+  - peanuts
+  - shellfish
+  - strawberries
+  - tomatoes
+  - chocolate
+  - pollen
+  - cats
+
+- name: No allergen score parts
+  code: list-allergens(509)
+  want:
+  - eggs
+  - shellfish
+  - strawberries
+  - tomatoes
+  - chocolate
+  - pollen
+  - cats
+
+- name: No allergen score parts without highest valid score
+  code: list-allergens(257)
+  want:
+  - eggs
+
+done: 50

@@ -1,0 +1,45 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: space-age
+
+test::
+- name: Age on earth
+  code: age("Earth" 1000000000)
+  want: 31.69
+
+- name: Age on mercury
+  code: age("Mercury" 2134835688)
+  want: 280.88
+
+- name: Age on venus
+  code: age("Venus" 189839836)
+  want: 9.78
+
+- name: Age on mars
+  code: age("Mars" 2129871239)
+  want: 35.88
+
+- name: Age on jupiter
+  code: age("Jupiter" 901876382)
+  want: 2.41
+
+- name: Age on saturn
+  code: age("Saturn" 2000000000)
+  want: 2.15
+
+- name: Age on uranus
+  code: age("Uranus" 1210123456)
+  want: 0.46
+
+- name: Age on neptune
+  code: age("Neptune" 1821023456)
+  want: 0.35
+
+- name: Invalid planet causes error
+  code: age("Sun" 680804807)
+  what: error
+  want: not a planet
+
+done: 9

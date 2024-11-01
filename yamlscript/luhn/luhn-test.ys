@@ -1,0 +1,96 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: luhn
+
+test::
+- name: Single digit strings can not be valid
+  code: valid("1")
+  want: false
+
+- name: A single zero is invalid
+  code: valid("0")
+  want: false
+
+- name: A simple valid sin that remains valid if reversed
+  code: valid("059")
+  want: true
+
+- name: A simple valid sin that becomes invalid if reversed
+  code: valid("59")
+  want: true
+
+- name: A valid canadian sin
+  code: valid("055 444 285")
+  want: true
+
+- name: Invalid canadian sin
+  code: valid("055 444 286")
+  want: false
+
+- name: Invalid credit card
+  code: valid("8273 1232 7352 0569")
+  want: false
+
+- name: Invalid long number with an even remainder
+  code: valid("1 2345 6789 1234 5678 9012")
+  want: false
+
+- name: Invalid long number with a remainder divisible by 5
+  code: valid("1 2345 6789 1234 5678 9013")
+  want: false
+
+- name: Valid number with an even number of digits
+  code: valid("095 245 88")
+  want: true
+
+- name: Valid number with an odd number of spaces
+  code: valid("234 567 891 234")
+  want: true
+
+- name: Valid strings with a non-digit added at the end become invalid
+  code: valid("059a")
+  want: false
+
+- name: Valid strings with punctuation included become invalid
+  code: valid("055-444-285")
+  want: false
+
+- name: Valid strings with symbols included become invalid
+  code: valid("055# 444$ 285")
+  want: false
+
+- name: Single zero with space is invalid
+  code: valid(" 0")
+  want: false
+
+- name: More than a single zero is valid
+  code: valid("0000 0")
+  want: true
+
+- name: Input digit 9 is correctly converted to output digit 9
+  code: valid("091")
+  want: true
+
+- name: Very long input is valid
+  code: valid("9999999999 9999999999 9999999999 9999999999")
+  want: true
+
+- name: Valid luhn with an odd number of digits and non zero first digit
+  code: valid("109")
+  want: true
+
+- name: Using ascii value for non-doubled non-digit isn't allowed
+  code: valid("055b 444 285")
+  want: false
+
+- name: Using ascii value for doubled non-digit isn't allowed
+  code: valid(":9")
+  want: false
+
+- name: Non-numeric, non-space char in the middle with a sum that's divisible by 10 isn't allowed
+  code: valid("59%59")
+  want: false
+
+done: 22

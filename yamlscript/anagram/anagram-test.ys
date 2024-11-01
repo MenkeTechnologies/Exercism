@@ -1,0 +1,113 @@
+#!/usr/bin/env ys-0
+
+require ys::taptest: :all
+
+use: anagram
+
+test::
+- name: No matches
+  code: find-anagrams("diaper" ["hello" "world" "zombies" "pants"])
+  want: []
+
+- name: Detects two anagrams
+  code: find-anagrams("master" ["stream" "pigeon" "maters"])
+  want:
+  - stream
+  - maters
+
+- name: Detects two anagrams
+  code: find-anagrams("solemn" ["lemons" "cherry" "melons"])
+  want:
+  - lemons
+  - melons
+
+- name: Does not detect anagram subsets
+  code: find-anagrams("good" ["dog" "goody"])
+  want: []
+
+- name: Detects anagram
+  code: find-anagrams("listen" ["enlists" "google" "inlets" "banana"])
+  want:
+  - inlets
+
+- name: Detects three anagrams
+  code: find-anagrams("allergy" ["gallery" "ballerina" "regally" "clergy" "largely" "leading"])
+  want:
+  - gallery
+  - regally
+  - largely
+
+- name: Detects multiple anagrams with different case
+  code: find-anagrams("nose" ["Eons" "ONES"])
+  want:
+  - Eons
+  - ONES
+
+- name: Does not detect non-anagrams with identical checksum
+  code: find-anagrams("mass" ["last"])
+  want: []
+
+- name: Detects anagrams case-insensitively
+  code: find-anagrams("Orchestra" ["cashregister" "Carthorse" "radishes"])
+  want:
+  - Carthorse
+
+- name: Detects anagrams using case-insensitive subject
+  code: find-anagrams("Orchestra" ["cashregister" "carthorse" "radishes"])
+  want:
+  - carthorse
+
+- name: Detects anagrams using case-insensitive possible matches
+  code: find-anagrams("orchestra" ["cashregister" "Carthorse" "radishes"])
+  want:
+  - Carthorse
+
+- name: Does not detect an anagram if the original word is repeated
+  code: find-anagrams("go" ["go Go GO"])
+  want: []
+
+- name: Does not detect an anagram if the original word is repeated
+  code: find-anagrams("go" ["goGoGO"])
+  want: []
+
+- name: Anagrams must use all letters exactly once
+  code: find-anagrams("tapper" ["patter"])
+  want: []
+
+- name: Words are not anagrams of themselves (case-insensitive)
+  code: find-anagrams("BANANA" ["BANANA" "Banana" "banana"])
+  want: []
+
+- name: Words are not anagrams of themselves
+  code: find-anagrams("BANANA" ["BANANA"])
+  want: []
+
+- name: Words are not anagrams of themselves even if letter case is partially different
+  code: find-anagrams("BANANA" ["Banana"])
+  want: []
+
+- name: Words are not anagrams of themselves even if letter case is completely different
+  code: find-anagrams("BANANA" ["banana"])
+  want: []
+
+- name: Words other than themselves can be anagrams
+  code: find-anagrams("LISTEN" ["Listen" "Silent" "LISTEN"])
+  want:
+  - Silent
+
+- name: Words other than themselves can be anagrams
+  code: find-anagrams("LISTEN" ["LISTEN" "Silent"])
+  want:
+  - Silent
+
+- name: Handles case of greek letters
+  code: find-anagrams("ΑΒΓ" ["ΒΓΑ" "ΒΓΔ" "γβα" "αβγ"])
+  want:
+  - ΒΓΑ
+  - γβα
+
+- name: Different characters may have the same bytes
+  code: find-anagrams("a⬂" ["€a"])
+  want: []
+
+done: 22
