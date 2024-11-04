@@ -1,1 +1,1 @@
-@Echo Goodbye, Mars!
+@Echo Hello, World!
