@@ -2,5 +2,8 @@
 
 set "name=%~1"
 
-REM Your code goes here
+if not defined name (
+    set name=you
+)
 
+echo One for %name%, one for me.

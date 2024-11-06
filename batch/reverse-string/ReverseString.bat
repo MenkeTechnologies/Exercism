@@ -4,16 +4,19 @@ setlocal enabledelayedexpansion
 set "str=%~1"
 set "rev="
 
-setlocal enabledelayedexpansion
+if not defined str (
+    exit /b
+)
 
-set num=0
+set i=0
 
 :LOOP
-call set tmpa=%%str:~%num%,1%%%
-set /a num+=1
+call set tmpa=%%str:~%i%,1%%%
+set /a i+=1
+
 if not "%tmpa%" equ "" (
-set rev=%tmpa%%rev%
-goto LOOP
+    set rev=%tmpa%%rev%
+    goto LOOP
 )
 
 echo %rev%
