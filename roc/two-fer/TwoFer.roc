@@ -1,5 +1,7 @@
 module [twoFer]
 
-twoFer : [Name Str, Anonymous] -> Str
 twoFer = \name ->
-    crash "Please implement the 'twoFer' function"
+    title = when name is
+        Name s -> s
+        Anonymous -> "you"
+    "One for $(title), one for me."
