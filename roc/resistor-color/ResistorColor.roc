@@ -1,9 +1,4 @@
 module [colorCode, colors]
 
-colorCode : Str -> Result U64 _
-colorCode = \color ->
-    crash "Please implement the 'colorCode' function"
-
-colors : List Str
-colors =
-    crash "Please implement the 'colors' function"
+colorCode = \color ->  colors |> List.findFirstIndex \c -> c == color
+colors = ["black", "brown", "red", "orange", "yellow", "green", "blue", "violet", "grey", "white"]
