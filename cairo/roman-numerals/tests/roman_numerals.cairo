@@ -8,7 +8,7 @@ fn number_1_is_i() {
 }
 
 #[test]
-#[ignore]
+
 fn number_2_is_ii() {
     let output: Roman = 2_u32.into();
     let expected: ByteArray = "II";
@@ -16,7 +16,7 @@ fn number_2_is_ii() {
 }
 
 #[test]
-#[ignore]
+
 fn number_3_is_iii() {
     let output: Roman = 3_u32.into();
     let expected: ByteArray = "III";
@@ -24,7 +24,7 @@ fn number_3_is_iii() {
 }
 
 #[test]
-#[ignore]
+
 fn number_4_is_iv() {
     let output: Roman = 4_u32.into();
     let expected: ByteArray = "IV";
@@ -32,7 +32,7 @@ fn number_4_is_iv() {
 }
 
 #[test]
-#[ignore]
+
 fn number_5_is_v() {
     let output: Roman = 5_u32.into();
     let expected: ByteArray = "V";
@@ -40,7 +40,7 @@ fn number_5_is_v() {
 }
 
 #[test]
-#[ignore]
+
 fn number_6_is_vi() {
     let output: Roman = 6_u32.into();
     let expected: ByteArray = "VI";
@@ -48,7 +48,7 @@ fn number_6_is_vi() {
 }
 
 #[test]
-#[ignore]
+
 fn number_9_is_ix() {
     let output: Roman = 9_u32.into();
     let expected: ByteArray = "IX";
@@ -56,7 +56,7 @@ fn number_9_is_ix() {
 }
 
 #[test]
-#[ignore]
+
 fn number_16_is_xvi() {
     let output: Roman = 16_u32.into();
     let expected: ByteArray = "XVI";
@@ -64,7 +64,7 @@ fn number_16_is_xvi() {
 }
 
 #[test]
-#[ignore]
+
 fn number_27_is_xxvii() {
     let output: Roman = 27_u32.into();
     let expected: ByteArray = "XXVII";
@@ -72,7 +72,7 @@ fn number_27_is_xxvii() {
 }
 
 #[test]
-#[ignore]
+
 fn number_48_is_xlviii() {
     let output: Roman = 48_u32.into();
     let expected: ByteArray = "XLVIII";
@@ -80,7 +80,7 @@ fn number_48_is_xlviii() {
 }
 
 #[test]
-#[ignore]
+
 fn number_49_is_xlix() {
     let output: Roman = 49_u32.into();
     let expected: ByteArray = "XLIX";
@@ -88,7 +88,7 @@ fn number_49_is_xlix() {
 }
 
 #[test]
-#[ignore]
+
 fn number_59_is_lix() {
     let output: Roman = 59_u32.into();
     let expected: ByteArray = "LIX";
@@ -96,7 +96,7 @@ fn number_59_is_lix() {
 }
 
 #[test]
-#[ignore]
+
 fn number_66_is_lxvi() {
     let output: Roman = 66_u32.into();
     let expected: ByteArray = "LXVI";
@@ -104,7 +104,7 @@ fn number_66_is_lxvi() {
 }
 
 #[test]
-#[ignore]
+
 fn number_93_is_xciii() {
     let output: Roman = 93_u32.into();
     let expected: ByteArray = "XCIII";
@@ -112,7 +112,7 @@ fn number_93_is_xciii() {
 }
 
 #[test]
-#[ignore]
+
 fn number_141_is_cxli() {
     let output: Roman = 141_u32.into();
     let expected: ByteArray = "CXLI";
@@ -120,7 +120,7 @@ fn number_141_is_cxli() {
 }
 
 #[test]
-#[ignore]
+
 fn number_163_is_clxiii() {
     let output: Roman = 163_u32.into();
     let expected: ByteArray = "CLXIII";
@@ -128,7 +128,7 @@ fn number_163_is_clxiii() {
 }
 
 #[test]
-#[ignore]
+
 fn number_166_is_clxvi() {
     let output: Roman = 166_u32.into();
     let expected: ByteArray = "CLXVI";
@@ -136,7 +136,7 @@ fn number_166_is_clxvi() {
 }
 
 #[test]
-#[ignore]
+
 fn number_402_is_cdii() {
     let output: Roman = 402_u32.into();
     let expected: ByteArray = "CDII";
@@ -144,7 +144,7 @@ fn number_402_is_cdii() {
 }
 
 #[test]
-#[ignore]
+
 fn number_575_is_dlxxv() {
     let output: Roman = 575_u32.into();
     let expected: ByteArray = "DLXXV";
@@ -152,7 +152,7 @@ fn number_575_is_dlxxv() {
 }
 
 #[test]
-#[ignore]
+
 fn number_666_is_dclxvi() {
     let output: Roman = 666_u32.into();
     let expected: ByteArray = "DCLXVI";
@@ -160,7 +160,7 @@ fn number_666_is_dclxvi() {
 }
 
 #[test]
-#[ignore]
+
 fn number_911_is_cmxi() {
     let output: Roman = 911_u32.into();
     let expected: ByteArray = "CMXI";
@@ -168,7 +168,7 @@ fn number_911_is_cmxi() {
 }
 
 #[test]
-#[ignore]
+
 fn number_1024_is_mxxiv() {
     let output: Roman = 1024_u32.into();
     let expected: ByteArray = "MXXIV";
@@ -176,7 +176,7 @@ fn number_1024_is_mxxiv() {
 }
 
 #[test]
-#[ignore]
+
 fn number_1666_is_mdclxvi() {
     let output: Roman = 1666_u32.into();
     let expected: ByteArray = "MDCLXVI";
@@ -184,7 +184,7 @@ fn number_1666_is_mdclxvi() {
 }
 
 #[test]
-#[ignore]
+
 fn number_3000_is_mmm() {
     let output: Roman = 3000_u32.into();
     let expected: ByteArray = "MMM";
@@ -192,7 +192,7 @@ fn number_3000_is_mmm() {
 }
 
 #[test]
-#[ignore]
+
 fn number_3001_is_mmmi() {
     let output: Roman = 3001_u32.into();
     let expected: ByteArray = "MMMI";
@@ -200,7 +200,7 @@ fn number_3001_is_mmmi() {
 }
 
 #[test]
-#[ignore]
+
 fn number_3888_is_mmmdccclxxxviii() {
     let output: Roman = 3888_u32.into();
     let expected: ByteArray = "MMMDCCCLXXXVIII";
@@ -208,7 +208,7 @@ fn number_3888_is_mmmdccclxxxviii() {
 }
 
 #[test]
-#[ignore]
+
 fn number_3999_is_mmmcmxcix() {
     let output: Roman = 3999_u32.into();
     let expected: ByteArray = "MMMCMXCIX";

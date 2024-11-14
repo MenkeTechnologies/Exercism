@@ -9,7 +9,7 @@ fn zero_pieces() {
 }
 
 #[test]
-#[ignore]
+
 fn one_piece() {
     let input: Array<ByteArray> = array!["nail"];
     let output = recite(@input);
@@ -18,7 +18,7 @@ fn one_piece() {
 }
 
 #[test]
-#[ignore]
+
 fn two_pieces() {
     let input: Array<ByteArray> = array!["nail", "shoe"];
     let output = recite(@input);
@@ -28,7 +28,7 @@ fn two_pieces() {
 }
 
 #[test]
-#[ignore]
+
 fn three_pieces() {
     let input: Array<ByteArray> = array!["nail", "shoe", "horse"];
     let output = recite(@input);
@@ -38,7 +38,7 @@ fn three_pieces() {
 }
 
 #[test]
-#[ignore]
+
 fn full_proverb() {
     let input: Array<ByteArray> = array![
         "nail", "shoe", "horse", "rider", "message", "battle", "kingdom",
@@ -50,7 +50,7 @@ fn full_proverb() {
 }
 
 #[test]
-#[ignore]
+
 fn four_pieces_modernized() {
     let input: Array<ByteArray> = array!["pin", "gun", "soldier", "battle"];
     let output = recite(@input);

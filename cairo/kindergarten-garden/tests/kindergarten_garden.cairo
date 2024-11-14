@@ -10,7 +10,7 @@ GG";
 }
 
 #[test]
-#[ignore]
+
 fn different_garden_with_single_student() {
     let diagram = "VC
 RC";
@@ -20,7 +20,7 @@ RC";
 }
 
 #[test]
-#[ignore]
+
 fn garden_with_two_students() {
     let diagram = "VVCG
 VVRC";
@@ -30,7 +30,7 @@ VVRC";
 }
 
 #[test]
-#[ignore]
+
 fn second_students_garden() {
     let diagram = "VVCCGG
 VVCCGG";
@@ -40,7 +40,7 @@ VVCCGG";
 }
 
 #[test]
-#[ignore]
+
 fn third_students_garden() {
     let diagram = "VVCCGG
 VVCCGG";
@@ -50,7 +50,7 @@ VVCCGG";
 }
 
 #[test]
-#[ignore]
+
 fn for_alice_first_students_garden() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -60,7 +60,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_bob_second_students_garden() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -70,7 +70,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_charlie() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -80,7 +80,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_david() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -90,7 +90,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_eve() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -100,7 +100,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_fred() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -110,7 +110,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_ginny() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -120,7 +120,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_harriet() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -130,7 +130,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_ileana() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -140,7 +140,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_joseph() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -150,7 +150,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_kincaid_second_to_last_students_garden() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";
@@ -160,7 +160,7 @@ VRCCCGCRRGVCGCRVVCVGCGCV";
 }
 
 #[test]
-#[ignore]
+
 fn for_larry_last_students_garden() {
     let diagram = "VRCGVVRVCGGCCGVRGCVCGCGV
 VRCCCGCRRGVCGCRVVCVGCGCV";

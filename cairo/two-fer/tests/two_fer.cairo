@@ -1,7 +1,7 @@
 use two_fer::response;
 
 #[test]
-#[ignore]
+
 fn no_name_given() {
     let name = Option::None;
     let output = response(name);
@@ -10,7 +10,7 @@ fn no_name_given() {
 }
 
 #[test]
-#[ignore]
+
 fn a_name_given() {
     let name = Option::Some("Alice");
     let output = response(name);
@@ -19,7 +19,7 @@ fn a_name_given() {
 }
 
 #[test]
-#[ignore]
+
 fn another_name_given() {
     let name = Option::Some("Bob");
     let output = response(name);

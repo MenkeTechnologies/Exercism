@@ -15,7 +15,7 @@ fn should_accept_an_initial_game_grid_and_a_target_search_word() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_one_word_written_left_to_right() {
     #[cairofmt::skip]
     let grid = array![
@@ -36,7 +36,7 @@ fn should_locate_one_word_written_left_to_right() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_the_same_word_written_left_to_right_in_a_different_position() {
     #[cairofmt::skip]
     let grid = array![
@@ -58,7 +58,7 @@ fn should_locate_the_same_word_written_left_to_right_in_a_different_position() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_a_different_left_to_right_word() {
     #[cairofmt::skip]
     let grid = array![
@@ -80,7 +80,7 @@ fn should_locate_a_different_left_to_right_word() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_that_different_left_to_right_word_in_a_different_position() {
     #[cairofmt::skip]
     let grid = array![
@@ -102,7 +102,7 @@ fn should_locate_that_different_left_to_right_word_in_a_different_position() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_a_left_to_right_word_in_a_two_line_grid() {
     #[cairofmt::skip]
     let grid = array![
@@ -125,7 +125,7 @@ fn should_locate_a_left_to_right_word_in_a_two_line_grid() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_a_left_to_right_word_in_a_three_line_grid() {
     #[cairofmt::skip]
     let grid = array![
@@ -149,7 +149,7 @@ fn should_locate_a_left_to_right_word_in_a_three_line_grid() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_a_left_to_right_word_in_a_ten_line_grid() {
     #[cairofmt::skip]
     let grid = array![
@@ -180,7 +180,7 @@ fn should_locate_a_left_to_right_word_in_a_ten_line_grid() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_that_left_to_right_word_in_a_different_position_in_a_ten_line_grid() {
     #[cairofmt::skip]
     let grid = array![
@@ -212,7 +212,7 @@ fn should_locate_that_left_to_right_word_in_a_different_position_in_a_ten_line_g
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_a_different_left_to_right_word_in_a_ten_line_grid() {
     #[cairofmt::skip]
     let grid = array![
@@ -244,7 +244,7 @@ fn should_locate_a_different_left_to_right_word_in_a_ten_line_grid() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_multiple_words() {
     #[cairofmt::skip]
     let grid = array![
@@ -278,7 +278,7 @@ fn should_locate_multiple_words() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_a_single_word_written_right_to_left() {
     #[cairofmt::skip]
     let grid = array![
@@ -300,7 +300,7 @@ fn should_locate_a_single_word_written_right_to_left() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_multiple_words_written_in_different_horizontal_directions() {
     #[cairofmt::skip]
     let grid = array![
@@ -334,7 +334,7 @@ fn should_locate_multiple_words_written_in_different_horizontal_directions() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_words_written_top_to_bottom() {
     #[cairofmt::skip]
     let grid = array![
@@ -374,7 +374,7 @@ fn should_locate_words_written_top_to_bottom() {
 
 
 #[test]
-#[ignore]
+
 fn should_locate_words_written_bottom_to_top() {
     #[cairofmt::skip]
     let grid = array![
@@ -416,7 +416,7 @@ fn should_locate_words_written_bottom_to_top() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_words_written_top_left_to_bottom_right() {
     #[cairofmt::skip]
     let grid = array![
@@ -461,7 +461,7 @@ fn should_locate_words_written_top_left_to_bottom_right() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_words_written_bottom_right_to_top_left() {
     #[cairofmt::skip]
     let grid = array![
@@ -511,7 +511,7 @@ fn should_locate_words_written_bottom_right_to_top_left() {
 
 
 #[test]
-#[ignore]
+
 fn should_locate_words_written_bottom_left_to_top_right() {
     #[cairofmt::skip]
     let grid = array![
@@ -564,7 +564,7 @@ fn should_locate_words_written_bottom_left_to_top_right() {
 }
 
 #[test]
-#[ignore]
+
 fn should_locate_words_written_top_right_to_bottom_left() {
     #[cairofmt::skip]
     let grid = array![
@@ -620,7 +620,7 @@ fn should_locate_words_written_top_right_to_bottom_left() {
     assert_eq!(results, expected);
 }
 #[test]
-#[ignore]
+
 fn should_fail_to_locate_a_word_that_is_not_in_the_puzzle() {
     #[cairofmt::skip]
     let grid = array![
@@ -676,7 +676,7 @@ fn should_fail_to_locate_a_word_that_is_not_in_the_puzzle() {
     assert_eq!(results, expected);
 }
 #[test]
-#[ignore]
+
 fn should_fail_to_locate_words_that_are_not_on_horizontal_vertical_or_diagonal_lines() {
     #[cairofmt::skip]
     let grid = array![
@@ -691,7 +691,7 @@ fn should_fail_to_locate_words_that_are_not_on_horizontal_vertical_or_diagonal_l
     assert!(results.is_empty());
 }
 #[test]
-#[ignore]
+
 fn should_not_concatenate_different_lines_to_find_a_horizontal_word() {
     #[cairofmt::skip]
     let grid = array![
@@ -707,7 +707,7 @@ fn should_not_concatenate_different_lines_to_find_a_horizontal_word() {
 }
 
 #[test]
-#[ignore]
+
 fn should_not_wrap_around_horizontally_to_find_a_word() {
     #[cairofmt::skip]
     let grid = array![
@@ -723,7 +723,7 @@ fn should_not_wrap_around_horizontally_to_find_a_word() {
 
 
 #[test]
-#[ignore]
+
 fn should_not_wrap_around_vertically_to_find_a_word() {
     #[cairofmt::skip]
     let grid = array![

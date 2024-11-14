@@ -10,7 +10,7 @@ fn no_matches() {
 }
 
 #[test]
-#[ignore]
+
 fn detects_two_anagrams() {
     let word: ByteArray = "solemn";
     let inputs = Set::new(array!["lemons", "cherry", "melons"]);
@@ -20,7 +20,7 @@ fn detects_two_anagrams() {
 }
 
 #[test]
-#[ignore]
+
 fn does_not_detect_anagram_subsets() {
     let word: ByteArray = "good";
     let inputs = Set::new(array!["dog", "goody"]);
@@ -30,7 +30,7 @@ fn does_not_detect_anagram_subsets() {
 }
 
 #[test]
-#[ignore]
+
 fn detects_anagram() {
     let word: ByteArray = "listen";
     let inputs = Set::new(array!["enlists", "google", "inlets", "banana"]);
@@ -40,7 +40,7 @@ fn detects_anagram() {
 }
 
 #[test]
-#[ignore]
+
 fn detects_three_anagrams() {
     let word: ByteArray = "allergy";
     let inputs = Set::new(
@@ -52,7 +52,7 @@ fn detects_three_anagrams() {
 }
 
 #[test]
-#[ignore]
+
 fn detects_multiple_anagrams_with_different_case() {
     let word: ByteArray = "nose";
     let inputs = Set::new(array!["Eons", "ONES"]);
@@ -62,7 +62,7 @@ fn detects_multiple_anagrams_with_different_case() {
 }
 
 #[test]
-#[ignore]
+
 fn does_not_detect_non_anagrams_with_identical_checksum() {
     let word: ByteArray = "mass";
     let inputs = Set::new(array!["last"]);
@@ -72,7 +72,7 @@ fn does_not_detect_non_anagrams_with_identical_checksum() {
 }
 
 #[test]
-#[ignore]
+
 fn detects_anagrams_case_insensitively() {
     let word: ByteArray = "Orchestra";
     let inputs = Set::new(array!["cashregister", "Carthorse", "radishes"]);
@@ -82,7 +82,7 @@ fn detects_anagrams_case_insensitively() {
 }
 
 #[test]
-#[ignore]
+
 fn detects_anagrams_using_case_insensitive_subject() {
     let word: ByteArray = "Orchestra";
     let inputs = Set::new(array!["cashregister", "carthorse", "radishes"]);
@@ -92,7 +92,7 @@ fn detects_anagrams_using_case_insensitive_subject() {
 }
 
 #[test]
-#[ignore]
+
 fn detects_anagrams_using_case_insensitive_possible_matches() {
     let word: ByteArray = "orchestra";
     let inputs = Set::new(array!["cashregister", "Carthorse", "radishes"]);
@@ -102,7 +102,7 @@ fn detects_anagrams_using_case_insensitive_possible_matches() {
 }
 
 #[test]
-#[ignore]
+
 fn does_not_detect_an_anagram_if_the_original_word_is_repeated() {
     let word: ByteArray = "go";
     let inputs = Set::new(array!["goGoGO"]);
@@ -112,7 +112,7 @@ fn does_not_detect_an_anagram_if_the_original_word_is_repeated() {
 }
 
 #[test]
-#[ignore]
+
 fn anagrams_must_use_all_letters_exactly_once() {
     let word: ByteArray = "tapper";
     let inputs = Set::new(array!["patter"]);
@@ -122,7 +122,7 @@ fn anagrams_must_use_all_letters_exactly_once() {
 }
 
 #[test]
-#[ignore]
+
 fn words_are_not_anagrams_of_themselves() {
     let word: ByteArray = "BANANA";
     let inputs = Set::new(array!["BANANA"]);
@@ -132,7 +132,7 @@ fn words_are_not_anagrams_of_themselves() {
 }
 
 #[test]
-#[ignore]
+
 fn words_are_not_anagrams_of_themselves_even_if_letter_case_is_partially_different() {
     let word: ByteArray = "BANANA";
     let inputs = Set::new(array!["Banana"]);
@@ -142,7 +142,7 @@ fn words_are_not_anagrams_of_themselves_even_if_letter_case_is_partially_differe
 }
 
 #[test]
-#[ignore]
+
 fn words_are_not_anagrams_of_themselves_even_if_letter_case_is_completely_different() {
     let word: ByteArray = "BANANA";
     let inputs = Set::new(array!["banana"]);
@@ -152,7 +152,7 @@ fn words_are_not_anagrams_of_themselves_even_if_letter_case_is_completely_differ
 }
 
 #[test]
-#[ignore]
+
 fn words_other_than_themselves_can_be_anagrams() {
     let word: ByteArray = "LISTEN";
     let inputs = Set::new(array!["LISTEN", "Silent"]);

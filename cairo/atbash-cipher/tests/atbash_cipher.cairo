@@ -11,7 +11,7 @@ fn encode_yes() {
 }
 
 #[test]
-#[ignore]
+
 fn encode_no() {
     let phrase = "no";
     let output = encode(phrase);
@@ -20,7 +20,7 @@ fn encode_no() {
 }
 
 #[test]
-#[ignore]
+
 fn encode_omg() {
     let phrase = "OMG";
     let output = encode(phrase);
@@ -29,7 +29,7 @@ fn encode_omg() {
 }
 
 #[test]
-#[ignore]
+
 fn encode_spaces() {
     let phrase = "O M G";
     let output = encode(phrase);
@@ -38,7 +38,7 @@ fn encode_spaces() {
 }
 
 #[test]
-#[ignore]
+
 fn encode_mindblowingly() {
     let phrase = "mindblowingly";
     let output = encode(phrase);
@@ -47,7 +47,7 @@ fn encode_mindblowingly() {
 }
 
 #[test]
-#[ignore]
+
 fn encode_numbers() {
     let phrase = "Testing, 1 2 3, testing.";
     let output = encode(phrase);
@@ -56,7 +56,7 @@ fn encode_numbers() {
 }
 
 #[test]
-#[ignore]
+
 fn encode_deep_thought() {
     let phrase = "Truth is fiction.";
     let output = encode(phrase);
@@ -65,7 +65,7 @@ fn encode_deep_thought() {
 }
 
 #[test]
-#[ignore]
+
 fn encode_all_the_letters() {
     let phrase = "The quick brown fox jumps over the lazy dog.";
     let output = encode(phrase);
@@ -76,7 +76,7 @@ fn encode_all_the_letters() {
 // Decode tests
 
 #[test]
-#[ignore]
+
 fn decode_exercism() {
     let phrase = "vcvix rhn";
     let output = decode(phrase);
@@ -85,7 +85,7 @@ fn decode_exercism() {
 }
 
 #[test]
-#[ignore]
+
 fn decode_a_sentence() {
     let phrase = "zmlyh gzxov rhlug vmzhg vkkrm thglm v";
     let output = decode(phrase);
@@ -94,7 +94,7 @@ fn decode_a_sentence() {
 }
 
 #[test]
-#[ignore]
+
 fn decode_numbers() {
     let phrase = "gvhgr mt123 gvhgr mt";
     let output = decode(phrase);
@@ -103,7 +103,7 @@ fn decode_numbers() {
 }
 
 #[test]
-#[ignore]
+
 fn decode_all_the_letters() {
     let phrase = "gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt";
     let output = decode(phrase);
@@ -112,7 +112,7 @@ fn decode_all_the_letters() {
 }
 
 #[test]
-#[ignore]
+
 fn decode_with_too_many_spaces() {
     let phrase = "vc vix    r hn";
     let output = decode(phrase);
@@ -121,7 +121,7 @@ fn decode_with_too_many_spaces() {
 }
 
 #[test]
-#[ignore]
+
 fn decode_with_no_spaces() {
     let phrase = "zmlyhgzxovrhlugvmzhgvkkrmthglmv";
     let output = decode(phrase);

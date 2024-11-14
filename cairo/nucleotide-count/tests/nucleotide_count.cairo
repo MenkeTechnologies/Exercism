@@ -9,7 +9,7 @@ fn empty_strand() {
 }
 
 #[test]
-#[ignore]
+
 fn can_count_one_nucleotide_in_single_character_input() {
     let strand = "G";
     let output = counts(strand);
@@ -18,7 +18,7 @@ fn can_count_one_nucleotide_in_single_character_input() {
 }
 
 #[test]
-#[ignore]
+
 fn strand_with_repeated_nucleotide() {
     let strand = "GGGGGGG";
     let output = counts(strand);
@@ -27,7 +27,7 @@ fn strand_with_repeated_nucleotide() {
 }
 
 #[test]
-#[ignore]
+
 fn strand_with_multiple_nucleotides() {
     let strand = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
     let output = counts(strand);
@@ -36,7 +36,7 @@ fn strand_with_multiple_nucleotides() {
 }
 
 #[test]
-#[ignore]
+
 #[should_panic(expected: ("Invalid nucleotide in strand",))]
 fn strand_with_invalid_nucleotides() {
     counts("AGXXACT");

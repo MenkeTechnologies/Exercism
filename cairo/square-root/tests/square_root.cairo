@@ -8,7 +8,7 @@ fn root_of_1() {
 }
 
 #[test]
-#[ignore]
+
 fn root_of_4() {
     let output = sqrt(4);
     let expected = 2;
@@ -16,7 +16,7 @@ fn root_of_4() {
 }
 
 #[test]
-#[ignore]
+
 fn root_of_25() {
     let output = sqrt(25);
     let expected = 5;
@@ -24,7 +24,7 @@ fn root_of_25() {
 }
 
 #[test]
-#[ignore]
+
 fn root_of_81() {
     let output = sqrt(81);
     let expected = 9;
@@ -32,7 +32,7 @@ fn root_of_81() {
 }
 
 #[test]
-#[ignore]
+
 fn root_of_196() {
     let output = sqrt(196);
     let expected = 14;
@@ -40,7 +40,7 @@ fn root_of_196() {
 }
 
 #[test]
-#[ignore]
+
 fn root_of_65025() {
     let output = sqrt(65025);
     let expected = 255;

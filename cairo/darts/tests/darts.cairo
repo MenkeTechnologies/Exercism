@@ -8,7 +8,7 @@ fn missed_target() {
 }
 
 #[test]
-#[ignore]
+
 fn on_the_outer_circle() {
     let output = score(0, 10);
     let expected = 1;
@@ -16,7 +16,7 @@ fn on_the_outer_circle() {
 }
 
 #[test]
-#[ignore]
+
 fn on_the_middle_circle() {
     let output = score(-5, 0);
     let expected = 5;
@@ -24,7 +24,7 @@ fn on_the_middle_circle() {
 }
 
 #[test]
-#[ignore]
+
 fn on_the_inner_circle() {
     let output = score(0, -1);
     let expected = 10;
@@ -32,7 +32,7 @@ fn on_the_inner_circle() {
 }
 
 #[test]
-#[ignore]
+
 fn exactly_on_center() {
     let output = score(0, 0);
     let expected = 10;
@@ -40,7 +40,7 @@ fn exactly_on_center() {
 }
 
 #[test]
-#[ignore]
+
 fn just_within_the_outer_circle() {
     let output = score(-7, 7);
     let expected = 1;

@@ -9,7 +9,7 @@ fn no_rows() {
 }
 
 #[test]
-#[ignore]
+
 fn no_columns() {
     let input = array![""];
     let expected = array![""];
@@ -18,7 +18,7 @@ fn no_columns() {
 }
 
 #[test]
-#[ignore]
+
 fn no_mines() {
     #[cairofmt::skip]
     let (input, expected) = (array![
@@ -35,7 +35,7 @@ fn no_mines() {
 }
 
 #[test]
-#[ignore]
+
 fn minefield_with_only_mines() {
     #[cairofmt::skip]
     let (input, expected) = (array![
@@ -52,7 +52,7 @@ fn minefield_with_only_mines() {
 }
 
 #[test]
-#[ignore]
+
 fn mine_surrounded_by_spaces() {
     #[cairofmt::skip]
     let (input, expected) = (array![
@@ -69,7 +69,7 @@ fn mine_surrounded_by_spaces() {
 }
 
 #[test]
-#[ignore]
+
 fn space_surrounded_by_mines() {
     #[cairofmt::skip]
     let (input, expected) = (array![
@@ -86,7 +86,7 @@ fn space_surrounded_by_mines() {
 }
 
 #[test]
-#[ignore]
+
 fn horizontal_line() {
     let input = array![" * * "];
     let expected = array!["1*2*1"];
@@ -95,7 +95,7 @@ fn horizontal_line() {
 }
 
 #[test]
-#[ignore]
+
 fn horizontal_line_mines_at_edges() {
     let input = array!["*   *"];
     let expected = array!["*1 1*"];
@@ -104,7 +104,7 @@ fn horizontal_line_mines_at_edges() {
 }
 
 #[test]
-#[ignore]
+
 fn vertical_line() {
     #[cairofmt::skip]
     let (input, expected) = (array![
@@ -125,7 +125,7 @@ fn vertical_line() {
 }
 
 #[test]
-#[ignore]
+
 fn vertical_line_mines_at_edges() {
     #[cairofmt::skip]
     let (input, expected) = (array![
@@ -146,7 +146,7 @@ fn vertical_line_mines_at_edges() {
 }
 
 #[test]
-#[ignore]
+
 fn cross() {
     #[cairofmt::skip]
     let (input, expected) = (array![
@@ -167,7 +167,7 @@ fn cross() {
 }
 
 #[test]
-#[ignore]
+
 fn large_minefield() {
     #[cairofmt::skip]
     let (input, expected) = (array![

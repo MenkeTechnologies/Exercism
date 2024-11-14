@@ -8,7 +8,7 @@ fn first_prime() {
 }
 
 #[test]
-#[ignore]
+
 fn second_prime() {
     let output = prime(2);
     let expected = 3;
@@ -16,7 +16,7 @@ fn second_prime() {
 }
 
 #[test]
-#[ignore]
+
 fn sixth_prime() {
     let output = prime(6);
     let expected = 13;
@@ -24,7 +24,7 @@ fn sixth_prime() {
 }
 
 #[test]
-#[ignore]
+
 fn big_prime() {
     let output = prime(4001);
     let expected = 37831;
@@ -32,7 +32,7 @@ fn big_prime() {
 }
 
 #[test]
-#[ignore]
+
 #[should_panic(expected: ("there is no zeroth prime",))]
 fn there_is_no_zeroth_prime() {
     prime(0);

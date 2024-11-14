@@ -7,7 +7,7 @@ fn new_list_is_empty() {
 }
 
 #[test]
-#[ignore]
+
 fn push_increments_length() {
     let mut list = SimpleLinkedListTrait::<u32>::new();
     list.push(1);
@@ -17,7 +17,7 @@ fn push_increments_length() {
 }
 
 #[test]
-#[ignore]
+
 fn pop_decrements_length() {
     let mut list = SimpleLinkedListTrait::<u32>::new();
     list.push(1);
@@ -29,7 +29,7 @@ fn pop_decrements_length() {
 }
 
 #[test]
-#[ignore]
+
 fn pop_returns_head_element_and_removes_it() {
     let mut list = SimpleLinkedListTrait::<u32>::new();
     list.push(1);
@@ -41,7 +41,7 @@ fn pop_returns_head_element_and_removes_it() {
 }
 
 #[test]
-#[ignore]
+
 fn peek_returns_reference_to_head_element_but_does_not_remove_it() {
     let mut list = SimpleLinkedListTrait::<u32>::new();
     let none: Option<@u32> = Option::None;
@@ -58,7 +58,7 @@ fn peek_returns_reference_to_head_element_but_does_not_remove_it() {
 }
 
 #[test]
-#[ignore]
+
 fn reverse() {
     let mut list = SimpleLinkedListTrait::<u32>::new();
     list.push(1);
@@ -73,7 +73,7 @@ fn reverse() {
 }
 
 #[test]
-#[ignore]
+
 fn reverse_empty_list() {
     let mut list = SimpleLinkedListTrait::<u32>::new();
     let mut rev_list = list.rev();
@@ -83,7 +83,7 @@ fn reverse_empty_list() {
 }
 
 #[test]
-#[ignore]
+
 fn from_array() {
     let mut array: Array<u32> = array![1, 2, 3, 4];
     let mut list: SimpleLinkedList<u32> = array.into();
@@ -94,7 +94,7 @@ fn from_array() {
 }
 
 #[test]
-#[ignore]
+
 fn from_empty_array_is_empty_list() {
     let mut array: Array<u32> = array![];
     let mut list: SimpleLinkedList<u32> = array.into();
@@ -104,7 +104,7 @@ fn from_empty_array_is_empty_list() {
 }
 
 #[test]
-#[ignore]
+
 fn into_array() {
     let mut list = SimpleLinkedListTrait::<u32>::new();
     list.push(1);
@@ -116,7 +116,7 @@ fn into_array() {
 }
 
 #[test]
-#[ignore]
+
 fn empty_list_into_empty_array() {
     let mut list = SimpleLinkedListTrait::<u32>::new();
     let list_as_arr: Array<u32> = list.into();

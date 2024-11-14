@@ -8,7 +8,7 @@ fn zero_eggs() {
 }
 
 #[test]
-#[ignore]
+
 fn one_egg() {
     let output = eggCount(16);
     let expected = 1;
@@ -16,7 +16,7 @@ fn one_egg() {
 }
 
 #[test]
-#[ignore]
+
 fn four_eggs() {
     let output = eggCount(89);
     let expected = 4;
@@ -24,7 +24,7 @@ fn four_eggs() {
 }
 
 #[test]
-#[ignore]
+
 fn thirteen_eggs() {
     let output = eggCount(2000000000);
     let expected = 13;

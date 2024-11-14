@@ -10,7 +10,7 @@ fn empty_lists() {
 }
 
 #[test]
-#[ignore]
+
 fn empty_list_within_non_empty_list() {
     let list_one: Array<u32> = array![];
     let list_two: Array<u32> = array![1, 2, 3];
@@ -20,7 +20,7 @@ fn empty_list_within_non_empty_list() {
 }
 
 #[test]
-#[ignore]
+
 fn non_empty_list_contains_empty_list() {
     let list_one: Array<u32> = array![1, 2, 3];
     let list_two: Array<u32> = array![];
@@ -30,7 +30,7 @@ fn non_empty_list_contains_empty_list() {
 }
 
 #[test]
-#[ignore]
+
 fn list_equals_itself() {
     let list_one: Array<u32> = array![1, 2, 3];
     let list_two: Array<u32> = array![1, 2, 3];
@@ -40,7 +40,7 @@ fn list_equals_itself() {
 }
 
 #[test]
-#[ignore]
+
 fn different_lists() {
     let list_one: Array<u32> = array![1, 2, 3];
     let list_two: Array<u32> = array![2, 3, 4];
@@ -50,7 +50,7 @@ fn different_lists() {
 }
 
 #[test]
-#[ignore]
+
 fn false_start() {
     let list_one: Array<u32> = array![1, 2, 5];
     let list_two: Array<u32> = array![0, 1, 2, 3, 1, 2, 5, 6];
@@ -60,7 +60,7 @@ fn false_start() {
 }
 
 #[test]
-#[ignore]
+
 fn consecutive() {
     let list_one: Array<u32> = array![1, 1, 2];
     let list_two: Array<u32> = array![0, 1, 1, 1, 2, 1, 2];
@@ -70,7 +70,7 @@ fn consecutive() {
 }
 
 #[test]
-#[ignore]
+
 fn sublist_at_start() {
     let list_one: Array<u32> = array![0, 1, 2];
     let list_two: Array<u32> = array![0, 1, 2, 3, 4, 5];
@@ -80,7 +80,7 @@ fn sublist_at_start() {
 }
 
 #[test]
-#[ignore]
+
 fn sublist_in_middle() {
     let list_one: Array<u32> = array![2, 3, 4];
     let list_two: Array<u32> = array![0, 1, 2, 3, 4, 5];
@@ -90,7 +90,7 @@ fn sublist_in_middle() {
 }
 
 #[test]
-#[ignore]
+
 fn sublist_at_end() {
     let list_one: Array<u32> = array![3, 4, 5];
     let list_two: Array<u32> = array![0, 1, 2, 3, 4, 5];
@@ -100,7 +100,7 @@ fn sublist_at_end() {
 }
 
 #[test]
-#[ignore]
+
 fn at_start_of_superlist() {
     let list_one: Array<u32> = array![0, 1, 2, 3, 4, 5];
     let list_two: Array<u32> = array![0, 1, 2];
@@ -110,7 +110,7 @@ fn at_start_of_superlist() {
 }
 
 #[test]
-#[ignore]
+
 fn in_middle_of_superlist() {
     let list_one: Array<u32> = array![0, 1, 2, 3, 4, 5];
     let list_two: Array<u32> = array![2, 3];
@@ -120,7 +120,7 @@ fn in_middle_of_superlist() {
 }
 
 #[test]
-#[ignore]
+
 fn at_end_of_superlist() {
     let list_one: Array<u32> = array![0, 1, 2, 3, 4, 5];
     let list_two: Array<u32> = array![3, 4, 5];
@@ -130,7 +130,7 @@ fn at_end_of_superlist() {
 }
 
 #[test]
-#[ignore]
+
 fn first_list_missing_element_from_second_list() {
     let list_one: Array<u32> = array![1, 3];
     let list_two: Array<u32> = array![1, 2, 3];
@@ -140,7 +140,7 @@ fn first_list_missing_element_from_second_list() {
 }
 
 #[test]
-#[ignore]
+
 fn second_list_missing_element_from_first_list() {
     let list_one: Array<u32> = array![1, 2, 3];
     let list_two: Array<u32> = array![1, 3];
@@ -150,7 +150,7 @@ fn second_list_missing_element_from_first_list() {
 }
 
 #[test]
-#[ignore]
+
 fn first_list_missing_additional_digits_from_second_list() {
     let list_one: Array<u32> = array![1, 2];
     let list_two: Array<u32> = array![1, 22];
@@ -160,7 +160,7 @@ fn first_list_missing_additional_digits_from_second_list() {
 }
 
 #[test]
-#[ignore]
+
 fn order_matters_to_a_list() {
     let list_one: Array<u32> = array![1, 2, 3];
     let list_two: Array<u32> = array![3, 2, 1];
@@ -170,7 +170,7 @@ fn order_matters_to_a_list() {
 }
 
 #[test]
-#[ignore]
+
 fn same_digits_but_different_numbers() {
     let list_one: Array<u32> = array![1, 0, 1];
     let list_two: Array<u32> = array![10, 1];

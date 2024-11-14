@@ -9,7 +9,7 @@ fn lowercase_letter() {
 }
 
 #[test]
-#[ignore]
+
 fn uppercase_letter() {
     let input = "A";
     let output = score(input);
@@ -18,7 +18,7 @@ fn uppercase_letter() {
 }
 
 #[test]
-#[ignore]
+
 fn valuable_letter() {
     let input = "f";
     let output = score(input);
@@ -27,7 +27,7 @@ fn valuable_letter() {
 }
 
 #[test]
-#[ignore]
+
 fn short_word() {
     let input = "at";
     let output = score(input);
@@ -36,7 +36,7 @@ fn short_word() {
 }
 
 #[test]
-#[ignore]
+
 fn short_valuable_word() {
     let input = "zoo";
     let output = score(input);
@@ -45,7 +45,7 @@ fn short_valuable_word() {
 }
 
 #[test]
-#[ignore]
+
 fn medium_word() {
     let input = "street";
     let output = score(input);
@@ -54,7 +54,7 @@ fn medium_word() {
 }
 
 #[test]
-#[ignore]
+
 fn medium_valuable_word() {
     let input = "quirky";
     let output = score(input);
@@ -63,7 +63,7 @@ fn medium_valuable_word() {
 }
 
 #[test]
-#[ignore]
+
 fn long_mixed_case_word() {
     let input = "OxyphenButazone";
     let output = score(input);
@@ -72,7 +72,7 @@ fn long_mixed_case_word() {
 }
 
 #[test]
-#[ignore]
+
 fn english_like_word() {
     let input = "pinata";
     let output = score(input);
@@ -81,7 +81,7 @@ fn english_like_word() {
 }
 
 #[test]
-#[ignore]
+
 fn empty_input() {
     let input = "";
     let output = score(input);
@@ -90,7 +90,7 @@ fn empty_input() {
 }
 
 #[test]
-#[ignore]
+
 fn entire_alphabet_available() {
     let input = "abcdefghijklmnopqrstuvwxyz";
     let output = score(input);
@@ -99,7 +99,7 @@ fn entire_alphabet_available() {
 }
 
 #[test]
-#[ignore]
+
 fn numbers_do_not_score() {
     let input = "pi3ata9";
     let output = score(input);
@@ -108,7 +108,7 @@ fn numbers_do_not_score() {
 }
 
 #[test]
-#[ignore]
+
 fn special_characters_do_not_score() {
     let input = "@STRA^E$";
     let output = score(input);
