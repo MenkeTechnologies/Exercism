@@ -8,7 +8,7 @@ fn square_of_sum_1() {
 }
 
 #[test]
-#[ignore]
+
 fn square_of_sum_5() {
     let output = squareOfSum(5);
     let expected = 225;
@@ -16,7 +16,7 @@ fn square_of_sum_5() {
 }
 
 #[test]
-#[ignore]
+
 fn square_of_sum_100() {
     let output = squareOfSum(100);
     let expected = 25502500;
@@ -24,7 +24,7 @@ fn square_of_sum_100() {
 }
 
 #[test]
-#[ignore]
+
 fn sum_of_squares_1() {
     let output = sumOfSquares(1);
     let expected = 1;
@@ -32,7 +32,7 @@ fn sum_of_squares_1() {
 }
 
 #[test]
-#[ignore]
+
 fn sum_of_squares_5() {
     let output = sumOfSquares(5);
     let expected = 55;
@@ -40,7 +40,7 @@ fn sum_of_squares_5() {
 }
 
 #[test]
-#[ignore]
+
 fn sum_of_squares_100() {
     let output = sumOfSquares(100);
     let expected = 338350;
@@ -48,7 +48,7 @@ fn sum_of_squares_100() {
 }
 
 #[test]
-#[ignore]
+
 fn difference_of_squares_1() {
     let output = differenceOfSquares(1);
     let expected = 0;
@@ -56,7 +56,7 @@ fn difference_of_squares_1() {
 }
 
 #[test]
-#[ignore]
+
 fn difference_of_squares_5() {
     let output = differenceOfSquares(5);
     let expected = 170;
@@ -64,7 +64,7 @@ fn difference_of_squares_5() {
 }
 
 #[test]
-#[ignore]
+
 fn difference_of_squares_100() {
     let output = differenceOfSquares(100);
     let expected = 25164150;
