@@ -1,13 +1,7 @@
 module [squareOfSum, sumOfSquares, differenceOfSquares]
 
-squareOfSum : U64 -> U64
-squareOfSum = \number ->
-    crash "Please implement the `squareOfSum` function"
+squareOfSum = \n -> List.range { start: At 1, end: At n } |> List.sum |> Num.powInt 2
 
-sumOfSquares : U64 -> U64
-sumOfSquares = \number ->
-    crash "Please implement the `sumOfSquares` function"
+sumOfSquares = \n -> List.range { start: At 1, end: At n } |> List.map (\num -> num * num) |> List.sum
 
-differenceOfSquares : U64 -> U64
-differenceOfSquares = \number ->
-    crash "Please implement the `differenceOfSquares` function"
+differenceOfSquares = \n -> squareOfSum n - sumOfSquares n
