@@ -1,15 +1,7 @@
 module [latest, personalBest, personalTopThree]
 
-Score : U64
+latest = List.last
 
-latest : List Score -> Result Score _
-latest = \scores ->
-    crash "Please implement the 'latest' function"
+personalBest = List.max
 
-personalBest : List Score -> Result Score _
-personalBest = \scores ->
-    crash "Please implement the 'personalBest' function"
-
-personalTopThree : List Score -> List Score
-personalTopThree = \scores ->
-    crash "Please implement the 'personalTopThree' function"
+personalTopThree = \scores -> scores |> List.sortDesc |> List.takeFirst 3
