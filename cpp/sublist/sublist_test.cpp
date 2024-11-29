@@ -31,8 +31,6 @@ TEST_CASE("empty lists", "[97319c93-ebc5-47ab-a022-02a1980e1d29]") {
 	REQUIRE(expected == sublist::sublist({}, {}));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
-
 TEST_CASE("empty list within non empty list", "[de27dbd4-df52-46fe-a336-30be58457382]") {
 	sublist::List_comparison expected = sublist::List_comparison::sublist;
 	REQUIRE(expected == sublist::sublist({}, {1, 2, 3}));
@@ -117,5 +115,3 @@ TEST_CASE("same digits but different numbers", "[5f47ce86-944e-40f9-9f31-6368aad
 	sublist::List_comparison expected = sublist::List_comparison::unequal;
 	REQUIRE(expected == sublist::sublist({1, 0, 1}, {10, 1}));
 }
-
-#endif
