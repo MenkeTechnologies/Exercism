@@ -1,9 +1,15 @@
 @echo off
-SETLOCAL EnableDelayedExpansion
-
 set "input=%~1"
-set "result="
+set "res="
 
-REM Your code goes here
+SET /A number =%input% %% 3
+if %number% == 0 set res=Pling
 
-echo !result!
+SET /A number =%input% %% 5
+if %number% == 0 set res=%res%Plang
+
+SET /A number =%input% %% 7
+if %number% == 0 set res=%res%Plong
+
+if [%res%]==[] set res=%input%
+echo %res%
