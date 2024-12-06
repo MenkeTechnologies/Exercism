@@ -1,16 +1,17 @@
 @echo off
 setlocal enabledelayedexpansion
-
 set "x=%~1"
 set "y=%~2"
-set "result="
+set /a "distance=x*x+y*y"
 
-REM Usage:  set /a "value=sqrt(n):n=100"
-REM         echo %value%
-REM '100' is the number to find the square root of '10'
-set "Sqrt(N)=( x=(N)/(11*1024)+40, x=((N)/x+x)/2, x=((N)/x+x)/2, x=((N)/x+x)/2, x=((N)/x+x)/2, x=((N)/x+x)/2 )"
+set result=0
 
-REM Your code goes here
-
+if %distance% LEQ 1 (
+    set result=10
+) else if %distance% LEQ 25 (
+    set result=5
+) else if %distance% LSS 100 (
+    set result=1
+)
 
 echo %result%
