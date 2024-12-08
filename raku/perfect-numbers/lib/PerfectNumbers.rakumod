@@ -6,5 +6,6 @@ enum AliquotSumType is export (
     :Abundant(More),
 );
 
-sub aliquot-sum-type ( $n --> AliquotSumType ) is export {
+sub aliquot-sum-type ( $n where 1..* --> AliquotSumType(Order) ) is export {
+    (1..$n-1).grep($n %% *).sum <=> $n
 }
