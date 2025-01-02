@@ -1,52 +1,10 @@
-// @ts-check
+export const isValidCommand = command => /^chatbot/i.test(command)
 
-/**
- * Given a certain command, help the chatbot recognize whether the command is valid or not.
- *
- * @param {string} command
- * @returns {boolean} whether or not is the command valid
- */
+export const removeEmoji = message => message.replace(/emoji\w+/g, "")
 
-export function isValidCommand(command) {
-  throw new Error('Please implement the isValidCommand function');
-}
+export const checkPhoneNumber = number => /\+\d/.test(number) ? "Thanks! You can now download me to your phone." : `Oops, it seems like I can't reach out to ${number}`
 
-/**
- * Given a certain message, help the chatbot get rid of all the emoji's encryption throught the message.
- *
- * @param {string} message
- * @returns {string} The message without the emojis encryption
- */
-export function removeEmoji(message) {
-  throw new Error('Please implement the removeEmoji function');
-}
+export const getURL = userInput => userInput.match(/\b\w+\.\w+/g)
 
-/**
- * Given a certain phone number, help the chatbot recognize whether it is in the correct format.
- *
- * @param {string} number
- * @returns {string} the Chatbot response to the phone Validation
- */
-export function checkPhoneNumber(number) {
-  throw new Error('Please implement the checkPhoneNumber function');
-}
+export const niceToMeetYou = fullName => `Nice to meet you, ${fullName.replace(/(\w+), (\w+)/, "$2 $1")}`
 
-/**
- * Given a certain response from the user, help the chatbot get only the URL
- *
- * @param {string} userInput
- * @returns {string[] | null} all the possible URL's that the user may have answered
- */
-export function getURL(userInput) {
-  throw new Error('Please implement the userInput function');
-}
-
-/**
- * Greet the user using its full name data from the profile
- *
- * @param {string} fullName
- * @returns {string} Greeting from the chatbot
- */
-export function niceToMeetYou(fullName) {
-  throw new Error('Please implement the fullName function');
-}
