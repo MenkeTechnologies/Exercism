@@ -1,4 +1,4 @@
-BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+{
+    for (cnt = 0; $0; $0 = rshift($0, 1)) cnt += $0 % 2
+    print cnt
 }
