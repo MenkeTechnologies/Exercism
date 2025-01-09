@@ -1,7 +1,16 @@
-# These variables are initialized on the command line (using '-v'):
-# - value
+BEGIN { FS = "," }
 
-BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+{
+    lo = 1
+    hi = NF
+    while (lo <= hi) {
+        mid = int((lo + hi) / 2)
+        if (value == $mid) {
+            print mid
+            exit
+        }
+        if (value < $mid) hi = mid - 1
+        else lo = mid + 1
+    }
+    print -1
 }
