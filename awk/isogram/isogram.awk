@@ -1,4 +1,5 @@
-BEGIN {
-    print "Implement this solution" > "/dev/stderr"
-    exit 1
+BEGIN { FPAT="\\w" }
+{
+    while (!dict[tolower($++i)]){ dict[tolower($i)]++; }
+    print $i ? "false" : "true"
 }
