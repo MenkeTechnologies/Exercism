@@ -1,4 +1,9 @@
 !yamlscript/v0
 
 defn score(x y):
-  # Implement the 'score' function.
+  distance =: math/hypot(x y)
+  cond:
+    distance > 10: 0
+    distance > 5: 1
+    distance > 1: 5
+    else: 10

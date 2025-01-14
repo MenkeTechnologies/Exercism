@@ -8,18 +8,7 @@ class Darts {
     }
 
     int score() {
-
-        if (distance <= 1) {
-            return 10;
-        }
-        if (distance <= 5) {
-            return 5;
-        }
-        if (distance <= 10) {
-            return 1;
-        }
-
-        return 0;
+        return distance > 10 ? 0 : distance > 5 ? 1 : distance > 1 ? 5 : 10;
     }
 
 }
