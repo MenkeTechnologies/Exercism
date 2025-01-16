@@ -1,4 +1,4 @@
 !yamlscript/v0
 
-defn reverse():
-  # Implement the 'reverse' function.
+defn reverse(s):
+  reduce (fn [acc c] (c + acc)) "": s
