@@ -1,20 +1,9 @@
-unique type Color = Red | Orange | Yellow | Green | Blue | Purple
+unique type majorityElement.Color = Red | Orange | Yellow | Green | Blue | Purple
 
-majorityFinder : [Color] -> Optional Color
-majorityFinder words =
-  todo "implement majorityFinder"
-
-
-structural ability Store where
-  put : a ->{Store a} ()
-  get : {Store a} a
-
-Store.runWith : a -> '{Store a, g} r -> {g} (a, r)
-Store.runWith elem storeFunction =
-  todo "optionally implement runWith handler if you choose to use the Store ability"
-
-unique type StoredState = Placeholder
-
-update : a -> '{Store StoredState} ()
-update currentElement _ =
-  todo "optionally implement update"
+majorityElement.majorityFinder : [majorityElement.Color] -> Optional majorityElement.Color
+majorityElement.majorityFinder elements =
+  elements
+    |> Bag.fromList
+    |> Bag.occurrenceList
+    |> findMap (cases (e, count) | toFloat(count) / toFloat(size elements) > 0.5 -> Some e
+                      _ -> None)
