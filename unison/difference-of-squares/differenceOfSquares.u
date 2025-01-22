@@ -1,8 +1,5 @@
-differenceOfSquares.squareOfSum : Nat -> Nat
-differenceOfSquares.squareOfSum number = todo "squareOfSum"
+differenceOfSquares.squareOfSum number = Nat.pow (List.range 0 (number+1) |> sum) 2
 
-differenceOfSquares.sumOfSquares : Nat -> Nat
-differenceOfSquares.sumOfSquares number = todo "sumOfSquares"
+differenceOfSquares.sumOfSquares number = List.range 0 (number + 1) |> List.map (n -> Nat.pow n 2) |> List.foldLeft (+) 0
 
-differenceOfSquares.difference : Nat -> Nat
-differenceOfSquares.difference number = todo "difference"
+differenceOfSquares.difference number = squareOfSum number - sumOfSquares number
