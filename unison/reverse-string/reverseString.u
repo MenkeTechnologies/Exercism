@@ -1,2 +1,1 @@
-reverseString.reverse : Text -> Text
-reverseString.reverse text = todo "implement reverse"
+reverseString.reverse = toCharList >> List.reverse >> fromCharList
