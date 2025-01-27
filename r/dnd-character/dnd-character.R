@@ -8,14 +8,13 @@ ability = function() {
 
 new_character = function() {
   constitution = ability()
-    structure(list(
-    strength = ability(),
-    dexterity = ability(),
-    constitution = ability(),
-    intelligence = ability(),
-    constiution = constitution,
-    wisdom = ability(),
-    charisma = ability(),
-    hitpoints = 10 + modifier(constitution)
+  structure(list(
+      strength = ability(),
+      dexterity = ability(),
+      constitution = constitution,
+      intelligence = ability(),
+      hitpoints = 10 + modifier(constitution),
+      wisdom = ability(),
+      charisma = ability()
   ), class = "character")
 }
