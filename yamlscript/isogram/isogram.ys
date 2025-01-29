@@ -1,4 +1,4 @@
 !yamlscript/v0
 
-defn isogram(phrase):
-  # Implement the 'isogram' function.
+defn isogram(s):
+  s !~ /(?i)(\w).*\1/
