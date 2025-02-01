@@ -1,4 +1,4 @@
 !yamlscript/v0
 
-defn is-pangram(sentence):
-  # Implement the 'is-pangram' function.
+defn is-pangram(s):
+  (\\a .. \\z).every?(\(index(lc(s), %1)))
