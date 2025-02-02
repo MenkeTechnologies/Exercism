@@ -1,10 +1,14 @@
 !yamlscript/v0
 
+defn valid-triangle(sides):
+  a b c =: sort(sides)
+  =>: (a > 0) && ((a + b) >= c)
+
 defn equilateral(sides):
-  # Implement the 'equilateral' function.
+  valid-triangle(sides) && (sides.distinct().# == 1)
 
 defn isosceles(sides):
-  # Implement the 'isosceles' function.
+  valid-triangle(sides) && (sides.distinct().# <= 2)
 
 defn scalene(sides):
-  # Implement the 'scalene' function.
+  valid-triangle(sides) && (sides.distinct().# == 3)
