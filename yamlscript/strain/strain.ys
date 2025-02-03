@@ -1,7 +1,7 @@
 !yamlscript/v0
 
-defn keep(list predicate):
-  # Implement the 'keep' function.
+defn keep(lst f):
+  mapcat: \(when(f(_) [_])) lst
 
-defn discard(list predicate):
-  # Implement the 'discard' function.
+defn discard(lst f):
+  keep: lst (comp not f)
