@@ -1,3 +1,8 @@
-score: function [x y][ 
-    panic "please implement the score function"
+score: function [x y][
+    when.has: hypot x y [
+        [> 10] -> 0
+        [> 5] -> 1
+        [> 1] -> 5
+        any -> 10
+    ]
 ]
