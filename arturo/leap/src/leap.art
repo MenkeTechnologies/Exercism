@@ -1,3 +1,1 @@
-isLeap?: function [year][
-    panic "please implement the isLeap? function"
-]
+isLeap?: $[year] -> and? (zero? mod year 4) or? (not? zero? mod year 100) (zero? mod year 400)
