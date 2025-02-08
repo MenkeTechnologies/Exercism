@@ -1,3 +1,5 @@
-reverseString: function [string][
-    panic "Please implement the reverseString function"
+reverseString: function [s][
+    res ""
+    loop s 'c -> prepend 'res c
+    res
 ]
