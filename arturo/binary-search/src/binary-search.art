@@ -1,4 +1,14 @@
-find: function [values value][  
-    panic "Implement the find function" 
+find: function [values target][
+    lo: 0
+    hi: sub size values 1
+    while [=< lo hi] [
+        mid: div lo + hi 2
+        elem: values\[mid]
+        case [target]
+            when? [> elem] -> lo: i + 1
+            when? [< elem] -> hi: i - 1
+            else  -> return mid
+    ]
+    null
 ]
 
