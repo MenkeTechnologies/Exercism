@@ -1,11 +1,5 @@
-squareOfSum: function [n][
-    panic "Please implement the squareOfSum function"
-]
+squareOfSum: $[n]-> (sum @1 .. n) ^ 2
 
-sumOfSquares: function [n][
-    panic "Please implement the sumOfSquares function"
-]
+sumOfSquares: $[n]-> sum(map @1 .. n => [& ^ 2])
 
-differenceOfSquares: function [n][
-    panic "Please implement the differenceOfSquares function"
-]
+differenceOfSquares: $[n]-> (squareOfSum n) - (sumOfSquares n)
