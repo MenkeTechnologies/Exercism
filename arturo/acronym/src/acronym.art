@@ -1,3 +1,6 @@
-abbreviate: function[phrase][
-    panic "Please implement the abbreviate function"
+abbreviate: function[s][
+    replace s ["_" "-"] " "
+    | split.words
+    | map => [upper &\0]
+    | join
 ]
