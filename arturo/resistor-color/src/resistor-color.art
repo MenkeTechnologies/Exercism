@@ -1,5 +1,2 @@
-; Define the colors variable
-
-colorCode: function [color][
-    panic "Please implement the twoFer function"
-]
+colors: ["black" "brown" "red" "orange" "yellow" "green" "blue" "violet" "grey" "white"]
+colorCode: $ => [index colors &]
