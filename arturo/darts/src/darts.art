@@ -1,4 +1,4 @@
-score: function [x y][
+score: $[x y][
     when.has: hypot x y [
         [> 10] -> 0
         [> 5] -> 1
