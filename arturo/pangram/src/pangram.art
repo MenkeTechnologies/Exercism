@@ -1,3 +1,4 @@
-pangram?: function [phrase][
-    panic "Please implement the pangram? function"
+pangram?: function [s][
+    lc: lower s
+    every? 'a'..'z' => [in? & lc]
 ]
