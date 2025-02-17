@@ -1,3 +1,1 @@
-isogram?: function [s][
-    (match lower(s) {/([a-z]).*\1/}) = []
-]
+isogram?: $[s]-> (match lower(s) {/([a-z]).*\1/}) = []
