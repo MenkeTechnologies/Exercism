@@ -1,11 +1,10 @@
-modifier: function [score][  
-    panic "Implement the modifier function" 
-]  
+define :character [strength dexterity constitution intelligence wisdom charisma hitpoints]
 
-ability: function [][ 
-    panic "Implement the ability function"
-]
+modifier: $[score] -> floor (score - 10) // 2
 
-makeCharacter: function [][ 
-    panic "Implement the makeCharacter function"
+ability: $[] -> sum drop sort map 4 => [random 1 6]
+
+makeCharacter: $ => [
+    a: ability
+    to :character [a, a, a, a, a, a, 10 + modifier a]
 ]

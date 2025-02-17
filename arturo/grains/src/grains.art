@@ -1,7 +1,6 @@
-square: function [number][
-    panic "Please implement the square function"
+square: $ [n][
+    unless in? n 1..64 -> return null
+    2 ^ dec n
 ]
 
-total: function [][
-    panic "Please implement the total function"
-]
+total: $ => [ sum map 1..64 => square ]
