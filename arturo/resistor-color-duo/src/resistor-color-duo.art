@@ -1,3 +1,2 @@
-resistorValue: function [colors][
-    panic "Please implement the resistorValue function"
-]
+colors: ["black" "brown" "red" "orange" "yellow" "green" "blue" "violet" "grey" "white"]
+resistorValue: $[lst] -> (10 * index colors lst\0) + index colors lst\1
