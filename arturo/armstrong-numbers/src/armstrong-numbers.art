@@ -1,3 +1,3 @@
-armstrong?: function[n][
-    panic "Please implement the armstrong? function"
+armstrong?: $[n][
+	n = (n | digits | map => [& ^ size digits n] | sum)
 ]
