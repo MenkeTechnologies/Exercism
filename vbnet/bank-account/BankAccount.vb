@@ -1,21 +1,30 @@
 Imports System
 
 Public Class BankAccount
-    Public Sub OpenMethod()
-        Throw New NotImplementedException("You need to implement this function.")
+    Private _balance As Decimal
+    Private _open  = False
+    Private ReadOnly balanceLock As New Object()
+
+    Public Sub Open()
+        _open = True
     End Sub
 
-    Public Sub CloseMethod()
-        Throw New NotImplementedException("You need to implement this function.")
+    Public Sub Close()
+        _open = False
     End Sub
 
-    Public ReadOnly Property BalanceProp As Decimal
+    Public ReadOnly Property Balance
         Get
-            Throw New NotImplementedException("You need to implement this property.")
+            If _open Then
+                Return _balance
+            End If
+            Throw New InvalidOperationException()
         End Get
     End Property
 
-    Public Sub UpdateBalanceMethod(ByVal change As Decimal)
-        Throw New NotImplementedException("You need to implement this function.")
+    Public Sub UpdateBalance(change As Decimal)
+        SyncLock balanceLock
+            _balance += change
+        End SyncLock
     End Sub
 End Class
