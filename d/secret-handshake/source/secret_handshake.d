@@ -1,8 +1,15 @@
 module secret_handshake;
 
-pure string[] commands(immutable int number)
-{
-    // implement this function
+import std.algorithm.mutation : reverse;
+
+pure string[] commands(immutable int n) {
+    string[] lst;
+    if (n & 1) lst ~= "wink";
+    if (n & 2) lst ~= "double blink";
+    if (n & 4) lst ~= "close your eyes";
+    if (n & 8) lst ~= "jump";
+    if (n & 16) lst = lst .reverse;
+    return lst ;
 }
 
 unittest
