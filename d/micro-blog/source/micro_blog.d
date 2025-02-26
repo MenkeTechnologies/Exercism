@@ -1,9 +1,13 @@
 module micro_blog;
 
-pure string truncate(immutable string phrase)
-{
-    // implement this function
-}
+import std.uni: byGrapheme;
+import std.array: array, join;
+import std.algorithm: map;
+import std.conv: to;
+import std.range: take;
+
+pure string truncate(immutable string s) => s.byGrapheme.take(5).map!(g => g.array.to!string).join;
+
 
 unittest
 {
