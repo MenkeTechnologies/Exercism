@@ -1,34 +1,27 @@
 #include <string>
 #include <vector>
+#include <algorithm>
+
+using namespace std;
 
 namespace election {
+    struct ElectionResult {
+        string name{};
+        int votes{};
+    };
 
-// The election result struct is already created for you:
+    int vote_count(const ElectionResult &result) { return result.votes; }
 
-struct ElectionResult {
-    // Name of the candidate
-    std::string name{};
-    // Number of votes the candidate has
-    int votes{};
-};
+    void increment_vote_count(ElectionResult &result, int increment) {
+        result.votes += increment;
+   }
 
-// TODO: Task 1
-// vote_count takes a reference to an `ElectionResult` as an argument and will
-// return the number of votes in the `ElectionResult.
-
-
-// TODO: Task 2
-// increment_vote_count takes a reference to an `ElectionResult` as an argument
-// and a number of votes (int), and will increment the `ElectionResult` by that
-// number of votes.
-
-
-// TODO: Task 3
-// determine_result receives the reference to a final_count and returns a
-// reference to the `ElectionResult` of the new president. It also changes the
-// name of the winner by prefixing it with "President". The final count is given
-// in the form of a `reference` to `std::vector<ElectionResult>`, a vector with
-// `ElectionResults` of all the participating candidates.
-
-
-}  // namespace election
+    ElectionResult &determine_result(vector<ElectionResult> &results) {
+        ElectionResult& res = *max_element(results.begin(), results.end(),
+                                           [](const auto &a, const auto &b) {
+                                              return a.votes < b.votes;
+                                          });
+        res.name = "President " + res.name;
+        return res;
+    }
+} 
