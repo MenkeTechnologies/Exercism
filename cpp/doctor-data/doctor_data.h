@@ -1,3 +1,34 @@
-// ERROR: FILE CORRUPTED. Please supply valid C++ Code.
+#pragma once
 
-hp1,üapöhp2ö%Äcountöiöma1,öhp2ö%Älawöhp3öö/önextöstepö%Ädacöiöml1ö%Älawö7ö%Ädacöiömb1ö%Ärandomöö%Äscrö9sö%Äsirö9sö%Äxctöhr1ö%Äaddöiömx1ö%Ädacöiömx1ö%Äswapö%Äaddöiömy1ö%Ädacöiömy1ö%Ärandomö%Äscrö9sö%Äsirö9sö%Äxctöhr2ö%Ädacöiömdyö%Ädioöiömdxö%Äsetupö.hpt,3ö%Älacöranö%Ädacöiömth
+#include <string>
+
+using namespace std;
+
+namespace star_map {
+    enum class System {
+        Sol, AlphaCentauri, BetaHydri, DeltaEridani,
+        EpsilonEridani, Omicron2Eridani
+    };
+}
+namespace heaven {
+    class Vessel {
+    public:
+        Vessel(string nm, unsigned gen = 1, star_map::System loc = star_map::System::Sol) :
+                name(std::move(nm)), generation(gen), current_system(loc) {}
+
+        Vessel replicate(const string &);
+
+        const string name;
+        const unsigned generation;
+        star_map::System current_system;
+        unsigned busters = 0;
+
+        void make_buster() { ++busters; }
+
+        bool shoot_buster() { return busters ? busters-- : busters; }
+    };
+
+    const string &get_older_bob(const Vessel &, const Vessel &);
+
+    bool in_the_same_system(const Vessel &, const Vessel &);
+}

@@ -1,4 +1,15 @@
-// ERROR: FILE CORRUPTED. Please supply valid C++ Code.
+#include "doctor_data.h"
 
-hp4,ölacöiömthö%Äsmaö%Äsubö(311040ö%Äspaö%Äaddö(311040ö%Ädacöiömthö%Äcountö.hpt,hp4ö%Äxctöhd2ö%Ädacöiöma1
-hp2,öjmpö.
+namespace heaven {
+    Vessel Vessel::replicate(const string &nm) {
+        return {nm, generation + 1, current_system};
+    }
+
+    const string &get_older_bob(const Vessel &v1, const Vessel &v2) {
+        return v1.generation < v2.generation ? v1.name : v2.name;
+    }
+
+    bool in_the_same_system(const Vessel &v1, const Vessel &v2) {
+        return v1.current_system == v2.current_system;
+    }
+}
