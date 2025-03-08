@@ -1,19 +1,38 @@
 #pragma once
 
 #include <string>
+#include <memory>
+#include <utility>
+
+using namespace std;
 
 namespace troy {
+    struct artifact {
+        explicit artifact(string name) : name(std::move(name)) {}
 
-struct artifact {
-    // constructors needed (until C++20)
-    artifact(std::string name) : name(name) {}
-    std::string name;
-};
+        string name;
+    };
 
-struct power {
-    // constructors needed (until C++20)
-    power(std::string effect) : effect(effect) {}
-    std::string effect;
-};
+    struct power {
+        explicit power(string effect) : effect(std::move(effect)) {}
 
-}  // namespace troy
+        string effect;
+    };
+
+    struct human {
+        unique_ptr<artifact> possession{nullptr};
+        shared_ptr<power> own_power{nullptr};
+        shared_ptr<power> influenced_by{nullptr};
+
+    };
+
+    void give_new_artifact(human &human, const string &artifact_name);
+
+    void manifest_power(human &human, const string &power_name);
+
+    void exchange_artifacts(unique_ptr<artifact> &artifact1, unique_ptr<artifact> &artifact2);
+
+    void use_power(human &human1, human &human2);
+
+    int power_intensity(human &human);
+}  

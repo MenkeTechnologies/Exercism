@@ -15,8 +15,6 @@ TEST_CASE("Create a human", "[task_1]") {
     REQUIRE(lanfeust.influenced_by == nullptr);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
-
 TEST_CASE("Give a new artifact to a human", "[task_2]") {
     human lanfeust{};
     std::string pommel{"Magohamoth Ivory Sword Pommel"};
@@ -114,5 +112,3 @@ TEST_CASE("Check power intensity drop after usage", "[task_6]") {
     }
     REQUIRE(power_intensity(palpatine) == 1);
 }
-
-#endif
