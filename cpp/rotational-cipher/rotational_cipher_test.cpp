@@ -13,8 +13,6 @@ TEST_CASE("rotate a by 0, same output as input", "[74e58a38-e484-43f1-9466-877a7
 	REQUIRE(rotational_cipher::rotate("a", 0) == "a");
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
-
 TEST_CASE("rotate a by 1", "[7ee352c6-e6b0-4930-b903-d09943ecb8f5]") {
 	REQUIRE(rotational_cipher::rotate("a", 1) == "b");
 }
@@ -50,5 +48,3 @@ TEST_CASE("rotate punctuation", "[32dd74f6-db2b-41a6-b02c-82eb4f93e549]") {
 TEST_CASE("rotate all letters", "[9fb93fe6-42b0-46e6-9ec1-0bf0a062d8c9]") {
 	REQUIRE(rotational_cipher::rotate("The quick brown fox jumps over the lazy dog.", 13) == "Gur dhvpx oebja sbk whzcf bire gur ynml qbt.");
 }
-
-#endif

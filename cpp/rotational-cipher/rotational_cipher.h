@@ -2,6 +2,8 @@
 
 #include <string>
 
-namespace rotational_cipher {
+using namespace std;
 
-}  // namespace rotational_cipher
+namespace rotational_cipher {
+    string rotate(string, int);
+}
