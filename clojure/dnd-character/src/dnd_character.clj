@@ -1,19 +1,17 @@
-(ns dnd-character)
+(ns dnd-character
+  (:require [clojure.math :refer [floor]]))
 
-(defn score-modifier
-  "Calculates a score's modifier"
-  [score]
-  ;; function body
-  )
+(defn score-modifier [score]
+  (int (floor (/ (- score 10) 2))))
 
-(defn rand-ability
-  "Generates a random ability"
-  []
-  ;; function body
-  )
+(defn rand-ability []
+  (reduce + (rest (sort (repeatedly 4 #(inc (rand-int 6)))))))
 
-(defn rand-character
-  "Generates a random character"
-  []
-  ;; function body
-  )
+(defrecord DndCharacter [strength dexterity charisma wisdom intelligence constitution hitpoints])
+
+(defn rand-character []
+  (let [abilities (repeatedly 6 rand-ability)
+        [strength dexterity charisma wisdom intelligence constitution] abilities
+        hitpoints (+ 10 (score-modifier constitution))]
+    (DndCharacter. strength dexterity charisma wisdom intelligence constitution hitpoints)))
+  
