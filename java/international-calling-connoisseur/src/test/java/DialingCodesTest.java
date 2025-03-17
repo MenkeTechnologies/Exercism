@@ -2,13 +2,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.entry;
 
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class DialingCodesTest {
 
     @Test
-    @Tag("task:1")
     @DisplayName("getCodes initially returns an empty map")
     public void testGetCodesReturnsMap() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -17,7 +15,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:2")
+    
     @DisplayName("setDialingCode adds new entry")
     public void testSetDialingCodeAddsEntry() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -27,7 +25,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:2")
+    
     @DisplayName("setDialingCode updates existing entry")
     public void testSetDialingCodeUpdatesEntry() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -38,7 +36,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:2")
+    
     @DisplayName("setDialingCode with multiple entries")
     public void testSetDialingCodeWithMultipleEntries() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -52,7 +50,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:3")
+    
     @DisplayName("getCountry returns a code's country")
     public void testGetCountryForCode() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -62,7 +60,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:3")
+    
     @DisplayName("getCountry returns updated country")
     public void testGetCountryForUpdatedCode() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -73,7 +71,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:4")
+    
     @DisplayName("addNewDialingCode adds new codes")
     public void testAddNewDialingCodeAddsNewCodes() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -85,7 +83,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:4")
+    
     @DisplayName("addNewDialingCode leaves already added code")
     public void testAddNewDialingCodeLeavesExistingCode() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -98,7 +96,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:4")
+    
     @DisplayName("addNewDialingCode leaves already added country")
     public void testAddNewDialingCodeLeavesExistingCountry() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -109,7 +107,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:5")
+    
     @DisplayName("findDialingCode returns a country's dialing code")
     public void testFindDialingCode() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -119,7 +117,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:5")
+    
     @DisplayName("findDialingCode returns null for country not yet added")
     public void testFindDialingCodeWithUnlistedCountry() {
         DialingCodes dialingCodes = new DialingCodes();
@@ -129,7 +127,7 @@ public class DialingCodesTest {
     }
 
     @Test
-    @Tag("task:6")
+    
     @DisplayName("updateDialingCode updates the map")
     public void testUpdateDialingCode() {
         DialingCodes dialingCodes = new DialingCodes();
