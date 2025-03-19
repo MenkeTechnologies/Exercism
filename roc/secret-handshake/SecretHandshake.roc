@@ -1,5 +1,10 @@
 module [commands]
 
-commands : U64 -> List Str
+dict = [(1, "wink"), (2, "double blink"), (4, "close your eyes"), (8, "jump")]
+
 commands = \number ->
-    crash "Please implement the 'commands' function"
+    actions = dict |> List.join_map \(mask, action) -> if Num.bitwise_and number mask > 0 then [action] else []
+    if Num.bitwise_and number 16 > 0 then
+        List.reverse actions
+    else
+        actions
