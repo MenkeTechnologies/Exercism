@@ -1,9 +1,11 @@
 module [keep, discard]
 
-keep : List a, (a -> Bool) -> List a
-keep = \list, predicate ->
-    crash "Please implement the 'keep' function"
+keep = \lst, f ->
+    lst |> List.walk [] \acc, elem ->
+        if f elem then
+            acc |> List.append elem
+        else
+            acc
 
-discard : List a, (a -> Bool) -> List a
-discard = \list, predicate ->
-    crash "Please implement the 'discard' function"
+discard = \lst, f ->
+    lst |> keep (|elem| !(f elem))
