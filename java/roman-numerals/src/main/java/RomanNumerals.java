@@ -25,10 +25,10 @@ public class RomanNumerals {
     private String s;
 
     public RomanNumerals(int num) {
-        final AtomicInteger n = new AtomicInteger(num);
+        final AtomicInteger dup = new AtomicInteger(num);
         s = map.entrySet().stream().map(e -> {
-            String s = e.getValue().repeat(n.get() / e.getKey());
-            n.set(n.get() % e.getKey());
+            String s = e.getValue().repeat(dup.get() / e.getKey());
+            dup.set(dup.get() % e.getKey());
             return s;
         }).collect(Collectors.joining());
     }
