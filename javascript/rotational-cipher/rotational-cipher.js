@@ -1,5 +1,4 @@
-const a = 'a'.charCodeAt(0),
-    A = 'A'.charCodeAt(0)
+const a = 'a'.charCodeAt(0), A = 'A'.charCodeAt(0)
 
 export const rotate = (s, amt) =>
     s.split('').map(c =>
