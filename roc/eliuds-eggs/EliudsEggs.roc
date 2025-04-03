@@ -1,8 +1,8 @@
-module [eggCount]
+module [egg_count]
 
-eggCount = \number ->
+egg_count = \number ->
     aux = \n, count ->
-        when n is
+        when n is 
             0 -> count
-            _ -> aux (Num.shift_right_by n, 1) (count + Num.bitwise_and n, 1)
-    aux 0 number
+            _ -> aux (Num.shift_right_by(n, 1)) (count + Num.bitwise_and(n, 1))
+    aux number 0
