@@ -1,9 +1,11 @@
-module [findAnagrams]
+module [find_anagrams]
 
-findAnagrams : Str, List Str -> List Str
-findAnagrams = \subject, candidates ->
-    crash "Please implement the 'findAnagrams' function"
+find_anagrams = \subject, candidates ->
+    lowerSubject = subject |> Str.to_utf8 |> List.keep_if (\v -> v < 127) |> toLower
+    sortedSubject = lowerSubject |> List.sort_asc
+    candidates |> List.keep_if \candidate ->
+        lowerCandidate = candidate |> Str.to_utf8 |> toLower
+        sortedCandidate = lowerCandidate |> List.sort_asc
+        lowerCandidate != lowerSubject && sortedCandidate == sortedSubject
 
-# HINT: we have added the `unicode` package to the app's header in
-#       anagram-test.roc, so you can use it here if you need to.
-#       For example, you could import unicode.Grapheme, just sayin'.
+toLower = \s -> s |> List.map \c -> if c >= 'A' && c <= 'Z' then c + 32 else c
