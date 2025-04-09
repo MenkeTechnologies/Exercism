@@ -1,4 +1,3 @@
-Imports System
 Imports System.Collections.Generic
 Imports System.Linq
 
@@ -6,12 +5,7 @@ Public Class GradeSchool
     Private ReadOnly _roster As New Dictionary(Of String, Integer)()
 
     Public Function Add(ByVal student As String, ByVal grade As Integer) As Boolean
-        If Not _roster.ContainsKey(student) Then
-            _roster.Add(student, grade)
-            Return True
-        Else
-            Return False
-        End If
+        Return _roster.TryAdd(student, grade)
     End Function
 
     Public Function Roster() As IEnumerable(Of String)
