@@ -1,3 +1,5 @@
-findAnagrams: function[subject candidates][
-    panic "Please implement the findAnagrams function"
+findAnagrams: $[target candidates][
+	select candidates 'candidate ->
+		and? notEqual? (lower target) (lower candidate),
+	          equal? (sort split lower candidate) (sort split lower target)
 ]
