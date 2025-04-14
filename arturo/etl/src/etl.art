@@ -1,3 +1,10 @@
-transform: function[old][
-    panic "Please implement the transform function"
+transform: function [dict][
+    res: #[]
+    loop dict [score, letters][
+        scoreInt: to :integer score
+        loop letters 'letter [
+            res\[lower letter]: scoreInt
+        ]
+    ]
+    res
 ]
