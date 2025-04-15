@@ -1,14 +1,7 @@
-;;; rotational-cipher.el --- Rotational Cipher (exercism)  -*- lexical-binding: t; -*-
+(defun rotate-char (c key)
+  (cond ((<= ?A c ?Z) (+ ?A (% (+ (- c ?A) key) 26)))
+        ((<= ?a c ?z) (+ ?a (% (+ (- c ?a) key) 26)))
+        (c)))
 
-;;; Commentary:
-
-;;; Code:
-
-
-(defun rotate (text shift-key)
-  (error
-   "Delete this S-Expression and write your own implementation"))
-
-
-(provide 'rotational-cipher)
-;;; rotational-cipher.el ends here
+(defun rotate (s shift-key)
+  (concat (mapcar (lambda (c) (rotate-char c shift-key)) s) ""))
