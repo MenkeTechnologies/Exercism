@@ -2,6 +2,7 @@ Imports System
 
 Public Module EliudsEggs
     Public Function EggCount(ByVal number As Integer) As Integer
-        Throw New NotImplementedException("You need to implement this function.")
+        Return Convert.ToString(number, 2).Where(Function(c) c = "1"c).Count()
     End Function
 End Module
+
