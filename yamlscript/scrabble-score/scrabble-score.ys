@@ -1,4 +1,11 @@
 !yamlscript/v0
 
-defn score(word):
-  # Implement the 'score' function.
+defn score(s):
+  uc(s):split.map(
+    createPairs(1 'AEIOULNRST') + createPairs(2 'DG') + createPairs(3 'BCMP') +
+    createPairs(4 'FHVWY') + createPairs(5 'K') + createPairs(8 'JX') + createPairs(10 'QZ')
+  ):sum
+
+defn createPairs(score letters):
+  zipmap: letters:split repeat(score)
+
