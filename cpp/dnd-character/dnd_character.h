@@ -1,5 +1,13 @@
 #pragma once
-
 namespace dnd_character {
+    class Character {
+    public:
+        Character();
 
-}  // namespace dnd_character
+        int strength, dexterity, constitution, intelligence, wisdom, charisma, hitpoints;
+
+    };
+    int ability();
+
+    int modifier(int);
+} 

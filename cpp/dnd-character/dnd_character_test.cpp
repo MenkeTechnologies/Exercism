@@ -9,7 +9,6 @@ TEST_CASE("ability modifier for score 3 is -4", "[1e9ae1dc-35bd-43ba-aa08-e4b94c
 	REQUIRE(-4 == dnd_character::modifier(3));
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 
 TEST_CASE("ability modifier for score 4 is -3", "[cc9bb24e-56b8-4e9e-989d-a0d1a29ebb9c]") {
 	REQUIRE(-3 == dnd_character::modifier(4));
@@ -97,5 +96,3 @@ TEST_CASE("each ability is only calculated once", "[dca2b2ec-f729-4551-84b9-0788
 	REQUIRE(character.wisdom == character.wisdom);
 	REQUIRE(character.charisma == character.charisma);
 }
-
-#endif
