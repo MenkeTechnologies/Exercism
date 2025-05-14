@@ -15,7 +15,6 @@ TEST_CASE("append: empty lists", "[485b9452-bf94-40f7-a3db-c3cf4850066a]") {
 	REQUIRE(left == expected);
 }
 
-#if defined(EXERCISM_RUN_ALL_TESTS)
 
 TEST_CASE("append: list to empty list", "[2c894696-b609-4569-b149-8672134d340a]") {
 	std::vector<int> left{};
@@ -198,5 +197,3 @@ TEST_CASE("reverse: list of lists is not flattened", "[40872990-b5b8-4cb8-9085-d
 	REQUIRE(result == expected);
 	//REQUIRE({[4, 5, 6], [], [3], [1, 2]} == list_ops::reverse({[1, 2], [3], [], [4, 5, 6]}));
 }
-
-#endif
