@@ -1,4 +1,6 @@
 !yamlscript/v0
 
-defn distance(strand1 strand2):
-  # Implement the 'distance' function.
+defn distance(s1 s2):
+  if len(s1) != len(s2):
+    die("strands must be of equal length")
+  len: map(ne s1 s2).filter(identity)
