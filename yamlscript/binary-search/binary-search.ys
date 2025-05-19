@@ -1,4 +1,12 @@
 !yamlscript/v0
 
-defn find(array value):
-  # Implement the 'find' function.
+defn find(array target):
+ loop lo 0, hi (array.# - 1):
+   when lo > hi:
+     die: 'value not in array'
+   mid =: (lo + hi).quot(2)
+   item =: array.$mid
+   cond:
+     target == item: mid
+     target < item: recur(lo (mid - 1))
+     else: recur((mid + 1) hi)
