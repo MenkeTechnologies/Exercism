@@ -1,6 +1,5 @@
 module ResistorColorDuo exposing (Color(..), value)
 
-
 type Color
     = Black
     | Brown
@@ -13,7 +12,23 @@ type Color
     | Grey
     | White
 
+colorCode color =
+    case color of
+        Black -> 0
+        Brown -> 1
+        Red -> 2
+        Orange -> 3
+        Yellow -> 4
+        Green -> 5
+        Blue -> 6
+        Violet -> 7
+        Grey -> 8
+        White -> 9
 
-value : List Color -> Int
 value colors =
-    Debug.todo "Please implement value"
+    let
+        values = List.map colorCode colors
+    in
+        case values of
+            fst :: snd :: _ -> fst * 10 + snd
+            _ -> 0
