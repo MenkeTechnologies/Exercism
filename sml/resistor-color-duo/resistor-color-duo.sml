@@ -1,2 +1,18 @@
-fun value (colors: string list): int =
-  raise Fail "'value' is not implemented"
+fun toInt (s) =
+  case s of
+    "black"  => 0
+  | "brown"  => 1
+  | "red"    => 2
+  | "orange" => 3
+  | "yellow" => 4
+  | "green"  => 5
+  | "blue"   => 6
+  | "violet" => 7
+  | "grey"   => 8
+  | "white"  => 9
+  | _        => 0
+
+fun value (colors) =
+  case colors of
+    a :: b :: _ => toInt a * 10 + toInt b
+  | _ => 0
