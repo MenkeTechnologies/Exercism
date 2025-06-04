@@ -9,7 +9,7 @@ fn green_bottles(i: usize) -> String {
     )
 }
 pub fn recite(start_bottles: usize, take_down: usize) -> String {
-    ((start_bottles + 1 - take_down)..=start_bottles )
+    ((start_bottles + 1 - take_down)..=start_bottles)
         .rev()
         .fold(String::new(), |acc, i| {
             acc + &format!(
