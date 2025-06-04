@@ -1,10 +1,15 @@
-/*
+import java.util.Arrays;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-Since this exercise has a difficulty of > 4 it doesn't come
-with any starter implementation.
-This is so that you get to practice creating classes and methods
-which is an important part of programming in Java.
+class ParallelLetterFrequency {
+    private final String[] strings;
 
-Please remove this comment when submitting your solution.
+    ParallelLetterFrequency(String[] strings) {
+        this.strings = strings;
+    }
 
-*/
+    Map<Character, Integer> countLetters() {
+        return Arrays.stream(strings).collect(Collectors.joining("")).chars().parallel().mapToObj(c -> (char) c).filter(Character::isLetter).collect(Collectors.groupingBy(Character::toLowerCase, Collectors.summingInt(c -> 1)));
+    }
+}
