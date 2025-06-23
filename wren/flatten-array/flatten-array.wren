@@ -1,5 +1,12 @@
 class Flatten {
-  static flatten(list) {
-    Fiber.abort("Remove this statement and implement this function")
+  static flatten(lst) {
+    return lst.reduce([]) {|acc, n|
+      if (n is Sequence) {
+        acc.addAll(flatten(n))
+      } else if (n != null) {
+        acc.add(n)
+      }
+      return acc
+    }
   }
 }
