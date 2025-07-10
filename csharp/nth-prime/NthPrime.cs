@@ -8,12 +8,12 @@ public static class NthPrime
     {
         if (nth < 1) throw new ArgumentOutOfRangeException();
         var primes = new List<int> { 2 };
-        var next_odd = 3;
+        var curr = 3;
         while (primes.Count < nth)
         {
-            if (primes.All(n => next_odd % n != 0))
-                primes.Add(next_odd);
-            next_odd += 2;
+            if (primes.All(n => curr % n != 0))
+                primes.Add(curr);
+            curr += 2;
         }
 
         return primes.Last();
