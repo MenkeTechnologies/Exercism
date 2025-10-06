@@ -1,2 +1,1 @@
-let two_fer _ =
-  failwith "'two_fer' is not implemented."
+let two_fer name = "One for " ^ Option.value name ~default:"you" ^ ", one for me."
