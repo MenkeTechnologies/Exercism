@@ -1,24 +1,14 @@
 #!/usr/bin/env bash
 
-# The following comments should help you get started:
-# - Bash is flexible. You may use functions or write a "raw" script.
-#
-# - Complex code can be made easier to read by breaking it up
-#   into functions, however this is sometimes overkill in bash.
-#
-# - You can find links about good style and other resources
-#   for Bash in './README.md'. It came with this exercise.
-#
-#   Example:
-#   # other functions here
-#   # ...
-#   # ...
-#
-#   main () {
-#     # your main function code here
-#   }
-#
-#   # call main with all of the positional arguments
-#   main "$@"
-#
-# *** PLEASE REMOVE THESE COMMENTS BEFORE SUBMITTING YOUR SOLUTION ***
+name=$1
+number=$2
+
+case "$number" in
+    *11|*12|*13) suffix="th" ;;
+    *1) suffix="st" ;;
+    *2) suffix="nd" ;;
+    *3) suffix="rd" ;;
+    *) suffix="th" ;;
+esac
+
+echo "$name, you are the $number$suffix customer we serve today. Thank you!"
