@@ -1,7 +1,24 @@
-=begin
-Write your code for the 'Bank Account' exercise in this file. Make the tests in
-`bank_account_test.rb` pass.
-
-To get started with TDD, see the `README.md` file in your
-`ruby/bank-account` directory.
-=end
+class BankAccount
+  @open = false
+  def open
+    raise ArgumentError if @open
+    @balance = 0
+    @open = true
+  end
+  def close
+    raise ArgumentError if !@open
+    @open = false
+  end
+  def balance
+    raise ArgumentError if !@open
+    @balance
+  end
+  def deposit(amt)
+    raise ArgumentError if !@open or amt < 0
+    @balance += amt
+  end
+  def withdraw(amt)
+    raise ArgumentError if !@open or amt > balance or amt < 0
+    @balance -= amt
+  end
+end
