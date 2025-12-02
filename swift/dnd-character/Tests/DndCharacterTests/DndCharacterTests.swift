@@ -3,7 +3,7 @@ import Testing
 
 @testable import DndCharacter
 
-let RUNALL = Bool(ProcessInfo.processInfo.environment["RUNALL", default: "false"]) ?? false
+let RUNALL = true
 
 @Suite struct DndCharacterTests {
 
