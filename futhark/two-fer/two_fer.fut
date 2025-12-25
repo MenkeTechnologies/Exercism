@@ -1,0 +1,1 @@
+def two_fer (s: []u8) = "One for " ++ (if null s then "you" else s) ++ ", one for me." 
