@@ -1,1 +1,1 @@
-def to_rna [n] (dna: [n]u8): [n]u8 = ???
+def to_rna = map \(c:u8) -> match c case 'G' -> 'C' case 'C' -> 'G' case 'T' -> 'A' case 'A' -> 'U' case _ -> c
