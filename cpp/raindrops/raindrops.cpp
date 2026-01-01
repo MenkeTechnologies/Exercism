@@ -13,8 +13,7 @@ namespace raindrops {
     string convert(int n) {
         string r;
 
-        for (auto[k, v]: m)
-            if (n % k == 0) r += v;
+        for (auto[k, v]: m) if (n % k == 0) r += v;
 
         if (r.empty()) r = to_string(n);
 
