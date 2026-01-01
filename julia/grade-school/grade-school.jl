@@ -1,19 +1,15 @@
-# The new_school() function must return something that can be used in
-# all the other functions.
-# Programmers are free to choose a suitable implementation.
-
-function new_school()
-
-end
+new_school() = []
 
 function add!(students, school)
-
+      map(student ->
+          if student.name in roster(school)
+              return false
+          else
+            push!(school, student)
+            return true
+          end, students)
 end
 
-function grade(num, school)
-    
-end
+grade(num, school) = map(x -> x.name, school |> filter(x -> x.grade == num)) |> sort
 
-function roster(school)
-
-end
+roster(school) = map(x -> x.name, sort(school; by = x -> (x.grade, x.name)))
