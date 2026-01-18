@@ -1,19 +1,10 @@
-import java.time.LocalDate;
-import java.util.List;
-
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static java.time.Month.APRIL;
-import static java.time.Month.AUGUST;
-import static java.time.Month.DECEMBER;
-import static java.time.Month.FEBRUARY;
-import static java.time.Month.JANUARY;
-import static java.time.Month.JULY;
-import static java.time.Month.MAY;
-import static java.time.Month.NOVEMBER;
-import static java.time.Month.OCTOBER;
+import java.time.LocalDate;
+import java.util.List;
+
+import static java.time.Month.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.data.Offset.offset;
 
@@ -28,7 +19,7 @@ public class BafflingBirthdaysTest {
         ))).isFalse();
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("two birthdates with same year, month, and day")
     public void twoBirthdatesWithSameYearMonthAndDayTest() {
@@ -38,7 +29,7 @@ public class BafflingBirthdaysTest {
         ))).isTrue();
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("two birthdates with same year and month, but different day")
     public void twoBirthdatesWithSameYearAndMonthButDifferentDayTest() {
@@ -48,7 +39,7 @@ public class BafflingBirthdaysTest {
         ))).isFalse();
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("two birthdates with same month and day, but different year")
     public void twoBirthdatesWithSameMonthAndDayButDifferentYearTest() {
@@ -58,7 +49,7 @@ public class BafflingBirthdaysTest {
         ))).isTrue();
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("two birthdates with same year, but different month and day")
     public void twoBirthdatesWithSameYearButDifferentMonthAndDayTest() {
@@ -68,7 +59,7 @@ public class BafflingBirthdaysTest {
         ))).isFalse();
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("two birthdates with different year, month, and day")
     public void twoBirthdatesWithDifferentYearMonthAndDayTest() {
@@ -78,7 +69,7 @@ public class BafflingBirthdaysTest {
         ))).isFalse();
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("multiple birthdates without shared birthday")
     public void multipleBirthdatesWithoutSharedBirthdayTest() {
@@ -90,7 +81,7 @@ public class BafflingBirthdaysTest {
         ))).isFalse();
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("multiple birthdates with one shared birthday")
     public void multipleBirthdatesWithOneSharedBirthdayTest() {
@@ -102,7 +93,7 @@ public class BafflingBirthdaysTest {
         ))).isTrue();
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("multiple birthdates with more than one shared birthday")
     public void multipleBirthdatesWithMoreThanOneSharedBirthdayTest() {
@@ -115,7 +106,7 @@ public class BafflingBirthdaysTest {
         ))).isTrue();
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("generate requested number of birthdates")
     public void generateRequestedNumberOfBirthdatesTest() {
@@ -123,14 +114,14 @@ public class BafflingBirthdaysTest {
         assertThat(birthdays.randomBirthdates(groupSize).size()).isEqualTo(groupSize);
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("years are not leap years")
     public void yearsAreNotLeapYearsTest() {
         assertThat(birthdays.randomBirthdates(100)).noneMatch(LocalDate::isLeapYear);
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("months are random")
     public void monthsAreRandomTest() {
@@ -138,7 +129,7 @@ public class BafflingBirthdaysTest {
                 .hasSizeGreaterThanOrEqualTo(7);
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("days are random")
     public void daysAreRandomTest() {
@@ -146,28 +137,28 @@ public class BafflingBirthdaysTest {
                 .hasSizeGreaterThanOrEqualTo(11);
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("estimated probability of at least one shared birthday case for one person")
     public void estimatedProbabilityOfAtLeastOneSharedBirthdayForOnePersonTest() {
         assertThat(birthdays.estimatedProbabilityOfSharedBirthday(1)).isEqualTo(0.0);
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("estimated probability of at least one shared birthday case among ten people")
     public void estimatedProbabilityOfAtLeastOneSharedBirthdayAmongTenPeopleTest() {
         assertThat(birthdays.estimatedProbabilityOfSharedBirthday(10)).isCloseTo(11.694818, offset(1.0));
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("estimated probability of at least one shared birthday case among twenty-three people")
     public void estimatedProbabilityOfAtLeastOneSharedBirthdayAmongTwentyThreePeopleTest() {
         assertThat(birthdays.estimatedProbabilityOfSharedBirthday(23)).isCloseTo(50.729723, offset(1.0));
     }
 
-    @Disabled("Remove to run test")
+
     @Test
     @DisplayName("estimated probability of at least one shared birthday case among seventy people")
     public void estimatedProbabilityOfAtLeastOneSharedBirthdayAmongSeventyPeopleTest() {
