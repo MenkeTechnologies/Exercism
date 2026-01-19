@@ -1,37 +1,65 @@
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
+import java.util.List;
+
 public class SplitSecondStopwatch {
-    public void start() {
-        throw new UnsupportedOperationException("Please implement the SplitSecondStopwatch.start method.");
-    }
-
-    public void stop() {
-        throw new UnsupportedOperationException("Please implement the SplitSecondStopwatch.stop method.");
-    }
-
-    public void reset() {
-        throw new UnsupportedOperationException("Please implement the SplitSecondStopwatch.reset method.");
-    }
-
-    public void lap() {
-        throw new UnsupportedOperationException("Please implement the SplitSecondStopwatch.lap method.");
-    }
+    private String state = "ready";
+    private LocalTime currentLap = LocalTime.of(0,0,0);
+    private LocalTime total = LocalTime.of(0, 0, 0, 0);
+    private List<String> previousLaps = new ArrayList<>();
 
     public String state() {
-        throw new UnsupportedOperationException("Please implement the SplitSecondStopwatch.state method.");
+        return state;
     }
 
     public String currentLap() {
-        throw new UnsupportedOperationException("Please implement the SplitSecondStopwatch.currentLap method.");
+        return currentLap.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
     }
 
     public String total() {
-        throw new UnsupportedOperationException("Please implement the SplitSecondStopwatch.total method.");
+        return total.format(DateTimeFormatter.ofPattern("HH:mm:ss"));
     }
 
     public java.util.List<String> previousLaps() {
-        throw new UnsupportedOperationException("Please implement the SplitSecondStopwatch.previousLaps method.");
+        return previousLaps;
+    }
+
+    public void start() {
+        if (state.equals("running")) {
+            throw new IllegalStateException("cannot start an already running stopwatch");
+        }
+        state = "running";
+    }
+
+    public void stop() {
+        if (!state.equals("running")) {
+            throw new IllegalStateException("cannot stop a stopwatch that is not running");
+        }
+        state = "stopped";
+    }
+
+    public void reset() {
+        if (!this.state.equals("stopped")) {
+            throw new IllegalStateException("cannot reset a stopwatch that is not stopped");
+        }
+        currentLap = LocalTime.of(0, 0, 0);
+        previousLaps = new ArrayList<>();
+        state = "ready";
+    }
+
+    public void lap() {
+        if (!state.equals("running")) {
+            throw new IllegalStateException("cannot lap a stopwatch that is not running");
+        }
+        previousLaps.add(currentLap());
+        currentLap = LocalTime.of(0, 0, 0);
     }
 
     public void advanceTime(String timeString) {
-        throw new UnsupportedOperationException("Please implement the SplitSecondStopwatch.advanceTime method.");
+        if (state.equals("running")) {
+            currentLap = this.currentLap.plusSeconds(LocalTime.parse(timeString).toSecondOfDay());
+            total = this.total.plusSeconds(LocalTime.parse(timeString).toSecondOfDay());
+        }
     }
 }
