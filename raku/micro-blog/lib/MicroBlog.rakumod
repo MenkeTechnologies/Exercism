@@ -1,3 +1,3 @@
-unit module MicroBlog;
-
-sub post (Str :$tweet) is export { }
+sub post ( :$tweet ) is export {
+    substr $tweet, 0, 5
+}
