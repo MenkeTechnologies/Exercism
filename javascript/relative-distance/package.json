@@ -17,7 +17,7 @@
     "@types/shelljs": "^0.8.15",
     "babel-jest": "^29.7.0",
     "core-js": "~3.40.0",
-    "diff": "^7.0.0",
+    "diff": "^8.0.3",
     "eslint": "^9.19.0",
     "expect": "^29.7.0",
     "globals": "^15.14.0",
