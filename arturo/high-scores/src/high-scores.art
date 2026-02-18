@@ -1,15 +1,4 @@
-list: function[scores][
-    panic "please implement the list function"
-]
-
-latest: function[scores][
-    panic "please implement the latest function"
-]
-
-personalBest: function[scores][
-    panic "please implement the personalBest function"
-]
-
-personalTopThree: function[scores][
-    panic "please implement the personalTopThree function"
-]
+list: function [scores] -> scores
+latest: function [scores] -> last scores
+personalBest: function [scores] -> max scores
+personalTopThree: function [scores] -> take sort.descending scores 3
