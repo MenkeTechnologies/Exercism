@@ -5,7 +5,7 @@ namespace rotational_cipher {
         for (char & c : s) {
             if (islower(c) || isupper(c)) {
                 char offset = isupper(c) ? 'A': 'a';
-                c = (((c - offset) + n) % 26) + offset;
+                c = (c - offset + n) % 26 + offset;
             }
         }
         return s;
