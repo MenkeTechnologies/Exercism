@@ -1,0 +1,1 @@
+val validate : int -> bool

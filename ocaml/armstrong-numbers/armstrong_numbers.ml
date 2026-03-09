@@ -1,0 +1,1 @@
+let validate: candidate = failwith = "'validate' is not implemented"
