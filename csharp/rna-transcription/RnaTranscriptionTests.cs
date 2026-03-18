@@ -2,37 +2,37 @@ using Xunit;
 
 public class RnaTranscriptionTests
 {
-    [Fact]
+ [Fact]
     public void Empty_rna_sequence()
     {
         Assert.Equal("", RnaTranscription.ToRna(""));
     }
 
-    [Fact]
+ [Fact]
     public void Rna_complement_of_cytosine_is_guanine()
     {
         Assert.Equal("G", RnaTranscription.ToRna("C"));
     }
 
-    [Fact]
+ [Fact]
     public void Rna_complement_of_guanine_is_cytosine()
     {
         Assert.Equal("C", RnaTranscription.ToRna("G"));
     }
 
-    [Fact]
+ [Fact]
     public void Rna_complement_of_thymine_is_adenine()
     {
         Assert.Equal("A", RnaTranscription.ToRna("T"));
     }
 
-    [Fact]
+ [Fact]
     public void Rna_complement_of_adenine_is_uracil()
     {
         Assert.Equal("U", RnaTranscription.ToRna("A"));
     }
 
-    [Fact]
+ [Fact]
     public void Rna_complement()
     {
         Assert.Equal("UGCACCAGAAUU", RnaTranscription.ToRna("ACGTGGTCTTAA"));

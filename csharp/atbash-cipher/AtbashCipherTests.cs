@@ -2,85 +2,85 @@ using Xunit;
 
 public class AtbashCipherTests
 {
-    [Fact]
+ [Fact]
     public void Encode_yes()
     {
         Assert.Equal("bvh", AtbashCipher.Encode("yes"));
     }
 
-    [Fact]
+ [Fact]
     public void Encode_no()
     {
         Assert.Equal("ml", AtbashCipher.Encode("no"));
     }
 
-    [Fact]
+ [Fact]
     public void Encode_omg()
     {
         Assert.Equal("lnt", AtbashCipher.Encode("OMG"));
     }
 
-    [Fact]
+ [Fact]
     public void Encode_spaces()
     {
         Assert.Equal("lnt", AtbashCipher.Encode("O M G"));
     }
 
-    [Fact]
+ [Fact]
     public void Encode_mindblowingly()
     {
         Assert.Equal("nrmwy oldrm tob", AtbashCipher.Encode("mindblowingly"));
     }
 
-    [Fact]
+ [Fact]
     public void Encode_numbers()
     {
         Assert.Equal("gvhgr mt123 gvhgr mt", AtbashCipher.Encode("Testing,1 2 3, testing."));
     }
 
-    [Fact]
+ [Fact]
     public void Encode_deep_thought()
     {
         Assert.Equal("gifgs rhurx grlm", AtbashCipher.Encode("Truth is fiction."));
     }
 
-    [Fact]
+ [Fact]
     public void Encode_all_the_letters()
     {
         Assert.Equal("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt", AtbashCipher.Encode("The quick brown fox jumps over the lazy dog."));
     }
 
-    [Fact]
+ [Fact]
     public void Decode_exercism()
     {
         Assert.Equal("exercism", AtbashCipher.Decode("vcvix rhn"));
     }
 
-    [Fact]
+ [Fact]
     public void Decode_a_sentence()
     {
         Assert.Equal("anobstacleisoftenasteppingstone", AtbashCipher.Decode("zmlyh gzxov rhlug vmzhg vkkrm thglm v"));
     }
 
-    [Fact]
+ [Fact]
     public void Decode_numbers()
     {
         Assert.Equal("testing123testing", AtbashCipher.Decode("gvhgr mt123 gvhgr mt"));
     }
 
-    [Fact]
+ [Fact]
     public void Decode_all_the_letters()
     {
         Assert.Equal("thequickbrownfoxjumpsoverthelazydog", AtbashCipher.Decode("gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt"));
     }
 
-    [Fact]
+ [Fact]
     public void Decode_with_too_many_spaces()
     {
         Assert.Equal("exercism", AtbashCipher.Decode("vc vix    r hn"));
     }
 
-    [Fact]
+ [Fact]
     public void Decode_with_no_spaces()
     {
         Assert.Equal("anobstacleisoftenasteppingstone", AtbashCipher.Decode("zmlyhgzxovrhlugvmzhgvkkrmthglmv"));

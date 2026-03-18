@@ -2,7 +2,7 @@ using Xunit;
 
 public class StateOfTicTacToeTests
 {
-    [Fact]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_left_column_victory()
     {
         string[] board = [
@@ -14,7 +14,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_middle_column_victory()
     {
         string[] board = [
@@ -26,7 +26,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_right_column_victory()
     {
         string[] board = [
@@ -38,7 +38,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_o_won_via_left_column_victory()
     {
         string[] board = [
@@ -50,7 +50,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_o_won_via_middle_column_victory()
     {
         string[] board = [
@@ -62,7 +62,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_o_won_via_right_column_victory()
     {
         string[] board = [
@@ -74,7 +74,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_top_row_victory()
     {
         string[] board = [
@@ -86,7 +86,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_middle_row_victory()
     {
         string[] board = [
@@ -98,7 +98,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_bottom_row_victory()
     {
         string[] board = [
@@ -110,7 +110,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_o_won_via_top_row_victory()
     {
         string[] board = [
@@ -122,7 +122,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_o_won_via_middle_row_victory()
     {
         string[] board = [
@@ -134,7 +134,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_o_won_via_bottom_row_victory()
     {
         string[] board = [
@@ -146,7 +146,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_falling_diagonal_victory()
     {
         string[] board = [
@@ -158,7 +158,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_rising_diagonal_victory()
     {
         string[] board = [
@@ -170,7 +170,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_o_won_via_falling_diagonal_victory()
     {
         string[] board = [
@@ -182,7 +182,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_o_won_via_rising_diagonal_victory()
     {
         string[] board = [
@@ -194,7 +194,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_a_row_and_a_column_victory()
     {
         string[] board = [
@@ -206,7 +206,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Won_games_finished_game_where_x_won_via_two_diagonal_victories()
     {
         string[] board = [
@@ -218,7 +218,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Win, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Drawn_games_draw()
     {
         string[] board = [
@@ -230,7 +230,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Draw, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Drawn_games_another_draw()
     {
         string[] board = [
@@ -242,7 +242,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Draw, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Ongoing_games_ongoing_game_one_move_in()
     {
         string[] board = [
@@ -254,7 +254,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Ongoing, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Ongoing_games_ongoing_game_two_moves_in()
     {
         string[] board = [
@@ -266,7 +266,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Ongoing, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Ongoing_games_ongoing_game_five_moves_in()
     {
         string[] board = [
@@ -278,7 +278,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Ongoing, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Invalid_boards_invalid_board_x_went_twice()
     {
         string[] board = [
@@ -290,7 +290,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Invalid, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Invalid_boards_invalid_board_o_started()
     {
         string[] board = [
@@ -302,7 +302,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Invalid, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Invalid_boards_invalid_board_x_won_and_o_kept_playing()
     {
         string[] board = [
@@ -314,7 +314,7 @@ public class StateOfTicTacToeTests
         Assert.Equal(State.Invalid, game.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Invalid_boards_invalid_board_players_kept_playing_after_a_win()
     {
         string[] board = [

@@ -3,14 +3,14 @@ using Exercism.Tests;
 
 public class BirdWatcherTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Last_week()
     {
         Assert.Equal(new int[] { 0, 2, 5, 3, 7, 8, 4 }, BirdCount.LastWeek());
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Today_for_disappointing_day()
     {
@@ -19,7 +19,7 @@ public class BirdWatcherTests
         Assert.Equal(0, birdCount.Today());
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Today_for_busy_day()
     {
@@ -28,7 +28,7 @@ public class BirdWatcherTests
         Assert.Equal(10, birdCount.Today());
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Increment_todays_count_with_no_previous_visits()
     {
@@ -38,7 +38,7 @@ public class BirdWatcherTests
         Assert.Equal(1, birdCount.Today());
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Increment_todays_count_with_multiple_previous_visits()
     {
@@ -48,7 +48,7 @@ public class BirdWatcherTests
         Assert.Equal(5, birdCount.Today());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Has_day_without_birds_with_day_without_birds()
     {
@@ -57,7 +57,7 @@ public class BirdWatcherTests
         Assert.True(birdCount.HasDayWithoutBirds());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Has_day_without_birds_with_no_day_without_birds()
     {
@@ -66,7 +66,7 @@ public class BirdWatcherTests
         Assert.False(birdCount.HasDayWithoutBirds());
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Count_for_first_three_days_of_disappointing_week()
     {
@@ -75,7 +75,7 @@ public class BirdWatcherTests
         Assert.Equal(1, birdCount.CountForFirstDays(3));
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Count_for_first_six_days_of_busy_week()
     {
@@ -84,7 +84,7 @@ public class BirdWatcherTests
         Assert.Equal(48, birdCount.CountForFirstDays(6));
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Busy_days_for_disappointing_week()
     {
@@ -93,7 +93,7 @@ public class BirdWatcherTests
         Assert.Equal(0, birdCount.BusyDays());
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Busy_days_for_busy_week()
     {

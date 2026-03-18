@@ -16,7 +16,7 @@ let ``Direct parent-child relation`` () =
     |> should equal
     <| Some 1
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Sibling relationship`` () =
     let familyTree = [ ("Dalia", [ "Olga"; "Yassin" ]) ] |> Map.ofList
 
@@ -24,7 +24,7 @@ let ``Sibling relationship`` () =
     |> should equal
     <| Some 1
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Two degrees of separation, grandchild`` () =
     let familyTree =
         [ ("Khadija", [ "Mateo" ])
@@ -35,7 +35,7 @@ let ``Two degrees of separation, grandchild`` () =
     |> should equal
     <| Some 2
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Unrelated individuals`` () =
     let familyTree =
         [ ("Priya", [ "Rami" ])
@@ -45,7 +45,7 @@ let ``Unrelated individuals`` () =
     degreeOfSeparation familyTree "Priya" "Kaito"
     |> should equal None
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Complex graph, cousins`` () =
     let familyTree =
         [ ("Aiko", [ "Bao"; "Carlos" ])
@@ -106,7 +106,7 @@ let ``Complex graph, cousins`` () =
     |> should equal
     <| Some 9
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Complex graph, no shortcut, far removed nephew`` () =
     let familyTree =
         [ ("Aiko", [ "Bao"; "Carlos" ])
@@ -167,7 +167,7 @@ let ``Complex graph, no shortcut, far removed nephew`` () =
     |> should equal
     <| Some 14
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree``
     ()
     =

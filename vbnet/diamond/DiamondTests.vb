@@ -7,7 +7,7 @@ Public Class DiamondTest
         Assert.Equal(expected, Rows("A"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Degenerate_case_with_no_row_containing_three_distinct_groups_of_spaces()
         Dim expected = Join(New String() { _
             " A ", _
@@ -17,7 +17,7 @@ Public Class DiamondTest
         Assert.Equal(expected, Rows("B"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Smallest_non_degenerate_case_with_odd_diamond_side_length()
         Dim expected = Join(New String() { _
             "  A  ", _
@@ -29,7 +29,7 @@ Public Class DiamondTest
         Assert.Equal(expected, Rows("C"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Smallest_non_degenerate_case_with_even_diamond_side_length()
         Dim expected = Join(New String() { _
             "   A   ", _
@@ -43,7 +43,7 @@ Public Class DiamondTest
         Assert.Equal(expected, Rows("D"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Largest_possible_diamond()
         Dim expected = Join(New String() { _
         "                         A                         ", _

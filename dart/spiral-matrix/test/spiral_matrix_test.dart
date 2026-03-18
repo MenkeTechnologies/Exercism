@@ -14,7 +14,7 @@ void main() {
       [1]
     ];
     expect(result, expected);
-  }, skip: true);
+  });
 
   test('spiral of size 2', () {
     final result = SpiralMatrix(2).toList();
@@ -23,7 +23,7 @@ void main() {
       [4, 3]
     ];
     expect(result, expected);
-  }, skip: true);
+  });
 
   test('spiral of size 3', () {
     final result = SpiralMatrix(3).toList();
@@ -33,7 +33,7 @@ void main() {
       [7, 6, 5]
     ];
     expect(result, expected);
-  }, skip: true);
+  });
 
   test('spiral of size 4', () {
     final result = SpiralMatrix(4).toList();
@@ -44,7 +44,7 @@ void main() {
       [10, 9, 8, 7]
     ];
     expect(result, expected);
-  }, skip: true);
+  });
 
   test("spiral of size 5", () {
     final result = SpiralMatrix(5).toList();
@@ -56,5 +56,5 @@ void main() {
       [13, 12, 11, 10, 9]
     ];
     expect(result, expected);
-  }, skip: true);
+  });
 }

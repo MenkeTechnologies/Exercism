@@ -4,7 +4,7 @@ using Exercism.Tests;
 
 public class WeighingMachineTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Get_Precision()
     {
@@ -12,7 +12,7 @@ public class WeighingMachineTests
         Assert.Equal(3, wm.Precision);
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Set_weight_and_get_weight()
     {
@@ -21,7 +21,7 @@ public class WeighingMachineTests
         Assert.Equal(60.567, wm.Weight, precision:3);
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Negative_weight_is_invalid()
     {
@@ -29,7 +29,7 @@ public class WeighingMachineTests
         Assert.Throws<ArgumentOutOfRangeException>(() => wm.Weight = -10);
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Apply_tare_adjustment_and_get_display_weight()
     {
@@ -39,7 +39,7 @@ public class WeighingMachineTests
         Assert.Equal("90.770 kg", wm.DisplayWeight);
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Apply_Default_tare_adjustment_and_get_display_weight()
     {
@@ -48,7 +48,7 @@ public class WeighingMachineTests
         Assert.Equal("95.567 kg", wm.DisplayWeight);
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Apply_negative_tare_adjustment_and_get_display_weight()
     {
@@ -58,7 +58,7 @@ public class WeighingMachineTests
         Assert.Equal("110.567 kg", wm.DisplayWeight);
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Apply_large_tare_adjustment_to_allow_negative_display_weight()
     {

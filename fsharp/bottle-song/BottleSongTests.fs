@@ -15,7 +15,7 @@ let ``First generic verse`` () =
           "And if one green bottle should accidentally fall,"
           "There'll be nine green bottles hanging on the wall." ]
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Last generic verse`` () =
     recite 3 1
     |> should
@@ -25,7 +25,7 @@ let ``Last generic verse`` () =
           "And if one green bottle should accidentally fall,"
           "There'll be two green bottles hanging on the wall." ]
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Verse with 2 bottles`` () =
     recite 2 1
     |> should
@@ -35,7 +35,7 @@ let ``Verse with 2 bottles`` () =
           "And if one green bottle should accidentally fall,"
           "There'll be one green bottle hanging on the wall." ]
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Verse with 1 bottle`` () =
     recite 1 1
     |> should
@@ -45,7 +45,7 @@ let ``Verse with 1 bottle`` () =
           "And if one green bottle should accidentally fall,"
           "There'll be no green bottles hanging on the wall." ]
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``First two verses`` () =
     recite 10 2
     |> should
@@ -60,7 +60,7 @@ let ``First two verses`` () =
           "And if one green bottle should accidentally fall,"
           "There'll be eight green bottles hanging on the wall." ]
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Last three verses`` () =
     recite 3 3
     |> should
@@ -80,7 +80,7 @@ let ``Last three verses`` () =
           "And if one green bottle should accidentally fall,"
           "There'll be no green bottles hanging on the wall." ]
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``All verses`` () =
     recite 10 10
     |> should

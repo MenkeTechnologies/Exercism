@@ -2,13 +2,13 @@ using Xunit;
 
 public class PascalsTriangleTests
 {
-    [Fact]
+ [Fact]
     public void Zero_rows()
     {
         Assert.Empty(PascalsTriangle.Calculate(0));
     }
 
-    [Fact]
+ [Fact]
     public void Single_row()
     {
         var expected = new[]
@@ -18,7 +18,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(1));
     }
 
-    [Fact]
+ [Fact]
     public void Two_rows()
     {
         var expected = new[]
@@ -29,7 +29,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(2));
     }
 
-    [Fact]
+ [Fact]
     public void Three_rows()
     {
         var expected = new[]
@@ -41,7 +41,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(3));
     }
 
-    [Fact]
+ [Fact]
     public void Four_rows()
     {
         var expected = new[]
@@ -54,7 +54,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(4));
     }
 
-    [Fact]
+ [Fact]
     public void Five_rows()
     {
         var expected = new[]
@@ -68,7 +68,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(5));
     }
 
-    [Fact]
+ [Fact]
     public void Six_rows()
     {
         var expected = new[]
@@ -83,7 +83,7 @@ public class PascalsTriangleTests
         Assert.Equal(expected, PascalsTriangle.Calculate(6));
     }
 
-    [Fact]
+ [Fact]
     public void Ten_rows()
     {
         var expected = new[]

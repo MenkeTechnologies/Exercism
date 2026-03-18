@@ -1,6 +1,6 @@
 public class BafflingBirthdaysTests
 {
-    [Fact]
+ [Fact]
     public void Shared_birthday_one_birthdate()
     {
         DateOnly[] birthdates = [
@@ -9,7 +9,7 @@ public class BafflingBirthdaysTests
         Assert.False(BafflingBirthdays.SharedBirthday(birthdates));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Shared_birthday_two_birthdates_with_same_year_month_and_day()
     {
         DateOnly[] birthdates = [
@@ -19,7 +19,7 @@ public class BafflingBirthdaysTests
         Assert.True(BafflingBirthdays.SharedBirthday(birthdates));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Shared_birthday_two_birthdates_with_same_year_and_month_but_different_day()
     {
         DateOnly[] birthdates = [
@@ -29,7 +29,7 @@ public class BafflingBirthdaysTests
         Assert.False(BafflingBirthdays.SharedBirthday(birthdates));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Shared_birthday_two_birthdates_with_same_month_and_day_but_different_year()
     {
         DateOnly[] birthdates = [
@@ -39,7 +39,7 @@ public class BafflingBirthdaysTests
         Assert.True(BafflingBirthdays.SharedBirthday(birthdates));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Shared_birthday_two_birthdates_with_same_year_but_different_month_and_day()
     {
         DateOnly[] birthdates = [
@@ -49,7 +49,7 @@ public class BafflingBirthdaysTests
         Assert.False(BafflingBirthdays.SharedBirthday(birthdates));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Shared_birthday_two_birthdates_with_different_year_month_and_day()
     {
         DateOnly[] birthdates = [
@@ -59,7 +59,7 @@ public class BafflingBirthdaysTests
         Assert.False(BafflingBirthdays.SharedBirthday(birthdates));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Shared_birthday_multiple_birthdates_without_shared_birthday()
     {
         DateOnly[] birthdates = [
@@ -71,7 +71,7 @@ public class BafflingBirthdaysTests
         Assert.False(BafflingBirthdays.SharedBirthday(birthdates));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Shared_birthday_multiple_birthdates_with_one_shared_birthday()
     {
         DateOnly[] birthdates = [
@@ -83,7 +83,7 @@ public class BafflingBirthdaysTests
         Assert.True(BafflingBirthdays.SharedBirthday(birthdates));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Shared_birthday_multiple_birthdates_with_more_than_one_shared_birthday()
     {
         DateOnly[] birthdates = [
@@ -96,7 +96,7 @@ public class BafflingBirthdaysTests
         Assert.True(BafflingBirthdays.SharedBirthday(birthdates));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Random_birthdates_generate_requested_number_of_birthdates()
     {
         for (var count = 1; count < 10; count++)
@@ -106,7 +106,7 @@ public class BafflingBirthdaysTests
         }
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Random_birthdates_years_are_not_leap_years()
     {
         var uniqueRandomYears = BafflingBirthdays.RandomBirthdates(50)
@@ -115,7 +115,7 @@ public class BafflingBirthdaysTests
         Assert.All(uniqueRandomYears, year => Assert.False(DateTime.IsLeapYear(year)));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Random_birthdates_months_are_random()
     {
         var uniqueRandomMonths = BafflingBirthdays.RandomBirthdates(100)
@@ -124,7 +124,7 @@ public class BafflingBirthdaysTests
         Assert.Equal(12, uniqueRandomMonths.Count);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Random_birthdates_days_are_random()
     {
         var uniqueRandomDays = BafflingBirthdays.RandomBirthdates(300)
@@ -133,25 +133,25 @@ public class BafflingBirthdaysTests
         Assert.Equal(31, uniqueRandomDays.Count);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Estimated_probability_of_at_least_one_shared_birthday_for_one_person()
     {
         Assert.Equal(0.0, BafflingBirthdays.EstimatedProbabilityOfSharedBirthday(1), tolerance: 1.0);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Estimated_probability_of_at_least_one_shared_birthday_among_ten_people()
     {
         Assert.Equal(11.694818, BafflingBirthdays.EstimatedProbabilityOfSharedBirthday(10), tolerance: 1.0);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Estimated_probability_of_at_least_one_shared_birthday_among_twenty_three_people()
     {
         Assert.Equal(50.729723, BafflingBirthdays.EstimatedProbabilityOfSharedBirthday(23), tolerance: 1.0);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Estimated_probability_of_at_least_one_shared_birthday_among_seventy_people()
     {
         Assert.Equal(99.915958, BafflingBirthdays.EstimatedProbabilityOfSharedBirthday(70), tolerance: 1.0);

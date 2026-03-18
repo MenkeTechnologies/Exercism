@@ -3,7 +3,7 @@ using Exercism.Tests;
 
 public class DeveloperPrivilegesTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void GetAdmin()
     {
@@ -19,7 +19,7 @@ public class DeveloperPrivilegesTests
         Assert.Equal("India", admin.NameAndAddress[2]);
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void GetBertrand()
     {
@@ -35,7 +35,7 @@ public class DeveloperPrivilegesTests
         Assert.Equal("France", bertrand.NameAndAddress[2]);
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void GetAnders()
     {

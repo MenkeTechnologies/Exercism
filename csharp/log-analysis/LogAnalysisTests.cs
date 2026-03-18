@@ -4,35 +4,35 @@ using System;
 
 public class LogAnalysisTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void SubstringAfter_WithDelimeterOfLength1()
     {
         Assert.Equal(" am the 1st test", "I am the 1st test".SubstringAfter("I"));
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void SubstringAfter_WithDelimeterOfLengthLongerThan1()
     {
         Assert.Equal(" test", "I am the 2nd test".SubstringAfter("2nd"));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void SubstringBetween()
     {
         Assert.Equal("INFO", "[INFO]: File Deleted.".SubstringBetween("[", "]"));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void SubstringBetweenLongerDelimiters()
     {
         Assert.Equal("SOMETHING", "FIND >>> SOMETHING <===< HERE".SubstringBetween(">>> ", " <===<"));
     }
     
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Message()
     {
@@ -40,7 +40,7 @@ public class LogAnalysisTests
         Assert.Equal("Library is deprecated.", log.Message());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void LogLevel()
     {

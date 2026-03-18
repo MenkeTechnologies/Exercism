@@ -18,7 +18,7 @@ void main() {
       };
       final distance = RelativeDistance(familyTree);
       expect(distance.degreesOfSeparation('Olga', 'Yassin'), equals(1));
-    }, skip: true);
+    });
 
     test('Two degrees of separation, grandchild', () {
       final familyTree = {
@@ -27,7 +27,7 @@ void main() {
       };
       final distance = RelativeDistance(familyTree);
       expect(distance.degreesOfSeparation('Khadija', 'Rami'), equals(2));
-    }, skip: true);
+    });
 
     test('Unrelated individuals', () {
       final familyTree = {
@@ -36,7 +36,7 @@ void main() {
       };
       final distance = RelativeDistance(familyTree);
       expect(distance.degreesOfSeparation('Priya', 'Kaito'), equals(-1));
-    }, skip: true);
+    });
 
     test('Complex graph, cousins', () {
       final familyTree = {
@@ -95,7 +95,7 @@ void main() {
       };
       final distance = RelativeDistance(familyTree);
       expect(distance.degreesOfSeparation('Dimitri', 'Fabio'), equals(9));
-    }, skip: true);
+    });
 
     test('Complex graph, no shortcut, far removed nephew', () {
       final familyTree = {
@@ -154,7 +154,7 @@ void main() {
       };
       final distance = RelativeDistance(familyTree);
       expect(distance.degreesOfSeparation('Lucia', 'Jun'), equals(14));
-    }, skip: true);
+    });
 
     test(
         'Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree',
@@ -214,6 +214,6 @@ void main() {
       };
       final distance = RelativeDistance(familyTree);
       expect(distance.degreesOfSeparation('Wyatt', 'Xia'), equals(12));
-    }, skip: true);
+    });
   });
 }

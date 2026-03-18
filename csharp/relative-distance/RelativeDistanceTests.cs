@@ -1,6 +1,6 @@
 public class RelativeDistanceTests
 {
-    [Fact]
+ [Fact]
     public void Direct_parent_child_relation()
     {
         Dictionary<string, string[]> familyTree = new()
@@ -12,7 +12,7 @@ public class RelativeDistanceTests
         Assert.Equal(1, rd.DegreeOfSeparation("Vera", "Tomoko"));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Sibling_relationship()
     {
         Dictionary<string, string[]> familyTree = new()
@@ -23,7 +23,7 @@ public class RelativeDistanceTests
         Assert.Equal(1, rd.DegreeOfSeparation("Olga", "Yassin"));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Two_degrees_of_separation_grandchild()
     {
         Dictionary<string, string[]> familyTree = new()
@@ -35,7 +35,7 @@ public class RelativeDistanceTests
         Assert.Equal(2, rd.DegreeOfSeparation("Khadija", "Rami"));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Unrelated_individuals()
     {
         Dictionary<string, string[]> familyTree = new()
@@ -47,7 +47,7 @@ public class RelativeDistanceTests
         Assert.Equal(-1, rd.DegreeOfSeparation("Priya", "Kaito"));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Complex_graph_cousins()
     {
         Dictionary<string, string[]> familyTree = new()
@@ -109,7 +109,7 @@ public class RelativeDistanceTests
         Assert.Equal(9, rd.DegreeOfSeparation("Dimitri", "Fabio"));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Complex_graph_no_shortcut_far_removed_nephew()
     {
         Dictionary<string, string[]> familyTree = new()
@@ -171,7 +171,7 @@ public class RelativeDistanceTests
         Assert.Equal(14, rd.DegreeOfSeparation("Lucia", "Jun"));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Complex_graph_some_shortcuts_cross_down_and_cross_up_cousins_several_times_removed_with_unrelated_family_tree()
     {
         Dictionary<string, string[]> familyTree = new()

@@ -12,7 +12,7 @@ void main() {
     final knapsack = Knapsack(maxWeight: 10);
     final value = knapsack.maxValue([(weight: 100, value: 1)]);
     expect(value, equals(0));
-  }, skip: true);
+  });
 
   test("five items (cannot be greedy by weight)", () {
     final knapsack = Knapsack(maxWeight: 10);
@@ -24,7 +24,7 @@ void main() {
       (weight: 10, value: 21)
     ]);
     expect(value, equals(21));
-  }, skip: true);
+  });
 
   test("five items (cannot be greedy by value)", () {
     final knapsack = Knapsack(maxWeight: 10);
@@ -36,14 +36,14 @@ void main() {
       (weight: 10, value: 50)
     ]);
     expect(value, equals(80));
-  }, skip: true);
+  });
 
   test("example knapsack", () {
     final knapsack = Knapsack(maxWeight: 10);
     final value = knapsack
         .maxValue([(weight: 5, value: 10), (weight: 4, value: 40), (weight: 6, value: 30), (weight: 4, value: 50)]);
     expect(value, equals(90));
-  }, skip: true);
+  });
 
   test("8 items", () {
     final knapsack = Knapsack(maxWeight: 104);
@@ -58,7 +58,7 @@ void main() {
       (weight: 2, value: 5)
     ]);
     expect(value, equals(900));
-  }, skip: true);
+  });
 
   test("15 items", () {
     final knapsack = Knapsack(maxWeight: 750);
@@ -80,5 +80,5 @@ void main() {
       (weight: 120, value: 240)
     ]);
     expect(value, equals(1458));
-  }, skip: true);
+  });
 }

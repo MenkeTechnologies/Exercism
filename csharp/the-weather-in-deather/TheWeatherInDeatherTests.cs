@@ -4,7 +4,7 @@ using Exercism.Tests;
 
 public class TheWeatherInDeatherTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void GetReading()
     {
@@ -15,7 +15,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(expected, actual);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void HasHistory_no()
     {
@@ -24,7 +24,7 @@ public class TheWeatherInDeatherTests
         Assert.False(ws.HasHistory);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void HasHistory_yes()
     {
@@ -34,7 +34,7 @@ public class TheWeatherInDeatherTests
         Assert.True(ws.HasHistory);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ClearAll()
     {
@@ -47,7 +47,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(expected, actual);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ShortTermOutlook_exception()
     {
@@ -55,7 +55,7 @@ public class TheWeatherInDeatherTests
         Assert.Throws<ArgumentException>(() => ws.ShortTermOutlook);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ShortTermOutlook_cool()
     {
@@ -64,7 +64,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(Outlook.Cool, ws.ShortTermOutlook);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ShortTermOutlook_good()
     {
@@ -73,7 +73,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(Outlook.Good, ws.ShortTermOutlook);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ShortTermOutlook_warm()
     {
@@ -82,7 +82,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(Outlook.Warm, ws.ShortTermOutlook);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void RunSelfTest_good()
     {
@@ -91,7 +91,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(State.Good, ws.RunSelfTest());
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void RunSelfTest_bad()
     {
@@ -99,7 +99,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(State.Bad, ws.RunSelfTest());
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void LongTermOutlook_exception()
     {
@@ -107,7 +107,7 @@ public class TheWeatherInDeatherTests
         Assert.Throws<ArgumentException>(() => ws.LongTermOutlook);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void LongTermOutlook_cool()
     {
@@ -116,7 +116,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(Outlook.Cool, ws.LongTermOutlook);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void LongTermOutlook_good()
     {
@@ -125,7 +125,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(Outlook.Good, ws.LongTermOutlook);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void LongTermOutlook_good2()
     {
@@ -134,7 +134,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(Outlook.Good, ws.LongTermOutlook);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void LongTermOutlook_warm()
     {
@@ -143,7 +143,7 @@ public class TheWeatherInDeatherTests
         Assert.Equal(Outlook.Warm, ws.LongTermOutlook);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void LongTermOutlook_rainy()
     {

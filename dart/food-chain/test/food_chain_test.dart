@@ -22,7 +22,7 @@ void main() {
           "She swallowed the spider to catch the fly.",
           "I don't know why she swallowed the fly. Perhaps she'll die."
         ]));
-  }, skip: true);
+  });
 
   test("bird", () {
     expect(
@@ -34,7 +34,7 @@ void main() {
           "She swallowed the spider to catch the fly.",
           "I don't know why she swallowed the fly. Perhaps she'll die."
         ]));
-  }, skip: true);
+  });
 
   test("cat", () {
     expect(
@@ -47,7 +47,7 @@ void main() {
           "She swallowed the spider to catch the fly.",
           "I don't know why she swallowed the fly. Perhaps she'll die."
         ]));
-  }, skip: true);
+  });
 
   test("dog", () {
     expect(
@@ -61,7 +61,7 @@ void main() {
           "She swallowed the spider to catch the fly.",
           "I don't know why she swallowed the fly. Perhaps she'll die."
         ]));
-  }, skip: true);
+  });
 
   test("goat", () {
     expect(
@@ -76,7 +76,7 @@ void main() {
           "She swallowed the spider to catch the fly.",
           "I don't know why she swallowed the fly. Perhaps she'll die."
         ]));
-  }, skip: true);
+  });
 
   test("cow", () {
     expect(
@@ -92,11 +92,11 @@ void main() {
           "She swallowed the spider to catch the fly.",
           "I don't know why she swallowed the fly. Perhaps she'll die."
         ]));
-  }, skip: true);
+  });
 
   test("horse", () {
     expect(foodChain.recite(8, 8), equals(["I know an old lady who swallowed a horse.", "She's dead, of course!"]));
-  }, skip: true);
+  });
 
   test("multiple verses", () {
     expect(
@@ -116,7 +116,7 @@ void main() {
           "She swallowed the spider to catch the fly.",
           "I don't know why she swallowed the fly. Perhaps she'll die."
         ]));
-  }, skip: true);
+  });
 
   test("full song", () {
     expect(
@@ -173,5 +173,5 @@ void main() {
           "I know an old lady who swallowed a horse.",
           "She's dead, of course!"
         ]));
-  }, skip: true);
+  });
 }

@@ -4,7 +4,7 @@ using Exercism.Tests;
 
 public class HyperOptimizedTelemetryTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_upper_long()
     {
@@ -12,7 +12,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xf8, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_lower_long()
     {
@@ -20,7 +20,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xf8, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_upper_uint()
     {
@@ -28,7 +28,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0x4, 0xff, 0xff, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_lower_uint()
     {
@@ -36,7 +36,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0x4, 0x0, 0x0, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_upper_int()
     {
@@ -44,7 +44,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xfc, 0xff, 0xff, 0xff, 0x7f, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_lower_int()
     {
@@ -52,7 +52,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xfc, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_upper_ushort()
     {
@@ -60,7 +60,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0x2, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_lower_ushort()
     {
@@ -68,7 +68,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0x2, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_upper_short()
     {
@@ -76,7 +76,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0x2, 0xff, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_Zero()
     {
@@ -84,7 +84,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0x2, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_upper_neg_short()
     {
@@ -92,7 +92,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xfe, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_lower_neg_short()
     {
@@ -100,7 +100,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xfe, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_upper_neg_int()
     {
@@ -109,7 +109,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xfc, 0xff, 0x7f, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_lower_neg_int()
     {
@@ -117,7 +117,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xfc, 0x0, 0x0, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_upper_neg_long()
     {
@@ -125,7 +125,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xf8, 0xff, 0xff, 0xff, 0x7f, 0xff, 0xff, 0xff, 0xff }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void ToBuffer_lower_neg_long()
     {
@@ -133,7 +133,7 @@ public class HyperOptimizedTelemetryTests
         Assert.Equal(new byte[] { 0xf8, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x80 }, bytes);
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_Invalid()
     {
@@ -141,7 +141,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 22, 0xff, 0xff, 0xff, 0x7f, 0, 0, 0, 0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_upper_long()
     {
@@ -149,7 +149,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xf8, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0x7f }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_lower_long()
     {
@@ -157,7 +157,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xf8, 0x0, 0x0, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_upper_uint()
     {
@@ -165,7 +165,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0x4, 0xff, 0xff, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_lower_uint()
     {
@@ -173,7 +173,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0x4, 0x0, 0x0, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_upper_int()
     {
@@ -181,7 +181,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xfc, 0xff, 0xff, 0xff, 0x7f, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_lower_int()
     {
@@ -189,7 +189,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xfc, 0x0, 0x0, 0x1, 0x0, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_upper_ushort()
     {
@@ -197,7 +197,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0x2, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_lower_ushort()
     {
@@ -205,7 +205,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0x2, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_upper_short()
     {
@@ -213,7 +213,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xfe, 0xff, 0x7f, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_Zero()
     {
@@ -221,7 +221,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xfe, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_upper_neg_short()
     {
@@ -229,7 +229,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xfe, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_lower_neg_short()
     {
@@ -237,7 +237,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xfe, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_upper_neg_int()
     {
@@ -245,7 +245,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xfc, 0xff, 0x7f, 0xff, 0xff, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_lower_neg_int()
     {
@@ -253,7 +253,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xfc, 0x0, 0x0, 0x0, 0x80, 0x0, 0x0, 0x0, 0x0 }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_upper_neg_long()
     {
@@ -261,7 +261,7 @@ public class HyperOptimizedTelemetryTests
             TelemetryBuffer.FromBuffer(new byte[] { 0xf8, 0xff, 0xff, 0xff, 0x7f, 0xff, 0xff, 0xff, 0xff }));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void FromBuffer_lower_neg_long()
     {

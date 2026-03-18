@@ -3,7 +3,7 @@ using Exercism.Tests;
 
 public class RollTheDieTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void RollDie()
     {
@@ -14,7 +14,7 @@ public class RollTheDieTests
         }
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void GenerateSpellStrength()
     {

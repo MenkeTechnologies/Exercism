@@ -5,14 +5,14 @@ using System;
 public class CalculatorConundrumTests
 {
     //Addition tests
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Addition_with_small_operands()
     {
         Assert.Equal("22 + 25 = 47", SimpleCalculator.Calculate(22, 25, "+"));
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Addition_with_large_operands()
     {
@@ -20,14 +20,14 @@ public class CalculatorConundrumTests
     }
 
     //Multiplication tests
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Multiplication_with_small_operands()
     {
         Assert.Equal("3 * 21 = 63", SimpleCalculator.Calculate(3, 21, "*"));
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Multiplication_with_large_operands()
     {
@@ -35,14 +35,14 @@ public class CalculatorConundrumTests
     }
 
     //Division tests
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Division_with_small_operands()
     {
         Assert.Equal("72 / 9 = 8", SimpleCalculator.Calculate(72, 9, "/"));
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Division_with_large_operands()
     {
@@ -50,28 +50,28 @@ public class CalculatorConundrumTests
     }
 
     // Invalid operator
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Calculate_throws_exception_for_non_valid_operations()
     {
         Assert.Throws<ArgumentOutOfRangeException>(() => SimpleCalculator.Calculate(1, 2, "**"));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Calculate_throws_exception_for_null_as_operation()
     {
         Assert.Throws<ArgumentNullException>(() => SimpleCalculator.Calculate(1, 2, null));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Calculate_throws_exception_for_empty_string_as_operation()
     {
         Assert.Throws<ArgumentException>(() => SimpleCalculator.Calculate(1, 2, ""));
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Calculate_throws_exception_for_division_with_0()
     {

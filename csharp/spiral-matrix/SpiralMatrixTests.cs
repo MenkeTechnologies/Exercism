@@ -2,13 +2,13 @@ using Xunit;
 
 public class SpiralMatrixTests
 {
-    [Fact]
+ [Fact]
     public void Empty_spiral()
     {
         Assert.Empty(SpiralMatrix.GetMatrix(0));
     }
 
-    [Fact]
+ [Fact]
     public void Trivial_spiral()
     {
         var expected = new[,]
@@ -18,7 +18,7 @@ public class SpiralMatrixTests
         Assert.Equal(expected, SpiralMatrix.GetMatrix(1));
     }
 
-    [Fact]
+ [Fact]
     public void Spiral_of_size_2()
     {
         var expected = new[,]
@@ -29,7 +29,7 @@ public class SpiralMatrixTests
         Assert.Equal(expected, SpiralMatrix.GetMatrix(2));
     }
 
-    [Fact]
+ [Fact]
     public void Spiral_of_size_3()
     {
         var expected = new[,]
@@ -41,7 +41,7 @@ public class SpiralMatrixTests
         Assert.Equal(expected, SpiralMatrix.GetMatrix(3));
     }
 
-    [Fact]
+ [Fact]
     public void Spiral_of_size_4()
     {
         var expected = new[,]
@@ -54,7 +54,7 @@ public class SpiralMatrixTests
         Assert.Equal(expected, SpiralMatrix.GetMatrix(4));
     }
 
-    [Fact]
+ [Fact]
     public void Spiral_of_size_5()
     {
         var expected = new[,]

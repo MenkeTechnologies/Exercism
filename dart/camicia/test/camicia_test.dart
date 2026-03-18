@@ -14,32 +14,32 @@ void main() {
     test('three cards, one trick', () {
       final result = camicia.simulateGame(deck('2 4'), deck('3'));
       expect(result, equals({'status': 'finished', 'cards': 3, 'tricks': 1}));
-    }, skip: true);
+    });
 
     test('four cards, one trick', () {
       final result = camicia.simulateGame(deck('2 4'), deck('3 5 6'));
       expect(result, equals({'status': 'finished', 'cards': 4, 'tricks': 1}));
-    }, skip: true);
+    });
 
     test('the ace reigns supreme', () {
       final result = camicia.simulateGame(deck('2 A'), deck('3 4 5 6 7'));
       expect(result, equals({'status': 'finished', 'cards': 7, 'tricks': 1}));
-    }, skip: true);
+    });
 
     test('the king beats ace', () {
       final result = camicia.simulateGame(deck('2 A'), deck('3 4 5 6 K'));
       expect(result, equals({'status': 'finished', 'cards': 7, 'tricks': 1}));
-    }, skip: true);
+    });
 
     test('the queen seduces the king', () {
       final result = camicia.simulateGame(deck('2 A 7 8 Q'), deck('3 4 5 6 K'));
       expect(result, equals({'status': 'finished', 'cards': 10, 'tricks': 1}));
-    }, skip: true);
+    });
 
     test('the jack betrays the queen', () {
       final result = camicia.simulateGame(deck('2 A 7 8 Q'), deck('3 4 5 6 K 9 J'));
       expect(result, equals({'status': 'finished', 'cards': 12, 'tricks': 1}));
-    }, skip: true);
+    });
 
     test('the 10 just wants to put on a show', () {
       final result = camicia.simulateGame(
@@ -47,12 +47,12 @@ void main() {
         deck('3 4 5 6 K 9 J'),
       );
       expect(result, equals({'status': 'finished', 'cards': 13, 'tricks': 1}));
-    }, skip: true);
+    });
 
     test('simple loop with decks of 3 cards', () {
       final result = camicia.simulateGame(deck('J 2 3'), deck('4 J 5'));
       expect(result, equals({'status': 'loop', 'cards': 8, 'tricks': 3}));
-    }, skip: true);
+    });
 
     test('the story is starting to get a bit complicated', () {
       final result = camicia.simulateGame(
@@ -62,22 +62,22 @@ void main() {
             '7 2 10 K 8 2 J 9 A 5 6 J Q 6 K 6 5 A 4 Q 7 J 7 10 2 Q 8 2 2 K J A 5 5 A 4 Q 6 Q K 10 8 Q 2 10 J A Q 8 Q Q J J A A 9 10 J K 4 Q 10 10 J K 10 2 J 7 A K K J A J 10 8 K A 7 Q Q J 3 Q 4 A 3 A Q Q Q 5 4 K J 10 A Q J 6 J A 10 A 5 8 3 K 5 9 Q 8 7 7 J 7 Q Q Q A 7 8 9 A Q A K 8 A A J 8 4 8 K J A 10 Q 8 J 8 6 10 Q J J A A J 5 Q 6 J K Q 8 K 4 Q Q 6 J K 4 7 J J 9 9 A Q Q K A 6 5 K'),
       );
       expect(result, equals({'status': 'finished', 'cards': 361, 'tricks': 1}));
-    }, skip: true);
+    });
 
     test('two tricks', () {
       final result = camicia.simulateGame(deck('J'), deck('3 J'));
       expect(result, equals({'status': 'finished', 'cards': 5, 'tricks': 2}));
-    }, skip: true);
+    });
 
     test('more tricks', () {
       final result = camicia.simulateGame(deck('J 2 4'), deck('3 J A'));
       expect(result, equals({'status': 'finished', 'cards': 12, 'tricks': 4}));
-    }, skip: true);
+    });
 
     test('simple loop with decks of 4 cards', () {
       final result = camicia.simulateGame(deck('2 3 J 6'), deck('K 5 J 7'));
       expect(result, equals({'status': 'loop', 'cards': 16, 'tricks': 4}));
-    }, skip: true);
+    });
 
     test('easy card combination', () {
       final result = camicia.simulateGame(
@@ -85,7 +85,7 @@ void main() {
         deck('6 9 4 7 2 2 3 6 7 3 A A A A K K K K Q Q Q Q J J J J'),
       );
       expect(result, equals({'status': 'finished', 'cards': 40, 'tricks': 4}));
-    }, skip: true);
+    });
 
     test('easy card combination, inverted decks', () {
       final result = camicia.simulateGame(
@@ -93,7 +93,7 @@ void main() {
         deck('5 10 8 2 6 7 2 4 9 2 6 10 10 5 4 8 4 8 6 9 8 5 9 3 4 9'),
       );
       expect(result, equals({'status': 'finished', 'cards': 40, 'tricks': 4}));
-    }, skip: true);
+    });
 
     test('mirrored decks', () {
       final result = camicia.simulateGame(
@@ -101,7 +101,7 @@ void main() {
         deck('6 A 4 A 7 K 4 K 7 Q 7 Q 5 J 8 J 4 5 8 9 10 6 8 3 8 5'),
       );
       expect(result, equals({'status': 'finished', 'cards': 59, 'tricks': 4}));
-    }, skip: true);
+    });
 
     test('opposite decks', () {
       final result = camicia.simulateGame(
@@ -109,7 +109,7 @@ void main() {
         deck('10 7 3 2 9 2 7 8 7 5 J 7 J 10 Q 10 Q 3 K 5 K 6 A 2 A 5'),
       );
       expect(result, equals({'status': 'finished', 'cards': 151, 'tricks': 21}));
-    }, skip: true);
+    });
 
     test('random decks #1', () {
       final result = camicia.simulateGame(
@@ -117,7 +117,7 @@ void main() {
         deck('6 3 K A Q 10 A 2 Q 8 2 10 10 2 Q 3 K 9 7 A 3 Q 5 J 2 6'),
       );
       expect(result, equals({'status': 'finished', 'cards': 542, 'tricks': 76}));
-    }, skip: true);
+    });
 
     test('random decks #2', () {
       final result = camicia.simulateGame(
@@ -125,7 +125,7 @@ void main() {
         deck('10 5 2 6 Q J A 9 5 5 3 7 3 J A 2 Q 3 J Q 4 10 4 7 4 6'),
       );
       expect(result, equals({'status': 'finished', 'cards': 327, 'tricks': 42}));
-    }, skip: true);
+    });
 
     test('Kleber 1999', () {
       final result = camicia.simulateGame(
@@ -133,7 +133,7 @@ void main() {
         deck('10 J 3 2 4 10 4 7 5 3 6 6 7 A J Q A 7 2 10 3 K 9 6 8 Q'),
       );
       expect(result, equals({'status': 'finished', 'cards': 5790, 'tricks': 805}));
-    }, skip: true);
+    });
 
     test('Collins 2006', () {
       final result = camicia.simulateGame(
@@ -141,7 +141,7 @@ void main() {
         deck('4 J A K 8 5 6 6 A 6 5 Q 4 6 10 8 J 2 5 7 Q J 3 3 K 9'),
       );
       expect(result, equals({'status': 'finished', 'cards': 6913, 'tricks': 960}));
-    }, skip: true);
+    });
 
     test('Mann and Wu 2007', () {
       final result = camicia.simulateGame(
@@ -149,7 +149,7 @@ void main() {
         deck('4 5 2 Q 7 9 9 Q 7 J 9 8 10 3 10 J 4 10 8 6 8 7 A Q 5 2'),
       );
       expect(result, equals({'status': 'finished', 'cards': 7157, 'tricks': 1007}));
-    }, skip: true);
+    });
 
     test('Nessler 2012', () {
       final result = camicia.simulateGame(
@@ -157,7 +157,7 @@ void main() {
         deck('10 Q 4 6 J 9 3 J 9 3 3 Q K 5 9 5 K 6 5 7 8 J A 7 8 7'),
       );
       expect(result, equals({'status': 'finished', 'cards': 7207, 'tricks': 1015}));
-    }, skip: true);
+    });
 
     test('Anderson 2013', () {
       final result = camicia.simulateGame(
@@ -165,7 +165,7 @@ void main() {
         deck('4 J 6 9 8 5 10 7 9 Q 2 7 10 8 4 10 A 6 4 A 6 8 Q K K 2'),
       );
       expect(result, equals({'status': 'finished', 'cards': 7225, 'tricks': 1016}));
-    }, skip: true);
+    });
 
     test('Rucklidge 2014', () {
       final result = camicia.simulateGame(
@@ -173,7 +173,7 @@ void main() {
         deck('K 7 10 6 3 J A 7 6 5 5 8 10 9 10 4 2 7 K Q 10 K 6 J J K'),
       );
       expect(result, equals({'status': 'finished', 'cards': 7959, 'tricks': 1122}));
-    }, skip: true);
+    });
 
     test('Nessler 2021', () {
       final result = camicia.simulateGame(
@@ -181,7 +181,7 @@ void main() {
         deck('3 10 8 9 8 K K 2 5 5 7 6 4 3 5 7 A 9 J K 2 Q 10 Q 10 Q'),
       );
       expect(result, equals({'status': 'finished', 'cards': 7972, 'tricks': 1106}));
-    }, skip: true);
+    });
 
     test('Nessler 2022', () {
       final result = camicia.simulateGame(
@@ -189,7 +189,7 @@ void main() {
         deck('10 7 6 3 6 A 8 9 4 3 K J 6 K 4 9 7 8 5 7 8 2 A 7 4 6'),
       );
       expect(result, equals({'status': 'finished', 'cards': 8344, 'tricks': 1164}));
-    }, skip: true);
+    });
 
     test('Casella 2024, first infinite game found', () {
       final result = camicia.simulateGame(
@@ -197,6 +197,6 @@ void main() {
         deck('7 7 8 6 10 10 6 10 7 2 Q 6 3 2 4 K Q 10 J 5 9 8 9 9 K A'),
       );
       expect(result, equals({'status': 'loop', 'cards': 474, 'tricks': 66}));
-    }, skip: true);
+    });
   });
 }

@@ -3,7 +3,7 @@ using Xunit;
 
 public class PythagoreanTripletTests
 {
-    [Fact]
+ [Fact]
     public void Triplets_whose_sum_is_12()
     {
         Assert.Equal(new[]
@@ -12,7 +12,7 @@ public class PythagoreanTripletTests
         }, PythagoreanTriplet.TripletsWithSum(12));
     }
 
-    [Fact]
+ [Fact]
     public void Triplets_whose_sum_is_108()
     {
         Assert.Equal(new[]
@@ -21,7 +21,7 @@ public class PythagoreanTripletTests
         }, PythagoreanTriplet.TripletsWithSum(108));
     }
 
-    [Fact]
+ [Fact]
     public void Triplets_whose_sum_is_1000()
     {
         Assert.Equal(new[]
@@ -30,13 +30,13 @@ public class PythagoreanTripletTests
         }, PythagoreanTriplet.TripletsWithSum(1000));
     }
 
-    [Fact]
+ [Fact]
     public void No_matching_triplets_for_1001()
     {
         Assert.Equal(Array.Empty<(int, int, int)>(), PythagoreanTriplet.TripletsWithSum(1001));
     }
 
-    [Fact]
+ [Fact]
     public void Returns_all_matching_triplets()
     {
         Assert.Equal(new[]
@@ -46,7 +46,7 @@ public class PythagoreanTripletTests
         }, PythagoreanTriplet.TripletsWithSum(90));
     }
 
-    [Fact]
+ [Fact]
     public void Several_matching_triplets()
     {
         Assert.Equal(new[]
@@ -62,7 +62,7 @@ public class PythagoreanTripletTests
         }, PythagoreanTriplet.TripletsWithSum(840));
     }
 
-    [Fact]
+ [Fact]
     public void Triplets_for_large_number()
     {
         Assert.Equal(new[]

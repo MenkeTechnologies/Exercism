@@ -5,7 +5,7 @@ using Exercism.Tests;
 
 public class ObjectRelationalMappingTests
 {
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Write_good()
     {
@@ -17,7 +17,7 @@ public class ObjectRelationalMappingTests
         Assert.Equal(new object[] { Database.State.DataWritten, "good write" }, actual);
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Write_bad()
     {
@@ -29,7 +29,7 @@ public class ObjectRelationalMappingTests
         Assert.Equal(new object[] { Database.State.Closed, "bad write" }, actual);
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Commit_good()
     {
@@ -42,7 +42,7 @@ public class ObjectRelationalMappingTests
         Assert.Equal(new object[] { Database.State.Closed, "good commit" }, actual);
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Commit_bad()
     {
@@ -55,7 +55,7 @@ public class ObjectRelationalMappingTests
         Assert.Equal(new object[] { Database.State.Closed, "bad commit" }, actual);
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Out_of_order()
     {
@@ -67,7 +67,7 @@ public class ObjectRelationalMappingTests
         Assert.Equal(new object[] { Database.State.Closed, string.Empty }, actual);
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Disposable()
     {

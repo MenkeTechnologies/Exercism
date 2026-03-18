@@ -3,7 +3,7 @@ using Exercism.Tests;
 
 public class NeedForSpeedTests
 {
-    [Fact]
+ [Fact]
     [Task(3)]
     public void New_remote_control_car_has_not_driven_any_distance()
     {
@@ -14,7 +14,7 @@ public class NeedForSpeedTests
         Assert.Equal(0, car.DistanceDriven());
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Drive_increases_distance_driven_with_speed()
     {
@@ -27,7 +27,7 @@ public class NeedForSpeedTests
         Assert.Equal(5, car.DistanceDriven());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Drive_does_not_increase_distance_driven_when_battery_drained()
     {
@@ -45,7 +45,7 @@ public class NeedForSpeedTests
         Assert.Equal(18, car.DistanceDriven());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void New_remote_control_car_battery_is_not_drained()
     {
@@ -56,7 +56,7 @@ public class NeedForSpeedTests
         Assert.False(car.BatteryDrained());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Drive_to_almost_drain_battery()
     {
@@ -73,7 +73,7 @@ public class NeedForSpeedTests
         Assert.False(car.BatteryDrained());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Drive_until_battery_is_drained()
     {
@@ -90,7 +90,7 @@ public class NeedForSpeedTests
         Assert.True(car.BatteryDrained());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Super_hungry_car_after_one_drive_is_drained()
     {
@@ -101,7 +101,7 @@ public class NeedForSpeedTests
         Assert.True(car.BatteryDrained());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Super_hungry_car_can_try_driving_but_is_drained()
     {
@@ -114,7 +114,7 @@ public class NeedForSpeedTests
         Assert.Equal(100, car.DistanceDriven());
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Nitro_car_has_not_driven_any_distance()
     {
@@ -122,7 +122,7 @@ public class NeedForSpeedTests
         Assert.Equal(0, car.DistanceDriven());
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Nitro_car_has_battery_not_drained()
     {
@@ -130,7 +130,7 @@ public class NeedForSpeedTests
         Assert.False(car.BatteryDrained());
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Nitro_car_has_correct_speed()
     {
@@ -139,7 +139,7 @@ public class NeedForSpeedTests
         Assert.Equal(50, car.DistanceDriven());
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Nitro_car_has_correct_battery_drain()
     {
@@ -159,7 +159,7 @@ public class NeedForSpeedTests
         Assert.True(car.BatteryDrained());
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Car_can_finish_with_car_that_can_easily_finish()
     {
@@ -173,7 +173,7 @@ public class NeedForSpeedTests
         Assert.True(race.TryFinishTrack(car));
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Car_can_finish_with_car_that_can_just_finish()
     {
@@ -187,7 +187,7 @@ public class NeedForSpeedTests
         Assert.True(race.TryFinishTrack(car));
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Car_can_finish_with_car_that_just_cannot_finish()
     {
@@ -201,7 +201,7 @@ public class NeedForSpeedTests
         Assert.False(race.TryFinishTrack(car));
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Car_can_finish_with_car_that_cannot_finish()
     {

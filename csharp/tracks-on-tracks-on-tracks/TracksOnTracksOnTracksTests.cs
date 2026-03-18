@@ -4,14 +4,14 @@ using Exercism.Tests;
 
 public class TracksOnTracksOnTracksTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void NewList()
     {
         Assert.Empty(Languages.NewList());
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void ExistingList()
     {
@@ -22,7 +22,7 @@ public class TracksOnTracksOnTracksTests
         Assert.Equal(expected, Languages.GetExistingLanguages());
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void AddLanguage()
     {
@@ -38,7 +38,7 @@ public class TracksOnTracksOnTracksTests
         Assert.Equal(expected, Languages.AddLanguage(languages, "Bash"));
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void CountLanguages()
     {
@@ -49,7 +49,7 @@ public class TracksOnTracksOnTracksTests
         Assert.Equal(3, Languages.CountLanguages(expected));
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void HasLanguage_yes()
     {
@@ -60,7 +60,7 @@ public class TracksOnTracksOnTracksTests
         Assert.True(Languages.HasLanguage(expected, "Elm"));
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void HasLanguage_no()
     {
@@ -71,7 +71,7 @@ public class TracksOnTracksOnTracksTests
         Assert.False(Languages.HasLanguage(expected, "D"));
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void ReverseList()
     {
@@ -86,7 +86,7 @@ public class TracksOnTracksOnTracksTests
         Assert.Equal(expected, Languages.ReverseList(languages));
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void IsExciting_yes()
     {
@@ -97,7 +97,7 @@ public class TracksOnTracksOnTracksTests
         Assert.True(Languages.IsExciting(expected));
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void IsExciting_too_many()
     {
@@ -109,7 +109,7 @@ public class TracksOnTracksOnTracksTests
         Assert.False(Languages.IsExciting(languages));
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void IsExciting_empty()
     {
@@ -117,7 +117,7 @@ public class TracksOnTracksOnTracksTests
         Assert.False(Languages.IsExciting(languages));
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void IsExciting_single_star()
     {
@@ -126,7 +126,7 @@ public class TracksOnTracksOnTracksTests
         Assert.True(Languages.IsExciting(languages));
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void IsExciting_star_on_second_place_size2()
     {
@@ -136,7 +136,7 @@ public class TracksOnTracksOnTracksTests
         Assert.True(Languages.IsExciting(languages));
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void IsExciting_star_on_second_place_size3()
     {
@@ -147,7 +147,7 @@ public class TracksOnTracksOnTracksTests
         Assert.True(Languages.IsExciting(languages));
     }
 
-    [Fact]
+ [Fact]
     [Task(8)]
     public void RemoveLanguage_yes()
     {
@@ -161,7 +161,7 @@ public class TracksOnTracksOnTracksTests
         Assert.Equal(expected, Languages.RemoveLanguage(languages, "Clojure"));
     }
 
-    [Fact]
+ [Fact]
     [Task(8)]
     public void RemoveLanguage_no()
     {
@@ -176,7 +176,7 @@ public class TracksOnTracksOnTracksTests
         Assert.Equal(expected, Languages.RemoveLanguage(languages, "English"));
     }
 
-    [Fact]
+ [Fact]
     [Task(9)]
     public void IsUnique_yes()
     {
@@ -187,7 +187,7 @@ public class TracksOnTracksOnTracksTests
         Assert.True(Languages.IsUnique(languages));
     }
 
-    [Fact]
+ [Fact]
     [Task(9)]
     public void IsUnique_no()
     {

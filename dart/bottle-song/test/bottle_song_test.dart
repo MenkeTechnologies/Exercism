@@ -29,7 +29,7 @@ void main() {
                 'And if one green bottle should accidentally fall,',
                 "There'll be two green bottles hanging on the wall."
               ]));
-        }, skip: true);
+        });
 
         test('verse with 2 bottles', () {
           final result = bottleSong.recite(2, 1);
@@ -41,7 +41,7 @@ void main() {
                 'And if one green bottle should accidentally fall,',
                 "There'll be one green bottle hanging on the wall."
               ]));
-        }, skip: true);
+        });
 
         test('verse with 1 bottle', () {
           final result = bottleSong.recite(1, 1);
@@ -53,7 +53,7 @@ void main() {
                 'And if one green bottle should accidentally fall,',
                 "There'll be no green bottles hanging on the wall."
               ]));
-        }, skip: true);
+        });
       });
     });
     group('lyrics', () {
@@ -73,7 +73,7 @@ void main() {
                 'And if one green bottle should accidentally fall,',
                 "There'll be eight green bottles hanging on the wall."
               ]));
-        }, skip: true);
+        });
 
         test('last three verses', () {
           final result = bottleSong.recite(3, 3);
@@ -95,7 +95,7 @@ void main() {
                 'And if one green bottle should accidentally fall,',
                 "There'll be no green bottles hanging on the wall."
               ]));
-        }, skip: true);
+        });
 
         test('all verses', () {
           final result = bottleSong.recite(10, 10);
@@ -152,7 +152,7 @@ void main() {
                 'And if one green bottle should accidentally fall,',
                 "There'll be no green bottles hanging on the wall."
               ]));
-        }, skip: true);
+        });
       });
     });
   });

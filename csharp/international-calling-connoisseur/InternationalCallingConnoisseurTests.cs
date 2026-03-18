@@ -3,7 +3,7 @@ using Exercism.Tests;
 
 public class InternationalCallingConnoisseurTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Empty_dictionary_is_empty()
     {
@@ -11,7 +11,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Empty(emptyDict);
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Existing_dictionary_count_is_3()
     {
@@ -19,7 +19,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal(3, prePopulated.Count);
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Existing_dictionary_1_is_United_States_of_America()
     {
@@ -27,7 +27,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("United States of America", prePopulated[1]);
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Existing_dictionary_55_is_Brazil()
     {
@@ -35,7 +35,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("Brazil", prePopulated[55]);
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Existing_dictionary_91_is_India()
     {
@@ -43,7 +43,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("India", prePopulated[91]);
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Add_country_to_empty_dictionary_single()
     {
@@ -51,7 +51,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Single(countryCodes);
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Add_country_to_empty_dictionary_44_is_United_Kingdom()
     {
@@ -59,7 +59,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("United Kingdom", countryCodes[44]);
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Add_country_to_existing_dictionary_count_is_1()
     {
@@ -68,7 +68,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal(4, countryCodes.Count);
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Add_country_to_existing_dictionary_1_is_United_States_of_America()
     {
@@ -77,7 +77,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("United States of America", countryCodes[1]);
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Add_country_to_existing_dictionary_44_is_United_Kingdom()
     {
@@ -86,7 +86,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("United Kingdom", countryCodes[44]);
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Add_country_to_existing_dictionary_55_is_Brazil()
     {
@@ -95,7 +95,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("Brazil", countryCodes[55]);
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Add_country_to_existing_dictionary_91_is_India()
     {
@@ -104,7 +104,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("India", countryCodes[91]);
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Get_country_name_from_dictionary()
     {
@@ -113,7 +113,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("Brazil", countryName);
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Get_country_name_for_non_existent_country()
     {
@@ -122,7 +122,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal(string.Empty, countryName);
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Check_country_exists()
     {
@@ -131,7 +131,7 @@ public class InternationalCallingConnoisseurTests
         Assert.True(exists);
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Check_country_exists_for_non_existent_country()
     {
@@ -140,7 +140,7 @@ public class InternationalCallingConnoisseurTests
         Assert.False(exists);
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void Update_country_name_in_dictionary_count_is_3()
     {
@@ -149,7 +149,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal(3, countryCodes.Count);
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void Update_country_name_in_dictionary_1_is_les_Etats_Unis()
     {
@@ -158,7 +158,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("les États-Unis", countryCodes[1]);
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void Update_country_name_in_dictionary_55_is_Brazil()
     {
@@ -167,7 +167,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("Brazil", countryCodes[55]);
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void Update_country_name_in_dictionary_91_is_India()
     {
@@ -176,7 +176,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("India", countryCodes[91]);
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void Update_country_name_in_dictionary_for_non_existent_country_count_is_3()
     {
@@ -185,7 +185,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal(3, countryCodes.Count);
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void Update_country_name_in_dictionary_for_non_existent_country_1_is_United_States_of_America()
     {
@@ -194,7 +194,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("United States of America", countryCodes[1]);
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void Update_country_name_in_dictionary_for_non_existent_country_55_is_Brazil()
     {
@@ -203,7 +203,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("Brazil", countryCodes[55]);
     }
 
-    [Fact]
+ [Fact]
     [Task(7)]
     public void Update_country_name_in_dictionary_for_non_existent_country_91_is_India()
     {
@@ -212,7 +212,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("India", countryCodes[91]);
     }
 
-    [Fact]
+ [Fact]
     [Task(8)]
     public void Remove_country_from_dictionary_count_is_2()
     {
@@ -221,7 +221,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal(2, countryCodes.Count);
     }
 
-    [Fact]
+ [Fact]
     [Task(8)]
     public void Remove_country_from_dictionary_1_is_United_States_of_America()
     {
@@ -230,7 +230,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("United States of America", countryCodes[1]);
     }
 
-    [Fact]
+ [Fact]
     [Task(8)]
     public void Remove_country_from_dictionary_55_is_Brazil()
     {
@@ -239,7 +239,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("Brazil", countryCodes[55]);
     }
 
-    [Fact]
+ [Fact]
     [Task(8)]
     public void Remove_country_from_dictionary_for_non_existent_country_count_is_3()
     {
@@ -248,7 +248,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal(3, countryCodes.Count);
     }
 
-    [Fact]
+ [Fact]
     [Task(8)]
     public void Remove_country_from_dictionary_for_non_existent_country_1_is_United_States_of_America()
     {
@@ -257,7 +257,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("United States of America", countryCodes[1]);
     }
 
-    [Fact]
+ [Fact]
     [Task(8)]
     public void Remove_country_from_dictionary_for_non_existent_country_55_is_Brazil()
     {
@@ -266,7 +266,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("Brazil", countryCodes[55]);
     }
 
-    [Fact]
+ [Fact]
     [Task(8)]
     public void Remove_country_from_dictionary_for_non_existent_country_91_is_India()
     {
@@ -275,7 +275,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("India", countryCodes[91]);
     }
 
-    [Fact]
+ [Fact]
     [Task(9)]
     public void Longest_country_name()
     {
@@ -284,7 +284,7 @@ public class InternationalCallingConnoisseurTests
         Assert.Equal("United States of America", longestCountryName);
     }
 
-    [Fact]
+ [Fact]
     [Task(9)]
     public void Longest_country_name_for_empty_dictionary()
     {

@@ -15,7 +15,7 @@ void main() {
       final expected = 'This is the malt that lay in the house that Jack built.';
       final result = house.recite(2, 2);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse three - the rat that ate', () {
       final expected = [
@@ -26,7 +26,7 @@ void main() {
       ].join(' ');
       final result = house.recite(3, 3);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse four - the cat that killed', () {
       final expected = [
@@ -38,7 +38,7 @@ void main() {
       ].join(' ');
       final result = house.recite(4, 4);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse five - the dog that worried', () {
       final expected = [
@@ -51,7 +51,7 @@ void main() {
       ].join(' ');
       final result = house.recite(5, 5);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse six - the cow with the crumpled horn', () {
       final expected = [
@@ -65,7 +65,7 @@ void main() {
       ].join(' ');
       final result = house.recite(6, 6);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse seven - the maiden all forlorn', () {
       final expected = [
@@ -80,7 +80,7 @@ void main() {
       ].join(' ');
       final result = house.recite(7, 7);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse eight - the man all tattered and torn', () {
       final expected = [
@@ -96,7 +96,7 @@ void main() {
       ].join(' ');
       final result = house.recite(8, 8);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse nine - the priest all shaven and shorn', () {
       final expected = [
@@ -113,7 +113,7 @@ void main() {
       ].join(' ');
       final result = house.recite(9, 9);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse ten - the rooster that crowed in the morn', () {
       final expected = [
@@ -131,7 +131,7 @@ void main() {
       ].join(' ');
       final result = house.recite(10, 10);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse eleven - the farmer sowing his corn', () {
       final expected = [
@@ -150,7 +150,7 @@ void main() {
       ].join(' ');
       final result = house.recite(11, 11);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('verse 12 - the horse and the hound and the horn', () {
       final expected = [
@@ -170,7 +170,7 @@ void main() {
       ].join(' ');
       final result = house.recite(12, 12);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('multiple verses', () {
       final expected = [
@@ -208,7 +208,7 @@ void main() {
       ].join('\n');
       final result = house.recite(4, 8);
       expect(result, equals(expected));
-    }, skip: true);
+    });
 
     test('full rhyme', () {
       final expected = [
@@ -294,6 +294,6 @@ void main() {
       ].join('\n');
       final result = house.recite(1, 12);
       expect(result, equals(expected));
-    }, skip: true);
+    });
   });
 }

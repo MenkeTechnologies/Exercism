@@ -25,7 +25,7 @@ void main() {
         [0, 0, 0],
       ];
       expect(game.matrix(), expected);
-    }, skip: true);
+    });
 
     test('live cells with only one live neighbor die', () {
       final List<List<int>> matrix = [
@@ -41,7 +41,7 @@ void main() {
         [0, 0, 0],
       ];
       expect(game.matrix(), expected);
-    }, skip: true);
+    });
 
     test('live cells with two live neighbors stay alive', () {
       final List<List<int>> matrix = [
@@ -57,7 +57,7 @@ void main() {
         [0, 0, 0],
       ];
       expect(game.matrix(), expected);
-    }, skip: true);
+    });
 
     test('live cells with three live neighbors stay alive', () {
       final List<List<int>> matrix = [
@@ -73,7 +73,7 @@ void main() {
         [1, 1, 0],
       ];
       expect(game.matrix(), expected);
-    }, skip: true);
+    });
 
     test('dead cells with three live neighbors become alive', () {
       final List<List<int>> matrix = [
@@ -89,7 +89,7 @@ void main() {
         [0, 0, 0],
       ];
       expect(game.matrix(), expected);
-    }, skip: true);
+    });
 
     test('live cells with four or more neighbors die', () {
       final List<List<int>> matrix = [
@@ -105,7 +105,7 @@ void main() {
         [1, 0, 1],
       ];
       expect(game.matrix(), expected);
-    }, skip: true);
+    });
 
     test('bigger matrix', () {
       final List<List<int>> matrix = [
@@ -131,6 +131,6 @@ void main() {
         [0, 0, 0, 0, 0, 0, 1, 1],
       ];
       expect(game.matrix(), expected);
-    }, skip: true);
+    });
   });
 }

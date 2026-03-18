@@ -3,7 +3,7 @@ using Xunit;
 
 public class ProverbTests
 {
-    [Fact]
+ [Fact]
     public void Zero_pieces()
     {
         var strings = Array.Empty<string>();
@@ -11,7 +11,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+ [Fact]
     public void One_piece()
     {
         var strings = new[]
@@ -25,7 +25,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+ [Fact]
     public void Two_pieces()
     {
         var strings = new[]
@@ -41,7 +41,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+ [Fact]
     public void Three_pieces()
     {
         var strings = new[]
@@ -59,7 +59,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+ [Fact]
     public void Full_proverb()
     {
         var strings = new[]
@@ -85,7 +85,7 @@ public class ProverbTests
         Assert.Equal(expected, Proverb.Recite(strings));
     }
 
-    [Fact]
+ [Fact]
     public void Four_pieces_modernized()
     {
         var strings = new[]

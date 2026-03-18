@@ -2,19 +2,19 @@ using Xunit;
 
 public class TwoFerTests
 {
-    [Fact]
+ [Fact]
     public void No_name_given()
     {
         Assert.Equal("One for you, one for me.", TwoFer.Speak());
     }
 
-    [Fact]
+ [Fact]
     public void A_name_given()
     {
         Assert.Equal("One for Alice, one for me.", TwoFer.Speak("Alice"));
     }
 
-    [Fact]
+ [Fact]
     public void Another_name_given()
     {
         Assert.Equal("One for Bob, one for me.", TwoFer.Speak("Bob"));

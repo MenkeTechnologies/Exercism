@@ -3,7 +3,7 @@ using Exercism.Tests;
 
 public class WizardsAndWarriors2Tests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Describe_warrior_character()
     {
@@ -15,7 +15,7 @@ public class WizardsAndWarriors2Tests
         Assert.Equal("You're a level 16 Warrior with 89 hit points.", GameMaster.Describe(character));
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Describe_wizard_character()
     {
@@ -27,7 +27,7 @@ public class WizardsAndWarriors2Tests
         Assert.Equal("You're a level 7 Wizard with 33 hit points.", GameMaster.Describe(character));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Describe_small_town_destination()
     {
@@ -38,7 +38,7 @@ public class WizardsAndWarriors2Tests
         Assert.Equal("You've arrived at Tol Honeth, which has 41 inhabitants.", GameMaster.Describe(destination));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void Describe_large_town_destination()
     {
@@ -49,21 +49,21 @@ public class WizardsAndWarriors2Tests
         Assert.Equal("You've arrived at Ashaba, which has 1500 inhabitants.", GameMaster.Describe(destination));
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Describe_walking_travel_method()
     {
         Assert.Equal("You're traveling to your destination by walking.", GameMaster.Describe(TravelMethod.Walking));
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void Describe_horse_travel_method()
     {
         Assert.Equal("You're traveling to your destination on horseback.", GameMaster.Describe(TravelMethod.Horseback));
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Describe_character_traveling_to_destination_with_explicit_travel_method()
     {
@@ -79,7 +79,7 @@ public class WizardsAndWarriors2Tests
         Assert.Equal("You're a level 20 Wizard with 120 hit points. You're traveling to your destination on horseback. You've arrived at Camaar, which has 999 inhabitants.", GameMaster.Describe(character, destination, TravelMethod.Horseback));
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Describe_character_traveling_to_destination_without_explicit_travel_method()
     {

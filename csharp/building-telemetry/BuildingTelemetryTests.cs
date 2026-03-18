@@ -3,7 +3,7 @@ using Exercism.Tests;
 
 public class BuildingTelemetryTests
 {
-    [Fact]
+ [Fact]
     public void DisplayNextSponsor_for_3_sponsors()
     {
         var car = RemoteControlCar.Buy();
@@ -14,7 +14,7 @@ public class BuildingTelemetryTests
         Assert.Equal((sp1, sp2, sp3), ("Exercism", "Walker Industries", "Acme Co."));
     }
 
-    [Fact]
+ [Fact]
     public void GetTelemetryData_good()
     {
         var car = RemoteControlCar.Buy();
@@ -26,7 +26,7 @@ public class BuildingTelemetryTests
         Assert.Equal((1, 80, 4), (serialNum, batteryPercentage, distanceDrivenInMeters));
     }
 
-    [Fact]
+ [Fact]
     public void GetTelemetryData_bad()
     {
         var car = RemoteControlCar.Buy();
@@ -41,7 +41,7 @@ public class BuildingTelemetryTests
         Assert.Equal((4, -1, -1), (serialNum, batteryPercentage, distanceDrivenInMeters));
     }
 
-    [Fact]
+ [Fact]
     public void GetUsagePerMeter_good()
     {
         var car = RemoteControlCar.Buy();
@@ -51,7 +51,7 @@ public class BuildingTelemetryTests
         Assert.Equal("usage-per-meter=5", tc.GetBatteryUsagePerMeter(serialNum: 1));
     }
 
-    [Fact]
+ [Fact]
     public void GetUsagePerMeter_not_started()
     {
         var car = RemoteControlCar.Buy();

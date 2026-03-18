@@ -16,7 +16,7 @@ test state-1.1 "Finished game where X won via left column victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.2
+
 test state-1.2 "Finished game where X won via middle column victory" -body {
     gamestate {
         "OXO"
@@ -25,7 +25,7 @@ test state-1.2 "Finished game where X won via middle column victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.3
+
 test state-1.3 "Finished game where X won via right column victory" -body {
     gamestate {
         "OOX"
@@ -34,7 +34,7 @@ test state-1.3 "Finished game where X won via right column victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.4
+
 test state-1.4 "Finished game where O won via left column victory" -body {
     gamestate {
         "OXX"
@@ -43,7 +43,7 @@ test state-1.4 "Finished game where O won via left column victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.5
+
 test state-1.5 "Finished game where O won via middle column victory" -body {
     gamestate {
         "XOX"
@@ -52,7 +52,7 @@ test state-1.5 "Finished game where O won via middle column victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.6
+
 test state-1.6 "Finished game where O won via right column victory" -body {
     gamestate {
         "XXO"
@@ -61,7 +61,7 @@ test state-1.6 "Finished game where O won via right column victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.7
+
 test state-1.7 "Finished game where X won via top row victory" -body {
     gamestate {
         "XXX"
@@ -70,7 +70,7 @@ test state-1.7 "Finished game where X won via top row victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.8
+
 test state-1.8 "Finished game where X won via middle row victory" -body {
     gamestate {
         "O  "
@@ -79,7 +79,7 @@ test state-1.8 "Finished game where X won via middle row victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.9
+
 test state-1.9 "Finished game where X won via bottom row victory" -body {
     gamestate {
         " OO"
@@ -88,7 +88,7 @@ test state-1.9 "Finished game where X won via bottom row victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.10
+
 test state-1.10 "Finished game where O won via top row victory" -body {
     gamestate {
         "OOO"
@@ -97,7 +97,7 @@ test state-1.10 "Finished game where O won via top row victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.11
+
 test state-1.11 "Finished game where O won via middle row victory" -body {
     gamestate {
         "XX "
@@ -106,7 +106,7 @@ test state-1.11 "Finished game where O won via middle row victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.12
+
 test state-1.12 "Finished game where O won via bottom row victory" -body {
     gamestate {
         "XOX"
@@ -115,7 +115,7 @@ test state-1.12 "Finished game where O won via bottom row victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.13
+
 test state-1.13 "Finished game where X won via falling diagonal victory" -body {
     gamestate {
         "XOO"
@@ -124,7 +124,7 @@ test state-1.13 "Finished game where X won via falling diagonal victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.14
+
 test state-1.14 "Finished game where X won via rising diagonal victory" -body {
     gamestate {
         "O X"
@@ -133,7 +133,7 @@ test state-1.14 "Finished game where X won via rising diagonal victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.15
+
 test state-1.15 "Finished game where O won via falling diagonal victory" -body {
     gamestate {
         "OXX"
@@ -142,7 +142,7 @@ test state-1.15 "Finished game where O won via falling diagonal victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.16
+
 test state-1.16 "Finished game where O won via rising diagonal victory" -body {
     gamestate {
         "  O"
@@ -151,7 +151,7 @@ test state-1.16 "Finished game where O won via rising diagonal victory" -body {
     }
 } -returnCodes ok -result "win"
 
-skip state-1.17
+
 test state-1.17 "Finished game where X won via a row and a column victory" -body {
     gamestate {
         "XXX"
@@ -160,7 +160,7 @@ test state-1.17 "Finished game where X won via a row and a column victory" -body
     }
 } -returnCodes ok -result "win"
 
-skip state-1.18
+
 test state-1.18 "Finished game where X won via two diagonal victories" -body {
     gamestate {
         "XOX"
@@ -171,7 +171,7 @@ test state-1.18 "Finished game where X won via two diagonal victories" -body {
 
 # Drawn games
 
-skip state-2.1
+
 test state-2.1 "Draw" -body {
     gamestate {
         "XOX"
@@ -180,7 +180,7 @@ test state-2.1 "Draw" -body {
     }
 } -returnCodes ok -result "draw"
 
-skip state-2.2
+
 test state-2.2 "Another draw" -body {
     gamestate {
         "XXO"
@@ -192,7 +192,7 @@ test state-2.2 "Another draw" -body {
 
 # Ongoing games
 
-skip state-3.1
+
 test state-3.1 "Ongoing game: one move in" -body {
     gamestate {
         "   "
@@ -201,7 +201,7 @@ test state-3.1 "Ongoing game: one move in" -body {
     }
 } -returnCodes ok -result "ongoing"
 
-skip state-3.2
+
 test state-3.2 "Ongoing game: two moves in" -body {
     gamestate {
         "O  "
@@ -210,7 +210,7 @@ test state-3.2 "Ongoing game: two moves in" -body {
     }
 } -returnCodes ok -result "ongoing"
 
-skip state-3.3
+
 test state-3.3 "Ongoing game: five moves in" -body {
     gamestate {
         "X  "
@@ -221,7 +221,7 @@ test state-3.3 "Ongoing game: five moves in" -body {
 
 # Invalid boards
 
-skip state-4.1
+
 test state-4.1 "Invalid board: X went twice" -body {
     gamestate {
         "XX "
@@ -230,7 +230,7 @@ test state-4.1 "Invalid board: X went twice" -body {
     }
 } -returnCodes error -result "Wrong turn order: X went twice"
 
-skip state-4.2
+
 test state-4.2 "Invalid board: O started" -body {
     gamestate {
         "OOX"
@@ -239,7 +239,7 @@ test state-4.2 "Invalid board: O started" -body {
     }
 } -returnCodes error -result "Wrong turn order: O started"
 
-skip state-4.3
+
 test state-4.3 "Invalid board: X won and O kept playing" -body {
     gamestate {
         "XXX"
@@ -248,7 +248,7 @@ test state-4.3 "Invalid board: X won and O kept playing" -body {
     }
 } -returnCodes error -result "Impossible board: game should have ended after the game was won"
 
-skip state-4.4
+
 test state-4.4 "Invalid board: players kept playing after a win" -body {
     gamestate {
         "XXX"

@@ -9,7 +9,7 @@ public class OrmInOneGoTests
         InvalidOperationExceptionThrown,
         NoInvalidOperationExceptionThrown
     }
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Write_good()
     {
@@ -20,7 +20,7 @@ public class OrmInOneGoTests
             (Database.DbState, Database.lastData));
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Write_bad()
     {
@@ -39,7 +39,7 @@ public class OrmInOneGoTests
             (result, Database.DbState, Database.lastData));
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Commit_bad()
     {
@@ -58,7 +58,7 @@ public class OrmInOneGoTests
             (result, Database.DbState, Database.lastData));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void CommitSafely_good()
     {
@@ -67,7 +67,7 @@ public class OrmInOneGoTests
         Assert.True(orm.WriteSafely("good write"));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void CommitSafely_bad_write()
     {
@@ -76,7 +76,7 @@ public class OrmInOneGoTests
         Assert.False(orm.WriteSafely("bad write"));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void CommitSafely_bad_commit()
     {

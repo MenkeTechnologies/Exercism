@@ -2,7 +2,7 @@ using Xunit;
 
 public class MarkdownTests
 {
-    [Fact]
+ [Fact]
     public void Parses_normal_text_as_a_paragraph()
     {
         var markdown = "This will be a paragraph";
@@ -10,7 +10,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void Parsing_italics()
     {
         var markdown = "_This will be italic_";
@@ -18,7 +18,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void Parsing_bold_text()
     {
         var markdown = "__This will be bold__";
@@ -26,7 +26,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void Mixed_normal_italics_and_bold_text()
     {
         var markdown = "This will _be_ __mixed__";
@@ -34,7 +34,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void With_h1_header_level()
     {
         var markdown = "# This will be an h1";
@@ -42,7 +42,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void With_h2_header_level()
     {
         var markdown = "## This will be an h2";
@@ -50,7 +50,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void With_h6_header_level()
     {
         var markdown = "###### This will be an h6";
@@ -58,7 +58,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void Unordered_lists()
     {
         var markdown = 
@@ -68,7 +68,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void With_a_little_bit_of_everything()
     {
         var markdown = 
@@ -79,7 +79,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void With_markdown_symbols_in_the_header_text_that_should_not_be_interpreted()
     {
         var markdown = "# This is a header with # and * in the text";
@@ -87,7 +87,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void With_markdown_symbols_in_the_list_item_text_that_should_not_be_interpreted()
     {
         var markdown = 
@@ -97,7 +97,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void With_markdown_symbols_in_the_paragraph_text_that_should_not_be_interpreted()
     {
         var markdown = "This is a paragraph with # and * in the text";
@@ -105,7 +105,7 @@ public class MarkdownTests
         Assert.Equal(expected, Markdown.Parse(markdown));
     }
 
-    [Fact]
+ [Fact]
     public void Unordered_lists_close_properly_with_preceding_and_following_lines()
     {
         var markdown = 

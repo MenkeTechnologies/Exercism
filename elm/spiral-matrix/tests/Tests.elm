@@ -8,17 +8,17 @@ import Test exposing (Test, describe, skip, test)
 tests : Test
 tests =
     describe "SpiralMatrix"
-        [ -- skip <|
+        [ -- 
           test "empty spiral" <|
             \() ->
                 SpiralMatrix.spiralMatrix 0
                     |> Expect.equal []
-        , skip <|
+        , 
             test "trivial spiral" <|
                 \() ->
                     SpiralMatrix.spiralMatrix 1
                         |> Expect.equal [ [ 1 ] ]
-        , skip <|
+        , 
             test "spiral of size 2" <|
                 \() ->
                     SpiralMatrix.spiralMatrix 2
@@ -26,7 +26,7 @@ tests =
                             [ [ 1, 2 ]
                             , [ 4, 3 ]
                             ]
-        , skip <|
+        , 
             test "spiral of size 3" <|
                 \() ->
                     SpiralMatrix.spiralMatrix 3
@@ -35,7 +35,7 @@ tests =
                             , [ 8, 9, 4 ]
                             , [ 7, 6, 5 ]
                             ]
-        , skip <|
+        , 
             test "spiral of size 4" <|
                 \() ->
                     SpiralMatrix.spiralMatrix 4
@@ -45,7 +45,7 @@ tests =
                             , [ 11, 16, 15, 6 ]
                             , [ 10, 9, 8, 7 ]
                             ]
-        , skip <|
+        , 
             test "spiral of size 5" <|
                 \() ->
                     SpiralMatrix.spiralMatrix 5

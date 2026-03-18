@@ -2,48 +2,48 @@ using Xunit;
 
 public class KnapsackTests
 {
-    [Fact]
+ [Fact]
     public void No_items()
     {
         Assert.Equal(0, Knapsack.MaximumValue(100, []));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void One_item_too_heavy()
     {
         (int weight, int value)[] items = [(weight: 100, value: 1)];
         Assert.Equal(0, Knapsack.MaximumValue(10, items));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Five_items_cannot_be_greedy_by_weight_()
     {
         (int weight, int value)[] items = [(weight: 2, value: 5), (weight: 2, value: 5), (weight: 2, value: 5), (weight: 2, value: 5), (weight: 10, value: 21)];
         Assert.Equal(21, Knapsack.MaximumValue(10, items));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Five_items_cannot_be_greedy_by_value_()
     {
         (int weight, int value)[] items = [(weight: 2, value: 20), (weight: 2, value: 20), (weight: 2, value: 20), (weight: 2, value: 20), (weight: 10, value: 50)];
         Assert.Equal(80, Knapsack.MaximumValue(10, items));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Example_knapsack()
     {
         (int weight, int value)[] items = [(weight: 5, value: 10), (weight: 4, value: 40), (weight: 6, value: 30), (weight: 4, value: 50)];
         Assert.Equal(90, Knapsack.MaximumValue(10, items));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Number_8_items()
     {
         (int weight, int value)[] items = [(weight: 25, value: 350), (weight: 35, value: 400), (weight: 45, value: 450), (weight: 5, value: 20), (weight: 25, value: 70), (weight: 3, value: 8), (weight: 2, value: 5), (weight: 2, value: 5)];
         Assert.Equal(900, Knapsack.MaximumValue(104, items));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Number_15_items()
     {
         (int weight, int value)[] items = [

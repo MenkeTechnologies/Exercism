@@ -2,7 +2,7 @@ using Xunit;
 
 public class CamiciaTests
 {
-    [Fact]
+ [Fact]
     public void Two_cards_one_trick()
     {
         string[] playerA = { "2" };
@@ -11,7 +11,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Three_cards_one_trick()
     {
         string[] playerA = { "2", "4" };
@@ -20,7 +20,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Four_cards_one_trick()
     {
         string[] playerA = { "2", "4" };
@@ -29,7 +29,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void The_ace_reigns_supreme()
     {
         string[] playerA = { "2", "A" };
@@ -38,7 +38,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void The_king_beats_ace()
     {
         string[] playerA = { "2", "A" };
@@ -47,7 +47,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void The_queen_seduces_the_king()
     {
         string[] playerA = { "2", "A", "7", "8", "Q" };
@@ -56,7 +56,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void The_jack_betrays_the_queen()
     {
         string[] playerA = { "2", "A", "7", "8", "Q" };
@@ -65,7 +65,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void The_10_just_wants_to_put_on_a_show()
     {
         string[] playerA = { "2", "A", "7", "8", "Q", "10" };
@@ -74,7 +74,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Simple_loop_with_decks_of_3_cards()
     {
         string[] playerA = { "J", "2", "3" };
@@ -83,7 +83,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void The_story_is_starting_to_get_a_bit_complicated()
     {
         string[] playerA = { "2", "6", "6", "J", "4", "K", "Q", "10", "K", "J", "Q", "2", "3", "K", "5", "6", "Q", "Q", "A", "A", "6", "9", "K", "A", "8", "K", "2", "A", "9", "A", "Q", "4", "K", "K", "K", "3", "5", "K", "8", "Q", "3", "Q", "7", "J", "K", "J", "9", "J", "3", "3", "K", "K", "Q", "A", "K", "7", "10", "A", "Q", "7", "10", "J", "4", "5", "J", "9", "10", "Q", "J", "J", "K", "6", "10", "J", "6", "Q", "J", "5", "J", "Q", "Q", "8", "3", "8", "A", "2", "6", "9", "K", "7", "J", "K", "K", "8", "K", "Q", "6", "10", "J", "10", "J", "Q", "J", "10", "3", "8", "K", "A", "6", "9", "K", "2", "A", "A", "10", "J", "6", "A", "4", "J", "A", "J", "J", "6", "2", "J", "3", "K", "2", "5", "9", "J", "9", "6", "K", "A", "5", "Q", "J", "2", "Q", "K", "A", "3", "K", "J", "K", "2", "5", "6", "Q", "J", "Q", "Q", "J", "2", "J", "9", "Q", "7", "7", "A", "Q", "7", "Q", "J", "K", "J", "A", "7", "7", "8", "Q", "10", "J", "10", "J", "J", "9", "2", "A", "2" };
@@ -92,7 +92,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Two_tricks()
     {
         string[] playerA = { "J" };
@@ -101,7 +101,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void More_tricks()
     {
         string[] playerA = { "J", "2", "4" };
@@ -110,7 +110,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Simple_loop_with_decks_of_4_cards()
     {
         string[] playerA = { "2", "3", "J", "6" };
@@ -119,7 +119,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Easy_card_combination()
     {
         string[] playerA = { "4", "8", "7", "5", "4", "10", "3", "9", "7", "3", "10", "10", "6", "8", "2", "8", "5", "4", "5", "9", "6", "5", "2", "8", "10", "9" };
@@ -128,7 +128,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Easy_card_combination_inverted_decks()
     {
         string[] playerA = { "3", "3", "5", "7", "3", "2", "10", "7", "6", "7", "A", "A", "A", "A", "K", "K", "K", "K", "Q", "Q", "Q", "Q", "J", "J", "J", "J" };
@@ -137,7 +137,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Mirrored_decks()
     {
         string[] playerA = { "2", "A", "3", "A", "3", "K", "4", "K", "2", "Q", "2", "Q", "10", "J", "5", "J", "6", "10", "2", "9", "10", "7", "3", "9", "6", "9" };
@@ -146,7 +146,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Opposite_decks()
     {
         string[] playerA = { "4", "A", "9", "A", "4", "K", "9", "K", "6", "Q", "8", "Q", "8", "J", "10", "J", "9", "8", "4", "6", "3", "6", "5", "2", "4", "3" };
@@ -155,7 +155,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Random_decks_1()
     {
         string[] playerA = { "K", "10", "9", "8", "J", "8", "6", "9", "7", "A", "K", "5", "4", "4", "J", "5", "J", "4", "3", "5", "8", "6", "7", "7", "4", "9" };
@@ -164,7 +164,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Random_decks_2()
     {
         string[] playerA = { "8", "A", "4", "8", "5", "Q", "J", "2", "6", "2", "9", "7", "K", "A", "8", "10", "K", "8", "10", "9", "K", "6", "7", "3", "K", "9" };
@@ -173,7 +173,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Kleber_1999()
     {
         string[] playerA = { "4", "8", "9", "J", "Q", "8", "5", "5", "K", "2", "A", "9", "8", "5", "10", "A", "4", "J", "3", "K", "6", "9", "2", "Q", "K", "7" };
@@ -182,7 +182,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Collins_2006()
     {
         string[] playerA = { "A", "8", "Q", "K", "9", "10", "3", "7", "4", "2", "Q", "3", "2", "10", "9", "K", "A", "8", "7", "7", "4", "5", "J", "9", "2", "10" };
@@ -191,7 +191,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Mann_and_wu_2007()
     {
         string[] playerA = { "K", "2", "K", "K", "3", "3", "6", "10", "K", "6", "A", "2", "5", "5", "7", "9", "J", "A", "A", "3", "4", "Q", "4", "8", "J", "6" };
@@ -200,7 +200,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Nessler_2012()
     {
         string[] playerA = { "10", "3", "6", "7", "Q", "2", "9", "8", "2", "8", "4", "A", "10", "6", "K", "2", "10", "A", "5", "A", "2", "4", "Q", "J", "K", "4" };
@@ -209,7 +209,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Anderson_2013()
     {
         string[] playerA = { "6", "7", "A", "3", "Q", "3", "5", "J", "3", "2", "J", "7", "4", "5", "Q", "10", "5", "A", "J", "2", "K", "8", "9", "9", "K", "3" };
@@ -218,7 +218,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Rucklidge_2014()
     {
         string[] playerA = { "8", "J", "2", "9", "4", "4", "5", "8", "Q", "3", "9", "3", "6", "2", "8", "A", "A", "A", "9", "4", "7", "2", "5", "Q", "Q", "3" };
@@ -227,7 +227,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Nessler_2021()
     {
         string[] playerA = { "7", "2", "3", "4", "K", "9", "6", "10", "A", "8", "9", "Q", "7", "A", "4", "8", "J", "J", "A", "4", "3", "2", "5", "6", "6", "J" };
@@ -236,7 +236,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Nessler_2022()
     {
         string[] playerA = { "2", "10", "10", "A", "J", "3", "8", "Q", "2", "5", "5", "5", "9", "2", "4", "3", "10", "Q", "A", "K", "Q", "J", "J", "9", "Q", "K" };
@@ -245,7 +245,7 @@ public class CamiciaTests
         Assert.Equal(expected, Camicia.SimulateGame(playerA, playerB));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Casella_2024_first_infinite_game_found()
     {
         string[] playerA = { "2", "8", "4", "K", "5", "2", "3", "Q", "6", "K", "Q", "A", "J", "3", "5", "9", "8", "3", "A", "A", "J", "4", "4", "J", "7", "5" };

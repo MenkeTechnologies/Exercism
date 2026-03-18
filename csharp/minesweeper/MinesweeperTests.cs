@@ -3,7 +3,7 @@ using Xunit;
 
 public class MinesweeperTests
 {
-    [Fact]
+ [Fact]
     public void No_rows()
     {
         var minefield = Array.Empty<string>();
@@ -11,7 +11,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void No_columns()
     {
         var minefield = new[]
@@ -25,7 +25,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void No_mines()
     {
         var minefield = new[]
@@ -43,7 +43,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void Minefield_with_only_mines()
     {
         var minefield = new[]
@@ -61,7 +61,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void Mine_surrounded_by_spaces()
     {
         var minefield = new[]
@@ -79,7 +79,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void Space_surrounded_by_mines()
     {
         var minefield = new[]
@@ -97,7 +97,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void Horizontal_line()
     {
         var minefield = new[]
@@ -111,7 +111,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void Horizontal_line_mines_at_edges()
     {
         var minefield = new[]
@@ -125,7 +125,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void Vertical_line()
     {
         var minefield = new[]
@@ -147,7 +147,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void Vertical_line_mines_at_edges()
     {
         var minefield = new[]
@@ -169,7 +169,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void Cross()
     {
         var minefield = new[]
@@ -191,7 +191,7 @@ public class MinesweeperTests
         Assert.Equal(expected, Minesweeper.Annotate(minefield));
     }
 
-    [Fact]
+ [Fact]
     public void Large_minefield()
     {
         var minefield = new[]

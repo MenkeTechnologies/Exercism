@@ -1,12 +1,12 @@
 public class FlowerFieldTests
 {
-    [Fact]
+ [Fact]
     public void No_rows()
     {
         Assert.Empty(FlowerField.Annotate(Array.Empty<string>()));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void No_columns()
     {
         string[] garden = [
@@ -18,7 +18,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void No_flowers()
     {
         string[] garden = [
@@ -34,7 +34,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Garden_full_of_flowers()
     {
         string[] garden = [
@@ -50,7 +50,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Flower_surrounded_by_spaces()
     {
         string[] garden = [
@@ -66,7 +66,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Space_surrounded_by_flowers()
     {
         string[] garden = [
@@ -82,7 +82,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Horizontal_line()
     {
         string[] garden = [
@@ -94,7 +94,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Horizontal_line_flowers_at_edges()
     {
         string[] garden = [
@@ -106,7 +106,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Vertical_line()
     {
         string[] garden = [
@@ -126,7 +126,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Vertical_line_flowers_at_edges()
     {
         string[] garden = [
@@ -146,7 +146,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Cross()
     {
         string[] garden = [
@@ -166,7 +166,7 @@ public class FlowerFieldTests
         Assert.Equal(expected, FlowerField.Annotate(garden));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Large_garden()
     {
         string[] garden = [

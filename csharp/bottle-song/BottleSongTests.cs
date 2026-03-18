@@ -1,6 +1,6 @@
 public class BottleSongTests
 {
-    [Fact]
+ [Fact]
     public void Verse_single_verse_first_generic_verse()
     {
         string[] expected = [
@@ -12,7 +12,7 @@ public class BottleSongTests
         Assert.Equal(expected, BottleSong.Recite(10, 1));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Verse_single_verse_last_generic_verse()
     {
         string[] expected = [
@@ -24,7 +24,7 @@ public class BottleSongTests
         Assert.Equal(expected, BottleSong.Recite(3, 1));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Verse_single_verse_verse_with_2_bottles()
     {
         string[] expected = [
@@ -36,7 +36,7 @@ public class BottleSongTests
         Assert.Equal(expected, BottleSong.Recite(2, 1));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Verse_single_verse_verse_with_1_bottle()
     {
         string[] expected = [
@@ -48,7 +48,7 @@ public class BottleSongTests
         Assert.Equal(expected, BottleSong.Recite(1, 1));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Lyrics_multiple_verses_first_two_verses()
     {
         string[] expected = [
@@ -65,7 +65,7 @@ public class BottleSongTests
         Assert.Equal(expected, BottleSong.Recite(10, 2));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Lyrics_multiple_verses_last_three_verses()
     {
         string[] expected = [
@@ -87,7 +87,7 @@ public class BottleSongTests
         Assert.Equal(expected, BottleSong.Recite(3, 3));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Lyrics_multiple_verses_all_verses()
     {
         string[] expected = [

@@ -4,7 +4,7 @@ using Exercism.Tests;
 
 public class RemoteControlCompetitionTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Race()
     {
@@ -17,7 +17,7 @@ public class RemoteControlCompetitionTests
         Assert.Equal(20, experimentalCar.DistanceTravelled - productionCar.DistanceTravelled);
     }
 
-    [Fact]
+ [Fact]
     public void EnsureInterfaceExposesDistanceTravelled()
     {
         var car = Assert.IsAssignableFrom<IRemoteControlCar>(new ProductionRemoteControlCar());
@@ -25,7 +25,7 @@ public class RemoteControlCompetitionTests
         Assert.Equal(10, car.DistanceTravelled);
     }
 
-    [Fact]
+ [Fact]
     public void EnsureCarsAreComparable()
     {
         var fast = new ProductionRemoteControlCar();
@@ -39,7 +39,7 @@ public class RemoteControlCompetitionTests
         Assert.Equal(new ProductionRemoteControlCar[] { slow, medium, fast }, cars);
     }
 
-    [Fact]
+ [Fact]
     public void RankCars()
     {
         var prc1 = new ProductionRemoteControlCar();

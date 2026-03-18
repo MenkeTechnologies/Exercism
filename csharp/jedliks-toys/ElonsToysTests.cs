@@ -2,7 +2,7 @@ using Exercism.Tests;
 
 public class ElonsToysTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Buy_new_car_returns_instance()
     {
@@ -10,7 +10,7 @@ public class ElonsToysTests
         Assert.NotNull(car);
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void Buy_new_car_returns_new_car_each_time()
     {
@@ -19,7 +19,7 @@ public class ElonsToysTests
         Assert.NotSame(car2, car1);
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void New_car_distance_display()
     {
@@ -27,7 +27,7 @@ public class ElonsToysTests
         Assert.Equal("Driven 0 meters", car.DistanceDisplay());
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void New_car_battery_display()
     {
@@ -35,7 +35,7 @@ public class ElonsToysTests
         Assert.Equal("Battery at 100%", car.BatteryDisplay());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Distance_display_after_driving_once()
     {
@@ -44,7 +44,7 @@ public class ElonsToysTests
         Assert.Equal("Driven 20 meters", car.DistanceDisplay());
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void Distance_display_after_driving_multiple_times()
     {
@@ -58,7 +58,7 @@ public class ElonsToysTests
         Assert.Equal("Driven 340 meters", car.DistanceDisplay());
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Battery_display_after_driving_once()
     {
@@ -67,7 +67,7 @@ public class ElonsToysTests
         Assert.Equal("Battery at 99%", car.BatteryDisplay());
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void Battery_display_after_driving_multiple_times()
     {
@@ -81,7 +81,7 @@ public class ElonsToysTests
         Assert.Equal("Battery at 77%", car.BatteryDisplay());
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Battery_display_when_battery_empty()
     {
@@ -99,7 +99,7 @@ public class ElonsToysTests
         Assert.Equal("Battery empty", car.BatteryDisplay());
     }
 
-    [Fact]
+ [Fact]
     [Task(6)]
     public void Distance_display_when_battery_empty()
     {

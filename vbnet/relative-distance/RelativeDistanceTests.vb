@@ -11,7 +11,7 @@ Public Class RelativeDistanceTest
         Assert.Equal(1,  DegreesOfSeparation(familyTree, "Vera", "Tomoko"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Sibling_relationship()
         Dim familyTree As New Dictionary(Of String, String()) From {
             {"Dalia", {"Olga", "Yassin"}}
@@ -19,7 +19,7 @@ Public Class RelativeDistanceTest
         Assert.Equal(1, DegreesOfSeparation(familyTree, "Olga", "Yassin"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Two_degrees_of_separation_grandchild()
         Dim familyTree As New Dictionary(Of String, String()) From {
             {"Khadija", {"Mateo"}},
@@ -28,7 +28,7 @@ Public Class RelativeDistanceTest
         Assert.Equal(2, DegreesOfSeparation(familyTree, "Khadija", "Rami"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Unrelated_individuals()
         Dim familyTree As New Dictionary(Of String, String()) From {
             {"Priya", {"Rami"}},
@@ -37,7 +37,7 @@ Public Class RelativeDistanceTest
         Assert.Equal(-1, DegreesOfSeparation(familyTree, "Priya", "Kaito"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Complex_graph_cousins()
         Dim familyTree As New Dictionary(Of String, String()) From {
             {"Aiko", {"Bao", "Carlos"}},
@@ -96,7 +96,7 @@ Public Class RelativeDistanceTest
         Assert.Equal(9, DegreesOfSeparation(familyTree, "Dimitri", "Fabio"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Complex_graph_far_removed_nephew()
         Dim familyTree As New Dictionary(Of String, String()) From {
             {"Mina", {"Viktor", "Wang"}},
@@ -155,7 +155,7 @@ Public Class RelativeDistanceTest
         Assert.Equal(14, DegreesOfSeparation(familyTree, "Lucia", "Jun"))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Complex_graph_cousins_several_times_removed()
         Dim familyTree As New Dictionary(Of String, String()) From {
             {"Mina", {"Viktor", "Wang"}},

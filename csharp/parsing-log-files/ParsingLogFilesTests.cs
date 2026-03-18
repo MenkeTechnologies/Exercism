@@ -4,7 +4,7 @@ using Exercism.Tests;
 
 public class ParsingLogFilesTests
 {
-    [Fact]
+ [Fact]
     [Task(1)]
     public void IsValidLine_match()
     {
@@ -12,7 +12,7 @@ public class ParsingLogFilesTests
         Assert.True(lp.IsValidLine("[INF] My Message"));
     }
 
-    [Fact]
+ [Fact]
     [Task(1)]
     public void IsValidLine_no_match()
     {
@@ -20,7 +20,7 @@ public class ParsingLogFilesTests
         Assert.False(lp.IsValidLine("bad start to [INF] Message"));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void SplitLogLine()
     {
@@ -28,7 +28,7 @@ public class ParsingLogFilesTests
         Assert.Equal(new string[] { "section 1", "section 2", "section 3" }, lp.SplitLogLine("section 1<^>section 2<--->section 3"));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void SplitLogLine_Empty()
     {
@@ -37,7 +37,7 @@ public class ParsingLogFilesTests
     }
 
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void AreQuotedPasswords()
     {
@@ -53,7 +53,7 @@ public class ParsingLogFilesTests
         Assert.Equal(2, lp.CountQuotedPasswords(string.Join(Environment.NewLine, lines)));
     }
 
-    [Fact]
+ [Fact]
     [Task(4)]
     public void RemoveEndOfLineText()
     {
@@ -62,7 +62,7 @@ public class ParsingLogFilesTests
         Assert.Equal("[INF]  Network Falure ", lp.RemoveEndOfLineText(input));
     }
 
-    [Fact]
+ [Fact]
     [Task(5)]
     public void ListLinesWithPasswords()
     {

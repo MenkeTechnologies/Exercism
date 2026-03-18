@@ -21,7 +21,7 @@ public class HighSchoolSweetheartsTests
              ***
               *
 ";
-    [Fact]
+ [Fact]
     [Task(1)]
     public void DisplaySingleLine()
     {
@@ -29,7 +29,7 @@ public class HighSchoolSweetheartsTests
         Assert.Equal(expected, HighSchoolSweethearts.DisplaySingleLine("Lance Green", "Pat Riley"));
     }
 
-    [Fact]
+ [Fact]
     [Task(2)]
     public void DisplayBanner()
     {
@@ -37,7 +37,7 @@ public class HighSchoolSweetheartsTests
         Assert.Equal(expectedBanner.Trim(), actualBanner.Trim());
     }
 
-    [Fact]
+ [Fact]
     [Task(3)]
     public void DisplayGermanExchangeStudents()
     {

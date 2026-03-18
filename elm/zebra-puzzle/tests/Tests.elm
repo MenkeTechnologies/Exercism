@@ -12,7 +12,7 @@ tests =
             \() ->
                 ZebraPuzzle.drinksWater
                     |> Expect.equal (Just ZebraPuzzle.Norwegian)
-        , skip <|
+        , 
             test "resident who owns zebra" <|
                 \() ->
                     ZebraPuzzle.ownsZebra

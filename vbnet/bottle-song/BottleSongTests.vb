@@ -11,7 +11,7 @@ Public Class BottleSongTests
         Assert.Equal(expected, Recite(10, 1))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Single_verse_last_generic_verse()
         Dim expected = _
             "Three green bottles hanging on the wall," & vbLf & _
@@ -21,7 +21,7 @@ Public Class BottleSongTests
         Assert.Equal(expected, Recite(3, 1))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Single_verse_verse_with_2_bottles()
         Dim expected = _
             "Two green bottles hanging on the wall," & vbLf & _
@@ -31,7 +31,7 @@ Public Class BottleSongTests
         Assert.Equal(expected, Recite(2, 1))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Single_verse_verse_with_1_bottle()
         Dim expected = _
             "One green bottle hanging on the wall," & vbLf & _
@@ -41,7 +41,7 @@ Public Class BottleSongTests
         Assert.Equal(expected, Recite(1, 1))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_verses_first_two_verses()
         Dim expected = _
             "Ten green bottles hanging on the wall," & vbLf & _
@@ -56,7 +56,7 @@ Public Class BottleSongTests
         Assert.Equal(expected, Recite(10, 2))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_verses_last_three_verses()
         Dim expected = _
             "Three green bottles hanging on the wall," & vbLf & _
@@ -76,7 +76,7 @@ Public Class BottleSongTests
         Assert.Equal(expected, Recite(3, 3))
     End Sub
 
-    <Fact(Skip:="Remove this Skip property to run this test")>
+    <Fact>
     Public Sub Multiple_verses_all_verses()
         Dim expected = _
             "Ten green bottles hanging on the wall," & vbLf & _

@@ -22,7 +22,7 @@ test paasio-1 "read a file" -body {
     reads 1 readBytes 1530 writes 0 writeBytes 0
 }
 
-skip paasio-2
+
 test paasio-2 "write a file" -setup {
     set filename [file tempfile]
 } -cleanup {
@@ -44,7 +44,7 @@ test paasio-2 "write a file" -setup {
     reads 0 readBytes 0 writes 2 writeBytes 30
 }
 
-skip paasio-3
+
 test paasio-3 "write and read a file" -setup {
     set filename [file tempfile]
 } -cleanup {
@@ -94,7 +94,7 @@ thread::send -async $serverThread {
 }
 after 100
 
-skip paasio-4
+
 test paasio-4 "sockets" -body {
     set ioMeter [PlatformIO new]
     set handle [$ioMeter socket localhost $env(ECHOPORT)]

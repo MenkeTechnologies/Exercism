@@ -11,11 +11,11 @@ tests =
         [ test "no items" <|
             \() ->
                 maximumValue 100 [] |> Expect.equal 0
-        , skip <|
+        , 
             test "one item, too heavy" <|
                 \() ->
                     maximumValue 10 [ { weight = 100, value = 1 } ] |> Expect.equal 0
-        , skip <|
+        , 
             test "five items (cannot be greedy by weight)" <|
                 \() ->
                     maximumValue 10
@@ -26,7 +26,7 @@ tests =
                         , { weight = 10, value = 21 }
                         ]
                         |> Expect.equal 21
-        , skip <|
+        , 
             test "five items (cannot be greedy by value)" <|
                 \() ->
                     maximumValue 10
@@ -37,7 +37,7 @@ tests =
                         , { weight = 10, value = 50 }
                         ]
                         |> Expect.equal 80
-        , skip <|
+        , 
             test "example knapsack" <|
                 \() ->
                     maximumValue 10
@@ -47,7 +47,7 @@ tests =
                         , { weight = 4, value = 50 }
                         ]
                         |> Expect.equal 90
-        , skip <|
+        , 
             test "8 items" <|
                 \() ->
                     maximumValue 104
@@ -61,7 +61,7 @@ tests =
                         , { weight = 2, value = 5 }
                         ]
                         |> Expect.equal 900
-        , skip <|
+        , 
             test "15 items" <|
                 \() ->
                     maximumValue 750

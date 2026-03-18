@@ -8,12 +8,12 @@ open Knapsack
 [<Fact>]
 let ``No items`` () = maximumValue [] 100 |> should equal 0
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``One item, too heavy`` () =
     maximumValue [ { weight = 100; value = 1 } ] 10
     |> should equal 0
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Five items (cannot be greedy by weight)`` () =
     maximumValue
         [ { weight = 2; value = 5 }
@@ -24,7 +24,7 @@ let ``Five items (cannot be greedy by weight)`` () =
         10
     |> should equal 21
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Five items (cannot be greedy by value)`` () =
     maximumValue
         [ { weight = 2; value = 20 }
@@ -35,7 +35,7 @@ let ``Five items (cannot be greedy by value)`` () =
         10
     |> should equal 80
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``Example knapsack`` () =
     maximumValue
         [ { weight = 5; value = 10 }
@@ -45,7 +45,7 @@ let ``Example knapsack`` () =
         10
     |> should equal 90
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``8 items`` () =
     maximumValue
         [ { weight = 25; value = 350 }
@@ -59,7 +59,7 @@ let ``8 items`` () =
         104
     |> should equal 900
 
-[<Fact(Skip = "Remove this Skip property to run this test")>]
+[<Fact>]
 let ``15 items`` () =
     maximumValue
         [ { weight = 70; value = 135 }

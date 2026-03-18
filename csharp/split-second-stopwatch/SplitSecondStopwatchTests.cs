@@ -2,7 +2,7 @@ using Microsoft.Extensions.Time.Testing;
 
 public class SplitSecondStopwatchTests
 {
-    [Fact]
+ [Fact]
     public void New_stopwatch_starts_in_ready_state()
     {
         var timeProvider = new FakeTimeProvider();
@@ -10,7 +10,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(StopwatchState.Ready, stopwatch.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void New_stopwatch_s_current_lap_has_no_elapsed_time()
     {
         var timeProvider = new FakeTimeProvider();
@@ -18,7 +18,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(TimeSpan.Zero, stopwatch.CurrentLap);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void New_stopwatch_s_total_has_no_elapsed_time()
     {
         var timeProvider = new FakeTimeProvider();
@@ -26,7 +26,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(TimeSpan.Zero, stopwatch.Total);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void New_stopwatch_does_not_have_previous_laps()
     {
         var timeProvider = new FakeTimeProvider();
@@ -34,7 +34,7 @@ public class SplitSecondStopwatchTests
         Assert.Empty(stopwatch.PreviousLaps);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Start_from_ready_state_changes_state_to_running()
     {
         var timeProvider = new FakeTimeProvider();
@@ -44,7 +44,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(StopwatchState.Running, stopwatch.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Start_does_not_change_previous_laps()
     {
         var timeProvider = new FakeTimeProvider();
@@ -54,7 +54,7 @@ public class SplitSecondStopwatchTests
         Assert.Empty(stopwatch.PreviousLaps);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Start_initiates_time_tracking_for_current_lap()
     {
         var timeProvider = new FakeTimeProvider();
@@ -65,7 +65,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(new TimeSpan(0, 0, 5), stopwatch.CurrentLap);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Start_initiates_time_tracking_for_total()
     {
         var timeProvider = new FakeTimeProvider();
@@ -76,7 +76,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(new TimeSpan(0, 0, 23), stopwatch.Total);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Start_cannot_be_called_from_running_state()
     {
         var timeProvider = new FakeTimeProvider();
@@ -86,7 +86,7 @@ public class SplitSecondStopwatchTests
         Assert.Throws<InvalidOperationException>(() => stopwatch.Start());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Stop_from_running_state_changes_state_to_stopped()
     {
         var timeProvider = new FakeTimeProvider();
@@ -98,7 +98,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(StopwatchState.Stopped, stopwatch.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Stop_pauses_time_tracking_for_current_lap()
     {
         var timeProvider = new FakeTimeProvider();
@@ -112,7 +112,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(new TimeSpan(0, 0, 5), stopwatch.CurrentLap);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Stop_pauses_time_tracking_for_total()
     {
         var timeProvider = new FakeTimeProvider();
@@ -126,7 +126,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(new TimeSpan(0, 0, 13), stopwatch.Total);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Stop_cannot_be_called_from_ready_state()
     {
         var timeProvider = new FakeTimeProvider();
@@ -134,7 +134,7 @@ public class SplitSecondStopwatchTests
         Assert.Throws<InvalidOperationException>(() => stopwatch.Stop());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Stop_cannot_be_called_from_stopped_state()
     {
         var timeProvider = new FakeTimeProvider();
@@ -146,7 +146,7 @@ public class SplitSecondStopwatchTests
         Assert.Throws<InvalidOperationException>(() => stopwatch.Stop());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Start_from_stopped_state_changes_state_to_running()
     {
         var timeProvider = new FakeTimeProvider();
@@ -160,7 +160,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(StopwatchState.Running, stopwatch.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Start_from_stopped_state_resumes_time_tracking_for_current_lap()
     {
         var timeProvider = new FakeTimeProvider();
@@ -177,7 +177,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(new TimeSpan(0, 1, 28), stopwatch.CurrentLap);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Start_from_stopped_state_resumes_time_tracking_for_total()
     {
         var timeProvider = new FakeTimeProvider();
@@ -194,7 +194,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(new TimeSpan(0, 0, 32), stopwatch.Total);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Lap_adds_current_lap_to_previous_laps()
     {
         var timeProvider = new FakeTimeProvider();
@@ -212,7 +212,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal([new TimeSpan(0, 1, 38), new TimeSpan(0, 0, 44)], stopwatch.PreviousLaps);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Lap_resets_current_lap_and_resumes_time_tracking()
     {
         var timeProvider = new FakeTimeProvider();
@@ -227,7 +227,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(new TimeSpan(0, 0, 15), stopwatch.CurrentLap);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Lap_continues_time_tracking_for_total()
     {
         var timeProvider = new FakeTimeProvider();
@@ -241,7 +241,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(new TimeSpan(0, 0, 55), stopwatch.Total);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Lap_cannot_be_called_from_ready_state()
     {
         var timeProvider = new FakeTimeProvider();
@@ -249,7 +249,7 @@ public class SplitSecondStopwatchTests
         Assert.Throws<InvalidOperationException>(() => stopwatch.Lap());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Lap_cannot_be_called_from_stopped_state()
     {
         var timeProvider = new FakeTimeProvider();
@@ -261,7 +261,7 @@ public class SplitSecondStopwatchTests
         Assert.Throws<InvalidOperationException>(() => stopwatch.Lap());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Stop_does_not_change_previous_laps()
     {
         var timeProvider = new FakeTimeProvider();
@@ -278,7 +278,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal([new TimeSpan(0, 11, 22)], stopwatch.PreviousLaps);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Reset_from_stopped_state_changes_state_to_ready()
     {
         var timeProvider = new FakeTimeProvider();
@@ -292,7 +292,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(StopwatchState.Ready, stopwatch.State);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Reset_resets_current_lap()
     {
         var timeProvider = new FakeTimeProvider();
@@ -307,7 +307,7 @@ public class SplitSecondStopwatchTests
         Assert.Equal(TimeSpan.Zero, stopwatch.CurrentLap);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Reset_clears_previous_laps()
     {
         var timeProvider = new FakeTimeProvider();
@@ -329,7 +329,7 @@ public class SplitSecondStopwatchTests
         Assert.Empty(stopwatch.PreviousLaps);
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Reset_cannot_be_called_from_ready_state()
     {
         var timeProvider = new FakeTimeProvider();
@@ -337,7 +337,7 @@ public class SplitSecondStopwatchTests
         Assert.Throws<InvalidOperationException>(() => stopwatch.Reset());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Reset_cannot_be_called_from_running_state()
     {
         var timeProvider = new FakeTimeProvider();
@@ -347,7 +347,7 @@ public class SplitSecondStopwatchTests
         Assert.Throws<InvalidOperationException>(() => stopwatch.Reset());
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Supports_very_long_laps()
     {
         var timeProvider = new FakeTimeProvider();
