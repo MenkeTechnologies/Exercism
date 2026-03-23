@@ -1,6 +1,6 @@
 public class PrismTests
 {
-    [Fact]
+ [Fact]
     public void Zero_prisms()
     {
         Prism.LaserInfo laser = new(0, 0, 0);
@@ -9,7 +9,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void One_prism_one_hit()
     {
         Prism.LaserInfo laser = new(0, 0, 0);
@@ -21,7 +21,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void One_prism_zero_hits()
     {
         Prism.LaserInfo laser = new(0, 0, 0);
@@ -33,7 +33,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Going_up_zero_hits()
     {
         Prism.LaserInfo laser = new(0, 0, 90);
@@ -47,7 +47,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Going_down_zero_hits()
     {
         Prism.LaserInfo laser = new(0, 0, -90);
@@ -61,7 +61,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Going_left_zero_hits()
     {
         Prism.LaserInfo laser = new(0, 0, 180);
@@ -75,7 +75,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Negative_angle()
     {
         Prism.LaserInfo laser = new(0, 0, -180);
@@ -89,7 +89,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Large_angle()
     {
         Prism.LaserInfo laser = new(0, 0, 2340);
@@ -101,7 +101,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Upward_refraction_two_hits()
     {
         Prism.LaserInfo laser = new(0, 0, 0);
@@ -114,7 +114,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Downward_refraction_two_hits()
     {
         Prism.LaserInfo laser = new(0, 0, 0);
@@ -127,7 +127,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Same_prism_twice()
     {
         Prism.LaserInfo laser = new(0, 0, 0);
@@ -140,7 +140,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Simple_path()
     {
         Prism.LaserInfo laser = new(0, 0, 0);
@@ -155,7 +155,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Multiple_prisms_floating_point_precision()
     {
         Prism.LaserInfo laser = new(0, 0, -6.429);
@@ -204,7 +204,7 @@ public class PrismTests
         Assert.Equal(expected, Prism.FindSequence(laser, prisms));
     }
 
-    [Fact(Skip = "Remove this Skip property to run this test")]
+ [Fact]
     public void Complex_path_with_multiple_prisms_floating_point_precision()
     {
         Prism.LaserInfo laser = new(0, 0, 0.0);
