@@ -48,7 +48,40 @@ val testsuite =
       (fn _ => isIsogram "angola" |> Expect.falsy),
 
     test "word with duplicated character and with two hyphens"
-      (fn _ => isIsogram "up-to-date" |> Expect.falsy)
+      (fn _ => isIsogram "up-to-date" |> Expect.falsy),
+
+    test "single character"
+      (fn _ => isIsogram "a" |> Expect.truthy),
+
+    test "two same characters"
+      (fn _ => isIsogram "aa" |> Expect.falsy),
+
+    test "word with spaces only"
+      (fn _ => isIsogram "   " |> Expect.truthy),
+
+    test "isogram with digits and letters"
+      (fn _ => isIsogram "abc123" |> Expect.truthy),
+
+    test "word with all unique uppercase characters"
+      (fn _ => isIsogram "DERMATOGLYPHICS" |> Expect.truthy),
+
+    test "word with duplicated uppercase characters"
+      (fn _ => isIsogram "MOOSE" |> Expect.falsy),
+
+    test "word with multiple spaces"
+      (fn _ => isIsogram "a b c d e" |> Expect.truthy),
+
+    test "word with spaces and duplicate letters"
+      (fn _ => isIsogram "a b c a" |> Expect.falsy),
+
+    test "hyphen only"
+      (fn _ => isIsogram "-" |> Expect.truthy),
+
+    test "all 26 letters"
+      (fn _ => isIsogram "abcdefghijklmnopqrstuvwxyz" |> Expect.truthy),
+
+    test "all 26 letters plus one duplicate"
+      (fn _ => isIsogram "abcdefghijklmnopqrstuvwxyza" |> Expect.falsy)
   ]
 
 val _ = Test.run testsuite
