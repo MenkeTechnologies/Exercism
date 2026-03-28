@@ -1,3 +1,4 @@
+# Determine whether the number is valid.
 is_valid <- function(input) {
   nows = gsub(" ", "", input)
   if (nchar(nows) < 2 || grepl(r"{\D}", nows)){

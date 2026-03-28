@@ -50,4 +50,4 @@ You can check this yourself:
 
 ### Based on
 
-The Prime Factors Kata by Uncle Bob - http://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata
+The Prime Factors Kata by Uncle Bob - https://butunclebob.com/ArticleS.UncleBob.ThePrimeFactorsKata

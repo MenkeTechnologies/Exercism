@@ -7,7 +7,7 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## More enumeration methods
 
-In Bird Count, you were introduced to the `count`, `any?`, `select`, `all` and `map` enumeration methods.
+In Bird Count, you were introduced to the `count`, `any?`, `select`, `all?` and `map` enumeration methods.
 Here's a recap of those, with a few extras added:
 
 ```ruby
@@ -19,12 +19,12 @@ fibonacci.none?  { |number| number > 20 }   #=> true
 fibonacci.select { |number| number.odd? }   #=> [1, 1, 3, 5, 13]
 fibonacci.all?   { |number| number < 20 }   #=> true
 fibonacci.map    { |number| number * 2  }   #=> [0, 2, 2, 4, 6, 10, 16, 26]
-fibonacci.select { |number| number >= 5}    #=> [5, 8, 13]
-fibonacci.find   { |number| number >= 5}    #=> 5
+fibonacci.select { |number| number >= 5 }   #=> [5, 8, 13]
+fibonacci.find   { |number| number >= 6 }   #=> 8
 
 # Some methods work with or without a block
 fibonacci.sum  #=> 33
-fibonacci.sum {| number | number * number }  #=> 273
+fibonacci.sum { |number| number * number }  #=> 273
 
 # There are also methods to help with nested arrays:
 animals = [ ['cat', 'bob'], ['horse', 'caris'], ['mouse', 'arya'] ]
@@ -45,13 +45,13 @@ This helps both in terms of developer clarity and also is a performance optimisa
 
 ```ruby
 pet_names = {cat: "bob", horse: "caris", mouse: "arya"}
-pet_names.map { |_, name| name }  #=> ["bob, "caris", "arya"]
+pet_names.map { |_, name| name }  #=> ["bob", "caris", "arya"]
 ```
 
 ## Nested Enumerations
 
 You can also enumerate in nested blocks, and daisy chain methods together.
-For example, if we have an array of hashes of animals, and we want extract the animals with short names, we might want to do something like:
+For example, if we have an array of hashes of animals, and we want to extract the animals with short names, we might want to do something like:
 
 ```ruby
 pets = [
@@ -83,9 +83,9 @@ A single item in the inventory is represented by a hash, and the whole inventory
 ]
 ```
 
-## 1. Return a list of the names of the items in stock
+## 1. Return a list of the names of the items
 
-Implement `BoutiqueInventory.item_names` which should return a list of the item names, ordered alphabetically.
+Implement `BoutiqueInventory.item_names`, which should return a list of the item names ordered alphabetically.
 
 ```ruby
 BoutiqueInventory.new([

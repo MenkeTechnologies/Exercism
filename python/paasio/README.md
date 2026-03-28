@@ -1,6 +1,6 @@
-# Paasio
+# PaaS I/O
 
-Welcome to Paasio on Exercism's Python Track.
+Welcome to PaaS I/O on Exercism's Python Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

@@ -39,9 +39,9 @@ static NSDictionary *letterValues;
                     @"Z" : @10
             };
         }
-        _score = 0;
+        self.score = 0;
         for (NSInteger i = 0; i < word.length; ++i) {
-            _score += [letterValues[[[word substringWithRange:NSMakeRange(i, 1)] uppercaseString]] integerValue];
+            self.score += [letterValues[[[word substringWithRange:NSMakeRange(i, 1)] uppercaseString]] integerValue];
         }
     return self;
 }

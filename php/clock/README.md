@@ -25,7 +25,8 @@ Two clocks that represent the same time should be equal to each other.
 - @kytrinyx
 - @lafent
 - @petemcfarlane
+- @tomasnorre
 
 ### Based on
 
-Pairing session with Erin Drummond - https://twitter.com/ebdrummond
+Pairing session with Erin Drummond

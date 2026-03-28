@@ -1,61 +1,64 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
-class ReverseStringTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class ReverseStringTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
         require_once 'ReverseString.php';
     }
 
+    /**
+     * uuid c3b7d806-dced-49ee-8543-933fd1719b1c
+     */
+    #[TestDox('an empty string')]
     public function testEmptyString(): void
     {
         $this->assertEquals("", reverseString(""));
     }
 
+    /** uuid 01ebf55b-bebb-414e-9dec-06f7bb0bee3c */
+    #[TestDox('a word')]
     public function testWord(): void
     {
         $this->assertEquals("tobor", reverseString("robot"));
     }
 
+    /**
+     * uuid 0f7c07e4-efd1-4aaa-a07a-90b49ce0b746
+     */
+    #[TestDox('a capitalized word')]
     public function testCapitalizedWord(): void
     {
         $this->assertEquals("nemaR", reverseString("Ramen"));
     }
 
+    /**
+     * uuid 71854b9c-f200-4469-9f5c-1e8e5eff5614
+     */
+    #[TestDox('a sentence with punctuation')]
     public function testSentenceWithPunctuation(): void
     {
         $this->assertEquals("!yrgnuh m'I", reverseString("I'm hungry!"));
     }
 
+    /**
+     * uuid 1f8ed2f3-56f3-459b-8f3e-6d8d654a1f6c
+     */
+    #[TestDox('a palindrome')]
     public function testPalindrome(): void
     {
         $this->assertEquals("racecar", reverseString("racecar"));
     }
 
+    /**
+     * uuid b9e7dec1-c6df-40bd-9fa3-cd7ded010c4c
+     */
+    #[TestDox('an even-sized word')]
     public function testEvenSizedWord(): void
     {
         $this->assertEquals("reward", reverseString("drawer"));

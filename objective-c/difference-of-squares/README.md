@@ -1,6 +1,6 @@
-# Difference Of Squares
+# Difference of Squares
 
-Welcome to Difference Of Squares on Exercism's Objective-C Track.
+Welcome to Difference of Squares on Exercism's Objective-C Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

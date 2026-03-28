@@ -1,6 +1,6 @@
-# Isbn Verifier
+# ISBN Verifier
 
-Welcome to Isbn Verifier on Exercism's Swift Track.
+Welcome to ISBN Verifier on Exercism's Swift Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

@@ -20,17 +20,15 @@ sub is_subset {
     my ( $subset, $set ) = @_;
     my %set    = map { $_ => 1 } $set->@*;
     my %subset = map { $_ => 1 } $subset->@*;
-    do { return 0 if !$set{$_} }
-      for keys %subset;
-    1;
+    do { return 0 if !$set{$_} } for keys %subset;
+    1
 }
 
 sub is_disjoint_set {
     my ( $set1, $set2 ) = @_;
     my %set1 = map { $_ => 1 } $set1->@*;
     my %set2 = map { $_ => 1 } $set2->@*;
-    do { return 0 if $set2{$_} }
-      for keys %set1;
+    do { return 0 if $set2{$_} } for keys %set1;
     1;
 }
 
@@ -38,9 +36,8 @@ sub is_equal_set {
     my ( $set1, $set2 ) = @_;
     return 0 if $set1->@* != $set2->@*;
     my %set1 = map { $_ => 1 } $set1->@*;
-    my %set2 = map { $_ => 1 } $set2->@*;
-    do { return 0 if !$set2{$_} }
-      for keys %set1;
+    my %set2 = map { $_ =>1 } $set2->@*;
+    do { return 0 if ! $set2{$_} } for keys %set1;
     1;
 }
 

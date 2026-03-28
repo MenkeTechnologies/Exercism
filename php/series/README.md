@@ -41,4 +41,4 @@ in the input; the digits need not be *numerically consecutive*.
 
 ### Based on
 
-A subset of the Problem 8 at Project Euler - http://projecteuler.net/problem=8
+A subset of the Problem 8 at Project Euler - https://projecteuler.net/problem=8

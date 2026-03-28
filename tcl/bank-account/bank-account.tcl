@@ -1,6 +1,6 @@
 oo::class create BankAccount {
     variable money
-    variable opened
+    variable opened 
     constructor {} {
         set money 0
         set opened false

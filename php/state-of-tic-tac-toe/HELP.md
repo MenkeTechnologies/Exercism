@@ -7,23 +7,24 @@
 1. Go to the root of your PHP exercise directory, which is `<EXERCISM_WORKSPACE>/php`.
    To find the Exercism workspace run
 
-       exercism debug | grep Workspace
+   ```shell
+   exercism workspace
+   ```
 
-2. Get [PHPUnit] if you don't have it already.
+2. Install [PHPUnit] if you don't have it already.
+3. Execute the tests with:
 
-       wget -O phpunit https://phar.phpunit.de/phpunit-10.phar
-       chmod +x phpunit
-       ./phpunit --version
-
-3. Execute the tests:
-
-       ./phpunit test_file.php
+   ```shell
+   phpunit test_file.php
+   ```
 
    For example, to run the tests for the Hello World exercise, you would run:
 
-       ./phpunit HelloWorldTest.php
+   ```shell
+   phpunit HelloWorldTest.php
+   ```
 
-[PHPUnit]: https://phpunit.de
+[PHPUnit]: https://exercism.org/docs/tracks/php/installation#h-via-php-archive-phar
 
 ## Submitting your solution
 
@@ -48,5 +49,5 @@ Should those resources not suffice, you could submit your (incomplete) solution 
 
 To get help if you're having trouble, you can use one of the following resources:
 
- - [/r/php](https://www.reddit.com/r/php) is the PHP subreddit.
- - [StackOverflow](https://stackoverflow.com/questions/tagged/php) can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.
+- [/r/php](https://www.reddit.com/r/php) is the PHP subreddit.
+- [StackOverflow](https://stackoverflow.com/questions/tagged/php) can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.

@@ -19,14 +19,14 @@ my $cases;
 plan 3 + @$cases;
 
 ok -e "$Bin/$module.pm", "missing $module.pm"
-  or BAIL_OUT("You need to create a class called $module.pm");
+    or BAIL_OUT("You need to create a class called $module.pm");
 
 eval "use $module";
 ok !$@, "Cannot load $module.pm"
-  or BAIL_OUT("Does $module.pm compile?  Does it end with 1; ?");
+    or BAIL_OUT("Does $module.pm compile?  Does it end with 1; ?");
 
 can_ok( $module, 'proverb' )
-  or BAIL_OUT("Missing package $module; or missing sub proverb()");
+    or BAIL_OUT("Missing package $module; or missing sub proverb()");
 
 $sub = "${module}::proverb";
 

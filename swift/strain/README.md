@@ -5,10 +5,8 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
 
-Implement the `keep` and `discard` operation on collections. Given a collection
-and a predicate on the collection's elements, `keep` returns a new collection
-containing those elements where the predicate is true, while `discard` returns
-a new collection containing those elements where the predicate is false.
+Implement the `keep` and `discard` operation on collections.
+Given a collection and a predicate on the collection's elements, `keep` returns a new collection containing those elements where the predicate is true, while `discard` returns a new collection containing those elements where the predicate is false.
 
 For example, given the collection of numbers:
 
@@ -28,15 +26,28 @@ While your discard operation should produce:
 
 Note that the union of keep and discard is all the elements.
 
-The functions may be called `keep` and `discard`, or they may need different
-names in order to not clash with existing functions or concepts in your
-language.
+The functions may be called `keep` and `discard`, or they may need different names in order to not clash with existing functions or concepts in your language.
 
 ## Restrictions
 
-Keep your hands off that filter/reject/whatchamacallit functionality
-provided by your standard library!  Solve this one yourself using other
-basic tools instead.
+Keep your hands off that filter/reject/whatchamacallit functionality provided by your standard library!
+Solve this one yourself using other basic tools instead.
+
+## Adding method to the Array structure
+
+This exercise focuses on adding methods to the `Array` structure in Swift.
+This is easiest done through using [extensions][extensions].
+
+```swift
+extension Array {
+  // Write your code for the 'Strain' exercise in this file.
+}
+```
+
+The `Array` documentation can be found [here][array].
+
+[array]: https://developer.apple.com/documentation/swift/array
+[extensions]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/extensions/
 
 ## Source
 
@@ -57,4 +68,4 @@ basic tools instead.
 
 ### Based on
 
-Conversation with James Edward Gray II - https://twitter.com/jeg2
+Conversation with James Edward Gray II - http://graysoftinc.com/

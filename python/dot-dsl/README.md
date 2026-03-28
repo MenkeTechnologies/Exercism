@@ -1,6 +1,6 @@
-# Dot Dsl
+# DOT DSL
 
-Welcome to Dot Dsl on Exercism's Python Track.
+Welcome to DOT DSL on Exercism's Python Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

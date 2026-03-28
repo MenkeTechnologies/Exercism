@@ -37,4 +37,4 @@ Implement a way to determine whether a given number is **perfect**. Depending on
 
 ### Based on
 
-Taken from Chapter 2 of Functional Thinking by Neal Ford. - http://shop.oreilly.com/product/0636920029687.do
+Taken from Chapter 2 of Functional Thinking by Neal Ford. - https://shop.oreilly.com/product/0636920029687.do

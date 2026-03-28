@@ -15,7 +15,7 @@ A negative index is assumed to be relative to the end of the array — e.g.. an 
 ### Creating arrays
 
 Arrays are normally created using the `[]` notation.
-They can create any different type of object.
+They can contain any different type of object.
 
 ```ruby
 array = [1, "two", 3.0]
@@ -23,7 +23,7 @@ array = [1, "two", 3.0]
 
 ### Element Reference
 
-Elements in an array can be retrieved their indexes using the `#[]` method.
+Elements in an array can be retrieved by their indexes using the `#[]` method.
 This returns the element at index, or returns a subarray starting at the start index and continuing for a specified length.
 Negative indices count backward from the end of the array.
 

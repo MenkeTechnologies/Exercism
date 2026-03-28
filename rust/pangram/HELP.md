@@ -57,7 +57,8 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Rust track's documentation](https://exercism.org/docs/tracks/rust)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Rust track's programming category on the forum](https://forum.exercism.org/c/programming/rust)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
@@ -73,13 +74,16 @@ Generally you should submit all files in which you implemented your solution (`s
 
 ## Feedback, Issues, Pull Requests
 
-The GitHub [track repository][github] is the home for all of the Rust exercises. If you have feedback about an exercise, or want to help implement new exercises, head over there and create an issue. Members of the rust track team are happy to help!
+Head to [the forum](https://forum.exercism.org/c/programming/rust/) and create a post to provide feedback about an exercise or if you want to help implement new exercises.
+Members of the rust track team are happy to help!
+
+The GitHub [track repository][github] is the home for all of the Rust exercises.
 
 If you want to know more about Exercism, take a look at the [contribution guide].
 
 ## Submitting Incomplete Solutions
 It's possible to submit an incomplete solution so you can see how others have completed the exercise.
 
-[help-page]: https://exercism.io/tracks/rust/learning
+[help-page]: https://exercism.org/tracks/rust/learning
 [github]: https://github.com/exercism/rust
-[contribution guide]: https://exercism.io/docs/community/contributors
+[contribution guide]: https://exercism.org/docs/community/contributors

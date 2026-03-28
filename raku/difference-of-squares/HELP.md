@@ -2,13 +2,16 @@
 
 ## Running the tests
 
-You can run the test suite for the exercise by executing either of the following commands:
-`prove6 {exercise-name}.rakutest`
-`prove6 .` (the dot representing the current directory).
+There is a Raku script with the extension `.rakutest` contained in the `t/` directory, which will be used to test your solution.
+You can run through the tests by using the command:
+
+```bash
+prove6
+```
 
 ## Submitting your solution
 
-You can submit your solution using the `exercism submit DifferenceOfSquares.rakumod` command.
+You can submit your solution using the `exercism submit lib/DifferenceOfSquares.rakumod` command.
 This command will upload your solution to the Exercism website and print the solution page's URL.
 
 It's possible to submit an incomplete solution which allows you to:
@@ -21,7 +24,8 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Raku track's documentation](https://exercism.org/docs/tracks/raku)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Raku track's programming category on the forum](https://forum.exercism.org/c/programming/raku)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.

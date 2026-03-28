@@ -1,89 +1,69 @@
 #!/usr/bin/env raku
 use Test;
-use JSON::Fast;
 use lib $?FILE.IO.dirname;
 use Acronym;
-plan 9;
 
-my @test-cases = from-json($=pod[*-1].contents).List;
-for @test-cases -> %case {
-  is abbreviate(%case<input><phrase>), |%case<expected description>;
-}
+cmp-ok( # begin: 1e22cceb-c5e4-4562-9afe-aef07ad1eaf4
+    abbreviate("Portable Network Graphics"),
+    "eq",
+    "PNG",
+    "basic",
+); # end: 1e22cceb-c5e4-4562-9afe-aef07ad1eaf4
 
-=head2 Test Cases
-=begin code
-[
-  {
-    "description": "basic",
-    "expected": "PNG",
-    "input": {
-      "phrase": "Portable Network Graphics"
-    },
-    "property": "abbreviate"
-  },
-  {
-    "description": "lowercase words",
-    "expected": "ROR",
-    "input": {
-      "phrase": "Ruby on Rails"
-    },
-    "property": "abbreviate"
-  },
-  {
-    "description": "punctuation",
-    "expected": "FIFO",
-    "input": {
-      "phrase": "First In, First Out"
-    },
-    "property": "abbreviate"
-  },
-  {
-    "description": "all caps word",
-    "expected": "GIMP",
-    "input": {
-      "phrase": "GNU Image Manipulation Program"
-    },
-    "property": "abbreviate"
-  },
-  {
-    "description": "punctuation without whitespace",
-    "expected": "CMOS",
-    "input": {
-      "phrase": "Complementary metal-oxide semiconductor"
-    },
-    "property": "abbreviate"
-  },
-  {
-    "description": "very long abbreviation",
-    "expected": "ROTFLSHTMDCOALM",
-    "input": {
-      "phrase": "Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"
-    },
-    "property": "abbreviate"
-  },
-  {
-    "description": "consecutive delimiters",
-    "expected": "SIMUFTA",
-    "input": {
-      "phrase": "Something - I made up from thin air"
-    },
-    "property": "abbreviate"
-  },
-  {
-    "description": "apostrophes",
-    "expected": "HC",
-    "input": {
-      "phrase": "Halley's Comet"
-    },
-    "property": "abbreviate"
-  },
-  {
-    "description": "underscore emphasis",
-    "expected": "TRNT",
-    "input": {
-      "phrase": "The Road _Not_ Taken"
-    },
-    "property": "abbreviate"
-  }
-]
-=end code
+cmp-ok( # begin: 79ae3889-a5c0-4b01-baf0-232d31180c08
+    abbreviate("Ruby on Rails"),
+    "eq",
+    "ROR",
+    "lowercase words",
+); # end: 79ae3889-a5c0-4b01-baf0-232d31180c08
+
+cmp-ok( # begin: ec7000a7-3931-4a17-890e-33ca2073a548
+    abbreviate("First In, First Out"),
+    "eq",
+    "FIFO",
+    "punctuation",
+); # end: ec7000a7-3931-4a17-890e-33ca2073a548
+
+cmp-ok( # begin: 32dd261c-0c92-469a-9c5c-b192e94a63b0
+    abbreviate("GNU Image Manipulation Program"),
+    "eq",
+    "GIMP",
+    "all caps word",
+); # end: 32dd261c-0c92-469a-9c5c-b192e94a63b0
+
+cmp-ok( # begin: ae2ac9fa-a606-4d05-8244-3bcc4659c1d4
+    abbreviate("Complementary metal-oxide semiconductor"),
+    "eq",
+    "CMOS",
+    "punctuation without whitespace",
+); # end: ae2ac9fa-a606-4d05-8244-3bcc4659c1d4
+
+cmp-ok( # begin: 0e4b1e7c-1a6d-48fb-81a7-bf65eb9e69f9
+    abbreviate("Rolling On The Floor Laughing So Hard That My Dogs Came Over And Licked Me"),
+    "eq",
+    "ROTFLSHTMDCOALM",
+    "very long abbreviation",
+); # end: 0e4b1e7c-1a6d-48fb-81a7-bf65eb9e69f9
+
+cmp-ok( # begin: 6a078f49-c68d-4b7b-89af-33a1a98c28cc
+    abbreviate("Something - I made up from thin air"),
+    "eq",
+    "SIMUFTA",
+    "consecutive delimiters",
+); # end: 6a078f49-c68d-4b7b-89af-33a1a98c28cc
+
+cmp-ok( # begin: 5118b4b1-4572-434c-8d57-5b762e57973e
+    abbreviate("Halley's Comet"),
+    "eq",
+    "HC",
+    "apostrophes",
+); # end: 5118b4b1-4572-434c-8d57-5b762e57973e
+
+cmp-ok( # begin: adc12eab-ec2d-414f-b48c-66a4fc06cdef
+    abbreviate("The Road _Not_ Taken"),
+    "eq",
+    "TRNT",
+    "underscore emphasis",
+); # end: adc12eab-ec2d-414f-b48c-66a4fc06cdef
+
+done-testing;
