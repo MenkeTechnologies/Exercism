@@ -14,7 +14,7 @@ describe 'TwoBucket', ->
     expect(result.goalBucket).toEqual("one")
     expect(result.otherBucket).toEqual(5)
 
-  it "Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two", ->
+  xit "Measure using bucket one of size 3 and bucket two of size 5 - start with bucket two", ->
     twoBucket = new TwoBucket({
       bucketOne: 3
       bucketTwo: 5
@@ -26,7 +26,7 @@ describe 'TwoBucket', ->
     expect(result.goalBucket).toEqual("two")
     expect(result.otherBucket).toEqual(3)
 
-  it "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket one", ->
+  xit "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket one", ->
     twoBucket = new TwoBucket({
       bucketOne: 7
       bucketTwo: 11
@@ -38,7 +38,7 @@ describe 'TwoBucket', ->
     expect(result.goalBucket).toEqual("one")
     expect(result.otherBucket).toEqual(11)
 
-  it "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket two", ->
+  xit "Measure using bucket one of size 7 and bucket two of size 11 - start with bucket two", ->
     twoBucket = new TwoBucket({
       bucketOne: 7
       bucketTwo: 11
@@ -50,7 +50,7 @@ describe 'TwoBucket', ->
     expect(result.goalBucket).toEqual("two")
     expect(result.otherBucket).toEqual(7)
 
-  it "Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two", ->
+  xit "Measure one step using bucket one of size 1 and bucket two of size 3 - start with bucket two", ->
     twoBucket = new TwoBucket({
       bucketOne: 1
       bucketTwo: 3
@@ -62,7 +62,31 @@ describe 'TwoBucket', ->
     expect(result.goalBucket).toEqual("two")
     expect(result.otherBucket).toEqual(0)
 
-  it "Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two", ->
+  xit "Measure using bucket one much bigger than bucket two", ->
+    twoBucket = new TwoBucket({
+      bucketOne: 5
+      bucketTwo: 1
+      goal: 2
+      startBucket: "one"
+    })
+    result = twoBucket.measure()
+    expect(result.moves).toEqual(6)
+    expect(result.goalBucket).toEqual("one")
+    expect(result.otherBucket).toEqual(1)
+
+  xit "Measure using bucket one much smaller than bucket two", ->
+    twoBucket = new TwoBucket({
+      bucketOne: 3
+      bucketTwo: 15
+      goal: 9
+      startBucket: "one"
+    })
+    result = twoBucket.measure()
+    expect(result.moves).toEqual(6)
+    expect(result.goalBucket).toEqual("two")
+    expect(result.otherBucket).toEqual(0)
+
+  xit "Measure using bucket one of size 2 and bucket two of size 3 - start with bucket one and end with bucket two", ->
     twoBucket = new TwoBucket({
       bucketOne: 2
       bucketTwo: 3
@@ -74,7 +98,7 @@ describe 'TwoBucket', ->
     expect(result.goalBucket).toEqual("two")
     expect(result.otherBucket).toEqual(2)
 
-  it "Not possible to reach the goal", ->
+  xit "Not possible to reach the goal", ->
     input = {
       bucketOne: 6
       bucketTwo: 15
@@ -83,7 +107,7 @@ describe 'TwoBucket', ->
     }
     expect(-> new TwoBucket(input)).toThrow("impossible")
 
-  it "With the same buckets but a different goal, then it is possible", ->
+  xit "With the same buckets but a different goal, then it is possible", ->
     twoBucket = new TwoBucket({
       bucketOne: 6
       bucketTwo: 15
@@ -95,7 +119,7 @@ describe 'TwoBucket', ->
     expect(result.goalBucket).toEqual("two")
     expect(result.otherBucket).toEqual(0)
 
-  it "Goal larger than both buckets is impossible", ->
+  xit "Goal larger than both buckets is impossible", ->
     input = {
       bucketOne: 5
       bucketTwo: 7

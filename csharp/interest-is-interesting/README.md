@@ -16,13 +16,13 @@ C# has three floating-point types:
 
 - `float`: 4 bytes (~6-9 digits precision). Written as `2.45f`.
 - `double`: 8 bytes (~15-17 digits precision). This is the most common type. Written as `2.45` or `2.45d`.
-- `decimal`: 16 bytes (28-29 digits precision). Normally used when working with monetary data, as its precision leads to less rounding errors. Written as `2.45m`.
+- `decimal`: 16 bytes (28-29 digits precision). Normally used when working with monetary data, as its precision reduces the chance of rounding errors. Written as `2.45m`.
 
-As can be seen, each type can store a different number of digits. This means that trying to store PI in a `float` will only store the first 6 to 9 digits (with the last digit being rounded).
+As can be seen, each type can store a different number of digits. For example, trying to store PI in a `float` will only store the first 6 decimal places (with the last stored digit rounded).
 
 ## While Loops
 
-In this exercise you may also want to use a loop. There are several ways to write loops in C#, but the `while` loop is most appropriate here:
+In this exercise you may want to use a loop. There are several ways to write loops in C#, but the `while` loop is most appropriate here:
 
 ```csharp
 int x = 23;
@@ -36,16 +36,16 @@ while (x > 10)
 
 ## Do While Loops
 
-A less commonly used alternative to the above syntax is a `do-while` loop:
+If the code in a loop should always be executed at least once, a `do`/`while` loop can be used:
 
 ```csharp
 int x = 23;
 
 do
 {
-    // Execute logic if x > 10
+    // Execute body, repeating only if x > 10
     x = x - 2;
-} while (x > 10)
+} while (x > 10);
 ```
 
 ## Instructions
@@ -83,7 +83,7 @@ Note that the value returned is a `decimal`.
 
 ## 3. Calculate the annual balance update
 
-Implement the (_static_) `SavingsAccount.AnnualBalanceUpdate()` method to calculate the annual balance update, taking into account the interest rate:
+Implement the (_static_) `SavingsAccount.AnnualBalanceUpdate()` method to calculate the updated annual balance, taking into account the interest rate: 
 
 ```csharp
 SavingsAccount.AnnualBalanceUpdate(balance: 200.75m)
@@ -116,3 +116,4 @@ On each application the interest amount is computed and added to the principal b
 
 - @ErikSchierboom
 - @yzAlvin
+- @karanchadha10

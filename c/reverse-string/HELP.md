@@ -18,6 +18,15 @@ As you progress through the tests, take the time to refactor your implementation
 
 Try to use standard C99 facilities in preference to writing your own low-level algorithms or facilities by hand.
 
+## Checking for memory leaks
+
+The makefile comes also with a build that checks some common mistakes regarding memory leaks and out of bound access to arrays.
+To run these checks, use the following at the command line:
+
+```console
+$ make memcheck
+```
+
 [3-tdd-rules]: https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
 
 ## Submitting your solution
@@ -35,6 +44,7 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [C track's documentation](https://exercism.org/docs/tracks/c)
+- The [C track's programming category on the forum](https://forum.exercism.org/c/programming/c)
 - [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
@@ -42,10 +52,6 @@ Should those resources not suffice, you could submit your (incomplete) solution 
 
 Make sure you have read the [C track-specific documentation][c-track] on the Exercism site.
 This covers the basic information on setting up the development environment expected by the exercises.
-
-## Submitting Incomplete Solutions
-
-If you are struggling with a particular exercise, it is possible to submit an incomplete solution so you can see how others have completed the exercise.
 
 ## Resources
 

@@ -13,18 +13,18 @@ tests =
                 \() ->
                     ResistorColor.colorCode "black"
                         |> Expect.equal 0
-            , 
+            , skip <|
                 test "White" <|
                     \() ->
                         ResistorColor.colorCode "white"
                             |> Expect.equal 9
-            , 
+            , skip <|
                 test "Orange" <|
                     \() ->
                         ResistorColor.colorCode "orange"
                             |> Expect.equal 3
             ]
-        , 
+        , skip <|
             test "Colors" <|
                 \() ->
                     ResistorColor.colors

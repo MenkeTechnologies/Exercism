@@ -172,7 +172,7 @@ wget https://raw.githubusercontent.com/exercism/fortran/master/testlib/TesterMai
 
 ## Submitting your solution
 
-You can submit your solution using the `exercism submit .meta/example.f90` command.
+You can submit your solution using the `exercism submit reverse_string.f90` command.
 This command will upload your solution to the Exercism website and print the solution page's URL.
 
 It's possible to submit an incomplete solution which allows you to:
@@ -185,6 +185,7 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Fortran track's documentation](https://exercism.org/docs/tracks/fortran)
+- The [Fortran track's programming category on the forum](https://forum.exercism.org/c/programming/fortran)
 - [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 

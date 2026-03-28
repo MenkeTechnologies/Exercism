@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Floating Point Numbers
+
 A floating-point number is a number with zero or more digits behind the decimal separator. Examples are `-2.4`, `0.1`, `3.14`, `16.984025` and `1024.0`.
 
 F# has three floating-point types:
@@ -25,9 +27,9 @@ In this exercise you'll be working with savings accounts. Each year, the balance
 - 1.621% for a positive balance greater or equal than `1000` dollars and less than `5000` dollars.
 - 2.475% for a positive balance greater or equal than `5000` dollars.
 
-Each year the government allows you donate a percentage of your money to charity, tax free. Because you're a nice person, if your balance is positive at the end of the year, you donate twice this amount to charities, rounded down to the nearest whole dollar.
+Each year the government allows you to donate a percentage of your money to charity, tax free. Because you're a nice person, if your balance ends up positive at the end of the year, you take the tax-free percentage and double it, rounding down to the nearest whole dollar.  You don't mind paying tax on the second half of the donation.
 
-You have three tasks, each of which will deal your balance and its interest rate.
+You have three tasks, each of which will deal with your balance and its interest rate.
 
 ## 1. Calculate the interest rate
 

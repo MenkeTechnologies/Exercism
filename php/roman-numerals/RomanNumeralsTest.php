@@ -1,138 +1,257 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
-class RomanNumeralsTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class RomanNumeralsTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
         require_once 'RomanNumerals.php';
     }
 
-    public function test1(): void
+    /**
+     * uuid 19828a3a-fbf7-4661-8ddd-cbaeee0e2178
+     */
+    #[TestDox('1 is I')]
+    public function test1IsI(): void
     {
         $this->assertSame('I', toRoman(1));
     }
 
-    public function test2(): void
+    /**
+     * uuid f088f064-2d35-4476-9a41-f576da3f7b03
+     */
+    #[TestDox('2 is II')]
+    public function test2IsII(): void
     {
         $this->assertSame('II', toRoman(2));
     }
 
-    public function test3(): void
+    /**
+     * uuid b374a79c-3bea-43e6-8db8-1286f79c7106
+     */
+    #[TestDox('3 is III')]
+    public function test3IsIII(): void
     {
         $this->assertSame('III', toRoman(3));
     }
 
-    public function test4(): void
+    /**
+     * uuid 05a0a1d4-a140-4db1-82e8-fcc21fdb49bb
+     */
+    #[TestDox('4 is IV')]
+    public function test4IsIV(): void
     {
         $this->assertSame('IV', toRoman(4));
     }
 
-    public function test5(): void
+    /**
+     * uuid 57c0f9ad-5024-46ab-975d-de18c430b290
+     */
+    #[TestDox('5 is V')]
+    public function test5IsV(): void
     {
         $this->assertSame('V', toRoman(5));
     }
 
-    public function test6(): void
+    /**
+     * uuid 20a2b47f-e57f-4797-a541-0b3825d7f249
+     */
+    #[TestDox('6 is VI')]
+    public function test6IsVI(): void
     {
         $this->assertSame('VI', toRoman(6));
     }
 
-    public function test9(): void
+    /**
+     * uuid ff3fb08c-4917-4aab-9f4e-d663491d083d
+     */
+    #[TestDox('9 is IX')]
+    public function test9IsIX(): void
     {
         $this->assertSame('IX', toRoman(9));
     }
 
-    public function test27(): void
+    /**
+     * uuid 6d1d82d5-bf3e-48af-9139-87d7165ed509
+     */
+    #[TestDox('16 is XVI')]
+    public function test16IsXVI(): void
+    {
+        $this->assertSame('XVI', toRoman(16));
+    }
+
+    /**
+     * uuid 2bda64ca-7d28-4c56-b08d-16ce65716cf6
+     */
+    #[TestDox('27 is XXVII')]
+    public function test27IsXXVII(): void
     {
         $this->assertSame('XXVII', toRoman(27));
     }
 
-    public function test48(): void
+    /**
+     * uuid a1f812ef-84da-4e02-b4f0-89c907d0962c
+     */
+    #[TestDox('48 is XLVIII')]
+    public function test48IsXLVIII(): void
     {
         $this->assertSame('XLVIII', toRoman(48));
     }
 
-    public function test49(): void
+    /**
+     * uuid 607ead62-23d6-4c11-a396-ef821e2e5f75
+     */
+    #[TestDox('49 is XLIX')]
+    public function test49IsXLIX(): void
     {
         $this->assertSame('XLIX', toRoman(49));
     }
 
-    public function test59(): void
+    /**
+     * uuid d5b283d4-455d-4e68-aacf-add6c4b51915
+     */
+    #[TestDox('59 is LIX')]
+    public function test59IsLIX(): void
     {
         $this->assertSame('LIX', toRoman(59));
     }
 
-    public function test93(): void
+    /**
+     * uuid 4465ffd5-34dc-44f3-ada5-56f5007b6dad
+     */
+    #[TestDox('66 is LXVI')]
+    public function test66IsLXVI(): void
+    {
+        $this->assertSame('LXVI', toRoman(66));
+    }
+
+    /**
+     * uuid 46b46e5b-24da-4180-bfe2-2ef30b39d0d0
+     */
+    #[TestDox('93 is XCIII')]
+    public function test93IsXCIII(): void
     {
         $this->assertSame('XCIII', toRoman(93));
     }
 
-    public function test141(): void
+    /**
+     * uuid 30494be1-9afb-4f84-9d71-db9df18b55e3
+     */
+    #[TestDox('141 is CXLI')]
+    public function test141IsCXLI(): void
     {
         $this->assertSame('CXLI', toRoman(141));
     }
 
-    public function test163(): void
+    /**
+     * uuid 267f0207-3c55-459a-b81d-67cec7a46ed9
+     */
+    #[TestDox('163 is CLXIII')]
+    public function test163IsCLXIII(): void
     {
         $this->assertSame('CLXIII', toRoman(163));
     }
 
-    public function test402(): void
+    /**
+     * uuid 902ad132-0b4d-40e3-8597-ba5ed611dd8d
+     */
+    #[TestDox('166 is CLXVI')]
+    public function test166IsCLXVI(): void
+    {
+        $this->assertSame('CLXVI', toRoman(166));
+    }
+
+    /**
+     * uuid cdb06885-4485-4d71-8bfb-c9d0f496b404
+     */
+    #[TestDox('402 is CDII')]
+    public function test402IsCDII(): void
     {
         $this->assertSame('CDII', toRoman(402));
     }
 
-    public function test575(): void
+    /**
+     * uuid 6b71841d-13b2-46b4-ba97-dec28133ea80
+     */
+    #[TestDox('575 is DLXXV')]
+    public function test575IsDLXXV(): void
     {
         $this->assertSame('DLXXV', toRoman(575));
     }
 
-    public function test911(): void
+    /**
+     * uuid dacb84b9-ea1c-4a61-acbb-ce6b36674906
+     */
+    #[TestDox('666 is DCLXVI')]
+    public function test666IsDCLXVI(): void
+    {
+        $this->assertSame('DCLXVI', toRoman(666));
+    }
+
+    /**
+     * uuid 432de891-7fd6-4748-a7f6-156082eeca2f
+     */
+    #[TestDox('911 is CMXI')]
+    public function test911IsCMXI(): void
     {
         $this->assertSame('CMXI', toRoman(911));
     }
 
-    public function test1024(): void
+    /**
+     * uuid e6de6d24-f668-41c0-88d7-889c0254d173
+     */
+    #[TestDox('1024 is MXXIV')]
+    public function test1024IsMXXIV(): void
     {
         $this->assertSame('MXXIV', toRoman(1024));
     }
 
-    public function test1998(): void
+    /**
+     * uuid efbe1d6a-9f98-4eb5-82bc-72753e3ac328
+     */
+    #[TestDox('1666 is MDCLXVI')]
+    public function test1666IsMDCLXVI(): void
     {
-        $this->assertSame('MCMXCVIII', toRoman(1998));
+        $this->assertSame('MDCLXVI', toRoman(1666));
     }
 
-    public function test2999(): void
-    {
-        $this->assertSame('MMCMXCIX', toRoman(2999));
-    }
-
-    public function test3000(): void
+    /**
+     * uuid bb550038-d4eb-4be2-a9ce-f21961ac3bc6
+     */
+    #[TestDox('3000 is MMM')]
+    public function test3000IsMMM(): void
     {
         $this->assertSame('MMM', toRoman(3000));
+    }
+
+    /**
+     * uuid 3bc4b41c-c2e6-49d9-9142-420691504336
+     */
+    #[TestDox('3001 is MMMI')]
+    public function test3001IsMMMI(): void
+    {
+        $this->assertSame('MMMI', toRoman(3001));
+    }
+
+    /**
+     * uuid 2f89cad7-73f6-4d1b-857b-0ef531f68b7e
+     */
+    #[TestDox('3888 is MMMDCCCLXXXVIII')]
+    public function test3888IsMMMDCCCLXXXVIII(): void
+    {
+        $this->assertSame('MMMDCCCLXXXVIII', toRoman(3888));
+    }
+
+    /**
+     * uuid 4e18e96b-5fbb-43df-a91b-9cb511fe0856
+     */
+    #[TestDox('3999 is MMMCMXCIX')]
+    public function test3999IsMMMCMXCIX(): void
+    {
+        $this->assertSame('MMMCMXCIX', toRoman(3999));
     }
 }

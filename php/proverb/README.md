@@ -19,7 +19,7 @@ For want of a battle the kingdom was lost.
 And all for the want of a nail.
 ```
 
-Note that the list of inputs may vary; your solution should be able to handle lists of arbitrary length and content. No line of the output text should be a static, unchanging string; all should vary according to the input given.
+Note that the list of inputs may vary; your solution should be able to handle lists of arbitrary length and content. **No line of the output text should be a static**, unchanging string; all should vary according to the input given.
 
 ## Source
 

@@ -228,7 +228,7 @@ __DATA__
     "property": "scalene"
   },
   {
-    "description": "scalene triangle: two sides are equal",
+    "description": "scalene triangle: first and second sides are equal",
     "expected": false,
     "input": {
       "sides": [

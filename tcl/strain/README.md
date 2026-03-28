@@ -5,10 +5,8 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
 
-Implement the `keep` and `discard` operation on collections. Given a collection
-and a predicate on the collection's elements, `keep` returns a new collection
-containing those elements where the predicate is true, while `discard` returns
-a new collection containing those elements where the predicate is false.
+Implement the `keep` and `discard` operation on collections.
+Given a collection and a predicate on the collection's elements, `keep` returns a new collection containing those elements where the predicate is true, while `discard` returns a new collection containing those elements where the predicate is false.
 
 For example, given the collection of numbers:
 
@@ -28,15 +26,26 @@ While your discard operation should produce:
 
 Note that the union of keep and discard is all the elements.
 
-The functions may be called `keep` and `discard`, or they may need different
-names in order to not clash with existing functions or concepts in your
-language.
+The functions may be called `keep` and `discard`, or they may need different names in order to not clash with existing functions or concepts in your language.
 
 ## Restrictions
 
-Keep your hands off that filter/reject/whatchamacallit functionality
-provided by your standard library!  Solve this one yourself using other
-basic tools instead.
+Keep your hands off that filter/reject/whatchamacallit functionality provided by your standard library!
+Solve this one yourself using other basic tools instead.
+
+## Tcl-specific instructions
+
+This exercise gets you to write your own control command (like `foreach` or `while`).
+You will need the [`upvar`][upvar] and [`uplevel`][uplevel] commands.
+
+The `uplevel` man page contains an example `do ... while ...` control construct which should help you solve this exercise.
+
+This discussion on the Tcl wiki, [New Control Structures][wiki], may also be helpful.
+
+
+[upvar]: https://www.tcl-lang.org/man/tcl8.6/TclCmd/upvar.htm
+[uplevel]: https://www.tcl-lang.org/man/tcl8.6/TclCmd/uplevel.htm
+[wiki]: https://wiki.tcl-lang.org/page/New+Control+Structures
 
 ## Source
 
@@ -50,4 +59,4 @@ basic tools instead.
 
 ### Based on
 
-Conversation with James Edward Gray II - https://twitter.com/jeg2
+Conversation with James Edward Gray II - http://graysoftinc.com/

@@ -1,6 +1,6 @@
 # Secret Handshake
 
-Welcome to Secret Handshake on Exercism's VB.NET Track.
+Welcome to Secret Handshake on Exercism's Visual Basic Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction
@@ -68,4 +68,4 @@ If you aren't sure what binary is or how it works, check out [this binary tutori
 
 ### Based on
 
-Bert, in Mary Poppins - https://www.imdb.com/title/tt0058331/quotes/qt0437047
+Bert, in Mary Poppins - https://www.imdb.com/title/tt0058331/quotes/?item=qt0437047

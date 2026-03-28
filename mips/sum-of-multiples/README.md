@@ -1,6 +1,6 @@
-# Sum Of Multiples
+# Sum of Multiples
 
-Welcome to Sum Of Multiples on Exercism's MIPS Assembly Track.
+Welcome to Sum of Multiples on Exercism's MIPS Assembly Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
 

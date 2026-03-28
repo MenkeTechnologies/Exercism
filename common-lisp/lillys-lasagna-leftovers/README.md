@@ -6,17 +6,16 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Lambda List
+
 In Common Lisp a function's argument list is known as a ['lambda list'][lambda-list].
-A lambda list can can have arguments of different types.
+A lambda list can have arguments of different types.
 These different types are designated with the use of ['lambda list keywords'][lambda-list-keyword] which all begin with `&`.
 The most commonly used types are optional, keyword and rest arguments types.
 Every parameter in the lambda list after a particular lambda list keyword will be of that type.
 A lambda list keyword can only be used once in a lambda list.
 
 Lambda lists are also used in other constructs which will be discussed later such as destructuring and macros.
-
-[lambda-list]: http://www.lispworks.com/documentation/HyperSpec/Body/26_glo_l.htm#lambda_list
-[lambda-list-keyword]: http://www.lispworks.com/documentation/HyperSpec/Body/26_glo_l.htm#lambda_list_keyword
 
 ## Optional Parameters
 
@@ -25,7 +24,7 @@ These are designated in the lambda list by `&optional` lambda list keyword.
 A parameter will be bound to the value `nil` if it is not specified.
 If there are several optional parameters they are bound in order.
 Default values can be specified for optional parameters.
-Finally a symbol an be specified for each optional parameter which will be bound to true or false depending on whether that parameter was supplied by the caller of the function (this is referred to as the "supplied-p parameter").
+Finally a symbol can be specified for each optional parameter which will be bound to true or false depending on whether that parameter was supplied by the caller of the function (this is referred to as the "supplied-p parameter").
 
 ```lisp
 (defun optional-parameters (&optional x (y 'default) (z nil z-supplied-p))
@@ -53,7 +52,7 @@ Keyword parameters can be specified by the caller of the function in any order.
 
 (keyword-parameters)            ; => (NIL DEFAULT (:Z-WAS-NOT-SUPPLIED NIL))
 (keyword-parameters :y 5)       ; => (NIL 5 (:Z-WAS-NOT-SUPPLIED NIL))
-(keyword-parameters :z 10 :x 5) ; => (5 NIL (:Z-WAS-SUPPLIED 10))
+(keyword-parameters :z 10 :x 5) ; => (5 DEFAULT (:Z-WAS-SUPPLIED 10))
 ```
 
 Care should be taken when combining optional and keyword parameters as the keyword name and argument could be consumed by optional parameters:
@@ -63,11 +62,11 @@ Care should be taken when combining optional and keyword parameters as the keywo
 (could-be-confusing :z 'huh?) ; => (:Z HUH? NIL)
 ```
 
-## Rest Parameters
+## Rest-Parameters
 
 In Common Lisp a function can have a parameter that will contain the "rest" of the arguments after any required or optional parameters are processed.
 This parameter is designated by the `&rest` lambda list keyword.
-If all arguments to a function are used by by other types of parameters then the rest parameter will be bound to an empty list.
+If all arguments to a function are used by other types of parameters then the rest parameter will be bound to an empty list.
 If there are unused arguments then the rest parameter will be bound to a list of those arguments.
 
 ```lisp

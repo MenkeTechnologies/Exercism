@@ -1,32 +1,11 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
-use PHPUnit\Framework\ExpectationFailedException;
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
 
-class ListOpsTest extends PHPUnit\Framework\TestCase
+class ListOpsTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -34,8 +13,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox append entries to a list and return the new list -> empty lists
+     * uuid 485b9452-bf94-40f7-a3db-c3cf4850066a
      */
+    #[TestDox('append entries to a list and return the new list -> empty lists')]
     public function testAppendEmptyLists()
     {
         $listOps = new ListOps();
@@ -43,8 +23,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox append entries to a list and return the new list -> list to empty list
+     * uuid 2c894696-b609-4569-b149-8672134d340a
      */
+    #[TestDox('append entries to a list and return the new list -> list to empty list')]
     public function testAppendNonEmptyListToEmptyList()
     {
         $listOps = new ListOps();
@@ -52,8 +33,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox append entries to a list and return the new list -> empty list to list
+     * uuid e842efed-3bf6-4295-b371-4d67a4fdf19c
      */
+    #[TestDox('append entries to a list and return the new list -> empty list to list')]
     public function testAppendEmptyListToNonEmptyList()
     {
         $listOps = new ListOps();
@@ -61,8 +43,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox append entries to a list and return the new list -> non-empty lists
+     * uuid 71dcf5eb-73ae-4a0e-b744-a52ee387922f
      */
+    #[TestDox('append entries to a list and return the new list -> non-empty lists')]
     public function testAppendNonEmptyLists()
     {
         $listOps = new ListOps();
@@ -70,8 +53,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox concatenate a list of lists -> empty list
+     * uuid 28444355-201b-4af2-a2f6-5550227bde21
      */
+    #[TestDox('concatenate a list of lists -> empty list')]
     public function testConcatEmptyLists()
     {
         $listOps = new ListOps();
@@ -79,8 +63,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox concatenate a list of lists -> list of lists
+     * uuid 331451c1-9573-42a1-9869-2d06e3b389a9
      */
+    #[TestDox('concatenate a list of lists -> list of lists')]
     public function testConcatLists()
     {
         $listOps = new ListOps();
@@ -88,8 +73,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox concatenate a list of lists -> list of nested lists
+     * uuid d6ecd72c-197f-40c3-89a4-aa1f45827e09
      */
+    #[TestDox('concatenate a list of lists -> list of nested lists')]
     public function testConcatNestedLists()
     {
         $listOps = new ListOps();
@@ -97,8 +83,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox filter list returning only values that satisfy the filter function -> empty list
+     * uuid 0524fba8-3e0f-4531-ad2b-f7a43da86a16
      */
+    #[TestDox('filter list returning only values that satisfy the filter function -> empty list')]
     public function testFilterEmptyList()
     {
         $listOps = new ListOps();
@@ -109,8 +96,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox filter list returning only values that satisfy the filter function -> non empty list
+     * uuid 88494bd5-f520-4edb-8631-88e415b62d24
      */
+    #[TestDox('filter list returning only values that satisfy the filter function -> non empty list')]
     public function testFilterNonEmptyList()
     {
         $listOps = new ListOps();
@@ -121,8 +109,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox returns the length of a list -> empty list
+     * uuid 1cf0b92d-8d96-41d5-9c21-7b3c37cb6aad
      */
+    #[TestDox('returns the length of a list -> empty list')]
     public function testLengthEmptyList()
     {
         $listOps = new ListOps();
@@ -130,8 +119,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox returns the length of a list -> non-empty list
+     * uuid d7b8d2d9-2d16-44c4-9a19-6e5f237cb71e
      */
+    #[TestDox('returns the length of a list -> non-empty list')]
     public function testLengthNonEmptyList()
     {
         $listOps = new ListOps();
@@ -139,8 +129,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox returns a list of elements whose values equal the list value transformed by the mapping function -> empty list
+     * uuid c0bc8962-30e2-4bec-9ae4-668b8ecd75aa
      */
+    #[TestDox('returns a list of elements whose values equal the list value transformed by the mapping function -> empty list')]
     public function testMapEmptyList()
     {
         $listOps = new ListOps();
@@ -151,8 +142,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox returns a list of elements whose values equal the list value transformed by the mapping function -> non-empty list
+     * uuid 11e71a95-e78b-4909-b8e4-60cdcaec0e91
      */
+    #[TestDox('returns a list of elements whose values equal the list value transformed by the mapping function -> non-empty list')]
     public function testMapNonEmptyList()
     {
         $listOps = new ListOps();
@@ -163,8 +155,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox folds (reduces) the given list from the left with a function -> empty list
+     * uuid 36549237-f765-4a4c-bfd9-5d3a8f7b07d2
      */
+    #[TestDox('folds (reduces) the given list from the left with a function -> empty list')]
     public function testFoldlEmptyList()
     {
         $listOps = new ListOps();
@@ -175,8 +168,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox folds (reduces) the given list from the left with a function -> direction independent function applied to non-empty list
+     * uuid 7a626a3c-03ec-42bc-9840-53f280e13067
      */
+    #[TestDox('folds (reduces) the given list from the left with a function -> direction independent function applied to non-empty list')]
     public function testFoldlDirectionIndependentNonEmptyList()
     {
         $listOps = new ListOps();
@@ -187,8 +181,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox folds (reduces) the given list from the left with a function -> direction dependent function applied to non-empty list
+     * uuid d7fcad99-e88e-40e1-a539-4c519681f390
      */
+    #[TestDox('folds (reduces) the given list from the left with a function -> direction dependent function applied to non-empty list')]
     public function testFoldlDirectionDependentNonEmptyList()
     {
         $listOps = new ListOps();
@@ -199,8 +194,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox folds (reduces) the given list from the right with a function -> empty list
+     * uuid aeb576b9-118e-4a57-a451-db49fac20fdc
      */
+    #[TestDox('folds (reduces) the given list from the right with a function -> empty list')]
     public function testFoldrEmptyList()
     {
         $listOps = new ListOps();
@@ -211,8 +207,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox folds (reduces) the given list from the right with a function -> direction independent function applied to non-empty list
+     * uuid e1c64db7-9253-4a3d-a7c4-5273b9e2a1bd
      */
+    #[TestDox('folds (reduces) the given list from the right with a function -> direction independent function applied to non-empty list')]
     public function testFoldrDirectionIndependentNonEmptyList()
     {
         $listOps = new ListOps();
@@ -223,8 +220,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox folds (reduces) the given list from the right with a function -> direction dependent function applied to non-empty list
+     * uuid 8066003b-f2ff-437e-9103-66e6df474844
      */
+    #[TestDox('folds (reduces) the given list from the right with a function -> direction dependent function applied to non-empty list')]
     public function testFoldrDirectionDependentNonEmptyList()
     {
         $listOps = new ListOps();
@@ -235,8 +233,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox reverse the elements of a list -> empty list
+     * uuid 94231515-050e-4841-943d-d4488ab4ee30
      */
+    #[TestDox('reverse the elements of a list -> empty list')]
     public function testReverseEmptyList()
     {
         $listOps = new ListOps();
@@ -244,8 +243,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox reverse the elements of a list -> non-empty list
+     * uuid fcc03d1e-42e0-4712-b689-d54ad761f360
      */
+    #[TestDox('reverse the elements of a list -> non-empty list')]
     public function testReverseNonEmptyList()
     {
         $listOps = new ListOps();
@@ -253,8 +253,9 @@ class ListOpsTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * @testdox reverse the elements of a list -> list of lists is not flattened
+     * uuid 40872990-b5b8-4cb8-9085-d91fc0d05d26
      */
+    #[TestDox('reverse the elements of a list -> list of lists is not flattened')]
     public function testReverseNonEmptyListIsNotFlattened()
     {
         $listOps = new ListOps();

@@ -10,13 +10,22 @@ The included makefile can be used to create and run the tests using the `test` t
 $ make test
 ```
 
-Create just the functions you need to satisfy any compiler errors and ratio the test to fail.
-Then write just enough code to ratio the test to pass.
+Create just the functions you need to satisfy any compiler errors and get the test to fail.
+Then write just enough code to get the test to pass.
 Once you've done that, move onto the next test.
 
 As you progress through the tests, take the time to refactor your implementation for readability and expressiveness and then go on to the next test.
 
 Try to use standard C99 facilities in preference to writing your own low-level algorithms or facilities by hand.
+
+## Checking for memory leaks
+
+The makefile comes also with a build that checks some common mistakes regarding memory leaks and out of bound access to arrays.
+To run these checks, use the following at the command line:
+
+```console
+$ make memcheck
+```
 
 [3-tdd-rules]: https://blog.cleancoder.com/uncle-bob/2014/12/17/TheCyclesOfTDD.html
 
@@ -30,12 +39,13 @@ It's possible to submit an incomplete solution which allows you to:
 - See how others have completed the exercise
 - Request help from a mentor
 
-## Need to ratio help?
+## Need to get help?
 
 If you'd like help solving the exercise, check the following pages:
 
 - The [C track's documentation](https://exercism.org/docs/tracks/c)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [C track's programming category on the forum](https://forum.exercism.org/c/programming/c)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
@@ -43,13 +53,9 @@ Should those resources not suffice, you could submit your (incomplete) solution 
 Make sure you have read the [C track-specific documentation][c-track] on the Exercism site.
 This covers the basic information on setting up the development environment expected by the exercises.
 
-## Submitting Incomplete Solutions
-
-If you are struggling with a particular exercise, it is possible to submit an incomplete solution so you can see how others have completed the exercise.
-
 ## Resources
 
-To ratio help if having trouble, you can use the following resources:
+To get help if having trouble, you can use the following resources:
 
 - [StackOverflow][] can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.
 - [CPPReference][] can be used to look up information on C concepts, operators, types, standard library functions and more.

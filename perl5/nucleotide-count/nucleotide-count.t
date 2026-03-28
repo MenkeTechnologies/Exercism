@@ -1,91 +1,39 @@
 #!/usr/bin/env perl
 use Test2::V0;
-use JSON::PP;
-use constant JSON => JSON::PP->new;
 
 use FindBin qw<$Bin>;
 use lib $Bin, "$Bin/local/lib/perl5";
 
 use NucleotideCount qw<count_nucleotides>;
 
-my @test_cases = do { local $/; @{ JSON->decode(<DATA>) }; };
-plan 6;
+is( # begin: 3e5c30a8-87e2-4845-a815-a49671ade970
+    count_nucleotides(""),
+    { A => 0, C => 0, G => 0, T => 0 },
+    "empty strand",
+); # end: 3e5c30a8-87e2-4845-a815-a49671ade970
 
-imported_ok qw<count_nucleotides> or bail_out;
+is( # begin: a0ea42a6-06d9-4ac6-828c-7ccaccf98fec
+    count_nucleotides("G"),
+    { A => 0, C => 0, G => 1, T => 0 },
+    "can count one nucleotide in single-character input",
+); # end: a0ea42a6-06d9-4ac6-828c-7ccaccf98fec
 
-for my $case (@test_cases) {
-    if ( $case->{expected}{error} ) {
-        like dies( sub { count_nucleotides( $case->{input}{strand} ) } ),
-          qr/$case->{expected}{error}/, $case->{description};
-    }
-    else {
-        is count_nucleotides( $case->{input}{strand} ),
-          $case->{expected}, $case->{description};
-    }
-}
+is( # begin: eca0d565-ed8c-43e7-9033-6cefbf5115b5
+    count_nucleotides("GGGGGGG"),
+    { A => 0, C => 0, G => 7, T => 0 },
+    "strand with repeated nucleotide",
+); # end: eca0d565-ed8c-43e7-9033-6cefbf5115b5
 
-__DATA__
-[
-  {
-    "description": "empty strand",
-    "expected": {
-      "A": 0,
-      "C": 0,
-      "G": 0,
-      "T": 0
-    },
-    "input": {
-      "strand": ""
-    },
-    "property": "nucleotideCounts"
-  },
-  {
-    "description": "can count one nucleotide in single-character input",
-    "expected": {
-      "A": 0,
-      "C": 0,
-      "G": 1,
-      "T": 0
-    },
-    "input": {
-      "strand": "G"
-    },
-    "property": "nucleotideCounts"
-  },
-  {
-    "description": "strand with repeated nucleotide",
-    "expected": {
-      "A": 0,
-      "C": 0,
-      "G": 7,
-      "T": 0
-    },
-    "input": {
-      "strand": "GGGGGGG"
-    },
-    "property": "nucleotideCounts"
-  },
-  {
-    "description": "strand with multiple nucleotides",
-    "expected": {
-      "A": 20,
-      "C": 12,
-      "G": 17,
-      "T": 21
-    },
-    "input": {
-      "strand": "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"
-    },
-    "property": "nucleotideCounts"
-  },
-  {
-    "description": "strand with invalid nucleotides",
-    "expected": {
-      "error": "Invalid nucleotide in strand"
-    },
-    "input": {
-      "strand": "AGXXACT"
-    },
-    "property": "nucleotideCounts"
-  }
-]
+is( # begin: 40a45eac-c83f-4740-901a-20b22d15a39f
+    count_nucleotides("AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC"),
+    { A => 20, C => 12, G => 17, T => 21 },
+    "strand with multiple nucleotides",
+); # end: 40a45eac-c83f-4740-901a-20b22d15a39f
+
+like( # begin: b4c47851-ee9e-4b0a-be70-a86e343bd851
+    dies( sub { count_nucleotides "AGXXACT" } ),
+    qr(Invalid nucleotide in strand),
+    "strand with invalid nucleotides",
+); # end: b4c47851-ee9e-4b0a-be70-a86e343bd851
+
+done_testing;

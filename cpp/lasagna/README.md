@@ -38,13 +38,13 @@ int tomatoes{80};
 int potatoes = 40;
 ```
 
-```exercism/caution
+~~~~exercism/caution
 C++ does allow using uninitialized variables.
 Until the variable is deliberately set, it is undefined and might contain anything.
-To avoid used-before-set errors and undefined behavior it is adviseable to **always initialize**.
+To avoid used-before-set errors and undefined behavior it is advisable to **always initialize**.
 Undefined behavior can crash your program at the worst possible moment, while it was running fine previously.
 It cannot be stressed enough: avoid undefined behavior at all cost.
-```
+~~~~
 
 ### Arithmetic Operations
 
@@ -94,7 +94,7 @@ int total_fee(int vips, int adults, int kids) {
     int standard_fee{30};
     int kids_discount{15};
 
-    int kids_total_fee = kids  * (standard_fee - kids_discount);
+    int kids_total_fee = kids * (standard_fee - kids_discount);
     int vips_total_fee = vips * vip_fee(standard_fee);
     int adult_total_fee = adults * standard_fee;
 
@@ -105,7 +105,7 @@ int total_fee(int vips, int adults, int kids) {
 Functions in C++ do not return the value of the last statement like in some other languages.
 The `return` keyword is required for the code to compile.
 
-#### Whitespace
+### Whitespace
 
 Whitespace is used for formatting source code and includes spaces, tabs, or newlines.
 As the compiler ignores unnecessary whitespace, you can use it to structure your code.

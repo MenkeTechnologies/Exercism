@@ -8,7 +8,7 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Multiple Clause Functions
 
-Elixir facilitates **Open-Close Principle** practices by allowing functions to have multiple clauses, so instead of sprawling and hard-coded control-logic, pointed functions can be written to add/remove behavior easily.
+Elixir facilitates **Open-Closed Principle** practices by allowing functions to have multiple clauses, so instead of sprawling and hard-coded control-logic, pointed functions can be written to add/remove behavior easily.
 
 Elixir offers _multiple function clauses_ and _guards_ to write:
 
@@ -16,6 +16,7 @@ Elixir offers _multiple function clauses_ and _guards_ to write:
 def number(n) when n == 7 do
   "Awesome, that's my favorite"
 end
+
 def number(_n) do
   "That's not my favorite"
 end
@@ -54,7 +55,7 @@ def number(n) when n < 10, do: "Dream bigger!"
 def number(n) when n > 100, do: "Not that big..."
 ```
 
-[kernel-guards]: https://hexdocs.pm/elixir/master/Kernel.html#guards
+[kernel-guards]: https://hexdocs.pm/elixir/Kernel.html#guards
 
 ## Instructions
 

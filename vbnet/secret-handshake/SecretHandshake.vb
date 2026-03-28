@@ -10,8 +10,8 @@ Public Module SecretHandshake
     }
     Public Function Commands(ByVal commandValue As Integer) As String()
         Dim lst = New List(Of String)()
-        For Each pair In dict
-            If (commandValue And pair.Key) > 0 Then lst.Add(pair.Value)
+        For Each order In dict
+            If (commandValue And order.Key) > 0 Then lst.Add(order.Value)
         Next
         If (commandValue And 16) > 0 Then lst.Reverse()
         Return lst.ToArray()

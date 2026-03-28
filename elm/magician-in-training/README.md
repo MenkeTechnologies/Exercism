@@ -10,12 +10,12 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 An [`Array`][array] in Elm is a fast immutable collection of zero or more values of the same type.
 
-Unlike `List` which is a [default-import][default import], the `Array` module must be explicity imported, using `import Array` or similar.
+Unlike `List` which is a [default-import][default-imports], the `Array` module must be explicity imported, using `import Array` or similar.
 
 Arrays can be defined as follows:
 
 ```elm
-import Array exposing Array
+import Array exposing (Array)
 
 empty : Array Char
 empty = Array.empty
@@ -39,8 +39,8 @@ oneToFour = Array.push 1 twoToFour --> Array.fromList [ 1, 2, 3, 4 ]
 An element in an Array is retrieved using `Array.get`:
 
 ```elm
-sixSeven = Array.fromList [ 6, 7 ]    
-Array.get 0 sixSeven --> 6
+sixSeven = Array.fromList [ 6, 7 ]
+Array.get 0 sixSeven --> Just 6
 ```
 
 An element in an Array is set using `Array.set`:
@@ -72,9 +72,9 @@ To make things a bit easier she only uses the cards 1 to 10.
 Implement the `getCard` function  that returns the card at position `index` from the given deck. If the index is not in the deck, return Nothing.
 
 ```elm
-getCard 2, ( Array.fromList [ 1, 2, 4, 1 ] )
+getCard 2 ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Just 4
-getCard 6, ( Array.fromList [ 1, 2, 4, 1 ] )
+getCard 6 ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Nothing
 ```
 
@@ -84,9 +84,9 @@ Implement the `setCard` function that returns a deck with the card at position `
 If the `index` is not in the deck, return the original deck.
 
 ```elm
-setCard 2, 6, ( Array.fromList [ 1, 2, 4, 1 ] )
+setCard 2 6 ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Array.fromList [ 1, 2, 6, 1 ]
-setCard 6, 6, ( Array.fromList [ 1, 2, 4, 1 ] )
+setCard 6 6 ( Array.fromList [ 1, 2, 4, 1 ] )
     --> Array.fromList [ 1, 2, 4, 1 ]
 ```
 

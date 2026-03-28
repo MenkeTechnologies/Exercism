@@ -7,10 +7,10 @@ end
 Base.:+(p::Point, q::Point) = Point(p.x + q.x, p.y + q.y)
 
 const advance_table = Dict(
-    NORTH => Point{Int}(0, 1),
-    EAST  => Point{Int}(1, 0),
-    SOUTH => Point{Int}(0, -1),
-    WEST  => Point{Int}(-1, 0)
+            NORTH => Point{Int}(0, 1),
+            EAST  => Point{Int}(1, 0),
+            SOUTH => Point{Int}(0, -1),
+            WEST  => Point{Int}(-1, 0)
 )
 
 mutable struct Robot

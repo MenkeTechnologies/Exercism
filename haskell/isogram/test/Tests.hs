@@ -4,12 +4,12 @@
 import Data.Foldable     (for_)
 import Data.String       (fromString)
 import Test.Hspec        (Spec, describe, it, shouldBe)
-import Test.Hspec.Runner (configFastFail, defaultConfig, hspecWith)
+import Test.Hspec.Runner (configFailFast, defaultConfig, hspecWith)
 
 import Isogram (isIsogram)
 
 main :: IO ()
-main = hspecWith defaultConfig {configFastFail = True} specs
+main = hspecWith defaultConfig {configFailFast = True} specs
 
 specs :: Spec
 specs = describe "isIsogram" $ for_ cases test
@@ -78,5 +78,3 @@ cases = [ Case { description = "empty string"
                , expected    = False
                }
         ]
-
--- a9959a2c54044c54f732db59fe91cf7bb44b2086

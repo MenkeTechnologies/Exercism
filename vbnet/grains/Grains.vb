@@ -1,4 +1,5 @@
 Imports System
+
 Public Module Grains
     Public Function Square(ByVal n As Integer) As ULong
         If n < 1 OR n > 64

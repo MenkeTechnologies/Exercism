@@ -1,48 +1,81 @@
 require 'minitest/autorun'
 require_relative 'scrabble_score'
 
-class ScrabbleTest < Minitest::Test
-  def test_empty_word_scores_zero
-    assert_equal 0, Scrabble.new('').score
+class ScrabbleScoreTest < Minitest::Test
+  def test_lowercase_letter
+    # skip
+    actual = Scrabble.new('a').score
+    expected = 1
+    assert_equal expected, actual
   end
 
-  def test_whitespace_scores_zero
-    
-    assert_equal 0, Scrabble.new(" \t\n").score
+  def test_uppercase_letter
+    skip
+    actual = Scrabble.new('A').score
+    expected = 1
+    assert_equal expected, actual
   end
 
-  def test_nil_scores_zero
-    
-    assert_equal 0, Scrabble.new(nil).score
+  def test_valuable_letter
+    skip
+    actual = Scrabble.new('f').score
+    expected = 4
+    assert_equal expected, actual
   end
 
-  def test_scores_very_short_word
-    
-    assert_equal 1, Scrabble.new('a').score
+  def test_short_word
+    skip
+    actual = Scrabble.new('at').score
+    expected = 2
+    assert_equal expected, actual
   end
 
-  def test_scores_other_very_short_word
-    
-    assert_equal 4, Scrabble.new('f').score
+  def test_short_valuable_word
+    skip
+    actual = Scrabble.new('zoo').score
+    expected = 12
+    assert_equal expected, actual
   end
 
-  def test_simple_word_scores_the_number_of_letters
-    
-    assert_equal 6, Scrabble.new('street').score
+  def test_medium_word
+    skip
+    actual = Scrabble.new('street').score
+    expected = 6
+    assert_equal expected, actual
   end
 
-  def test_complicated_word_scores_more
-    
-    assert_equal 22, Scrabble.new('quirky').score
+  def test_medium_valuable_word
+    skip
+    actual = Scrabble.new('quirky').score
+    expected = 22
+    assert_equal expected, actual
   end
 
-  def test_scores_are_case_insensitive
-    
-    assert_equal 41, Scrabble.new('OXYPHENBUTAZONE').score
+  def test_long_mixed_case_word
+    skip
+    actual = Scrabble.new('OxyphenButazone').score
+    expected = 41
+    assert_equal expected, actual
   end
 
-  def test_convenient_scoring
-    
-    assert_equal 13, Scrabble.score('alacrity')
+  def test_english_like_word
+    skip
+    actual = Scrabble.new('pinata').score
+    expected = 8
+    assert_equal expected, actual
+  end
+
+  def test_empty_input
+    skip
+    actual = Scrabble.new('').score
+    expected = 0
+    assert_equal expected, actual
+  end
+
+  def test_entire_alphabet_available
+    skip
+    actual = Scrabble.new('abcdefghijklmnopqrstuvwxyz').score
+    expected = 87
+    assert_equal expected, actual
   end
 end

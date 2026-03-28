@@ -1,11 +1,11 @@
-import java.io.FileNotFoundException;
+class CustomCheckedException extends Exception {
 
-class CustomCheckedException extends FileNotFoundException {
     CustomCheckedException() {
-        super();
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
 
     CustomCheckedException(String message) {
-        super(message);
+        throw new UnsupportedOperationException("Delete this statement and write your own implementation.");
     }
+
 }

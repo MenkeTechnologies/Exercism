@@ -32,7 +32,6 @@ func TestNewCar(t *testing.T) {
 			}
 		})
 	}
-
 }
 
 func TestNewTrack(t *testing.T) {
@@ -66,7 +65,7 @@ func TestNewTrack(t *testing.T) {
 			got := NewTrack(tt.track.distance)
 
 			if got != tt.expected {
-				t.Errorf("NewTrack(%+v) = %+v; expected %+v", tt.track.distance, tt.track, tt.expected)
+				t.Errorf("NewTrack(%+v) = %+v; expected %+v", tt.track.distance, got, tt.expected)
 			}
 		})
 	}
@@ -91,6 +90,21 @@ func TestDrive(t *testing.T) {
 				batteryDrain: 2,
 				battery:      98,
 				distance:     5,
+			},
+		},
+		{
+			name: "Drive the car with exactly enough battery.",
+			car: Car{
+				speed:        18,
+				batteryDrain: 10,
+				battery:      10,
+				distance:     0,
+			},
+			expected: Car{
+				speed:        18,
+				batteryDrain: 10,
+				battery:      0,
+				distance:     18,
 			},
 		},
 		{

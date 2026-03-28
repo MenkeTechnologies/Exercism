@@ -1,6 +1,6 @@
-# Rest Api
+# REST API
 
-Welcome to Rest Api on Exercism's C# Track.
+Welcome to REST API on Exercism's C# Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

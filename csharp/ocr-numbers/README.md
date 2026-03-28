@@ -1,6 +1,6 @@
-# Ocr Numbers
+# OCR Numbers
 
-Welcome to Ocr Numbers on Exercism's C# Track.
+Welcome to OCR Numbers on Exercism's C# Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

@@ -1,8 +1,11 @@
 module scrabble_scores;
+
 import std.algorithm: map, sum;
 import std.conv: to;
 import std.uni: toLower;
+
 immutable int[char] letterScores;
+
 static this() {
     letterScores = [
         'a': 1, 'e': 1, 'i': 1, 'o': 1, 'u': 1, 'l': 1, 'n': 1, 'r': 1, 's': 1, 't': 1,
@@ -14,9 +17,12 @@ static this() {
         'q': 10, 'z': 10
     ];
 }
+
+
 pure int score(immutable string word) {
     return toLower(word).map!(s => letterScores.get(cast(char)s, 0)).sum();
 }
+
 unittest
 {
     immutable int allTestsEnabled = 1;

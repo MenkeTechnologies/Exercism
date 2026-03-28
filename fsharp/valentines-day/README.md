@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Discriminated Unions
+
 The discriminated union type represents a fixed number of named cases. Each value of a discriminated union corresponds to exactly one of the named cases.
 
 A discriminated union is defined using the `type` keyword, with cases separated by pipe (`|`) characters:
@@ -98,7 +100,7 @@ Finally, you're ready to rate your partner's ideas. This is how you feel about y
 - Chill out: no.
 - Watch a movie: yes if is is a romantic movie; otherwise, no.
 - Go to a restaurant: yes if the cuisine is Korean, maybe if it is Turkish.
-- Take a walk: yes if the walk is less then three kilometers; maybe if it is less than five kilometers; otherwise, no.
+- Take a walk: yes if the walk is less than three kilometers; maybe if it is less than five kilometers; otherwise, no.
 
 Implement a function named `rateActivity` that takes an `Activity` value and returns the `Approval` based on the above sentiments:
 

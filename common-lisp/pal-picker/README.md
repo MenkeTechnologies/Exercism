@@ -99,7 +99,7 @@ Now that Ludwig has a new friend, they'll need a place to stay! Can you help
 Ludwig select the right size bed / tank / cage for their pet?
 
 Here, Ludwig needs a function called `habitat-fitter` for selecting the proper
-habitat size (a keyword) from their pet's weight in kilograms (a integer).
+habitat size (a keyword) from their pet's weight in kilograms (an integer).
 
 The habitats needed by each size pet are:
 
@@ -148,6 +148,14 @@ be pet.
 (pet "Dog")         ; => NIL
 (play-fetch "Fish") ; => "Maybe not with this pet..."
 ```
+
+~~~~exercism/note
+This task requires string comparisons. This can be done using the
+[`string=`][string-eq] function.  We'll learn more about this later in the
+syllabus in the Strings lesson.
+
+[string-eq]: https://www.cs.cmu.edu/Groups/AI/html/cltl/clm/node166.html
+~~~~
 
 ## Source
 

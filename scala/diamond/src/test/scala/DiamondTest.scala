@@ -1,25 +1,27 @@
-import org.scalatest.{Matchers, FunSuite}
+import org.scalatest.funsuite.AnyFunSuite
+import org.scalatest.matchers.should.Matchers
+
 
 /** @version 1.1.0 */
-class DiamondTest extends FunSuite with Matchers {
+class DiamondTest extends AnyFunSuite with Matchers {
 
   test("Degenerate case with a single 'A' row") {
     Diamond.rows('A') should be(List("A"))
   }
 
   test("Degenerate case with no row containing 3 distinct groups of spaces") {
-    
+    pending
     Diamond.rows('B') should be(List(" A ", "B B", " A "))
   }
 
   test("Smallest non-degenerate case with odd diamond side length") {
-    
+    pending
     Diamond.rows('C') should be(
       List("  A  ", " B B ", "C   C", " B B ", "  A  "))
   }
 
   test("Smallest non-degenerate case with even diamond side length") {
-    
+    pending
     Diamond.rows('D') should be(
       List("   A   ",
            "  B B  ",
@@ -31,7 +33,7 @@ class DiamondTest extends FunSuite with Matchers {
   }
 
   test("Largest possible diamond") {
-    
+    pending
     Diamond.rows('Z') should be(
       List(
         "                         A                         ",

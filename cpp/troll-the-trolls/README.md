@@ -52,7 +52,7 @@ enum class WheelMaterial {
     plastic
 };
 ```
-Although the wheels and the deck can both be made of _plastic_, the two cannot be confused. 
+Although the wheels and the deck can both be made of _plastic_, the two cannot be confused.
 They are different _types_:  `DeckMaterial` plastic and `WheelMaterial` plastic.
 Each `enumeration` will have its `enumerators` in its own scope - its own `namespace`.
 This is the reason they are called `scoped enumerations`.
@@ -63,7 +63,7 @@ You might be thinking that with a name like `scoped`, there would also be  _`uns
 `Unscoped enumerations` are becoming less popular because they all share the same global namespace.
 Because of the sharing, you could not have two `unscoped enumerations` with the same `enumerators` like _plastic_ in the example above.
 
-Also, `unscoped enumerations` implicitly convert to integers. 
+Also, `unscoped enumerations` implicitly convert to integers.
 Look at the example below for a surprising result:
 
 ```cpp
@@ -149,7 +149,7 @@ case 3:
 default:
     book_house(group_size);
 }
-// book_apartment happens wheng roup_size is 2 or 3
+// book_apartment happens when group_size is 2 or 3
 ```
 
 [magic numbers]: https://en.wikipedia.org/wiki/Magic_number_(programming)
@@ -159,7 +159,7 @@ default:
 Your friend Helma made a small online game that rapidly gained popularity.
 It is called _HellMath_.
 The small community attracted some trolls who make the game and the forums pretty unpleasant.
-Helma has asked you to work on a new permission system to separate troublemakers. 
+Helma has asked you to work on a new permission system to separate troublemakers.
 
 The forum supports three different actions:
 

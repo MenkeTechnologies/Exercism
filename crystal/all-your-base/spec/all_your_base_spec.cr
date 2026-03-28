@@ -3,104 +3,167 @@ require "../src/*"
 
 describe "AllYourBase" do
   it "single bit one to decimal" do
-    AllYourBase.rebase(2, [1], 10).should eq([1])
+    input_base = 2
+    digits = [1] of Int32
+    output_base = 10
+    AllYourBase.rebase(input_base, digits, output_base).should eq([1] of Int32)
   end
 
-  it "binary to single decimal" do
-    AllYourBase.rebase(2, [1, 0, 1], 10).should eq([5])
+  pending "binary to single decimal" do
+    input_base = 2
+    digits = [1, 0, 1] of Int32
+    output_base = 10
+    AllYourBase.rebase(input_base, digits, output_base).should eq([5] of Int32)
   end
 
-  it "single decimal to binary" do
-    AllYourBase.rebase(10, [5], 2).should eq([1, 0, 1])
+  pending "single decimal to binary" do
+    input_base = 10
+    digits = [5] of Int32
+    output_base = 2
+    AllYourBase.rebase(input_base, digits, output_base).should eq([1, 0, 1] of Int32)
   end
 
-  it "binary to multiple decimal" do
-    AllYourBase.rebase(2, [1, 0, 1, 0, 1, 0], 10).should eq([4, 2])
+  pending "binary to multiple decimal" do
+    input_base = 2
+    digits = [1, 0, 1, 0, 1, 0] of Int32
+    output_base = 10
+    AllYourBase.rebase(input_base, digits, output_base).should eq([4, 2] of Int32)
   end
 
-  it "decimal to binary" do
-    AllYourBase.rebase(10, [4, 2], 2).should eq([1, 0, 1, 0, 1, 0])
+  pending "decimal to binary" do
+    input_base = 10
+    digits = [4, 2] of Int32
+    output_base = 2
+    AllYourBase.rebase(input_base, digits, output_base).should eq([1, 0, 1, 0, 1, 0] of Int32)
   end
 
-  it "trinary to hexadecimal" do
-    AllYourBase.rebase(3, [1, 1, 2, 0], 16).should eq([2, 10])
+  pending "trinary to hexadecimal" do
+    input_base = 3
+    digits = [1, 1, 2, 0] of Int32
+    output_base = 16
+    AllYourBase.rebase(input_base, digits, output_base).should eq([2, 10] of Int32)
   end
 
-  it "hexadecimal to trinary" do
-    AllYourBase.rebase(16, [2, 10], 3).should eq([1, 1, 2, 0])
+  pending "hexadecimal to trinary" do
+    input_base = 16
+    digits = [2, 10] of Int32
+    output_base = 3
+    AllYourBase.rebase(input_base, digits, output_base).should eq([1, 1, 2, 0] of Int32)
   end
 
-  it "15-bit integer" do
-    AllYourBase.rebase(97, [3, 46, 60], 73).should eq([6, 10, 45])
+  pending "15-bit integer" do
+    input_base = 97
+    digits = [3, 46, 60] of Int32
+    output_base = 73
+    AllYourBase.rebase(input_base, digits, output_base).should eq([6, 10, 45] of Int32)
   end
 
-  it "empty list" do
-    AllYourBase.rebase(2, [] of Int32, 10).should eq([0])
+  pending "empty list" do
+    input_base = 2
+    digits = [] of Int32
+    output_base = 10
+    AllYourBase.rebase(input_base, digits, output_base).should eq([0] of Int32)
   end
 
-  it "single zero" do
-    AllYourBase.rebase(10, [0], 2).should eq([0])
+  pending "single zero" do
+    input_base = 10
+    digits = [0] of Int32
+    output_base = 2
+    AllYourBase.rebase(input_base, digits, output_base).should eq([0] of Int32)
   end
 
-  it "multiple zeros" do
-    AllYourBase.rebase(10, [0, 0, 0], 2).should eq([0])
+  pending "multiple zeros" do
+    input_base = 10
+    digits = [0, 0, 0] of Int32
+    output_base = 2
+    AllYourBase.rebase(input_base, digits, output_base).should eq([0] of Int32)
   end
 
-  it "leading zeros" do
-    AllYourBase.rebase(7, [0, 6, 0], 10).should eq([4, 2])
+  pending "leading zeros" do
+    input_base = 7
+    digits = [0, 6, 0] of Int32
+    output_base = 10
+    AllYourBase.rebase(input_base, digits, output_base).should eq([4, 2] of Int32)
   end
 
-  it "input base is one" do
+  pending "input base is one" do
+    input_base = 1
+    digits = [0] of Int32
+    output_base = 10
     expect_raises(ArgumentError) do
-      AllYourBase.rebase(1, [0], 10)
+      AllYourBase.rebase(input_base, digits, output_base)
     end
   end
 
-  it "input base is zero" do
+  pending "input base is zero" do
+    input_base = 0
+    digits = [] of Int32
+    output_base = 10
     expect_raises(ArgumentError) do
-      AllYourBase.rebase(0, [] of Int32, 10)
+      AllYourBase.rebase(input_base, digits, output_base)
     end
   end
 
-  it "input base is negative" do
+  pending "input base is negative" do
+    input_base = -2
+    digits = [1] of Int32
+    output_base = 10
     expect_raises(ArgumentError) do
-      AllYourBase.rebase(-2, [1], 10)
+      AllYourBase.rebase(input_base, digits, output_base)
     end
   end
 
-  it "negative digit" do
+  pending "negative digit" do
+    input_base = 2
+    digits = [1, -1, 1, 0, 1, 0] of Int32
+    output_base = 10
     expect_raises(ArgumentError) do
-      AllYourBase.rebase(2, [1, -1, 1, 0, 1, 0], 10)
+      AllYourBase.rebase(input_base, digits, output_base)
     end
   end
 
-  it "invalid positive digit" do
+  pending "invalid positive digit" do
+    input_base = 2
+    digits = [1, 2, 1, 0, 1, 0] of Int32
+    output_base = 10
     expect_raises(ArgumentError) do
-      AllYourBase.rebase(2, [1, 2, 1, 0, 1, 0], 10)
+      AllYourBase.rebase(input_base, digits, output_base)
     end
   end
 
-  it "output base is one" do
+  pending "output base is one" do
+    input_base = 2
+    digits = [1, 0, 1, 0, 1, 0] of Int32
+    output_base = 1
     expect_raises(ArgumentError) do
-      AllYourBase.rebase(2, [1, 0, 1, 0, 1, 0], 1)
+      AllYourBase.rebase(input_base, digits, output_base)
     end
   end
 
-  it "output base is zero" do
+  pending "output base is zero" do
+    input_base = 10
+    digits = [7] of Int32
+    output_base = 0
     expect_raises(ArgumentError) do
-      AllYourBase.rebase(10, [7], 0)
+      AllYourBase.rebase(input_base, digits, output_base)
     end
   end
 
-  it "output base is negative" do
+  pending "output base is negative" do
+    input_base = 2
+    digits = [1] of Int32
+    output_base = -7
     expect_raises(ArgumentError) do
-      AllYourBase.rebase(2, [1], -7)
+      AllYourBase.rebase(input_base, digits, output_base)
     end
   end
 
-  it "both bases are negative" do
+  pending "both bases are negative" do
+    input_base = -2
+    digits = [1] of Int32
+    output_base = -7
     expect_raises(ArgumentError) do
-      AllYourBase.rebase(-2, [1], -7)
+      AllYourBase.rebase(input_base, digits, output_base)
     end
   end
 end

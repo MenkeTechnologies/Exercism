@@ -11,7 +11,7 @@ type Color
     | Violet
     | Grey
     | White
-
+    
 colorCode color =
     case color of
         Black -> 0
@@ -24,9 +24,9 @@ colorCode color =
         Violet -> 7
         Grey -> 8
         White -> 9
-
+        
 value colors =
-    let
+    let 
         values = List.map colorCode colors
     in
         case values of

@@ -7,13 +7,11 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 Given a number n, determine what the nth prime is.
 
-By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that
-the 6th prime is 13.
+By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
 
-If your language provides methods in the standard library to deal with prime
-numbers, pretend they don't exist and implement them yourself.
+If your language provides methods in the standard library to deal with prime numbers, pretend they don't exist and implement them yourself.
 
-If the argument is not less than `1` raise the exception [`Domain`](http://sml-family.org/Basis/general.html#SIG:GENERAL.Domain:EXN).
+If the argument is less than `1`, return [`NONE`](https://smlfamily.github.io/Basis/option.html#SIG:OPTION.option:TY:SPEC).
 
 Some of these concepts may be helpful:
 
@@ -34,4 +32,4 @@ Some of these concepts may be helpful:
 
 ### Based on
 
-A variation on Problem 7 at Project Euler - http://projecteuler.net/problem=7
+A variation on Problem 7 at Project Euler - https://projecteuler.net/problem=7

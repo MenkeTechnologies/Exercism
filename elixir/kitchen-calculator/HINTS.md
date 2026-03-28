@@ -18,13 +18,13 @@
 ## 3. Convert the milliliter volume-pair to another unit
 
 - Use [multiple clause functions][multi-clause] and [pattern matching][pattern-matching] to reduce conditional control flow logic.
-- Implement the function for all units to milliliters, including milliliters to milliliters.
+- Implement the function for milliliters to all units, including milliliters to milliliters.
 
 ## 4. Convert from any unit to any unit
 
 - Reuse the functions already created to perform the conversion in the `convert/2` function.
 
 [elem]: https://hexdocs.pm/elixir/Kernel.html#elem/2
-[multi-clause]: https://elixir-lang.org/getting-started/modules-and-functions.html#named-functions
+[multi-clause]: https://hexdocs.pm/elixir/modules-and-functions.html#function-definition
 [tuple-module]: https://hexdocs.pm/elixir/Tuple.html
 [pattern-matching]: https://medium.com/rebirth-delivery/how-to-use-elixir-pattern-matched-functions-arguments-a793733acc6d

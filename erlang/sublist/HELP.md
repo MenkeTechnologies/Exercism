@@ -23,14 +23,14 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Erlang track's documentation](https://exercism.org/docs/tracks/erlang)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Erlang track's programming category on the forum](https://forum.exercism.org/c/programming/erlang)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
 
 To get help if you're having trouble, you can use one of the following resources:
 
-- [Exercism related BEAM support channel on gitter](https://gitter.im/exercism/xerlang)
 - [Erlang Documentation](http://www.erlang.org/doc.html)
 - [Learn You Some Erlang for Great Good](http://learnyousomeerlang.com)
 - [StackOverflow](http://stackoverflow.com/)

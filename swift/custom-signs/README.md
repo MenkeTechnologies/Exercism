@@ -6,91 +6,153 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
-Strings in Swift are a collection of characters, where characters are, more or less, a single printable element. So strings in Swift are able to contain Unicode characters and emoji.
+Strings are a data type that represent a text value.
+[`Strings`][strings-and-characters] in Swift are a collection of `Character`s, which themselves hold a [Unicode scalar value][unicode-scalar-values].
 
-Strings are easily created in Swift through string literals. String literals are similar to those seen in many other programming languages, characters enclosed between a pair of double quotation marks (`"`). Certain characters use a special notation inside of strings so they can be properly represented, such as the newline character which is written as `\n` inside strings or the double-quote character which is written as `\"` inside of a string so the compiler knows it isn't the double-quote which ends the string.
-
-An empty string is represented by two double quotation marks with nothing between them.
+You can create a String through a string literal, which is a series of characters enclosed in double quotation marks (`"`).
+For multi-line strings, you can use triple quotation marks (`"""`).
 
 ```swift
-let hello = "Hello, World!"
-let sausage = "Weißwurst is a tasty sausage."
-var fam = "This is my family: 👨‍👩‍👦‍👦, this is our dog: 🐶"
-var empty = ""
+let hello : String = "Hello, World!"
+
+let poem : String = """
+Roses are red,
+Violets are blue.
+Sugar is sweet,
+And so are you.
+"""
 ```
 
-Character literals in Swift look just like string literals, however, only one character is allowed between the quotation marks. Since the two literals look the same, Swift will default to inferring that characters are strings unless the type is specified by an explicit annotation or the context can tell the compiler otherwise.
+Strings in Swift also obtain all of the functionality of the [NSString][nsstring-docs] class which was originally used in Apple's Objective-C libraries.
+
+## Character
+
+`Character` is a data type that stores a single [Unicode scalar value][unicode-scalar-values] that is made up of one or more Unicode code points.
+A Unicode scalar value is any [Unicode code][unicode] point in the range `U+0000` to `U+D7FF` inclusive or `U+E000` to `U+10FFFF` inclusive.
+
+```swift
+let aChar : Character = "A"
+```
+
+## Type inference
+
+Swift can infer the type of a string literal, and will by default infer it to be a `String`.
+You can explicitly declare a string to be a `Character` by using the `Character` type annotation, which requires the value to be a single character.
 
 ```swift
 let aString = "A"
-// Swift infers this to be a String
+let aChar: Character = "A"
+print(type(of: aString)) // Prints String
+print(type(of: aChar))   // Prints Character
 
-var aChar: Character = "A"
-// Swift now knows to make this a Character
-
+// The following code will not compile
 let badChar: Character = "Too many characters"
 // Error: Cannot convert value of type 'String' to specified type 'Character'
 ```
 
-## Building strings from smaller parts
+## Concatenation
 
-Strings can be concatenated using the `+` operator, and mutable strings can have other strings appended onto them using the `+=` mutating operator.
-
-```swift
-"honey" + "comb"
-// => "honeycomb"
-
-fam += ", this is our cat: 🐱"
-// => "This is my family: 👨‍👩‍👦‍👦, this is our dog: 🐶, this is our cat: 🐱"
-```
-
-Note that only strings can be concatenated with strings. In order to use concatenation with a character, one must convert it to a String first
+In Swift, strings can be [concatenated][] using the `+` operator.
+Characters can **not** be concatenated with strings using the `+` operator without first converting the character to a string.
 
 ```swift
-let question: Character = "?"
-let areYouHappy = "Happy" + question
-// Error: Cannot convert value of type 'Character' to expected argument type 'String'
-
-let areYouHappy = "Happy" + String(question)
-// => "Happy?"
+print("honey" + "comb")
+// Prints "honeycomb"
 ```
 
-## String Interpolation
+The [`append(_:)`][append] method mutates the string by adding either a string or a character to the end of it.
 
-The most common way to build up strings in Swift is _string interpolation_. To insert a value into a string using string interpolation, you place an expression or value in parentheses which are preceded by a backslash character.
+```swift
+var greeting = "Hello"
+let world = ", world"
+let period: Character = "."
+
+greeting.append(world)
+print(greeting) // Prints "Hello, world"
+
+greeting.append(period)
+print(greeting) // Prints "Hello, world."
+```
+
+## String interpolation
+
+[String interpolation][string-interpolation] is a way of constructing a String based on values from different sources like variables and expressions.
+To insert a value into a string using string interpolation, you place an expression or value in parentheses which are preceded by a backslash character.
 
 ```swift
 let radius = 5.0
-let interp = "The area of a circle with radius \(radius) is \(Double.pi * radius * radius)"
-// => "The area of a circle with radius 5.0 is 78.53981633974483"
-```
-
-## String and Character equality
-
-Strings and Characters can be compared for equality (or lack thereof) using the `==` operator (or `!=` for not-equal).
-
-```swift
-let hi = "Hello"
-hi == "Hello."
-// => true
-
-let period: Character = "."
-period != ";"
-// => true
+let circle = "The area of a circle with radius \(radius) is \(Double.pi * radius * radius)"
+print(circle) // Prints "The area of a circle with radius 5.0 is 78.53981633974483"
 ```
 
 ## String and Character properties
 
-Strings and characters have a few different _properties_ which can be queried to get information about the string or character. These are queried by placing a ._propertyName_ after the string or character in question. For example, one can check to see if a string is empty by querying its `isEmpty` property, and the count of characters in a string can be retrieved using its `count` property.
+Strings and characters have a few different _properties_ which can be queried to get information about the string or character.
 
-Character properties are mostly based on the type of character it is. For example, one can check to see if a character `isNumber`, `isLetter`, `isUppercase`, etc.
+### String properties
+
+Here are some of the most common string properties, but to find all, see the [documentation][string-docs].
+
+| Property  | Description                                    | Example                        |
+| --------- | ---------------------------------------------- | ------------------------------ |
+| `isEmpty` | Returns `true` if the string is empty          | `"Hello".isEmpty equals false` |
+| `count`   | Returns the number of characters in the string | `"Hello".count   equals 5`     |
+
+### Character properties
+
+Here are some of the most common character properties, but to find all, see the [documentation][string-docs].
+
+| Property       | Description                                   | Example                        |
+| -------------- | --------------------------------------------- | ------------------------------ |
+| `isLowercase`  | Returns `true` if the character is lowercase  | `"a".isLowercase  equals true` |
+| `isUppercase`  | Returns `true` if the character is uppercase  | `"A".isUppercase  equals true` |
+| `isNumber`     | Returns `true` if the character is a number   | `"1".isNumber     equals true` |
+| `isWhitespace` | Returns `true` if the character is whitespace | `" ".isWhitespace equals true` |
+
+## Type conversion
+
+To convert a type to a string, you can use the `String()` initializer, which accepts a variety of types, including `Int`, `Double`, `Character`, and more.
 
 ```swift
-empty.isEmpty
-// => true
-fam.count
-// => 60
+let charX: Character = "x"
+print(String(charX))     // Prints "x"
+print(String(110))       // Prints "110"
+print(String(Double.pi)) // Prints "3.141592653589793"
 ```
+
+## Special characters
+
+Swift has a few [special characters][special-characters] that can be used in strings.
+
+| Value    | Description                   |
+| -------- | ----------------------------- |
+| `\0`     | Null character                |
+| `\\`     | Backslash                     |
+| `\t`     | Horizontal tab                |
+| `\n`     | Line feed                     |
+| `\r`     | Carriage return               |
+| `\'`     | Single quote mark             |
+| `\"`     | Double quote mark             |
+| `\uFFFF` | Hexadecimal unicode character |
+
+```swift
+let quote : String = "\"Hello\", he said."
+print(quote) // Prints "Hello", he said.
+
+let unicode : Character = "\u{1F496}"
+print(unicode) // Prints 💖
+```
+
+[strings-and-characters]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/stringsandcharacters/
+[string-docs]: https://developer.apple.com/documentation/swift/String
+[nsstring-docs]: https://developer.apple.com/documentation/foundation/nsstring
+[character-docs]: https://developer.apple.com/documentation/swift/character
+[string-interpolation]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/stringsandcharacters/#String-Interpolation
+[unicode-scalar-values]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/stringsandcharacters/
+[unicode]: https://en.wikipedia.org/wiki/Unicode
+[concatenated]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/stringsandcharacters/#Concatenating-Strings-and-Characters
+[append]: https://developer.apple.com/documentation/swift/string/append(_:)-4xa8f
+[special-characters]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/stringsandcharacters/#Special-Characters-in-String-Literals
 
 ## Instructions
 
@@ -113,32 +175,38 @@ Define the following constant characters which will be used to create signs:
 
 ## 3. Combine phrases to build up messages
 
-Implement the function `buildSign(for: String, name: String) -> String`. This function takes one of the three strings you defined in the first task as the `for` parameter and a String holding someone's name as the `name` parameter and uses concatenation as well as the characters defined in task #2 to build up a phrase for a sign.
+Implement the function `buildSign(for:name:)`, which takes the argument `for` which holds one of the three strings you defined in the first task and the argument `name` which is a string that holds the name of the person the sign is for.
+You shall use concatenation to build up the message for the sign and remember to reuse the already defined constants.
+The function should return the sign message as a string.
 
 ```swift
 buildSign(for: birthday, name: "Otto")
-// => "Happy Birthday Otto!"
+// returns "Happy Birthday Otto!"
 
 buildSign(for: anniversary, name: "Valentina")
-// => "Happy Anniversary Valentina!"
+// returns "Happy Anniversary Valentina!"
 ```
 
 ## 4. Build a graduation sign
 
-Implement the function `graduationFor(name: String, year: Int) -> String` which takes a name as a string parameter and a year as a string parameter and uses string interpolation to create a phrase for a sign that uses a newline to separate the two lines of the message.
+Implement the function `graduationFor(name:year:)` which takes the argument `name` which is a string that holds the name of the person the sign is for and the argument `year` which is an integer that holds the year the person is graduating.
+You shall use template strings to build up the message for the sign.
+The function should return the sign message as a string.
 
 ```swift
-graduationFor(name: "Padma", year: 2020)
-// => "Congratulations Padma!\nClass of 2020"
+graduationFor(name: "Padma", year: 2023)
+// returns "Congratulations Padma!\nClass of 2023"
 ```
 
 ## 5. Compute the cost of a sign
 
-Implement the function `costOf(sign: String) -> Int` which takes a string that holds the contents of the sign and returns the cost to create the sign, which is 2 dollars for each character in the sign plus a base price of 20 dollars.
+Implement the function `costOf(sign:)` which takes the argument `sign` which is a string that holds the message for the sign.
+The sign has a base price of 20 in the given currency. Additionally each letter costs 2 (Whitespaces are included in the calculation).
+The function should return the cost of the sign as an integer.
 
 ```swift
 costOf(sign: "Happy Birthday Grandma!")
-// => 66
+// returns 66
 ```
 
 ## Source
@@ -146,3 +214,4 @@ costOf(sign: "Happy Birthday Grandma!")
 ### Created by
 
 - @wneumann
+- @meatball133

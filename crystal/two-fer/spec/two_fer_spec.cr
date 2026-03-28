@@ -6,11 +6,11 @@ describe "TwoFer" do
     TwoFer.two_fer.should eq("One for you, one for me.")
   end
 
-  it "a name given" do
+  pending "a name given" do
     TwoFer.two_fer("Alice").should eq("One for Alice, one for me.")
   end
 
-  it "another name given" do
+  pending "another name given" do
     TwoFer.two_fer("Bob").should eq("One for Bob, one for me.")
   end
 end

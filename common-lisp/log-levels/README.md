@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Strings
+
 In Common Lisp strings are [vectors][concept-vectors] of [characters][concept-characters].
 They are written as characters surrounded by double quotes (_e.g_ "Hello World!").
 
@@ -72,7 +74,7 @@ Define a function `log-severity` which will take a log string and evaluate to th
 Unfortunately sometimes the log strings are not always formatted correctly. Specifically the log level may be not all lower case as specified above. Modify `log-severity` to handle this.
 
 ```lisp
-(log-severity "[WaRn] string case system failing") ; => :getting-worried
+(log-severity "[WaRn]: string case system failing") ; => :getting-worried
 ```
 
 ## 4. Reformatting the log message according to log severity

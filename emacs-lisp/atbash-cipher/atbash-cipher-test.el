@@ -1,4 +1,4 @@
-;;; atbash-cipher-test.el --- Tests for Atbash Cipher (exercism)
+;;; atbash-cipher-test.el --- Tests for Atbash Cipher (exercism)  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -7,6 +7,7 @@
 (require 'cl-lib)
 
 (load-file "atbash-cipher.el")
+(declare-function encode "atbash-cipher.el" (plaintext))
 
 (ert-deftest encode-no ()
   (should (equal "ml" (encode "no"))))

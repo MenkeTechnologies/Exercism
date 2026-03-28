@@ -1,6 +1,7 @@
 module.exports = class
   @format: (name, n) ->
     "#{name}, you are the #{n}#{@getSuffix n} customer we serve today. Thank you!"
+    
   @getSuffix: (n) ->
     if n.toString().match /1(1|2|3)$/
       'th'

@@ -13,17 +13,21 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 Elixir is a dynamically-typed language, meaning that the type of a variable is only checked at runtime. Using the match `=` operator, we can bind a value of any type to a variable name:
 
 ```elixir
-count = 1 # Bound an integer value of 1
-count = 2 # You may re-bind variables
+# Bound an integer value of 1
+count = 1
+# You may re-bind variables
+count = 2
 
-count = false # You may re-bind any type to a variable
+# You may re-bind any type to a variable
+count = false
 
-message = "Success!" # Strings can be created by enclosing characters within double quotes
+# Strings can be created by enclosing characters within double quotes
+message = "Success!"
 ```
 
 ### Modules
 
-Elixir is an [functional-programming language][functional-programming] and requires all named functions to be defined in a _module_. The `defmodule` keyword is used to define a module. All modules are available to all other modules at runtime and do not require an _access modifier_ to make them visible to other parts of the program. A _module_ is analogous to a _class_ in other programming languages.
+Elixir is a [functional-programming language][functional-programming] and requires all named functions to be defined in a _module_. The `defmodule` keyword is used to define a module. All modules are available to all other modules at runtime and do not require an _access modifier_ to make them visible to other parts of the program. A _module_ is analogous to a _class_ in other programming languages.
 
 ```elixir
 defmodule Calculator do
@@ -33,25 +37,46 @@ end
 
 ### Named functions
 
-_Named Functions_ must be defined in a module. Each function can have zero or more arguments. All arguments are dynamically-typed, and the return type is not explicitly declared, it is the type of the value returned. An _access modifier_ can be specified for functions, making only desired functions available for use external to the module. In a function, the value of the last line is _implicitly returned_ to the calling function.
+_Named Functions_ must be defined in a module. The `def` keyword is used to define a _public_ named function.
 
-Invoking a function is done by specifying its module- and function name and passing arguments for each of the function's arguments. The module name may be omitted if the function is invoked inside of the module.
-
-You may also write short functions using a one-line syntax (note the comma `,` and the colon `:` around the keyword `do`).
+Each function can have zero or more arguments. The value of the last expression in a function is always _implicitly returned_.
 
 ```elixir
 defmodule Calculator do
   def add(x, y) do
     x + y
   end
-
-  def short_add(x, y), do: x + y
 end
+```
 
+Invoking a function is done by specifying its module and function name and passing arguments for each of the function's arguments.
+
+```elixir
 sum = Calculator.add(1, 2)
 # => 3
-sum = Calculator.short_add(2, 2)
-# => 4
+```
+
+The `defp` keyword can be used instead of `def` to define a _private_ function. Private functions can only be used from within the same module that defined them.
+
+When invoking a function inside the same module where it's defined, the module name can be omitted.
+
+You may also write short functions using a one-line syntax (note the comma `,` and the colon `:` around the keyword `do`).
+
+```elixir
+defmodule Calculator do
+  def subtract(x, y) do
+    private_subtract(x, y)
+  end
+
+  defp private_subtract(x, y), do: x - y
+end
+
+difference = Calculator.subtract(7, 2)
+# => 5
+
+difference = Calculator.private_subtract(7, 2)
+# => ** (UndefinedFunctionError) function Calculator.private_subtract/2 is undefined or private
+#       Calculator.private_subtract(7, 2)
 ```
 
 ### Arity of functions
@@ -64,6 +89,12 @@ def add(x, y, z) do
   x + y + z
 end
 ```
+
+### Naming conventions
+
+Module names should use `PascalCase`. A module name must start with an uppercase letter `A-Z` and can contain letters `a-zA-Z`, numbers `0-9`, and underscores `_`.
+
+Variable and function names should use `snake_case`. A variable or function name must start with a lowercase letter `a-z` or an underscore `_`, can contain letters `a-zA-Z`, numbers `0-9`, and underscores `_`, and might end with a question mark `?` or an exclamation mark `!`.
 
 ### Standard library
 
@@ -88,7 +119,7 @@ You have five tasks, all related to the time spent cooking the lasagna.
 
 ## 1. Define the expected oven time in minutes
 
-Define the `Lasagna.expected_minutes_in_oven/0` method that does not take any arguments and returns how many minutes the lasagna should be in the oven. According to the cooking book, the expected oven time in minutes is 40:
+Define the `Lasagna.expected_minutes_in_oven/0` function that does not take any arguments and returns how many minutes the lasagna should be in the oven. According to the cooking book, the expected oven time in minutes is 40:
 
 ```elixir
 Lasagna.expected_minutes_in_oven()
@@ -97,7 +128,7 @@ Lasagna.expected_minutes_in_oven()
 
 ## 2. Calculate the remaining oven time in minutes
 
-Define the `Lasagna.remaining_minutes_in_oven/1` method that takes the actual minutes the lasagna has been in the oven as a argument and returns how many minutes the lasagna still has to remain in the oven, based on the expected oven time in minutes from the previous task.
+Define the `Lasagna.remaining_minutes_in_oven/1` function that takes the actual minutes the lasagna has been in the oven as an argument and returns how many minutes the lasagna still has to remain in the oven, based on the expected oven time in minutes from the previous task.
 
 ```elixir
 Lasagna.remaining_minutes_in_oven(30)
@@ -106,7 +137,7 @@ Lasagna.remaining_minutes_in_oven(30)
 
 ## 3. Calculate the preparation time in minutes
 
-Define the `Lasagna.preparation_time_in_minutes/1` method that takes the number of layers you added to the lasagna as a argument and returns how many minutes you spent preparing the lasagna, assuming each layer takes you 2 minutes to prepare.
+Define the `Lasagna.preparation_time_in_minutes/1` function that takes the number of layers you added to the lasagna as an argument and returns how many minutes you spent preparing the lasagna, assuming each layer takes you 2 minutes to prepare.
 
 ```elixir
 Lasagna.preparation_time_in_minutes(2)
@@ -115,7 +146,7 @@ Lasagna.preparation_time_in_minutes(2)
 
 ## 4. Calculate the total working time in minutes
 
-Define the `Lasagna.total_time_in_minutes/2` method that takes two arguments: the first argument is the number of layers you added to the lasagna, and the second argument is the number of minutes the lasagna has been in the oven. The function should return how many minutes in total you've worked on cooking the lasagna, which is the sum of the preparation time in minutes, and the time in minutes the lasagna has spent in the oven at the moment.
+Define the `Lasagna.total_time_in_minutes/2` function that takes two arguments: the first argument is the number of layers you added to the lasagna, and the second argument is the number of minutes the lasagna has been in the oven. The function should return how many minutes in total you've worked on cooking the lasagna, which is the sum of the preparation time in minutes, and the time in minutes the lasagna has spent in the oven at the moment.
 
 ```elixir
 Lasagna.total_time_in_minutes(3, 20)
@@ -124,7 +155,7 @@ Lasagna.total_time_in_minutes(3, 20)
 
 ## 5. Create a notification that the lasagna is ready
 
-Define the `Lasagna.alarm/0` method that does not take any arguments and returns a message indicating that the lasagna is ready to eat.
+Define the `Lasagna.alarm/0` function that does not take any arguments and returns a message indicating that the lasagna is ready to eat.
 
 ```elixir
 Lasagna.alarm()

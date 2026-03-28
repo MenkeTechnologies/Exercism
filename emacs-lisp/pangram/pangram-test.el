@@ -1,4 +1,4 @@
-;;; pagram-test.el --- Tests for Pangram (exercism)
+;;; pagram-test.el --- Tests for Pangram (exercism)  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 ;; Common test data version: 1.3.0 d79e13e
@@ -6,6 +6,7 @@
 ;;; Code:
 
 (load-file "pangram.el")
+(declare-function is-pangram "pangram.el" (phrase))
 
 (ert-deftest sentence-empty ()
   (should (equal nil (is-pangram ""))))
@@ -34,8 +35,8 @@
 (ert-deftest  pangram-with-mixed-case-and-punctuation ()
   (should (equal t (is-pangram "\"Five quacking Zephyrs jolt my wax bed.\""))))
 
-(ert-deftest  upper-and-lower-case-versions-of-the-same-character-should-not-be-counted-separately ()
-  (should (equal nil (is-pangram "the quick brown fox jumps over with lazy FX"))))
+(ert-deftest  a-m-and-A-M-are-26-different-characters-but-not-a-pangram ()
+  (should (equal nil (is-pangram "abcdefghijklm ABCDEFGHIJKLM"))))
 
 (provide 'pangram-test)
 ;;; pagram-test.el ends here

@@ -15,7 +15,7 @@ Swift has 3 [logical operators (`!`, `||`, `&&`)][logical-operators] which are u
 ### And(`&&`)
 
 The [_and_ operator][and] in Swift is represented by `&&` and returns `true` if both values given are `true` otherwise it returns `false`.
-When using the _and_ operator, one Bool be placed on the right side of the `&&` and another one on the left side.
+When using the _and_ operator, one Bool is placed on the right side of the `&&` and another one on the left side.
 
 ```Swift
 true && true  // true
@@ -24,7 +24,7 @@ true && false // false
 
 ### Or(`||`)
 
-The [_or_ operator][or] in Swift is represented by `||` and returns `true` if **at least one** of values given is `true` if both of the values are `false` then it returns `false`.
+The [_or_ operator][or] in Swift is represented by `||` and returns `true` if **at least one** of values given is `true`. If both of the values are `false` then it returns `false`.
 When using the _or_ operator one bool should be placed on the right side of the `||` and another one on the left side.
 
 ```swift
@@ -35,7 +35,7 @@ false || false // false
 
 ### Not(`!`)
 
-The [_not_ operator][not] in Swift is represented by `!` and returns `true` if the given Bool is `false` and returns `false` if `true` is given.
+The [_not_ operator][not] in Swift is represented by `!` and returns `true` if the given Bool is `false`, and returns `false` if `true` is given.
 When using the _not_ operator one Bool should be placed after the operator (`!`).
 
 ```swift
@@ -61,9 +61,9 @@ Since what is in parentheses is evaluated first, in the following example, the _
 !(true && false) // true
 ```
 
-```exercism/note
+~~~~exercism/note
 You should only use parentheses when they affect the result, otherwise, should they be omitted.
-```
+~~~~
 
 [logical-operators]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators/#Logical-Operators
 [not]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/basicoperators/#Logical-NOT-Operator
@@ -109,7 +109,7 @@ score(touchingPowerUp: true, touchingSeed: true)
 ## 3. Define if bird loses
 
 Define the function `lose(powerUpActive:touchingEagle:)` that takes two arguments `powerUpActive`, which holds if the bird has an active power-up, and the argument `touchingEagle` which holds if the bird is touching an eagle.
-The function should return `true` if the character is an eagle and does not have a power-up active, and return `false` otherwise.
+The function should return `true` if the character is touching an eagle and does not have a power-up active, and return `false` otherwise.
 
 ```Swift
 lose(powerUpActive: false, touchingEagle: true)
@@ -118,16 +118,16 @@ lose(powerUpActive: false, touchingEagle: true)
 
 ## 4. Define if bird wins
 
-Define the `win(HasPickedUpAllSeeds:powerUpActive:touchingEagle:)` function that takes the arguments:
+Define the `win(hasPickedUpAllSeeds:powerUpActive:touchingEagle:)` function that takes the arguments:
 
-- `HasPickedUpAllSeeds` if the bird has picked up all of the seeds.
+- `hasPickedUpAllSeeds` if the bird has picked up all of the seeds.
 - `powerUpActive` if the bird has a power-up active.
-- `touchingEagle` if the bird is an eagle.
+- `touchingEagle` if the bird is touching an eagle.
 
 The function should return `true` if the bird has gathered all of the seeds and has not lost based on the arguments defined in part 3, and return `false` otherwise.
 
 ```Swift
-win(HasPickedUpAllSeeds: false, powerUpActive: true, touchingEagle: false)
+win(hasPickedUpAllSeeds: false, powerUpActive: true, touchingEagle: false)
 // Returns false
 ```
 

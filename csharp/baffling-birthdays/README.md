@@ -1,6 +1,6 @@
-# baffling-birthdays
+# Baffling Birthdays
 
-Welcome to baffling-birthdays on Exercism's C# Track.
+Welcome to Baffling Birthdays on Exercism's C# Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction

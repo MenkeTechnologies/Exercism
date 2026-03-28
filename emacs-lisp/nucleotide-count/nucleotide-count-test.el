@@ -1,10 +1,11 @@
-;;; nucleotide-count-test.el --- Tests for nucleotide-count (exercism)
+;;; nucleotide-count-test.el --- Tests for nucleotide-count (exercism)  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
 ;;; Code:
 
 (load-file "nucleotide-count.el")
+(declare-function nucleotide-count "nucleotide-count.el" (sequence))
 
 
 (defun sort-pairs (lst fn)

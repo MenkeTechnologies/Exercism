@@ -1,23 +1,4 @@
-// API:
-//
-// type Element struct {
-//  data int
-//  next *Element
-// }
-//
-// type List struct {
-//  head *Element
-//  size int
-// }
-//
-// func New([]int) *List
-// func (*List) Size() int
-// func (*List) Push(int)
-// func (*List) Pop() (int, error)
-// func (*List) Array() []int
-// func (*List) Reverse() *List
-
-package linkedlist
+package simplelinkedlist
 
 import (
 	"reflect"
@@ -48,6 +29,30 @@ func TestNonEmptyListHasCorrectSize(t *testing.T) {
 	list := New([]int{1, 2, 3})
 	if size := list.Size(); size != 3 {
 		t.Fatalf("Size of list from [1, 2, 3]: %d, expected: %d", size, 3)
+	}
+}
+
+func TestListHasCorrectSizeAfterPop(t *testing.T) {
+	list := New([]int{1, 2, 3})
+
+	list.Pop()
+	list.Pop()
+	list.Pop()
+
+	if size := list.Size(); size != 0 {
+		t.Fatalf("Size of list from [1, 2, 3] after 3 calls to pop(): got %d, expected: %d", size, 0)
+	}
+}
+
+func TestListHasCorrectSizeAfterPush(t *testing.T) {
+	list := New([]int{})
+
+	list.Push(1)
+	list.Push(2)
+	list.Push(3)
+
+	if size := list.Size(); size != 3 {
+		t.Fatalf("Size of list from [] after 3 calls to push(): got %d, expected: %d", size, 3)
 	}
 }
 
@@ -159,21 +164,21 @@ func TestReverseNonEmptyList(t *testing.T) {
 }
 
 func BenchmarkNewList(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		_ = New(array1To10)
+	for range b.N {
+		New(array1To10)
 	}
 }
 
 func BenchmarkListSize(b *testing.B) {
 	list := New(array1To10)
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		_ = list.Size()
+	for range b.N {
+		list.Size()
 	}
 }
 
 func BenchmarkListPush(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		b.StopTimer()
 		list := New([]int{})
 		b.StartTimer()
@@ -184,7 +189,7 @@ func BenchmarkListPush(b *testing.B) {
 }
 
 func BenchmarkListPop(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		b.StopTimer()
 		list := New([]int{})
 		for k := 0; k < 1000; k++ {
@@ -192,7 +197,7 @@ func BenchmarkListPop(b *testing.B) {
 		}
 		b.StartTimer()
 		for k := 0; k < 1000; k++ {
-			_, _ = list.Pop()
+			list.Pop()
 		}
 	}
 }
@@ -200,15 +205,15 @@ func BenchmarkListPop(b *testing.B) {
 func BenchmarkListToArray(b *testing.B) {
 	list := New(array1To10)
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		_ = list.Array()
+	for range b.N {
+		list.Array()
 	}
 }
 
 func BenchmarkListReverse(b *testing.B) {
 	list := New(array1To10)
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
-		_ = list.Reverse()
+	for range b.N {
+		list.Reverse()
 	}
 }

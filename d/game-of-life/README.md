@@ -1,6 +1,6 @@
-# Game Of Life
+# Conway's Game of Life
 
-Welcome to Game Of Life on Exercism's D Track.
+Welcome to Conway's Game of Life on Exercism's D Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction

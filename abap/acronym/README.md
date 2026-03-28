@@ -15,11 +15,11 @@ Punctuation is handled as follows: hyphens are word separators (like whitespace)
 
 For example:
 
-|Input|Output|
-|-|-|
-|As Soon As Possible|ASAP|
-|Liquid-crystal display|LCD|
-|Thank George It's Friday!|TGIF|
+| Input                     | Output |
+| ------------------------- | ------ |
+| As Soon As Possible       | ASAP   |
+| Liquid-crystal display    | LCD    |
+| Thank George It's Friday! | TGIF   |
 
 ## Source
 
@@ -29,4 +29,4 @@ For example:
 
 ### Based on
 
-https://github.com/monkbroc
+Julien Vanier - https://github.com/monkbroc

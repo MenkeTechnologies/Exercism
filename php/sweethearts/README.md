@@ -1,6 +1,6 @@
-# Highschool Sweetheats
+# Highschool Sweethearts
 
-Welcome to Highschool Sweetheats on Exercism's PHP Track.
+Welcome to Highschool Sweethearts on Exercism's PHP Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
 
@@ -32,7 +32,7 @@ $expanded = "The answer to life, the universe, and everything is $answer";
 ### Character Encoding Support
 
 Historically, string functions in PHP only supported ASCII characters and did not support modern Unicode encodings.
-ASCII characters are each 1 byte, wheras Unicode characters may be 1-4 bytes in length.
+ASCII characters are each 1 byte, whereas Unicode characters may be 1-4 bytes in length.
 If needing to manipulate Unicode strings safely, refer to the [multibyte versions][multi-byte-fns] of the historic functions.
 
 ```php

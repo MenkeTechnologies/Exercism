@@ -12,5 +12,7 @@ pub fn char_score(c: char) -> u64 {
 }
 
 pub fn score(word: &str) -> u64 {
-    word.to_ascii_uppercase().chars().map(char_score).sum()
+    word.to_ascii_uppercase().chars()
+        .map(char_score)
+        .sum()
 }

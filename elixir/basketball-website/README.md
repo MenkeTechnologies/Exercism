@@ -47,6 +47,7 @@ data = %{
     }
   }
 }
+
 BasketballWebsite.extract_from_path(data, "team_mascot.animal")
 # => "bear"
 BasketballWebsite.extract_from_path(data, "team_mascot.colors")

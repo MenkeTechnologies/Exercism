@@ -8,8 +8,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 A [`list`][list] is a mutable collection of items in _sequence_.
 Like most collections (_see the built-ins [`tuple`][tuple], [`dict`][dict] and [`set`][set]_), lists can hold reference to any (or multiple) data type(s) - including other lists.
-Like any [sequence][sequence type], items can be accessed via `0-based index` number from the left and `-1-base index` from the right.
-Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`
+Like any [sequence][sequence type], items can be accessed via `0-based index` number from the left and `-1-based index` from the right.
+Lists can be copied in whole or in part via [slice notation][slice notation] or `<list>.copy()`.
 
 Lists support both [common][common sequence operations] and [mutable][mutable sequence operations] sequence operations such as `min()`/`max()`, `<list>.index()`, `<list>.append()` and `<list>.reverse()`.
 List elements can be iterated over using the `for item in <list>` construct.
@@ -367,7 +367,7 @@ False
 Every 11th hand in Black Joe is a bonus hand with a bonus rule: if the last card you draw is a Jack, you double its value.
 
 Implement a function `maybe_double_last(<hand>)` that takes a hand and checks if the last card is a Jack (11).
- If the the last card **is** a Jack (11), double its value before returning the hand.
+ If the last card **is** a Jack (11), double its value before returning the hand.
 
 ```python
 >>> hand = [5, 9, 11]

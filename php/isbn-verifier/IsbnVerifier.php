@@ -1,4 +1,5 @@
 <?php
+
 class IsbnVerifier
 {
     public function isValid(string $s): bool

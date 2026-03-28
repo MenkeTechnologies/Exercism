@@ -1,10 +1,11 @@
-;;; anagram-test.el --- Tests for Anagram (exercism)
+;;; anagram-test.el --- Tests for Anagram (exercism)  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
 ;;; Code:
 
 (load-file "anagram.el")
+(declare-function anagrams-for "anagram.el" (subject candidates))
 
 (ert-deftest no-matches ()
   (should (equal '() (anagrams-for

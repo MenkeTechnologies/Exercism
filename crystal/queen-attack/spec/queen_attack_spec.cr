@@ -7,25 +7,25 @@ describe "QueenAttack" do
       Queen.new(2, 2)
     end
 
-    it "queen must have positive row" do
+    pending "queen must have positive row" do
       expect_raises(ArgumentError) do
         Queen.new(-2, 2)
       end
     end
 
-    it "queen must have row on board" do
+    pending "queen must have row on board" do
       expect_raises(ArgumentError) do
         Queen.new(8, 4)
       end
     end
 
-    it "queen must have positive column" do
+    pending "queen must have positive column" do
       expect_raises(ArgumentError) do
         Queen.new(2, -2)
       end
     end
 
-    it "queen must have column on board" do
+    pending "queen must have column on board" do
       expect_raises(ArgumentError) do
         Queen.new(4, 8)
       end
@@ -33,36 +33,36 @@ describe "QueenAttack" do
   end
 
   describe "Test the ability of one queen to attack another" do
-    it "cannot attack" do
-      Queen.new(2, 4).can_attack?(Queen.new(6, 6)).should eq false
+    pending "cannot attack" do
+      Queen.new(2, 4).can_attack?(Queen.new(6, 6)).should be_false
     end
 
-    it "can attack on same row" do
-      Queen.new(2, 4).can_attack?(Queen.new(2, 6)).should eq true
+    pending "can attack on same row" do
+      Queen.new(2, 4).can_attack?(Queen.new(2, 6)).should be_true
     end
 
-    it "can attack on same column" do
-      Queen.new(4, 5).can_attack?(Queen.new(2, 5)).should eq true
+    pending "can attack on same column" do
+      Queen.new(4, 5).can_attack?(Queen.new(2, 5)).should be_true
     end
 
-    it "can attack on first diagonal" do
-      Queen.new(2, 2).can_attack?(Queen.new(0, 4)).should eq true
+    pending "can attack on first diagonal" do
+      Queen.new(2, 2).can_attack?(Queen.new(0, 4)).should be_true
     end
 
-    it "can attack on second diagonal" do
-      Queen.new(2, 2).can_attack?(Queen.new(3, 1)).should eq true
+    pending "can attack on second diagonal" do
+      Queen.new(2, 2).can_attack?(Queen.new(3, 1)).should be_true
     end
 
-    it "can attack on third diagonal" do
-      Queen.new(2, 2).can_attack?(Queen.new(1, 1)).should eq true
+    pending "can attack on third diagonal" do
+      Queen.new(2, 2).can_attack?(Queen.new(1, 1)).should be_true
     end
 
-    it "can attack on fourth diagonal" do
-      Queen.new(1, 7).can_attack?(Queen.new(0, 6)).should eq true
+    pending "can attack on fourth diagonal" do
+      Queen.new(1, 7).can_attack?(Queen.new(0, 6)).should be_true
     end
 
-    it "cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal" do
-      Queen.new(4, 1).can_attack?(Queen.new(2, 5)).should eq false
+    pending "cannot attack if falling diagonals are only the same when reflected across the longest falling diagonal" do
+      Queen.new(4, 1).can_attack?(Queen.new(2, 5)).should be_false
     end
   end
 end

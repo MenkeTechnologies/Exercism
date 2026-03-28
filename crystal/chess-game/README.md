@@ -8,15 +8,15 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 [Ranges][range] represent an interval between two values.
 The most common types that support ranges are `Int`, `Char`, and `String`.
-They can be used for many things like quickly creating a collection, slicing strings, checking if a value is in a range, and iteration.
+They can be used for many things, such as quickly creating a collection, slicing strings, checking if a value is in a range, and iteration.
 They are created using the range operator `..` or `...` (inclusive and exclusive, respectively).
 
 ```crystal
-1..5  # A range containing 1..5
-1...5 # A range containing 1...5
+1..5  # A range containing 1, 2, 3, 4, 5
+1...5 # A range containing 1, 2, 3, 4
 ```
 
-The reason for having two range operators is to allow to create ranges that are inclusive or exclusive of the end value, which can be useful when for example working with indexes that are zero based.
+The reason for having two range operators is to create ranges that are inclusive or exclusive of the end value, which can be useful when, for example, working with zero-based indexes.
 
 Ranges can also be created using the `Range` initializer.
 
@@ -57,7 +57,7 @@ Ranges do have a set of methods that can be used to work with them.
 For example, these methods can be used to get the sum of all the values in the range or check if the range includes a value.
 
 | Method                  | Description                                                             | Example                         |
-| ----------------------- | ----------------------------------------------------------------------- | ------------------------------- |
+|-------------------------|-------------------------------------------------------------------------|---------------------------------|
 | [`sum`][sum]            | Returns the sum of all the values in the range                          | `(1..5).sum # => 15`            |
 | [`size`][size]          | Returns the size of the range                                           | `(1..5).size # => 5`            |
 | [`includes?`][indludes] | Returns `true` if the range includes the given value, otherwise `false` | `(1..5).includes?(3) # => true` |
@@ -65,7 +65,7 @@ For example, these methods can be used to get the sum of all the values in the r
 ## Endless & Beginningless ranges
 
 A range can be endless and beginless.
-The endless or beginless range has their start or end value being `nil`, but when defining the range the `nil` can be omitted.
+The endless or beginless range has its start or end value as `nil`, but `nil` can be omitted when defining the range.
 
 Using beginless and endless ranges is useful when you want to, for example, slice a string from the beginning or to the end.
 
@@ -82,7 +82,7 @@ If not used on a collection, the endless range can cause an endless sequence, if
 ## Char ranges
 
 Chars can be used in ranges and allow you to get an interval of chars between two chars.
-This can be handy when you want to, for example, get the alphabet.
+For example, this can be handy when you want to get the alphabet.
 
 ```crystal
 'a'..'z' # A range containing ['a', 'b', 'c', ..., 'z']
@@ -90,9 +90,9 @@ This can be handy when you want to, for example, get the alphabet.
 
 ## String ranges
 
-Strings can also be used in ranges and allow one to get an interval of strings between two strings.
-But its behavior is a bit different than with `Char` when using multiple characters in a string range.
-Its behavior can become confusing when doing more complex string ranges, so use it with caution.
+Strings can also be used in ranges, allowing one to get an interval of strings between two strings.
+But its behavior is slightly different than that of `Char` when multiple characters are used in a string range.
+Its behavior can become confusing when doing more complex string ranges, so use caution.
 
 ```crystal
 ("aa".."az") # A range containing ["aa", "ab", "ac", ..., "az"]
@@ -105,12 +105,12 @@ Its behavior can become confusing when doing more complex string ranges, so use 
 
 ## Instructions
 
-As a chess enthusiast, you would like to write your own version of the game.
-Yes, there maybe plenty of implementations of chess available online already, but yours will be unique!
+As a chess enthusiast, you want to write your version of the game.
+Yes, there may be plenty of implementations of chess available online already, but yours will be unique!
 
 You start with implementing a basic movement system for the pieces.
 
-The chess game will be played on a board that is 8 squares wide and 8 squares long.
+The chess game will be played on an eight-square wide and eight-square long board.
 The squares are identified by a letter and a number.
 
 ## 1. Define rank & file range
@@ -118,8 +118,8 @@ The squares are identified by a letter and a number.
 The game will have to store the ranks of the board.
 The ranks are the rows of the board, and are numbered from 1 to 8.
 
-The game will also have to store the files of the board.
-The files are the columns of the board and are identified by the letters A to H.
+The game will also have to store the files on the board.
+The files are the board's columns and are identified by the letters A to H.
 
 Define the `Chess::RANKS` and `Chess::FILES` constants that store the range of ranks and files respectively.
 
@@ -146,12 +146,12 @@ Chess.valid_square?(1, 'A')
 
 ## 3. Get player's nickname
 
-The game will have to get the nickname of the player.
-The nickname is the first 2 characters of the player's first name and the last 2 characters of the player's last name.
+The game will have to get the player's nickname.
+The nickname is the first two characters of the player's first name and the last two characters of the player's last name.
 The nickname should be capitalized.
 
 Define the `Chess.nickname` method that takes the arguments `first_name` that holds a string of the player's first name and `last_name` that holds a string of the player's last name.
-The method should return the nickname of the player as capitalized string.
+The method should return the nickname of the player as an uppercased string.
 
 ```crystal
 Chess.nickname("John", "Doe")
@@ -162,7 +162,7 @@ Chess.nickname("John", "Doe")
 
 The game will have to create a message for a move to say which player moved to which square.
 The message should use the player's nickname and the square they moved to.
-The game also has to determine if the move is valid by checking if the file and rank of the square are within the ranges of the files and ranks.
+The game must also determine if the move is valid by checking if the file and rank of the square are within the ranges of the files and ranks.
 
 If the move is valid, the message should be: `"{nickname} moved to {square}"`
 If the move is invalid, the message should be: `"{nickname} attempted to move to {square}, but that is not a valid square"`

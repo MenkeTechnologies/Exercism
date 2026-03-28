@@ -13,7 +13,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("0")
   end
 
-  it "Recognizes 1" do
+  pending "Recognizes 1" do
     input = [
       "   ",
       "  |",
@@ -24,7 +24,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("1")
   end
 
-  it "Unreadable but correctly sized inputs return ?" do
+  pending "Unreadable but correctly sized inputs return ?" do
     input = [
       "   ",
       "  _",
@@ -35,7 +35,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("?")
   end
 
-  it "Input with a number of lines that is not a multiple of four raises an error" do
+  pending "Input with a number of lines that is not a multiple of four raises an error" do
     input = [
       " _ ",
       "| |",
@@ -47,7 +47,7 @@ describe "OcrNumbers" do
     end
   end
 
-  it "Input with a number of columns that is not a multiple of three raises an error" do
+  pending "Input with a number of columns that is not a multiple of three raises an error" do
     input = [
       "    ",
       "   |",
@@ -60,7 +60,7 @@ describe "OcrNumbers" do
     end
   end
 
-  it "Recognizes 110101100" do
+  pending "Recognizes 110101100" do
     input = [
       "       _     _        _  _ ",
       "  |  || |  || |  |  || || |",
@@ -71,7 +71,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("110101100")
   end
 
-  it "Garbled numbers in a string are replaced with ?" do
+  pending "Garbled numbers in a string are replaced with ?" do
     input = [
       "       _     _           _ ",
       "  |  || |  || |     || || |",
@@ -82,7 +82,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("11?10?1?0")
   end
 
-  it "Recognizes 2" do
+  pending "Recognizes 2" do
     input = [
       " _ ",
       " _|",
@@ -93,7 +93,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("2")
   end
 
-  it "Recognizes 3" do
+  pending "Recognizes 3" do
     input = [
       " _ ",
       " _|",
@@ -104,7 +104,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("3")
   end
 
-  it "Recognizes 4" do
+  pending "Recognizes 4" do
     input = [
       "   ",
       "|_|",
@@ -115,7 +115,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("4")
   end
 
-  it "Recognizes 5" do
+  pending "Recognizes 5" do
     input = [
       " _ ",
       "|_ ",
@@ -126,7 +126,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("5")
   end
 
-  it "Recognizes 6" do
+  pending "Recognizes 6" do
     input = [
       " _ ",
       "|_ ",
@@ -137,7 +137,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("6")
   end
 
-  it "Recognizes 7" do
+  pending "Recognizes 7" do
     input = [
       " _ ",
       "  |",
@@ -148,7 +148,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("7")
   end
 
-  it "Recognizes 8" do
+  pending "Recognizes 8" do
     input = [
       " _ ",
       "|_|",
@@ -159,7 +159,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("8")
   end
 
-  it "Recognizes 9" do
+  pending "Recognizes 9" do
     input = [
       " _ ",
       "|_|",
@@ -170,7 +170,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("9")
   end
 
-  it "Recognizes string of decimal numbers" do
+  pending "Recognizes string of decimal numbers" do
     input = [
       "    _  _     _  _  _  _  _  _ ",
       "  | _| _||_||_ |_   ||_||_|| |",
@@ -181,7 +181,7 @@ describe "OcrNumbers" do
     OcrNumbers.convert(input).should eq("1234567890")
   end
 
-  it "Numbers separated by empty lines are recognized. Lines are joined by commas." do
+  pending "Numbers separated by empty lines are recognized. Lines are joined by commas." do
     input = [
       "    _  _ ",
       "  | _| _|",

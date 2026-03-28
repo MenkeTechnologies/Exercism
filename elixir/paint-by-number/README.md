@@ -41,7 +41,7 @@ If the value of the segment overflows the capacity of the segment's type, it wil
 
 ### Prepending and appending
 
-You can both prepend and append to an existing bitstring using the special form. The `::bistring` type must be used on the existing bitstring if it's of unknown size.
+You can both prepend and append to an existing bitstring using the special form. The `::bitstring` type must be used on the existing bitstring if it's of unknown size.
 
 ```elixir
 value = <<0b110::3, 0b001::3>>
@@ -51,7 +51,7 @@ new_value = <<0b011::3, value::bitstring, 0b000::3>>
 
 ### Concatenating
 
-We can concatenate bitstrings stored in variables using the special form. The `::bistring` type must be used when concatenating two bitstrings of unknown sizes.
+We can concatenate bitstrings stored in variables using the special form. The `::bitstring` type must be used when concatenating two bitstrings of unknown sizes.
 
 ```elixir
 first = <<0b110::3>>
@@ -72,8 +72,10 @@ value == 0b0110
 
 ### Inspecting bitstrings
 
-~~~~exericism/note
-Bitstrings might be printed (by the test runner or in iex) in a different format than the format that was used to create them. This often causes confusion when learning bistrings.
+~~~~exercism/note
+Bitstrings might be printed (by the test runner or in iex) in a
+different format than the format that was used to create them. This often
+causes confusion when learning bitstrings.
 ~~~~
 
 By default, bitstrings are displayed in fragments of 8 bits (a byte), even if you created them with fragments of a different size.
@@ -126,7 +128,7 @@ We can now use those color indices to represent the color of each pixel.
 
 | Smiley                                                                                                | Smiley with color indices                                                                                     |
 |-------------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------|
-| ![](https://exercism-v3-icons.s3.eu-west-2.amazonaws.com/images/exercises/paint-by-number/smiley.png) | ![](https://exercism-v3-icons.s3.eu-west-2.amazonaws.com/images/exercises/paint-by-number/smiley-numbers.png) |
+| ![](https://assets.exercism.org/images/exercises/paint-by-number/smiley.png) | ![](https://assets.exercism.org/images/exercises/paint-by-number/smiley-numbers.png) |
 
 ## 1. Calculate palette bit size
 
@@ -139,7 +141,7 @@ PaintByNumber.palette_bit_size(13)
 # => 4
 ```
 
-Note: there is no `log2` function in the Elixir standard library. You will later learn how to use [Erlang libraries][erlang-libraries] from Elixir where you can find this function. Now, solve this task with recursion and the [`Integer.pow/2`][integer-pow] function instead. If you're solving this exercise on your own computer using an older Elixir version (1.11 or lower) that doesn't have `Integer.pow/2` function, use the `Math.pow/2` function we provided in the `lib/math.ex` file for this exercise.
+Note: there is no `log2` function in the Elixir standard library. You will later learn how to use [Erlang libraries][erlang-libraries] from Elixir where you can find this function. Now, solve this task with recursion and the [power operator `**`][power-operator] instead.
 
 ## 2. Create an empty picture
 
@@ -194,7 +196,7 @@ PaintByNumber.drop_first_pixel(picture, color_count)
 
 ## 7. Concatenate two pictures
 
-Implement the `PaintByNumber.concat_pictures/2` function. It should take two arguments, two bitstrings. It should return a bitstrings that is the result of prepending the first argument to the second argument.
+Implement the `PaintByNumber.concat_pictures/2` function. It should take two arguments, two bitstrings. It should return a bitstring that is the result of prepending the first argument to the second argument.
 
 ```elixir
 picture1 = <<52::6, 51::6>>
@@ -208,7 +210,7 @@ PaintByNumber.concat_pictures(picture1, picture2)
 [paint-by-number]: https://en.wikipedia.org/wiki/Paint_by_number
 [binary-file]: https://en.wikipedia.org/wiki/Binary_file
 [erlang-libraries]: https://exercism.org/tracks/elixir/concepts/erlang-libraries
-[integer-pow]: https://hexdocs.pm/elixir/Integer.html#pow/2
+[power-operator]: https://hexdocs.pm/elixir/Kernel.html#**/2
 
 ## Source
 

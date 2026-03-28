@@ -43,4 +43,4 @@ a single line. Feel free to add your own code/tests to check for degenerate tria
 
 ### Based on
 
-The Ruby Koans triangle project, parts 1 & 2 - http://rubykoans.com
+The Ruby Koans triangle project, parts 1 & 2 - https://rubykoans.com

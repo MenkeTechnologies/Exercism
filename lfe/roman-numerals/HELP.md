@@ -22,8 +22,8 @@ It's possible to submit an incomplete solution which allows you to:
 
 If you'd like help solving the exercise, check the following pages:
 
-- The [LFE track's documentation](https://exercism.org/docs/tracks/lfe)
-- The [LFE track's programming category on the forum](https://forum.exercism.org/c/programming/lfe)
+- The [Lisp Flavoured Erlang track's documentation](https://exercism.org/docs/tracks/lfe)
+- The [Lisp Flavoured Erlang track's programming category on the forum](https://forum.exercism.org/c/programming/lfe)
 - [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 

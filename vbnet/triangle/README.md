@@ -1,6 +1,6 @@
 # Triangle
 
-Welcome to Triangle on Exercism's VB.NET Track.
+Welcome to Triangle on Exercism's Visual Basic Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
@@ -17,6 +17,12 @@ A _scalene_ triangle has all sides of different lengths.
 ## Note
 
 For a shape to be a triangle at all, all sides have to be of length > 0, and the sum of the lengths of any two sides must be greater than or equal to the length of the third side.
+
+~~~~exercism/note
+_Degenerate triangles_ are triangles where the sum of the length of two sides is **equal** to the length of the third side, e.g. `1, 1, 2`.
+We opted to not include tests for degenerate triangles in this exercise.
+You may handle those situations if you wish to do so, or safely ignore them.
+~~~~
 
 In equations:
 

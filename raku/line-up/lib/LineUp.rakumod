@@ -2,7 +2,7 @@ unit module LineUp;
 
 sub deli-order (:$customer, :$ticket) is export {
     my $suffix = 'th';
-
+    
     my $mod100 = $ticket % 100;
     my $mod10  = $ticket % 10;
     if $mod100 != 11|12|13 {

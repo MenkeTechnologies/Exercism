@@ -1,4 +1,5 @@
-fun keep f l = case l of
+fun keep f l =
+  case l of
        [] => []
      | x::xs => if f x then x :: keep f xs else keep f xs
 

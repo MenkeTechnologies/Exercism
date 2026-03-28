@@ -185,7 +185,7 @@ Sounds like a perfect fit for the phantom type technique!
 
 ## 1. Provide a placeholder for treasure chests
 
-The `treasureChest` type and its companion `getTreasure` are already given, but you need to come up with a type for a chest suggestion.
+The `TreasureChest` type and its companion `getTreasure` are already given, but you need to come up with a type for a chest suggestion.
 
 Implement the `Chest` type, implement `makeChest` and fix the type signatures of `secureChest` and `uniqueTreasures`.
 The type signatures of `makeChest` and `makeTreasureChest` are already provided as part of the requirements, do not modify them.
@@ -194,12 +194,13 @@ A `Chest` should hold the same data as a `TreasureChest` and should have two typ
 Note that because `Chest` is using a phantom type, and should therefore be opaque to prevent its use anywhere outside of the `TreasureFactory` module.
 In this case, it is not even exposed at all.
 
-`secureChest` should take a `Chest` without specific conditions and return one wrapped in a `Maybe` that has the extra condition `securePassword : ()`.
-`makeTreasureChest` should take a `List` of `Chest` without specific conditions and return a `List` of `Chest`, with the duplicates removed, and the extra condition `uniqueTreasure : ()` added.
+Edit the type signatures of `secureChest` and `uniqueTreasures` to add the constraints using extensible records as phantom types.
+`secureChest` should take a `Chest` without specific conditions and return a `Maybe Chest`, with the extra condition `securePassword : ()` in its phantom record.
+`uniqueTreasures` should take a `List Chest` without specific conditions and return a `List Chest`, with the extra condition `uniqueTreasure : ()` added to the phantom record.
 
 ~~~~exercism/note
 Elm tests have access to exposed functions, but not to type signatures, it is therefore impossible for tests to verify that you are using the right signatures.
-Of course, the strongest indication that you have the right signatures is to succeed in getting the module and tests to compile and run.
+Of course, the strongest indication that you have the right signatures is to succeed in getting the module and tests to compile and run, but we have created an analyzer rule that will check your type signatures once you submit your solution.
 ~~~~
 
 ## 2. Select secure chests

@@ -91,11 +91,11 @@ puts my_string         #=> "hello"
 
 # And bang-methods (...!) to modify the object
 my_string = "hello"
-my_string.capitalize!  #=> nil
-puts my_string         #=> "HELLO"
+my_string.capitalize!  #=> "Hello"
+puts my_string         #=> "Hello"
 ```
 
-[docs-string]: https://ruby-doc.org/core-2.7.0/String.html
+[docs-string]: https://docs.ruby-lang.org/en/master/String.html
 
 ## Instructions
 

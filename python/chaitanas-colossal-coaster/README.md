@@ -103,10 +103,10 @@ ValueError: list.remove(x): x not in list
 ```
 
 
-Alternatively, using the `<list>.pop(<item>)` method will both remove **and** `return` an element for use.
+Alternatively, using the `<list>.pop(<index>)` method will both remove **and** `return` an element for use.
 
 
-`<list>.pop(<item>)` takes one optional parameter: the `index` of the item to be removed and returned.
+`<list>.pop(<index>)` takes one optional parameter: the `index` of the item to be removed and returned.
  If the (optional) `index` argument is not specified, the final element of the `list` will be removed and returned.
  If the `index` specified is higher than the final item `index`, an `IndexError` is raised.
 
@@ -156,10 +156,16 @@ The `<list>.reverse()` method will reverse the order of elements **in-place**.
 ```
 
 
-A list can be re-ordered _**in place**_ with the help of `<list>.sort()`.
- Internally, Python uses [`Timsort`][timsort] to arrange the list.
- Default order is _ascending_ from the left.
- The Python docs offer [additional tips and techniques for sorting][sorting how to] lists effectively.
+A list can be re-ordered _**in place**_ with the help of [`<list>.sort()`][sort].
+Default sort order is _ascending_ from the left.
+The Python docs offer [additional tips and techniques for sorting][sorting how to].
+
+~~~~exercism/note
+ From 2002 to 2022, Python used an algorithm called [`Timsort`][timsort] internally to arrange lists, but switched to [`Powersort`][powersort] from `Python 3.11` onward.
+
+[powersort]: https://www.wild-inter.net/publications/munro-wild-2018
+[timsort]: https://en.wikipedia.org/wiki/Timsort
+~~~~
 
 
 ```python
@@ -239,7 +245,6 @@ ValueError: 10 is not in list
 3
 ```
 
-
 [common sequence operations]: https://docs.python.org/3/library/stdtypes.html#common-sequence-operations
 [dict]: https://docs.python.org/3/library/stdtypes.html#dict
 [list-methods]: https://docs.python.org/3/tutorial/datastructures.html#more-on-lists
@@ -248,9 +253,9 @@ ValueError: 10 is not in list
 [sequence type]: https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range
 [set]: https://docs.python.org/3/library/stdtypes.html#set
 [slice notation]: https://docs.python.org/3/reference/expressions.html#slicings
+[sort]: https://docs.python.org/3/library/stdtypes.html#list.sort
 [sorted]: https://docs.python.org/3/library/functions.html#sorted
 [sorting how to]: https://docs.python.org/3/howto/sorting.html
-[timsort]: https://en.wikipedia.org/wiki/Timsort
 [tuple]: https://docs.python.org/3/library/stdtypes.html#tuple
 
 ## Instructions
@@ -407,5 +412,6 @@ Define the `sorted_names()` function that takes 1 argument,  `queue`, (the `list
 
 ### Contributed to by
 
+- @BethanyG
 - @valentin-p
 - @pranasziaukas

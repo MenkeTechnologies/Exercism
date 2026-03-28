@@ -1,6 +1,6 @@
-# Paasio
+# PaaS I/O
 
-Welcome to Paasio on Exercism's Go Track.
+Welcome to PaaS I/O on Exercism's Go Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

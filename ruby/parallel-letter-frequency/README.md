@@ -9,7 +9,7 @@ Count the frequency of letters in texts using parallel computation.
 
 Parallelism is about doing things in parallel that can also be done sequentially.
 A common example is counting the frequency of letters.
-Create a function that returns the total frequency of each letter in a list of texts and that employs parallelism.
+Employ parallelism to calculate the total frequency of each letter in a list of texts.
 
 ## Benchmarking
 
@@ -27,7 +27,7 @@ You may want to investigate what performance impact length of text vs number of 
 - [Ruby `Thread::Queue` Documentation](https://docs.ruby-lang.org/en/master/Thread/Queue.html)
 - [Ruby `Fiber` Documentation](https://docs.ruby-lang.org/en/master/Fiber.html)
 - [Ruby `Ractor` Documentation](https://docs.ruby-lang.org/en/master/Ractor.html)
-- [`Minitest::Benchmark` Documentation](https://ruby-doc.org/3.0.6/gems/minitest/Minitest/Benchmark.html)
+- [`Minitest::Benchmark` Documentation](https://ruby-doc.org/3.4/gems/minitest/Minitest/Benchmark.html)
 
 ## Source
 

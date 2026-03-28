@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Object Initializers
+
 Object initializers are an alternative to constructors. The syntax is illustrated below. You provide a comma separated list of name-value pairs separated with `=` within curly brackets:
 
 ```csharp
@@ -56,7 +58,7 @@ authenticator.Admin;
 // => {"admin@ex.ism", {"green", 0.9m}, ["Chanakya", "Mumbai", "India"]}
 ```
 
-## 2 Store the developers' details hard-coded in the system and make them available in the form of a dictionary
+## 2. Store the developers' details hard-coded in the system and make them available in the form of a dictionary
 
 The developers' details are as follows:
 
@@ -65,13 +67,13 @@ The developers' details are as follows:
 | bert@ex.ism   | blue      | 0.8            | Bertrand | Paris     | France    |
 | anders@ex.ism | brown     | 0.85           | Anders   | Redmond   | USA       |
 
-Implement the `Authenticator.Developers()` method to return the developers' identity details. The dictionary key is the developer's name.
+Implement the `Authenticator.Developers` property to return the developers' identity details. The dictionary key is the developer's name.
 
 ```csharp
 var authenticator = new Authenticator();
 authenticator.Developers;
-// => {"Bertrand" = {"bert@ex.ism", {"blue", 0.8m}, ["Bertrand", "Paris", "France"]},
-// ["Anders" = {"anders@ex.ism", {"brown", 0.85m}, ["Anders", "Redmond", "USA"]},
+// => ["Bertrand"] = {"bert@ex.ism", {"blue", 0.8m}, ["Bertrand", "Paris", "France"]},
+// ["Anders"] = {"anders@ex.ism", {"brown", 0.85m}, ["Anders", "Redmond", "USA"]},
 
 ```
 

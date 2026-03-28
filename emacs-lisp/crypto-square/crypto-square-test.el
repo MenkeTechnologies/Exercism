@@ -1,10 +1,11 @@
-;;; crypto-square-test.el --- Tests for Crypto Square (exercism)
+;;; crypto-square-test.el --- Tests for Crypto Square (exercism)  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
 ;;; Code:
 
 (load-file "crypto-square.el")
+(declare-function encipher "crypto-square.el" (plaintext))
 
 (ert-deftest empty-plaintext-results-in-an-empty-ciphertext ()
   (should (equal "" (encipher ""))))

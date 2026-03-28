@@ -6,13 +6,16 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
-Extension methods allow adding methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type. They are defined as static methods but are called by using instance method syntax. Their first parameter is preceded by the 'this' modifier, and specifies which type the method operates on.
+## Extension Methods
+
+Extension methods allow adding methods to existing types without creating a new derived type, recompiling, or otherwise modifying the original type. They are defined as static methods but are called by using instance method syntax. Their first parameter is preceded by the `this` modifier, and specifies which type the method operates on, and are brought into scope at the namespace level.
 
 ```csharp
 public static int WordCount(this string str)
 {
     return str.Split().Length;
 }
+
 "Hello World".WordCount();
 // => 2
 ```
@@ -35,7 +38,7 @@ You have several tasks, each of which will take a log line and ask you to do som
 
 Looking at the logs of the last month, you see that the test message is always located after a specific substring. As you're anticipating having to extract the test message sometime in the near future, you decide to create a helper method to help you with that.
 
-Implement the (_static_) `LogAnalysis.SubstringAfter()` extension method, that takes in some string delimeter and returns the substring after the delimiter.
+Implement the (_static_) `LogAnalysis.SubstringAfter()` extension method, that takes in some string delimiter and returns the substring after the delimiter.
 
 ```csharp
 var log = "[INFO]: File Deleted.";
@@ -44,9 +47,9 @@ log.SubstringAfter(": "); // => returns "File Deleted."
 
 ## 2. Allow retrieving the string in between two substrings
 
-On further inspection, you see that the log level is always located between square brackets (`[` and `]`). As you're also anticipating having to extract the log level sometime in the near future, you decide to create a another helper method to help you with that.
+On further inspection, you see that the log level is always located between square brackets (`[` and `]`). As you're also anticipating having to extract the log level sometime in the near future, you decide to create another helper method to help you with that.
 
-Implement the (_static_) `LogAnalysis.SubstringBetween()` extension method that takes in two string delimeters, and returns the substring that lies between the two delimeters.
+Implement the (_static_) `LogAnalysis.SubstringBetween()` extension method that takes in two string delimiters, and returns the substring that lies between the two delimiters.
 
 ```csharp
 var log = "[INFO]: File Deleted.";

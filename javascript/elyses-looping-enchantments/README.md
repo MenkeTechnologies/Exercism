@@ -29,7 +29,7 @@ for (let i = 0; i < numbers.length; i++) {
 
 ## The `for...of` Loop
 
-When you want to work with the value directly in each iteration and do not require the index at all, you can use a `for .. of` loop.
+When you want to work with the value directly in each iteration and do not require the index at all, you can use a `for...of` loop.
 
 `for...of` works like the basic `for` loop shown above, but instead of having to deal with the _index_ as a variable in the loop, you are provided with the _value_ directly.
 
@@ -83,7 +83,11 @@ To keep things simple, she only uses cards with values 1-10.
 Elyse wants to know how many cards of a particular type she has in her deck.
 
 Write a function `cardTypeCheck` that takes two parameters: an array of cards (Elyse's deck) and the type of card to count.
+
+<!--prettier-ignore -->
+~~~exercism/note
 The function should use `forEach` and return the number of cards in the deck of the specified type.
+~~~
 
 ```javascript
 const cardType = 3;
@@ -98,7 +102,11 @@ For another trick, Elyse needs to know how many odd or even cards there are in h
 Implement a function `determineOddEvenCards` that takes in two parameters: an array of cards (Elyse's deck), and a boolean (true is analogous to 'even', and false is analogous to 'odd').
 
 This function should return a single number: the number of odd or even cards there are (depending on the value of the second argument) in the deck.
+
+<!--prettier-ignore -->
+~~~exercism/note
 To practice, use a `for...of` loop in the function implementation this time.
+~~~
 
 ```javascript
 determineOddEvenCards([1, 2, 3, 1, 5, 6], true);

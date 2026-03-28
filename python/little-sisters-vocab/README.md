@@ -18,7 +18,7 @@ A `str` literal can be declared via single `'` or double `"` quotes. The escape 
 
 >>> single_quoted = 'These allow "double quoting" without "escape" characters.'
 
->>> double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character".
+>>> double_quoted = "These allow embedded 'single quoting', so you don't have to use an 'escape' character."
 
 >>> escapes = 'If needed, a \'slash\' can be used as an escape character within a string when switching quote styles won\'t work.'
 ```
@@ -42,13 +42,13 @@ Strings can be concatenated using the `+` operator.
 ```python
 language = "Ukrainian"
 number = "nine"
-word = "девять"
+word = "дев'ять"
 
 sentence = word + " " + "means" + " " + number + " in " + language + "."
 
 >>> print(sentence)
 ...
-"девять means nine in Ukrainian."
+"дев'ять means nine in Ukrainian."
 ```
 
 If a `list`, `tuple`, `set` or other collection of individual strings needs to be combined into a single `str`, [`<str>.join(<iterable>)`][str-join], is a better option:
@@ -56,7 +56,7 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 
 ```python
 # str.join() makes a new string from the iterables elements.
->>> chickens = ["hen", "egg", "rooster"]
+>>> chickens = ["hen", "egg", "rooster"] # Lists are iterable.
 >>> ' '.join(chickens)
 'hen egg rooster'
 
@@ -66,6 +66,34 @@ If a `list`, `tuple`, `set` or other collection of individual strings needs to b
 
 >>> ' 🌿 '.join(chickens)
 'hen 🌿 egg 🌿 rooster'
+
+
+# Any iterable can be used as input.
+>>> flowers = ("rose", "daisy", "carnation")  # Tuples are iterable.
+>>> '*-*'.join(flowers)
+'rose*-*daisy*-*carnation'
+
+>>> flowers = {"rose", "daisy", "carnation"}  # Sets are iterable, but output order is not guaranteed.
+>>> '*-*'.join(flowers)
+'rose*-*carnation*-*daisy'
+
+>>> phrase = "This is my string"  # Strings are iterable, but be careful!
+>>> '..'.join(phrase)
+'T..h..i..s.. ..i..s.. ..m..y.. ..s..t..r..i..n..g'
+
+
+# Separators are inserted **between** elements, but can be any string (including spaces).
+# This can be exploited for interesting effects.
+>>> under_words = ['under', 'current', 'sea', 'pin', 'dog', 'lay']
+>>> separator = ' ⤴️ under'
+>>> separator.join(under_words)
+'under ⤴️ undercurrent ⤴️ undersea ⤴️ underpin ⤴️ underdog ⤴️ underlay'
+
+# The separator can be composed different ways, as long as the result is a string.
+>>> upper_words = ['upper', 'crust', 'case', 'classmen', 'most', 'cut']
+>>> separator = ' 🌟 ' + upper_words[0]
+>>> separator.join(upper_words)
+ 'upper 🌟 uppercrust 🌟 uppercase 🌟 upperclassmen 🌟 uppermost 🌟 uppercut'
 ```
 
 Code points within a `str` can be referenced by `0-based index` number from the left:
@@ -100,7 +128,6 @@ creative = '창의적인'
 '인'
 
 ```
-
 
 There is no separate “character” or "rune" type in Python, so indexing a string produces a new `str` of length 1:
 
@@ -170,11 +197,10 @@ Strings can also be broken into smaller strings via [`<str>.split(<separator>)`]
 
 
 >>> cat_words = "feline, four-footed, ferocious, furry"
->>> cat_words.split(',')
+>>> cat_words.split(', ')
 ...
 ['feline', 'four-footed', 'ferocious', 'furry']
 ```
-
 
 Separators for `<str>.split()` can be more than one character.
 The **whole string** is used for split matching.
@@ -237,11 +263,11 @@ Strings support all [common sequence operations][common sequence operations].
 
 ## Instructions
 
-You are helping your younger sister with her English vocabulary homework, which she's finding very tedious.
+You are helping your younger sister with her English vocabulary homework, which she is finding very tedious.
  Her class is learning to create new words by adding _prefixes_ and _suffixes_.
  Given a set of words, the teacher is looking for correctly transformed words with correct spelling by adding the prefix to the beginning or the suffix to the ending.
 
-There's four activities in the assignment, each with a set of text or words to work with.
+The assignment has four activities, each with a set of text or words to work with.
 
 
 ## 1. Add a prefix to a word
@@ -249,7 +275,7 @@ There's four activities in the assignment, each with a set of text or words to w
 One of the most common prefixes in English is `un`, meaning "not".
  In this activity, your sister needs to make negative, or "not" words by adding `un` to them.
 
-Implement the `add_prefix_un()` function that takes `word` as a parameter and returns a new `un` prefixed word:
+Implement the `add_prefix_un(<word>)` function that takes `word` as a parameter and returns a new `un` prefixed word:
 
 
 ```python
@@ -277,6 +303,9 @@ Implement the `make_word_groups(<vocab_words>)` function that takes a `vocab_wor
  `[<prefix>, <word_1>, <word_2> .... <word_n>]`, and returns a string with the prefix applied to each word that looks like:
   `'<prefix> :: <prefix><word_1> :: <prefix><word_2> :: <prefix><word_n>'`.
 
+Creating a `for` or `while` loop to process the input is not needed here.
+Think carefully about which string methods (and delimiters) you could use instead.
+
 
 ```python
 >>> make_word_groups(['en', 'close', 'joy', 'lighten'])
@@ -300,7 +329,7 @@ Implement the `make_word_groups(<vocab_words>)` function that takes a `vocab_wor
   But of course there are pesky spelling rules: If the root word originally ended in a consonant followed by a 'y', then the 'y' was changed to 'i'.
  Removing 'ness' needs to restore the 'y' in those root words. e.g. `happiness` --> `happi` --> `happy`.
 
-Implement the `remove_suffix_ness(<word>)` function that takes in a word `str`, and returns the root word without the `ness` suffix.
+Implement the `remove_suffix_ness(<word>)` function that takes in a `word`, and returns the root word without the `ness` suffix.
 
 
 ```python
@@ -313,7 +342,7 @@ Implement the `remove_suffix_ness(<word>)` function that takes in a word `str`, 
 
 ## 4. Extract and transform a word
 
-Suffixes are often used to change the part of speech a word has.
+Suffixes are often used to change the part of speech a word is assigned to.
  A common practice in English is "verbing" or "verbifying" -- where an adjective _becomes_ a verb by adding an `en` suffix.
 
 In this task, your sister is going to practice "verbing" words by extracting an adjective from a sentence and turning it into a verb.
@@ -337,4 +366,4 @@ Implement the `adjective_to_verb(<sentence>, <index>)` function that takes two p
 ### Created by
 
 - @aldraco
-- @bethanyg
+- @BethanyG

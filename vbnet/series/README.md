@@ -1,6 +1,6 @@
 # Series
 
-Welcome to Series on Exercism's VB.NET Track.
+Welcome to Series on Exercism's Visual Basic Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
@@ -20,8 +20,8 @@ And the following 4-digit series:
 
 And if you ask for a 6-digit series from a 5-digit string, you deserve whatever you get.
 
-Note that these series are only required to occupy *adjacent positions* in the input;
-the digits need not be *numerically consecutive*.
+Note that these series are only required to occupy _adjacent positions_ in the input;
+the digits need not be _numerically consecutive_.
 
 ## Source
 

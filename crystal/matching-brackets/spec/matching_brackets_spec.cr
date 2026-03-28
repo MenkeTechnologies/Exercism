@@ -3,70 +3,82 @@ require "../src/*"
 
 describe "MatchingBrackets" do
   it "paired square brackets" do
-    MatchingBrackets.valid?("[]").should eq(true)
+    MatchingBrackets.valid?("[]").should be_true
   end
 
-  it "empty string" do
-    MatchingBrackets.valid?("").should eq(true)
+  pending "empty string" do
+    MatchingBrackets.valid?("").should be_true
   end
 
-  it "unpaired brackets" do
-    MatchingBrackets.valid?("[[").should eq(false)
+  pending "unpaired brackets" do
+    MatchingBrackets.valid?("[[").should be_false
   end
 
-  it "wrong ordered brackets" do
-    MatchingBrackets.valid?("}{").should eq(false)
+  pending "wrong ordered brackets" do
+    MatchingBrackets.valid?("}{").should be_false
   end
 
-  it "wrong closing bracket" do
-    MatchingBrackets.valid?("{]").should eq(false)
+  pending "wrong closing bracket" do
+    MatchingBrackets.valid?("{]").should be_false
   end
 
-  it "paired with whitespace" do
-    MatchingBrackets.valid?("{ }").should eq(true)
+  pending "paired with whitespace" do
+    MatchingBrackets.valid?("{ }").should be_true
   end
 
-  it "partially paired brackets" do
-    MatchingBrackets.valid?("{[])").should eq(false)
+  pending "partially paired brackets" do
+    MatchingBrackets.valid?("{[])").should be_false
   end
 
-  it "simple nested brackets" do
-    MatchingBrackets.valid?("{[]}").should eq(true)
+  pending "simple nested brackets" do
+    MatchingBrackets.valid?("{[]}").should be_true
   end
 
-  it "several paired brackets" do
-    MatchingBrackets.valid?("{}[]").should eq(true)
+  pending "several paired brackets" do
+    MatchingBrackets.valid?("{}[]").should be_true
   end
 
-  it "paired and nested brackets" do
-    MatchingBrackets.valid?("([{}({}[])])").should eq(true)
+  pending "paired and nested brackets" do
+    MatchingBrackets.valid?("([{}({}[])])").should be_true
   end
 
-  it "unopened closing brackets" do
-    MatchingBrackets.valid?("{[)][]}").should eq(false)
+  pending "unopened closing brackets" do
+    MatchingBrackets.valid?("{[)][]}").should be_false
   end
 
-  it "unpaired and nested brackets" do
-    MatchingBrackets.valid?("([{])").should eq(false)
+  pending "unpaired and nested brackets" do
+    MatchingBrackets.valid?("([{])").should be_false
   end
 
-  it "paired and wrong nested brackets" do
-    MatchingBrackets.valid?("[({]})").should eq(false)
+  pending "paired and wrong nested brackets" do
+    MatchingBrackets.valid?("[({]})").should be_false
   end
 
-  it "paired and incomplete brackets" do
-    MatchingBrackets.valid?("{}[").should eq(false)
+  pending "paired and wrong nested brackets but innermost are correct" do
+    MatchingBrackets.valid?("[({}])").should be_false
   end
 
-  it "too many closing brackets" do
-    MatchingBrackets.valid?("[]]").should eq(false)
+  pending "paired and incomplete brackets" do
+    MatchingBrackets.valid?("{}[").should be_false
   end
 
-  it "math expression" do
-    MatchingBrackets.valid?("(((185 + 223.85) * 15) - 543)/2").should eq(true)
+  pending "too many closing brackets" do
+    MatchingBrackets.valid?("[]]").should be_false
   end
 
-  it "complex latex expression" do
-    MatchingBrackets.valid?("\\left(\\begin{array}{cc} \\frac{1}{3} & x\\\\ \\mathrm{e}^{x} &... x^2 \\end{array}\\right)").should eq(true)
+  pending "early unexpected brackets" do
+    MatchingBrackets.valid?(")()").should be_false
+  end
+
+  pending "early mismatched brackets" do
+    MatchingBrackets.valid?("{)()").should be_false
+  end
+
+  pending "math expression" do
+    MatchingBrackets.valid?("(((185 + 223.85) * 15) - 543)/2").should be_true
+  end
+
+  pending "complex latex expression" do
+    MatchingBrackets.valid?("left(\begin{array}{cc} \frac{1}{3} & x\\ mathrm{e}^{x} &... x^2 \end{array}\right)").should be_true
   end
 end

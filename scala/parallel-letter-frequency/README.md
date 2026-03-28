@@ -7,10 +7,9 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 Count the frequency of letters in texts using parallel computation.
 
-Parallelism is about doing things in parallel that can also be done
-sequentially. A common example is counting the frequency of letters.
-Create a function that returns the total frequency of each letter in a
-list of texts and that employs parallelism.
+Parallelism is about doing things in parallel that can also be done sequentially.
+A common example is counting the frequency of letters.
+Employ parallelism to calculate the total frequency of each letter in a list of texts.
 
 According to [this terminology](http://chimera.labs.oreilly.com/books/1230000000929/ch01.html#sec_terminology) you should write a *parallel* and *deterministic*
 program and (by all means!) let Scala deal with the *concurrency* aspect.
