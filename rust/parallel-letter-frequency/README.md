@@ -7,10 +7,11 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 Count the frequency of letters in texts using parallel computation.
 
-Parallelism is about doing things in parallel that can also be done
-sequentially. A common example is counting the frequency of letters.
-Create a function that returns the total frequency of each letter in a
-list of texts and that employs parallelism.
+Parallelism is about doing things in parallel that can also be done sequentially.
+A common example is counting the frequency of letters.
+Employ parallelism to calculate the total frequency of each letter in a list of texts.
+
+## Parallel Letter Frequency in Rust
 
 Learn more about concurrency in Rust here:
 
@@ -40,8 +41,8 @@ rustup run nightly cargo bench
 
 Learn more about nightly Rust:
 
-- [Nightly Rust](https://doc.rust-lang.org/stable/book/2018-edition/appendix-06-nightly-rust.html)
-- [Rustup: Working with nightly](https://github.com/rust-lang-nursery/rustup.rs#working-with-nightly-rust)
+- [Nightly Rust](https://doc.rust-lang.org/book/appendix-07-nightly-rust.html)
+- [Installing Rust nightly](https://rust-lang.github.io/rustup/concepts/channels.html#working-with-nightly-rust)
 
 ## Source
 

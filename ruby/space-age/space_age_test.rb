@@ -1,7 +1,6 @@
 require 'minitest/autorun'
 require_relative 'space_age'
 
-# Common test data version: 1.1.0 8d4df79
 class SpaceAgeTest < Minitest::Test
   # assert_in_delta will pass if the difference
   # between the values being compared is less
@@ -9,50 +8,58 @@ class SpaceAgeTest < Minitest::Test
   DELTA = 0.01
 
   def test_age_on_earth
-    # 
-    age = SpaceAge.new(1_000_000_000)
-    assert_in_delta 31.69, age.on_earth, DELTA
+    # skip
+    actual = SpaceAge.new(1_000_000_000).on_earth
+    expected = 31.69
+    assert_in_delta expected, actual, DELTA
   end
 
   def test_age_on_mercury
-    
-    age = SpaceAge.new(2_134_835_688)
-    assert_in_delta 280.88, age.on_mercury, DELTA
+    skip
+    actual = SpaceAge.new(2_134_835_688).on_mercury
+    expected = 280.88
+    assert_in_delta expected, actual, DELTA
   end
 
   def test_age_on_venus
-    
-    age = SpaceAge.new(189_839_836)
-    assert_in_delta 9.78, age.on_venus, DELTA
+    skip
+    actual = SpaceAge.new(189_839_836).on_venus
+    expected = 9.78
+    assert_in_delta expected, actual, DELTA
   end
 
   def test_age_on_mars
-    
-    age = SpaceAge.new(2_329_871_239)
-    assert_in_delta 39.25, age.on_mars, DELTA
+    skip
+    actual = SpaceAge.new(2_129_871_239).on_mars
+    expected = 35.88
+    assert_in_delta expected, actual, DELTA
   end
 
   def test_age_on_jupiter
-    
-    age = SpaceAge.new(901_876_382)
-    assert_in_delta 2.41, age.on_jupiter, DELTA
+    skip
+    actual = SpaceAge.new(901_876_382).on_jupiter
+    expected = 2.41
+    assert_in_delta expected, actual, DELTA
   end
 
   def test_age_on_saturn
-    
-    age = SpaceAge.new(3_000_000_000)
-    assert_in_delta 3.23, age.on_saturn, DELTA
+    skip
+    actual = SpaceAge.new(2_000_000_000).on_saturn
+    expected = 2.15
+    assert_in_delta expected, actual, DELTA
   end
 
   def test_age_on_uranus
-    
-    age = SpaceAge.new(3_210_123_456)
-    assert_in_delta 1.21, age.on_uranus, DELTA
+    skip
+    actual = SpaceAge.new(1_210_123_456).on_uranus
+    expected = 0.46
+    assert_in_delta expected, actual, DELTA
   end
 
   def test_age_on_neptune
-    
-    age = SpaceAge.new(8_210_123_456)
-    assert_in_delta 1.58, age.on_neptune, DELTA
+    skip
+    actual = SpaceAge.new(1_821_023_456).on_neptune
+    expected = 0.35
+    assert_in_delta expected, actual, DELTA
   end
 end

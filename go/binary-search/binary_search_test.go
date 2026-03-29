@@ -1,3 +1,4 @@
+//nolint:gosec // In the context of this exercise, it is fine to use math.Rand instead of crypto.Rand.
 package binarysearch
 
 import (
@@ -8,16 +9,15 @@ import (
 
 func TestSearchInts(t *testing.T) {
 	for _, test := range testCases {
-		if x := SearchInts(test.slice, test.key); x != test.x {
-			t.Fatalf("FAIL: %s\nSearchInts(%#v, %d) = %d, want %d",
-				test.description, test.slice, test.key, x, test.x)
-		}
-		t.Logf("SUCCESS: %s", test.description)
+		t.Run(test.description, func(t *testing.T) {
+			if actual := SearchInts(test.inputList, test.inputKey); actual != test.expectedKey {
+				t.Errorf("SearchInts(%#v, %d) = %d, want %d", test.inputList, test.inputKey, actual, test.expectedKey)
+			}
+		})
 	}
 }
 
 // Benchmarks also test searching larger random slices
-
 type query struct {
 	slice []int
 	x     int
@@ -25,12 +25,12 @@ type query struct {
 
 func newQuery(n int) (query, error) {
 	q := query{slice: make([]int, n)}
-	for i := 0; i < n; i++ {
+	for i := range n {
 		q.slice[i] = i
 	}
 	q.x = rand.Intn(n)
 	if res := SearchInts(q.slice, q.x); res != q.x {
-		return q, fmt.Errorf("Search of %d values gave different answer", n)
+		return q, fmt.Errorf("search of %d values gave different answer", n)
 	}
 	return q, nil
 }
@@ -38,10 +38,10 @@ func newQuery(n int) (query, error) {
 func runBenchmark(n int, b *testing.B) {
 	q, err := newQuery(n)
 	if err != nil {
-		b.Fatal(err)
+		b.Error(err)
 	}
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		SearchInts(q.slice, q.x)
 	}
 }

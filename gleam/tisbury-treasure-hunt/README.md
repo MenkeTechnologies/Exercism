@@ -50,7 +50,7 @@ person.1 // -> 170
 // Option 2: let
 let #(name2, length2) = person
 // -> name2 = "Jordan"
-// -> length2 = 52
+// -> length2 = 170
 
 // Option 3: case
 case person {
@@ -106,7 +106,7 @@ Aazra and Rui are designing a pirate-themed treasure hunt. There is a list of tr
 </td></tr>
 </table>
 
-But things are a bit disorganized: Azara's coordinates appear to be formatted and sorted differently from Rui's, and they have to keep looking from one list to the other to figure out which treasures go with which locations. Being budding Gleamlins, they have come to you for help in writing a small program (a set of functions, really) to better organize their hunt information.
+But things are a bit disorganized: Aazra's coordinates appear to be formatted and sorted differently from Rui's, and they have to keep looking from one list to the other to figure out which treasures go with which locations. Being budding Gleamlins, they have come to you for help in writing a small program (a set of functions, really) to better organize their hunt information.
 
 ## 1. Convert locations
 
@@ -125,7 +125,7 @@ Implement the `treasure_location_matches_place_location` function that takes a p
 treasure_location_matches_place_location(#("C", 1), #(1, "C"))
 // -> True
 
-treasure_location_matches_place_location(#("C", 1) #(2, "C"))
+treasure_location_matches_place_location(#("C", 1), #(2, "C"))
 // -> False
 ```
 
@@ -142,7 +142,7 @@ count_place_treasures(place, treasures)
 
 ## 4. Special Places
 
-Implement the `special_case_swap_possible` function, which takes a treasure (such as `#("Amethyst Octopus", #(1, "F"))`) and a Place (such as `#("Seaside Cottages", #("C", 1))`), and returns `True` for the following combinations:
+Implement the `special_case_swap_possible` function, which takes a treasure (such as `#("Amethyst Octopus", #(1, "F"))`), a Place (such as `#("Seaside Cottages", #("C", 1))`) and a desired treasure (such as `#("Crystal Crab", #(6, "A"))`), and returns `True` for the following combinations:
 
 - The Brass Spyglass can be swapped for any other treasure at the Abandoned Lighthouse.
 - The Amethyst Octopus can be swapped for the Crystal Crab or the Glass Starfish at the Stormy Breakwater.

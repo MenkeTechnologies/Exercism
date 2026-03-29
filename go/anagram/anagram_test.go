@@ -1,40 +1,25 @@
 package anagram
 
 import (
-	"fmt"
-	"sort"
+	"slices"
 	"testing"
 )
 
-func equal(a, b []string) bool {
-	if len(b) != len(a) {
-		return false
-	}
-
-	sort.Strings(a)
-	sort.Strings(b)
-	return fmt.Sprintf("%v", a) == fmt.Sprintf("%v", b)
-}
-
 func TestDetectAnagrams(t *testing.T) {
-	for _, tt := range testCases {
-		actual := Detect(tt.subject, tt.candidates)
-		if !equal(tt.expected, actual) {
-			msg := `FAIL: %s
-	Subject %s
-	Candidates %q
-	Expected %q
-	Got %q
-				`
-			t.Fatalf(msg, tt.description, tt.subject, tt.candidates, tt.expected, actual)
-		} else {
-			t.Logf("PASS: %s", tt.description)
-		}
+	for _, tc := range testCases {
+		t.Run(tc.description, func(t *testing.T) {
+			actual := Detect(tc.subject, tc.candidates)
+			slices.Sort(actual)
+			slices.Sort(tc.expected)
+			if !slices.Equal(tc.expected, actual) {
+				t.Errorf("Detect(%q, %#v) = %#v, want: %#v", tc.subject, tc.candidates, actual, tc.expected)
+			}
+		})
 	}
 }
 
 func BenchmarkDetectAnagrams(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		for _, tt := range testCases {
 			Detect(tt.subject, tt.candidates)
 		}

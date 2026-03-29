@@ -1,4 +1,4 @@
-;;; rna-transcription-test.el --- Tests for RNA Transcription (exercism)
+;;; rna-transcription-test.el --- Tests for RNA Transcription (exercism)  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -8,6 +8,7 @@
 (require 'cl-lib)
 
 (load-file "rna-transcription.el")
+(declare-function to-rna "rna-transcription.el" (strand))
 
 (ert-deftest transcribes-cytosine-to-guanine ()
   (should (string= "G" (to-rna "C"))))

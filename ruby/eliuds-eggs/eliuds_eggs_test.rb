@@ -8,6 +8,7 @@ class EliudsEggsTest < Minitest::Test
   end
 
   def test_1_egg
+    skip
     assert_equal 1, EliudsEggs.egg_count(16)
   end
 

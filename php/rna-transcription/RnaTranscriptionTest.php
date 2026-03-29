@@ -1,56 +1,66 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
 
-class RnaTranscriptionTest extends PHPUnit\Framework\TestCase
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
+
+class RnaTranscriptionTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
         require_once 'RnaTranscription.php';
     }
 
+    /**
+     * uuid b4631f82-c98c-4a2f-90b3-c5c2b6c6f661
+     */
+    #[TestDox('It handles an empty string')]
+    public function testHandlesEmptyString(): void
+    {
+        $this->assertSame('', toRna(''));
+    }
+
+    /**
+     * uuid a9558a3c-318c-4240-9256-5d5ed47005a6
+     */
+    #[TestDox('It transcribes guanine to cytosine')]
     public function testTranscribesGuanineToCytosine(): void
     {
         $this->assertSame('G', toRna('C'));
     }
 
+    /**
+     * uuid 6eedbb5c-12cb-4c8b-9f51-f8320b4dc2e7
+     */
+    #[TestDox('It transcribes cytosine to guanine')]
     public function testTranscribesCytosineToGuanine(): void
     {
         $this->assertSame('C', toRna('G'));
     }
 
+    /**
+     * uuid 870bd3ec-8487-471d-8d9a-a25046488d3e
+     */
+    #[TestDox('It transcribes thymine to adenine')]
     public function testTranscribesThymineToAdenine(): void
     {
         $this->assertSame('A', toRna('T'));
     }
 
+    /**
+     * uuid aade8964-02e1-4073-872f-42d3ffd74c5f
+     */
+    #[TestDox('It transcribes adenine to uracil')]
     public function testTranscribesAdenineToUracil(): void
     {
         $this->assertSame('U', toRna('A'));
     }
 
+    /**
+     * uuid 79ed2757-f018-4f47-a1d7-34a559392dbf
+     */
+    #[TestDox('RNA complement')]
     public function testTranscribesAllOccurrencesOne(): void
     {
         $this->assertSame('UGCACCAGAAUU', toRna('ACGTGGTCTTAA'));

@@ -1,6 +1,6 @@
 # Acronym
 
-Welcome to Acronym on Exercism's LFE Track.
+Welcome to Acronym on Exercism's Lisp Flavoured Erlang Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
@@ -15,11 +15,11 @@ Punctuation is handled as follows: hyphens are word separators (like whitespace)
 
 For example:
 
-|Input|Output|
-|-|-|
-|As Soon As Possible|ASAP|
-|Liquid-crystal display|LCD|
-|Thank George It's Friday!|TGIF|
+| Input                     | Output |
+| ------------------------- | ------ |
+| As Soon As Possible       | ASAP   |
+| Liquid-crystal display    | LCD    |
+| Thank George It's Friday! | TGIF   |
 
 ## Source
 

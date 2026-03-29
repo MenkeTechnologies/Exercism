@@ -1,8 +1,9 @@
 package darts
 
+// This is an auto-generated file. Do not change it manually. Run the generator to update the file.
+// See https://github.com/exercism/go#synchronizing-tests-and-instructions
 // Source: exercism/problem-specifications
-// Commit: 212baa3 [Darts] Slim down generated method names (#1530)
-// Problem Specifications Version: 2.2.0
+// Commit: 0b1dfc2 darts: use US English in test description (#2228)
 
 var testCases = []struct {
 	description string
@@ -35,13 +36,13 @@ var testCases = []struct {
 		expected:    10,
 	},
 	{
-		description: "Exactly on centre",
+		description: "Exactly on center",
 		x:           0.0,
 		y:           0.0,
 		expected:    10,
 	},
 	{
-		description: "Near the centre",
+		description: "Near the center",
 		x:           -0.1,
 		y:           -0.1,
 		expected:    10,

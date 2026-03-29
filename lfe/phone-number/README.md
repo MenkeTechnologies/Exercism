@@ -1,6 +1,6 @@
 # Phone Number
 
-Welcome to Phone Number on Exercism's LFE Track.
+Welcome to Phone Number on Exercism's Lisp Flavoured Erlang Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

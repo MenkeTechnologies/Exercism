@@ -6,22 +6,9 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
-## Multiple return values
-
-Multiple values can be returned from Swift functions by creating and returning a tuple from the different values.
-
-```swift
-func reverseAndLength(_ str: String) -> (reverse: String, length: Int) {
-  return (reverse: str.reverse, length: str.count)
-}
-
-reverseAndLength("Hello")
-// => (reverse: "olleH", length: 5)
-```
-
 ## Default parameter values
 
-Default parameter values can be supplied for any of a function's parameters by assigning a value to the parameter in the parameter list following the parameter's type annotation. When a default parameter value is specified, the caller of the function can omit that parameter when calling the function and the default value will be used instead.
+[Default parameter values][default-parameter-values] can be supplied for any of a function's parameters by assigning a value to the parameter in the parameter list following the parameter's type annotation. When a default parameter value is specified, the caller of the function can omit that parameter when calling the function and the default value will be used instead.
 
 ```swift
 func greeting(name: String = "guest", duration: Int = 2) -> String {
@@ -29,18 +16,18 @@ func greeting(name: String = "guest", duration: Int = 2) -> String {
 }
 
 greeting(name: "Bobo", duration: 7)
-// => "Welcome, Bobo. Enjoy your 7 night stay."
+// Returns "Welcome, Bobo. Enjoy your 7 night stay."
 greeting(duration: 3)
-// => "Welcome, guest. Enjoy your 3 night stay."
+// Returns "Welcome, guest. Enjoy your 3 night stay."
 greeting(name: "Wynona")
-// => "Welcome, Wynona. Enjoy your 2 night stay."
+// Returns "Welcome, Wynona. Enjoy your 2 night stay."
 greeting()
-// => "Welcome, guest. Enjoy your 2 night stay."
+// Returns "Welcome, guest. Enjoy your 2 night stay."
 ```
 
 ## Variadic parameters
 
-_Variadic parameters_ in Swift allow zero or more values of the same type to be passed into a single parameter in a function. This is indicated by appending `...` to the type annotation of the parameter.
+[_Variadic parameters_][variadic-parameters] in Swift allow zero or more values of the same type to be passed into a single parameter in a function. This is indicated by appending `...` to the type annotation of the parameter.
 
 These values will be automatically grouped into an array with elements of the same type as the type of the variadic parameter.
 
@@ -57,9 +44,13 @@ geometricMean(1, 2, 3, 4, 5)
 // => 2.605171084697352
 ```
 
+Note that when using variadic parameters, Swift has a limitation.
+If a function has parameters that follow the variadic parameter in the definition, the first parameter following the variadic parameter is _required_ to have an argument label.
+
 ## In-out parameters
 
-Within the body of a function, parameters are treated as constants, not variables; trying to modify the value of a parameter will raise a compile-time error. If a function wishes to modify the value of a parameter, it must use an _in-out parameter_ to make this mutability explicit.
+Within the body of a function, parameters are treated as constants, not variables; trying to modify the value of a parameter will raise a compile-time error.
+If a function wishes to modify the value of a parameter, it must use an [_in-out parameter_][in-out-parameters] to make this mutability explicit.
 
 To use in-out parameters, a programmer must be sure of three things:
 
@@ -80,32 +71,49 @@ updateVersion(&dbRecord)
 // dbRecord is now (3, "Exercism")
 ```
 
+~~~~exercism/warning
+There are a couple of extra rules one should be aware of regarding in-out parameters.
+
+1.  Inside a function with in-out parameters, you are not allowed to reference the variable that was passed in as the in-out parameter.
+2.  The same variable cannot be passed as multiple in-out parameters in the same function.
+
+```swift
+func inoutFunc(_ ioVar1: inout Int, _ ioVar2: inout Int) {
+  ioVar1 += 1
+  ioVar2 += 2
+}
+
+var mutVar = 0
+inoutFunc(&mutVar, &mutVar)
+// raises a compiler error: "Inout arguments are not allowed to alias each other"
+```
+~~~~
+
 ## Nested functions
 
-Functions may be defined inside of other functions. This is commonly used to create helper functions which are only useful to their enclosing function and so don't need to pollute the outside namespace.
+Functions may be defined [inside of other functions][nested-functions].
+This is commonly used to create helper functions which are only useful to their enclosing function and so don't need to pollute the outside namespace.
 
 These functions are defined and called just like normal functions, but are not visible outside the enclosing function.
 
 ```swift
-func makeNumber(_ bits: [Bool]) -> Int {
+func makeNumber(_ number: Int) -> Int {
   func double(_ x: Int) -> Int { 2 * x }
   func add(_ x: Int) -> Int { x + 1 }
 
-  var number = 0
-  for bit in bits {
-    number = double(number)
-    if bit {
-      number = add(number)
-    }
-  }
-  return number
+  return number.isMultiple(of: 2) ? add(double(number)) : double(number)
 }
 
-makeNumber([true, false, true, true])
-// => 11
-makeNumber([true, true, false, false, false, true, true])
-// => 99
+makeNumber(3)
+// Returns 6
+makeNumber(4)
+// Returns 9
 ```
+
+[nested-functions]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/functions/#Nested-Functions
+[default-parameter-values]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/functions/#Default-Parameter-Values
+[variadic-parameters]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/functions/#Variadic-Parameters
+[in-out-parameters]: https://docs.swift.org/swift-book/documentation/the-swift-programming-language/declarations/#In-Out-Parameters
 
 ## Instructions
 
@@ -115,62 +123,77 @@ You have five tasks, all related to the time spent cooking the lasagna.
 
 ## 1. Allow changing the expected oven time
 
-You want to write an improved `remainingMinutesInOven` function that takes the number of elapsed minutes the lasagna has been in the oven as a parameter and returns how many minutes the lasagna still has to remain in the oven, based on the expected oven time in minutes from the previous task. Previously, you had relied on a constant value, `expectedMinutesInOven` that came from outside the `remainingMinutesInOven` function. That was both a bit too cluttered for your taste and not flexible enough, as it doesn't allow you to change the expected time in the oven.
+You want to write an improved `remainingMinutesInOven` function that takes the number of elapsed minutes the lasagna has been in the oven as a parameter and returns how many minutes the lasagna still has to remain in the oven, based on the expected oven time in minutes from the previous task.
+Previously, you had relied on a constant value, `expectedMinutesInOven` that came from outside the `remainingMinutesInOven` function.
+That was both a bit too cluttered for your taste and not flexible enough, as it doesn't allow you to change the expected time in the oven.
 
-To clean things up, define the `remainingMinutesInOven` function that takes the number of elapsed minutes the lasagna has been in the oven as a parameter, as well as an `expectedMinutesInOven` parameter that has a default value of 40. Your function should return how many minutes the lasagna still has to remain in the oven, based on the expected oven time in minutes from the previous task.
+To clean things up, define the `remainingMinutesInOven` function that takes the number of elapsed minutes the lasagna has been in the oven as a parameter, as well as an `expectedMinutesInOven` parameter that has a default value of 40.
+Your function should return how many minutes the lasagna still has to remain in the oven, based on the expected oven time in minutes from the previous task.
 
 ```swift
 remainingMinutesInOven(elapsedMinutes: 30)
-// => 10
+// Returns 10
 remainingMinutesInOven(elapsedMinutes: 30, expectedMinutesInOven: 75)
-// => 45
+// Returns 45
 ```
 
 ## 2. Allow differing numbers of layers
 
-You had previously written a `preparationTimeInMinutes` function that takes the number of layers you added to the lasagna as a parameter and returns how many minutes you spent preparing the lasagna, assuming each layer takes you 2 minutes to prepare. However, you are not particularly happy with this function, as you have to count the number of layers in your lasagna yourself before you can call this function, and who has time for all that?
+You had previously written a `preparationTimeInMinutes` function that takes the number of layers you added to the lasagna as a parameter and returns how many minutes you spent preparing the lasagna, assuming each layer takes you 2 minutes to prepare.
+However, you are not particularly happy with this function, as you have to count the number of layers in your lasagna yourself before you can call this function, and who has time for all that?
 
-To make things easier for yourself, write a function, `preparationTimeInMinutes` that takes a variadic `String` parameter, `layers`, where you list the different layers in your lasagna. The function will then count the number of layers in your lasagna, and return the amount of preparation time required.
+To make things easier for yourself, write a function, `preparationTimeInMinutes` that takes a variadic `String` parameter, `layers`, where you list the different layers in your lasagna.
+The function will then count the number of layers in your lasagna, and return the amount of preparation time required.
 
 ```swift
 preparationTimeInMinutes(layers: "sauce", "noodles")
-// => 4
+// Returns 4
 preparationTimeInMinutes(layers: "sauce", "noodles", "sauce", "meat", "mozzarella", "noodles", "sauce", "eggplant", "béchamel", "noodles", "sauce", "mozzarella")
-// => 24
+// Returns 24
 ```
 
 ## 3. Compute amounts of noodles and sauce
 
-Before you start to assemble your lasagna, you want to make sure you have enough sauce and noodles to build the lasagna of your dreams. For each noodle layer in your lasagna, you will need 3 noodles. For each sauce layer in your lasagna, you will need 0.2 liters of sauce.
+Before you start to assemble your lasagna, you want to make sure you have enough sauce and noodles to build the lasagna of your dreams.
+For each noodle layer in your lasagna, you will need 3 noodles.
+For each sauce layer in your lasagna, you will need 0.2 liters of sauce.
 
-Define the function `quantities` that takes a variadic `String` parameter, `layers`, where you list the different layers in your lasagna. The function will then determine the quantity of noodles and sauce needed to make your meal. The result should be returned in a tuple of type `(noodles: Int, sauce: Double)`.
+Define the function `quantities` that takes a variadic `String` parameter, `layers`, where you list the different layers in your lasagna.
+The function will then determine the quantity of noodles and sauce needed to make your meal. The result should be returned in a tuple of type `(noodles: Int, sauce: Double)`.
 
 ```swift
 quantities(layers: "sauce", "noodles", "sauce", "meat", "mozzarella", "noodles", "sauce", "eggplant", "béchamel", "noodles", "sauce", "mozzarella")
-// => (noodles 9, sauce 0.8)
+// Returns (noodles: 9, sauce: 0.8)
 quantities(layers: "sauce", "noodles", "sauce", "noodles", "meat", "noodles", "mozzarella")
-// => (noodles 9, sauce 0.4)
+// Returns (noodles: 9, sauce: 0.4)
 ```
 
 ## 4. Convert liters to fluid ounces in place
 
-Unfortunately, the sauce you have on hand has the volume is listed in fluid ounces instead of liters. To help let you know if you have enough sauce on hand, write a function, `toOz`, that takes an in-out tuple parameter, `(noodles: Int, sauce: Double)`, and converts the quantity of sauce to fluid ounces. Note that there are 33.814 fluid ounces per liter.
+Unfortunately, the sauce you have on hand has the volume is listed in fluid ounces instead of liters.
+To help let you know if you have enough sauce on hand, write a function, `toOz`, that takes an in-out tuple parameter, `(noodles: Int, sauce: Double)`, and converts the quantity of sauce to fluid ounces.
+Note that there are 33.814 fluid ounces per liter.
 
 ```swift
 var amount = (noodles: 9, sauce: 0.8)
 toOz(&amount)
-// => amount is now (noodles: 9, sauce: 27.0512)
+
+amount
+// Returns (noodles: 9, sauce: 27.0512)
 ```
 
 ## 5. Determine the best wine to serve
 
-Finally, you want to know what kind of wine to serve with your lasagna. You've heard that you should serve white wine if there is more mozzarella, ricotta, and béchamel in the lasagna than there is meat and sauce, and red wine otherwise. Write a function `redWine` that takes a variadic `String` parameter, `layers`, where you list the different layers in your lasagna. The function will use five nested functions to determine the number of layers of mozzarella, ricotta, béchamel, sauce, and meat in the lasagna, and compare the numbers of layers to determine if red wine should be served, returning `true` if so and `false` if not.
+Finally, you want to know what kind of wine to serve with your lasagna.
+You've heard that you should serve white wine if there is more mozzarella, ricotta, and béchamel in the lasagna than there is meat and sauce, and red wine otherwise.
+Write a function `redWine` that takes a variadic `String` parameter, `layers`, where you list the different layers in your lasagna.
+The function will use five nested functions to determine the number of layers of mozzarella, ricotta, béchamel, sauce, and meat in the lasagna, and compare the numbers of layers to determine if red wine should be served, returning `true` if so and `false` if not.
 
 ```swift
 redWine(layers: "sauce", "noodles", "sauce", "meat", "mozzarella", "noodles", "sauce", "eggplant", "béchamel", "noodles", "sauce", "mozzarella")
-// => true
+// Returns true
 redWine(layers: "sauce", "noodles", "béchamel", "meat", "mozzarella", "noodles", "ricotta", "eggplant", "béchamel", "noodles", "sauce", "mozzarella")
-// => false
+// Returns false
 ```
 
 ## Source

@@ -8,17 +8,21 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Charlists
 
-Charlists are created using single quotes.
+Charlists are created using the `~c` Sigil.
 
 ```elixir
-'hello'
+~c"hello"
 ```
 
-Although they look similar to strings, the two data types are quite different from one another. A charlist is a list of integers. The integers represent the Unicode values of a given character — also known as code points.
+~~~~exercism/note
+Note that in older versions of Elixir, charlists are represented as `'hello'` with single quotes.
+~~~~
+
+Although they look very similar to strings, the two data types are quite different from one another. A charlist is a list of integers. The integers represent the Unicode values of a given character — also known as code points.
 
 ```elixir
 [65, 66, 67]
-# => 'ABC'
+# => ~c"ABC"
 ```
 
 You can prepend a character with `?` to get its code point.
@@ -28,13 +32,13 @@ You can prepend a character with `?` to get its code point.
 # => 65
 
 [?:, ?)]
-# => ':)'
+# => ~c":)"
 ```
 
 Because charlist are lists, you can work with them just like with any other list - using recursion and pattern matching.
 
 ```elixir
-[first_letter | _] = 'cat'
+[first_letter | _] = ~c"cat"
 first_letter
 # => 99
 ```
@@ -42,8 +46,8 @@ first_letter
 You can concatenate two lists using `++`.
 
 ```elixir
-'hi' ++ '!'
-# => 'hi!'
+~c"hi" ++ ~c"!"
+# => ~c"hi!"
 ```
 
 The longer the first list is, the slower the concatenation, so avoid repeatedly appending to lists of arbitrary length.
@@ -56,14 +60,14 @@ The longer the first list is, the slower the concatenation, so avoid repeatedly 
 age = 15
 
 case age do
-  0 -> 'infant'
-  age when age < 4 -> 'baby'
-  age when age < 13 -> 'child'
-  age when age < 18 -> 'teenager'
-  _ -> 'adult'
+  0 -> ~c"infant"
+  age when age < 4 -> ~c"baby"
+  age when age < 13 -> ~c"child"
+  age when age < 18 -> ~c"teenager"
+  _ -> ~c"adult"
 end
 
-# => 'teenager'
+# => ~c"teenager"
 ```
 
 ## Instructions
@@ -79,8 +83,8 @@ Telling people to give up their favorite old email client is a lost battle, so y
 Implement the `sanitize/1` function. It should accept a username as a charlist and return the username with all characters but lowercase letters removed.
 
 ```elixir
-Username.sanitize('schmidt1985')
-# => 'schmidt'
+Username.sanitize(~c"schmidt1985")
+# => ~c"schmidt"
 ```
 
 ## 2. Allow underscores
@@ -88,8 +92,8 @@ Username.sanitize('schmidt1985')
 Extend the `sanitize/1` function. It should not remove underscores from the username.
 
 ```elixir
-Username.sanitize('mark_fischer$$$')
-# => 'mark_fischer'
+Username.sanitize(~c"mark_fischer$$$")
+# => ~c"mark_fischer"
 ```
 
 ## 3. Substitute German characters
@@ -106,8 +110,8 @@ There are 4 non-Latin characters in the German alphabet, and all of them have co
 Extend the `sanitize/1` function. It should substitute German characters according to the table. You can safely assume all usernames are already downcase.
 
 ```elixir
-Username.sanitize('cäcilie_weiß')
-# => 'caecilie_weiss'
+Username.sanitize(~c"cäcilie_weiß")
+# => ~c"caecilie_weiss"
 ```
 
 ## Source

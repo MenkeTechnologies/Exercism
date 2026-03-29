@@ -5,17 +5,19 @@ import (
 )
 
 func TestAcronym(t *testing.T) {
-	for _, test := range stringTestCases {
-		actual := Abbreviate(test.input)
-		if actual != test.expected {
-			t.Errorf("Acronym test [%s], expected [%s], actual [%s]", test.input, test.expected, actual)
-		}
+	for _, tc := range testCases {
+		t.Run(tc.description, func(t *testing.T) {
+			actual := Abbreviate(tc.input)
+			if actual != tc.expected {
+				t.Errorf("Abbreviate(%q) = %q, want: %q", tc.input, actual, tc.expected)
+			}
+		})
 	}
 }
 
 func BenchmarkAcronym(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		for _, test := range stringTestCases {
+	for range b.N {
+		for _, test := range testCases {
 			Abbreviate(test.input)
 		}
 	}

@@ -14,7 +14,7 @@ Your task is to write methods that return the highest score from the list, the l
 
 ### Created by
 
-- @BNAmdras
+- @BNAndras
 
 ### Based on
 

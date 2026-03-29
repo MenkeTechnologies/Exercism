@@ -8,15 +8,7 @@ class PerfectNumberTest < Minitest::Test
     end
   end
 
-  def test_classify_deficient1
-    assert_equal 'deficient', PerfectNumber.classify(33550337)
-  end
-
-  def test_classify_deficient2
-    assert_equal 'deficient', PerfectNumber.classify(1)
-  end
-
-  def test_classify_deficient3
+  def test_classify_deficient
     assert_equal 'deficient', PerfectNumber.classify(13)
   end
 

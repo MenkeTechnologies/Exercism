@@ -51,10 +51,10 @@ Custom type variants can be pattern matched on using case expressions.
 import gleam/int
 import gleam/float
 
-pub fn describe(number: Number) -> String {
-  case flexibleNumber {
-    SomeFloat(f) -> "Float: " ++ float.to_string(f)
-    SomeInt(i) -> "Int: " ++ int.to_string(i)
+pub fn describe(flexible_number: Number) -> String {
+  case flexible_number {
+    SomeFloat(f) -> "Float: " <> float.to_string(f)
+    SomeInt(i) -> "Int: " <> int.to_string(i)
     Invalid -> "Neither a float nor an int"
   }
 }
@@ -102,7 +102,7 @@ Define the `Activity` custom type to represent these activity types:
 - `Chill`: no associated data.
 - `Movie`: has its `Genre` as associated data.
 - `Restaurant`: has its `Cuisine` as associated data.
-- `Walk`: has an `int` representing the number of kilometers to walk as associated data.
+- `Walk`: has an `Int` representing the number of kilometers to walk as associated data.
 
 ## 5. Rate the activity
 
@@ -110,7 +110,7 @@ Finally, you're ready to rate your partner's ideas. This is how you feel about y
 
 - Playing a board game: no.
 - Chill out: no.
-- Watch a movie: yes if is is a romantic movie; otherwise, no.
+- Watch a movie: yes if it is a romantic movie; otherwise, no.
 - Go to a restaurant: yes if the cuisine is Korean, maybe if it is Turkish.
 - Take a walk: yes if the walk is more than eleven kilometers; maybe if it is more than six kilometers; otherwise, no.
 

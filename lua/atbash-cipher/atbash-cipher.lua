@@ -6,7 +6,7 @@ return {
   if #trans <= 5 then return trans end
   local encoded = ''
   for i=1, #trans, 5 do
-    local j = i + 4
+    local j = i + 4 
     if j > #trans then j = #trans end
     encoded = encoded .. trans:sub(i,j) .. ' '
   end

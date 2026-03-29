@@ -2,25 +2,38 @@
 
 Welcome to Anagram on Exercism's Rust Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
+If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
+
+## Introduction
+
+At a garage sale, you find a lovely vintage typewriter at a bargain price!
+Excitedly, you rush home, insert a sheet of paper, and start typing away.
+However, your excitement wanes when you examine the output: all words are garbled!
+For example, it prints "stop" instead of "post" and "least" instead of "stale."
+Carefully, you try again, but now it prints "spot" and "slate."
+After some experimentation, you find there is a random delay before each letter is printed, which messes up the order.
+You now understand why they sold it for so little money!
+
+You realize this quirk allows you to generate anagrams, which are words formed by rearranging the letters of another word.
+Pleased with your finding, you spend the rest of the day generating hundreds of anagrams.
 
 ## Instructions
 
-An anagram is a rearrangement of letters to form a new word.
-Given a word and a list of candidates, select the sublist of anagrams of the given word.
+Given a target word and one or more candidate words, your task is to find the candidates that are anagrams of the target.
 
-Given `"listen"` and a list of candidates like `"enlists" "google"
-"inlets" "banana"` the program should return a list containing
-`"inlets"`.
+An anagram is a rearrangement of letters to form a new word: for example `"owns"` is an anagram of `"snow"`.
+A word is _not_ its own anagram: for example, `"stop"` is not an anagram of `"stop"`.
 
-The solution is case insensitive, which means `"WOrd"` is the same as `"word"` or `"woRd"`. It may help to take a peek at the [std library](https://doc.rust-lang.org/std/primitive.char.html) for functions that can convert between them.
+The target word and candidate words are made up of one or more ASCII alphabetic characters (`A`-`Z` and `a`-`z`).
+Lowercase and uppercase characters are equivalent: for example, `"PoTS"` is an anagram of `"sTOp"`, but `"StoP"` is not an anagram of `"sTOp"`.
+The words you need to find should be taken from the candidate words, using the same letter case.
 
-The solution cannot contain the input word. A word is always an anagram of itself, which means it is not an interesting result. Given `"hello"` and the list `["hello", "olleh"]` the answer is `["olleh"]`.
+Given the target `"stone"` and the candidate words `"stone"`, `"tones"`, `"banana"`, `"tons"`, `"notes"`, and `"Seton"`, the anagram words you need to find are `"tones"`, `"notes"`, and `"Seton"`.
 
-You are going to have to adjust the function signature provided in the stub in order for the lifetimes to work out properly. This is intentional: what's there demonstrates the basics of lifetime syntax, and what's missing teaches how to interpret lifetime-related compiler errors.
+The Rust track extends the possible letters to be any unicode character, not just ASCII alphabetic ones.
 
-Try to limit case changes. Case changes are expensive in terms of time, so it's faster to minimize them.
-
-If sorting, consider [sort_unstable](https://doc.rust-lang.org/std/primitive.slice.html#method.sort_unstable) which is typically faster than stable sorting. When applicable, unstable sorting is preferred because it is generally faster than stable sorting and it doesn't allocate auxiliary memory.
+You are going to have to adjust the function signature provided in the stub in order for the lifetimes to work out properly.
+This is intentional: what's there demonstrates the basics of lifetime syntax, and what's missing teaches how to interpret lifetime-related compiler errors.
 
 ## Source
 

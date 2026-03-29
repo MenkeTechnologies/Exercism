@@ -1,13 +1,16 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/acronym/canonical-data.json
+# File last updated on 2026-02-19
+
 import unittest
 
 from acronym import (
     abbreviate,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
-
 
 class AcronymTest(unittest.TestCase):
+
     def test_basic(self):
         self.assertEqual(abbreviate("Portable Network Graphics"), "PNG")
 
@@ -39,7 +42,3 @@ class AcronymTest(unittest.TestCase):
 
     def test_underscore_emphasis(self):
         self.assertEqual(abbreviate("The Road _Not_ Taken"), "TRNT")
-
-
-if __name__ == "__main__":
-    unittest.main()

@@ -1,6 +1,6 @@
-# Nucleotide count
+# Nucleotide Count
 
-Welcome to Nucleotide count on Exercism's Gleam Track.
+Welcome to Nucleotide Count on Exercism's Gleam Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

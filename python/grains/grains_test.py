@@ -1,3 +1,7 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/grains/canonical-data.json
+# File last updated on 2026-02-19
+
 import unittest
 
 from grains import (
@@ -5,10 +9,9 @@ from grains import (
     total,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
-
 
 class GrainsTest(unittest.TestCase):
+
     def test_grains_on_square_1(self):
         self.assertEqual(square(1), 1)
 
@@ -30,19 +33,19 @@ class GrainsTest(unittest.TestCase):
     def test_grains_on_square_64(self):
         self.assertEqual(square(64), 9223372036854775808)
 
-    def test_square_0_raises_an_exception(self):
+    def test_square_0_is_invalid(self):
         with self.assertRaises(ValueError) as err:
             square(0)
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "square must be between 1 and 64")
 
-    def test_negative_square_raises_an_exception(self):
+    def test_negative_square_is_invalid(self):
         with self.assertRaises(ValueError) as err:
             square(-1)
         self.assertEqual(type(err.exception), ValueError)
         self.assertEqual(err.exception.args[0], "square must be between 1 and 64")
 
-    def test_square_greater_than_64_raises_an_exception(self):
+    def test_square_greater_than_64_is_invalid(self):
         with self.assertRaises(ValueError) as err:
             square(65)
         self.assertEqual(type(err.exception), ValueError)

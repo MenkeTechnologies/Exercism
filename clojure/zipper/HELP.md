@@ -7,7 +7,7 @@
 The Clojure exercises on Exercism ship with a `deps.edn` file with a `:test` alias to invoke the [cognitect-labs test-runner](https://github.com/cognitect-labs/test-runner):
 
 ``` bash
-$ clj -X:test
+clj -X:test
 ```
 
 ## Leiningen
@@ -16,34 +16,6 @@ Leiningen can also be used to run the exercise's test by running the following c
 
 ```bash
 lein test
-```
-
-## REPL
-
-To use the REPL to run the exercise's test, run the following command from the exercise's directory:
-
-```bash
-$ clj
-```
-
--or-
-
-```bash
-$ lein repl
-```
-
-Then `require` the exercise's test namespace and the Clojure test namespace):
-
-```clojure
-;; replace <exercise> with the exercise's name
-=> (require '<exercise>-test)
-```
-
-Then call `run-tests` on `<exercise>-test`:
-
-```clojure
-;; replace <exercise> with the exercise's name
-=> (clojure.test/run-tests '<exercise>-test)
 ```
 
 ## Submitting your solution
@@ -61,6 +33,7 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Clojure track's documentation](https://exercism.org/docs/tracks/clojure)
+- The [Clojure track's programming category on the forum](https://forum.exercism.org/c/programming/clojure)
 - [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 

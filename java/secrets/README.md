@@ -63,7 +63,7 @@ Otherwise, the result's bit is 0.
 #### Bitwise OR
 
 The bitwise OR (`|`) operator takes two values and performs an OR on each bit.
-It compares each bit from the first value with the bit in thes same position from the second value.
+It compares each bit from the first value with the bit in the same position from the second value.
 If either bit is 1, the result's bit is 1.
 Otherwise, it is 0.
 
@@ -108,7 +108,7 @@ There will be further steps in the decryption process that assume 0s are inserte
 Implement the `Secrets.shiftBack` method that takes a value and the number of places to shift and peforms the shift.
 
 ```java
-Secrets.shiftBack(0b1001, 2);s
+Secrets.shiftBack(0b1001, 2);
 # => 0b0010
 ```
 
@@ -136,20 +136,20 @@ If the bit is 1 in mask, the bit is flipped in the value.
 All other bits are kept unchanged.
 
 ```java
-Secrets.flipBits(0b1100, 0b0101)
+Secrets.flipBits(0b1100, 0b0101);
 # => 0b1001
 ```
 
 ## 4. Clear specific bits
 
-Lastly, there are also certain bits that always decrpyt to 0.
+Lastly, there are also certain bits that always decrypt to 0.
 
 Implement the `Secrets.clearBits` method that takes a value and a mask.
 The bits in the `value` should be set to 0 where the bit in the mask is 1.
 All other bits should be kept unchanged.
 
 ```java
-Secrets.applyMask(0b0110, 0b0101);
+Secrets.clearBits(0b0110, 0b0101);
 # => 0b0010
 ```
 

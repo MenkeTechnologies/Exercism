@@ -21,7 +21,7 @@
 ## 4. Put the initials inside of the heart
 
 - There is a special syntax for [interpolating][string-interpolation] an expression inside of a string.
-- You can put a heart emoji in a string by using escpaing: `\u<id>`, the id for the heart emoji is `2764`.
+- You can put a heart emoji in a string by using escaping: `\u<id>`, the id for the heart emoji is `2764`.
 
 [string-guide]: https://crystal-lang.org/reference/latest/tutorials/basics/40_strings.html
 [string-methods]: https://crystal-lang.org/api/latest/String.html

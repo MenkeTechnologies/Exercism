@@ -1,5 +1,4 @@
 Imports System.Linq
-
 Public Module Pangram
     Const alphabet As String = "abcdefghijklmnopqrstuvwxyz"
     Public Function IsPangram(ByVal input As String) As Boolean

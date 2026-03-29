@@ -1,54 +1,64 @@
-import XCTest
+import Foundation
+import Testing
+
 @testable import ScrabbleScore
 
-class ScrabbleScoreTests: XCTestCase {
-    func testEmptyWordScoresZero() {
-        XCTAssertEqual( 0, Scrabble("").score)
-    }
+let RUNALL = Bool(ProcessInfo.processInfo.environment["RUNALL", default: "false"]) ?? false
 
-    func testWhitespaceScoresZero() {
-        XCTAssertEqual( 0, Scrabble(" \t\n").score)
-    }
+@Suite struct ScrabbleScoreTests {
 
-    func testNilScoresZero() {
-        XCTAssertEqual( 0, Scrabble(nil).score)
-    }
+  @Test("lowercase letter")
+  func testLowercaseLetter() {
+    #expect(score("a") == 1)
+  }
 
-    func testScoresVeryShortWord() {
-        XCTAssertEqual( 1, Scrabble("a").score)
-    }
+  @Test("uppercase letter", .enabled(if: RUNALL))
+  func testUppercaseLetter() {
+    #expect(score("A") == 1)
+  }
 
-    func testScoresOtherVeryShortWord() {
-        XCTAssertEqual( 4, Scrabble("f").score)
-    }
+  @Test("valuable letter", .enabled(if: RUNALL))
+  func testValuableLetter() {
+    #expect(score("f") == 4)
+  }
 
-    func testSimpleWordScoresTheNumberOfLetters() {
-        XCTAssertEqual( 6, Scrabble("street").score)
-    }
+  @Test("short word", .enabled(if: RUNALL))
+  func testShortWord() {
+    #expect(score("at") == 2)
+  }
 
-    func testComplicatedWordScoresMore() {
-        XCTAssertEqual( 22, Scrabble("quirky").score)
-    }
+  @Test("short, valuable word", .enabled(if: RUNALL))
+  func testShortValuableWord() {
+    #expect(score("zoo") == 12)
+  }
 
-    func testScoresAreCaseInsensitive() {
-        XCTAssertEqual( 41, Scrabble("OXYPHENBUTAZONE").score)
-    }
+  @Test("medium word", .enabled(if: RUNALL))
+  func testMediumWord() {
+    #expect(score("street") == 6)
+  }
 
-    func testScoringUtility() {
-        XCTAssertEqual( 13, Scrabble.score("alacrity"))
-    }
+  @Test("medium, valuable word", .enabled(if: RUNALL))
+  func testMediumValuableWord() {
+    #expect(score("quirky") == 22)
+  }
 
-    static var allTests: [(String, (ScrabbleScoreTests) -> () throws -> Void)] {
-        return [
-            ("testEmptyWordScoresZero", testEmptyWordScoresZero),
-            ("testWhitespaceScoresZero", testWhitespaceScoresZero),
-            ("testNilScoresZero", testNilScoresZero),
-            ("testScoresVeryShortWord", testScoresVeryShortWord),
-            ("testScoresOtherVeryShortWord", testScoresOtherVeryShortWord),
-            ("testSimpleWordScoresTheNumberOfLetters", testSimpleWordScoresTheNumberOfLetters),
-            ("testComplicatedWordScoresMore", testComplicatedWordScoresMore),
-            ("testScoresAreCaseInsensitive", testScoresAreCaseInsensitive),
-            ("testScoringUtility", testScoringUtility),
-        ]
-    }
+  @Test("long, mixed-case word", .enabled(if: RUNALL))
+  func testLongMixedCaseWord() {
+    #expect(score("OxyphenButazone") == 41)
+  }
+
+  @Test("english-like word", .enabled(if: RUNALL))
+  func testEnglishLikeWord() {
+    #expect(score("pinata") == 8)
+  }
+
+  @Test("empty input", .enabled(if: RUNALL))
+  func testEmptyInput() {
+    #expect(score("") == 0)
+  }
+
+  @Test("entire alphabet available", .enabled(if: RUNALL))
+  func testEntireAlphabetAvailable() {
+    #expect(score("abcdefghijklmnopqrstuvwxyz") == 87)
+  }
 }

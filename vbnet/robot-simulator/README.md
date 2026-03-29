@@ -1,6 +1,6 @@
 # Robot Simulator
 
-Welcome to Robot Simulator on Exercism's VB.NET Track.
+Welcome to Robot Simulator on Exercism's Visual Basic Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

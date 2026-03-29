@@ -2,7 +2,7 @@ require "spec"
 require "../src/*"
 
 describe "HighSchoolSweetheart" do
-  describe "clean_up_name" do
+  describe "clean_up_name", tags: "task_id=1" do
     it "should remove `-` when inside a name" do
       HighSchoolSweetheart.clean_up_name("John-Doe").should eq "John Doe"
     end
@@ -12,7 +12,7 @@ describe "HighSchoolSweetheart" do
     end
   end
 
-  describe "first_letter" do
+  describe "first_letter", tags: "task_id=2" do
     it "gets the first letter" do
       HighSchoolSweetheart.first_letter("Marry").to_s.should eq "M"
     end
@@ -26,7 +26,7 @@ describe "HighSchoolSweetheart" do
     end
   end
 
-  describe "initial" do
+  describe "initial", tags: "task_id=3" do
     it "gets the first letter and appends a dot" do
       HighSchoolSweetheart.initial("Betty").should eq "B."
     end
@@ -36,7 +36,7 @@ describe "HighSchoolSweetheart" do
     end
   end
 
-  describe "pair" do
+  describe "pair", tags: "task_id=4" do
     it "prints the pair's initials inside a heart" do
       expected = "❤ A.  +  C. ❤"
       HighSchoolSweetheart.pair("Avery", "Charlie").should eq expected

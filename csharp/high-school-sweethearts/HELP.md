@@ -27,13 +27,13 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [C# track's documentation](https://exercism.org/docs/tracks/csharp)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [C# track's programming category on the forum](https://forum.exercism.org/c/programming/csharp)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
 
 To get help if you're having trouble, you can use one of the following resources:
 
-- [Gitter](https://gitter.im/exercism/xcsharp) is Exercism C# track's Gitter room; go here to get support and ask questions related to the C# track.
 - [/r/csharp](https://www.reddit.com/r/csharp) is the C# subreddit.
 - [StackOverflow](http://stackoverflow.com/questions/tagged/c%23) can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.

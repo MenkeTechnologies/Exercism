@@ -1,8 +1,5 @@
 const std = @import("std");
-const mem = std.mem;
-const sort = std.sort;
-const lc = std.ascii.allocLowerString;
-const eq = mem.eql;
+const mem = std.mem; const sort = std.sort; const lc = std.ascii.allocLowerString; const eq = mem.eql;
 
 pub fn detectAnagrams(
     allocator: mem.Allocator,
@@ -18,7 +15,7 @@ pub fn detectAnagrams(
     for (candidates) |candidate| {
         var lowerCandidate = try lc(allocator, candidate);
         defer allocator.free(lowerCandidate);
-
+        
         if (eq(u8, lower, lowerCandidate)) {
             continue;
         }

@@ -33,7 +33,7 @@ enum NESButton {
 }
 ```
 
-This defines a new type named `NESButtons` with possible values `up`, `down`, `left`, `right`, `a`, `b`, `select`, and `start`. These values can be referred to by following the name of the type with a dot (`.`) and the value. In cases where the type name can be inferred, only the dot and value are needed.
+This defines a new type named `NESButton` with possible values `up`, `down`, `left`, `right`, `a`, `b`, `select`, and `start`. These values can be referred to by following the name of the type with a dot (`.`) and the value. In cases where the type name can be inferred, only the dot and value are needed.
 
 ## Methods
 
@@ -168,14 +168,15 @@ Next, implement the `LogLevel` initializer to parse the log level of a log line:
 
 ```swift
 LogLevel("[INF]: File deleted")
-// => LogLevel.info
+// Returns LogLevel.info
 LogLevel("Something went wrong!")
-// => LogLevel.unknown
+// Returns LogLevel.unknown
 ```
 
 ## 3. Convert log line to short format
 
-The log level of a log line is quite verbose. To reduce the disk space needed to store the log lines, a short format is developed: `"<ENCODED_LEVEL>:<MESSAGE>"`.
+The log level of a log line is quite verbose.
+To reduce the disk space needed to store the log lines, a short format is developed: `"<ENCODED_LEVEL>:<MESSAGE>"`.
 
 The encoded log level is simple mapping of a log level to a number:
 
@@ -192,7 +193,7 @@ Implement the `shortFormat(message: String) -> String` method that can output th
 ```swift
 let overflow = LogLevel.error
 overflow.shortFormat(message: "Stack overflow")
-// => "6:Stack overflow"
+// Returns "6:Stack overflow"
 ```
 
 ## Source

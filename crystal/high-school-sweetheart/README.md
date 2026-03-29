@@ -6,14 +6,13 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
-## String Methods
+`String` has several methods that can be used to manipulate strings.  
+These methods are called on the string itself and are often chained together to perform multiple operations on a string.
 
-String has a number of methods that can be used to manipulate strings.  
-These methods are called on the string itself, and are often chained together to perform multiple operations on a string.
+The following is a list of some of the most common methods.
+See the [`String` API documentation][string-api] for a complete list of methods.
 
-Following is a list of some of the most common methods, for a full list of methods, see the [String API documentation][string-api].
-
-### String#upcase & String#downcase
+## String#upcase & String#downcase
 
 The [`upcase`][upcase] method returns a new string with all the characters converted to uppercase.
 
@@ -29,14 +28,14 @@ The [`downcase`][downcase] method returns a new string with all the characters c
 # => "hello"
 ```
 
-### String#sub & String#gsub
+## String#sub & String#gsub
 
 Crystal has methods for replacing parts of a string.
 These are known as [`sub`][sub] (_substitution_) and [`gsub`][gsub] (_global substitution_).
 
-These methods can take a string, char or regex as the first argument, and a string or char as the second argument.
+These methods can take a string, char, or regex as the first argument and a string or char as the second argument.
 The first argument is the part of the string that will be replaced, and the second argument is the replacement.
-Chars and regex will be explained at later concepts.
+`Char` and regex will be explained in later concepts.
 
 The `sub` method will replace the first occurrence of the first argument with the second argument.
 
@@ -45,16 +44,16 @@ The `sub` method will replace the first occurrence of the first argument with th
 # => "herlo"
 ```
 
-The `gsub` method works the same as sub but will replace all occurrences of the first argument with the second argument.
+The `gsub` method works the same as `sub` but will replace all occurrences of the first argument with the second argument.
 
 ```crystal
 "hello".gsub("l", "r")
 # => "herro"
 ```
 
-### String#chomp & String#strip
+## String#chomp & String#strip
 
-Chomp and strip are methods that can be used to remove unwanted characters from a string.
+Chomp and strip can be used to remove unwanted characters from a string.
 
 The [`chomp`][chomp] method will be default remove the last `\r`, `\n` or `\r\n` characters from a string.
 If the method is called with an argument, it will remove the given value from the end of the string.
@@ -68,7 +67,7 @@ If it does exist at the end of the string.
 # => "he"
 ```
 
-The [`strip`][strip] method will by default remove all whitespace from the beginning and end of a string.
+By default, the [`strip`][strip] method will remove all whitespace from the beginning and end of a string.
 If the method is called with an argument, it will remove that argument from the beginning and end of the string.
 If it does exist at the beginning or end of the string.
 
@@ -77,11 +76,11 @@ If it does exist at the beginning or end of the string.
 # => "hello"
 ```
 
-### String#index
+## String#index
 
-The [`index`][index] method can be used to find the index of a character in a string.
-The `index` method takes a string, char or regex as an argument.
-And can take an optional second argument to specify the index to start searching from.
+The [`index`][index] method can be used to find a character's index in a string.
+The `index` method takes a `String`, `Char`, or regex as an argument.
+It can take an optional second argument to specify the index from which to search.
 The `index` method will return the index of the first occurrence of the argument.
 
 ```crystal
@@ -92,9 +91,9 @@ The `index` method will return the index of the first occurrence of the argument
 # => 3
 ```
 
-### String#delete_at
+## String#delete_at
 
-To remove a character from a string, you can use the [`delete_at`][delete_at] method.
+You can use the [`delete_at`][delete_at] method to remove a character from a string.
 The `delete_at` method takes an index as an argument and will remove the character at that index.
 
 ```crystal
@@ -105,7 +104,7 @@ The `delete_at` method takes an index as an argument and will remove the charact
 # => "helo"
 ```
 
-### String#insert
+## String#insert
 
 The [`insert`][insert] method can be used to insert a string at a specific index.
 The `insert` method takes an index as the first argument and a string as the second argument.

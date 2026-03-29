@@ -1,33 +1,14 @@
 <?php
 
-/*
- * By adding type hints and enabling strict type checking, code can become
- * easier to read, self-documenting and reduce the number of potential bugs.
- * By default, type declarations are non-strict, which means they will attempt
- * to change the original type to match the type specified by the
- * type-declaration.
- *
- * In other words, if you pass a string to a function requiring a float,
- * it will attempt to convert the string value to a float.
- *
- * To enable strict mode, a single declare directive must be placed at the top
- * of the file.
- * This means that the strictness of typing is configured on a per-file basis.
- * This directive not only affects the type declarations of parameters, but also
- * a function's return type.
- *
- * For more info review the Concept on strict type checking in the PHP track
- * <link>.
- *
- * To disable strict typing, comment out the directive below.
- */
-
 declare(strict_types=1);
+
+use PHPUnit\Framework\TestCase;
+use PHPUnit\Framework\Attributes\TestDox;
 
 /**
  * Calculate the value of scrabble score for a given word.
  */
-class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
+class ScrabbleScoreTest extends TestCase
 {
     public static function setUpBeforeClass(): void
     {
@@ -35,8 +16,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test lowercase single letter word.
+     * uuid f46cda29-1ca5-4ef2-bd45-388a767e3db2
      */
+    #[TestDox('Lowercase letter')]
     public function testLowercaseSingleLetter(): void
     {
         $word = 'a';
@@ -44,8 +26,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test uppercase single letter word.
+     * uuid f7794b49-f13e-45d1-a933-4e48459b2201
      */
+    #[TestDox('Uppercase letter')]
     public function testUppercaseSingleLetter(): void
     {
         $word = 'A';
@@ -53,8 +36,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test valuable single letter word.
+     * uuid eaba9c76-f9fa-49c9-a1b0-d1ba3a5b31fa
      */
+    #[TestDox('Valuable letter')]
     public function testValuableSingleLetter(): void
     {
         $word = 'f';
@@ -62,8 +46,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test short word.
+     * uuid f3c8c94e-bb48-4da2-b09f-e832e103151e
      */
+    #[TestDox('Short word')]
     public function testShortWord(): void
     {
         $word = 'at';
@@ -71,8 +56,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test short valuable word.
+     * uuid 71e3d8fa-900d-4548-930e-68e7067c4615
      */
+    #[TestDox('Short, valuable word')]
     public function testShortValuableWord(): void
     {
         $word = 'zoo';
@@ -80,8 +66,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test medium word.
+     * uuid d3088ad9-570c-4b51-8764-c75d5a430e99
      */
+    #[TestDox('Medium word')]
     public function testMediumWord(): void
     {
         $word = 'street';
@@ -89,8 +76,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test medium valuable word.
+     * uuid fa20c572-ad86-400a-8511-64512daac352
      */
+    #[TestDox('Medium, valuable word')]
     public function testMediumValuableWord(): void
     {
         $word = 'quirky';
@@ -98,8 +86,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test long mixed-case word.
+     * uuid 9336f0ba-9c2b-4fa0-bd1c-2e2d328cf967
      */
+    #[TestDox('Long, mixed-case word')]
     public function testLongMixedCaseWord(): void
     {
         $word = 'OxyphenButazone';
@@ -107,8 +96,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test english-like word.
+     * uuid 1e34e2c3-e444-4ea7-b598-3c2b46fd2c10
      */
+    #[TestDox('English-like word')]
     public function testEnglishLikeWord(): void
     {
         $word = 'pinata';
@@ -116,8 +106,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /**
-     * Test empty word score.
+     * uuid 4efe3169-b3b6-4334-8bae-ff4ef24a7e4f
      */
+    #[TestDox('Empty input')]
     public function testEmptyWordScore(): void
     {
         $word = '';
@@ -125,8 +116,9 @@ class ScrabbleScoreTest extends PHPUnit\Framework\TestCase
     }
 
     /*
-     * Test entire alphabet word.
+     * uuid 3b305c1c-f260-4e15-a5b5-cb7d3ea7c3d7
      */
+    #[TestDox('Entire alphabet available')]
     public function testEntireAlphabetWord(): void
     {
         $word = 'abcdefghijklmnopqrstuvwxyz';

@@ -101,4 +101,3 @@ unittest
         assert(proteins("UUCUUCUAAUGGU") == ["Phenylalanine", "Phenylalanine"]);
     }
 }
-

@@ -1,6 +1,6 @@
 # Largest Series Product
 
-Welcome to Largest Series Product on Exercism's VB.NET Track.
+Welcome to Largest Series Product on Exercism's Visual Basic Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction

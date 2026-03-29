@@ -6,6 +6,10 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Generic Types
+
+A collection definition typically includes a place holder in angle brackets, often `T` by convention. Such a collection is referred to as a generic type. This allows the collection user to specify what type of items to store in the collection. In the example code below we are instantiating a list of strings.
+
 ## Lists
 
 Lists in C# are collections of primitive values or instances of structs or classes. They are implemented in the base class library as `List<T>` where `T` is the type of the item in the list. The API exposes a rich set of methods for creating and manipulating lists.
@@ -15,10 +19,6 @@ Items can be added to and removed from lists. They grow and shrink as necessary.
 ```csharp
 var listOfStrings = new List<string>();
 ```
-
-## Generic Types
-
-A collection definition typically includes a place holder in angle brackets, often `T` by convention. Such a collection is referred to as a generic type. This allows the collection user to specify what type of items to store in the collection. In the above example code we are instantiating a list of strings.
 
 ## Instructions
 
@@ -92,7 +92,7 @@ Languages.ReverseList(Languages.GetExistingLanguages())
 
 ## 7. Check if list is exciting
 
-While you love all languages, C# has a special place in your heart. As such, you're really excited about a list of languages if:
+While you love all languages, C# has a special place in your heart. As such, you're really excited about a list of languages if one of the following conditions is true:
 
 - The first on the list is C#.
 - The second item on the list is C# and the list contains either two or three languages.

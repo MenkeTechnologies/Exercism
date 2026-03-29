@@ -1,6 +1,6 @@
-# Two Fer
+# Two-Fer
 
-Welcome to Two Fer on Exercism's Lua Track.
+Welcome to Two-Fer on Exercism's Lua Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction

@@ -129,3 +129,7 @@ captainsLog.randomStardate();
 ### Created by
 
 - @sanderploegsma
+
+### Contributed to by
+
+- @santialb

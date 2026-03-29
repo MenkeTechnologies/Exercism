@@ -31,4 +31,3 @@ fn proteins(strand string) ![]string {
     }
     return res
 }
-

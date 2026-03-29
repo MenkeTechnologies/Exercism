@@ -30,6 +30,8 @@ Words in the anagram set should have the same letter case as in the candidate se
 
 Given the target `"stone"` and candidates `"stone"`, `"tones"`, `"banana"`, `"tons"`, `"notes"`, `"Seton"`, the anagram set is `"tones"`, `"notes"`, `"Seton"`.
 
+You must return the anagrams in the same order as they are listed in the candidate words.
+
 ## Source
 
 ### Created by

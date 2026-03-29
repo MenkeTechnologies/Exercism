@@ -1,13 +1,16 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/etl/canonical-data.json
+# File last updated on 2026-02-19
+
 import unittest
 
 from etl import (
     transform,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
-
 
 class EtlTest(unittest.TestCase):
+
     def test_single_letter(self):
         legacy_data = {1: ["A"]}
         data = {"a": 1}
@@ -62,7 +65,3 @@ class EtlTest(unittest.TestCase):
             "z": 10,
         }
         self.assertEqual(transform(legacy_data), data)
-
-
-if __name__ == "__main__":
-    unittest.main()

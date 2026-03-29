@@ -38,9 +38,9 @@ The text in braces, placeholders in the case of the composite format and interpo
 
 A format item can comprise up to 3 parts. The first is the mandatory expression or argument placeholder as seen in the example code above. In addition, there is an optional alignment (introduced with a comma, ",") and an optional _format string_ (introduced with a colon ":").
 
-`{<interpolationExpression>[,<alignment>][:<formatString>]`
+`{<interpolationExpression>[,<alignment>][:<formatString>]}`
 
-The _alignment_ specifies the length of the "field" in which the text is placed, padded to the left with spaces if the alignment is negative or to the right if it is positive.
+The _alignment_ specifies the length of the "field" in which the text is placed, padded to the left with spaces if the alignment is positive or to the right if it is negative.
 
 The _format string_ specifies the shape of the text output such as whether thousands separators should be included for a number or whether the date part only of a `DateTime` object should be output.
 
@@ -83,7 +83,8 @@ In this exercise, you are going to help high school sweethearts profess their lo
 
 ## 1. Display the couple's name separated by a heart
 
-Please implement the static `HighSchoolSweethearts.DisplaySingleLine()` method to take 2 names and display them separated by a heart centered in a 61 character line.
+Please implement the static `HighSchoolSweethearts.DisplaySingleLine()` method to take two names and display them separated by a heart.
+The formatted text should be 61 characters wide, with the heart in the center of the string.
 
 All names are guaranteed to fit well within the width of the line.
 

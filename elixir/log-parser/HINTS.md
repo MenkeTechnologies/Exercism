@@ -14,7 +14,7 @@
 ## 1. Identify garbled log lines
 
 - Use the [`r` sigil][sigil-r] to create a regular expression.
-- There is [an operator]([match-operator]) that can be used to check a string against a regular expression. There is also a [`Regex` function][regex-match] and a [`String` function][string-match] that can do the same.
+- There is [an operator][match-operator] that can be used to check a string against a regular expression. There is also a [`Regex` function][regex-match] and a [`String` function][string-match] that can do the same.
 - Don't forget to escape characters that have special meaning in regular expressions.
 
 ## 2. Split the log line
@@ -32,7 +32,7 @@
 - There is a [`Regex` function][regex-run] that runs a regular expression against a string and returns all captures.
 
 [regex-docs]: https://hexdocs.pm/elixir/Regex.html
-[sigils-regex]: https://elixir-lang.org/getting-started/sigils.html#regular-expressions
+[sigils-regex]: https://hexdocs.pm/elixir/sigils.html#regular-expressions
 [website-regex-info]: https://www.regular-expressions.info
 [website-rexegg]: https://www.rexegg.com/
 [website-regexone]: https://regexone.com/

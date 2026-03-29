@@ -1,6 +1,6 @@
-# Sgf Parsing
+# SGF Parsing
 
-Welcome to Sgf Parsing on Exercism's F# Track.
+Welcome to SGF Parsing on Exercism's F# Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

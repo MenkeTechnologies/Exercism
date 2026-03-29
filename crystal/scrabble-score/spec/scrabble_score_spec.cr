@@ -6,43 +6,43 @@ describe "ScrabbleScore" do
     ScrabbleScore.score("a").should eq(1)
   end
 
-  it "uppercase letter" do
+  pending "uppercase letter" do
     ScrabbleScore.score("A").should eq(1)
   end
 
-  it "valuable letter" do
+  pending "valuable letter" do
     ScrabbleScore.score("f").should eq(4)
   end
 
-  it "short word" do
+  pending "short word" do
     ScrabbleScore.score("at").should eq(2)
   end
 
-  it "short, valuable word" do
+  pending "short, valuable word" do
     ScrabbleScore.score("zoo").should eq(12)
   end
 
-  it "medium word" do
+  pending "medium word" do
     ScrabbleScore.score("street").should eq(6)
   end
 
-  it "medium, valuable word" do
+  pending "medium, valuable word" do
     ScrabbleScore.score("quirky").should eq(22)
   end
 
-  it "long, mixed-case word" do
+  pending "long, mixed-case word" do
     ScrabbleScore.score("OxyphenButazone").should eq(41)
   end
 
-  it "english-like word" do
+  pending "english-like word" do
     ScrabbleScore.score("pinata").should eq(8)
   end
 
-  it "empty input" do
+  pending "empty input" do
     ScrabbleScore.score("").should eq(0)
   end
 
-  it "entire alphabet available" do
+  pending "entire alphabet available" do
     ScrabbleScore.score("abcdefghijklmnopqrstuvwxyz").should eq(87)
   end
 end

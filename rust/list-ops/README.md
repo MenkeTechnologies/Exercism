@@ -40,3 +40,5 @@ See if you can create your own iterator type instead of creating an iterator fro
 ### Created by
 
 - @ellnix
+- @senekor
+- @Morgane55440

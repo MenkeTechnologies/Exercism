@@ -6,9 +6,11 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Nullability
+
 In C#, the `null` literal is used to denote the absence of a value. A _nullable_ type is a type that allows for `null` values.
 
-Prior to C# 8.0, reference types were always nullable and value types were not. A value type can be made nullable though by appending it with a question mark (`?`).
+Prior to C# 8.0, reference types were always nullable and value types were not. A value type can be made nullable by appending a question mark to it (`?`).
 
 ```csharp
 string nullableReferenceType = "hello";
@@ -21,7 +23,7 @@ int? nullableValueType = 5; // Define nullable value type
 nullableValueType = null;   // Valid as type is nullable
 ```
 
-Accessing a member of a variable which value is `null` will compile fine, but result in a `NullReferenceException` being thrown at runtime:
+Accessing a null variable's member does not cause a compile error, but results in a `NullReferenceException` being thrown at runtime:
 
 ```csharp
 string sentence = null;
@@ -40,7 +42,7 @@ string? nullableReferenceType = "movie";
 nullableReferenceType = null; // Valid as type is nullable
 ```
 
-To safely work with nullable values, one should check if they are `null` before working with them:
+To safely work with nullable values, check if they are `null` before using them:
 
 ```csharp
 string NormalizedName(string? name)
@@ -49,12 +51,10 @@ string NormalizedName(string? name)
     {
         return "UNKNOWN";
     }
-    else
-    {
-        // Value is not null at this point, so no compile warning
-        // and no runtime NullReferenceException being thrown
-        return name.ToUpper();
-    }
+
+    // Value is not null at this point, so no compile warning
+    // and no runtime NullReferenceException being thrown
+    return name.ToUpper();
 }
 
 NormalizedName(null); // => "UNKNOWN"

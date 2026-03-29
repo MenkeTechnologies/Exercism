@@ -1,6 +1,6 @@
-# gotta-snatch-em-all
+# Gotta Snatch 'Em All
 
-Welcome to gotta-snatch-em-all on Exercism's Java Track.
+Welcome to Gotta Snatch 'Em All on Exercism's Java Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
 
@@ -69,7 +69,7 @@ important when your goal is to get all existing cards.
 
 ## 1. Start a collection
 
-You just found your old stash of Blorkemon™️ cards! so it's time to start a new collection!
+You just found your old stash of Blorkemon™️ cards!
 The stash contains a bunch of duplicate cards, so it's time to start a new collection by removing the duplicates.
 
 You really want your friends to join your Blorkemon™️ madness, and the best way is to kickstart their collection by
@@ -103,8 +103,8 @@ collection.contains("Scientuna");
 
 You really want your friends to join your Blorkemon™️ madness, so it's time to start trading!
 
-Not every trade is worth doing, or can be done at all.
-You cannot trade a card you don't have, and you shouldn't trade a card for one that you already have.
+When trading with friends not every trade is worth doing, or can be done at all.
+You should only trade if both you and your friend have a card the other does not have.
 
 Implement the `canTrade` method, that takes your current collection and the collection of one of your friends.
 It should return a `boolean` indicating whether a trade is possible, following the rules above.

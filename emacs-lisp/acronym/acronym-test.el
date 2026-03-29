@@ -1,10 +1,11 @@
-;;; acronym-test.el --- Tests for Acronym (exercism)
+;;; acronym-test.el --- Tests for Acronym (exercism)  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
 ;;; Code
 
 (load-file "acronym.el")
+(declare-function acronym "acronym.el" (phrase))
 
 (ert-deftest basic ()
   (should (equal "PNG" (acronym "Portable Network Graphics"))))

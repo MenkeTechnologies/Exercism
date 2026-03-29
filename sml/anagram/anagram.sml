@@ -1,5 +1,5 @@
-fun aux (c, []) = [c]
-  | aux (c, acc_h::acc_t) = if c <= acc_h then c::acc_h::acc_t else acc_h::aux(c, acc_t)
+fun aux (x, []) = [x]
+  | aux (x, y::ys) = if x <= y then x::y::ys else y::aux(x, ys)
 
 fun sort lst = foldr aux [] lst
 

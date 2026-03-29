@@ -1,5 +1,4 @@
 new_school() = []
-
 function add!(students, school)
       map(student ->
           if student.name in roster(school)

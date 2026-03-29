@@ -3,17 +3,18 @@ package raindrops
 import "testing"
 
 func TestConvert(t *testing.T) {
-	for _, test := range tests {
-		if actual := Convert(test.input); actual != test.expected {
-			t.Errorf("Convert(%d) = %q, expected %q.",
-				test.input, actual, test.expected)
-		}
+	for _, tc := range testCases {
+		t.Run(tc.description, func(t *testing.T) {
+			if actual := Convert(tc.input); actual != tc.expected {
+				t.Fatalf("Convert(%d) = %q, want: %q", tc.input, actual, tc.expected)
+			}
+		})
 	}
 }
 
 func BenchmarkConvert(b *testing.B) {
-	for i := 0; i < b.N; i++ {
-		for _, test := range tests {
+	for range b.N {
+		for _, test := range testCases {
 			Convert(test.input)
 		}
 	}

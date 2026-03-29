@@ -19,7 +19,7 @@ test "word with one duplicated character from the end of the alphabet" {
     try testing.expect(!isogram.isIsogram("zzyzx"));
 }
 
-test "word with one duplicated character from the end of the alphabet" {
+test "longest reported english isogram" {
     try testing.expect(isogram.isIsogram("subdermatoglyphic"));
 }
 
@@ -53,4 +53,8 @@ test "duplicated character in the middle" {
 
 test "same first and last characters" {
     try testing.expect(!isogram.isIsogram("angola"));
+}
+
+test "word with duplicated character and with two hyphens" {
+    try testing.expect(!isogram.isIsogram("up-to-date"));
 }

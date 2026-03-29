@@ -1,54 +1,31 @@
-package diffsquares
+package differenceofsquares
 
 import "testing"
 
-var tests = []struct{ n, sqOfSum, sumOfSq int }{
-	{5, 225, 55},
-	{10, 3025, 385},
-	{100, 25502500, 338350},
-}
-
-func TestSquareOfSum(t *testing.T) {
-	for _, test := range tests {
-		if s := SquareOfSum(test.n); s != test.sqOfSum {
-			t.Fatalf("SquareOfSum(%d) = %d, want %d", test.n, s, test.sqOfSum)
-		}
+func TestDifferenceOfSquares(t *testing.T) {
+	for _, tc := range testCases {
+		t.Run(tc.description, func(t *testing.T) {
+			if got := tc.fn(tc.input); got != tc.expected {
+				t.Fatalf("%s(%d) = %d, want: %d", tc.fnName, tc.input, got, tc.expected)
+			}
+		})
 	}
 }
 
-func TestSumOfSquares(t *testing.T) {
-	for _, test := range tests {
-		if s := SumOfSquares(test.n); s != test.sumOfSq {
-			t.Fatalf("SumOfSquares(%d) = %d, want %d", test.n, s, test.sumOfSq)
-		}
-	}
-}
-
-func TestDifference(t *testing.T) {
-	for _, test := range tests {
-		want := test.sqOfSum - test.sumOfSq
-		if s := Difference(test.n); s != want {
-			t.Fatalf("Difference(%d) = %d, want %d", test.n, s, want)
-		}
-	}
-}
-
-// Benchmark functions on just a single number (100, from the original PE problem)
-// to avoid overhead of iterating over tests.
 func BenchmarkSquareOfSum(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		SquareOfSum(100)
 	}
 }
 
 func BenchmarkSumOfSquares(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		SumOfSquares(100)
 	}
 }
 
 func BenchmarkDifference(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		Difference(100)
 	}
 }

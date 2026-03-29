@@ -1,6 +1,6 @@
 # Twelve Days
 
-Welcome to Twelve Days on Exercism's VB.NET Track.
+Welcome to Twelve Days on Exercism's Visual Basic Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

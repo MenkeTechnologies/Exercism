@@ -14,10 +14,10 @@ This allows for code to be more concise and readable, and is done by separating 
 
 The splat operator(`*`), and double splat operator, (`**`), are often used in decomposition contexts.
 
-```exercism/caution
+~~~~exercism/caution
 `*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`.
 While `*` and `**` are used for multiplication and exponentiation, respectively, `*<variable_name>` and `**<variable_name>` are used as composition and decomposition operators.
-```
+~~~~
 
 ## Multiple assignment
 
@@ -57,9 +57,9 @@ For example:
 => [2, 1]
 ```
 
-```exercism/note
+~~~~exercism/note
 This is also known as "Parallel Assignment", and can be used to avoid a temporary variable.
-```
+~~~~
 
 If there are more variables than values, the extra variables will be assigned `nil`:
 
@@ -121,10 +121,12 @@ If the decomposition has variables with incorrect placement and/or an incorrect 
 
 ```ruby
 fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
-(a, b), (d) = fruits_vegetables
 
-syntax error, unexpected ')', expecting '.' or &. or :: or '['
+(a, b), (d) = fruits_vegetables
+# syntax error, unexpected '=', expecting '.' or &. or :: or '['
+
 ((a, b), (d)) = fruits_vegetables
+# syntax error, unexpected ')', expecting '.' or &. or :: or '['
 ```
 
 Experiment here, and you will notice that the first pattern dictates, not the available values on the right hand side.
@@ -132,7 +134,7 @@ The syntax error is not tied to the data structure.
 
 ### Decomposing an array with the single splat operator (`*`)
 
-When [decomposing an **array**][decomposition] you can use the splat operator (`*`) to capture the "leftover" values.
+When [decomposing an **array**][decompose] you can use the splat operator (`*`) to capture the "leftover" values.
 This is clearer than slicing the **array** (_which in some situations is less readable_).
 For example, we can extract the first element and then assign the remaining values into a new **array** without the first element:
 
@@ -303,7 +305,7 @@ If the method defined does not have any defined parameters for keyword arguments
 `*arguments` and `**keyword_arguments` can also be used in combination with one another:
 
 ```ruby
-def my_method(*arguments, **keywword_arguments)
+def my_method(*arguments, **keyword_arguments)
   p arguments.sum
   for (key, value) in keyword_arguments.to_a
     p key.to_s + " = " + value.to_s
@@ -321,13 +323,13 @@ my_method(1, 2, 3, a: 1, b: 2, c: 3)
 You can also write arguments before and after `*arguments` to allow for specific positional arguments.
 This works the same way as decomposing an array.
 
-```exercism/caution
+~~~~exercism/caution
 Arguments have to be structured in a specific order:
 
 `def my_method(<positional_arguments>, *arguments, <positional_arguments>, <keyword_arguments>, **keyword_arguments)`
 
 If you don't follow this order then you will get an error.
-```
+~~~~
 
 ```ruby
 def my_method(a, b, *arguments)
@@ -417,11 +419,11 @@ my_method(**numbers)
 1
 ```
 
-[arguments]: https://docs.ruby-lang.org/en/3.1/syntax/methods_rdoc.html#label-Array-2FHash+Argument
-[keyword arguments]: https://docs.ruby-lang.org/en/3.1/syntax/methods_rdoc.html#label-Keyword+Arguments
-[multiple assignment]: https://docs.ruby-lang.org/en/3.1/syntax/assignment_rdoc.html#label-Multiple+Assignment
+[arguments]: https://docs.ruby-lang.org/en/master/syntax/methods_rdoc.html#label-Array-2FHash+Argument
+[keyword arguments]: https://docs.ruby-lang.org/en/master/syntax/methods_rdoc.html#label-Keyword+Arguments
+[multiple assignment]: https://docs.ruby-lang.org/en/master/syntax/assignment_rdoc.html#label-Multiple+Assignment
 [sorting algorithms]: https://en.wikipedia.org/wiki/Sorting_algorithm
-[decompose]: https://docs.ruby-lang.org/en/3.1/syntax/assignment_rdoc.html#label-Array+Decomposition
+[decompose]: https://docs.ruby-lang.org/en/master/syntax/assignment_rdoc.html#label-Array+Decomposition
 [delimited decomposition expression]: https://riptutorial.com/ruby/example/8798/decomposition
 
 ## Instructions
@@ -430,12 +432,12 @@ Your friend Linus is a Locomotive Engineer who drives cargo trains between citie
 Although they are amazing at handling trains, they are not amazing at handling logistics or computers.
 They would like to enlist your programming help organizing train details and correcting mistakes in route data.
 
-```exercism/note
+~~~~exercism/note
 This exercise could easily be solved using slicing, indexing, and various `hash` methods.
 However, we would like you to practice packing, unpacking, and multiple assignment in solving each of the tasks below.
-```
+~~~~
 
-## 1. Create an list of all wagons
+## 1. Create a list of all wagons
 
 Your friend has been keeping track of each wagon identifier (ID), but they are never sure how many wagons the system is going to have to process at any given time. It would be much easier for the rest of the logistics program to have this data packaged into a unified **array**.
 
@@ -463,7 +465,7 @@ Linus would be really grateful to you for fixing their mistakes and consolidatin
 
 Implement a method `fix_list_of_wagons()` that takes two **arrays** containing wagon IDs.
 It should reposition the first two items of the first **array** to the end, and insert the values from the second **array** behind (_on the right hand side of_) the locomotive ID (**1**).
-The method should then `return` a **array** with the modifications.
+The method should then `return` an **array** with the modifications.
 
 ```ruby
 LocomotiveEngineer.fix_list_of_wagons([2, 5, 1, 7, 4, 12, 6, 3, 13], [3, 17, 6, 15])
@@ -488,6 +490,10 @@ LocomotiveEngineer.add_missing_stops({from: "New York", to: "Miami"},
 # => {from: "New York", to: "Miami", stops: ["Washington, DC", "Charlotte", "Atlanta", "Jacksonville", "Orlando"]}
 ```
 
+~~~~exercism/note
+The stops will always be passed in the correct order, so you don’t need to worry about sorting them.
+~~~~
+
 ## 4. Extend routing information
 
 Linus has been working on the routing program and has noticed that certain routes are missing some important details.
@@ -500,9 +506,9 @@ The first **hash** contains the origin and destination cities the train route ru
 The second **hash** contains other routing details such as train speed, length, or temperature.
 The method should return a consolidated **hash** with all routing information.
 
-```exercism/note
+~~~~exercism/note
 The second **hash** can contain different/more properties than the ones shown in the example.
-```
+~~~~
 
 ```ruby
 LocomotiveEngineer.extend_route_information({"from": "Berlin", "to": "Hamburg"}, {"length": "100", "speed": "50"})

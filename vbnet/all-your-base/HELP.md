@@ -26,15 +26,16 @@ It's possible to submit an incomplete solution which allows you to:
 
 If you'd like help solving the exercise, check the following pages:
 
-- The [VB.NET track's documentation](https://exercism.org/docs/tracks/vbnet)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Visual Basic track's documentation](https://exercism.org/docs/tracks/vbnet)
+- The [Visual Basic track's programming category on the forum](https://forum.exercism.org/c/programming/vbnet)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
 
 To get help if you're having trouble, you can use one of the following resources:
 
-- [Visual Basic community on Discord](https://discord.gg/c5XVTU9X); go here to ask questions related to VB.NET.
-- [/r/visualbasic](https://www.reddit.com/r/visualbasic) is the VB.NET subreddit.
-- [StackOverflow](http://stackoverflow.com/questions/tagged/vb.net) can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.
-- [RosettaCode](http://rosettacode.org/wiki/Category:Visual_Basic_.NET) has many examples of programming tasks solved in VB.NET
+- [Visual Basic community on Discord](https://discord.gg/c5XVTU9X); go here to ask questions related to Visual Basic.
+- [/r/visualbasic](https://www.reddit.com/r/visualbasic) is the Visual Basic subreddit.
+- [StackOverflow](http://stackoverflow.com/questions/tagged/Visual Basic) can be used to search for your problem and see if it has been answered already. You can also ask and answer questions.
+- [RosettaCode](http://rosettacode.org/wiki/Category:Visual_Basic_.NET) has many examples of programming tasks solved in Visual Basic

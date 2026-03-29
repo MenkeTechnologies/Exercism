@@ -1,6 +1,6 @@
-# matching brackets
+# Matching Brackets
 
-Welcome to matching brackets on Exercism's Ballerina Track.
+Welcome to Matching Brackets on Exercism's Ballerina Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction

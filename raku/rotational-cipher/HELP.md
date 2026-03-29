@@ -2,17 +2,16 @@
 
 ## Running the tests
 
-You can run the test suite for the exercise by executing the appropriate command:
+There is a Raku script with the extension `.rakutest` contained in the `t/` directory, which will be used to test your solution.
+You can run through the tests by using the command:
 
-If the `rakutest` file is contained in the `t/` directory:
-`prove6 --lib`
-
-If the `rakutest` file is in the top-level directory:
-`prove6 {exercise-name}.rakutest`
+```bash
+prove6
+```
 
 ## Submitting your solution
 
-You can submit your solution using the `exercism submit RotationalCipher.rakumod` command.
+You can submit your solution using the `exercism submit lib/RotationalCipher.rakumod` command.
 This command will upload your solution to the Exercism website and print the solution page's URL.
 
 It's possible to submit an incomplete solution which allows you to:

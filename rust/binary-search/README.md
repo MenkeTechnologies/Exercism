@@ -2,58 +2,57 @@
 
 Welcome to Binary Search on Exercism's Rust Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
+If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
+
+## Introduction
+
+You have stumbled upon a group of mathematicians who are also singer-songwriters.
+They have written a song for each of their favorite numbers, and, as you can imagine, they have a lot of favorite numbers (like [0][zero] or [73][seventy-three] or [6174][kaprekars-constant]).
+
+You are curious to hear the song for your favorite number, but with so many songs to wade through, finding the right song could take a while.
+Fortunately, they have organized their songs in a playlist sorted by the title — which is simply the number that the song is about.
+
+You realize that you can use a binary search algorithm to quickly find a song given the title.
+
+[zero]: https://en.wikipedia.org/wiki/0
+[seventy-three]: https://en.wikipedia.org/wiki/73_(number)
+[kaprekars-constant]: https://en.wikipedia.org/wiki/6174_(number)
 
 ## Instructions
 
-Implement a binary search algorithm.
+Your task is to implement a binary search algorithm.
 
-Searching a sorted collection is a common task. A dictionary is a sorted
-list of word definitions. Given a word, one can find its definition. A
-telephone book is a sorted list of people's names, addresses, and
-telephone numbers. Knowing someone's name allows one to quickly find
-their telephone number and address.
+A binary search algorithm finds an item in a list by repeatedly splitting it in half, only keeping the half which contains the item we're looking for.
+It allows us to quickly narrow down the possible locations of our item until we find it, or until we've eliminated all possible locations.
 
-If the list to be searched contains more than a few items (a dozen, say)
-a binary search will require far fewer comparisons than a linear search,
-but it imposes the requirement that the list be sorted.
+~~~~exercism/caution
+Binary search only works when a list has been sorted.
+~~~~
 
-In computer science, a binary search or half-interval search algorithm
-finds the position of a specified input value (the search "key") within
-an array sorted by key value.
+The algorithm looks like this:
 
-In each step, the algorithm compares the search key value with the key
-value of the middle element of the array.
+- Find the middle element of a _sorted_ list and compare it with the item we're looking for.
+- If the middle element is our item, then we're done!
+- If the middle element is greater than our item, we can eliminate that element and all the elements **after** it.
+- If the middle element is less than our item, we can eliminate that element and all the elements **before** it.
+- If every element of the list has been eliminated then the item is not in the list.
+- Otherwise, repeat the process on the part of the list that has not been eliminated.
 
-If the keys match, then a matching element has been found and its index,
-or position, is returned.
+Here's an example:
 
-Otherwise, if the search key is less than the middle element's key, then
-the algorithm repeats its action on the sub-array to the left of the
-middle element or, if the search key is greater, on the sub-array to the
-right.
+Let's say we're looking for the number 23 in the following sorted list: `[4, 8, 12, 16, 23, 28, 32]`.
 
-If the remaining array to be searched is empty, then the key cannot be
-found in the array and a special "not found" indication is returned.
-
-A binary search halves the number of items to check with each iteration,
-so locating an item (or determining its absence) takes logarithmic time.
-A binary search is a dichotomic divide and conquer search algorithm.
+- We start by comparing 23 with the middle element, 16.
+- Since 23 is greater than 16, we can eliminate the left half of the list, leaving us with `[23, 28, 32]`.
+- We then compare 23 with the new middle element, 28.
+- Since 23 is less than 28, we can eliminate the right half of the list: `[23]`.
+- We've found our item.
 
 ## Restrictions
 
 Rust provides in its standard library already a
 [binary search function](https://doc.rust-lang.org/std/primitive.slice.html#method.binary_search).
 For this exercise you should not use this function but just other basic tools instead.
-
-## Hints
-
-[Slices](https://doc.rust-lang.org/book/2018-edition/ch04-03-slices.html) have additionally to
-the normal element access via indexing (slice[index]) many useful functions like
-[split_at](https://doc.rust-lang.org/std/primitive.slice.html#method.split_at) or [getting
-subslices](https://doc.rust-lang.org/std/primitive.slice.html#method.get) (slice[start..end]).
-
-You can solve this exercise by just using boring old element access via indexing, but maybe the
-other provided functions can make your code cleaner and safer.
 
 ## For bonus points
 
@@ -75,13 +74,6 @@ $ cargo test --features generic
 
 Then please share your thoughts in a comment on the submission. Did this
 experiment make the code better? Worse? Did you learn anything from it?
-
-### Hints for Bonus Points
-
-- To get your function working with all kind of elements which can be ordered,
-  have a look at the [Ord Trait](https://doc.rust-lang.org/std/cmp/trait.Ord.html).
-- To get your function working directly on Vec and Array, you can use the
-  [AsRef Trait](https://doc.rust-lang.org/std/convert/trait.AsRef.html)
 
 ## Source
 
@@ -106,4 +98,4 @@ experiment make the code better? Worse? Did you learn anything from it?
 
 ### Based on
 
-Wikipedia - http://en.wikipedia.org/wiki/Binary_search_algorithm
+Wikipedia - https://en.wikipedia.org/wiki/Binary_search_algorithm

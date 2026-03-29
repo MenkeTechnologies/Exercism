@@ -2,15 +2,15 @@
 
 ## Running the tests
 
-## Non-interactive
+## Command line
 
-To run your implementation directly run:
+The following command can be used to run the tests from the command line:
 
 ```bash
 swipl -f <exercise>.pl -s <exercise>_tests.plt -g run_tests,halt -t 'halt(1)'
 ```
 
-In both cases, replace `<exercise>` with the name of the exercise you are implementing.
+Replace `<exercise>` with the name of the exercise you are implementing.
 
 ## Interactive
 
@@ -29,7 +29,16 @@ with:
 ?- run_tests.
 ```
 
-In both cases, replace `<exercise>` with the name of the exercise you are implementing.
+Replace `<exercise>` with the name of the exercise you are implementing.
+
+### Reloading changes
+
+Once the above files are loaded, you can apply any changes you've made
+by running:
+
+```
+?- make.
+```
 
 ## Skipped tests
 
@@ -37,6 +46,14 @@ When you first begin an exercise, only the first test will run. The rest have
 been skipped by adding `condition(pending)` to the `test` goal. Once the first
 test passes, un-skip the next test by changing `pending` in `condition(pending)`
 to `true`. Repeat for each test until they are all running and passing.
+
+### Command line
+
+Add the `-- --all` argument to the end of the command to also run any pending tests:
+
+```bash
+swipl -f <exercise>.pl -s <exercise>_tests.plt -g run_tests,halt -t 'halt(1)' -- --all
+```
 
 ## Submitting your solution
 
@@ -53,7 +70,8 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Prolog track's documentation](https://exercism.org/docs/tracks/prolog)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Prolog track's programming category on the forum](https://forum.exercism.org/c/programming/prolog)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.

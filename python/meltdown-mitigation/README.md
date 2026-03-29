@@ -9,9 +9,9 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 In Python, [`if`][if statement], `elif` (_a contraction of 'else and if'_) and `else` statements are used to [control the flow][control flow tools] of execution and make decisions in a program.
 Unlike many other programming languages, Python versions 3.9 and below do not offer a formal case-switch statement, instead using multiple `elif` statements to serve a similar purpose.
 
-Python 3.10 introduces a variant case-switch statement called `pattern matching`, which will be covered separately in another concept.
+Python 3.10 introduces a variant case-switch statement called `structural pattern matching`, which will be covered separately in another concept.
 
-Conditional statements use expressions that must resolve to `True` or `False` -- either by returning a `bool` directly, or by evaluating ["truthy" or "falsy"][truth value testing].
+Conditional statements use expressions that must resolve to `True` or `False` -- either by returning a `bool` type directly, or by evaluating as ["truthy" or "falsy"][truth value testing].
 
 ```python
 x = 10
@@ -54,24 +54,25 @@ if x > y:
 elif y > z:
     print("y is greater than x and z")
 else:
-    print("z is great than x and y")
+    print("z is greater than x and y")
 ...
->>> z is great than x and y
+>>> z is greater than x and y
 ```
 
 [Boolean operations][boolean operations] and [comparisons][comparisons] can be combined with conditionals for more complex testing:
 
 ```python
-
 >>> def classic_fizzbuzz(number):
         if number % 3 == 0 and number % 5 == 0:
-            return 'FizzBuzz!'
+            say = 'FizzBuzz!'
         elif number % 5 == 0:
-            return 'Buzz!'
+            say = 'Buzz!'
         elif number % 3 == 0:
-            return 'Fizz!'
+            say = 'Fizz!'
         else:
-            return str(number)
+            say = str(number)
+        
+        return say
 
 >>> classic_fizzbuzz(15)
 'FizzBuzz!'
@@ -80,11 +81,11 @@ else:
 '13'
 ```
 
-[if statement]: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
-[control flow tools]: https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools
-[truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
 [boolean operations]: https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not
 [comparisons]: https://docs.python.org/3/library/stdtypes.html#comparisons
+[control flow tools]: https://docs.python.org/3/tutorial/controlflow.html#more-control-flow-tools
+[if statement]: https://docs.python.org/3/reference/compound_stmts.html#the-if-statement
+[truth value testing]: https://docs.python.org/3/library/stdtypes.html#truth-value-testing
 
 ## Instructions
 
@@ -99,14 +100,14 @@ The following three tasks are all related to writing code for maintaining ideal 
 
 ## 1. Check for criticality
 
-The first thing a control system has to do is check if the reactor is balanced in criticality.
-A reactor is said to be critical if it satisfies the following conditions:
+The first thing a control system has to do is check if the reactor is _balanced in criticality_.
+A reactor is said to be balanced in criticality if it satisfies the following conditions:
 
-- The temperature is less than 800.
+- The temperature is less than 800 K.
 - The number of neutrons emitted per second is greater than 500.
 - The product of temperature and neutrons emitted per second is less than 500000.
 
-Implement the function `is_criticality_balanced()` that takes `temperature` and `neutrons_emitted` as parameters, and returns `True` if the criticality conditions are met, `False` if not.
+Implement the function `is_criticality_balanced()` that takes `temperature` measured in kelvin and `neutrons_emitted` as parameters, and returns `True` if the criticality conditions are met, `False` if not.
 
 ```python
 >>> is_criticality_balanced(750, 600)
@@ -143,15 +144,13 @@ Your final task involves creating a fail-safe mechanism to avoid overload and me
 This mechanism will determine if the reactor is below, at, or above the ideal criticality threshold.
 Criticality can then be increased, decreased, or stopped by inserting (or removing) control rods into the reactor.
 
-Implement the function called `fail_safe()`, which takes 3 parameters: `temperature`,
+Implement the function called `fail_safe()`, which takes 3 parameters: `temperature` measured in kelvin,
 `neutrons_produced_per_second`, and `threshold`, and outputs a status code for the reactor.
 
 - If `temperature * neutrons_produced_per_second` < 90% of `threshold`, output a status code of 'LOW'
   indicating that control rods must be removed to produce power.
 
-- If `temperature * neutrons_produced_per_second` are within plus or minus 10% of the `threshold`
-  the reactor is in _criticality_ and the status code of 'NORMAL' should be output, indicating that the
-  reactor is in optimum condition and control rods are in an ideal position.
+- If the value `temperature * neutrons_produced_per_second` is within 10% of the `threshold` (so either 0-10% less than the threshold, at the threshold, or 0-10% greater than the threshold), the reactor is in _criticality_ and the status code of 'NORMAL' should be output, indicating that the reactor is in optimum condition and control rods are in an ideal position.
 
 - If `temperature * neutrons_produced_per_second` is not in the above-stated ranges, the reactor is
   going into meltdown and a status code of 'DANGER' must be passed to immediately shut down the reactor.

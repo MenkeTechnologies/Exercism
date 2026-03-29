@@ -1,6 +1,6 @@
-# Hello, World!
+# Hello World
 
-Welcome to Hello, World! on Exercism's Zig Track.
+Welcome to Hello World on Exercism's Zig Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

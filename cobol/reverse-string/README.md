@@ -3,22 +3,21 @@
 Welcome to Reverse String on Exercism's COBOL Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
+## Introduction
+
+Reversing strings (reading them from right to left, rather than from left to right) is a surprisingly common task in programming.
+
+For example, in bioinformatics, reversing the sequence of DNA or RNA strings is often important for various analyses, such as finding complementary strands or identifying palindromic sequences that have biological significance.
+
 ## Instructions
 
-Introductory exercise to reverse an input string.
+Your task is to reverse a given string.
 
-## Task
+Some examples:
 
-Given an input string, your solution should reverse the characters in the string, 
-while maintaining letter case (Uppercase and Lowercase characters)
-
-## Examples
-
-- `Cool` gives `looC`
-- `c` gives `c`
-- `COBOL` gives `LOBOC`
-- `LOBOC` gives `COBOL`
-- `reverse` gives `esrever`
+- Turn `"stressed"` into `"desserts"`.
+- Turn `"strops"` into `"sports"`.
+- Turn `"racecar"` into `"racecar"`.
 
 ## Source
 

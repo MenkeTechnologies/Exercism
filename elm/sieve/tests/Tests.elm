@@ -8,27 +8,27 @@ import Test exposing (Test, describe, skip, test)
 tests : Test
 tests =
     describe "Sieve"
-        [ -- 
+        [ -- skip <|
           test "no primes under two" <|
             \() ->
                 Sieve.primes 1
                     |> Expect.equal []
-        , 
+        , skip <|
             test "find first prime" <|
                 \() ->
                     Sieve.primes 2
                         |> Expect.equal [ 2 ]
-        , 
+        , skip <|
             test "find primes up to 10" <|
                 \() ->
                     Sieve.primes 10
                         |> Expect.equal [ 2, 3, 5, 7 ]
-        , 
+        , skip <|
             test "limit is prime" <|
                 \() ->
                     Sieve.primes 13
                         |> Expect.equal [ 2, 3, 5, 7, 11, 13 ]
-        , 
+        , skip <|
             test "find primes up to 1000" <|
                 \() ->
                     Sieve.primes 1000

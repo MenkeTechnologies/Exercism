@@ -82,7 +82,8 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Unison track's documentation](https://exercism.org/docs/tracks/unison)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [Unison track's programming category on the forum](https://forum.exercism.org/c/programming/unison)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.

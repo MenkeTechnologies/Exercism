@@ -24,7 +24,7 @@ The `Some` constructor is used to wrap a value when it's present, and the `None`
 Accessing the content of a `Option` is often done via pattern matching.
 
 ```gleam
-import gleam/option.{Option, Some, None}
+import gleam/option.{type Option, None, Some}
 
 pub fn say_hello(person: Option(String)) -> String {
   case person {
@@ -45,7 +45,7 @@ say_hello(None)
 The `gleam/option` module also defines a number of useful function for working with `Option` types, such as `unwrap`, which returns the content of an `Option` or a default value if it is `None`.
 
 ```gleam
-import gleam/option.{Option}
+import gleam/option.{type Option}
 
 pub fn say_hello_again(person: Option(String)) -> String {
   let name = option.unwrap(person, "Friend")
@@ -79,7 +79,7 @@ If they are, it should return a new `Player` instance with 100 health.
 Otherwise, if the player's character isn't dead, the `revive` function returns `None`.
 
 If the player's level is 10 or above, they should also be revived with 100 mana.
-If they player's level is below 10, their mana should be `None`.
+If the player's level is below 10, their mana should be untouched.
 The `revive` function should preserve the player's level.
 
 ```gleam
@@ -105,12 +105,13 @@ It returns the updated player, as well as the amount of damage that the cast spe
 A successful spell cast does damage equal to two times the mana cost of the spell.
 However, if the player has insufficient mana, nothing happens, the player is unchanged and no damage is done.
 If the player does not even have a mana pool, attempting to cast the spell must decrease their health by the mana cost of the spell and does no damage.
+Be aware that the players health cannot be below zero (0).
 
 ```gleam
 let wizard = Player(name: None, level: 18, health: 123, mana: Some(30))
 let #(wizard, damage) = cast_spell(wizard, 14)
 
-wizard.mana // -> Just 16
+wizard.mana // -> Some 16
 damage      // -> 28
 ```
 

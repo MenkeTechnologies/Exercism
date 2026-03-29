@@ -9,22 +9,22 @@ pending :-
     test(leap_year, condition(true)) :-
         leap(1996).
 
-    test(standard_and_odd_year, condition(true)) :-
+    test(standard_and_odd_year, condition(pending)) :-
         not(leap(1997)).
 
-    test(standard_even_year, condition(true)) :-
+    test(standard_even_year, condition(pending)) :-
         not(leap(1998)).
 
-    test(standard_nineteeth_century, condition(true)) :-
+    test(standard_nineteeth_century, condition(pending)) :-
         not(leap(1900)).
 
-    test(standard_eighteenth_century, condition(true)) :-
+    test(standard_eighteenth_century, condition(pending)) :-
         not(leap(1800)).
 
-    test(leap_twenty_fourth_century, condition(true)) :-
+    test(leap_twenty_fourth_century, condition(pending)) :-
         leap(2400).
 
-    test(leap_y2k, condition(true)) :-
+    test(leap_y2k, condition(pending)) :-
         leap(2000).
 
 :- end_tests(leap_tests).

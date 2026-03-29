@@ -1,6 +1,6 @@
 # Perfect Numbers
 
-Welcome to Perfect Numbers on Exercism's LFE Track.
+Welcome to Perfect Numbers on Exercism's Lisp Flavoured Erlang Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

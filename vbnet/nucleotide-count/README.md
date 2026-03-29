@@ -1,6 +1,6 @@
 # Nucleotide Count
 
-Welcome to Nucleotide Count on Exercism's VB.NET Track.
+Welcome to Nucleotide Count on Exercism's Visual Basic Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

@@ -2,17 +2,14 @@
 
 Welcome to Doubly Linked List on Exercism's Rust Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
+If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
 
 ## Instructions
 
 Write a doubly linked list using unsafe Rust, including an iterator over the list
 and a cursor for efficient mutation.
 
-The doubly linked list is a fundamental data structure in computer science,
-often used in the implementation of other data structures. They're
-pervasive in functional programming languages, such as Clojure, Erlang,
-or Haskell, but far less common in imperative languages such as Ruby or
-Python.
+The doubly linked list is a fundamental data structure in computer science.
 
 Each node in a doubly linked list contains data and pointers to the next
 and previous node, if they exist.
@@ -72,15 +69,6 @@ Make sure that your list is safe to send and share across thread boundaries
 and signal this to the type system by implementing `Send` and `Sync` manually.
 These traits are usually auto-derived, but aren't implemented here automatically, because of the use of
 raw pointers. See the docs for [`Send`](https://doc.rust-lang.org/std/marker/trait.Send.html) and [`Sync`](https://doc.rust-lang.org/std/marker/trait.Sync.html) and the [rustonomicon chapter](https://doc.rust-lang.org/nomicon/send-and-sync.html) on them for details on their significance.
-
-* A doubly linked does not have a clear ownership hierarchy, which is why it requires either the use
-  of unsafe or abstractions for shared ownership like `Rc`. The latter has some overhead that is unnecessary
-  for this case.
-
-* Refer to the [Rustonomicon](https://doc.rust-lang.org/nomicon/) for details on how to use `unsafe {}` correctly.
-
-* Several functions require similar behaviour in different directions (towards front or back). Try not to duplicate
-  shared code paths.
 
 ## Source
 

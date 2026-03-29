@@ -5,12 +5,10 @@ If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
 
-Create an implementation of the atbash cipher, an ancient encryption system created in the Middle East.
+Create an implementation of the Atbash cipher, an ancient encryption system created in the Middle East.
 
-The Atbash cipher is a simple substitution cipher that relies on
-transposing all the letters in the alphabet such that the resulting
-alphabet is backwards. The first letter is replaced with the last
-letter, the second with the second-last, and so on.
+The Atbash cipher is a simple substitution cipher that relies on transposing all the letters in the alphabet such that the resulting alphabet is backwards.
+The first letter is replaced with the last letter, the second with the second-last, and so on.
 
 An Atbash cipher for the Latin alphabet would be as follows:
 
@@ -19,41 +17,19 @@ Plain:  abcdefghijklmnopqrstuvwxyz
 Cipher: zyxwvutsrqponmlkjihgfedcba
 ```
 
-It is a very weak cipher because it only has one possible key, and it is
-a simple monoalphabetic substitution cipher. However, this may not have
-been an issue in the cipher's time.
+It is a very weak cipher because it only has one possible key, and it is a simple mono-alphabetic substitution cipher.
+However, this may not have been an issue in the cipher's time.
 
-Ciphertext is written out in groups of fixed length, the traditional group size
-being 5 letters, and punctuation is excluded. This is to make it harder to guess
-things based on word boundaries.
+Ciphertext is written out in groups of fixed length, the traditional group size being 5 letters, leaving numbers unchanged, and punctuation is excluded.
+This is to make it harder to guess things based on word boundaries.
+All text will be encoded as lowercase letters.
 
 ## Examples
 
 - Encoding `test` gives `gvhg`
+- Encoding `x123 yes` gives `c123b vh`
 - Decoding `gvhg` gives `test`
 - Decoding `gsvjf rxpyi ldmul cqfnk hlevi gsvoz abwlt` gives `thequickbrownfoxjumpsoverthelazydog`
-
-
-## Running and testing your solutions
-
-
-### From the command line
-
-Simply type `make chez` if you're using ChezScheme or `make guile` if you're using GNU Guile\.
-Sometimes the name for the scheme binary on your system will differ from the defaults\.
-When this is the case, you'll need to tell make by running `make chez chez=your-chez-binary` or `make guile guile=your-guile-binary`\.
-
-### From a REPL
-
-* Enter `(load "test.scm")` at the repl prompt\.
-* Develop your solution in `atbash-cipher.scm` reloading as you go\.
-* Run `(test)` to check your solution\.
-
-### Failed Test Cases
-
-If some of the test cases fail, you should see the failing input and the expected output\.
-The failing input is presented as a list because the tests call your solution by `(apply atbash-cipher input-list)`\.
-To learn more about `apply` see [The Scheme Programming Language -- Chapter 5](https://www.scheme.com/tspl4/control.html#./control:h1)
 
 ## Source
 
@@ -69,4 +45,4 @@ To learn more about `apply` see [The Scheme Programming Language -- Chapter 5](h
 
 ### Based on
 
-Wikipedia - http://en.wikipedia.org/wiki/Atbash
+Wikipedia - https://en.wikipedia.org/wiki/Atbash

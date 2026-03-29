@@ -1,6 +1,6 @@
-# Two Fer
+# Two-Fer
 
-Welcome to Two Fer on Exercism's Pharo Track.
+Welcome to Two-Fer on Exercism's Pharo Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

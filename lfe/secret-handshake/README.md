@@ -1,6 +1,6 @@
 # Secret Handshake
 
-Welcome to Secret Handshake on Exercism's LFE Track.
+Welcome to Secret Handshake on Exercism's Lisp Flavoured Erlang Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction

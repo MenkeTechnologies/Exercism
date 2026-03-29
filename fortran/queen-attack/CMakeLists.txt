@@ -2,7 +2,7 @@
 get_filename_component(exercise ${CMAKE_CURRENT_SOURCE_DIR} NAME)
 
 # Basic CMake project
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.5.0)
 
 # Name the project after the exercise
 project(${exercise} Fortran)
@@ -16,13 +16,13 @@ string(REPLACE "-" "_" file ${exercise})
 # Activate Fortran compiler warnings
 if(CMAKE_Fortran_COMPILER_ID MATCHES "Intel") # Intel fortran
   if(WIN32)
-    set (CCMAKE_Fortran_FLAG ${CCMAKE_Fortran_FLAGS} "/warn:all")
+    add_compile_options(/warn:all)
   else()
-    set (CMAKE_Fortran_FLAGS ${CCMAKE_Fortran_FLAGS} "-warn all")
+    add_compile_options(-warn all)
   endif()
 endif()
-if(CMAKE_Fortran_COMPILER_ID MATCHES "GNU") # GFrotran
-  set (CMAKE_Fortran_FLAGS ${CCMAKE_Fortran_FLAGS} "-std=f2008 -W -Wall -Wextra -pedantic -fbacktrace")
+if(CMAKE_Fortran_COMPILER_ID MATCHES "GNU") # GFortran
+  add_compile_options(-std=f2008 -W -Wall -Wextra -pedantic -fbacktrace)
 endif()
 
 # Configure to run all the tests?

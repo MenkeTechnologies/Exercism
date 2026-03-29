@@ -1,11 +1,11 @@
 import Data.Char         (toUpper)
 import Test.Hspec        (Spec, it, shouldBe)
-import Test.Hspec.Runner (configFastFail, defaultConfig, hspecWith)
+import Test.Hspec.Runner (configFailFast, defaultConfig, hspecWith)
 
 import Accumulate (accumulate)
 
 main :: IO ()
-main = hspecWith defaultConfig {configFastFail = True} specs
+main = hspecWith defaultConfig {configFailFast = True} specs
 
 specs :: Spec
 specs = do
@@ -35,5 +35,3 @@ specs = do
     it "accumulate non-strict" $
       take 1 (accumulate id ("nice work!" : error "accumulate should be even lazier, don't use reverse!"))
       `shouldBe` ["nice work!"]
-
--- d72616bca2a0a7d8ddf81469e688dc5f7e8103f6

@@ -30,7 +30,7 @@ Since structs are built on maps, we can use most map functions to get and manipu
   plane.engine
   # => nil
   Map.fetch(plane, :wings)
-  # => 2
+  # => {:ok, 2}
   ```
 
 - update field values
@@ -40,6 +40,27 @@ Since structs are built on maps, we can use most map functions to get and manipu
   %{plane | wings: 4}
   # => %Plane{engine: nil, wings: 4}
   ```
+
+### Pattern matching
+
+Structs can be used in pattern matching with or without the struct name.
+
+```elixir
+plane = %Plane{}
+%Plane{wings: wings} = plane
+%{wings: wings} = plane
+```
+
+By including the struct name in the pattern, you can ensure that both the left and right side are structs of the same type.
+
+```elixir
+defmodule Helicopter do
+  defstruct [:engine, rotors: 1]
+end
+
+%Plane{} = %Helicopter{}
+# => (MatchError) no match of right hand side value: %Helicopter{engine: nil, rotors: 1}
+```
 
 ### Enforcing field value initialization
 
@@ -132,12 +153,12 @@ Implement the `RemoteControlCar.drive/1` function that:
 ```elixir
 RemoteControlCar.new("Red")
 |> RemoteControlCar.drive()
+
 # => %RemoteControlCar{
 #      battery_percentage: 99,
 #      distance_driven_in_meters: 20,
 #      nickname: "Red"
 #    }
-
 ```
 
 Make sure the function only accepts a `RemoteControlCar` struct as the argument.
@@ -153,6 +174,7 @@ Update the `RemoteControlCar.drive/1` function to not increase the distance driv
   nickname: "Red"
 }
 |> RemoteControlCar.drive()
+
 # => %RemoteControlCar{
 #      battery_percentage: 0,
 #      distance_driven_in_meters: 1980,

@@ -27,16 +27,16 @@ foreach my $c (@$cases) {
 plan $tests;
 
 ok -e "$Bin/$module.pm", "missing $module.pm"
-  or BAIL_OUT(
-"You need to create a class called $module.pm with a constructor called new."
-  );
+    or BAIL_OUT(
+    "You need to create a class called $module.pm with a constructor called new."
+    );
 
 eval "use $module";
 ok !$@, "Cannot load $module.pm"
-  or BAIL_OUT("Does $module.pm compile?  Does it end with 1; ? ($@)");
+    or BAIL_OUT("Does $module.pm compile?  Does it end with 1; ? ($@)");
 
 can_ok( $module, 'new' )
-  or BAIL_OUT("Missing package $module; or missing sub new()");
+    or BAIL_OUT("Missing package $module; or missing sub new()");
 
 foreach my $c (@$cases) {
     foreach my $board ( @{ $c->{boards} } ) {
@@ -48,7 +48,7 @@ foreach my $c (@$cases) {
     foreach my $board ( @{ $c->{boards} } ) {
         if ( $board->{exception} ) {
             like $board->{res}{exception}, qr{^$board->{exception}},
-              "$c->{name} exception";
+                "$c->{name} exception";
         }
         else {
             ok !$board->{res}{exception}, "$c->{name} no exception" or do {
@@ -57,10 +57,12 @@ foreach my $c (@$cases) {
             };
         }
         if ( $board->{white} ) {
-            is_deeply $board->{res}->white, $board->{white}, "$c->{name} white";
+            is_deeply $board->{res}->white, $board->{white},
+                "$c->{name} white";
         }
         if ( $board->{black} ) {
-            is_deeply $board->{res}->black, $board->{black}, "$c->{name} black";
+            is_deeply $board->{res}->black, $board->{black},
+                "$c->{name} black";
         }
         if ( $board->{board} ) {
             my $expected = join( "\n", @{ $board->{board} } ) . "\n";

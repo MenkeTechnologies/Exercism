@@ -1,9 +1,9 @@
-package lsproduct
+package largestseriesproduct
 
 // This is an auto-generated file. Do not change it manually. Run the generator to update the file.
 // See https://github.com/exercism/go#synchronizing-tests-and-instructions
 // Source: exercism/problem-specifications
-// Commit: 7a8722a Reorder keys (#1960)
+// Commit: f427e3d span must not exceed string length (#2548)
 
 var testCases = []struct {
 	description string
@@ -80,28 +80,14 @@ var testCases = []struct {
 		digits:      "123",
 		span:        4,
 		expected:    0,
-		error:       "span must be smaller than string length",
-	},
-	{
-		description: "reports 1 for empty string and empty product (0 span)",
-		digits:      "",
-		span:        0,
-		expected:    1,
-		error:       "",
-	},
-	{
-		description: "reports 1 for nonempty string and empty product (0 span)",
-		digits:      "123",
-		span:        0,
-		expected:    1,
-		error:       "",
+		error:       "span must not exceed string length",
 	},
 	{
 		description: "rejects empty string and nonzero span",
 		digits:      "",
 		span:        1,
 		expected:    0,
-		error:       "span must be smaller than string length",
+		error:       "span must not exceed string length",
 	},
 	{
 		description: "rejects invalid character in digits",

@@ -8,30 +8,42 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 A `string` in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.
 
-A `string` literal is a sequence of bytes enclosed in double quotes:
+A string literal is defined between double quotes:
 
 ```go
-firstName := "Jane"
+const name = "Jane"
 ```
 
 Strings can be concatenated via the `+` operator:
 
 ```go
-fullName := "Jane" + " " + "Austen"
+"Jane" + " " + "Austen"
+// => "Jane Austen"
 ```
 
-Some special characters need to be escaped with a leading backslash:
+Some special characters need to be escaped with a leading backslash, such as `\t` for a tab and `\n` for a new line in strings.
 
 ```go
-question := "\t or spaces?"
+"How is the weather today?\nIt's sunny"  
+// =>
+// How is the weather today?
+// It's sunny
 ```
 
 The `strings` package contains many useful functions to work on strings.
+For more information about string functions, check out the [strings package documentation](https://pkg.go.dev/strings).
+Here are some examples:
 
 ```go
 import "strings"
 
-strings.ToLower("TEST") // Output: "test"
+// strings.ToLower returns the string given as argument with all its characters lowercased
+strings.ToLower("MaKEmeLoweRCase")
+// => "makemelowercase"
+
+// strings.Repeat returns a string with a substring given as argument repeated many times
+strings.Repeat("Go", 3)
+// => "GoGoGo"
 ```
 
 ## Instructions
@@ -44,13 +56,13 @@ The store owner needs your help with the code that is used to generate the text 
 
 ## 1. Create the welcome message
 
-For most customers who scan their loyalty cards, the store owner wants to see `Welcome to the Tech Palace, ` followed by the name of the customer in capital letters on the display.
+For most customers who scan their loyalty cards, the store owner wants to see `"Welcome to the Tech Palace,"` followed by the name of the customer in capital letters on the display.
 
 Implement the function `WelcomeMessage` that accepts the name of the customer as a `string` argument and returns the desired message as a `string`.
 
 ```go
 WelcomeMessage("Judy")
-// Output: Welcome to the Tech Palace, JUDY
+// => Welcome to the Tech Palace, JUDY
 ```
 
 ## 2. Add a fancy border
@@ -63,10 +75,14 @@ It should return a `string` that consists of 3 lines, a line with the desired nu
 
 ```go
 AddBorder("Welcome!", 10)
-// Output:
-// **********
-// Welcome!
-// **********
+```
+
+Should return the following:
+
+```text
+**********
+Welcome!
+**********
 ```
 
 ## 3. Clean up old marketing messages
@@ -88,7 +104,7 @@ message := `
 `
 
 CleanUpMessage(message)
-// Output: BUY NOW, SAVE 10%
+// => BUY NOW, SAVE 10%
 ```
 
 ## Source
@@ -97,3 +113,7 @@ CleanUpMessage(message)
 
 - @erikschierboom
 - @junedev
+
+### Contributed to by
+
+- @kekimaker

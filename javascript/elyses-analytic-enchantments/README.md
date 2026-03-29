@@ -6,6 +6,43 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Arrow Functions
+
+Besides function declarations and function expressions, JavaScript also has another very concise syntax for defining a function.
+These functions are called _arrow functions_.
+
+Here is a comparison between a function declaration and an arrow function.
+
+```javascript
+function addUpTwoNumbers(num1, num2) {
+  return num1 + num2;
+}
+// function keyword removed and => added
+const addUpTwoNumbers = (num1, num2) => {
+  return num1 + num2;
+};
+```
+
+If the function body contains only a return statement, like in the example above, the `{}` and the `return` keyword can be omitted.
+If there is only one parameter, the parenthesis `()` can be omitted as well.
+
+<!-- prettier-ignore-start -->
+```javascript
+const addUpTwoNumbers = (num1, num2) => num1 + num2;
+const square = num => num * num;
+```
+<!-- prettier-ignore-end -->
+
+Arrow functions are often used to define short callback functions directly in the function call.
+
+<!-- prettier-ignore-start -->
+```javascript
+applyToSquare(number => number * number);
+```
+<!-- prettier-ignore-end -->
+
+## Array Analysis
+
 [Arrays][arrays-concept] have built-in methods to analyse the contents of the array.
 Most of these methods take a function that returns true or false as an argument.
 Such a function is called a [`predicate`][predicate_in_programming].
@@ -32,11 +69,13 @@ numbers.indexOf('two');
 // => 1
 ```
 
-Some other helpful built-in methods that are available to analyze an array are shown below. See [MDN][mdn-array-methods] for a full list of array methods.
+Some other helpful built-in methods that are available to analyze an array are shown below.
+See [MDN][mdn-array-methods] for a full list of array methods.
 
-## `includes`
+### `includes`
 
-> The includes() method determines whether an array includes a certain value among its entries, returning true or false as appropriate. [^1]
+The `includes(value)` method determines whether an array includes a certain value.
+It returns `true` when the value is included, `false` otherwise.
 
 ```javascript
 const numbers = [1, 'two', 3, 'four'];
@@ -46,9 +85,12 @@ numbers.includes('one');
 // => false
 ```
 
-## `every`
+### `every`
 
-> The every() method tests whether all elements in the array pass the test implemented by the provided function. It returns a Boolean value. [^2]
+The `every(predicate)` method take a function which is _a predicate_.
+It tests whether all elements in the array return `true` when passed to the predicate.
+In other words: the methods tests that all its elements pass the test passed to the function call.
+It returns `true` when every element passes the predicate test, `false` otherwise.
 
 ```javascript
 const numbers = [1, 3, 5, 7, 9];
@@ -56,9 +98,9 @@ numbers.every((num) => num % 2 !== 0);
 // => true
 ```
 
-## `some`
+### `some`
 
-> The some() method tests whether at least one element in the array passes the test implemented by the provided function. [^3]
+The `some(predicate)` method is the same as the `every` method, but returns `true` if at least one item in the array passes the _predicate_ test.
 
 ```javascript
 const numbers = [1, 3, 5, 7, 9];
@@ -66,9 +108,11 @@ numbers.some((num) => num % 2 !== 0);
 // => true
 ```
 
-## `find`
+### `find`
 
-> The find() method returns the value of the first element in the provided array that satisfies the provided testing function. If no values satisfy the testing function, undefined is returned. [^4]
+The `find(predicate)` method returns the value of the first element in the array that passes the `predicate` test.
+Where `some()` returns `true` when it passes, `find()` returns the actual value in the array.
+The method returns `undefined` when none of the elements in the array pass the _predicate_ test.
 
 ```javascript
 const numbers = [1, 3, 5, 7, 9];
@@ -76,9 +120,10 @@ numbers.find((num) => num < 5);
 // => 1
 ```
 
-## `findIndex`
+### `findIndex`
 
-> The findIndex() method returns the index of the first element in the array that satisfies the provided testing function. Otherwise, it returns -1, indicating that no element passed the test. [^5]
+The `findIndex(predicate)` is the same as the `find()` method, but it returns the (first) _index_ of the element that passes the _predicate_ test instead of the `value`.
+The method returns `-1` when none of the elements in the array pass the _predicate_ test.
 
 ```javascript
 const numbers = [1, 3, 5, 7, 9];
@@ -87,12 +132,6 @@ numbers.findIndex((num) => num > 7);
 numbers.findIndex((num) => num > 9);
 // => -1
 ```
-
-[^1]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/includes
-[^2]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/every
-[^3]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/some
-[^4]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find
-[^5]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex
 
 [predicate_in_programming]: https://derk-jan.com/2020/05/predicate/
 [mdn-array-methods]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#instance_methods

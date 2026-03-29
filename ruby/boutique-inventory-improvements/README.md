@@ -55,7 +55,9 @@ person = OpenStruct.new(name: "Jeremy Walker")
 
 ## Instructions
 
-You're continuing to work on the stock management system you built previous. Since discovering `OpenStruct` and block shortcuts, you've decided to refactor the code a little. Rather than storing the items as hashes, you're going to utilize your newfound skills.
+You're continuing to work on the stock management system you built previously.
+Since discovering `OpenStruct` and block shortcuts, you've decided to refactor the code a little.
+Rather than storing the items as hashes, you're going to utilize your newfound skills.
 
 ## 1. Allow retrievable of items
 
@@ -79,6 +81,8 @@ inventory.items.size
 # => 4
 ```
 
+## 2. Refactor `item_names`
+
 Refactor `item_names` to use the new block shortcut you've learnt rather than hashes.
 As a reminder, the method should return:
 
@@ -93,9 +97,10 @@ BoutiqueInventory.new([
 # => ["Bamboo Socks Cats", "Black Short Skirt", "Maxi Brown Dress", "Red Short Skirt"]
 ```
 
+## 3. Refactor `total_stock`
 
-Refactor `total_stock` to use the new block shortcut you've learnt rather than hashes.
-As a reminder, the method should return::
+Refactor `total_stock` to use the OpenStruct's method, rather than referencing a hash.
+As a reminder, the method should return:
 
 ```ruby
 BoutiqueInventory.new([

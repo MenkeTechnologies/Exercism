@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Switch Statements
+
 Wikipedia describes a `switch` statement as "a type of selection control mechanism used to allow the value of a variable or expression to change the control flow of program".
 
 The mechanism involves the following keywords: `switch`, `case`, `break` and `default`.
@@ -63,7 +65,7 @@ The player descriptions are as follows:
 ```
 1 -> "goalie"
 2 -> "left back"
-3 & 4 "center back"
+3 & 4 -> "center back"
 5 -> "right back"
 6, 7 & 8 -> "midfielder"
 9 -> "left wing"
@@ -117,7 +119,7 @@ PlayAnalyzer.AnalyzeOffField(new Foul());
 // => "The referee deemed a foul."
 
 PlayAnalyzer.AnalyzeOffField(new Injury(8));
-// => "Oh no! Player 8 is injured. Medics are on the field.
+// => "Oh no! Player 8 is injured. Medics are on the field."
 ```
 
 ## 5. Report on club managers

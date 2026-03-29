@@ -1,7 +1,7 @@
-hamming = function(s1, s2) {
-  if (nchar(s1) != nchar(s2)) {
+hamming = function(strand1, strand2) {
+  if (nchar(strand1) != nchar(strand2)) {
     stop("the two strands must be of equal length")
   } else {
-    sum(charToRaw(s1) != charToRaw(s2))
+    sum(charToRaw(strand1) != charToRaw(strand2))
   }
 }
