@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Basics
+
 In F#, assigning a value to a name is referred to as a _binding_. Bindings are immutable, which makes them similar to constants in other languages. As F# is a statically-typed language, each binding has a type at compile-time.
 
 Bindings are defined using the `let` keyword. Specifying a binding's type is optional for most bindings, as F#'s _type inference_ can usually infer the type based on their value. A binding looks like this:
@@ -42,7 +44,7 @@ Bindings in F# can only be used _after_ they have been defined. Using a binding 
 
 ```fsharp
 // Compile error as the add binding has not yet been defined
-// let seven = add 3 + 4
+// let seven = add 3 4
 
 let add x y = x + y
 ```
@@ -80,6 +82,11 @@ F# supports two types of comments. Single line comments are preceded by `//` and
 In this exercise you're going to write some code to help you cook a brilliant lasagna from your favorite cooking book.
 
 You have four tasks, all related to the time spent cooking the lasagna.
+
+~~~~exercism/note
+You can either use type inference, where you don't specify any types, or use explicit typing, where you do specify the types.
+If you choose the latter, use `int` as the type.
+~~~~
 
 ## 1. Define the expected oven time in minutes
 

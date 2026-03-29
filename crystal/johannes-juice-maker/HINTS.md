@@ -2,7 +2,7 @@
 
 ## General
 
-- Don't worry about which running state the machine is in, e.g the machine wont be running when you plug it in.
+- Don't worry about which running state the machine is in; for example, it won't be running when you plug it in.
 
 ## 1. Debug light
 

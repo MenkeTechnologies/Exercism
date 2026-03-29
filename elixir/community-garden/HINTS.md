@@ -19,7 +19,7 @@
 
 - The [`Agent`][elixir-doc-agent] module contains functions to obtain and update the state of the _agent process_.
 - The functions generally require a function which transforms the state and returns a specific form.
-- In order to keep track of the id for the next plot to assign, your _agent process_'s state may need to keep track of the plots and also the next id to use for a plot.
+- In order to keep track of the id for the next plot to assign, your _agent process_'s state needs to keep track of the plots and also the next id to use for a plot.
 
 ## 4. Release plots
 
@@ -33,4 +33,4 @@
 
 [elixircasts-agent]: https://elixircasts.io/intro-to-agents
 [elixir-doc-agent]: https://hexdocs.pm/elixir/Agent.html
-[getting-started-agent]: https://elixir-lang.org/getting-started/mix-otp/agent.html
+[getting-started-agent]: https://hexdocs.pm/elixir/agents.html

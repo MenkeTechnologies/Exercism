@@ -1,6 +1,6 @@
-# Simple linked list
+# Simple Linked List
 
-Welcome to Simple linked list on Exercism's C++ Track.
+Welcome to Simple Linked List on Exercism's C++ Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

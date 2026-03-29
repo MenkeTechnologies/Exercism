@@ -1,13 +1,16 @@
+# These tests are auto-generated with test data from:
+# https://github.com/exercism/problem-specifications/tree/main/exercises/diamond/canonical-data.json
+# File last updated on 2026-02-19
+
 import unittest
 
 from diamond import (
     rows,
 )
 
-# Tests adapted from `problem-specifications//canonical-data.json`
-
 
 class DiamondTest(unittest.TestCase):
+
     def test_degenerate_case_with_a_single_a_row(self):
         result = ["A"]
         self.assertEqual(rows("A"), result)
@@ -87,7 +90,3 @@ class DiamondTest(unittest.TestCase):
             "                         A                         ",
         ]
         self.assertEqual(rows("Z"), result)
-
-
-if __name__ == "__main__":
-    unittest.main()

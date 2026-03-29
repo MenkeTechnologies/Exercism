@@ -1,6 +1,6 @@
-# Annalyns Infiltration
+# Annalyn's Infiltration
 
-Welcome to Annalyns Infiltration on Exercism's PHP Track.
+Welcome to Annalyn's Infiltration on Exercism's PHP Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
 
@@ -18,7 +18,7 @@ $value_is_true = true;
 $value_is_false = false;
 ```
 
-Boolean values are often use in logical expressions as the result of an operator and then used in control structures.
+Boolean values are often used in logical expressions as the result of an operator and then used in control structures.
 
 ### Logical Operators
 
@@ -67,7 +67,7 @@ Otherwise, returns `false`:
 <?php
 $is_knight_awake = true;
 
-$infiltration = new AnnalynsInfiltration()
+$infiltration = new AnnalynsInfiltration();
 $infiltration->canFastAttack($is_knight_awake);
 // => false
 ```
@@ -84,14 +84,14 @@ $is_knight_awake = false;
 $is_archer_awake = true;
 $is_prisoner_awake = false;
 
-$infiltration = new AnnalynsInfiltration()
+$infiltration = new AnnalynsInfiltration();
 $infiltration->canSpy($is_knight_awake, $is_archer_awake, $is_prisoner_awake);
-// => false
+// => true
 ```
 
 ## 3. Check if the 'Signal Prisoner' action is possible
 
-Implement a function named `canSignalPrisoner` that takes two boolean values, indicating if the archer and the prisoner, respectively, are awake.
+Implement a function named `canSignal` that takes two boolean values, indicating if the archer and the prisoner, respectively, are awake.
 The function returns `true` if the 'Signal Prisoner' action is available based on the state of the characters.
 Otherwise, returns `false`:
 
@@ -100,17 +100,17 @@ Otherwise, returns `false`:
 $is_archer_awake = false;
 $is_prisoner_awake = true;
 
-$infiltration = new AnnalynsInfiltration()
+$infiltration = new AnnalynsInfiltration();
 $infiltration->canSignal($is_archer_awake, $is_prisoner_awake);
-// => false
+// => true
 ```
 
-## 4. Check if the 'Free Prisoner' action is possible
+## 4. Check if the 'Liberate Prisoner' action is possible
 
-Implement a function named `canFreePrisoner` that takes four boolean values.
+Implement a function named `canLiberate` that takes four boolean values.
 The first three parameters indicate if the knight, archer and the prisoner, respectively, are awake.
 The last parameter indicates if Annalyn's pet dog is present.
-The function returns `true` if the 'Free Prisoner' action is available based on the state of the characters and Annalyn's pet dog presence.
+The function returns `true` if the 'Liberate Prisoner' action is available based on the state of the characters and Annalyn's pet dog presence.
 Otherwise, it returns `false`:
 
 ```php
@@ -118,9 +118,9 @@ Otherwise, it returns `false`:
 $is_knight_awake = false;
 $is_archer_awake = true;
 $is_prisoner_awake = false;
-$is_dog_present = false
+$is_dog_present = false;
 
-$infiltration = new AnnalynsInfiltration()
+$infiltration = new AnnalynsInfiltration();
 $infiltration->canLiberate(
     $is_knight_awake,
     $is_archer_awake,

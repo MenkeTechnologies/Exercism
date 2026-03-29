@@ -8,11 +8,11 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 Crystal allows for a variable to consist of multiple types.
 This is called a [union type][union-type].
-In Crystal it is quite common for a union type to be inferred by the compiler.
+In Crystal, it is common for a union type to be inferred by the compiler.
 
 ~~~~exercism/note
-A union type, even if it consists of multiple types, is still a single type at runtime.
-Meaning a union type is built of `String` and `Int32` so it will not be both at the same time.
+A union type is still a single type at runtime, even if it consists of multiple types.
+This means that if a union type is built of `String` and `Int32`, it will not be both at the same time.
 Instead, it will be either a `String` or an `Int32`.
 ~~~~
 
@@ -29,7 +29,7 @@ foo : (String | Nil) = "Hello"
 foo = nil
 ```
 
-It is not limited to just 2 types, but can be as many as you want.
+It is not limited to just two types, but can be as many as you want.
 
 ```crystal
 foo : (String | Int32 | Nil | Float64) = "Hello"
@@ -40,10 +40,10 @@ foo = 1.0
 
 ## `typeof` vs `Object#class`
 
-There are 2 ways to get the type of a variable.
+There are two ways to get the type of a variable.
 Either by using [`typeof`][typeof] or by using [`Object#class`][Object#class].
-The difference between them is that `typeof` will return a variable's type at compile time, while `Object#class` will return the type at runtime.
-Meaning if you want to for example see if a variable is a union type, then `Object#class` will not be able to tell you that as it will only return the type at runtime, which is a single type.
+The difference is that `typeof` will return a variable's type at compile time, while `Object#class` will return the type at runtime.
+This means that if you want to see if a variable is a union type, for example, `Object#class` will not be able to tell you that as it will only return the type at runtime, which is a single type.
 
 ```crystal
 foo = 0 == 0 ? "a" : 1
@@ -53,8 +53,8 @@ foo.class # => String
 
 ## Operations on union types
 
-As a union type is a single type at runtime, all the normal operations work on it.
-But when compiling the code the compiler will not know which type it is.
+As a union type is a single type at runtime, all the standard operations work on it.
+But when compiling the code the compiler will need to know which type it is.
 Thereby the code has to be setup in such a way that it can only be one of the types when wanting to use the type-specific operations.
 
 ```crystal
@@ -62,21 +62,21 @@ foo : (String | Int32) = "Hello"
 foo.downcase # Error: undefined method 'downcase' for (String | Int32)
 ```
 
-Crystal does have a special method for union types: the `is_a?` method, which takes a type as an argument and returns a boolean.
+Crystal does have a particular method for union types: the `is_a?` method, which takes a type as an argument and returns a boolean.
 The `nil?` method is a shortcut for `is_a?(Nil)`.
-Putting the `is_a?` method in an control expression will make the compiler know which type it is, and thereby guarantee that it is that type.
+Putting the `is_a?` method in a control expression will tell the compiler which type it is and thereby guarantee that it is that type.
 And for an else branch it will be guaranteed that it is not that type.
 
 ```crystal
 foo : (String | Int32) = "Hello"
 if foo.is_a?(String)
-  typeof(foo)  # => String
-  foo.downcase # => "hello"
+  typeof(foo)  # => String
+  foo.downcase # => "hello"
 end
 ```
 
-This `is_a?` is not limited to having just a single type as an argument, but can have a union type as an argument.
-And can also be combined with `&&` to allow for multiple types.
+This `is_a?` is not limited to having a single type as an argument but can also have a union type.
+It can also be combined with `&&` for multiple types.
 
 ~~~~exercism/note
 The `is_a?` method when using it in conjunction with a control expression can't be an instance variable or class variable.
@@ -87,8 +87,8 @@ Instead these have to be assigned to a local variable first.
 
 One way of making a union type into a single type is by making it so that a branch can only be entered if the type is a specific type.
 Another approach is to use the [`as`][as] method.
-This will make an union type into a single type by doing a runtime check.
-If the type is not the expected type, it will raise an exception.
+This will make a union type into a single type by doing a runtime check.
+An exception will be raised if the type is not the expected type.
 
 ```crystal
 foo : String | Int32 = "Hello"
@@ -105,8 +105,8 @@ Using this approach with an improper setup can lead to unexpected behavior.
 
 ## as?
 
-[`as?`][as?] works very similarly to `as`, but instead of raising an exception if the type is not the expected type, it will return `nil`.
-This means that it will return a union type of the expected type and `Nil`.
+[`as?`][as?] works very similarly to `as`, but it will return' nil' instead of raising an exception if the type is not the expected type.
+This means it will return a union type of the expected type and `Nil`.
 
 ```crystal
 foo : (String | Int32) = "Hello"
@@ -117,14 +117,16 @@ foo.as?(Int32) # => nil
 
 ## Nilable shorthand
 
-Nilable means that a variable can be either a type or `Nil`.
+Nilable means a variable can be either a type or `Nil`.
 This can be written as `(T | Nil)`.
-But since Nilable types are rather common, there is a shorthand for it: `T?`.
+But since Nilable types are relatively common, there is a shorthand for it: `T?`.
 
 ```crystal
+# This:
 foo : (String | Nil) = "Hello"
 foo = nil
 
+# Is the same as:
 foo : String? = "Hello"
 foo = nil
 ```
@@ -138,9 +140,9 @@ foo = nil
 
 ## Instructions
 
-The company you work for is just about to launch their brand new smartphone, called the **Smarty 5**, it features a brand new camera system, a new design, and a revolutionary new processor running on a new operating system called **smartyOS**.
+The company you work for is just about to launch its brand new smartphone, called the **Smarty 5**, it features a brand new camera system, a new design, and a revolutionary new processor running on a new operating system called **smartyOS**.
 
-The new processor has the power to be able to do more secure password handling than ever before, and the company has decided to use this to its advantage.
+The new processor has the power to handle more secure passwords than ever before, and the company has decided to use this to its advantage.
 They have asked you to implement a password lock system for the phone that will allow the user to set a password and then check if a given password is correct.
 
 ~~~~exercism/caution
@@ -150,7 +152,7 @@ It should **NOT** be used in any real-world applications.
 
 ## 1. Set a password
 
-The phone has the possibility of using multiple different types of passwords: everything from a simple digit password to a more secure alphanumeric password and even a password that stores their fingerprint.
+The phone allows users to use multiple different types of passwords, from a simple digit password to a more secure alphanumeric password and even a password that stores their fingerprint.
 
 These different types of passwords use different types: the digit password uses an `Int32`, the alphanumeric password uses a `String`, and the fingerprint password uses a `Float64`.
 
@@ -163,13 +165,13 @@ password_lock = PasswordLock.new(1234)
 
 ## 2. Encrypt the password
 
-The company has decided that they want to encrypt the password so that it is not stored in plain text and has asked you to implement a method that encrypts the password.
+The company has decided to encrypt the password so that it is not stored in plain text and has asked you to implement a method for encrypting it.
 
-Each password type has its own unique way of being encrypted:
+Each password type has its unique way of being encrypted:
 
-- `Int32` password: The password is divided by 2 and rounded to the nearest integer.
+- `Int32` password: The password is divided by two and rounded to the nearest integer.
 - `String` password: The password is reversed.
-- `Float64` password: The password is multiplied by 4.
+- `Float64` password: The password is multiplied by four.
 
 Implement an instance method called `encrypt` that takes no arguments and modifies the `@password` instance variable so that it is encrypted.
 

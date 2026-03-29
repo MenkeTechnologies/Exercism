@@ -13,7 +13,7 @@ Multiple `char`s can comprise a string such as `"word"` or `char`s can be
 processed independently. Their literals have single quotes e.g. `'A'`.
 
 C# `char`s support UTF-16 Unicode encoding so in addition to the latin character set
-pretty much all the writing systems in use world can be represented,
+pretty much all the writing systems used in the world can be represented,
 e.g. the Greek letter `'β'`.
 
 There are many builtin library methods to inspect and manipulate `char`s. These
@@ -28,19 +28,17 @@ character by character and manipulated. At the end of the process
 
 ## Instructions
 
-In this exercise you will implement a partial set of utility routines to help a developer
-clean up identifier names.
-
-In the 4 tasks you will gradually build up the routine `Clean` A valid identifier comprises
-zero or more letters and underscores.
-
-In all cases the input string is guaranteed to be non-null. If an empty string is passed to the `Clean` function, an empty string should be returned.
-
+In this exercise, you will implement a partial set of utility routines to help a developer clean up identifier names.
+In the 5 tasks you will gradually build up the routine `Clean`.
+A valid identifier comprises zero or more letters and underscores.
+In all cases, the input string is guaranteed to be non-null.
+If an empty string is passed to the `Clean` function, an empty string should be returned.
 Note that the caller should avoid calling the routine `Clean` with an empty identifier since such identifiers are ineffectual.
 
 ## 1. Replace any spaces encountered with underscores
 
-Implement the (_static_) `Identifier.Clean()` method to replace any spaces with underscores. This also applies to leading and trailing spaces.
+Implement the (_static_) `Identifier.Clean()` method to replace any spaces with underscores.
+This also applies to leading and trailing spaces.
 
 ```csharp
 Identifier.Clean("my   Id");
@@ -65,7 +63,16 @@ Identifier.Clean("à-ḃç");
 // => "àḂç"
 ```
 
-## 4. Omit Greek lower case letters
+## 4. Omit characters that are not letters
+
+Modify the (_static_) `Identifier.Clean()` method to omit any characters that are not letters.
+
+```csharp
+Identifier.Clean("1😀2😀3😀");
+// => ""
+```
+
+## 5. Omit Greek lower case letters
 
 Modify the (_static_) `Identifier.Clean()` method to omit any Greek letters in the range 'α' to 'ω'.
 

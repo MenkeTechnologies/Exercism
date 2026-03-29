@@ -1,15 +1,4 @@
-function shift_back(value, amount)
-
-end
-
-function set_bits(value, mask)
-
-end
-
-function flip_bits(value, mask)
-    
-end
-
-function clear_bits(value, mask)
-
-end
+shift_back(value, amount) = value >>> amount
+set_bits(value, mask) = value | mask
+flip_bits(value, mask) = xor(value, mask)
+clear_bits(value, mask) = value & ~mask

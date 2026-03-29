@@ -9,7 +9,7 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 Classes are a central concept in [object-oriented programming][object-oriented-programming].
 [In Crystal, everything is an object][everything-is-an-object], every object has a type, and it can respond to some methods.
 Classes are blueprints to create objects, providing initial values for state, like variables, and implementations of behavior, like methods.
-Objects are an instance of a class, that hold all the instance variables and states.
+Objects are class instances that hold all the instance variables and states.
 
 ## Class definition
 
@@ -22,7 +22,7 @@ end
 
 ## Creating an instance
 
-To [create an instance of a class][new-initialize], you call the class name with the `new` method.
+To [create an instance of a class][new-initialize], call the class name using the `new` method.
 
 ```crystal
 class Account
@@ -33,7 +33,7 @@ account = Account.new
 
 In the example above the variable `account` is an instance of the class `Account`.
 
-When creating an instance, there is a special method called `initialize` that acts as a constructor.
+When creating an instance, a special method called `initialize` acts as a constructor.
 It is called when an instance is created.
 The constructor allows you to set the initial state of the instance.
 The `initialize` method can take arguments, which are passed when creating an instance.
@@ -48,7 +48,7 @@ end
 Account.new(4)
 ```
 
-````exercism/note
+~~~~exercism/note
 The `initialize` method cannot manually return a value, instead, `new` returns the newly created instance.
 
 ```crystal
@@ -61,12 +61,13 @@ end
 Account.new(4)
 # => #<Account:0x7f5dc33dcea0>
 ```
-````
+~~~~
 
 ## Instance methods
 
 An instance method is a method that is available to an instance of a class, and can be called on that instance.
-Instance methods are defined using the `def` keyword, followed by the name of the method. They are defined inside the class definition.
+Instance methods are defined using the `def` keyword, followed by the method's name.
+They are defined inside the class definition.
 
 ```crystal
 class Account
@@ -102,7 +103,7 @@ account.balance
 # => 100
 ```
 
-Instance methods are defined using the `def` keyword, followed by the name of the method. They are defined inside the class definition.
+Instance variables may also be defined inside the class definition.
 
 ```crystal
 class Account
@@ -113,7 +114,7 @@ end
 ### Instance variables with initialization
 
 Instance variables can be initialized with an argument passed to the `initialize` method.
-Since Crystal can't infer the type of an argument during initialization, it needs to be specified.
+Since Crystal can't infer the type of argument used during initialization, it must be specified.
 If you want to read more about this, you can read: [type-inference][type-inference].
 To specify the type of the variable you can use the `:` symbol, followed by the type.
 For example, if you want to create an instance variable called `balance` of type `Int32`, you can do the following: `@balance : Int32`.
@@ -165,7 +166,7 @@ weather.raining
 
 ## Modify instance variables
 
-Instance variables can be modified by methods.
+Methods can modify instance variables.
 These methods can be called on the instance of the class.
 When a method modifies an instance variable, that change is only available in the instance of the class you called it on.
 
@@ -202,12 +203,12 @@ account_2.balance
 
 ## Class methods
 
-[Class methods][class-methods], are methods that are defined on a class, but not on the instances of that class.
-They offer a way to create methods that are not dependent on the state of the instance.
+[Class methods][class-methods] are methods that are defined for a class but not for its instances.
+They offer a way to create methods not dependent on the instance's state.
 They are defined using the `def` keyword, followed by `self.<method name>`.
 `self` is a reference to the namespace which self is being called from.
-In this case, it is a reference to the class, `Account`.
-It would be the same as if you would have written `Account.`, but `self.` is the preferred way to do it.
+In this case, it refers to the class, `Account`.
+It would be the same as if you would have written `Account.`, but `self.` is the preferred way.
 
 ```crystal
 class Account
@@ -235,7 +236,7 @@ Johannes's goal is to be able to make fresh juice every morning.
 
 Johannes Juice maker has a lot of fancy features.
 Like a built-in measurement system, which can tell you how much juice is in the cup.
-It also has a timer, which can tell you how long the machine has been running.
+It also has a timer, telling you how long the machine has been running.
 
 Johannes isn't the best at programming, but they want to make a program to control the machine.
 They have thereby asked you to help them.
@@ -245,7 +246,7 @@ They have thereby asked you to help them.
 The machine has a debug light, it is a simple mechanic, if the machine has power the debug light is on.
 The program will only run if the debug light is on.
 
-This method should be a class method of a class called `JuiceMaker`.
+This method should be a class method called `JuiceMaker`.
 
 Define the class method `JuiceMaker.debug_light_on?` that returns `true`.
 
@@ -292,7 +293,7 @@ juice_maker
 The machine needs to be able to tell you the status of the machine.
 It should return `true` if the machine is running, and `false` if the machine is not running.
 
-Define the method `JuiceMaker#running?` that returns the status of the machine.
+Define the method `JuiceMaker#running?` that returns the machine's status.
 
 ```crystal
 juice_maker = JuiceMaker.new(5)
@@ -308,7 +309,7 @@ The machine can add juice to the cup.
 The machine can tell how much juice is added to the cup.
 The machine needs help to know how much juice is in the cup after the juice is added.
 
-Define the method `JuiceMaker#add_fluid` that takes the amount of juice added as a parameter, and updates the amount of juice in the cup.
+Define the method `JuiceMaker#add_fluid`, which takes the amount of juice added as a parameter and updates the amount of juice in the cup.
 
 ```crystal
 juice_maker = JuiceMaker.new(5)
@@ -324,8 +325,8 @@ The machine can be turned on and off.
 You need to define a method to turn off the machine
 This method will only be called when the machine is running.
 When the machine is turned off, the running state should be set to `false`.
-The machine also needs help to know how much juice is in the cup after the machine is turned off.
-The machine uses 5 units of juice per minute.
+The machine also needs help determining how much juice is in the cup after it is turned off.
+The machine uses five units of juice per minute.
 
 Define the method `JuiceMaker#stop` that takes the number of minutes the machine has been running as a parameter and returns the amount of juice in the cup after the machine has been turned off.
 

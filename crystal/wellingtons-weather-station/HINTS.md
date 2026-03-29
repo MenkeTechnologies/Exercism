@@ -2,8 +2,8 @@
 
 ## General
 
-- Don't worry about specific number types, just use `Int32` and `Float64` for now.
-- Int32 and Float64 are the default number types in crystal, so you don't need to specify them.
+- Don't worry about specific number types; use `Int32` and `Float64` for now.
+- Int32 and Float64 are the default number types in Crystal, so you don't need to specify them.
 
 ## 1. Convert the temperature from Celsius to Kelvin
 

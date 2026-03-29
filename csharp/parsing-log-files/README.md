@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Regular Expressions
+
 The .NET base class libraries provide the `Regex` class for processing of regular expressions.
 
 ## Instructions
@@ -100,7 +102,7 @@ Lines with quoted passwords have already been removed and you process lines irre
 
 Lines containing an offending password should be returned prefixed with "<password>: ".
 
-Lines not containing an offending password should be returned prefixed with "-------: ".
+Lines not containing an offending password should be returned prefixed with "--------: ".
 
 ```csharp
 var lp = new LogParser();

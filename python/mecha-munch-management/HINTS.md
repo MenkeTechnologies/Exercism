@@ -38,7 +38,7 @@ The dictionary section of the [official tutorial][dicts-docs] and the mapping ty
 - What method would you call to get an [iterable view of just the keys][keys] of the dictionary?
 - Remember that you can get the `value` of a given key by using `<dict name>[<key_name>]` syntax.
 - If you had a `list` or a `tuple`, what [`built-in`][builtins] function might you use to sort them?
-- Remember that the `built-in` function can take an optional `reversed=true` argument.
+- Remember that the `built-in` function can take an optional `reverse=True` argument.
 
 ## 6. Update the Store Inventory to Reflect what a User Has Ordered.
 
@@ -50,6 +50,7 @@ The dictionary section of the [official tutorial][dicts-docs] and the mapping ty
 [dicts-docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [fromkeys]: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
 [items]: https://docs.python.org/3/library/stdtypes.html#dict.items
+[keys]: https://docs.python.org/3/library/stdtypes.html#dict.keys
 [mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 [mvp]: https://en.wikipedia.org/wiki/Minimum_viable_product
 [set-default]: https://docs.python.org/3/library/stdtypes.html#dict.setdefault

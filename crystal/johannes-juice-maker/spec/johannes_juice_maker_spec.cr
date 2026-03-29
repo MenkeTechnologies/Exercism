@@ -2,13 +2,13 @@ require "spec"
 require "../src/*"
 
 describe "JuiceMaker" do
-  describe "debug_light_on?" do
+  describe "debug_light_on?", tags: "task_id=1" do
     it "should be on if the machine is running" do
       JuiceMaker.debug_light_on?.should be_true
     end
   end
 
-  describe "initialize" do
+  describe "initialize", tags: "task_id=2" do
     it "should create a new JuiceMaker" do
       {% if JuiceMaker.has_method? "initialize" %}
         juice_maker = JuiceMaker.new(0)
@@ -30,7 +30,7 @@ describe "JuiceMaker" do
     end
   end
 
-  describe "start" do
+  describe "start", tags: "task_id=3" do
     it "Can start the machine" do
       {% if JuiceMaker.has_method?("initialize") && JuiceMaker.has_method?("start") %}
         juice_maker = JuiceMaker.new(50)
@@ -52,7 +52,7 @@ describe "JuiceMaker" do
     end
   end
 
-  describe "running?" do
+  describe "running?", tags: "task_id=4" do
     it "Status should return true if the machine is started" do
       {% if JuiceMaker.has_method?("start") && JuiceMaker.has_method?("initialize") && JuiceMaker.has_method?("running?") %}
         juice_maker = JuiceMaker.new(50)
@@ -73,7 +73,7 @@ describe "JuiceMaker" do
     end
   end
 
-  describe "add_fluid" do
+  describe "add_fluid", tags: "task_id=5" do
     it "Can add fluid to the machine" do
       {% if JuiceMaker.has_method?("add_fluid") && JuiceMaker.has_method?("initialize") %}
         juice_maker = JuiceMaker.new(0)
@@ -96,7 +96,7 @@ describe "JuiceMaker" do
     end
   end
 
-  describe "stop" do
+  describe "stop", tags: "task_id=6" do
     it "Can stop the machine" do
       {% if JuiceMaker.has_method?("add_fluid") && JuiceMaker.has_method?("initialize") && JuiceMaker.has_method?("start") && JuiceMaker.has_method?("running?") && JuiceMaker.has_method?("stop") %}
         juice_maker = JuiceMaker.new(50)

@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Casting
+
 Casting and type conversion are different ways of changing an expression from one data type to another.
 
 An expression can be cast to another type with the cast operator `(<type>)`.

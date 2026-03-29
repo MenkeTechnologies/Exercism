@@ -1,6 +1,6 @@
-# Linked List 
+# Linked List
 
-Welcome to Linked List  on Exercism's C++ Track.
+Welcome to Linked List on Exercism's C++ Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction

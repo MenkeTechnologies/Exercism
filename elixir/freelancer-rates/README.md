@@ -66,7 +66,7 @@ We first establish a few rules between the freelancer and the project manager:
 - The daily rate is 8 times the hourly rate.
 - A month has 22 billable days.
 
-The freelancer is offering to apply a discount if the project manager chooses to let the freelancer bill per month, which can come in handy if there is a certain budget the project manager has to work with.
+Sometimes, the freelancer is offering to apply a discount on their daily rate (for example for their most loyal customers or for non-for-profit customers).
 
 Discounts are modeled as fractional numbers representing percentage, for example `25.0` (25%).
 
@@ -105,7 +105,7 @@ The returned monthly rate should be rounded up (take the ceiling) to the nearest
 
 ## 4. Calculate the number of workdays given a budget, hourly rate and discount
 
-Implement a function that takes a budget, a hourly rate, and a discount, and calculates how many days of work that covers.
+Implement a function that takes a budget, an hourly rate, and a discount, and calculates how many days of work that covers.
 
 ```elixir
 FreelancerRates.days_in_budget(20000, 80, 11.0)

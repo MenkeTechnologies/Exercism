@@ -24,7 +24,7 @@ If the key is **not** found, it will _insert_ the (`key`, `default value`) pair 
 
 # Looking for the value associated with key "Rock Brown".
 # The key does not exist, so it is added with the default value, and the value is returned.
->>> palette.setdefault('Rock Brown', '#694605')
+>>> palette_I.setdefault('Rock Brown', '#694605')
 '#694605'
 
 # The (key, default value) pair has now been added to the dictionary.
@@ -93,7 +93,7 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ```python
 >>> palette_II = {'Factory Stone Purple': '#7c677f', 'Green Treeline': '#478559', 'Purple baseline': '#161748'}
 
-# Iterating in insertion order 
+# Iterating in insertion order (First in, first out)
 >>> for item in palette_II.items():
 ...     print(item)
 ...
@@ -102,7 +102,7 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ('Purple baseline', '#161748')
 
 
-# Iterating in the reverse direction.
+# Iterating in the reverse direction. (Last in, first out)
 >>> for item in reversed(palette_II.items()):
 ...    print (item)
 ...
@@ -114,12 +114,12 @@ This allows keys, values, or (`key`, `value`) pairs to be iterated over in Last-
 ## Sorting a Dictionary
 
 Dictionaries do not have a built-in sorting method.
-However, it is possible to sort a `dict` _view_ using the built-in function `sorted()` with `.items()`.
+However, it is possible to sort a `dict` _view_ using the built-in function `sorted()` with `dict.items()`.
 The sorted view can then be used to create a new dictionary.
-Like iteration, the default sort is over dictionary `keys`.
+Like iteration, the default sort is over the dictionary `keys`.
 
 ```python
-# Default ordering for a dictionary is last in, first out (LIFO).
+# Default ordering for a dictionary is insertion order (First in, first out).
 >>> color_palette = {'Grassy Green': '#9bc400', 
                     'Purple Mountains Majesty': '#8076a3', 
                     'Misty Mountain Pink': '#f9c5bd', 
@@ -197,7 +197,7 @@ When both dictionaries share keys, `dict_two` values take precedence.
  'Purple baseline': '#161748'}
 ```
 
-`dict_one |= other` behaves similar to `<dict_one>.update(<dict_two>)`, but in this case, `other` can be either a `dict` or an iterable of (`key`, `value`) pairs:
+`dict_one |= other` behaves similar to `<dict_one>.update(<other>)`, but in this case, `other` can be either a `dict` or an iterable of (`key`, `value`) pairs:
 
 ```python
 >>> palette_III = {'Grassy Green': (155, 196, 0),
@@ -223,7 +223,7 @@ For a detailed explanation of dictionaries and methods for working with them, th
 [dicts-docs]: https://docs.python.org/3/tutorial/datastructures.html#dictionaries
 [fi-dict-guide]: https://blog.finxter.com/python-dictionary
 [fromkeys]: https://docs.python.org/3/library/stdtypes.html#dict.fromkeys
-[how-to-dicts]: https://www.w3schools.com/python/python_dictionaries.asp
+[how-to-dicts]: https://realpython.com/python-dicts/
 [mapping-types-dict]: https://docs.python.org/3/library/stdtypes.html#mapping-types-dict
 
 ## Instructions
@@ -241,15 +241,15 @@ If a user wants to add 2 Oranges, 'Oranges' will appear twice in the input itera
 If the user already has the item in their cart, the cart quantity should be increased by 1.
 If the item is _new_ to the cart, it should be added with a quantity of 1.
 
-Create the function `add_items(<current_cart>, <items_to_add>)` that takes a cart dictionary and any list-like iterable of items to add as arguments.
+Create the function `add_item(<current_cart>, <items_to_add>)` that takes a cart dictionary and any list-like iterable of items to add as arguments.
 It should return a new/updated shopping cart dictionary for the user.
 
 ```python
->>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1}, 
+>>> add_item({'Banana': 3, 'Apple': 2, 'Orange': 1},
               ('Apple', 'Apple', 'Orange', 'Apple', 'Banana'))
 {'Banana': 4, 'Apple': 5, 'Orange': 2}
 
->>> add_items({'Banana': 3, 'Apple': 2, 'Orange': 1}, 
+>>> add_item({'Banana': 3, 'Apple': 2, 'Orange': 1},
               ['Banana', 'Orange', 'Blueberries', 'Banana'])
 {'Banana': 5, 'Apple': 2, 'Orange': 2, 'Blueberries': 1}
 ```
@@ -285,24 +285,28 @@ Create the function `update_recipes(<ideas>, <recipe_updates>)` that takes an "i
 The function should return the new/updated "ideas" dictionary.
 
 ```python
->>> update_recipes({'Banana Bread' : {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1},
-                    'Raspberry Pie' : {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1}},
-(('Banana Bread', {'Banana': 4,  'Walnuts': 2, 'Flour': 1, 'Eggs': 2, 'Butter': 1, 'Milk': 2, 'Eggs': 3}),))
+>>>update_recipes(
+    {'Banana Bread' : {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1},
+     'Raspberry Pie' : {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1}},
+    (('Banana Bread', {'Banana': 4,  'Walnuts': 2, 'Flour': 1, 'Butter': 1, 'Milk': 2, 'Eggs': 3}),)
+    )
 ...
 
-{'Banana Bread' : {'Banana': 4,  'Walnuts': 2, 'Flour': 1, 'Eggs': 2, 'Butter': 1, 'Milk': 2, 'Eggs': 3},
- 'Raspberry Pie' : {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1}}
+{'Banana Bread': {'Banana': 4, 'Walnuts': 2, 'Flour': 1, 'Butter': 1, 'Milk': 2, 'Eggs': 3}, 
+ 'Raspberry Pie': {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1}}
 
->>> update_recipes({'Banana Bread' : {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1},
-                    'Raspberry Pie' : {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1},
-                    'Pasta Primavera': {'Eggs': 1, 'Carrots': 1, 'Spinach': 2, 'Tomatoes': 3, 'Parmesan': 2, 'Milk': 1, 'Onion': 1}},
-[('Raspberry Pie', {'Raspberry': 3, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1, 'Whipped Cream': 2}),
-('Pasta Primavera', {'Eggs': 1, 'Mixed Veggies': 2, 'Parmesan': 2, 'Milk': 1, 'Spinach': 1, 'Bread Crumbs': 1}),
-('Blueberry Crumble', {'Blueberries': 2, 'Whipped Creme': 2, 'Granola Topping': 2, 'Yogurt': 3})])
+>>> update_recipes(
+    {'Banana Bread' : {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1},
+    'Raspberry Pie' : {'Raspberry': 1, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1},
+    'Pasta Primavera': {'Eggs': 1, 'Carrots': 1, 'Spinach': 2, 'Tomatoes': 3, 'Parmesan': 2, 'Milk': 1, 'Onion': 1}},
+    [('Raspberry Pie', {'Raspberry': 3, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1, 'Whipped Cream': 2}),
+    ('Pasta Primavera', {'Eggs': 1, 'Mixed Veggies': 2, 'Parmesan': 2, 'Milk': 1, 'Spinach': 1, 'Bread Crumbs': 1}),
+    ('Blueberry Crumble', {'Blueberries': 2, 'Whipped Creme': 2, 'Granola Topping': 2, 'Yogurt': 3})]
+    )
 ...
 
-{'Banana Bread': {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1},
- 'Raspberry Pie': {'Raspberry': 3, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1, 'Whipped Cream': 2},
+{'Banana Bread': {'Banana': 1, 'Apple': 1, 'Walnuts': 1, 'Flour': 1, 'Eggs': 2, 'Butter': 1}, 
+ 'Raspberry Pie': {'Raspberry': 3, 'Orange': 1, 'Pie Crust': 1, 'Cream Custard': 1, 'Whipped Cream': 2}, 
  'Pasta Primavera': {'Eggs': 1, 'Mixed Veggies': 2, 'Parmesan': 2, 'Milk': 1, 'Spinach': 1, 'Bread Crumbs': 1},
  'Blueberry Crumble': {'Blueberries': 2, 'Whipped Creme': 2, 'Granola Topping': 2, 'Yogurt': 3}}
 ```
@@ -322,17 +326,17 @@ Create the function `sort_entries(<cart>)` that takes a shopping cart/dictionary
 ## 5. Send User Shopping Cart to Store for Fulfillment
 
 The app needs to send a given users cart to the store for fulfillment.
-However, the shoppers in the store need to know which store isle the item can be found in and if the item needs refrigeration.
+However, the shoppers in the store need to know which store aisle the item can be found in and if the item needs refrigeration.
 So (_rather arbitrarily_) the "fulfillment cart" needs to be sorted in reverse alphabetical order with item quantities combined with location and refrigeration information.
 
-Create the function `send_to_store(<cart>, <isle_mapping>)` that takes a user shopping cart and a dictionary that has store isle number and a `True`/`False` for refrigeration needed for each item.
-The function should `return` a combined "fulfillment cart" that has (quantity, isle, and refrigeration) for each item the customer is ordering.
+Create the function `send_to_store(<cart>, <aisle_mapping>)` that takes a user shopping cart and a dictionary that has store aisle number and a `True`/`False` for refrigeration needed for each item.
+The function should `return` a combined "fulfillment cart" that has (quantity, aisle, and refrigeration) for each item the customer is ordering.
 Items should appear in _reverse_ alphabetical order.
 
 ```python
->>> send_to_store({'Banana': 3, 'Apple': 2, 'Orange': 1, 'Milk': 2}, 
-                  {'Banana': ['Isle 5', False], 'Apple': ['Isle 4', False], 'Orange': ['Isle 4', False], 'Milk': ['Isle 2', True]})
-{'Orange': [1, 'Isle 4', False], 'Milk': [2, 'Isle 2', True], 'Banana': [3, 'Isle 5', False], 'Apple': [2, 'Isle 4', False]}
+>>> send_to_store({'Banana': 3, 'Apple': 2, 'Orange': 1, 'Milk': 2},
+                  {'Banana': ['Aisle 5', False], 'Apple': ['Aisle 4', False], 'Orange': ['Aisle 4', False], 'Milk': ['Aisle 2', True]})
+{'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True], 'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]}
 ```
 
 ## 6. Update the Store Inventory to Reflect what a User Has Ordered.
@@ -347,10 +351,10 @@ The function should reduce the store inventory amounts by the number "ordered" i
 Where a store item count falls to 0, the count should be replaced by the message 'Out of Stock'.
 
 ```python
->>> update_store_inventory({'Orange': [1, 'Isle 4', False], 'Milk': [2, 'Isle 2', True], 'Banana': [3, 'Isle 5', False], 'Apple': [2, 'Isle 4', False]}, 
-{'Banana': [15, 'Isle 5', False], 'Apple': [12, 'Isle 4', False], 'Orange': [1, 'Isle 4', False], 'Milk': [4, 'Isle 2', True]})
+>>> update_store_inventory({'Orange': [1, 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True], 'Banana': [3, 'Aisle 5', False], 'Apple': [2, 'Aisle 4', False]},
+{'Banana': [15, 'Aisle 5', False], 'Apple': [12, 'Aisle 4', False], 'Orange': [1, 'Aisle 4', False], 'Milk': [4, 'Aisle 2', True]})
 
-{'Banana': [12, 'Isle 5', False], 'Apple': [10, 'Isle 4', False], 'Orange': ['Out of Stock', 'Isle 4', False], 'Milk': [2, 'Isle 2', True]}
+{'Banana': [12, 'Aisle 5', False], 'Apple': [10, 'Aisle 4', False], 'Orange': ['Out of Stock', 'Aisle 4', False], 'Milk': [2, 'Aisle 2', True]}
 ```
 
 [feature creep]: https://en.wikipedia.org/wiki/Feature_creep

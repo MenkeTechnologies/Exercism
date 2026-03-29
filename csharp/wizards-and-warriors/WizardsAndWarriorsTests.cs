@@ -1,9 +1,8 @@
-using Xunit;
 using Exercism.Tests;
 
 public class WizardsAndWarriorsTests
 {
- [Fact]
+    [Fact]
     [Task(1)]
     public void Describe_wizard()
     {
@@ -11,7 +10,7 @@ public class WizardsAndWarriorsTests
         Assert.Equal("Character is a Wizard", wizard.ToString());
     }
 
- [Fact]
+    [Fact]
     [Task(1)]
     public void Describe_warrior()
     {
@@ -19,7 +18,7 @@ public class WizardsAndWarriorsTests
         Assert.Equal("Character is a Warrior", warrior.ToString());
     }
 
- [Fact]
+    [Fact]
     [Task(2)]
     public void Warrior_is_not_vulnerable()
     {
@@ -27,7 +26,7 @@ public class WizardsAndWarriorsTests
         Assert.False(warrior.Vulnerable());
     }
 
- [Fact]
+    [Fact]
     [Task(4)]
     public void Wizard_is_vulnerable()
     {
@@ -35,7 +34,7 @@ public class WizardsAndWarriorsTests
         Assert.True(wizard.Vulnerable());
     }
 
- [Fact]
+    [Fact]
     [Task(4)]
     public void Wizard_with_prepared_spell_is_not_vulnerable()
     {
@@ -44,7 +43,7 @@ public class WizardsAndWarriorsTests
         Assert.False(wizard.Vulnerable());
     }
 
- [Fact]
+    [Fact]
     [Task(4)]
     public void Wizard_with_no_prepared_spell_is_vulnerable()
     {
@@ -52,7 +51,7 @@ public class WizardsAndWarriorsTests
         Assert.True(wizard.Vulnerable());
     }
 
- [Fact]
+    [Fact]
     [Task(5)]
     public void Attack_points_for_wizard_with_prepared_spell()
     {
@@ -64,7 +63,7 @@ public class WizardsAndWarriorsTests
         Assert.Equal(12, wizard.DamagePoints(warrior));
     }
 
- [Fact]
+    [Fact]
     [Task(5)]
     public void Attack_points_for_wizard_with_no_prepared_spell()
     {
@@ -74,7 +73,7 @@ public class WizardsAndWarriorsTests
         Assert.Equal(3, wizard.DamagePoints(otherWizard));
     }
 
- [Fact]
+    [Fact]
     [Task(6)]
     public void Attack_points_for_warrior_with_vulnerable_target()
     {
@@ -84,7 +83,7 @@ public class WizardsAndWarriorsTests
         Assert.Equal(10, warrior.DamagePoints(wizard));
     }
 
- [Fact]
+    [Fact]
     [Task(6)]
     public void Attack_points_for_warrior_with_non_vulnerable_target()
     {

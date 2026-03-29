@@ -1,7 +1,7 @@
 import "./etl" for Etl
 import "wren-testie/testie" for Testie, Expect
 
-Testie.test("ETL") { |do|
+Testie.test("ETL") { |do, skip|
   do.test("single letter") {
     var legacy = { 1: ["A"] }
     var actual = Etl.transform(legacy)
@@ -9,21 +9,21 @@ Testie.test("ETL") { |do|
     Expect.value(actual).toEqual(expected)
   }
 
-  do.test("single score with multiple letters") {
+  skip.test("single score with multiple letters") {
     var legacy = { 1: ["A", "E", "I", "O", "U"] }
     var actual = Etl.transform(legacy)
     var expected = { "a": 1, "e": 1, "i": 1, "o": 1, "u": 1 }
     Expect.value(actual).toEqual(expected)
   }
 
-  do.test("multiple scores with multiple letters") {
+  skip.test("multiple scores with multiple letters") {
     var legacy = { 1: ["A", "E"], 2: ["D", "G"] }
     var actual = Etl.transform(legacy)
     var expected = { "a": 1, "d": 2, "e": 1, "g": 2 }
     Expect.value(actual).toEqual(expected)
   }
 
-  do.test("multiple scores with differing numbers of letters") {
+  skip.test("multiple scores with differing numbers of letters") {
     var legacy = {
       1: ["A", "E", "I", "O", "U", "L", "N", "R", "S", "T"],
       2: ["D", "G"],

@@ -11,7 +11,7 @@
 
 ## 2. Generate a random starship registry number
 
-- There is a [build-in function][enum-random] for choosing an element from a range at random.
+- There is a [built-in function][enum-random] for choosing an element from a range at random.
 
 ## 3. Generate a random stardate
 
@@ -30,9 +30,9 @@
 - The control sequence type for floats is `f`.
 - The exact format string you need is `~.1f`.
 
-[getting-started-erlang-libraries]: https://elixir-lang.org/getting-started/erlang-libraries.html
-[getting-started-formatted-text-output]: https://elixir-lang.org/getting-started/erlang-libraries.html#formatted-text-output
+[getting-started-erlang-libraries]: https://hexdocs.pm/elixir/erlang-libraries.html
+[getting-started-formatted-text-output]: https://hexdocs.pm/elixir/erlang-libraries.html#formatted-text-output
 [enum-random]: https://hexdocs.pm/elixir/Enum.html#random/1
-[erl-rand-uniform]: http://www.erlang.org/doc/man/rand.html#uniform-0
-[erl-io-lib-format]: http://www.erlang.org/doc/man/io_lib.html#format-2
+[erl-rand-uniform]: https://www.erlang.org/doc/man/rand.html#uniform-0
+[erl-io-lib-format]: https://www.erlang.org/doc/man/io_lib.html#format-2
 [to-string]: https://hexdocs.pm/elixir/Kernel.html#to_string/1

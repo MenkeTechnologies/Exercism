@@ -48,4 +48,4 @@ which you should pretend doesn't exist for the purposes of implementing this exe
 
 ### Based on
 
-CodeRanch Cattle Drive, Assignment 3 - https://coderanch.com/t/718816/Leap
+CodeRanch Cattle Drive, Assignment 3 - https://web.archive.org/web/20240907033714/https://coderanch.com/t/718816/Leap

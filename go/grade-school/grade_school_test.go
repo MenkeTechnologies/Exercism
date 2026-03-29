@@ -1,15 +1,4 @@
-// API:
-//
-// type Grade struct {
-// 	int, []string
-// }
-//
-// type School
-// func New() *School
-// func (s *School) Add(string, int)
-// func (s *School) Grade(int) []string
-// func (s *School) Enrollment() []Grade
-
+//nolint:gosec // In the context of this exercise, it is fine to use math.Rand instead of crypto.Rand.
 package school
 
 import (
@@ -38,9 +27,7 @@ func TestAddStudent(t *testing.T) {
 	s.Add("Aimee", 2)
 	got := list(s.Enrollment())
 	if got != exp {
-		t.Errorf(`Add Aimee level 2, got
-%sexpected:
-%s`, got, exp)
+		t.Errorf("Add Aimee level 2, got\n%sexpected:\n%s", got, exp)
 	}
 }
 
@@ -52,9 +39,7 @@ func TestAddMoreSameGrade(t *testing.T) {
 	s.Add("Paul", 2)
 	got := list(s.Enrollment())
 	if got != exp {
-		t.Errorf(`Add more same grade, got
-%sexpected:
-%s`, got, exp)
+		t.Errorf("Add more same grade, got\n%sexpected:\n%s", got, exp)
 	}
 }
 
@@ -68,9 +53,7 @@ func TestAddDifferentGrades(t *testing.T) {
 	s.Add("Logan", 7)
 	got := list(s.Enrollment())
 	if got != exp {
-		t.Errorf(`Add different grades, got
-%sexpected:
-%s`, got, exp)
+		t.Errorf("Add different grades, got\n%sexpected:\n%s", got, exp)
 	}
 }
 
@@ -87,20 +70,14 @@ func TestGetGrade(t *testing.T) {
 			return
 		}
 	}
-	t.Errorf(`Get grade, got
-%q
-expected
-%q`, got, exp)
+	t.Errorf("Get grade, got\n%q\nexpected\n%q", got, exp)
 }
 
 func TestNonExistantGrade(t *testing.T) {
 	s := New()
 	got := s.Grade(1)
 	if len(got) != 0 {
-		t.Errorf(`Get non-existent grade, got
-%q
-expected
-[]`, got)
+		t.Errorf("Get non-existent grade, got\n%q\nexpected: []", got)
 	}
 }
 
@@ -117,9 +94,7 @@ func TestSortedEnrollment(t *testing.T) {
 	s.Add("Kyle", 3)
 	got := list(s.Enrollment())
 	if got != exp {
-		t.Errorf(`Sorted enrollment, got
-%sexpected:
-%s`, got, exp)
+		t.Errorf("Sorted enrollment, got\n%sexpected:\n%s", got, exp)
 	}
 }
 
@@ -139,7 +114,7 @@ func BenchmarkAddStudents(b *testing.B) {
 	}
 	p := 0
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		// bench combined time to create a school and add
 		// a number of students, drawn from a pool of students
 		s := New()
@@ -164,7 +139,7 @@ func BenchmarkEnrollment(b *testing.B) {
 	}
 	p := 0
 	b.ResetTimer()
-	for i := 0; i < b.N; i++ {
+	for range b.N {
 		// bench time to get enrollment of a full school,
 		// averaged over a pool of schools.
 		ss[p].Enrollment()

@@ -27,7 +27,7 @@ func TestCanFastAttack(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.desc, func(t *testing.T) {
 			if got := CanFastAttack(tt.knightIsAwake); got != tt.expected {
-				t.Errorf("CanFastAttack(%v) = %v; want %v", tt.knightIsAwake, tt.knightIsAwake, tt.expected)
+				t.Errorf("CanFastAttack(%v) = %v; want %v", tt.knightIsAwake, got, tt.expected)
 			}
 		})
 	}
@@ -265,6 +265,14 @@ func TestCanFreePrisoner(t *testing.T) {
 			archerIsAwake:   true,
 			prisonerIsAwake: true,
 			dogIsPresent:    true,
+			expected:        false,
+		},
+		{
+			desc:            "Everyone is sleeping. Dog is not present",
+			knightIsAwake:   false,
+			archerIsAwake:   false,
+			prisonerIsAwake: false,
+			dogIsPresent:    false,
 			expected:        false,
 		},
 	}

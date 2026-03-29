@@ -16,14 +16,14 @@ test relative-1 "Direct parent-child relation" -body {
     }
 } -returnCodes ok -result 1
 
-
+skip relative-2
 test relative-2 "Sibling relationship" -body {
     degreeOfSeparation Olga Yassin {
         Dalia {Olga Yassin}
     }
 } -returnCodes ok -result 1
 
-
+skip relative-3
 test relative-3 "Two degrees of separation, grandchild" -body {
     degreeOfSeparation Khadija Rami {
         Khadija {Mateo}
@@ -31,7 +31,7 @@ test relative-3 "Two degrees of separation, grandchild" -body {
     }
 } -returnCodes ok -result 2
 
-
+skip relative-4
 test relative-4 "Unrelated individuals" -body {
     degreeOfSeparation Priya Kaito {
         Priya {Rami}
@@ -39,7 +39,7 @@ test relative-4 "Unrelated individuals" -body {
     }
 } -returnCodes ok -result -1
 
-
+skip relative-5
 test relative-5 "Complex graph, cousins" -body {
     degreeOfSeparation Dimitri Fabio {
         Aiko {Bao Carlos}
@@ -97,7 +97,7 @@ test relative-5 "Complex graph, cousins" -body {
     }
 } -returnCodes ok -result 9
 
-
+skip relative-6
 test relative-6 "Complex graph, no shortcut, far removed nephew" -body {
     degreeOfSeparation Lucia Jun {
         Aiko {Bao Carlos}
@@ -155,7 +155,7 @@ test relative-6 "Complex graph, no shortcut, far removed nephew" -body {
     }
 } -returnCodes ok -result 14
 
-
+skip relative-7
 test relative-7 "Complex graph, some shortcuts, cross-down and cross-up, cousins several times removed, with unrelated family tree" -body {
     degreeOfSeparation Wyatt Xia {
         Aiko {Bao Carlos}

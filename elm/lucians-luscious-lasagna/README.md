@@ -6,7 +6,9 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
-## Constants and functions
+## Basics 1
+
+### Constants and functions
 
 A constant value is defined with `name = expression`,
 where in Elm, everything except definitions are expressions.
@@ -40,7 +42,7 @@ six = add 2 (1 * 4)
 twelve = add 2 1 * 4
 ```
 
-## Indentation / significant whitespace
+### Indentation / significant whitespace
 
 Elm doesn't use syntactic markers such as curly brackets, parentheses, or semicolons to specify code boundaries. It uses whitespaces and indentations instead.
 
@@ -56,11 +58,11 @@ add number1 number2 =
 
 https://elmprogramming.com/indentation.html
 
-## Modules
+### Modules
 
 Each file in Elm is a module, and must contain a `module` statement before all other code.
 Module names must match their file name, so module `Calculator` must be in file Calculator.elm.
-Anything defined within a module is privatly scoped to it
+Anything defined within a module is privately scoped to it
 and cannot be accessed from outside this module, unless listed in `exposing`.
 
 ```elm
@@ -83,7 +85,7 @@ add number1 number2 = number1 + number2
 
 https://elm-lang.org/docs/syntax#modules
 
-## Comments
+### Comments
 
 A comment is some text within the Elm file that is not interpreted as code.
 It is mainly intented to be read by yourself and other programmers.
@@ -100,20 +102,20 @@ of opening and closing delimiters.
 -}
 ```
 
-## Formatting
+### Formatting
 
 There is a [style guide](https://elm-lang.org/docs/style-guide),
 and [elm-format](https://github.com/avh4/elm-format) can be used to automatically format code.
 
 ## Instructions
 
-In this exercise you're going to write some code to help you cook a brilliant lasagna from your favorite cooking book.
+In this exercise you're going to write some code to help you cook a brilliant lasagna from your favorite cookbook.
 
-You have four tasks, all related to the time spent cooking the lasagna.
+You have three tasks, all related to the time spent cooking the lasagna.
 
 ## 1. Define the expected oven time in minutes
 
-Define the `expectedMinutesInOven` constant to check how many minutes the lasagna should be in the oven. According to the cooking book, the expected oven time in minutes is 40:
+Define `expectedMinutesInOven` to calculate how many minutes the lasagna should be in the oven. According to the cookbook, the expected oven time in minutes is 40:
 
 ```elm
 expectedMinutesInOven
@@ -122,7 +124,7 @@ expectedMinutesInOven
 
 ## 2. Calculate the preparation time in minutes
 
-Define the `preparationTimeInMinutes` function that takes the number of layers you added to the lasagna as a parameter and returns how many minutes you spent preparing the lasagna, assuming each layer takes you 2 minutes to prepare.
+Define `preparationTimeInMinutes` that takes the number of layers in the lasagna as a parameter and returns how many minutes it takes to prepare the lasagna, assuming each layer takes 2 minutes to prepare.
 
 ```elm
 preparationTimeInMinutes 3
@@ -131,7 +133,7 @@ preparationTimeInMinutes 3
 
 ## 3. Calculate the elapsed time in minutes
 
-Define the `elapsedTimeInMinutes` function that takes two parameters: the first parameter is the number of layers you added to the lasagna, and the second parameter is the number of minutes the lasagna has been in the oven. The function should return how many minutes you've worked on cooking the lasagna, which is the sum of the preparation time in minutes, and the time in minutes the lasagna has spent in the oven at the moment.
+Define the `elapsedTimeInMinutes` function that takes two parameters: the first parameter is the number of layers in the lasagna, and the second parameter is the number of minutes the lasagna has been in the oven. The function should return how many minutes you've worked on cooking the lasagna, which is the sum of the preparation time in minutes and the time in minutes the lasagna has spent in the oven at the moment.
 
 ```elm
 elapsedTimeInMinutes 3 20

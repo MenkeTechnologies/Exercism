@@ -1,11 +1,11 @@
-# Isbn Verifier
+# ISBN Verifier
 
-Welcome to Isbn Verifier on Exercism's C++ Track.
+Welcome to ISBN Verifier on Exercism's C++ Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions
 
-The [ISBN-10 verification process][isbn-verification] is used to valid book identification numbers.
+The [ISBN-10 verification process][isbn-verification] is used to validate book identification numbers.
 These normally contain dashes and look like: `3-598-21508-8`
 
 ## ISBN

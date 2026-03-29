@@ -41,8 +41,8 @@ This would give a total of:
 
 Resulting in:
 
-- 5 × (100% - 25%) * $8 = 5 × $6.00 = $30.00, plus
-- 3 × (100% - 10%) * $8 = 3 × $7.20 = $21.60
+- 5 × (100% - 25%) × $8 = 5 × $6.00 = $30.00, plus
+- 3 × (100% - 10%) × $8 = 3 × $7.20 = $21.60
 
 Which equals $51.60.
 
@@ -58,12 +58,16 @@ This would give a total of:
 
 Resulting in:
 
-- 4 × (100% - 20%) * $8 = 4 × $6.40 = $25.60, plus
-- 4 × (100% - 20%) * $8 = 4 × $6.40 = $25.60
+- 4 × (100% - 20%) × $8 = 4 × $6.40 = $25.60, plus
+- 4 × (100% - 20%) × $8 = 4 × $6.40 = $25.60
 
 Which equals $51.20.
 
 And $51.20 is the price with the biggest discount.
+
+## More on price per book
+
+Because the problem specification prohibits prices in float representation, the actual price per book is in cents (800¢) instead of dollars ($8).
 
 ## Source
 

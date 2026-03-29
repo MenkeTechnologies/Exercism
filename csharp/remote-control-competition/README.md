@@ -43,7 +43,14 @@ Interfaces can contain instance methods and properties amongst other members
 
 ## Ordering
 
-The `IComparable<T>` interface can be implemented where a default generic sort order in collections is required.
+To allow an object to be compared to another object, it must implement the `IComparable<T>` interface.
+This interface has a single method that needs to be implemented: `int CompareTo(T other)`.
+
+There are three possible return values for the `CompareTo` method:
+
+- Value smaller than zero: the current object is smaller than the other object.
+- Value greater than zero: the current object is greater than the other object.
+- Value is zero: the current object is equal to the other object.
 
 ## Instructions
 
@@ -82,7 +89,7 @@ exp.DistanceTravelled
 
 Please implement the `IComparable<T>` interface in the `ProductionRemoteControlCar` class. The default sort order for cars should be ascending order of victories.
 
-Implement the static `TestTrack.GetRankedCars()` to return the cars passed is sorted in ascending order of number of victories.
+Implement the static `TestTrack.GetRankedCars()` to return the passed cars sorted in ascending order of number of victories.
 
 ```csharp
 var prc1 = new ProductionRemoteControlCar();

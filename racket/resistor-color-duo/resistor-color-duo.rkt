@@ -1,5 +1,4 @@
 #lang racket
-
 (provide color-code)
 
 (define color-values
@@ -19,4 +18,3 @@
 (define (color-code color)
   (string->number
    (string-join (map (lambda (colo) (number->string (value colo))) (take color (min 2 (length color)))) "")))
-

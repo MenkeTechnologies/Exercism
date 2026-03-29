@@ -6,6 +6,8 @@ If you get stuck on the exercise, check out `HINTS.md`, but try and solve it wit
 
 ## Introduction
 
+## Dict
+
 A [`Dict`][dict] in Elm is an immutable dictionary of zero or more key-value pairs.
 
 Dicts are manipulated by functions and operators defined in the [`Dict` module][dict-module].
@@ -66,7 +68,7 @@ stillAlice = Dict.remove 1 --> ( 0, "Alice" )
 empty = Dict.remove 0 alice --> Dict.empty
 ```
 
-A list of key value pairs can be converted into a list with `fromList`.
+A list of key value pairs can be converted into a dict with `fromList`.
 
 ```elm
 alice = Dict.fromList [ ( 0, "Bob" ), ( 0, "Alice" ) ]
@@ -86,14 +88,14 @@ Multiple items can be removed using `filter`.
 
 ```elm
 aliceAndBob = Dict.fromList [ ( "Alice", 1 ), ( "Bob", 0 ) ]
-bob = Dict.filter (\name count) -> name == "Bob") aliceAndBob --> Dict.fromList [ ( "Bob", 0 ) ]
+bob = Dict.filter (\name count -> name == "Bob") aliceAndBob --> Dict.fromList [ ( "Bob", 0 ) ]
 ```
 
 Items can be transformed using `map`.
 
 ```elm
 alice = Dict.fromList [ ( "Alice", 0 ) ]
-empty = Dict.map (\player count -> count + 1) --> Dict.fromList [ ( "Alice", 1 ) ]
+empty = Dict.map (\player count -> count + 1) alice --> Dict.fromList [ ( "Alice", 1 ) ]
 ```
 
 Dicts can be combined / transformed using `merge`.
@@ -184,8 +186,8 @@ Implement the `combineGames` function, counting the total number of goals each p
 ```elm
 combine Games
   (Dict.fromList [ ( "Betty", 2 ), ( "Cedd", 1 ) ] )
-  (Dict.fromList [ ( "Betty", 2 ), ( "Luigi", 3 ) ] )
---> Dict.fromList [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Luigi", 3 ) ]
+  (Dict.fromList [ ( "Betty", 2 ), ( "Mario", 3 ) ] )
+--> Dict.fromList [ ( "Betty", 4 ), ( "Cedd", 1 ), ( "Mario", 3 ) ]
 ```
 
 ## Source

@@ -37,12 +37,12 @@ A quick set of definitions (leaving out a few details) are as follows:
 (eql #\a #\A) ; => NIL
 ```
 
-- `equal`: defines equality as meaning: two lists are `equal` if each element is also `equal`; two arrays are `equal` if each element is `eq`; two strings are `equal` if each element is `eql`; everything else is `equal` if they are `eql`.
+- `equal`: defines equality as meaning: two lists are `equal` if each element is also `equal`; two strings are `equal` if each element is `eql`; two arrays are `equal` if they are `eq`; everything else is `equal` if they are `eql`.
   _e.g._:
 
 ```lisp
 (equal (list 1 2) (list 1 2)) ; => T
-(equal #(1 2) #(1 2))         ; => T
+(equal #(1 2) #(1 2))         ; => NIL
 (equal "foo" "foo")           ; => T
 ```
 
@@ -74,8 +74,8 @@ For example:
 a                         ; => "pizza"
 b                         ; => "pizza"
 
-(key-object-equality a a) ; => T
-(key-object-equality a b) ; => NIL
+(key-object-identity a a) ; => T
+(key-object-identity a b) ; => NIL
 ```
 
 because while `a` and `b` appear to be the same, they are not the same object.
@@ -170,19 +170,24 @@ because even with an equality predicate that will look inside of a cons, it may 
 
 ## 6. The maze of arrays
 
-This maze is simpler with only two rooms. The first needs a key that checks if the arrays contain the equal contents. The second needs a key that is more flexible about checking equality of numbers.
+This maze is simpler with only two rooms. 
+The first needs a key that checks if the arrays are the same arrays. 
+The second needs a key that will check the contents of the arrays.
 
 For example:
 
 ```lisp
 a                        ; => #[13 23]
-b                        ; => #[13 23.0]
+b                        ; => #[13 23]
+c                        ; => #[13 23.0]
 
 (key-arrays a b)         ; => NIL
+(key-arrays a c)         ; => NIL
 (key-arrays-loosely a b) ; => T
+(key-arrays-loosely a c) ; => T
 ```
 
-because a permissive equality predicate will not consider numeric type when comparing the contents of an array.
+because only very permissive equality checkers will check that if the contents of the array are equal.
 
 ## Source
 

@@ -36,7 +36,7 @@ The most commonly used Erlang functions that do not have an Elixir equivalent ar
 
 To discover Erlang's standard library, explore the [STDLIB Reference Manual][erl-stdlib-ref].
 
-[erl-stdlib-ref]: http://www.erlang.org/doc/apps/stdlib/index.html
+[erl-stdlib-ref]: https://www.erlang.org/doc/apps/stdlib/index.html
 
 ## Instructions
 
@@ -76,6 +76,8 @@ A stardate is a floating point number. The adventures of the _Starship Enterpris
 
 Implement the function `random_stardate/0` that returns a floating point number between 41000.0 (inclusive) and 42000.0 (exclusive).
 
+The implementation should use an Erlang function.
+
 ```elixir
 CaptainsLog.random_stardate()
 # => 41458.15721310934
@@ -86,6 +88,8 @@ CaptainsLog.random_stardate()
 In the captain's log, stardates are usually rounded to a single decimal place.
 
 Implement the `format_stardate/1` function that will take a floating point number and return a string with the number rounded to a single decimal place.
+
+The implementation should use an Erlang function.
 
 ```elixir
 CaptainsLog.format_stardate(41458.15721310934)

@@ -11,9 +11,10 @@ Unpacked values can then be assigned to variables within the same statement, whi
 
 The special operators `*` and `**` are often used in unpacking contexts and with multiple assignment.
 
-```exercism/caution
+~~~~exercism/caution
 `*<variable_name>` and `**<variable_name>` should not be confused with `*` and `**`. While `*` and `**` are used for multiplication and exponentiation respectively, `*<variable_name>` and `**<variable_name>` are used as packing and unpacking operators.
-```
+~~~~
+
 
 ## Multiple assignment
 
@@ -61,11 +62,12 @@ For example:
 
 Since `tuples` are immutable, you can't swap elements in a `tuple`.
 
+
 ## Unpacking
 
-```exercism/note
+~~~~exercism/note
 The examples below use `lists` but the same concepts apply to `tuples`.
-```
+~~~~
 
 In Python, it is possible to [unpack the elements of `list`/`tuple`/`dictionary`][unpacking] into distinct variables.
 Since values appear within `lists`/`tuples` in a specific order, they are unpacked into variables in the same order:
@@ -86,9 +88,10 @@ If there are values that are not needed then you can use `_` to flag them:
 "cherry"
 ```
 
+
 ### Deep unpacking
 
-Unpacking and assigning values from a `list`/`tuple` inside of a `list` or `tuple` (_also known as nested lists/tuples_), works in the same way a shallow unpacking does, but often needs qualifiers to clarify the values context or position:
+Unpacking and assigning values from a `list`/`tuple` enclosed inside a `list` or `tuple` (_also known as nested lists/tuples_) works in the same way a shallow unpacking does — but often needs qualifiers to clarify the context or position:
 
 ```python
 >>> fruits_vegetables = [["apple", "banana"], ["carrot", "potato"]]
@@ -125,7 +128,7 @@ ValueError: too many values to unpack (expected 1)
 
 When [unpacking a `list`/`tuple`][packing and unpacking] you can use the `*` operator to capture the "leftover" values.
 This is clearer than slicing the `list`/`tuple` (_which in some situations is less readable_).
-For example, we can extract the first element and then assign the remaining values into a new `list` without the first element:
+For example, the first element can be extracted and then the remaining values can be placed into a new `list` without the first element:
 
 ```python
 >>> fruits = ["apple", "banana", "cherry", "orange", "kiwi", "melon", "mango"]
@@ -163,7 +166,7 @@ We can also use `*` in deep unpacking:
 
 ### Unpacking a dictionary
 
-[Unpacking a dictionary][packing and unpacking] is a bit different than unpacking a `list`/`tuple`.
+[Unpacking a dictionary][packing and unpacking] is a bit different from unpacking a `list`/`tuple`.
 Iteration over dictionaries defaults to the **keys**.
 So when unpacking a `dict`, you can only unpack the **keys** and not the **values**:
 
@@ -174,7 +177,7 @@ So when unpacking a `dict`, you can only unpack the **keys** and not the **value
 "apple"
 ```
 
-If you want to unpack the values then you can use the `values()` method:
+If you want to unpack the values then you can use the `<dict>.values()` method:
 
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
@@ -183,9 +186,9 @@ If you want to unpack the values then you can use the `values()` method:
 6
 ```
 
-If both **keys** and **values** are needed, use the `items()` method.
-Using `items()` will generate tuples with **key-value** pairs.
-This is because of [`dict.items()` generates an iterable with key-value `tuples`][items].
+If both **keys** and **values** are needed, use the [`<dict>.items()`][items] method.
+`<dict>.items()` generates an [iterable view][view-objects] containing **key-value** pairs.
+These can be unpacked into a `tuple`:
 
 ```python
 >>> fruits_inventory = {"apple": 6, "banana": 2, "cherry": 3}
@@ -216,11 +219,15 @@ This will pack all the values into a `list`/`tuple`.
 >>> combined_fruits
 ("apple", "banana", "cherry", "orange", "kiwi", "melon", "mango")
 
-# If the * operator is used on the left side of "=" the result is a list
+# If the * operator is used on the left side of "=" the result is a list.
+# Note the trailing comma.
 >>> *combined_fruits_too, = *fruits, *more_fruits
 >>> combined_fruits_too
 ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'melon', 'mango']
 ```
+
+For more background on using `*` on the left-hand side, see [PEP 3132][pep-3132].
+
 
 ### Packing a dictionary with `**`
 
@@ -244,8 +251,8 @@ This will pack all **key**-**value** pairs from one dictionary into another dict
 ### Packing with function parameters
 
 When you create a function that accepts an arbitrary number of arguments, you can use [`*args` or `**kwargs`][args and kwargs] in the function definition.
-`*args` is used to pack an arbitrary number of positional (non-keyworded) arguments and
-`**kwargs` is used to pack an arbitrary number of keyword arguments.
+`*args` is used to pack an arbitrary number of positional (_non-keyword_) arguments as a `tuple` and
+`**kwargs` is used to pack an arbitrary number of keyword arguments as a dictionary.
 
 Usage of `*args`:
 
@@ -299,13 +306,13 @@ c = 3
 You can also write parameters before `*args` to allow for specific positional arguments.
 Individual keyword arguments then have to appear before `**kwargs`.
 
-```exercism/caution
+~~~~exercism/caution
 [Arguments have to be structured](https://www.python-engineer.com/courses/advancedpython/18-function-arguments/) like this:
 
 `def my_function(<positional_args>, *args, <key-word_args>, **kwargs)`
 
 If you don't follow this order then you will get an error.
-```
+~~~~
 
 ```python
 >>> def my_function(a, b, *args):
@@ -350,8 +357,8 @@ numbers = [1, 2, 3]
 1
 ```
 
-Using `*` unpacking with the `zip()` function is another common use case.
-Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the values from each `iterable` grouped:
+Using `*` unpacking with the [`zip()` built-in][zip] is another common use case.
+The `zip()` function takes multiple iterables and returns a `list` of `tuples` with the values from each `iterable` grouped:
 
 ```python
 >>> values = (['x', 'y', 'z'], [1, 2, 3], [True, False, True])
@@ -361,11 +368,14 @@ Since `zip()` takes multiple iterables and returns a `list` of `tuples` with the
 ```
 
 [args and kwargs]: https://www.geeksforgeeks.org/args-kwargs-python/
-[items]: https://www.geeksforgeeks.org/python-dictionary-items-method/
+[items]: https://docs.python.org/3/library/stdtypes.html#dict.items
 [multiple assignment]: https://www.geeksforgeeks.org/assigning-multiple-variables-in-one-line-in-python/
 [packing and unpacking]: https://www.geeksforgeeks.org/packing-and-unpacking-arguments-in-python/
+[pep-3132]: https://peps.python.org/pep-3132/
 [sorting algorithms]: https://realpython.com/sorting-algorithms-python/
 [unpacking]: https://www.geeksforgeeks.org/unpacking-arguments-in-python/?ref=rp
+[view-objects]: https://docs.python.org/3/library/stdtypes.html#dict-views
+[zip]: https://docs.python.org/3/library/functions.html#zip
 
 ## Instructions
 
@@ -373,10 +383,10 @@ Your friend Linus is a Locomotive Engineer who drives cargo trains between citie
 Although they are amazing at handling trains, they are not amazing at handling logistics or computers.
 They would like to enlist your programming help organizing train details and correcting mistakes in route data.
 
-```exercism/note
+~~~~exercism/note
 This exercise could easily be solved using slicing, indexing, and various `dict` methods.
 However, we would like you to practice packing, unpacking, and multiple assignment in solving each of the tasks below.
-```
+~~~~
 
 ## 1. Create a list of all wagons
 
@@ -417,7 +427,7 @@ The function should then `return` a `list` with the modifications.
 
 Now that all the wagon data is correct, Linus would like you to update the system's routing information.
 Along a transport route, a train might make stops at a few different stations to pick up and/or drop off cargo.
-Each journey could have a different amount of these intermediary delivery points.
+Each journey could have a different number of these intermediary delivery points.
 Your friend would like you to update the systems routing `dict` with any missing/additional delivery information.
 
 Implement a function `add_missing_stops()` that accepts a routing `dict` followed by a variable number of keyword arguments.
@@ -444,9 +454,9 @@ The first `dict` contains the origin and destination cities the train route runs
 The second `dict` contains other routing details such as train speed, length, or temperature.
 The function should return a consolidated `dict` with all routing information.
 
-```exercism/note
+~~~~exercism/note
 The second `dict` can contain different/more properties than the ones shown in the example.
-```
+~~~~
 
 ```python
 >>> extend_route_information({"from": "Berlin", "to": "Hamburg"}, {"length": "100", "speed": "50"})

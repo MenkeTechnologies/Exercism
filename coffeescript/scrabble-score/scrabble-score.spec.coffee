@@ -4,32 +4,32 @@ describe 'ScrabbleScore', ->
   it 'lowercase letter', ->
     expect(ScrabbleScore.score('a')).toEqual(1)
 
-  it 'uppercase letter', ->
+  xit 'uppercase letter', ->
     expect(ScrabbleScore.score('A')).toEqual(1)
 
-  it 'valuable letter', ->
+  xit 'valuable letter', ->
     expect(ScrabbleScore.score('f')).toEqual(4)
 
-  it 'short word', -> 
+  xit 'short word', ->
     expect(ScrabbleScore.score('at')).toEqual(2)
-  
-  it 'short, valuable word', ->
+
+  xit 'short, valuable word', ->
     expect(ScrabbleScore.score('zoo')).toEqual(12)
 
-  it 'medium word', ->
+  xit 'medium word', ->
     expect(ScrabbleScore.score('street')).toEqual(6)
 
-  it 'medium, valuable word', ->
+  xit 'medium, valuable word', ->
     expect(ScrabbleScore.score('quirky')).toEqual(22)
 
-  it 'long, mixed-case word', ->
+  xit 'long, mixed-case word', ->
     expect(ScrabbleScore.score('OxyphenButazone')).toEqual(41)
 
-  it 'english-like word', ->
+  xit 'english-like word', ->
     expect(ScrabbleScore.score('pinata')).toEqual(8)
 
-  it 'empty input', ->
+  xit 'empty input', ->
     expect(ScrabbleScore.score('')).toEqual(0)
 
-  it 'entire alphabet available', ->
+  xit 'entire alphabet available', ->
     expect(ScrabbleScore.score('abcdefghijklmnopqrstuvwxyz')).toEqual(87)

@@ -17,7 +17,7 @@
 
 ## 3. Calculate the velocity
 
-- To get the velocity you need to divide the distance by the time.
+- To get the velocity, divide the distance by the time.
 - The result of a numeric operation will be of the highest precision type, so you need to convert the result to the correct type.
 
 [constants]: https://crystal-lang.org/reference/syntax_and_semantics/constants.html

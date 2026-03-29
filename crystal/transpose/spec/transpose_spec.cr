@@ -8,67 +8,67 @@ describe "Transpose" do
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "two characters in a row" do
+  pending "two characters in a row" do
     input = "A1"
     expected = "A\n1"
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "two characters in a column" do
+  pending "two characters in a column" do
     input = "A\n1"
     expected = "A1"
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "simple" do
+  pending "simple" do
     input = "ABC\n123"
     expected = "A1\nB2\nC3"
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "single line" do
+  pending "single line" do
     input = "Single line."
     expected = "S\ni\nn\ng\nl\ne\n \nl\ni\nn\ne\n."
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "first line longer than second line" do
+  pending "first line longer than second line" do
     input = "The fourth line.\nThe fifth line."
     expected = "TT\nhh\nee\n  \nff\noi\nuf\nrt\nth\nh \n l\nli\nin\nne\ne.\n."
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "second line longer than first line" do
+  pending "second line longer than first line" do
     input = "The first line.\nThe second line."
     expected = "TT\nhh\nee\n  \nfs\nie\nrc\nso\ntn\n d\nl \nil\nni\nen\n.e\n ."
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "mixed line length" do
+  pending "mixed line length" do
     input = "The longest line.\nA long line.\nA longer line.\nA line."
     expected = "TAAA\nh   \nelll\n ooi\nlnnn\nogge\nn e.\nglr\nei \nsnl\ntei\n .n\nl e\ni .\nn\ne\n."
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "square" do
+  pending "square" do
     input = "HEART\nEMBER\nABUSE\nRESIN\nTREND"
     expected = "HEART\nEMBER\nABUSE\nRESIN\nTREND"
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "rectangle" do
+  pending "rectangle" do
     input = "FRACTURE\nOUTLINED\nBLOOMING\nSEPTETTE"
     expected = "FOBS\nRULE\nATOP\nCLOT\nTIME\nUNIT\nRENT\nEDGE"
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "triangle" do
+  pending "triangle" do
     input = "T\nEE\nAAA\nSSSS\nEEEEE\nRRRRRR"
     expected = "TEASER\n EASER\n  ASER\n   SER\n    ER\n     R"
     Transpose.transpose(input).should eq(expected)
   end
 
-  it "jagged triangle" do
+  pending "jagged triangle" do
     input = "11\n2\n3333\n444\n555555\n66666"
     expected = "123456\n1 3456\n  3456\n  3 56\n    56\n    5"
     Transpose.transpose(input).should eq(expected)
