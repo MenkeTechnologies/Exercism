@@ -27,7 +27,7 @@ pub fn foldr[T, U](array []T, initial U, f fn (acc U, e T) U) U {
 }
 
 pub fn length[T](array []T) int {
-	return array.len
+	return foldl(array, 0, fn[T](acc int, _ T) int { return acc + 1})
 }
 
 pub fn reverse[T](array []T) []T {

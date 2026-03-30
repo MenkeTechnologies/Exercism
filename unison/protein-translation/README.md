@@ -1,6 +1,6 @@
-# Protein-Translation
+# Protein Translation
 
-Welcome to Protein-Translation on Exercism's Unison Track.
+Welcome to Protein Translation on Exercism's Unison Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Instructions

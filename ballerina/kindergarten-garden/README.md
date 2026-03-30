@@ -1,6 +1,6 @@
-# kindergarten garden
+# Kindergarten Garden
 
-Welcome to kindergarten garden on Exercism's Ballerina Track.
+Welcome to Kindergarten Garden on Exercism's Ballerina Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction

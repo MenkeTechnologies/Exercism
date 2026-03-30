@@ -1,6 +1,6 @@
-# Pig-Latin
+# Pig Latin
 
-Welcome to Pig-Latin on Exercism's Unison Track.
+Welcome to Pig Latin on Exercism's Unison Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 
 ## Introduction

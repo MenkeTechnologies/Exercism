@@ -19,6 +19,7 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Gleam track's documentation](https://exercism.org/docs/tracks/gleam)
+- The [Gleam track's programming category on the forum](https://forum.exercism.org/c/programming/gleam)
 - [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 

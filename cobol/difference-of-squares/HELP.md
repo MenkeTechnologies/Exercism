@@ -42,8 +42,6 @@ Choose your current OS:
 
 Good luck, have fun and welcome to the COBOL track!
 
-If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
-
 ----
 
 ## macOS
@@ -78,9 +76,6 @@ If you get stuck, at any point, don't forget to reach out for [help](https://git
 
 Good luck, have fun and welcome to the COBOL track!
 
-If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
-
-
 ----
 
 ## Linux
@@ -113,8 +108,6 @@ If you get stuck, at any point, don't forget to reach out for [help](https://git
 
 Good luck, have fun and welcome to the COBOL track!
 
-If you get stuck, at any point, don't forget to reach out for [help](https://gitter.im/exercism/support).
-
 ## Submitting your solution
 
 You can submit your solution using the `exercism submit src/difference-of-squares.cob` command.
@@ -130,7 +123,8 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [COBOL track's documentation](https://exercism.org/docs/tracks/cobol)
-- [Exercism's support channel on gitter](https://gitter.im/exercism/support)
+- The [COBOL track's programming category on the forum](https://forum.exercism.org/c/programming/cobol)
+- [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.

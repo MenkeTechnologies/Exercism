@@ -34,7 +34,7 @@ If you'd like help solving the exercise, check the following pages:
 Should those resources not suffice, you could submit your (incomplete) solution to request mentoring.
 
 - [The Zig Programming Language Documentation][documentation] is a great overview of all of the language features that Zig provides to those who use it.
-- [Zig Learn][zig-learn] is an excellent primer that explains the language features that Zig has to offer.
+- [Zig Guide][zig-guide] is an excellent primer that explains the language features that Zig has to offer.
 - [Ziglings][ziglings] is highly recommended.
   Learn Zig by fixing tiny broken programs.
 - [The Zig Programming Language Discord][discord-zig] is the main [Discord][discord].
@@ -49,5 +49,5 @@ Should those resources not suffice, you could submit your (incomplete) solution 
 [irc]: https://webchat.freenode.net/?channels=%23zig
 [reddit]: https://www.reddit.com/r/Zig
 [stack-overflow]: https://stackoverflow.com/questions/tagged/zig
-[zig-learn]: https://ziglearn.org/
-[ziglings]: https://github.com/ratfactor/ziglings
+[zig-guide]: https://zig.guide/
+[ziglings]: https://codeberg.org/ziglings/exercises

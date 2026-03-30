@@ -4,6 +4,12 @@
 
 To run the tests, run the command `bal test --offline` from within the exercise directory.
 
+## Skipped tests
+
+Initially, only the first test will be enabled.
+This is to encourage you to solve the exercise one step at a time.
+Once you get the first test passing, remove the `enable: false` property from the next test and work on getting that test passing.
+
 ## Submitting your solution
 
 You can submit your solution using the `exercism submit service_invocation.bal` command.
@@ -19,6 +25,7 @@ It's possible to submit an incomplete solution which allows you to:
 If you'd like help solving the exercise, check the following pages:
 
 - The [Ballerina track's documentation](https://exercism.org/docs/tracks/ballerina)
+- The [Ballerina track's programming category on the forum](https://forum.exercism.org/c/programming/ballerina)
 - [Exercism's programming category on the forum](https://forum.exercism.org/c/programming/5)
 - The [Frequently Asked Questions](https://exercism.org/docs/using/faqs)
 

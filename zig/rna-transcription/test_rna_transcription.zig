@@ -5,23 +5,11 @@ const testing = std.testing;
 const rna_transcription = @import("rna_transcription.zig");
 const RnaError = rna_transcription.RnaError;
 
-fn testTranscription(
-    dna: []const u8,
-    expected: []const u8
-) !void {
+fn testTranscription(dna: []const u8, expected: []const u8) !void {
     const rna = try rna_transcription.toRna(testing.allocator, dna);
     try testing.expectEqualStrings(expected, rna);
     testing.allocator.free(rna);
 }
-
-fn testFailure(
-    dna: []const u8
-) !void {
-    const expected = RnaError.IllegalDnaNucleotide;
-    const actual = rna_transcription.toRna(testing.allocator, dna);
-    try testing.expectError(expected, actual);
-}
-
 
 test "empty rna sequence" {
     try testTranscription("", "");

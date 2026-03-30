@@ -1,22 +1,29 @@
-# Two-fer
+# Two Fer
 
-Welcome to Two-fer on Exercism's Red Track.
+Welcome to Two Fer on Exercism's Red Track.
 If you need help running the tests or submitting your code, check out `HELP.md`.
 If you get stuck on the exercise, check out `HINTS.md`, but try and solve it without using those first :)
 
+## Introduction
+
+In some English accents, when you say "two for" quickly, it sounds like "two fer".
+Two-for-one is a way of saying that if you buy one, you also get one for free.
+So the phrase "two-fer" often implies a two-for-one offer.
+
+Imagine a bakery that has a holiday offer where you can buy two cookies for the price of one ("two-fer one!").
+You take the offer and (very generously) decide to give the extra cookie to someone else in the queue.
+
 ## Instructions
 
-`Two-fer` or `2-fer` is short for two for one. One for you and one for me.
+Your task is to determine what you will say as you give away the extra cookie.
 
-Given a name, return a string with the message:
+If you know the person's name (e.g. if they're named Do-yun), then you will say:
 
 ```text
-One for name, one for me.
+One for Do-yun, one for me.
 ```
 
-Where "name" is the given name.
-
-However, if the name is missing, return the string:
+If you don't know the person's name, you will say _you_ instead.
 
 ```text
 One for you, one for me.
@@ -24,15 +31,19 @@ One for you, one for me.
 
 Here are some examples:
 
-|Name    |String to return
-|:-------|:------------------
-|Alice   |One for Alice, one for me.
-|Bob     |One for Bob, one for me.
-|        |One for you, one for me.
-|Zaphod  |One for Zaphod, one for me.
+| Name   | Dialogue                    |
+| :----- | :-------------------------- |
+| Alice  | One for Alice, one for me.  |
+| Bohdan | One for Bohdan, one for me. |
+|        | One for you, one for me.    |
+| Zaphod | One for Zaphod, one for me. |
 
 ## Source
 
 ### Created by
 
 - @loziniak
+
+### Based on
+
+https://github.com/exercism/problem-specifications/issues/757

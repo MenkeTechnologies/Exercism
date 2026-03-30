@@ -5,20 +5,42 @@
 If you have the 8th binary on your path, enter the command:
 
 ```bash
-8th test.8th
+8th -f test.8th
 ```
 
 If the 8th binary is not on the PATH, in Windows enter
 
 ```cmd
-\path\to\8th test.8th
+\path\to\8th -f test.8th
 ```
 
 Linux or macOS:
 
 ```bash
-/path/to/8th test.8th
+/path/to/8th -f test.8th
 ```
+
+## Testing in the REPL
+
+Start 8th, loading test-words.8th: 
+
+```sh
+8th -f test-words.8th
+```
+
+This will start a CLI session where, once you’ve written some code in your solution file, you can load it into the REPL.
+For example, for the "word-count" exercise, you would enter:
+
+```8th
+"word-count.8th" f:include
+```
+
+And you can run the tests with 
+```sh
+"word-count-tests.8th" f:include
+```
+
+Or you can copy and paste a single test from that file or enter your own. 
 
 ## Skipped tests
 
@@ -33,7 +55,7 @@ To run all tests, including the ones after the `SKIP-REST-OF-TESTS` word, you ca
 One way to set this just for the duration of running the tests is (macOS and Linux):
 
 ```bash
-RUN_ALL_TESTS=true 8th test.8th
+RUN_ALL_TESTS=true 8th -f test.8th
 ```
 
 ## Submitting your solution

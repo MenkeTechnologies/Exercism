@@ -1,1 +1,1 @@
-def reverse [n] (s: [n]u8): [n]u8 = s[::-1]
+def reverse [n] (s: [n]u8) = s[::-1]
