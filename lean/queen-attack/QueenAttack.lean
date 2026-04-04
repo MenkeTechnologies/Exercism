@@ -1,17 +1,19 @@
 namespace QueenAttack
 
 structure Queen where
-  /-
-    define here a type Queen that satisfies the following theorem:
-
-    theorem check (q : QueenAttack.Queen) : q.row ≥ 0 ∧ q.row < 8 ∧ q.col ≥ 0 ∧ q.col < 8 := by
-      simp [q.h]
-  -/
+  row : Int
+  col : Int
+  h : row >= 0 ∧ row < 8 ∧ col >= 0 ∧ col < 8
+  deriving BEq, Repr
 
 def create? (row col : Int) : Option Queen :=
-  sorry --remove this line and implement the function
+  if h : row >= 0 ∧ row < 8 ∧ col >= 0 ∧ col < 8 then
+    some { row, col, h }
+  else none
 
 def canAttack (white black : Queen) : Bool :=
-  sorry --remove this line and implement the function
+  let dx := white.row - black.row
+  let dy := white.col - black.col
+  dx == 0 || dy == 0 || dx.natAbs == dy.natAbs
 
 end QueenAttack
