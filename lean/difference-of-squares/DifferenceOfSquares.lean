@@ -1,12 +1,9 @@
 namespace DifferenceOfSquares
 
-def squareOfSum (number : Nat) : Nat :=
-  sorry --remove this line and implement the function
+def squareOfSum (n : Nat) : Nat := Array.range (n + 1) |>.sum |> (·^2)
 
-def sumOfSquares (number : Nat) : Nat :=
-  sorry --remove this line and implement the function
+def sumOfSquares (n : Nat) : Nat := Array.range (n + 1) |>.map (·^2) |>.sum
 
-def differenceOfSquares (number : Nat) : Nat :=
-  sorry --remove this line and implement the function
+def differenceOfSquares (n : Nat) : Nat :=  squareOfSum n - sumOfSquares n
 
 end DifferenceOfSquares
