@@ -34,5 +34,9 @@
     "lint:types": "corepack yarn tsc --noEmit -p .",
     "lint:ci": "corepack yarn eslint . --ext .tsx,.ts"
   },
-  "packageManager": "yarn@4.5.1"
+  "packageManager": "yarn@4.5.1",
+  "resolutions": {
+    "glob@npm:^10.2.2": "^14.0.2",
+    "minimatch@npm:^9.0.4": "^11.0.1"
+  }
 }
